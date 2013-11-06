@@ -78,7 +78,6 @@ install-data-local:
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) alt.xsl $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) rem-compounds.xsl $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(LANG1).prob $(DESTDIR)$(apertium_nob_srcdir)
 
 
 CLEANFILES = $(TARGETS_COMMON)
