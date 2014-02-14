@@ -9,14 +9,11 @@ BASENAME=apertium-$(LANG1)
 
 TARGETS_COMMON = $(LANG1).automorf.bin $(LANG1).autogen.bin \
 	$(LANG1).automorf.att.gz $(LANG1).autogen.att.gz \
-        $(LANG1).prob \
         $(LANG1).rlx.bin
 
 ###############################################################################
 ## Norwegian Bokmål transducer
 ###############################################################################
-
-# TODO: alt.xsl, rem-compounds.xsl
 
 $(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
 	lt-comp rl $< $@
@@ -44,8 +41,6 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix \
            $(BASENAME).$(LANG1).rlx \
            $(LANG1).prob            \
 	   $(BASENAME).$(LANG1).tsx \
-	   alt.xsl \
-	   rem-compounds.xsl \
 	   modes.xml
 
 ###############################################################################
@@ -76,9 +71,6 @@ install-data-local:
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) alt.xsl $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) rem-compounds.xsl $(DESTDIR)$(apertium_nob_srcdir)
-
 
 CLEANFILES = $(TARGETS_COMMON)
 clean-local:
