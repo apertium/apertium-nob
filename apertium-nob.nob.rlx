@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nb-nn-morph|cg-conv -a 2>/dev/null" -*-
+# -*- cg-pre-pipe: "apertium -d . nob-morph|cg-conv -a 2>/dev/null" -*-
 
 SOFT-DELIMITERS = "<,>" cm ;
 DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" sent ;
@@ -1830,6 +1830,10 @@ CONSTRAINTS
 # I bm er de fleste for-verb-eksemplene verb + prep"
 #	(*-1 setn-gr BARRIER fv)
 #	(*1 setn-gr BARRIER fv)
+
+"<fortsatt>" SELECT (adv) IF
+	(NEGATE -1 ("ha") LINK 2 ("med"))
+;
 
 
 #:3611
