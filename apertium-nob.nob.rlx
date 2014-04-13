@@ -4566,14 +4566,14 @@ CONSTRAINTS
 
 
 #:3120
-  "<å>"   SELECT:3120   ("å") IF
+  "<å>"   SELECT:3120   ("å" part) IF
 	(1 adverb)
 	(2 inf)
 ;
 
 
 #:3121
-  "<å>"   SELECT:3121   ("å") IF
+  "<å>"   SELECT:3121   ("å" part) IF
 	(1 anf)
 	(2 inf)
 ;
@@ -4582,7 +4582,7 @@ CONSTRAINTS
 
 
 #:3122
-  "<å>"   SELECT:3122   ("å") IF
+  "<å>"   SELECT:3122   ("å" part) IF
 	(1 inf)
 ;
 #  "å leke"
