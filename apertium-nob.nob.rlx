@@ -26320,7 +26320,7 @@ SELECT:4081 (adj) IF
 #:6211
 REMOVE:6211 (n pl) IF
 	(0 ent-subst)
-	(-1 be-ent-subst LINK -1 adj-be BARRIER ikke-adv-adj-komma LINK -1* be-det-ent/fl)
+	(-1 be-ent-subst LINK *-1 adj-be BARRIER ikke-adv-adj-komma LINK -1* be-det-ent/fl)
 ;
 # KBU: «det viktige, grammatiske trekket imperativ<sg>»
 
