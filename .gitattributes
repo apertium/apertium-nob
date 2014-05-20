@@ -7,6 +7,7 @@
 /README -text
 /apertium-nob.nob.dix -text
 /apertium-nob.nob.rlx -text
+/apertium-nob.nob.syn.rlx -text
 /apertium-nob.nob.tsx -text
 /apertium-nob.pc.in -text
 /autogen.sh -text

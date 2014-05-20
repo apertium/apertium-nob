@@ -17,7 +17,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-tagger">
+  <mode name="nob-dis">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
@@ -28,14 +28,57 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-disam">
+  <mode name="nob-dis-trace">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
       </program>
-      <program name="cg-conv -a -l" />
+      <program name="cg-conv -a -r" />
       <program name="vislcg3 --trace -g">
         <file name="apertium-nob.nob.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nob-syn">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nob.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nob.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nob-syn-trace">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nob.rlx.bin"/>
+      </program>
+      <program name="cg-conv -a -r" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-nob.nob.syn.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nob-tagger">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nob.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="nob.prob"/>
       </program>
     </pipeline>
   </mode>

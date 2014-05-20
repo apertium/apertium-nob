@@ -9,7 +9,8 @@ BASENAME=apertium-$(LANG1)
 
 TARGETS_COMMON = $(LANG1).automorf.bin $(LANG1).autogen.bin \
 	$(LANG1).automorf.att.gz $(LANG1).autogen.att.gz \
-        $(LANG1).rlx.bin
+        $(LANG1).rlx.bin \
+        $(LANG1).syn.rlx.bin
 
 ###############################################################################
 ## Norwegian Bokmål transducer
@@ -36,11 +37,15 @@ $(LANG1).automorf.att.gz: $(LANG1).automorf.bin
 $(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
 	cg-comp $< $@
 
+$(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx
+	cg-comp $< $@
+
 ###############################################################################
 ## Distribution
 ###############################################################################
 EXTRA_DIST=$(BASENAME).$(LANG1).dix \
            $(BASENAME).$(LANG1).rlx \
+	   $(BASENAME).$(LANG1).syn.rlx \
            $(LANG1).prob            \
 	   $(BASENAME).$(LANG1).tsx \
 	   modes.xml
@@ -72,6 +77,7 @@ install-data-local:
 	test -d $(DESTDIR)$(apertium_nob_srcdir) || mkdir -p $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_nob_srcdir)
+	$(INSTALL_DATA) $(BASENAME).$(LANG1).syn.rlx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
 
 CLEANFILES = $(TARGETS_COMMON)
