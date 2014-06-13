@@ -17,7 +17,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-dis">
+  <mode name="nob-disam">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
@@ -28,7 +28,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-dis-trace">
+  <mode name="nob-disam-trace">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
@@ -40,7 +40,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-syn">
+  <mode name="nob-syntax">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
@@ -54,7 +54,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-syn-trace">
+  <mode name="nob-syntax-trace">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
