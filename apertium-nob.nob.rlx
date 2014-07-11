@@ -566,13 +566,13 @@ LIST nom/som = ("som"  cnjsub) (n) (np) (adj) (prn) (det) ;
 LIST nominativ = nom ;
 LIST npu-verb = "trenge"  "orke"  "klare"  "gidde"  "behøve"  ;
 LIST nr2-det = "sånn"  "sådan"  "slik"  "samme"  "noe"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  (det qnt pl) ("ene"  det) ;
-LIST nr2-det-fem-be = ("noe"  f) ("ene"  def) ("eneste"  def) ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
-LIST nr2-det-fem-ub = ("noe"  f) ("annen"  f ind) ("eneste"  def) ("slik"  f) ("sånn"  f) ("sådan"  f) ("egen"  f ind) ("egen"  m ind) ("eigen"  f ind) ("halvannen"  f) ("hver"  det f) ;
-LIST nr2-det-fl = (det qnt pl) ("eneste"  def) ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  pl) ("slik"  pl) ("sånn"  pl) ("sådan"  pl) ("egen"  pl) ("eigen"  pl) ;
-LIST nr2-det-mask-be = ("noe"  m) ("ene"  def) ("eneste"  def) ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
-LIST nr2-det-mask-ub = ("noe"  m) ("annen"  m ind) ("eneste"  def) ("slik"  m) ("sånn"  m) ("sådan"  m) ("egen"  m ind) ("eigen"  m ind) ("halvannen"  m) ("hver"  det m) ;
-LIST nr2-det-nøyt-be = ("noe"  nt) ("ene"  def) ("eneste"  def) ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  nt def) ("eigen"  nt def) ;
-LIST nr2-det-nøyt-ub = ("noe"  nt) ("annen"  nt ind) ("eneste"  def) ("slik"  nt) ("sånn"  nt) ("sådan"  nt) ("egen"  nt ind) ("eigen"  nt ind) ("halvannen"  nt) ("hver"  det nt) ;
+LIST nr2-det-fem-be = ("noe"  f) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
+LIST nr2-det-fem-ub = ("noe"  f) ("annen"  f ind) ("eneste") ("slik"  f) ("sånn"  f) ("sådan"  f) ("egen"  f ind) ("egen"  m ind) ("eigen"  f ind) ("halvannen"  f) ("hver"  det f) ;
+LIST nr2-det-fl = (det qnt pl) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  pl) ("slik"  pl) ("sånn"  pl) ("sådan"  pl) ("egen"  pl) ("eigen"  pl) ;
+LIST nr2-det-mask-be = ("noe"  m) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
+LIST nr2-det-mask-ub = ("noe"  m) ("annen"  m ind) ("eneste") ("slik"  m) ("sånn"  m) ("sådan"  m) ("egen"  m ind) ("eigen"  m ind) ("halvannen"  m) ("hver"  det m) ;
+LIST nr2-det-nøyt-be = ("noe"  nt) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  nt def) ("eigen"  nt def) ;
+LIST nr2-det-nøyt-ub = ("noe"  nt) ("annen"  nt ind) ("eneste") ("slik"  nt) ("sånn"  nt) ("sådan"  nt) ("egen"  nt ind) ("eigen"  nt ind) ("halvannen"  nt) ("hver"  det nt) ;
 LIST nr2-det-u-fl = "sånn"  "sådan"  "slik"  "samme"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  ("ene"  det) ;
 LIST nøyt = nt ;
 LIST nøyt-adj-det = (adj nt) (det nt) (adj def) (adj pprs) ;
@@ -689,6 +689,7 @@ LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
 LIST storbokstav = <*> ;
+LIST berre-storbokstav =  ("<[[:upper:]]+>"r);
 LIST strek = <strek> ;
 LIST strek/parentes = <strek> lpar rpar ;
 LIST strek/parentes-beg/anf = <strek> lpar <anf> ;
@@ -4601,6 +4602,23 @@ CONSTRAINTS
 
 #CONSTRAINTS
 ## remove domain
+
+"<leder>" REMOVE (vblex) IF
+  	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
+;
+"<leder>" REMOVE (vblex) IF
+	(1 ("for") OR ("av"))
+;
+"<leder>" REMOVE (vblex) IF
+	(-1 ("som"))
+	(NOT *1 subst-ub BARRIER ikke-subst-adj-det-pron)
+;
+"<leder>" REMOVE (vblex) IF
+	(-1 ("som"))
+	(2 ("i"))
+;
+
+
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
 	(0 adv)
@@ -23919,6 +23937,7 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 	(-1 setn-gr)
 ;
 #  «Les også:» lite sannsynleg at dette er passiv av «le» --KBU
+
 
 
 #:31230
