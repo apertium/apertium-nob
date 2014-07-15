@@ -63,4 +63,6 @@ then
 fi
 
 
+AP_MKINCLUDE
+
 AC_OUTPUT([Makefile apertium-nob.pc])
