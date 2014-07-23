@@ -2503,6 +2503,9 @@ CONSTRAINTS
 #  "jeg endrer meg (pron, ikke verb)"))
 
 
+  "<med>"   SELECT   (pr) IF
+	(1 subst/adj/pron/det OR fork/ukjent-ord)
+;
 
 
 #:3450
