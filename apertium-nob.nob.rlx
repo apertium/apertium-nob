@@ -688,8 +688,8 @@ LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "ke
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
-LIST storbokstav = <*> ;
-LIST berre-storbokstav =  ("<[[:upper:]]+>"r);
+LIST storbokstav = "<\\p{Lu}.*>"r ;
+LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
 LIST strek = <strek> ;
 LIST strek/parentes = <strek> lpar rpar ;
 LIST strek/parentes-beg/anf = <strek> lpar <anf> ;
@@ -779,6 +779,14 @@ LIST verk = <verk> ;
 
 # sec 1
 CONSTRAINTS
+SELECT:over_30._Men clb IF
+        (0/1 det-kvant)
+        (0 (<<<) LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
+        # TODO: why can't I say >1?
+;
+        
+SELECT ("å" sep) IF (*-1 (vblex sep)) ;
+SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 ## select domain
 #:3787
