@@ -1,0 +1,230 @@
+2014-12-10  unhammer
+
+	* [r57970] apertium-nob.nob.dix: omardit→sørge_for + andre ord
+	  funne i magiske gtweb.uit.no/korp
+
+2014-10-25  unhammer
+
+	* [r57679] AUTHORS, apertium-nob.nob.dix: testvoc
+	  
+	  (I think? just getting this out of the way before the major
+	  slv-ita commit)
+
+2014-10-20  trondtr
+
+	* [r57641] apertium-nob.nob.dix: typo
+
+2014-10-20  unhammer
+
+	* [r57640] apertium-nob.nob.dix: Diehtosiida står som <top> i bidix
+	  iallfall …
+
+2014-10-20  trondtr
+
+	* [r57638] apertium-nob.nob.dix: Diehtosiida
+
+2014-10-06  unhammer
+
+	* [r57472] apertium-nob.nob.dix, configure.ac: testvoc
+
+2014-07-24  unhammer
+
+	* [r55966] apertium-nob.nob.dix: clear up some of the license mess;
+	  nno/nob/sme stuff is GPL2-or-later (as are any of my
+	  contributions to Apertium, if that's ever a question)
+
+2014-07-23  unhammer
+
+	* [r55909] apertium-nob.nob.dix, apertium-nob.nob.rlx: meir
+	  unio-feilretting
+
+2014-07-15  unhammer
+
+	* [r55575] Makefile.am, configure.ac: use $(CGCOMP) as dep for rlx
+	  goals so theyre recompiled on new versions
+
+2014-07-11  unhammer
+
+	* [r55456] apertium-nob.nob.rlx: UNIO-leder → UNIO-leiar
+
+2014-06-26  unhammer
+
+	* [r55008] apertium-nob.nob.dix: driftigere
+	* [r55004] apertium-nob.nob.dix: forskjellig/ulik.det.qnt RL's for
+	  sme-nob, also fix some syntax errors …
+	* [r54985] apertium-nob.nob.dix: språkrevitalisering
+	* [r54984] apertium-nob.nob.dix: reindriftsutøver
+
+2014-06-24  unhammer
+
+	* [r54911] apertium-nob.nob.dix: doh
+	* [r54909] apertium-nob.nob.dix: tatarisk osb.
+
+2014-06-13  unhammer
+
+	* [r54196] modes.xml: s/dis/disam;s/syn/syntax;s/mor/morph
+
+2014-06-09  unhammer
+
+	* [r54005] Makefile.am, autogen.sh: Put .pc and compiled data in
+	  /share/, not /lib/ (following Debian/autotools standards)
+	  
+	  pkgconfigdir=$(libdir)/pkgconfig →
+	  pkgconfigdir=$(prefix)/share/pkgconfig AP_LIB → AP_SRC
+	  apertium_XXXdir=$(prefix)/lib/apertium/$(BASENAME)/ →
+	  apertium_XXXdir=$(prefix)/share/apertium/$(BASENAME)/
+	  
+	  put share/pkgconfig in PKG_CONFIG_PATH in autogen.sh
+
+2014-05-20  unhammer
+
+	* [r53217] Makefile.am, apertium-nob.nob.syn.rlx, modes.xml:
+	  syn.rlx'es (unused) moved to monolingual dirs
+
+2014-05-12  unhammer
+
+	* [r52850] modes.xml: -e
+
+2014-04-27  trondtr
+
+	* [r52332] apertium-nob.nob.dix: Beaivváš
+
+2014-04-22  trondtr
+
+	* [r52200] apertium-nob.nob.dix: Removed some doublets having same
+	  paradigm, except compound _\s_. Still 600 doublets left :-/
+	* [r52195] apertium-nob.nob.dix: Removed two homonym lines.
+
+2014-04-21  unhammer
+
+	* [r52193] apertium-nob.nob.dix: fjerna masse duplikat; enno ein
+	  del igjen kor den eine har feil par
+	* [r52192] apertium-nob.nob.dix: litt duplikatfjerning
+
+2014-04-21  trondtr
+
+	* [r52181] apertium-nob.nob.dix: Added 1331 entries, taken from FAD
+	  lexicon update to sme-nob. Note, there may be some doublets in
+	  the beginning...
+
+2014-04-20  unhammer
+
+	* [r52127] apertium-nob.nob.dix: Od.pirk. nr.
+
+2014-04-19  unhammer
+
+	* [r52076] apertium-nob.nob.dix: some un.sp.def fixes, 103/229 now
+	  :)
+
+2014-04-18  leneant
+
+	* [r52032] apertium-nob.nob.rlx: Added an asterix to a rule
+
+2014-04-17  trondtr
+
+	* [r52011] apertium-nob.nob.dix: Added nouns from the sme-nob FAD
+	  update.
+
+2014-04-16  unhammer
+
+	* [r51984] apertium-nob.nob.dix: testvoc
+
+2014-04-14  unhammer
+
+	* [r51954] apertium-nob.nob.dix: moar testvoc
+
+2014-04-13  unhammer
+
+	* [r51936] apertium-nob.nob.dix, apertium-nob.nob.rlx: nno->nob
+	  testvoc (and turn on compounding)
+
+2014-04-12  unhammer
+
+	* [r51922] apertium-nob.nob.dix, apertium-nob.nob.rlx: some nno-nob
+	  testvoc and cleanup of dev dir
+
+2014-04-08  spectre360
+
+	* [r51808] apertium-nob.nob.dix: remove duplicate
+	* [r51805] configure.ac: fix pkgconfig
+
+2014-04-05  unhammer
+
+	* [r51693] apertium-nob.nob.dix: more #-testvoc, cmp-split RL's
+	  added to no-cmp pardefs
+	* [r51691] apertium-nob.nob.dix: some #-testvoc
+
+2014-04-04  unhammer
+
+	* [r51671] configure.ac: require 3.3.0
+
+2014-04-02  unhammer
+
+	* [r51635] apertium-nob.nob.dix: dan-nor/{nob,nno}.dix merged in;
+	  adjectives pardefs now have un and sp tags; adj testvoc in
+	  sme-nob and nno-nob TODO
+
+2014-03-26  unhammer
+
+	* [r51260] autogen.sh: fix autogen.sh so users don't have to set
+	  PKG_CONFIG_PATH and similar *PATH's
+
+2014-03-24  unhammer
+
+	* [r51163] Makefile.am: install .prob
+
+2014-03-20  unhammer
+
+	* [r50959] Makefile.am, apertium-nob.nob.dix: sme-nob.nob.dix fully
+	  merged in, adj's now have sint tags
+
+2014-03-16  unhammer
+
+	* [r50852] apertium-nob.nob.dix: wip: merging in sme nob.dix
+	* [r50844] apertium-nob.nob.dix: uniq
+	* [r50838] apertium-nob.nob.dix: re-add stuff that was added to
+	  nn-nb after this file was split out
+
+2014-02-14  unhammer
+
+	* [r50245] Makefile.am, alt.xsl, rem-compounds.xsl: lt-trim + modes
+	  makefile fixes to nor-eng, use alt.xsl in nno, no rem-compounds
+	  
+	  also, use compiled analysers/generators from AP_LIBfoo
+
+2013-11-06  unhammer
+
+	* [r48395] Makefile.am: use apertium.m4, supporting
+	  --with-lang1n=/path/to/nno --with-lang1b=/path/to/nob
+
+2013-10-31  unhammer
+
+	* [r48232] configure.ac: configure.ac's updated to use apertium.pc
+	  (or apertium-3.2.pc if that doesn't exist)
+	* [r48230] apertium-nob.nob.dix: mv infreq to languages (didn't I
+	  do this already)
+
+2013-10-15  unhammer
+
+	* [r48117] Makefile.am, alt.xsl, apertium-nob.nob.tsx, nob.prob,
+	  rem-compounds.xsl: nor-eng depends on nno/nob for dix, prob, xsl
+	* [r48112] Makefile.am: use $(TARGETS_COMMON) in _DATA to make it
+	  even more less redundanter
+	* [r48110] Makefile.am: s/LANG2/LANG1/g # there is no LANG2
+	* [r48108] Makefile.am: fix mode building, add EXTRA_DIST goals for
+	  tarballing
+	  
+	  also, modes.xml for tuk and fix dix-build for hbs
+
+2013-10-12  unhammer
+
+	* [r48046] Makefile.am, apertium-nob.pc.in: put dir and srcdir in
+	  pc.in, minor mode build fixes
+
+2013-10-12  spectre360
+
+	* [r48038] ., AUTHORS, COPYING, ChangeLog, Makefile.am, NEWS,
+	  README, apertium-nob.nob.dix, apertium-nob.nob.rlx,
+	  apertium-nob.pc.in, autogen.sh, configure.ac, modes.xml: new
+	  languages dir (apertium-nob) and some updates to -kaz
+
