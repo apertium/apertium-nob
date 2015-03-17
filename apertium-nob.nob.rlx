@@ -63,7 +63,7 @@ LIST %enn% = "enn"  ;
 LIST %et% = ("en"  det qnt nt sg) ;
 LIST %etter% = "etter"  ;
 LIST %etter/fram/opp% = ("etter"  pr) ("fram"  pr) ("frem"  pr) ("opp"  pr) ;
-LIST %eventuelt% = ("eventuell"  adj posi ind nt) ;
+LIST %eventuelt% = ("eventuell"  adj pst ind nt) ;
 LIST %fare%-pret = ("fare"  vblex pret) ;
 LIST %fast% = ("fast"  adj) ;
 LIST %fast%-verb = "tjore"  "surre"  "sette"  "klore"  "brenne"  "binde"  ;
@@ -147,13 +147,13 @@ LIST %klokke% = "klokke"  ;
 LIST %klokke/kl% = ("klokke"  n) ("kl." n acr) ;
 LIST %kort/lang/på% = "på"  "lang"  "kort"  ;
 LIST %la% = "la"  ;
-LIST %langt% = ("lang"  adj posi nt) ;
+LIST %langt% = ("lang"  adj pst nt) ;
 LIST %leder% = ("leder"  n m sg ind) ;
 LIST %lenge% = ("lenge"  adj) ;
 LIST %ligge% = "ligge"  ;
 LIST %lignende/liknende% = "liknende"  "lignende"  ;
 LIST %like% = "like"  ;
-LIST %alt/litt% = ("alt"  det qnt nt sg) ("litt"  adj posi nt ind sg) ;
+LIST %alt/litt% = ("alt"  det qnt nt sg) ("litt"  adj pst nt ind sg) ;
 LIST %mange% = "mange"  ;
 LIST %med% = "med"  ;
 LIST %meget% = "meget"  ;
@@ -271,7 +271,7 @@ LIST %ved% = ("ved"  pr) ;
 LIST %vel% = "vel"  ;
 LIST %videre% = ("vid"  adj comp) ;
 LIST %viss% = "viss"  ;
-LIST %visst% = ("viss"  adj posi nt ind sg) ;
+LIST %visst% = ("viss"  adj pst nt ind sg) ;
 LIST %være% = "være"  ;
 LIST %være/bli% = "være"  "bli"  ;
 LIST %ytterligere% = "ytterligere"  ;
@@ -304,7 +304,7 @@ LIST adj-mask/fem = (adj m) (adj f) (adj mf) (adj pprs) (adj def) ;
 LIST adj-mask/nøyt = (adj m) (adj mf) (adj nt) (adj pprs) (adj def) ;
 LIST adj-nøyt = (adj nt) (adj def) (adj pprs) ;
 LIST adj-nøyt-ub = (adj nt ind) (adj pprs) ;
-LIST adj-pos = (adj posi) ;
+LIST adj-pos = (adj pst) ;
 LIST adj-ren = adj ;
 LIST adj-subst-konj = adj n np cnjcoo ;
 LIST adj-sup = (adj sup) ;
@@ -584,7 +584,7 @@ LIST objpred-pron-verb = "ønske"  "spise"  "snakke"  "si"  "se"  "oppleve"  "ma
 LIST objpred-verb = "ønske"  "male"  "lage"  "kalle"  "holde"  "gjøre"  ;
 LIST ord-%andre%-ent/fl-subst = "halvår"  "forsøk"  "avsnitt"  ;
 LIST orden = ("ene"  det qnt) ord ;
-LIST orden-pos = ("ene"  det qnt) (ord posi) ;
+LIST orden-pos = ("ene"  det qnt) (ord pst) ;
 LIST overskrift = overskrift ;
 LIST p-hj-verb = "være"  "ha"  "få"  "bli"  ;
 LIST parentes = lpar rpar ;
@@ -606,12 +606,12 @@ LIST periode-slutt = <<< ;
 LIST periode-slutt/clb-konj = <<< (clb cnjcoo) ;
 LIST periode-slutt/konj-clb = <<< (clb cnjcoo) ;
 LIST person-u-suffiks = <person> ;
-LIST pos-be-ent = (adj posi def sg) ;
-LIST pos-be-fl = (adj posi pl) ;
-LIST pos-ub-ent = (adj posi ind sg) ;
-LIST pos-ub-ent-mask/fem = (adj posi mf ind sg) ;
-LIST pos-ub-ent-nøyt = (adj posi nt ind sg) ;
-LIST pos-ub-fl = (adj posi pl) ;
+LIST pos-be-ent = (adj pst def sg) ;
+LIST pos-be-fl = (adj pst pl) ;
+LIST pos-ub-ent = (adj pst ind sg) ;
+LIST pos-ub-ent-mask/fem = (adj pst mf ind sg) ;
+LIST pos-ub-ent-nøyt = (adj pst nt ind sg) ;
+LIST pos-ub-fl = (adj pst pl) ;
 LIST poss-det = (det pos) ;
 LIST poss-det-nøyt = (det pos nt) ;
 LIST poss/gen = pos gen ;
@@ -714,7 +714,7 @@ LIST subst/adj = n np adj ;
 LIST subst/adj-ent-be = (n sg def) (np sg def) (adj def sg) (adj pprs) ;
 LIST subst/adj-fl = (n pl) (np pl) (adj pl) (adj pprs) ;
 LIST subst/adj-gen = (adj gen) (n gen) (np gen) ;
-LIST subst/adj-pos = n np (adj posi) ;
+LIST subst/adj-pos = n np (adj pst) ;
 LIST subst/adj/adv = n np adj adv ;
 LIST subst/adj/det = n np adj det ;
 LIST subst/adj/det-kvant-%av% = n np adj ("av"  pr) (det qnt) ;
@@ -790,7 +790,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 ## select domain
 #:3787
-  "<absolutt>"   SELECT:3787   (adj posi nt ind sg) IF
+  "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
 	(1 %ikke/ingen%)
 ;
 #  "absolutt ikke"
@@ -2432,7 +2432,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3463
-  "<lite>"   SELECT:3463   (adj posi ind) IF
+  "<lite>"   SELECT:3463   (adj pst ind) IF
 	(1C ub-subst)
 	(NOT 1 fl)
 ;
@@ -2441,7 +2441,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3461
-  "<lite>"   SELECT:3461   (adj posi nt ind sg) IF
+  "<lite>"   SELECT:3461   (adj pst nt ind sg) IF
 	(1 prep)
 	(NOT 1 %på%)
 ;
@@ -2451,7 +2451,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3462
-  "<lite>"   SELECT:3462   (adj posi nt ind sg) IF
+  "<lite>"   SELECT:3462   (adj pst nt ind sg) IF
 	(1C adj)
 ;
 #  "lite god"
@@ -2656,7 +2656,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3419
-  "<mye>"   SELECT:3419   (adj posi mf ind sg) IF
+  "<mye>"   SELECT:3419   (adj pst mf ind sg) IF
 	(1 %klokke%)
 	(2 kop-fv)
 ;
@@ -2665,7 +2665,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3420
-  "<mye>"   SELECT:3420   (adj posi mf ind sg) IF
+  "<mye>"   SELECT:3420   (adj pst mf ind sg) IF
 	(1 kop-fv)
 	(2 %klokke%)
 ;
@@ -3589,7 +3589,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3269
-  "<slett>"   SELECT:3269   (adj posi nt) IF
+  "<slett>"   SELECT:3269   (adj pst nt) IF
 	(1 %ikke/ingen%)
 ;
 #  "slett (adv) ikke"))
@@ -4450,7 +4450,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3159
-  "<var>"   SELECT:3159   (adj posi mf) IF
+  "<var>"   SELECT:3159   (adj pst mf) IF
 	(-1 %føre%)
 	(-2 %være%)
 ;
@@ -4460,7 +4460,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3160
-  "<var>"   SELECT:3160   (adj posi mf) IF
+  "<var>"   SELECT:3160   (adj pst mf) IF
 	(*-1O ub-det LINK 0 mask/fem LINK NOT *1 ikke-adv-adj)
 	(*1 ub-ent-mask/fem-subst BARRIER ikke-adv-adj)
 ;
@@ -4552,7 +4552,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3124
-  "<visst>"   SELECT:3124   (adj posi nt ind sg) IF
+  "<visst>"   SELECT:3124   (adj pst nt ind sg) IF
 	(-1 kop)
 	(1C adj)
 	(-1C pres/pret)
@@ -4562,7 +4562,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3125
-  "<visst>"   SELECT:3125   (adj posi nt ind sg) IF
+  "<visst>"   SELECT:3125   (adj pst nt ind sg) IF
 	(-1 hj-verb)
 	(*1 perf-part/inf BARRIER setn-gr)
 ;
@@ -6847,7 +6847,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3156
-  "<var>"   REMOVE:3156   (adj posi mf) IF
+  "<var>"   REMOVE:3156   (adj pst mf) IF
 	(NOT -1 %føre%)
 	(*1 ikke-adv-adj BARRIER ub-ent-mask/fem-subst)
 ;
@@ -6856,7 +6856,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 
 
 #:3157
-  "<var>"   REMOVE:3157   (adj posi mf) IF
+  "<var>"   REMOVE:3157   (adj pst mf) IF
 	(NOT -1 %føre%)
 	(*-1 ikke-adv-adj LINK NOT 0 ub-det LINK NOT 0 mask/fem)
 ;
@@ -9545,7 +9545,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2942
- SELECT:2942 (adj posi ind) IF
+ SELECT:2942 (adj pst ind) IF
 	(0 %mye/lite%)
 	(1C ub-subst)
 	(NOT 1 fl)
@@ -9556,7 +9556,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2939
- SELECT:2939 (adj posi def sg) IF
+ SELECT:2939 (adj pst def sg) IF
 	(NOT 0 farlige-adj)
 	(*-1 %hver%-fem BARRIER ikke-adv-adj)
 	(*-1 %hver%-fem LINK NOT -1 det)
@@ -9568,7 +9568,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2940
- SELECT:2940 (adj posi def sg) IF
+ SELECT:2940 (adj pst def sg) IF
 	(NOT 0 farlige-adj)
 	(*-1 %hver%-mask BARRIER ikke-adv-adj)
 	(*-1 %hver%-mask LINK NOT -1 det)
@@ -9580,7 +9580,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2941
- SELECT:2941 (adj posi def sg) IF
+ SELECT:2941 (adj pst def sg) IF
 	(NOT 0 farlige-adj)
 	(*-1 %hver%-nøyt BARRIER ikke-adv-adj)
 	(*-1 %hver%-nøyt LINK NOT -1 det)
@@ -9592,7 +9592,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2937
- SELECT:2937 (adj posi pl) IF
+ SELECT:2937 (adj pst pl) IF
 	(NOT 0 fv)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9605,7 +9605,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2938
- SELECT:2938 (adj posi pl) IF
+ SELECT:2938 (adj pst pl) IF
 	(NOT 0 fv)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9618,7 +9618,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2932
- SELECT:2932 (adj posi nt ind sg) IF
+ SELECT:2932 (adj pst nt ind sg) IF
 	(0 %eventuelt%)
 	(NOT -1 %under%)
 ;
@@ -9627,7 +9627,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2933
- SELECT:2933 (adj posi nt ind sg) IF
+ SELECT:2933 (adj pst nt ind sg) IF
 	(0 %mye/lite%)
 	(1 infmerke)
 ;
@@ -9637,7 +9637,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2934
- SELECT:2934 (adj posi nt ind sg) IF
+ SELECT:2934 (adj pst nt ind sg) IF
 	(0 %mye/lite%)
 	(1C perf-part)
 ;
@@ -9647,7 +9647,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2935
- SELECT:2935 (adj posi nt ind sg) IF
+ SELECT:2935 (adj pst nt ind sg) IF
 	(0 %mye/lite%)
 	(1 prep)
 	(NOT 1 %på%)
@@ -9659,7 +9659,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2936
- SELECT:2936 (adj posi nt ind sg) IF
+ SELECT:2936 (adj pst nt ind sg) IF
 	(0 %mye/lite%)
 	(1C adj)
 ;
@@ -23339,7 +23339,7 @@ CONSTRAINTS
 
 
 #:4064
- "<rette>"   SELECT:4064   (adj posi def) IF
+ "<rette>"   SELECT:4064   (adj pst def) IF
 	  (-1 %den/det/de%)
 ;
 #være den rette
@@ -23387,7 +23387,7 @@ CONSTRAINTS
 
 
 #:4049
-  "<visst>"   SELECT:4049   (adj posi nt ind sg) IF
+  "<visst>"   SELECT:4049   (adj pst nt ind sg) IF
 	(-1C setn-gr)
 
 ;
@@ -23402,7 +23402,7 @@ CONSTRAINTS
 #  ha visst ser ut til oftest å være perf-part
 
 #:4052
-  "<visst>"   SELECT:4052   (adj posi nt ind sg) IF
+  "<visst>"   SELECT:4052   (adj pst nt ind sg) IF
 	(0 verb)
 
 ;
