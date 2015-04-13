@@ -6,8 +6,8 @@ AC_PROG_LN_S
 AC_PROG_AWK
 
 m4_define([required_apertium_version], [3.4.0])
-m4_define([required_lttolbox_version], [3.4.0])
-                          
+m4_define([required_lttolbox_version], [3.3.1])
+
 PKG_CHECK_MODULES(APERTIUM,   apertium >= required_apertium_version)
 PKG_CHECK_MODULES(LTTOOLBOX, lttoolbox >= required_lttolbox_version)
 
