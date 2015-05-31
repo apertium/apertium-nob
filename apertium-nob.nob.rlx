@@ -796,6 +796,9 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 #  "absolutt ikke"
 
 
+"<LES>" SELECT (vblex imp);
+"<Les>" SELECT (vblex imp);
+"<les>" SELECT (vblex imp);
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
@@ -23921,33 +23924,6 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 	(-1 tall-fl)
 ;
 
-#:6206
-  "<LES>"   REMOVE:6206 (vblex pass) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-  "<Les>"   REMOVE:6206 (vblex pass) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-  "<les>"   REMOVE:6206 (vblex pass) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-#:6207
-  "<LES>"   REMOVE:6207 (n) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-  "<Les>"   REMOVE:6207 (n) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-  "<les>"   REMOVE:6207 (n) IF
-  	(0 imp)
-	(-1 setn-gr)
-;
-#  «Les også:» lite sannsynleg at dette er passiv av «le» --KBU
 
 
 
