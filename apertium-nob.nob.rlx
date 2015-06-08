@@ -2483,6 +2483,9 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 #  "Jeg har lyst til å gjøre det"
 
 
+  "<Løs>"   SELECT:Løs-ut imp IF
+	(1 ("<ut>"))
+;
 
 #:3451
   "<man>"   SELECT:3451   (prn) IF
@@ -6008,6 +6011,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 	(NOT 1 %opp%)
 ;
 #  "Bare ved: har livet opp stemningen"
+
 
 
 
