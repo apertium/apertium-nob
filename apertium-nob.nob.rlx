@@ -2239,6 +2239,13 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 #      :group 2
 
 
+# If it's really a cnjsub, it's typically handled by earlier rules:
+"<hvor>" SELECT:hvor-pene-de-er (adv) IF
+        (1 adj)
+;
+"<Hvor>" SELECT:Hvor-stor-er-du (adv) IF
+        (1 adj)
+;
 
 #:4008
  "<i>"   SELECT:4008   (pr) IF
