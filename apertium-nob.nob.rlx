@@ -1196,6 +1196,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 ;
 #  skal en forsker bry seg
 
+"<bukkene>" SELECT subst-mask;
 
 #:3724
   "<den>"   SELECT:3724   (det) IF
@@ -1622,6 +1623,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 #: 4060
 "<fór>" SELECT:4060 (vblex pret)
 	(0 verb)
+;
 
 #:3650
   "<for>"   SELECT:3650   (adv) IF
@@ -2237,7 +2239,6 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 ;
 #  "Dette er en kvinne hvis bedrifter vil huskes"
 #      :group 2
-
 
 # If it's really a cnjsub, it's typically handled by earlier rules:
 "<hvor>" SELECT:hvor-pene-de-er (adv) IF
@@ -5646,6 +5647,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
  "<hjem>"   REMOVE:4048   (pr)
 	 (-2 %hus%)
 	 (-1 %og%)
+;
 #hus og hjem
 
 #:3537
@@ -23451,7 +23453,7 @@ CONSTRAINTS
 	(NOT 1  det)
 	(NOT 1 adj/subst)
 #mest sannsynlig substantiv etter prep
-
+;
 
 
 
@@ -23509,6 +23511,7 @@ CONSTRAINTS
 	(NOT -1 adj-fl)
 	(NOT -1 fl-det)
 # er oftest ikke i betydningen "spor"  (fl)
+;
 
 
 #:4014
@@ -23763,6 +23766,7 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 #:4045
  REMOVE  ("<mine>"  ) + (vblex imp) IF
 	 (0 poss-det)
+;
 
 #:3414
   "<navnet>"   REMOVE:3414   (adj) IF
@@ -23825,7 +23829,7 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 #:4041
  "<sin>"   REMOVE:4041   (n acr) IF
 	(0 poss-det)
-
+;
 
 
 #:3280
