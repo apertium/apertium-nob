@@ -2262,6 +2262,9 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 #  "Størst sjanse for at ille er adv ikke adj (vondt)"))
 
 
+SELECT ("ikon") + subst-nøyt IF
+	(0C subst)
+;
 
 #:3509
   "<intet>"   SELECT:3509   (det nt) IF
