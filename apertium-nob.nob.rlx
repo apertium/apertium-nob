@@ -3837,6 +3837,10 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "det stikk motsatte"
 
+"<støtte>"   SELECT  subst IF
+	(NOT -1 infmerke)
+	(NOT -2 infmerke)
+;
 
 
 #:3236
