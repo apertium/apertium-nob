@@ -7,6 +7,7 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 #PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
+LIST sp = sp ;
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
 LIST %all% = "all"  ;
@@ -5110,12 +5111,10 @@ SELECT ("ikon") + subst-nøyt IF
 
 
 
-#:3673
-  "<far>"   REMOVE:3673   (n nt) IF
-	(1 poss-det)
+ "<far>"   REMOVE:far   (n nt) IF
+	(NEGATE -1C nøyt-det)
+	(NEGATE -1C fl-adj/fl-det - sp)
 ;
-#  "Han traff far (mask) sin
-# 4.2"
 
 
 
