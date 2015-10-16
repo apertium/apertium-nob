@@ -17258,6 +17258,11 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove ndomain
 
+REMOVE:et-faglig-senter subst-mask IF
+        (-2C ub-nøyt-det)
+        (-1C adj-mask/nøyt)
+        (0C subst-mask OR subst-nøyt)
+;
 
 #:4090
 REMOVE:4090 (vblex)
