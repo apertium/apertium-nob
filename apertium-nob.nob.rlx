@@ -7121,7 +7121,6 @@ SELECT:4089 (vblex)
 #bare verb ved "flekke tenner"
 
 
-
 #:3104
  SELECT:3104 (<adv>) IF
 	(1 nom)
@@ -25493,6 +25492,10 @@ SELECT:4081 (adj) IF
 ;
 
 
+SELECT:no-pres-pres subst
+	(-1 pres)
+	(0C subst OR pres)
+;
 
 #4086
  SELECT:4086 (np)
