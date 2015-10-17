@@ -4955,7 +4955,7 @@ SELECT ("ikon") + subst-nøyt IF
 
 
 
-;
+"<domene>" REMOVE ("dom");
 
 
 
