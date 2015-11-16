@@ -550,7 +550,8 @@ LIST mask-adj-det = (adj m) (adj mf) (adj def) (adj pprs) (det m) ;
 LIST mask-be = (m def) ;
 LIST mask-det = (det m) ;
 LIST mask-ent = (m sg) (mf sg) (adj def) (m ubøy) (np) ;
-LIST mask/fem = m f mf (adj def) (adj pprs) ;
+LIST mask/fem/mf = m f mf ;
+LIST mask/fem/adj = m f mf (adj def) (adj pprs) ;
 LIST mest-sanns-adj-istf-subst = "visse"  "ville"  "venstre"  "velkommen"  "stille"  "snille"  "myke"  "mjuke"  "klare"  "høyre"  "høgre"  "flott"  ;
 LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skygg"  def) ("folke"  adj pp) ("live"  adj pp) ("kute"  adj pp) ("leg"  adj pl) ("leg"  adj def) ;
 LIST mest-sanns-verb-istf-subst = "temmer"  "tapper"  "suger"  "strever"  "strekker"  "stiller"  "stikker"  "slukker"  "koker"  "hogger"  "binder"  ;
@@ -577,6 +578,7 @@ LIST nr2-det-mask-ub = ("noe"  m) ("annen"  m ind) ("eneste") ("slik"  m) ("sån
 LIST nr2-det-nøyt-be = ("noe"  nt) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  nt def) ("eigen"  nt def) ;
 LIST nr2-det-nøyt-ub = ("noe"  nt) ("annen"  nt ind) ("eneste") ("slik"  nt) ("sånn"  nt) ("sådan"  nt) ("egen"  nt ind) ("eigen"  nt ind) ("halvannen"  nt) ("hver"  det nt) ;
 LIST nr2-det-u-fl = "sånn"  "sådan"  "slik"  "samme"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  ("ene"  det) ;
+LIST mf = mf ;
 LIST nøyt = nt ;
 LIST nøyt-adj-det = (adj nt) (det nt) (adj def) (adj pprs) ;
 LIST nøyt-be = (nt def) ;
@@ -599,6 +601,8 @@ LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare"
 LIST perf-gen = (adj pp gen) (vblex pp pass) ;
 LIST perf-part = (vblex pp) ;
 LIST perf-part/<perf-part> = (vblex pp) (adj pp) ;
+LIST perf-part-mf = (adj pp mf) ;
+LIST perf-part-nt = (adj pp nt) ;
 LIST perf-part/inf = (vblex pp) (vblex inf) ;
 LIST periode-beg = >>> ;
 LIST periode-beg/clb/strek = >>> clb <strek> ;
@@ -1203,7 +1207,7 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
   "<den>"   SELECT:3724   (det) IF
 	(-1 %hele%)
 	(2 subst/adj)
-	(2 mask/fem)
+	(2 mask/fem/adj)
 ;
 #  "hele den norske befolkning"
 
@@ -4489,7 +4493,7 @@ SELECT ("ikon") + subst-nøyt IF
 
 #:3160
   "<var>"   SELECT:3160   (adj pst mf) IF
-	(*-1O ub-det LINK 0 mask/fem LINK NOT *1 ikke-adv-adj)
+	(*-1O ub-det LINK 0 mask/fem/adj LINK NOT *1 ikke-adv-adj)
 	(*1 ub-ent-mask/fem-subst BARRIER ikke-adv-adj)
 ;
 # group: 4
@@ -4962,7 +4966,7 @@ SELECT ("ikon") + subst-nøyt IF
 #:3713
   "<egen>"   REMOVE:3713   (adj mf) IF
 	(*1 ub-ent-mask/fem-subst BARRIER ikke-adv-adj)
-	(*-1O poss-det LINK 0 mask/fem LINK NOT *1 ikke-adv-adj)
+	(*-1O poss-det LINK 0 mask/fem/adj LINK NOT *1 ikke-adv-adj)
 ;
 #  "vår egen historie"
 
@@ -5139,6 +5143,7 @@ SELECT ("ikon") + subst-nøyt IF
 #  "den er den største som er felt (ikke subst)"))
 
 
+"<fiskene>" REMOVE nøyt;
 
 #:3660
   "<fly>"   REMOVE:3660   (n m) IF
@@ -6886,7 +6891,7 @@ SELECT ("ikon") + subst-nøyt IF
 #:3157
   "<var>"   REMOVE:3157   (adj pst mf) IF
 	(NOT -1 %føre%)
-	(*-1 ikke-adv-adj LINK NOT 0 ub-det LINK NOT 0 mask/fem)
+	(*-1 ikke-adv-adj LINK NOT 0 ub-det LINK NOT 0 mask/fem/adj)
 ;
 # group: 4
 
@@ -7066,7 +7071,7 @@ SELECT ("ikon") + subst-nøyt IF
 
 #:3127
   "<ville>"   REMOVE:3127   subst-appell-ub-ent IF
-	(0 mask/fem)
+	(0 mask/fem/adj)
 ;
 #  "Bare: tale i villa"
 
@@ -8566,7 +8571,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT 0 pres/pret)
 	(1C adv)
 	(-1C fv)
-	(NOT -2 mask/fem)
+	(NOT -2 mask/fem/adj)
 ;
 #  "er egentlig ikke"
 
@@ -8717,7 +8722,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT 2 adj-fl)
 	(**-1C setn-gr BARRIER kop)
 ;
-#  "Ikke: så omhyggelig (mask/fem) og grei (mask/fem) "))
+#  "Ikke: så omhyggelig (mask/fem/adj) og grei (mask/fem/adj) "))
 
 
 
@@ -8834,7 +8839,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT -1 <adv>)
 	(-2C ub-ent-nøyt-adj)
 	(NOT 2 adverb)
-	(NOT -2 mask/fem)
+	(NOT -2 mask/fem/adj)
 ;
 # group: 15
 
@@ -8846,7 +8851,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT 0 pres/pret)
 	(1 komma)
 	(NOT 2 adverb)
-	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C ub-ent-nøyt-adj LINK NOT 0 mask/fem)
+	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C ub-ent-nøyt-adj LINK NOT 0 mask/fem/adj)
 ;
 # group: 15
 
@@ -8860,7 +8865,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT 1 komma)
 	(NOT -1 <adv>)
 	(-2C ub-ent-nøyt-adj)
-	(NOT -2 mask/fem)
+	(NOT -2 mask/fem/adj)
 ;
 # group: 15
 
@@ -8872,7 +8877,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(NOT 0 pres/pret)
 	(NOT 1 ub-ent-nøyt-subst)
 	(NOT 1 komma)
-	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C ub-ent-nøyt-adj LINK NOT 0 mask/fem)
+	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C ub-ent-nøyt-adj LINK NOT 0 mask/fem/adj)
 ;
 # group: 15
 
@@ -12558,7 +12563,7 @@ SELECT:2963 (adj nt ind sg) IF
 # (NOT LR0 IKKE-ADJ-SUBST))
 # ei (ganske gul) vogn
 # (NOT 0 %NOEN/INGEN%) fordi noen i mengden ub-det
-# er lik i mask/fem /fl"
+# er lik i mask/fem/adj /fl"
 
 
 
@@ -13638,7 +13643,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(0 %den/denne%)
 	(1 adverb)
 	(-1C fv)
-	(NOT 2 mask/fem)
+	(NOT 2 mask/fem/adj)
 	(*-2O setn-gr LINK 1 prep LINK NOT *1 setn-gr)
 ;
 #  "i dag spiser den kjøtt"
@@ -13649,7 +13654,7 @@ SELECT:2963 (adj nt ind sg) IF
  SELECT:2599 pron-pers IF
 	(0 %den/denne%)
 	(-1C fv)
-	(NOT 1 mask/fem)
+	(NOT 1 mask/fem/adj)
 	(NOT 1 adj-sup)
 	(NOT 1 adverb)
 	(*-2O setn-gr LINK 1 prep LINK NOT *1 setn-gr)
@@ -13662,7 +13667,7 @@ SELECT:2963 (adj nt ind sg) IF
  SELECT:2600 pron-pers IF
 	(0 %den/denne%)
 	(-1C fv)
-	(NOT 1 mask/fem)
+	(NOT 1 mask/fem/adj)
 	(NOT 1 adj-sup)
 	(NOT 1 adverb)
 	(-2C adverb)
@@ -17148,6 +17153,13 @@ SELECT:2335 (vblex) IF
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
+SELECT:fisken-ble-funnet perf-part-mf IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + mask/fem/mf BARRIER setn-gr)
+;
+
 
 #:2410
  SELECT:2410 (vblex pp) IF
@@ -17766,7 +17778,7 @@ REMOVE:4090 (vblex)
 #:2289
  REMOVE:2289 (adj pp mf ind sg) IF
 	(1 subst/adj)
-	(NOT 1 mask/fem)
+	(NOT 1 mask/fem/adj)
 	(NOT 1 adj-komp)
 	(NOT 1 adj-sup)
 	(NOT 1 subst-prop)
@@ -18070,7 +18082,7 @@ REMOVE:4090 (vblex)
 #:2272
  REMOVE:2272 (adj mf sg) IF
 	(0 pos-ub-ent-nøyt)
-	(NOT 1 mask/fem)
+	(NOT 1 mask/fem/adj)
 	(NOT -1 int-setn-gr)
 	(NOT -1 det-ent)
 	(*-1 ikke-adv LINK 0 iv LINK NOT 0 pred-verb LINK NOT 0 %dømme% LINK NOT 0 %så%)
@@ -18114,7 +18126,7 @@ REMOVE:4090 (vblex)
 	(NOT 1 mask-ent)
 	(NOT 1 fem-ent)
 ;
-#  "fra liknende (ikke adj mask/fem) samfunnslag (fl eller nøyt ent)"))
+#  "fra liknende (ikke adj mask/fem/adj) samfunnslag (fl eller nøyt ent)"))
 
 
 
@@ -20086,7 +20098,7 @@ REMOVE:2135 (det) IF
 	(NOT 2 komma/konj)
 ;
 #  "forsøker å finne np-er med bare det + adj
-# (noe må fjernes istf velges pga lik mask/fem)
+# (noe må fjernes istf velges pga lik mask/fem/adj)
 
 
 
@@ -20969,7 +20981,7 @@ REMOVE:2135 (det) IF
 #:2005
  REMOVE:2005 (np gen) IF
 	(0 subst-prop)
-	(0 mask/fem)
+	(0 mask/fem/adj)
 	(1 subst-prop)
 ;
 #  "Johannes Hansen
@@ -21169,7 +21181,7 @@ REMOVE:gen-subst gen-subst IF
 
 #:1983
  REMOVE:1983 subst IF
-	(0 mask/fem)
+	(0 mask/fem/adj)
 	(0 ub)
 	(0 fv)
 	(-1 nøyt)
