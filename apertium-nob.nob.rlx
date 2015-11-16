@@ -23,7 +23,7 @@ LIST %annen/samme%/kvant-fem = ("annen"  f) ("samme" ) (det qnt) ;
 LIST %annen/samme%/kvant-mask = ("annen"  m) ("samme" ) (det qnt) ;
 LIST %annen/samme%/kvant-nøyt = ("annen"  nt) ("samme" ) (det qnt) ;
 LIST %ansatte/tiltalte% = ("tiltale"  adj def sg) ("tiltale"  adj pl) ("ansatt"  adj pl) ("ansatt"  adj def sg) ;
-LIST %antas% = ("anta"  pass) ;
+LIST %antas% = ("anta"  pasv) ;
 LIST %arm/ben/kropp/legg/tre%-fl = ("arm"  pl) ("ben"  pl) ("bein"  pl)("kropp"  pl) ("legg"  pl) ("tre"  pl) ;
 LIST %at% = "at"  ;
 LIST %at/om% = "om"  "at"  ;
@@ -226,7 +226,7 @@ LIST %sjakk% = "sjakk"  ;
 LIST %sjelden% = "sjelden"  ;
 LIST %skifte/bytte% = ("skifte"  vblex) ("bytte"  vblex) ;
 LIST %slags% = "slags"  ;
-LIST %slettes% = ("slette"  pass) ;
+LIST %slettes% = ("slette"  pasv) ;
 LIST %slik%-adv = ("slik"  adv) ;
 LIST %slutt% = ("slutt"  n m) ;
 LIST %slå% = ("slå"  vblex) ;
@@ -410,7 +410,7 @@ LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "s
 LIST farlige-fl-subst = ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
-LIST farlige-inf = ("felle"  vblex inf pass) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pass) "røde"  ;
+LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
 LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale"  gen ;
@@ -461,9 +461,9 @@ LIST ikke-adv-adj-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rp
 LIST ikke-adv-adj-subst-det-prep = "$-" "-" "$," "," vblex prn cnjsub cnjcoo "å" ij <<< >>> <ellipse> ;
 LIST ikke-adv-adj-subst-pron-det = cnjcoo pr cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (det dem) (n gen) ("$," clb) ("," clb) ;
 LIST ikke-adv-adj-subst-pron-konj-det = "siden"  pr cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (det dem) (n gen) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
-LIST ikke-adv-adj-subst-pron-konj-det-sbu2 = "siden"  pr "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pass) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
-LIST ikke-adv-adj-subst-pron-konj-det2 = "siden"  pr cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pass) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
-LIST ikke-adv-adj-subst-pron-konj-det2-prep = cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pass) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
+LIST ikke-adv-adj-subst-pron-konj-det-sbu2 = "siden"  pr "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pasv) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
+LIST ikke-adv-adj-subst-pron-konj-det2 = "siden"  pr cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pasv) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
+LIST ikke-adv-adj-subst-pron-konj-det2-prep = cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (vblex inf) (vblex pasv) (vblex pp) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
 LIST ikke-adv-adj-substmgen-konj-detmdem-prep = prn cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
 LIST ikke-adv-adj-substmgen-pron-detmdem-prep = cnjsub "å" ij cnjcoo <ellipse> (vblex pres) (vblex pret) ("$," clb) ("," clb) ;
 LIST ikke-adv-adj-substmgen-pron-konj-detmdem-prep = cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
@@ -526,9 +526,9 @@ LIST komp = comp ;
 LIST konj = cnjcoo ;
 LIST konj-<adv> = (cnjcoo <adv>) ;
 LIST konj/pron = cnjcoo (prn p1) (prn p2) (prn p3) ;
-LIST kop = "være"  "virke"  "synes"  "hete"  "bli"  ("kalle"  pass) ;
+LIST kop = "være"  "virke"  "synes"  "hete"  "bli"  ("kalle"  pasv) ;
 LIST kop-u-%hete/kalle = "være"  "virke"  "synes"  "bli" ;
-LIST kop-fv = ("være"  pres) ("bli"  pres) ("hete"  pres) ("synes"  pres) ("virke"  pres) ("kalle"  pres pass) ("være"  pret) ("bli"  pret) ("hete"  pret) ("synes"  pret) ("virke"  pret) ("kalle"  pret pass) ;
+LIST kop-fv = ("være"  pres) ("bli"  pres) ("hete"  pres) ("synes"  pres) ("virke"  pres) ("kalle"  pres pasv) ("være"  pret) ("bli"  pret) ("hete"  pret) ("synes"  pret) ("virke"  pret) ("kalle"  pret pasv) ;
 LIST kvant = qnt ;
 LIST kvant-med-flere = "mange"  "halv"  "flere"  (det qnt) ("adskillig"  pl) ;
 LIST lo#animat = "øyenvitne"  "øyensten"  "øyenlege"  "østtysker"  "østerriker"  "ørn"  "økonom"  "ærfugl"  "æresmedlem"  "æresborger"  "århusianer"  "åndemaner"  "zulu"  "zoolog"  "yppersteprest"  "væpner"  "voldsmann"  "voldsforbryter"  "vitne"  "vitenskapsmann"  "visesanger"  "visepresident"  "viseborgermester"  "viseadmiral"  "vipe"  "vinner"  "vinhandler"  "ving"  "vinduspusser"  "vinbonde"  "villdyr"  "villand"  "viking"  "vikar"  "vietnameser"  "vi"  "vever"  "veterinær"  "vesttysker"  "vestlending"  "vestjyde"  "vertshuseier"  "vertinne"  "vert"  "verksmester"  "verge"  "verdensmester"  "venninne"  "venn"  "vendelbo"  "velgjører"  "velger"  "vekter"  "veimuseum"  "veileder"  "vegetarianer"  "vedlikeholdssjef"  "vasall"  "vaktmester"  "vaktmann"  "vakt"  "vagabond"  "vadefugl"  "uvenn"  "utøver"  "utvandrer"  "utvalgsformann"  "utskudd"  "utnytter"  "utleier"  "utkaster"  "utgiver"  "utfordrer"  "utenriksminister"  "utbytter"  "utbyder"  "urostifter"  "urmaker"  "universitetslærer"  "ungkar"  "unge"  "ungdom"  "ungarer"  "undulat"  "undervisningsminister"  "undertrykker"  "undertegnede"  "undersått"  "underdirektør"  "ukrainer"  "ugle"  "tømmermester"  "tømmermann"  "tyv"  "tysker"  "tyrker"  "tyrann"  "typograf"  "tvillingsøster"  "tvillingbror"  "tvilling"  "tviler"  "tv-titter" "turistsjef"  "turist"  "turgåer"  "tuareg"  "tsjekker"  "tsar"  "trøster"  "tryllekunstner"  "tronfølger"  "trompetist"  "trommeslager"  "trollmann"  "triumfator"  "trilling"  "trener"  "tremenning"  "trellkvinne"  "trell"  "trekkfugl"  "trekkdyr"  "transvestitt"  "trane"  "trafikant"  "toppsjef"  "toppscorer"  "toppolitiker"  "toppleder"  "toller"  "tolk"  "togfører"  "tobakkshandler"  "tjenestepike"  "tjenestemann"  "tjenerskap"  "tjener"  "tilskuer"  "tillitsvalgt"  "tillitsmann"  "tilhører"  "tilflytter"  "tilbeder"  "tigger"  "thailender"  "terrorist"  "terne"  "terapeut"  "teoretiker"  "teolog"  "tenorsaksofonist"  "tenor"  "tennisspiller"  "tenker"  "telegrafist"  "tekstforfatter"  "tekniker"  "tegner"  "teatergjenger"  "taper"  "tantebarn"  "tante"  "tanntekniker"  "tannpleier"  "tannlege"  "tamil"  "taler"  "talepedagog"  "talentspeider"  "taktiker"  "søvngjenger"  "søster"  "søskenbarn"  "søsken"  "sørjyde"  "søramerikaner"  "sørafrikaner"  "søppelmann"  "sønnesønn"  "sønn"  "sølvsmed"  "særling"  "sæddonor"  "syrer"  "synder"  "syndebukk"  "sympatisør"  "syklist"  "sykkelrytter"  "sykkelreparatør"  "sykkelhandler"  "sykepleierske"  "sykepleier"  "syerske"  "svømmer"  "svoger"  "svindler"  "svigersøster"  "svigersønn"  "svigermor"  "svigerinne"  "svigerfar"  "svigerdatter"  "svigerbror"  "svenske"  "svenn"  "sveitser"  "sveiser"  "svane"  "svale"  "suppleant"  "sultan"  "støttepedagog"  "stær"  "styrmann"  "styremedlem"  "stuepike"  "studine"  "student"  "stråmann"  "stripper"  "streikevakt"  "streber"  "strateg"  "straffange"  "stormester"  "stork"  "storfavoritt"  "storesøster"  "storebror"  "stoffmisbruker"  "stifter"  "stesønn"  "stemor"  "stemor"  "steinhugger"  "stefar"  "stedfortreder"  "stedatter"  "stebarn"  "statssjef"  "statsrevisor"  "statsoverhode"  "statsminister"  "statsborger"  "statsadvokat"  "statistiker"  "statist"  "stat"  "stasoverhode"  "stasjonsmester"  "stamkunde"  "stamgjest"  "stamfar"  "stabssjef"  "spøkefugl"  "spåmann"  "spåkone"  "spurvefugl"  "spurv"  "sprøytenarkoman"  "språkforsker"  "språkbruker"  "sprinter"  "sponsor"  "spion"  "spiller"  "spillemann"  "spesialist"  "spekulant"  "speider"  "sparringspartner"  "sparer"  "spanjol"  "sovjetborger"  "sosiolog"  "sosialrådgiver"  "sosialpedagog"  "sosialminister"  "sosialarbeider"  "sopran"  "sommerfugl"  "somalier"  "solodanser"  "soldat"  "sogneprest"  "snekkermester"  "snekker"  "snegl"  "småborger"  "smugler"  "smeller"  "smed"  "slåsskjempe"  "slektning"  "slavinne"  "slave"  "slaktermester"  "slakter"  "skøyteforbund"  "skytter"  "skyldner"  "skulptør"  "skuespillerinne"  "skuespiller"  "skrytepave"  "skribent"  "skredder"  "skotte"  "skorsteinsfeier"  "skomaker"  "skolevaktmester"  "skolepsykolog"  "skolelærer"  "skolelege"  "skoleinspektør"  "skoleelev"  "skoledirektør"  "skogsarbeider"  "skogdue"  "skjørtejeger"  "skjøge"  "skjære"  "skipsreder"  "skipsfører"  "skipsbygger"  "skipper"  "skiløper"  "skilsmissebarn"  "skilpadde"  "skeptiker"  "skatteyter"  "skandinav"  "skald"  "sjørøver"  "sjømann"  "sjøhelt"  "sjåfør"  "sjefsredaktør"  "sjef"  "sikkerhetsfolk"  "sidemann"  "sidekamerat"  "sheriff"  "sheik"  "sexolog"  "servitrise"  "serber"  "sensor"  "senator"  "selvmorder"  "selger"  "sekundant"  "sekretær"  "sekretær"  "sekretariatssjef"  "seiler"  "seierherre"  "seer"  "scenograf"  "sangfugl"  "sangerinne"  "sanger"  "samler"  "samferdselsminister"  "saksøker"  "saksofonist"  "sakfører"  "sadist"  "røyker"  "røykdykker"  "røver"  "rør"  "rømling"  "rådgiver"  "råd"  "rytter"  "russer"  "rumener"  "rovfugl"  "romer"  "rockesanger"  "rival"  "riksråd"  "riksadvokat"  "revisor"  "restauratør"  "resipient"  "reservelege"  "resepsjonist"  "representant"  "reporter"  "rengjøringsassistent"  "rektor"  "rekrutt"  "reisende"  "reiseleder"  "reingjeter"  "reineier"  "regjering"  "regissør"  "regionsykehus"  "regent"  "redningsmann"  "reder"  "redaktør"  "redaksjonssekretær"  "ravn"  "pøt"  "pårørende"  "påfugl"  "pyskoanalytiker"  "pyroman"  "pusher"  "publikummer"  "psykoterapeut"  "psykiater"  "prøysser"  "prost"  "prosessfullmektig"  "promotor"  "proletar"  "programmerer"  "profet"  "professor"  "produsent"  "privatperson"  "privatdetektiv"  "prinsesse"  "prins"  "prest"  "president"  "predikant"  "pottemaker"  "postmester"  "portør"  "portugiser"  "portier"  "politimester"  "politimann"  "politiker"  "politikammer"  "politibetjent"  "politiassistent"  "politi"  "polfarer"  "polakk"  "pleier"  "plattenslager"  "plageånd"  "pilot"  "pilkaster"  "pianist"  "personalsjef"  "perser"  "pendler"  "pelikan"  "pedagog"  "pave"  "patriark"  "pastor"  "passasjer"  "pasje"  "pasient"  "partner"  "partifelle"  "part"  "pariser"  "pappa"  "papegøye"  "panser"  "panser"  "pamp"  "palestiner"  "pakistaner"  "oversykepleierske"  "oversetter"  "overlærer"  "overlege"  "overhode"  "outsider"  "orrfugl"  "ornitolog"  "orlogskaptein"  "organist"  "organisator"  "organisasjon"  "ordstyrer"  "orakel"  "optiker"  "oppvasker"  "oppleser"  "oppkjøper"  "oppfinner"  "oppdretter"  "operatør"  "operasanger"  "onkel"  "ombudsmann"  "oljeselskap"  "oldemor"  "oldefar"  "oldebarn"  "offiser"  "observatør"  "oberstløytnant"  "oberst"  "nyhetsoppleser"  "nybegynner"  "normanner"  "nordmann"  "nordamerikaner"  "noen"  "niese"  "nevø"  "nederlender"  "navigatør"  "naturlege"  "naturforsker"  "nattevakt"  "nattergal"  "narr"  "narkoman"  "nabo"  "møller"  "møll"  "møbelarkitekt"  "måke"  "myndighet"  "mygg"  "musvåk"  "muslim"  "musikkpedagog"  "musiker"  "musikant"  "museumsinspektør"  "museumsbetjent"  "murersvenn"  "murermester"  "murer"  "munk"  "motstander"  "moteskaper"  "moster"  "mormor"  "morfar"  "morder"  "mor"  "montør"  "mongol"  "modell"  "misjonær"  "minoritet"  "ministerpresident"  "minister"  "militærnekter"  "mexicaner"  "meteorolog"  "metallarbeider"  "mester"  "menneske"  "mellomste"  "melkemann"  "mekaniker"  "meis"  "meieri"  "megler"  "medisinmann"  "medisiner"  "medhjelper"  "medarbeider"  "matematiker"  "matador"  "massør"  "maskinsjef"  "maskinmester"  "maskiningeniør"  "maskinarbeider"  "marokkaner"  "marketingsjef"  "marinesoldat"  "marineoffiser"  "mannekeng"  "mann"  "mange"  "man"  "mamma"  "malersvenn"  "malermester"  "maler"  "makedoner"  "major"  "magister"  "lærling"  "lærerinne"  "lærer"  "låtskriver"  "lyriker"  "lobbyist"  "livvakt"  "livredder"  "litterat"  "litauer"  "linjemann"  "lillesøster"  "lillebror"  "likemann"  "libaneser"  "lerke"  "lektor"  "leietager"  "leiesoldat"  "legionær"  "legevakt"  "legesekretær"  "lege"  "leder"  "lastebilsjåfør"  "langturssjåfør"  "landslagsspiller"  "landsdommer"  "landbruker"  "landarbeider"  "laborant"  "københavner"  "kvinne"  "kuwaiter"  "kusk"  "kusine"  "kursdeltaker"  "kurer"  "kurder"  "kurator"  "kunstner"  "kunstmaler"  "kunsthåndverker"  "kunsthistoriker"  "kunsthandler"  "kunde"  "kulturminister"  "ku"  "krypskytter"  "krykkje"  "kronikør"  "kroat"  "kritiker"  "kriminalassistent"  "kriger"  "kremmer"  "kranfører"  "kosmonaut"  "korsanger"  "korrespondent"  "korporal"  "koreograf"  "koreaner"  "koordinator"  "kontrollør"  "kontraktspiller"  "kontorsjef"  "kontorist"  "kontorassistent"  "kontaktperson"  "kontaktmann"  "konsulent"  "konsul"  "konstruktør"  "konservator"  "konsertmester"  "konkurrent"  "konge"  "konfirmant"  "konferansier"  "kone"  "konduktør"  "konditor"  "komtesse"  "komponist"  "kommunestyremedlem"  "kommune"  "kommunaldirektør"  "kommentator"  "kommandør"  "komiker"  "kokkepike"  "kokk"  "knivstikker"  "klubb"  "klokker"  "klinikkassistent"  "klient"  "klatrer"  "klasselærer"  "klager"  "kjøttmeis"  "kjørelærer"  "kjøpmann"  "kjøper"  "kjøkkensjef"  "kjerring"  "kjemiker"  "kjemiingeniør"  "kirurg"  "kiropraktor"  "kirkeminister"  "kinogjenger"  "kineser"  "kidnapper"  "keramiker"  "kelner"  "keiserinne"  "keiser"  "keeper"  "kavaler"  "kar"  "kaptein"  "kantor"  "kamerat"  "journalist"  "jordmor"  "jente"  "jeg"  "jarl"  "italiener"  "israeler"  "islending"  "isbjørn"  "institusjon"  "insekt"  "indremisjonsselskap"  "idrettsmann"  "høne"  "hvem"  "hustru"  "husokkupant"  "hun"  "hane"  "han"  "hallodame"  "hakkespett"  "gårdeier"  "gutt"  "grønnsakshandler"  "gråspurv"  "greve"  "greker"  "gjenbo"  "genetiker"  "generalsekretær"  "generalmajor"  "generalløytnant"  "generaldirektør"  "general"  "gendarm"  "gast"  "gartner"  "gardist"  "førstekandidat"  "fører"  "fødselshjelper"  "færøying"  "fysiker"  "fyrvokter"  "fyrdirektør"  "fyllik"  "fyllekjører"  "fylkesskolesjef"  "funksjonær"  "fullmektig"  "fugl"  "froskemann"  "fritidspedagog"  "frisør"  "franskmann"  "fotomodell"  "fotohandler"  "fotograf"  "fotogalleri"  "fotgjenger"  "fotballspiller"  "fostersønn"  "fostermor"  "fosterfar"  "fosterdatter"  "forvaltningssjef"  "forvalter"  "forsvarsminister"  "forsvarer"  "forstanderinne"  "forstander"  "forsker"  "forsanger"  "forretningsmann"  "forretningsfører"  "formann"  "forliksmann"  "forlegger"  "forfatterinne"  "forfatter"  "forelder"  "forbundskansler"  "forbundsformann"  "forbrukerombudsmann"  "folketingsmedlem"  "folketingsmann"  "folketingsmann"  "folkeskolelærer"  "folk"  "flyttemann"  "flyktning"  "flyger"  "flue"  "flamingo"  "fjortis"  "fiskeørn"  "fiskeskipper"  "fiskeriminister"  "fisker"  "fiskehandler"  "fiolinist"  "finne"  "fink"  "finansminister"  "filolog"  "filmskuespiller"  "filmprodusent"  "filminstruktør"  "fiende"  "fetter"  "fergemann"  "fengselsbetjent"  "feltherre"  "faster"  "fasan"  "farmor"  "farmer"  "farmasøyt"  "fargehandler"  "farfar"  "farbror"  "far"  "fantast"  "fangevokter"  "fan"  "familiemedlem"  "familie"  "falk"  "fagmann"  "fagforeningsleder"  "fagfolk"  "fagfelle"  "fadder"  "fabrikkarbeider"  "eventyrer"  "europeer"  "etterlikner"  "etnograf"  "eskimo"  "erobrer"  "erkebisp"  "erkebiskop"  "ergoterapeut"  "entusiast"  "entreprenør"  "entertainer"  "enkemann"  "enkefrue"  "enkedronning"  "enke"  "englender"  "enehersker"  "eneboligeier"  "emigrant"  "embetsmann"  "elskerinne"  "elsker"  "elev"  "elektriker"  "ektepar"  "ektemann"  "ektefelle"  "ekstremist"  "ekspert"  "ekspedisjonssjef"  "egypter"  "dørvakt"  "døgnflue"  "dyr"  "du"  "drømmer"  "drosjesjåfør"  "dranker"  "dramatiker"  "donor"  "domprost"  "dommer"  "doktor"  "dikter"  "diktator"  "designer"  "designer"  "departementssjef"  "departement"  "demonstrant"  "deltager"  "dekksgutt"  "dekan"  "degn"  "debutant"  "datterdatter"  "datter"  "danske"  "damefrisør"  "dame"  "dagsommerfugl"  "dagmamma"  "dagleier"  "cubaner"  "cowboy"  "cellist"  "canadier"  "bøddel"  "bærer"  "båtsmann"  "bysbarn"  "byråd"  "byrettsdommer"  "byplanlegger"  "byggmester"  "byggherre"  "bydel"  "bybør"  "bruden"  "bror"  "brite"  "brevvenn"  "brevskriver"  "brevdue"  "brems"  "brasilianer"  "brannmann"  "branninspektør"  "botaniker"  "borger"  "bordkavaler"  "borddame"  "bondemann"  "bonde"  "bokbinder"  "bodybuilder"  "bløtdyr"  "blåmeis"  "blotter"  "blomsterhandler"  "bisp"  "biskop"  "biperson"  "biolog"  "biokjemiker"  "billedkunstner"  "billedhugger"  "bille"  "bilist"  "bileier"  "bie"  "bidragsyter"  "bibliotekar"  "beundrer"  "betjent"  "bestyrer"  "bestemor"  "bestefar"  "beslutningstaker"  "beskytter"  "belgier"  "bekjent"  "beiler"  "begge"  "bebør"  "bass"  "baryton"  "bartender"  "baronesse"  "baron"  "barnelege"  "barnehagepedagog"  "barnebokforfatter"  "barnebarn"  "barn"  "baker"  "avtaker"  "avsender"  "avis"  "avdelingssykepleierske"  "avdelingssykepleier"  "atlet"  "astronom"  "astronaut"  "astrolog"  "assistent"  "arkitekt"  "argentiner"  "arbeider"  "annen"  "anmelder"  "anleggsgartner"  "angriper"  "anfører"  "andunge"  "analysator"  "amme"  "amerikaner"  "alpinist"  "alkoholiker"  "agent"  "afrikaner"  "afghaner"  "advokat"  "administrator"  "adjunkt"  "adelsmann"  "abonnent"  "wangerud"  "vinmonopolkøere"  "vesten"  "usa"  "toten"  "torkill"  "smirnov"  "skane"  "schipper"  "regjeringen"  "readyjente"  "readyjente"  "readygutt"  "politiforbund"  "plesner"  "pilkaster"  "palacio"  "oslo"  "nato"   "matthew"  "matthaus"  "mannesmann"  "lykambes"  "likudregjeringen"  "lawrence"  "kors"  "killengreen"  "justisdepartementet"  "jarvoll"  "indremisjonsselskapet"  "hemingkjørerne"  "heie"  "gudmunsson"  "gudbrandsdalen"  "group"  "gregard"  "gomanbakeri"  "giga"  "folkpartiet"  "fanebust"  "elsero"  "elgin"  "djurhuus"  "clinton"  "carney"  "byutviklingskomiteen"  "byutviklingskomiteen"  "breiby"  "blumenthal"  "beth"  "bergelevene"  "baste"  "alpinanlegg"  "akershus"  "as"  "as"  "46åringen" "10åringen" <person> <org> ("dere"  nom) ("ingen"  m) ("ingen"  f) ("de"  prn p3) ("all"  pl) ("en"  prn) ("undertegne"  pl adj) ;
@@ -595,10 +595,10 @@ LIST p-hj-verb = "være"  "ha"  "få"  "bli"  ;
 LIST parentes = lpar rpar ;
 LIST parentes-beg = lpar ;
 LIST parentes-slutt = rpar ;
-LIST pass = (vblex pass) ;
+LIST pass = (vblex pasv) ;
 LIST pass_tar_pp = "forsøke" "anta" "meddele" "få" "frykte" "gjøre" "dokumentere" "anse" "begjære" "søke" "holde" "vente" "vurdere" "foreslå" "kreve" ; # blir forsøkt lokket, antas forsvunnet
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" ;
-LIST perf-gen = (adj pp gen) (vblex pp pass) ;
+LIST perf-gen = (adj pp gen) (vblex pp pasv) ;
 LIST perf-part = (vblex pp) ;
 LIST perf-part/<perf-part> = (vblex pp) (adj pp) ;
 LIST perf-part-mf = (adj pp mf) ;
@@ -15888,7 +15888,7 @@ SELECT:5009 (vblex pres) IF
 
 
 #:2434
- SELECT:2434 (vblex inf pass) IF
+ SELECT:2434 (vblex inf pasv) IF
 	(0 farlige-inf)
 	(NOT 0 %slettes%)
 	(-1 m-hj-verb)
@@ -15898,7 +15898,7 @@ SELECT:5009 (vblex pres) IF
 
 
 #:2437
- SELECT:2437 (vblex inf pass) IF
+ SELECT:2437 (vblex inf pasv) IF
 	(0 farlige-inf)
 	(NOT 0 %slettes%)
 	(NOT -1 det)
@@ -15914,7 +15914,7 @@ SELECT:5009 (vblex pres) IF
 
 
 #:2439
- SELECT:2439 (vblex inf pass) IF
+ SELECT:2439 (vblex inf pasv) IF
 	(0 farlige-inf)
 	(NOT 0 %slettes%)
 	(NOT -1 ikke-adv-subst-pron-konj)
@@ -17090,7 +17090,7 @@ SELECT:5008 (vblex pret) IF
 
 
 #:2337
- SELECT:2337 (vblex pass) IF
+ SELECT:2337 (vblex pasv) IF
 	(NOT 0 s-verb)
 	(NOT 0 imp)
 	(NOT *1 overskrift)
@@ -26329,7 +26329,7 @@ SELECT:no-pres-pres subst
 # overskriftstagg :-/ -KBU
 
 #:4999
- REMOVE:4999 (vblex pass) IF
+ REMOVE:4999 (vblex pasv) IF
 	   (0 s-verb)
 ;
 # KBU: Om me har valet mellom identisk passiv og pstv, vel pstv
