@@ -336,7 +336,7 @@ LIST adverbialsubst = "øyeblikk"  "år"  "vinter"  "vei"  "uke"  "torsdag"  "to
 LIST advtype-konj = (cnjcoo <adv>) ;
 LIST agens-p = "av"  ;
 LIST akk = acc ;
-LIST alt = "siden"  adj adv vblex pr prn cnjsub "å" n np ij det cnjcoo <anf> cm <ellipse> <kolon> lpar rpar <semi> <strek> ;
+LIST alt = "siden"  adj adv vblex pr prn cnjsub "å" n np ij det cnjcoo <anf> cm <ellipse> <kolon> lpar rpar <semi> guio ;
 LIST anf = <anf> <ANF>;
 LIST bare-adj = "vedkommende"  "ugjort"  "tilsvarende"  "skrå"  "nær"  "ny"  "middels"  "kort"  "iført"  "halv"  "fånyttes"  "fri"  ;
 LIST be = def ;
@@ -395,7 +395,7 @@ LIST det/adj/komma/konj = "$," "," (adj m) (adj f) (adj mf) (adj pl) (adj pprs) 
 LIST det/adv = det adv ;
 LIST det/subst-gen = det (n gen) (np gen) ;
 LIST ditrans = "donere"  d1 d2 d3 d6 d7 rl6 rl7 rl8 ;
-LIST ellipse = ("$--" <strek>) ("--" <strek>) <ellipse> ;
+LIST ellipse = ("$--" guio) ("--" guio) <ellipse> ;
 LIST ent = sg ;
 LIST ent-fem-subst = (n f sg) (np f sg) ;
 LIST ent-fem-subst/tall-subst/målsubst/tidssubst = "år"  "uke"  "tusen"  "trillion"  "tonnkilometer"  "time"  "tiendelssekund"  "tidelssekund"  "snes"  "sjømil"  "sekundmeter"  "sekund"  "prosent"  "nanosekund"  "nanometer"  "måned"  "mrd." "minutt"  "millisekund"  "million"  "millimeter"  "milliliter"  "milligram"  "milliard"  "mill." "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadrillion"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo"  "hundredelssekund"  "hundre"  "hektoliter"  "hektogram"  "halvår"  "halvmillion"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "døgn"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "dag"  "centimeter"  "centiliter"  "centigram"  "billion"  "billiard"  (n f sg) (np f sg) ("gang"  pl) ;
@@ -406,7 +406,7 @@ LIST ent-ub = (sg ind) ;
 LIST f-subj = ("det"  prn) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  ;
 LIST farlige-adj = "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
-LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ;
+LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
 LIST farlige-fl-subst = ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
@@ -519,9 +519,9 @@ LIST kolon = ("$:" clb) (":" clb) ;
 LIST komma = "$," "," ;
 LIST komma-interj = "$," "," ij ;
 LIST komma/konj = "$," "," cnjcoo ;
-LIST komma/konj/strek = "$," "," <strek> cnjcoo ;
+LIST komma/konj/strek = "$," "," guio cnjcoo ;
 LIST komma/setn-slutt = "$," "," <<< ;
-LIST komma/strek = "$," "," <strek> ;
+LIST komma/strek = "$," "," guio ;
 LIST komp = comp ;
 LIST konj = cnjcoo ;
 LIST konj-<adv> = (cnjcoo <adv>) ;
@@ -605,8 +605,8 @@ LIST perf-part-mf = (adj pp mf) ;
 LIST perf-part-nt = (adj pp nt) ;
 LIST perf-part/inf = (vblex pp) (vblex inf) ;
 LIST periode-beg = >>> ;
-LIST periode-beg/clb/strek = >>> clb <strek> ;
-LIST periode-beg/komma/konj/strek = >>> cm cnjcoo <strek> ;
+LIST periode-beg/clb/strek = >>> clb guio ;
+LIST periode-beg/komma/konj/strek = >>> cm cnjcoo guio ;
 LIST periode-beg/konj-clb = >>> (clb cnjcoo) ;
 LIST periode-beg/sbu = >>> cnjsub ;
 LIST periode-slutt = <<< ;
@@ -683,7 +683,7 @@ LIST setn-gr/parentes-beg = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$
 LIST setn-gr/prep = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" pr cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" vblex cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
-LIST setn-start-med-strek/anf = <anf> <ANF> <strek> >>> ;
+LIST setn-start-med-strek/anf = <anf> <ANF> guio >>> ;
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
 LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
 LIST sikre-navn = "svein"  "rune"  "helle"  "dag"  "bjørn"  "arne"  (np m) (np f) ;
@@ -697,9 +697,9 @@ LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
-LIST strek = <strek> ;
-LIST strek/parentes = <strek> lpar rpar ;
-LIST strek/parentes-beg/anf = <strek> lpar <anf> ;
+LIST strek = guio ;
+LIST strek/parentes = guio lpar rpar ;
+LIST strek/parentes-beg/anf = guio lpar <anf> ;
 LIST subst = n np ;
 LIST subst-appell = (n) ; 				    # (n appell)
 LIST subst-appell-ub-ent = (n sg ind) ; 		    # (n appell sg ind)
@@ -737,7 +737,7 @@ LIST tall = "1" (det qnt pl) ("en"  det qnt) ("én" det qnt) "pi" ;
 LIST tall-fl = (det qnt pl) "pi" ;
 LIST tall-subst = "tusen"  "trillion"  "titusen"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard" "pi" ;
 LIST tall/tall-subst = "tusen"  "trillion"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard"  "1" (det qnt pl) ("en"  det qnt) ("én" det qnt) "pi" ;
-LIST tegnsetting = cm <ellipse> <kolon> lpar rpar <semi> <strek> ;
+LIST tegnsetting = cm <ellipse> <kolon> lpar rpar <semi> guio ;
 LIST tidsadv = "tidlig"  "sen"  "sein"  "nå"  "lenge"  "igjen"  "før"  "etterpå"  "da"  ("snar"  nt ind sg) ;
 LIST tittel = <tittel> @tittel ;
 LIST tr1/tr4-10/tr14/dtr1-9/refl/pr1/pr3-10/adv2/adv6-11/adv13-14/kaus = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 d1 d2 d3 d4 d5 d6 d7 d8 d9 rl1 rl2 rl3 rl4 rl5 rl6 rl7 rl8 rl9 rl10 rl11 rl12 rl13 rl14 rl15 rl16 rl17 rl18 rl19 rl20 pr1 pr3 pr4 pr5 pr6 pr7 pr8 pr9 pr10 a2 a6 a7 a8 a9 a10 a11 a13 a14 k1 k2 ;
@@ -2956,6 +2956,7 @@ SELECT ("ikon") + subst-nøyt IF
 # «å spørre/vurdere/høre om ...»
 
 
+"<området>" SELECT:ikkje-områdde subst;
 
 #:3364
   "<omvendt>"   SELECT:3364   (adj nt ind) IF
@@ -3145,6 +3146,10 @@ SELECT ("ikon") + subst-nøyt IF
 #  "ha/få råd til"
 
 
+# TODO: any exceptions?
+"<seg>" REMOVE fv IF
+        (0* fv)
+;
 
 #:3333
   "<seg>"   SELECT:3333   (prn) IF
@@ -23641,6 +23646,11 @@ CONSTRAINTS
 ;
 
 
+"<funnet>" REMOVE:fragment-funnet subst IF
+	(NOT 0* fv)
+;
+
+
 #:6092
   "<hi>"   REMOVE:6092   (det f) IF
 	(0 subst)
@@ -26400,6 +26410,15 @@ REMOVE:mine-data ent-subst IF
         (-1 poss-det + fl)
         (1 clb OR fl)
 ;
+
+REMOVE:strek-saman-sett fv IF
+        (-2C subst)
+        (-1 strek)
+        (0C fv OR subst)
+        ;
+
+
+
 
 #### Simple anaphora resolution. < means span window boundaries to the left
 REMOVE:anaphora ("de" det pos) IF
