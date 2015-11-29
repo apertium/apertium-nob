@@ -4335,6 +4335,7 @@ MAP:1401 (@adv)   (cnjsub) IF
 #:1400
 MAP:1400 (@adv)   (cnjsub) IF
     	(0 sbu)
+;
 #  "Andre subjunksjoner kan bare innlede adverbial"))
 
 
@@ -6324,6 +6325,7 @@ SELECT:6121 (@<subst) IF
 	(NOT 0 ikke-subst)
 	(*-1 mengdeord-bestemt LINK NOT *1 ikke-mod )
 	(NOT -1 @det>)
+;
 #det store antallet flinke studenter
 
 
@@ -11931,6 +11933,7 @@ SELECT:781 (@tittel) IF
 SELECT:6001 (@iv) IF
 	 (-1 @subj)
 	 (*-2 hj-verb BARRIER ikke-adv-adj-det LINK 0 @fv LINK -1 @adv)
+;
 #nå har prisen økt (@iv) 
 
 
@@ -11940,6 +11943,7 @@ SELECT:6002 (@iv) IF
 	 (-2 hj-verb) 
 	 (-2 @fv)
 	 (-3 @adv)
+;
 #nå har den økt (@iv) 
 
 

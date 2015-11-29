@@ -21287,6 +21287,13 @@ REMOVE:gen-subst gen-subst IF
 
 
 #:1991
+ select:1991 subst IF
+	(0 retning)
+	(-1 %i%)
+;
+
+
+#:1991
  REMOVE:1991 subst IF
 	(0 retning)
 ;
