@@ -1757,6 +1757,9 @@ SELECT (vblex sep) IF (*1 ("å" sep)) ;
 ;
 #  "å være redd for (prep)"))
 
+"<Fant>" SELECT:Fant-en-feil pret IF
+        (NOT *0C fv)
+;
 
 
 #:3636
