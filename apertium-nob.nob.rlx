@@ -23987,8 +23987,8 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 
 
 #
-  "<øy>"  REMOVE ("øye" n nt pl def) IF
-  	  (0 %øy%)
+REMOVE ("øye" n nt pl def) IF
+  	  (0 %øy% )
 ;
 
 #:3118
