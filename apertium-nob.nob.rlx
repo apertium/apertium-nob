@@ -239,6 +239,8 @@ LIST %som/om% = "som"  "om"  ;
 LIST %som/om/der% = "som"  "om"  "der"  ;
 LIST %sort/svart% = "svart"  "sort"  ;
 LIST %spørre% = "spørre"  ;
+LIST %spille% = ("spille" vblex) ;
+LIST %spile% = ("spile" vblex) ;
 LIST %stein%-adv = ("stein"  adv) ;
 LIST %stikk% = ("stikk"  adv) ;
 LIST %stille% = "stille"  ;
@@ -278,6 +280,8 @@ LIST %visst% = ("viss"  adj pst nt ind sg) ;
 LIST %være% = "være"  ;
 LIST %være/bli% = "være"  "bli"  ;
 LIST %ytterligere% = "ytterligere"  ;
+LIST %øy% = "øy" ;
+LIST %øye% = "øye" ;
 LIST %år% = "år"  ;
 LIST top = top ;
 LIST <<< = <<< ;
@@ -23897,6 +23901,13 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 ;
 #  "kh jan 2004: Bare ved spill levende, spill våken"
 
+#:
+#  "<spile>"   REMOVE:spille_spile (%spile% vblex) IF
+  REMOVE (%spile% vblex) #IF
+#	(0 %spille%)
+;
+#  "tt: Vi vil gjerne ha kontekst for "å spile"...
+
 
   "<sport>"  REMOVE:sport   (vblex) IF
 	(0 subst)
@@ -23970,6 +23981,12 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 	  (NOT -1 %i%)
 ;
 #bare fem i betydningen forvirring
+
+
+#
+  "<øy>"  REMOVE ("øye" n nt pl def) IF
+  	  (0 %øy%)
+;
 
 #:3118
   "<å>"   REMOVE:3118   (n sg ind) IF
