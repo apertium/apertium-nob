@@ -4658,6 +4658,14 @@ SELECT ("ikon") + subst-nøyt IF
 #CONSTRAINTS
 ## remove domain
 
+
+REMOVE:spille_spile ("spile") + verb IF
+	(0 ("spille"))
+    (NEGATE 1 ("opp") LINK 1 ("øye"))
+;
+# tt: Vi vil gjerne ha kontekst for "å spile"...
+
+
 "<leder>" REMOVE (vblex) IF
   	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
 ;
@@ -23901,12 +23909,7 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 ;
 #  "kh jan 2004: Bare ved spill levende, spill våken"
 
-#:
-#  "<spile>"   REMOVE:spille_spile (%spile% vblex) IF
-  REMOVE (%spile% vblex) #IF
-#	(0 %spille%)
-;
-#  "tt: Vi vil gjerne ha kontekst for "å spile"...
+
 
 
   "<sport>"  REMOVE:sport   (vblex) IF
