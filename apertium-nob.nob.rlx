@@ -2120,6 +2120,8 @@ SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 ;
 #  "en helt (subst)"))
 
+"<helte>" SELECT ("helle");
+# Unngå "hele" (å «heile vatnet»)
 
 
 #:3543
@@ -4658,6 +4660,7 @@ SELECT ("ikon") + subst-nøyt IF
 #CONSTRAINTS
 ## remove domain
 
+REMOVE ("sekund") + mask;
 
 REMOVE:spille_spile ("spile") + verb IF
 	(0 ("spille"))
@@ -7121,6 +7124,7 @@ REMOVE:spille_spile ("spile") + verb IF
 CONSTRAINTS
 ## select ndomain
 
+        
 #:6212
 SELECT:6212 (adj) IF
 	(-1 ("<fargen>"))
