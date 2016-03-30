@@ -23262,6 +23262,11 @@ CONSTRAINTS
 	(NOT 1 prop)
 ;
 
+"<De>" REMOVE:de-acc (acc);
+"<de>" REMOVE:de-acc (acc) IF
+	(NOT -1 %til%)
+;
+
 
 #5004:
  "<ekstra>"   SELECT:5004   (adj nt ind sg) IF
