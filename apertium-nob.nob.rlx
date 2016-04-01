@@ -23213,6 +23213,16 @@ CONSTRAINTS
 ;
 #  "det aller meste av korrespondansen der (prep) går på norsk"))
 
+       # setn-start usannsynleg akk
+"<Dere>" REMOVE:Dere-subj akk;
+"<Han>" REMOVE:Han-subj akk;
+"<dere>" REMOVE:Dere-subj akk IF
+        (-1 >>>)
+;
+"<han>" REMOVE:Han-subj akk IF
+        (-1 >>>)
+;
+
 
 "<De>" REMOVE:De ("de" prn) IF
  	(0 høflig)
