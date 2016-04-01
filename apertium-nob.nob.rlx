@@ -4659,6 +4659,7 @@ SELECT ("ikon") + subst-nøyt IF
 
 #CONSTRAINTS
 ## remove domain
+REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» – are there exceptions?
 
 REMOVE ("sekund") + mask;
 
