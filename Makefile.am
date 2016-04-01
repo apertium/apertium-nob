@@ -2,8 +2,8 @@
 ## Makefile for apertium-nob
 ###############################################################################
 
-RELEASE=0.6
-VERSION=0.6.0
+RELEASE=0.7
+VERSION=0.7.0
 LANG1=nob
 BASENAME=apertium-$(LANG1)
 
