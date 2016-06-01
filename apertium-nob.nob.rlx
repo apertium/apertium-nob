@@ -806,6 +806,9 @@ SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 ;
 #  "absolutt ikke"
 
+"<at>" SELECT:antas-at sbu IF
+	(-1 %antas%)
+;
 
 "<LES>" SELECT (vblex imp);
 "<Les>" SELECT (vblex imp);
@@ -6846,6 +6849,9 @@ REMOVE:spille_spile ("spile") + verb IF
 # må leddsetningen etterfølges av , PRES/PRET
 # Til hun kommer, skriver han"
 
+"<teller>" REMOVE:tel ub-subst IF
+        (NOT -1 %en%)
+;
 
 
 #:3181
@@ -26116,7 +26122,7 @@ SELECT:no-pres-pres subst
  REMOVE:1684 (vblex pres) IF
 	(NOT 0 m-hj-verb)
 	(*-1 setn-gr LINK 0 %og/men%)
-	(*1 pres/pret BARRIER setn-gr)
+	(*1 pres/pret BARRIER setn-gr OR sbu)
 	(*-1O >>> LINK NOT 1 sbu LINK *1 fv LINK NOT 0 pres LINK NOT 0 m-hj-verb)
 ;
 
