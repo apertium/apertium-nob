@@ -14,4 +14,5 @@
 /configure.ac -text
 /modes.xml -text
 /nob.prob -text svneol=unset#unset
+texts/Stanisław_Lem.txt -text
 texts/udhr.txt -text
