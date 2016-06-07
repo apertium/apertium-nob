@@ -7,7 +7,7 @@ AC_PREREQ(2.52)
 m4_define([required_apertium_version], [3.4.0])
 m4_define([required_lttoolbox_version], [3.3.2])
 
-AC_INIT([Apertium Norwegian Bokmål], [0.8.0], [unhammer+apertium@mm.st], [apertium-nob], [http://wiki.apertium.org/wiki/Apertium-nob])
+AC_INIT([Apertium Norwegian Bokmål], [0.9.0], [unhammer+apertium@mm.st], [apertium-nob], [http://wiki.apertium.org/wiki/Apertium-nob])
 AM_INIT_AUTOMAKE
 
 AC_PROG_LN_S
