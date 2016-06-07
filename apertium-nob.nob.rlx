@@ -25595,6 +25595,12 @@ SELECT:no-pres-pres subst
 ;
 #ikke bekkelifaret 14c eller "I de dager"
 
+SELECT:har-blitt-oppretta perf-part IF
+        (*-1 %ha%-pres/pret)
+        (-1C perf-part)
+        (0C adj OR verb)
+
+
 #CONSTRAINTS
 ## remove ndomain heur
 #:1723
