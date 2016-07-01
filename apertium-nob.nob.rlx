@@ -4618,6 +4618,10 @@ SELECT ("ikon") + subst-nøyt IF
 #  "Olsen hadde visst høstet det meste
 # 30.11"
 
+"<øyer>"   SELECT:antall-øyer subst IF
+        (NEGATE -1C pron)
+;
+
 
 #:6210
   "<øye>"   SELECT:6210   (n) IF
@@ -24012,9 +24016,9 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 #bare fem i betydningen forvirring
 
 
-#
-REMOVE ("øye" n nt pl def) IF
-  	  (0 %øy% )
+REMOVE:øye ("øye"i) IF
+  	  (0 ("øy"i))
+          # rare radical form "<øya>", need to find corpus-exceptions if we want to choose this
 ;
 
 #:3118
