@@ -5174,7 +5174,8 @@ REMOVE:spille_spile ("spile") + verb IF
 #  "den er den største som er felt (ikke subst)"))
 
 
-"<fiskene>" REMOVE nøyt;
+# Only really nøyt if "et fiske" or "fisket"
+REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 #:3660
   "<fly>"   REMOVE:3660   (n m) IF
@@ -26453,6 +26454,9 @@ REMOVE:6211 (n pl) IF
 	(-1 be-ent-subst LINK *-1 adj-be BARRIER ikke-adv-adj-komma LINK -1* be-det-ent/fl)
 ;
 # KBU: «det viktige, grammatiske trekket imperativ<sg>»
+
+REMOVE:hvor-mange-fisker ub-ent IF (-1C fl-det) (0C ub-subst) (0 fl-subst);
+# not "fisker" n m sg ind
 
 REMOVE:Importer-alle (n pl) IF
 	(-1 >>>)
