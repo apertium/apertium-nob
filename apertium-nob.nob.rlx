@@ -440,6 +440,7 @@ LIST gen/%slags% = "slags"  gen ;
 LIST grads-adv = "stor"  "mye"  "liten"  "ille"  "god"  ;
 LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burde"  "bli"  ;
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
+# TODO: fix in dix
 LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
 LIST ikke-@p<utfyll = vblex pp @det> @<det @adj> @adv> @<adv @subst> @<subst @tittel @kon ;
 LIST ikke-@p<utfyll2 = @fv @iv @subj @i-obj @s-pred @o-pred @adv @adv> @<adv @app @tittel @det> @<det @subst> @<subst @obj @interj @adj> @kon @løs-np @<sbu @<sbu-rel @s-gr ;
@@ -23243,7 +23244,7 @@ CONSTRAINTS
  	(0 høflig)
 	(NOT -1 >>>)
 ;
-"<Deres>" REMOVE:Deres ("de" det pos) OR ("dere" det pos) IF
+"<Deres>" REMOVE:Deres ("deres²" pos) OR ("deres¹" pos) IF
  	(0 høflig)
 	(NOT -1 >>>)
 ;
@@ -23256,7 +23257,7 @@ CONSTRAINTS
  	(0 høflig)
 	(*1 høflig)
 ;
-"<Deres>" REMOVE:Deres ("de" det pos) OR ("dere" det pos) IF
+"<Deres>" REMOVE:Deres ("deres²" pos) OR ("deres¹" pos) IF
  	(0 høflig)
 	(*1 høflig)
 ;
@@ -23272,7 +23273,7 @@ CONSTRAINTS
 	(-1 >>>)
 ;
 "<Deres>" REMOVE:Deres høflig IF
- 	(0 ("de" det pos) OR ("dere" det pos))
+        (0 ("deres²" pos) OR ("deres¹" pos))
 	(NOT *1 høflig)
 	(-1 >>>)
 ;
@@ -26491,11 +26492,11 @@ REMOVE:strek-saman-sett fv IF
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
-REMOVE:anaphora ("de" det pos) IF
+REMOVE:anaphora ("deres¹" pos) IF # p2 if seen p2
 	(*-1C< (p2) LINK -1 setn-gr)
 ;
-REMOVE:anaphora ("dere" det pos) IF # default: p3
-	(0 ("de" det pos))
+REMOVE:anaphora ("deres²" pos) IF # default: p3
+	(0 ("deres¹" pos))
 ;
 
 
