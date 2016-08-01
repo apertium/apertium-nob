@@ -550,6 +550,7 @@ LIST m-hj-verb = ("få"  vblex) ("skulle"  vblex) ("kunne"  vblex) ("ville"  vbl
 LIST m-hj-verb-fv = ("få"  pres) ("skulle"  pres) ("kunne"  pres) ("ville"  pres) ("måtte"  pres) ("burde"  pres) ("skulle"  pret) ("kunne"  pret) ("ville"  pret) ("måtte"  pret) ("burde"  pret) ("få"  pret) ;
 LIST m-hj-verb-perfpart = ("skulle"  vblex pp) ("kunne"  vblex pp) ("ville"  vblex pp) ("måtte"  vblex pp) ("burde"  vblex pp) ("få"  vblex pp) ;
 LIST m-hj-verb-pret = ("skulle"  pret) ("kunne"  pret) ("ville"  pret) ("måtte"  pret) ("burde"  pret) ("få"  pret) ;
+LIST un = un ;
 LIST mask = m mf (adj def) ;
 LIST mask-adj-det = (adj m) (adj mf) (adj def) (adj pprs) (det m) ;
 LIST mask-be = (m def) ;
@@ -23385,16 +23386,22 @@ CONSTRAINTS
 
 
 # NOKON vs NOKRE:
-  "<noen>"   SELECT:noen-d   (det qnt neg) IF
+LIST <noen> = ("<noen>"i);
+REMOVE:wtf ("noen") + det;      # where is this one in the .dix?
+REMOVE:noen-års-tid <noen> + mask/fem/mf IF
+	(1C nøyt)
+;
+
+SELECT:noen-d   <noen> + (det qnt neg) IF
 	(0C det-kvant + fl)
 	(*-1 %ikke% BARRIER setn-gr)
 ;
-  "<noen>"   SELECT:noen-p   (prn neg) IF
+SELECT:noen-p   <noen> + (prn neg) IF
 	(0C pron + fl)
 	(*-1 %ikke% BARRIER setn-gr)
 ;
 # «Jeg hadde ikke noen gode poeng i min.»
-  "<noen>"   REMOVE:noen-d   (det qnt neg) IF
+REMOVE:noen-d   <noen> + (det qnt neg) IF
 	(0C det-kvant + fl)
 	(NEGATE *-1 %ikke% BARRIER setn-gr)
 	(NEGATE *1 spørsmål-t)
@@ -23404,22 +23411,27 @@ CONSTRAINTS
 # Ikkje: «Sa læreren at jeg hadde noen(nokon) gode poeng i oppgaven min?»
 # Men: «Sa læreren at jeg kunne låne noen(nokre) pengar til oppgaven min?»
 # Ikkje: «før noen(nokon) kommer»
-  "<noen>"   REMOVE:noen-p   (prn neg) IF
+REMOVE:noen-p   <noen> + (prn neg) IF
 	(0C pron + fl)
 	(NEGATE *-1 %ikke% BARRIER setn-gr)
 ;
 # «Læreren sa jeg hadde noen gode poeng i oppgaven min»
-  "<noen>"   SELECT:noen-p   (prn neg) IF
+SELECT:noen-p   <noen> + (prn neg) IF
 	(NOT 0 det)
 ;
 # «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
-  "<noen>"   SELECT:noen-d   (det neg) IF
+SELECT:noen-d   <noen> + (det neg) IF
 	(NOT 0 pron)
 ;
 # «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
 
+REMOVE:noen-års-tid <noen> + (neg) IF
+        (0 fl-det)
+	(1 ub-fl-nøyt-subst)
+	(1C subst-nøyt + ub)
+;
 # Default:
-  "<noen>"   SELECT:noen-default (neg) ;
+SELECT:noen-default <noen> + (neg) ;
 # Viss me har kome så langt, tek me «nokon»
 
 
@@ -25605,7 +25617,7 @@ SELECT:har-blitt-oppretta perf-part IF
         (*-1 %ha%-pres/pret)
         (-1C perf-part)
         (0C adj OR verb)
-
+;
 
 #CONSTRAINTS
 ## remove ndomain heur
@@ -26475,6 +26487,13 @@ REMOVE:gen-subst-setn-gr gen-subst IF
 	(1 setn-gr)
 ;
 # «dine glass.» -- _veldig_ heuristisk! men me har alt for mange genitivfeil...
+
+REMOVE:vi-deler. fl-subst IF
+        (0C fl-subst OR pres)
+        (-1C nominativ)
+        (1C <<<)
+;
+# «Det er et ønske vi deler.»
 
 REMOVE:mine-data ent-subst IF
         (0 fl-subst)
