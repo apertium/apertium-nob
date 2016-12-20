@@ -432,6 +432,7 @@ LIST fl-be = (pl def) ;
 LIST fl-det = (det pl) ;
 LIST fl-subst = (n pl) (np pl) ;
 LIST fork = acr ;
+LIST ukjent = ("\\*.*"r) ukjent ;
 LIST fork/ukjent-ord = acr ("\\*.*"r) ukjent ;
 LIST fv = (vblex pres) (vblex pret) (vblex imp) ;
 LIST gen = gen ;
@@ -10737,6 +10738,7 @@ SELECT:2963 (adj nt ind sg) IF
 	(-1C verb)
 	(NOT 1 anf)
 	(NOT 1 pron/subst/det)
+	(NOT 1 ukjent)          # god sjanse for subst
  	(NOT -1 kop)
  	(NOT -1 %ha%)
 	(NOT 1 infmerke)
