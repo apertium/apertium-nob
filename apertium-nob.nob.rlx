@@ -5429,6 +5429,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "bare verb ved feks to ganger to"
 
+"<Gjør>"   REMOVE ("gjø") IF (NOT 1 %hund%);
+"<gjør>"   REMOVE ("gjø") IF (NOT *0 %hund%);
 
 
 #:3589
