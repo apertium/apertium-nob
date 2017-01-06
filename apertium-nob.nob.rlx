@@ -7015,20 +7015,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 
 
-# TODO: SELECT in a REMOVE domain, MOVE! -KBU
 #:3137
-  "<via>"   SELECT:3137   (pr) IF
-	 (1 nom)
-	 (*1 setn-gr BARRIER %brudeparet/paret%)
-	 (*-1 setn-gr BARRIER %brudeparet/paret%)
+"<via>" REMOVE:via ("vie") IF
+	 (NOT *0  %brudeparet/paret% CBARRIER setn-gr)
 ;
-
-#	(NOT *1 %brudeparet/paret% CBARRIER setn-gr)
-#	(NOT *-1 %brudeparet/paret% CBARRIER setn-gr)
-
-#
-#
-
 #  "15.11.2002: via er som regel prep"
 
 
