@@ -103,6 +103,8 @@ LIST %vise% = "vise" ;
 LIST %være%-inf = ("være" inf) ;
 LIST %være/bli% = "være" "bli" ;
 LIST %være/bli%-fin = ("være" <auxp> pres) ("være" <auxp> pret) ("bli" pres) ("bli" pret) ;
+LIST %øy% = "øy" ;
+LIST %øye% = "øye" ;
 LIST <<< = <<< ;
 LIST <adv> = <adv> ;
 LIST <pres-part> = pprs ;
@@ -5004,6 +5006,7 @@ CONSTRAINTS
 ;
 #  " Fjern @S-PRED på \"som\" hvis det står konjunksjon foran og 
 #  det ikke finnes noe \"som\" med @S-PRED tidligere i setningen."))
+
 
 
 
