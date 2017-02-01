@@ -4956,6 +4956,9 @@ REMOVE:spille_spile ("spile") + verb IF
 #  "bare adj i kontekster som: det bare treet"
 
 
+"<blottende>" REMOVE:blotte (adv) IF
+        (NOT 1 adj)
+;
 
 
 #:3731
