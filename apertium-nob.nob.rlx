@@ -2971,9 +2971,6 @@ SELECT ("ikon") + subst-nøyt IF
 # «å spørre/vurdere/høre om ...»
 
 
-"<område>" SELECT:ikkje-områr subst;
-"<området>" SELECT:ikkje-områdde subst;
-
 #:3364
   "<omvendt>"   SELECT:3364   (adj nt ind) IF
 	(-1 konj)
@@ -23884,6 +23881,10 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 	(0 adv)
 ;
 #tar bort imp-lesning om den ikke er valgt tidligere
+
+"<område>" SELECT:ikkje-områr subst;
+"<områder>" SELECT:ikkje-områr subst;
+"<området>" SELECT:ikkje-områdde subst;
 
 #:3374
   "<og>"   REMOVE:3374   (clb) IF
