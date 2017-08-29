@@ -2971,6 +2971,7 @@ SELECT ("ikon") + subst-nøyt IF
 # «å spørre/vurdere/høre om ...»
 
 
+"<område>" SELECT:ikkje-områr subst;
 "<området>" SELECT:ikkje-områdde subst;
 
 #:3364
