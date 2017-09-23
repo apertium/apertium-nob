@@ -25,6 +25,7 @@ $(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
 
 $(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $<
+	./test-scandivoc
 	lt-comp lr $< $@
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.bin

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Simple test for consistency across scandipairs
+
+set -u
+
+cd "$(dirname "$0")" || exit 1
+
+
+declare -a dixen=(
+    ../../languages/apertium-nob/apertium-nob.nob.dix
+    ../../languages/apertium-swe/apertium-swe.swe.dix
+    ../../languages/apertium-nno/apertium-nno.nno.dix
+    ../../languages/apertium-dan/apertium-dan.dan.dix
+)
+
+for dix in "${dixen[@]}"; do
+    if [[ ! -f "${dix}" ]]; then
+        echo "WARNING: Couldn't find ${dix}, not testing scandipars for consistency"
+        exit 0
+    fi
+done
+
+props () {
+    sed -n '/SCANDIPROPS/,/\/SCANDIPROPS/p' "$@";
+}
+diffprops () {
+    diff --label "$1" --label "$2" -u <(props "$1") <(props "$2")
+}
+
+for dix in "${dixen[@]:1}"; do
+    if ! d=$(diffprops "${dixen[0]}" "${dix}"); then
+        echo "WARNING: Found differences in SCANDIPROPS section between ${dixen[0]} and ${dix}:"
+        echo "$d"
+        exit 1
+    fi
+done
