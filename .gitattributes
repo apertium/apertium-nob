@@ -22,3 +22,8 @@ texts/ngrams.4 -text
 texts/ngrams.5 -text
 texts/stanisław_lem.txt -text
 texts/udhr.txt -text
+*.dix linguist-language=XML linguist-detectable=true
+*.lrx linguist-language=XML linguist-detectable=true
+*.lsx linguist-language=XML linguist-detectable=true
+*.tsx linguist-language=XML linguist-detectable=true
+*.t[[:digit:]]x linguist-language=XML linguist-detectable=true
