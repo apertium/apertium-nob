@@ -6496,7 +6496,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #bare ved noe sånt noe som "en pils egenskaper" eller noe slikt
 
-
 #:3353
   "<pluss>"   REMOVE:3353   (n sg) IF
 	(NOT -1 det-nøyt-ent)
@@ -7132,7 +7131,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 CONSTRAINTS
 ## select ndomain
 
-        
+
 #:6212
 SELECT:6212 (adj) IF
 	(-1 ("<fargen>"))
@@ -26253,6 +26252,12 @@ SELECT:har-blitt-oppretta perf-part IF
 ;
 
 
+REMOVE subst-nøyt + ("plan") IF
+        (0 subst-mask)
+        (0/1 (*))
+;
+# «Kunnskapsdepartementets strategiplan …»
+# (typically masc in compounds)
 
 
 
