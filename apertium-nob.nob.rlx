@@ -26511,7 +26511,7 @@ REMOVE:strek-saman-sett fv IF
         (0C fv OR subst)
         ;
 
-
+"<regler>" REMOVE ("regle");
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
