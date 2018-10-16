@@ -17217,6 +17217,7 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 	(*-1 p-hj-verb BARRIER perf-part)
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
+        (NEGATE 0 adv LINK 1 perf-part)
 ;
 #  "Nå har de i løpet av den første uka skrevet (perf-part
 # vi har hoppet (perf)
@@ -26528,8 +26529,9 @@ REMOVE:strek-saman-sett fv IF
 
 
 # If still ambiguous, remove unlikely lemmas:
-"<regler>" REMOVE ("regle");
-"<stemmer>" REMOVE ("stem");
+"<regler>"  REMOVE:default ("regle");
+"<stemmer>" REMOVE:default ("stem");
+"<fort>"    SELECT:default adv;
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
