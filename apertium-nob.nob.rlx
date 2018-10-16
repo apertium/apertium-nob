@@ -610,6 +610,7 @@ LIST perf-part = (vblex pp) ;
 LIST perf-part/<perf-part> = (vblex pp) (adj pp) ;
 LIST perf-part-mf = (adj pp mf) ;
 LIST perf-part-nt = (adj pp nt) ;
+LIST perf-part-pl = (adj pp pl) ;
 LIST perf-part/inf = (vblex pp) (vblex inf) ;
 LIST periode-beg = >>> ;
 LIST periode-beg/clb/strek = >>> clb guio ;
@@ -801,6 +802,14 @@ SELECT:over_30._Men clb IF
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
+
+
+REMOVE:eitt-amputerte-tips perf-part-pl IF
+        (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
+        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -1 (>>>)) # «: ti drept i …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -2 (>>>)) # «: minst ti drept i …»
+        ;
 
 ## select domain
 #:3787
@@ -3057,6 +3066,12 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "Han har redd (perf-part) opp senga"))
 
+"<redde>"   SELECT:redde-for ("redd") IF
+	(1 ("for"))
+        ;
+"<Redde>"   SELECT:redde-for ("redd") IF
+	(1 ("for"))
+        ;
 
 
 #:3346
