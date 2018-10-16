@@ -26511,7 +26511,10 @@ REMOVE:strek-saman-sett fv IF
         (0C fv OR subst)
         ;
 
+
+# If still ambiguous, remove unlikely lemmas:
 "<regler>" REMOVE ("regle");
+"<stemmer>" REMOVE ("stem");
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
