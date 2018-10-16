@@ -2332,6 +2332,7 @@ SELECT ("ikon") + subst-nøyt IF
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
 
 
+"<kvoter>" SELECT:kvoter ("kvote");
 
 #:3502
   "<klart>"   SELECT:3502   (vblex pp) IF
@@ -23772,7 +23773,6 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 adj)
 ;
 #  "kh jan 2004: Mest vanlig i eggehvite"
-
 
 
 #:3498
