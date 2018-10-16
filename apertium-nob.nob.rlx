@@ -417,7 +417,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
-LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale"  gen ;
+LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "område" gen ;
 LIST farlige-verb = ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres);
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -19671,6 +19671,7 @@ REMOVE:2210 (clb) IF
 	(0 %det/dette%)
 	(1 fl)
 	(NOT 1 ent)
+	(NEGATE 1 sp + be)      # det kristne<sp><def> korset
 ;
 #  "er det (pron) mange som"
 #      :group 60
@@ -23847,6 +23848,16 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 	(*1 %opp% BARRIER ikke-adv LINK 1 %til%)
 ;
 
+"<så>" SELECT:så-avgjort-ikke adv IF
+	(1 ("<avgjort>") OR ("<bestemt>"))
+        (2 ("ikke"))
+        ;
+"<så>" SELECT:så-avgjort-heller-ikke adv IF
+	(1 ("<avgjort>") OR ("<bestemt>"))
+        (3 ("ikke"))
+        ;
+
+
 
 #:3433
   "<mens>"   REMOVE:3433   (n) IF
@@ -26529,9 +26540,11 @@ REMOVE:strek-saman-sett fv IF
 
 
 # If still ambiguous, remove unlikely lemmas:
-"<regler>"  REMOVE:default ("regle");
-"<stemmer>" REMOVE:default ("stem");
+"<regler>"  SELECT:default ("regel");
+"<stemmer>" SELECT:default ("stemme");
 "<fort>"    SELECT:default adv;
+"<men>"     SELECT:default konj;
+"<hendene>" SELECT:default ("hånd");
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
