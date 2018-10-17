@@ -7,6 +7,9 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 #PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
+LIST GENDER = m f nt mf;
+LIST NUMBER = sg pl sp;
+
 LIST sp = sp ;
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
@@ -26484,20 +26487,30 @@ REMOVE subst-nøyt + ("plan") IF
 	   (0 bare-adj)
 ;
 
-#:6201
- REMOVE:6201 (n) IF
+REMOVE:det-beste-vilkåret (n) IF
 	   (0 adj)
 	   (-1 det)
 	   (1 subst)
 ;
-# KBU «det beste<adj, ikkje subst> vilkåret»
+# KBU: «det beste<adj, ikkje subst> vilkåret»
 
-#:6211
-REMOVE:6211 (n pl) IF
+REMOVE:det-viktige-grammatiske-trekket-imperativ (n pl) IF
 	(0 ent-subst)
 	(-1 be-ent-subst LINK *-1 adj-be BARRIER ikke-adv-adj-komma LINK -1* be-det-ent/fl)
 ;
 # KBU: «det viktige, grammatiske trekket imperativ<sg>»
+
+REMOVE:det-israelske-militærets (adj pl) IF
+        (-1 dem LINK 0 $$GENDER)
+        (0 be-adj)
+        (1 be-subst LINK 0 $$GENDER)
+        ;
+REMOVE:det-israelske-militærets (prn) IF
+        (0 dem)
+        (0 $$GENDER)
+        (1 be-adj)
+        (2 be-subst LINK 0 $$GENDER)
+        ;
 
 REMOVE:hvor-mange-fisker ub-ent IF (-1C fl-det) (0C ub-subst) (0 fl-subst);
 # not "fisker" n m sg ind
