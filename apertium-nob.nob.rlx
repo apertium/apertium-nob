@@ -5449,8 +5449,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "bare verb ved feks to ganger to"
 
-"<Gjør>"   REMOVE ("gjø") IF (NOT 1 %hund%);
-"<gjør>"   REMOVE ("gjø") IF (NOT *0 %hund%);
+"<Gjør>"   REMOVE:gjø ("gjø") IF (NOT 1 %hund%);
+"<gjør>"   REMOVE:gjø ("gjø") IF (NOT *0 %hund%);
 
 
 #:3589
@@ -26553,11 +26553,13 @@ REMOVE:strek-saman-sett fv IF
 
 
 # If still ambiguous, remove unlikely lemmas:
-"<regler>"  SELECT:default ("regel");
-"<stemmer>" SELECT:default ("stemme");
-"<fort>"    SELECT:default adv;
-"<men>"     SELECT:default konj;
-"<hendene>" SELECT:default ("hånd");
+SELECT:default ("regel")  IF (0 ("<regler>"i));
+SELECT:default ("stemme") IF (0 ("<stemmer>"i));
+SELECT:default adv        IF (0 ("<fort>"i));
+SELECT:default konj       IF (0 ("<men>"i));
+SELECT:default ("hånd")   IF (0 ("<hendene>"i));
+SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
+SELECT:default ("heder")  IF (0 ("<heder>"i));
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
