@@ -7,6 +7,9 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 #PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
+LIST GENDER = m f nt mf;
+LIST NUMBER = sg pl sp;
+
 LIST sp = sp ;
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
@@ -412,12 +415,12 @@ LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "
 LIST farlige-adj = "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
 LIST farlige-fl-subst = ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
-LIST farlige-forledd-verb = ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) ;
+LIST farlige-forledd-verb = ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
-LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale"  gen ;
+LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen ;
 LIST farlige-verb = ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres);
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -610,6 +613,7 @@ LIST perf-part = (vblex pp) ;
 LIST perf-part/<perf-part> = (vblex pp) (adj pp) ;
 LIST perf-part-mf = (adj pp mf) ;
 LIST perf-part-nt = (adj pp nt) ;
+LIST perf-part-pl = (adj pp pl) ;
 LIST perf-part/inf = (vblex pp) (vblex inf) ;
 LIST periode-beg = >>> ;
 LIST periode-beg/clb/strek = >>> clb guio ;
@@ -801,6 +805,14 @@ SELECT:over_30._Men clb IF
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
+
+
+REMOVE:eitt-amputerte-tips perf-part-pl IF
+        (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
+        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -1 (>>>)) # «: ti drept i …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -2 (>>>)) # «: minst ti drept i …»
+        ;
 
 ## select domain
 #:3787
@@ -2323,6 +2335,7 @@ SELECT ("ikon") + subst-nøyt IF
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
 
 
+"<kvoter>" SELECT:kvoter ("kvote");
 
 #:3502
   "<klart>"   SELECT:3502   (vblex pp) IF
@@ -3057,6 +3070,12 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "Han har redd (perf-part) opp senga"))
 
+"<redde>"   SELECT:redde-for ("redd") IF
+	(1 ("for"))
+        ;
+"<Redde>"   SELECT:redde-for ("redd") IF
+	(1 ("for"))
+        ;
 
 
 #:3346
@@ -5430,8 +5449,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "bare verb ved feks to ganger to"
 
-"<Gjør>"   REMOVE ("gjø") IF (NOT 1 %hund%);
-"<gjør>"   REMOVE ("gjø") IF (NOT *0 %hund%);
+"<Gjør>"   REMOVE:gjø ("gjø") IF (NOT 1 %hund%);
+"<gjør>"   REMOVE:gjø ("gjø") IF (NOT *0 %hund%);
 
 
 #:3589
@@ -17202,6 +17221,7 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 	(*-1 p-hj-verb BARRIER perf-part)
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
+        (NEGATE 0 adv LINK 1 perf-part)
 ;
 #  "Nå har de i løpet av den første uka skrevet (perf-part
 # vi har hoppet (perf)
@@ -19655,6 +19675,7 @@ REMOVE:2210 (clb) IF
 	(0 %det/dette%)
 	(1 fl)
 	(NOT 1 ent)
+	(NEGATE 1 sp + be)      # det kristne<sp><def> korset
 ;
 #  "er det (pron) mange som"
 #      :group 60
@@ -23757,7 +23778,6 @@ SELECT:noen-default <noen> + (neg) ;
 #  "kh jan 2004: Mest vanlig i eggehvite"
 
 
-
 #:3498
   "<komme>"   REMOVE:3498   (n) IF
 	(NOT -1 subst-gen)
@@ -23830,6 +23850,16 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
   "<så>"   REMOVE:så   (adv) IF
 	(*1 %opp% BARRIER ikke-adv LINK 1 %til%)
 ;
+
+"<så>" SELECT:så-avgjort-ikke adv IF
+	(1 ("<avgjort>") OR ("<bestemt>"))
+        (2 ("ikke"))
+        ;
+"<så>" SELECT:så-avgjort-heller-ikke adv IF
+	(1 ("<avgjort>") OR ("<bestemt>"))
+        (3 ("ikke"))
+        ;
+
 
 
 #:3433
@@ -26457,20 +26487,30 @@ REMOVE subst-nøyt + ("plan") IF
 	   (0 bare-adj)
 ;
 
-#:6201
- REMOVE:6201 (n) IF
+REMOVE:det-beste-vilkåret (n) IF
 	   (0 adj)
 	   (-1 det)
 	   (1 subst)
 ;
-# KBU «det beste<adj, ikkje subst> vilkåret»
+# KBU: «det beste<adj, ikkje subst> vilkåret»
 
-#:6211
-REMOVE:6211 (n pl) IF
+REMOVE:det-viktige-grammatiske-trekket-imperativ (n pl) IF
 	(0 ent-subst)
 	(-1 be-ent-subst LINK *-1 adj-be BARRIER ikke-adv-adj-komma LINK -1* be-det-ent/fl)
 ;
 # KBU: «det viktige, grammatiske trekket imperativ<sg>»
+
+REMOVE:det-israelske-militærets (adj pl) IF
+        (-1 dem LINK 0 $$GENDER)
+        (0 be-adj)
+        (1 be-subst LINK 0 $$GENDER)
+        ;
+REMOVE:det-israelske-militærets (prn) IF
+        (0 dem)
+        (0 $$GENDER)
+        (1 be-adj)
+        (2 be-subst LINK 0 $$GENDER)
+        ;
 
 REMOVE:hvor-mange-fisker ub-ent IF (-1C fl-det) (0C ub-subst) (0 fl-subst);
 # not "fisker" n m sg ind
@@ -26512,6 +26552,14 @@ REMOVE:strek-saman-sett fv IF
         ;
 
 
+# If still ambiguous, remove unlikely lemmas:
+SELECT:default ("regel")  IF (0 ("<regler>"i));
+SELECT:default ("stemme") IF (0 ("<stemmer>"i));
+SELECT:default adv        IF (0 ("<fort>"i));
+SELECT:default konj       IF (0 ("<men>"i));
+SELECT:default ("hånd")   IF (0 ("<hendene>"i));
+SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
+SELECT:default ("heder")  IF (0 ("<heder>"i));
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
