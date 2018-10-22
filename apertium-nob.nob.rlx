@@ -1854,7 +1854,7 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 
 #:3632
   "<for>"   SELECT:3632   (vblex) IF
-	(1 pron/subst/det)
+	(1 det-subst)
 	(-1 %det%-pron)
 	(NOT 1 %at%)
 	(NOT *-1 fv BARRIER setn-gr)
