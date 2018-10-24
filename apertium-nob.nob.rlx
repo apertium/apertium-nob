@@ -48,10 +48,10 @@ LIST %den% = ("den"  det) ;
 LIST %den/denne% = ("den"  det) ("denne"  det) ;
 LIST %den/det/de% = "det"  "den"  "de" ;
 LIST %der% = "der"  ;
-LIST %det% = "det" ("den"  det nt) ;
-LIST %det%-pron = ("det"  prn) ;
+LIST %det% = ("den"  prn nt) ("den"  det nt) ;
+LIST %det%-pron = ("den" prn nt) ;
 LIST %det/dette% = ("den"  det nt) ("denne"  det nt) ;
-LIST %det/dette%-pron = ("det"  prn) ("denne"  prn nt) ;
+LIST %det/dette%-pron = ("den" prn nt) ("denne"  prn nt) ;
 LIST %dømme% = "dømme"  ;
 LIST %ei% = ("en"  f) ;
 LIST %eksempel% = "eksempel"  ;
@@ -349,7 +349,7 @@ LIST bare-adj = "vedkommende"  "ugjort"  "tilsvarende"  "skrå"  "nær"  "ny"  "
 LIST be = def ;
 LIST be-adj = (adj def) (adj pprs) ;
 LIST be-det = "hin"  "dette"  "det"  "denne"  "den"  ;
-LIST be-det-ent = ("hin"  sg) ("denne"  sg) ("den"  sg) ("det"  sg) ("de"  sg) (det def sg) (n gen) (np gen) ;
+LIST be-det-ent = ("hin"  sg) ("denne"  sg) ("den"  sg) ("de"  sg) (det def sg) (n gen) (np gen) ;
 LIST be-det-ent/fl = "hin"    "det"  "denne"  "den"  "de"  (det def) ;
 LIST be-ent = (def sg) ;
 LIST be-ent-adj/komp-be-sup-adj = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
@@ -410,7 +410,7 @@ LIST ent-mask-subst = (n m sg) (np m sg) ;
 LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
-LIST f-subj = ("det"  prn) ;
+LIST f-subj = ("den" prn nt) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  ;
 LIST farlige-adj = "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
@@ -571,7 +571,7 @@ LIST nom-ent = (n sg) (np sg) ("all"  sg) (nom sg) ;
 LIST nom-fem-ent = (n f sg) (np f sg) ("all"  det f) ("jeg"  nom) ("hen"  nom) ("hun"  nom) ("du"  nom) ("den"  prn) ("denne"  prn) ;
 LIST nom-fl = "vi"  "disse"  "dere"  "de"  (n pl) (np pl) ("all"  det pl) ;
 LIST nom-mask-ent = (n m sg) (np m sg) ("all"  det m) ("de"  nom) ("hen"  nom) ("han"  nom) ("jeg"  nom) ("hun"  nom) ("du"  nom) ("man"  prn) ("den"  prn) ("denne"  prn) ;
-LIST nom-nøyt-ent = (n nt sg) (np nt sg) ("all"  det nt) ("det"  prn) ("denne"  prn nt) ;
+LIST nom-nøyt-ent = (n nt sg) (np nt sg) ("all"  det nt) ("den" prn nt) ("denne"  prn nt) ;
 LIST nom-uten-pron = n np adj det ;
 LIST nom/akk-pron = "jeg" "hun" "hen" "han"  "du"  "dere"  ;
 LIST nom/at = ("at"  cnjsub) (n) (np) (adj) (prn) (det) ;
@@ -656,10 +656,10 @@ LIST pron = prn ;
 LIST pron-akk = "seg"  (prn p1 pl acc) (prn p2 pl acc) (prn p3 pl acc) ;
 LIST pron-akk-fl = ("vi"  acc) ("de"  acc) ("dere"  acc) ("disse"  prn) ;
 LIST pron-akk-mask/fem = ("de"  acc) ("hen"  acc) ("han"  acc) ("jeg"  acc) ("hun"  acc) ("du"  acc) ("den"  prn) ("denne"  prn) ;
-LIST pron-akk-mfn/fl = "seg"  ("de"  acc) ("hen"  acc) ("han"  acc) ("jeg"  acc) ("hun"  acc) ("du"  acc) ("den"  prn) ("denne"  prn) ("vi"  acc) ("de"  acc) ("dere"  acc) ("de"  acc) ("disse"  prn) ("det"  prn) ("denne"  prn nt) ;
+LIST pron-akk-mfn/fl = "seg"  ("de"  acc) ("hen"  acc) ("han"  acc) ("jeg"  acc) ("hun"  acc) ("du"  acc) ("den"  prn) ("denne"  prn) ("vi"  acc) ("de"  acc) ("dere"  acc) ("de"  acc) ("disse"  prn) ("den" prn nt) ("denne"  prn nt) ;
 LIST pron-nom = (prn p1 nom) (prn p2 nom) (prn p3 nom) ;
 LIST pron-nom/%seg% = (prn p1 nom) (prn p2 nom) (prn p3 nom) ;
-LIST pron-nøyt = ("det"  prn) ("denne"  prn nt) ;
+LIST pron-nøyt = ("den" prn nt) ("denne"  prn nt) ;
 LIST pron-pers = (prn p1) (prn p2) (prn p3) ;
 LIST pron-r = "seg"  "hverandre"  "hinannen"  ;
 LIST pron/subst = prn n np ;
@@ -668,6 +668,7 @@ LIST prop = np ;
 LIST prop-det-ent = ("det" np) ("den" np) ;
 LIST prop-fem = (np f) ;
 LIST prop-mask = (np m) ;
+LIST prop-cog = (np cog) ;
 LIST refl = rl1 rl2 rl3 rl4 rl5 rl6 rl7 rl8 rl9 rl10 rl11 rl12 rl13 rl14 rl15 rl16 rl17 rl18 rl19 rl20 ;
 LIST rel-pron = "som"  ;
 LIST replikk = "$?" "?" "$;" "$:" ":" "$--" "--" "$-" "-" "$\"" "\"" >>> <<< ;
@@ -1853,7 +1854,7 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 
 #:3632
   "<for>"   SELECT:3632   (vblex) IF
-	(1 subst/adj/pron/det)
+	(1 det-subst)
 	(-1 %det%-pron)
 	(NOT 1 %at%)
 	(NOT *-1 fv BARRIER setn-gr)
@@ -7149,6 +7150,42 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # sec 2
 CONSTRAINTS
 ## select ndomain
+
+
+SELECT:de-har-blitt-tatt (adj pp pl)
+	(-3 fl-subst OR nom-fl)
+	(-2 %ha%-pres/pret)
+	(-1 kop)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:de-som-parkerer-båten-har-vært-nevnt (adj pp pl)
+        (*-3 %som%-sbu BARRIER ikke-subst-verb LINK -1 fl-subst OR nom-fl)
+	(-2 %ha%-pres/pret)
+	(-1 kop)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:det-har-blitt-solgt (adj pp nt sg ind)
+	(-3 subst-nøyt OR %det/dette%-pron)
+	(-2 %ha%-pres/pret)
+	(-1 kop)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:han-har-vært-sykmeldt (adj pp mf sg ind)
+	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask)
+	(-2 %ha%-pres/pret)
+	(-1 kop)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:han-var-sykmeldt (adj pp mf sg ind)
+	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask)
+	(-1 %var%)
+        (NOT 0 adv OR farlige-part)
+        ;
+
 
 
 #:6212
