@@ -26588,6 +26588,10 @@ REMOVE:strek-saman-sett fv IF
         (0C fv OR subst)
         ;
 
+REMOVE:har-et-håp-om fl-subst IF
+        (-1C det + $$GENDER)
+        (0C subst + $$GENDER)
+        ;
 
 # If still ambiguous, remove unlikely lemmas:
 SELECT:default ("regel")  IF (0 ("<regler>"i));
