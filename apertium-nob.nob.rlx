@@ -795,9 +795,13 @@ LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 LIST verk = <verk> ;
+LIST guess = guess ;
 
 # sec 1
 CONSTRAINTS
+
+REMOVE guess;
+
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
         (0 (<<<) LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
