@@ -16289,7 +16289,13 @@ SELECT:5009 (vblex pres) IF
 # dersom hjelpeverbet er inf med å foran:
 # For å få begrenset (perf-part)"))
 
-
+SELECT:å-glemme-tapet-mot be-subst + nøyt IF
+        (-2C infmerke)
+        (-1C inf)
+        (0C subst OR perf-part OR <perf-part> OR pret)
+        (1C prep)
+        ;
+# pp vs nt.def gives lots of bad translations like «å gløyme tapt mot»
 
 #:2406
  SELECT:2406 (vblex pp) IF
