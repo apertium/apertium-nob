@@ -11,6 +11,11 @@ LIST GENDER = m f nt mf;
 LIST NUMBER = sg pl sp;
 
 # Apertium tagset:
+LIST vblex = vblex ;
+LIST pr = pr ;
+LIST prn = prn ;
+LIST det = det ;
+LIST expl = expl ;
 LIST ind = ind ;
 LIST def = def ;
 LIST nt = nt ;
@@ -22,6 +27,8 @@ LIST sp = sp ;
 LIST pos = pos ;
 LIST guess = guess ;
 LIST cmp = cmp ;
+LIST pret = pret ;
+LIST pp = pp ;
 
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
@@ -57,13 +64,13 @@ LIST %daglig% = ("daglig"  adj) ;
 LIST %de% = ("de"  det) ;
 LIST %de%-det = ("de"  det) ;
 LIST %del/andel% = "del"  "andel"  ;
-LIST %den% = ("den"  det) ;
-LIST %den/denne% = ("den"  det) ("denne"  det) ;
-LIST %den/det/de% = "det"  "den"  "de" ;
+LIST %den% = "<den>"i ;
+LIST %den/denne% = "<den>"i "<denne>"i ;
+LIST %den/det/de% = "<det>"i  "<den>"i  "<de>"i ;
 LIST %der% = "der"  ;
-LIST %det% = ("den"  prn nt) ("den"  det nt) ;
+LIST %det% = "<det>"i;
 LIST %det%-pron = ("den" prn nt) ;
-LIST %det/dette% = ("den"  det nt) ("denne"  det nt) ;
+LIST %det/dette% = "<det>"i "<dette>"i ;
 LIST %det/dette%-pron = ("den" prn nt) ("denne"  prn nt) ;
 LIST %dømme% = "dømme"  ;
 LIST %ei% = ("en"  f) ;
@@ -665,7 +672,6 @@ LIST pres/pret = (vblex pres) (vblex pret) ;
 LIST pres/pret/adverb = adv <adv> (vblex pres) (vblex pret) (adj nt ind) ("noen"  det nt) ;
 LIST present-ub = "et"  "en"  "ei"  (n ind) (np ind) ;
 LIST present-verb = "være"  "stå"  "ligge"  "komme"  "henge"  ;
-LIST pret = pret ;
 LIST pron = prn ;
 LIST pron-akk = "seg"  (prn p1 pl acc) (prn p2 pl acc) (prn p3 pl acc) ;
 LIST pron-akk-fl = ("vi"  acc) ("de"  acc) ("dere"  acc) ("disse"  prn) ;
@@ -1272,6 +1278,7 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 #  "det aller meste av korrespondansen der"
 
 
+"<det>" REMOVE adv;             # when is this adverb?
 
 #:3718
   "<det>"   SELECT:3718   (det) IF
@@ -1312,6 +1319,18 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 # (forts) grunn (uB) til...;"))
 
 
+"<det>" SELECT:hos-oss-blir-det-fossefall expl IF
+        (-3 pr)
+        (-2 prn)
+        (-1 kop-fv OR ("forekomme"))
+        (1 ind)
+        ;
+
+"<det>" SELECT:så-blir-det-teokrati expl IF
+        (-2 adv)
+        (-1 kop-fv OR ("forekomme"))
+        (1 ind)
+        ;
 
 #:3717
   "<det>"   SELECT:3717   (prn) IF
@@ -2634,7 +2653,7 @@ SELECT ("ikon") + subst-nøyt IF
   "<men>"   SELECT:3441   (n sg) IF
 	(NOT 0 %mens%)
 	(NOT 1 nøyt)
-	(*-1 det-nøyt-ent BARRIER ikke-adv-adj)
+	(*-1 det-nøyt-ent BARRIER ikke-adv-adj LINK NOT 0 %det%)
 ;
 #  "kh jan 2004: Det er et stort men ved det hele.
 # NOT 1 nøyt: Han har et grønt men modent eple."
@@ -17260,6 +17279,7 @@ SELECT:2335 (vblex) IF
 	(NOT 0 prep)
 	(NOT 0 sbu)
 	(NOT 0 %så/og/selv%)
+        (NOT 0 %det%)
 	(1 nom)
 	(-1 fv)
 ;
@@ -17363,8 +17383,6 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 
 
 CONSTRAINTS
-#substitute-regler for enkelte utvalgte + disamb
-
 
 #5034
  "<bad>"   REMOVE:5034   (n nt ind pl) IF
@@ -17378,6 +17396,29 @@ CONSTRAINTS
    (0 adj)
 ;
 #bad (adj) guy og andre engelske bad
+
+
+"<skrevet>" REMOVE:skrev (n nt sg def) IF
+	(0 adj/perf-part)
+	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
+;
+REMOVE:skrev ("<skrev>"ri n nt ind) IF
+	(0 pret)
+	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
+;
+"<skrevet>" REMOVE:skrev ("skreve") IF
+	(0 adj/perf-part)
+	(0 ("skrive"))
+	(NOT *1C %over%)
+;
+SELECT:skrev vblex IF
+	(0 pret)
+	(0 ("skrive"))
+	(NOT *1C %over%)
+;
+# skrev<n> og skreve<vblex> er svært sjeldan rett svar, sjølv for ordbokdømet:
+# «Han hadde bare laget seg en blogg og skrevet i vei.»
+# men desse reglane kan sikkert nyanserast litt... -KBU
 
 
 #CONSTRAINTS
@@ -23866,28 +23907,6 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 
 
-"<skrevet>" REMOVE:skrev (n nt sg def) IF
-	(0 adj/perf-part)
-	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
-;
-REMOVE:skrev ("<skrev>"ri n nt ind) IF
-	(0 pret)
-	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
-;
-"<skrevet>" REMOVE:skrev ("skreve") IF
-	(0 adj/perf-part)
-	(0 ("skrive"))
-	(NOT *1C %over%)
-;
-REMOVE:skrev ("<skrev>"ri "skreve") IF
-	(0 pret)
-	(0 ("skrive"))
-	(NOT *1C %over%)
-;
-# skrev<n> og skreve<vblex> er svært sjeldan rett svar, sjølv for ordbokdømet:
-# «Han hadde bare laget seg en blogg og skrevet i vei.»
-# men desse reglane kan sikkert nyanserast litt... -KBU
-
 
 #5006
   "<straks>"   REMOVE:5006   (adj gen) IF
@@ -23976,6 +23995,8 @@ REMOVE:skrev ("<skrev>"ri "skreve") IF
 "<område>" SELECT:ikkje-områr subst;
 "<områder>" SELECT:ikkje-områr subst;
 "<området>" SELECT:ikkje-områdde subst;
+
+"<ølet>" SELECT:ølet subst;
 
 #:3374
   "<og>"   REMOVE:3374   (clb) IF
@@ -26576,7 +26597,7 @@ REMOVE:det-beste-vilkåret (n) IF
 
 
 REMOVE:den-nette-sum fl IF
-        (-2C det-dem + sg)
+        (-2C det-dem + sg OR %den%)
         (-1 adj-ent OR sp)
         (0C subst)
         ;
@@ -26669,6 +26690,18 @@ REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
         (0C subst)
         ;
 
+REMOVE:Så-fint pret + ("se") IF
+        (-1 clb OR >>> OR tegnsetting)
+        (1C adj-nøyt OR adv)
+        ;
+
+REMOVE:ble-de-stoppet be-ent-nøyt-subst IF
+        (-2C kop-fv)
+        (-1C det OR prn LINK 0C pl)
+        (0C be-ent-nøyt-subst OR pp)
+        ;
+
+
 # If still ambiguous, remove unlikely lemmas:
 SELECT:default ("regel")  IF (0 ("<regler>"i));
 SELECT:default ("stemme") IF (0 ("<stemmer>"i));
@@ -26680,8 +26713,12 @@ SELECT:default ("heder")  IF (0 ("<heder>"i));
 SELECT:default ("vise")   IF (0 ("<viser>"i));
 SELECT:default prep       IF (0 ("<i>"i));
 SELECT:default nt         IF (0 ("<verk>"i));
+SELECT:default ("være")   IF (0 ("<var>"i));
 
+SELECT:default ("skrive") IF (0 ("skrev"));
 SELECT:default ("form")   IF (0 ("former")); # also match compounds
+
+REMOVE:default adv   IF (0 ("<det>"i));
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
