@@ -10,7 +10,20 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 LIST GENDER = m f nt mf;
 LIST NUMBER = sg pl sp;
 
+# Apertium tagset:
+LIST ind = ind ;
+LIST def = def ;
+LIST nt = nt ;
+LIST f = f ;
+LIST m = m ;
+LIST pl = pl ;
+LIST sg = sg ;
 LIST sp = sp ;
+LIST pos = pos ;
+LIST guess = guess ;
+LIST cmp = cmp ;
+
+# OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
 LIST %all% = "all"  ;
@@ -466,6 +479,7 @@ LIST ikke-adv-adj-konj = "siden"  "$:" ":" vblex pr prn cnjsub "for å" "å" n n
 LIST ikke-adv-adj-kvant = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij <ellipse> (det dem) (det pos) (det emph) ;
 LIST ikke-adv-adj-prep = "$," "," det vblex prn cnjsub cnjcoo "å" ij n np <ellipse> ;
 LIST ikke-adv-adj-prep-det = "$," "," vblex prn cnjsub cnjcoo "å" ij n np <ellipse> ;
+LIST ikke-adv-adj-prep-det-pron = "$," "," vblex cnjsub cnjcoo "å" ij n np <ellipse> ;
 LIST ikke-adv-adj-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij det <<< <ellipse> ;
 LIST ikke-adv-adj-subst-det-prep = "$-" "-" "$," "," vblex prn cnjsub cnjcoo "å" ij <<< >>> <ellipse> ;
 LIST ikke-adv-adj-subst-pron-det = cnjcoo pr cnjsub "å" ij <ellipse> (vblex pres) (vblex pret) (det dem) (n gen) ("$," clb) ("," clb) ;
@@ -794,8 +808,6 @@ LIST veldig-farlige-part = "nære"  "nyte"  "mige"  "make"  "lite"  "hele"  "gal
 LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"  pres) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("grade"  vblex pres) ;
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
-LIST verk = <verk> ;
-LIST guess = guess ;
 
 # sec 1
 CONSTRAINTS
@@ -6575,7 +6587,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3337
-  "<røde>"   REMOVE:3337   (n) IF
+  "<røde>"   REMOVE:røde-ting subst IF
 	(0 adj)
 ;
 #  "kh feb 2004: Sjelden i betydningen \"snakk, samtale\" eller \"rødlig skinn\""
@@ -6875,7 +6887,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(**-1C setn-gr BARRIER pres/pret)
 	(*1 pres/pret LINK *1 clb-konj LINK NOT 1 pres/pret)
 ;
-
 
 #:3183
   "<til>"   REMOVE:3183   (cnjsub) IF
@@ -20772,7 +20783,7 @@ REMOVE:2135 (det) IF
 	(0 ub-fl-subst)
 	(-1 adj-fl)
 	(NOT 1 subst)
-	(NOT -1 adj-ent)
+	(NOT -1 adj-ent OR sp)
 	(NOT -1 det-ent)
 	(NOT -1 gen)
 	(NOT -1 sup)
@@ -26538,12 +26549,46 @@ REMOVE subst-nøyt + ("plan") IF
 	   (0 bare-adj)
 ;
 
+REMOVE:musikkverk m IF          # compunds like "hodeverk" less likely
+        (0 ("verk"))
+        (0/1 cmp)
+        ;
+
+REMOVE:hennes-røde-ting ent-subst IF
+        (-2 poss-det + fl OR poss-det + sp)
+        (-1C fl-adj OR sp)
+        (0C subst)
+        ;
+
+REMOVE:hennes-røde-ting ent IF
+        (0C pos)
+        (1C fl-adj OR sp)
+        (2C fl-subst)
+        ;
+
+
 REMOVE:det-beste-vilkåret (n) IF
 	   (0 adj)
 	   (-1 det)
 	   (1 subst)
 ;
 # KBU: «det beste<adj, ikkje subst> vilkåret»
+
+
+REMOVE:den-nette-sum fl IF
+        (-2C det-dem + sg)
+        (-1 adj-ent OR sp)
+        (0C subst)
+        ;
+
+SELECT:den-nette-sum m IF
+        (-2C det-dem + sg LINK 0C m OR f)
+        (-1 adj-ent OR sp)
+        (0C subst)
+        ;
+
+
+
 
 REMOVE:det-viktige-grammatiske-trekket-imperativ (n pl) IF
 	(0 ent-subst)
@@ -26590,6 +26635,12 @@ REMOVE:vi-deler. fl-subst IF
 ;
 # «Det er et ønske vi deler.»
 
+REMOVE:sitt-nye-verk fl-subst IF
+        (-2C sg + pos)
+        (-1 adj + def LINK 0C adj)
+        (0C subst)
+;
+
 REMOVE:mine-data ent-subst IF
         (0 fl-subst)
         (-1 poss-det + fl)
@@ -26607,6 +26658,17 @@ REMOVE:har-et-håp-om fl-subst IF
         (0C subst + $$GENDER)
         ;
 
+REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
+        (0C subst)
+        (0 ent-subst)
+        (**-1C ent LINK -1 >>>)
+        ;
+
+REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
+        (*-1 %noen/noe% BARRIER ikke-adv-adj-prep-det-pron LINK 1 %av%)
+        (0C subst)
+        ;
+
 # If still ambiguous, remove unlikely lemmas:
 SELECT:default ("regel")  IF (0 ("<regler>"i));
 SELECT:default ("stemme") IF (0 ("<stemmer>"i));
@@ -26615,7 +26677,11 @@ SELECT:default konj       IF (0 ("<men>"i));
 SELECT:default ("hånd")   IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
 SELECT:default ("heder")  IF (0 ("<heder>"i));
+SELECT:default ("vise")   IF (0 ("<viser>"i));
 SELECT:default prep       IF (0 ("<i>"i));
+SELECT:default nt         IF (0 ("<verk>"i));
+
+SELECT:default ("form")   IF (0 ("former")); # also match compounds
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
