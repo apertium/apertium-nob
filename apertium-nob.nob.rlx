@@ -2285,6 +2285,10 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
         (1 adj)
 ;
 
+"<i>" SELECT:i-LeBron-debut prep IF
+        (1 subst OR ukjent)
+        ;
+
 #:4008
  "<i>"   SELECT:4008   (pr) IF
       (0 subst-prop)
@@ -26611,6 +26615,7 @@ SELECT:default konj       IF (0 ("<men>"i));
 SELECT:default ("hånd")   IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
 SELECT:default ("heder")  IF (0 ("<heder>"i));
+SELECT:default prep       IF (0 ("<i>"i));
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
