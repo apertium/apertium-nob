@@ -21,6 +21,7 @@ LIST def = def ;
 LIST nt = nt ;
 LIST f = f ;
 LIST m = m ;
+LIST n = n ;
 LIST pl = pl ;
 LIST sg = sg ;
 LIST sp = sp ;
@@ -2373,6 +2374,15 @@ SELECT ("ikon") + subst-nøyt IF
 	(NOT -1 poss-det-nøyt)
 ;
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
+
+
+"<kroner>" SELECT:milliarder-norsk-kroner n + ("krone") IF
+        (*-1 %hundre/tusen/osv% BARRIER setn-gr)
+        ;
+
+"<kroner>" SELECT:norsk-kroner n + ("krone") IF
+        (-1 ("norsk"))          # even if wrong form ;)
+        ;
 
 
 "<kvoter>" SELECT:kvoter ("kvote");
@@ -5935,7 +5945,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(NOT 1 %seg%)
 ;
 #  "kh jan 2004: vannet har kravet seg"
-
 
 
 #:3488
