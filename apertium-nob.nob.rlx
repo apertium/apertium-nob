@@ -838,6 +838,9 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -2 (>>>)) # «: minst ti drept i …»
         ;
 
+REMOVE:unlikely n + ("lenge") ;
+
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
