@@ -839,7 +839,7 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
         ;
 
 REMOVE:unlikely n + ("lenge") ;
-
+"<verre>" SELECT:unlikely adv;     # unlikely «vondare»
 
 ## select domain
 #:3787
@@ -4664,7 +4664,6 @@ SELECT ("ikon") + subst-nøyt IF
 	(*1 %eller% BARRIER)
 ;
 #  "verken ... eller"
-
 
 
 #:3138
