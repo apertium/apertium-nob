@@ -26725,6 +26725,7 @@ SELECT:default ("vise")   IF (0 ("<viser>"i));
 SELECT:default prep       IF (0 ("<i>"i));
 SELECT:default nt         IF (0 ("<verk>"i));
 SELECT:default ("være")   IF (0 ("<var>"i));
+SELECT:default ("tørre")  IF (0 ("<turt>"i));
 
 SELECT:default ("skrive") IF (0 ("skrev"));
 SELECT:default ("form")   IF (0 ("former")); # also match compounds
