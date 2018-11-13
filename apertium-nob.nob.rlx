@@ -4694,6 +4694,10 @@ SELECT ("ikon") + subst-nøyt IF
 #  "Olsen hadde visst høstet det meste
 # 30.11"
 
+SELECT:kroner ("øre") IF (*-1 ("krone"));
+SELECT:kroner ("øre") IF (-1 ("[0-9]+"r));
+SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
+
 "<øyer>"   SELECT:antall-øyer subst IF
         (NEGATE -1C pron)
 ;
