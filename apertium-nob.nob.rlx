@@ -1103,7 +1103,9 @@ REMOVE:unlikely n + ("lenge") ;
 # NOT LR0 %SIDE%: på andre (det) siden var det..."))
 
 
-
+"<anklager>"   SELECT:anklager-om pl IF
+	(1 %om%)
+;
 
 #:3744
   "<anstrengt>"   SELECT:3744   (vblex pp) IF
@@ -26726,6 +26728,7 @@ SELECT:default prep       IF (0 ("<i>"i));
 SELECT:default nt         IF (0 ("<verk>"i));
 SELECT:default ("være")   IF (0 ("<var>"i));
 SELECT:default ("tørre")  IF (0 ("<turt>"i));
+SELECT:default ("anklage") IF (0 ("<anklager>"i));
 
 SELECT:default ("skrive") IF (0 ("skrev"));
 SELECT:default ("form")   IF (0 ("former")); # also match compounds
