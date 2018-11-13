@@ -4746,6 +4746,8 @@ REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» 
 
 REMOVE ("sekund") + mask;
 
+REMOVE:unlikely ("øre") + vblex;
+
 REMOVE:spille_spile ("spile") + verb IF
 	(0 ("spille"))
     (NEGATE 1 ("opp") LINK 1 ("øye"))
