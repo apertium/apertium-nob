@@ -841,6 +841,8 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 REMOVE:unlikely n + ("lenge") ;
 "<verre>" SELECT:unlikely adv;     # unlikely «vondare»
 
+"<mens>" REMOVE ("men");
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
@@ -4750,6 +4752,7 @@ REMOVE:spille_spile ("spile") + verb IF
 ;
 # tt: Vi vil gjerne ha kontekst for "å spile"...
 
+"<ledd>" REMOVE:ledd-unlikely-adj-pp adj;
 
 "<leder>" REMOVE (vblex) IF
   	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
