@@ -31,6 +31,10 @@ LIST cmp = cmp ;
 LIST pret = pret ;
 LIST pp = pp ;
 
+LIST %ett% = ("én" nt);
+LIST %én% = ("én" m);
+LIST %éi% = ("én" f);
+
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
@@ -21133,7 +21137,8 @@ REMOVE:2135 (det) IF
 #:2011
  REMOVE:2011 ent-nøyt-subst IF
 	(0 adj)
-	(**-1C det LINK NOT 0 nøyt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
+        (NOT -1C det + nt)
+	(**-1C det LINK NOT 0 nt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
 	(**-1C det BARRIER ikke-adv-adj)
 ;
 
@@ -26732,24 +26737,29 @@ REMOVE:ble-de-stoppet be-ent-nøyt-subst IF
         (0C be-ent-nøyt-subst OR pp)
         ;
 
+SELECT:ett-øre ind + n + nt + sg IF
+        (-1C det)
+        (0C adj + pl OR adj + sp OR n)
+        (1C setn-gr)
+        ;
 
 # If still ambiguous, remove unlikely lemmas:
-SELECT:default ("regel")  IF (0 ("<regler>"i));
-SELECT:default ("stemme") IF (0 ("<stemmer>"i));
-SELECT:default adv        IF (0 ("<fort>"i));
-SELECT:default konj       IF (0 ("<men>"i));
-SELECT:default ("hånd")   IF (0 ("<hendene>"i));
-SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
-SELECT:default ("heder")  IF (0 ("<heder>"i));
-SELECT:default ("vise")   IF (0 ("<viser>"i));
-SELECT:default prep       IF (0 ("<i>"i));
-SELECT:default nt         IF (0 ("<verk>"i));
-SELECT:default ("være")   IF (0 ("<var>"i));
-SELECT:default ("tørre")  IF (0 ("<turt>"i));
+SELECT:default ("regel")   IF (0 ("<regler>"i));
+SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
+SELECT:default adv         IF (0 ("<fort>"i));
+SELECT:default konj        IF (0 ("<men>"i));
+SELECT:default ("hånd")    IF (0 ("<hendene>"i));
+SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
+SELECT:default ("heder")   IF (0 ("<heder>"i));
+SELECT:default ("vise")    IF (0 ("<viser>"i));
+SELECT:default prep        IF (0 ("<i>"i));
+SELECT:default nt          IF (0 ("<verk>"i));
+SELECT:default ("være")    IF (0 ("<var>"i));
+SELECT:default ("tørre")   IF (0 ("<turt>"i));
 SELECT:default ("anklage") IF (0 ("<anklager>"i));
-
-SELECT:default ("skrive") IF (0 ("skrev"));
-SELECT:default ("form")   IF (0 ("former")); # also match compounds
+SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
+SELECT:default ("skrive")  IF (0 ("skrev"));
+SELECT:default ("form")    IF (0 ("former")); # also match compounds
 
 REMOVE:default adv   IF (0 ("<det>"i));
 
