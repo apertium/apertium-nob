@@ -21,6 +21,7 @@ LIST def = def ;
 LIST nt = nt ;
 LIST f = f ;
 LIST m = m ;
+LIST n = n ;
 LIST pl = pl ;
 LIST sg = sg ;
 LIST sp = sp ;
@@ -29,6 +30,10 @@ LIST guess = guess ;
 LIST cmp = cmp ;
 LIST pret = pret ;
 LIST pp = pp ;
+
+LIST %ett% = ("én" nt);
+LIST %én% = ("én" m);
+LIST %éi% = ("én" f);
 
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
@@ -837,6 +842,11 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -2 (>>>)) # «: minst ti drept i …»
         ;
 
+REMOVE:unlikely n + ("lenge") ;
+"<verre>" SELECT:unlikely adv;     # unlikely «vondare»
+
+"<mens>" REMOVE ("men");
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
@@ -1099,7 +1109,9 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 # NOT LR0 %SIDE%: på andre (det) siden var det..."))
 
 
-
+"<anklager>"   SELECT:anklager-om pl IF
+	(1 %om%)
+;
 
 #:3744
   "<anstrengt>"   SELECT:3744   (vblex pp) IF
@@ -2373,6 +2385,15 @@ SELECT ("ikon") + subst-nøyt IF
 	(NOT -1 poss-det-nøyt)
 ;
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
+
+
+"<kroner>" SELECT:milliarder-norsk-kroner n + ("krone") IF
+        (*-1 %hundre/tusen/osv% BARRIER setn-gr)
+        ;
+
+"<kroner>" SELECT:norsk-kroner n + ("krone") IF
+        (-1 ("norsk"))          # even if wrong form ;)
+        ;
 
 
 "<kvoter>" SELECT:kvoter ("kvote");
@@ -4653,7 +4674,6 @@ SELECT ("ikon") + subst-nøyt IF
 #  "verken ... eller"
 
 
-
 #:3138
   "<vi>"   SELECT:3138   (prn) IF
 	(*1 fv BARRIER setn-gr)
@@ -4677,6 +4697,10 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "Olsen hadde visst høstet det meste
 # 30.11"
+
+SELECT:kroner ("øre") IF (*-1 ("krone"));
+SELECT:kroner ("øre") IF (-1 ("[0-9]+"r));
+SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 "<øyer>"   SELECT:antall-øyer subst IF
         (NEGATE -1C pron)
@@ -4730,12 +4754,15 @@ REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» 
 
 REMOVE ("sekund") + mask;
 
+REMOVE:unlikely ("øre") + vblex;
+
 REMOVE:spille_spile ("spile") + verb IF
 	(0 ("spille"))
     (NEGATE 1 ("opp") LINK 1 ("øye"))
 ;
 # tt: Vi vil gjerne ha kontekst for "å spile"...
 
+"<ledd>" REMOVE:ledd-unlikely-adj-pp adj;
 
 "<leder>" REMOVE (vblex) IF
   	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
@@ -5935,7 +5962,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(NOT 1 %seg%)
 ;
 #  "kh jan 2004: vannet har kravet seg"
-
 
 
 #:3488
@@ -7189,6 +7215,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 CONSTRAINTS
 ## select ndomain
 
+###################################################
+# adj pp-dis til bruk i samsvarsbøying i nob→nno: #
 
 SELECT:de-har-blitt-tatt (adj pp pl)
 	(-3 fl-subst OR nom-fl)
@@ -7222,6 +7250,13 @@ SELECT:han-var-sykmeldt (adj pp mf sg ind)
 	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:ble-det-vedtatt (adj pp nt sg ind)
+	(-2 %være/bli%)
+	(-1 %det%)
+        (NOT 0 adv OR farlige-part)
+        (0C vblex OR adj + pp)
         ;
 
 
@@ -21102,7 +21137,8 @@ REMOVE:2135 (det) IF
 #:2011
  REMOVE:2011 ent-nøyt-subst IF
 	(0 adj)
-	(**-1C det LINK NOT 0 nøyt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
+        (NOT -1C det + nt)
+	(**-1C det LINK NOT 0 nt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
 	(**-1C det BARRIER ikke-adv-adj)
 ;
 
@@ -26701,22 +26737,29 @@ REMOVE:ble-de-stoppet be-ent-nøyt-subst IF
         (0C be-ent-nøyt-subst OR pp)
         ;
 
+SELECT:ett-øre ind + n + nt + sg IF
+        (-1C det)
+        (0C adj + pl OR adj + sp OR n)
+        (1C setn-gr)
+        ;
 
 # If still ambiguous, remove unlikely lemmas:
-SELECT:default ("regel")  IF (0 ("<regler>"i));
-SELECT:default ("stemme") IF (0 ("<stemmer>"i));
-SELECT:default adv        IF (0 ("<fort>"i));
-SELECT:default konj       IF (0 ("<men>"i));
-SELECT:default ("hånd")   IF (0 ("<hendene>"i));
-SELECT:default ("gjøre")  IF (0 ("<gjør>"i));
-SELECT:default ("heder")  IF (0 ("<heder>"i));
-SELECT:default ("vise")   IF (0 ("<viser>"i));
-SELECT:default prep       IF (0 ("<i>"i));
-SELECT:default nt         IF (0 ("<verk>"i));
-SELECT:default ("være")   IF (0 ("<var>"i));
-
-SELECT:default ("skrive") IF (0 ("skrev"));
-SELECT:default ("form")   IF (0 ("former")); # also match compounds
+SELECT:default ("regel")   IF (0 ("<regler>"i));
+SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
+SELECT:default adv         IF (0 ("<fort>"i));
+SELECT:default konj        IF (0 ("<men>"i));
+SELECT:default ("hånd")    IF (0 ("<hendene>"i));
+SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
+SELECT:default ("heder")   IF (0 ("<heder>"i));
+SELECT:default ("vise")    IF (0 ("<viser>"i));
+SELECT:default prep        IF (0 ("<i>"i));
+SELECT:default nt          IF (0 ("<verk>"i));
+SELECT:default ("være")    IF (0 ("<var>"i));
+SELECT:default ("tørre")   IF (0 ("<turt>"i));
+SELECT:default ("anklage") IF (0 ("<anklager>"i));
+SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
+SELECT:default ("skrive")  IF (0 ("skrev"));
+SELECT:default ("form")    IF (0 ("former")); # also match compounds
 
 REMOVE:default adv   IF (0 ("<det>"i));
 
