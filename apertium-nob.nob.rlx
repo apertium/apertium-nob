@@ -7232,6 +7232,13 @@ SELECT:de-som-parkerer-båten-har-vært-nevnt (adj pp pl)
         (NOT 0 adv OR farlige-part)
         ;
 
+SELECT:de-var-kjent pp + pl IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr)
+;
+
 SELECT:det-har-blitt-solgt (adj pp nt sg ind)
 	(-3 subst-nøyt OR %det/dette%-pron)
 	(-2 %ha%-pres/pret)
@@ -17327,6 +17334,7 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 	(NOT -2 be-nøyt-det)
 	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + mask/fem/mf BARRIER setn-gr)
 ;
+
 
 
 #:2410
