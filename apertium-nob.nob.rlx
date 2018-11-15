@@ -846,6 +846,7 @@ REMOVE:unlikely n + ("lenge") ;
 "<verre>" SELECT:unlikely adv;     # unlikely «vondare»
 
 "<mens>" REMOVE ("men");
+REMOVE:prefer-museum ("musé");
 
 ## select domain
 #:3787
@@ -3976,6 +3977,21 @@ SELECT ("ikon") + subst-nøyt IF
 #bare adv ved "sørpe full"
 
 
+"<så>" SELECT:og-så-i-1818 adv IF
+        (-1 %og%)
+        (1 %i%)
+        (2 ("[0-9][0-9]+"r))
+        ;
+
+"<så>" SELECT:så-som adv IF
+        (1 %som%)
+        ;
+
+"<så>" SELECT:som-han-så-snudde adv IF
+        (-2 %som%)
+        (-1 prn OR n)
+        (1C fv OR pp)
+        ;
 
 #:3210
   "<så>"   SELECT:3210   (vblex pret) IF
