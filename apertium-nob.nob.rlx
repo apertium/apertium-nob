@@ -4973,6 +4973,7 @@ REMOVE:spille_spile ("spile") + verb IF
 #  "Vanlig bruk: har anstrengt (perf-part) seg
 # perf-part mest vanlig med \"ha\" og \"seg\"?"
 
+"<Arne>" REMOVE n;
 
 
 #:3743
