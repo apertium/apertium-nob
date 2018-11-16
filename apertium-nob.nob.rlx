@@ -26317,7 +26317,7 @@ SELECT:har-blitt-oppretta perf-part IF
 
 #:1684
  REMOVE:1684 (vblex pres) IF
-	(NOT 0 m-hj-verb)
+	(NOT 0 m-hj-verb OR ("synes"))
 	(*-1 setn-gr LINK 0 %og/men%)
 	(*1 pres/pret BARRIER setn-gr OR sbu)
 	(*-1O >>> LINK NOT 1 sbu LINK *1 fv LINK NOT 0 pres LINK NOT 0 m-hj-verb)
