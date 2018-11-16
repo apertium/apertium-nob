@@ -30,6 +30,7 @@ LIST guess = guess ;
 LIST cmp = cmp ;
 LIST pret = pret ;
 LIST pp = pp ;
+LIST pstv = pstv ;
 
 LIST %ett% = ("én" nt);
 LIST %én% = ("én" m);
@@ -26766,6 +26767,12 @@ SELECT:ett-øre ind + n + nt + sg IF
         (-1C det)
         (0C adj + pl OR adj + sp OR n)
         (1C setn-gr)
+        ;
+
+
+REMOVE:møtes pstv + pp IF
+        (NOT -2 %ha%)
+        (NOT -1 %ha%)
         ;
 
 # If still ambiguous, remove unlikely lemmas:
