@@ -4780,6 +4780,7 @@ REMOVE:spille_spile ("spile") + verb IF
 # tt: Vi vil gjerne ha kontekst for "å spile"...
 
 "<ledd>" REMOVE:ledd-unlikely-adj-pp adj;
+"<lyktes>" REMOVE ("lykte");
 
 "<leder>" REMOVE (vblex) IF
   	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
