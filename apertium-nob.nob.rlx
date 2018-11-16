@@ -29,8 +29,16 @@ LIST pos = pos ;
 LIST guess = guess ;
 LIST cmp = cmp ;
 LIST pret = pret ;
+LIST imp = imp ;
+LIST inf = inf ;
 LIST pp = pp ;
 LIST pstv = pstv ;
+LIST pasv = pasv ;
+LIST qnt = qnt ;
+LIST ref = ref ;
+LIST comp = comp ;
+LIST sup = sup ;
+LIST pst = pst ;
 
 LIST %ett% = ("én" nt);
 LIST %én% = ("én" m);
@@ -537,9 +545,7 @@ LIST ikke-subst-verb = "siden"  "$-" "-" "$," "," pr prn cnjsub cnjcoo "å" det 
 LIST ikke-tall = "somme"  "samtlige"  "noen"  "ingen"  "hver"  "enhver"  "begge"  "all"  ;
 LIST ikke-tr1/tr4-10/tr14/dtr1-9/refl/pr1/pr3-10/adv2/adv6-11/adv13-14/kaus = tr2 tr3 tr11 tr12 tr12/til tr13 tr13/til tr15 tr16 tr17 tr18 tr19 tr20 tr20/til tr21 tr21/til tr22 tr22/til tr23 t n np n1 i1 i2 i3 i4 pr2 pr11 pr12 pr13 a1 a3 a4 a5 a12 a15 a16 a17 pa pa/til pa1 pa1/til pa1 refl4 pa2 pa2/til pa3 pa3/til pa4 pa4/til pa5 pa5 pa5/til pa6 pa7 pa8 <aux1/inf> <aux1/infinitiv> <aux1/perf_part> ;
 LIST ikke-verb = "siden"  det pr prn cnjsub cnjcoo "å" n np ij adj adv ;
-LIST imp = imp ;
 LIST imp-i-førsteposisjon = ("løpe"  imp) ;
-LIST inf = inf ;
 LIST inf/perf-part = (vblex inf) (vblex pp) ;
 LIST inf/pres = (vblex inf pres) ;
 LIST inf/pres/pret = inf pres pret ;
@@ -660,6 +666,7 @@ LIST pos-ub-fl = (adj pst pl) ;
 LIST poss-det = (det pos) ;
 LIST poss-det-nøyt = (det pos nt) ;
 LIST poss/gen = pos gen ;
+LIST poss = pos ;
 LIST pred-verb = pr1 pr2 pr3 pr5 pr6 pr7 ;
 LIST predik3/5-7 = pr3 pr5 pr6 pr7 ;
 LIST premod-subst = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  ("gang"  pl) ;
@@ -770,7 +777,6 @@ LIST subst/pron/%all% = n np prn ("all"  det qnt) ;
 LIST subst/pron/%all%/%mang%/%mange% = n np prn ("all"  det qnt) ("mang"  det) ("mange"  det) ;
 LIST subst/pron/fl-adj/%all%/%mang%/%mange% = n np prn (adj pl) (adj pprs) ("all"  det qnt) ("mang"  det) ("mange"  adj) ;
 LIST subst/pron/prep = n np prn pr ;
-LIST sup = sup ;
 LIST tall = "1" (det qnt pl) ("en"  det qnt) ("én" det qnt) "pi" ;
 LIST tall-fl = (det qnt pl) "pi" ;
 LIST tall-subst = "tusen"  "trillion"  "titusen"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard" "pi" ;
@@ -1931,6 +1937,16 @@ REMOVE:prefer-museum ("musé");
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
+
+"<før>"  REMOVE:fø-unlikely ("fø") IF
+        (NOT 1 poss)               # før mine sauer
+        (NEGATE 1 def LINK 2 poss) # før sauene mine
+        (NOT 1 qnt)                # før 10 barn
+        (NOT 1 ("opp"))            # før opp barnene
+        (NOT 1 ("<verdens>"))      # før verdens barn
+        (NOT 1 ("<nesten>"))       # før nesten hele nasjonen med ris
+        (NOT 1 ref)                # før seg selv
+        ;
 
 #:3611
   "<før>"   SELECT:3611   (vblex pres) IF
@@ -5494,7 +5510,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "\"før\" adj er sjelden. Bare ved: føre karer, de er føre,
 # de er mer føre. (??)"))
-
 
 
 #:3595
@@ -21951,9 +21966,20 @@ REMOVE:gen-subst gen-subst IF
 
 
 
+REMOVE:Videre-påpekes inf + pasv IF
+	(-1 storbokstav)
+	(-1C adv OR comp)
+;
+
+REMOVE:før-det-legges-fram inf IF
+	(-2 %før%)
+	(-1 %det%)
+;
+
 #:1958
  REMOVE:1958 (vblex pres) IF
 	(-1C subst-gen)
+        (NOT -1 storbokstav)
 ;
 #  "ordet etter et subst gen er neppe verb"
 
