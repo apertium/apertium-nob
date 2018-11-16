@@ -22,11 +22,13 @@ LIST nt = nt ;
 LIST f = f ;
 LIST m = m ;
 LIST n = n ;
+LIST np = np ;
 LIST pl = pl ;
 LIST sg = sg ;
 LIST sp = sp ;
 LIST pos = pos ;
 LIST guess = guess ;
+LIST cgguess = cgguess ;
 LIST cmp = cmp ;
 LIST pret = pret ;
 LIST imp = imp ;
@@ -39,6 +41,8 @@ LIST ref = ref ;
 LIST comp = comp ;
 LIST sup = sup ;
 LIST pst = pst ;
+LIST lquot = lquot ;
+LIST rquot = rquot ;
 
 LIST %ett% = ("én" nt);
 LIST %én% = ("én" m);
@@ -827,14 +831,33 @@ LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
+BEFORE-SECTIONS
+
+SET not-np-guess = np OR ukjent OR adverbialsubst ;
+
+APPEND:np-guess ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
+        (0 storbokstav)
+        (NOT 0 not-np-guess)
+        ;
+
+APPEND:np-guess ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
+        (0 storbokstav)
+        (NOT 0 not-np-guess)
+        ;
+
 # sec 1
 CONSTRAINTS
 
 REMOVE guess;
 
+REMOVE cgguess IF
+        (-1 >>> OR lquot)
+        ;
+# Men, TODO: Letnes og Sandberg …
+
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
-        (0 (<<<) LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
+        (0 <<< LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
         # TODO: why can't I say >1?
 ;
 
