@@ -19952,6 +19952,7 @@ REMOVE:2135 (det) IF
 	(NOT 1 anf)
 	(NOT 1 ub)
 	(NOT 1 subst-prop)
+	(NOT 1 ukjent + storbokstav)
 ;
 #  "Det finnes (ikke subst gen) flere ...
 # Ikke: Premiere på Oscar Wildes (gen) \"Den perfekte ektemann\"."))
@@ -21232,6 +21233,7 @@ REMOVE:2135 (det) IF
 	(NOT 1 det)
 	(NOT 1 anf)
 	(NOT 1 setn-gr)
+	(NOT 1 ukjent + storbokstav)
 ;
 #  "Johannes - Tar sjansen på at det ikke er
 # gen om det det ikke kommer en
@@ -21328,6 +21330,7 @@ REMOVE:2135 (det) IF
 	(NOT 1 setn-gr)
 	(NOT 1 konj)
 	(NOT 1 parentes)
+	(NOT 1 ukjent + storbokstav)
 ;
 #  "gamle, utbombede hus (ikke gen) noen km unna"))
 
