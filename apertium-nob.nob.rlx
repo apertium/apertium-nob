@@ -22,6 +22,7 @@ LIST nt = nt ;
 LIST f = f ;
 LIST m = m ;
 LIST n = n ;
+LIST np = np ;
 LIST pl = pl ;
 LIST sg = sg ;
 LIST sp = sp ;
@@ -851,6 +852,8 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
 
 REMOVE:unlikely n + ("lenge") ;
 "<verre>" SELECT:unlikely adv;     # unlikely «vondare»
+
+"<OL>" SELECT nt;               # very unlikely «alte»
 
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
@@ -23489,12 +23492,26 @@ CONSTRAINTS
 	(-1 >>>)
 ;
 
-"<de>" REMOVE:de-np (np) IF
-	(NOT 1 prop)
-;
-"<De>" REMOVE:de-np (np) IF
-	(NOT 1 prop)
-;
+SELECT:Staffan-de-Mistura ("<de>"i) + np IF
+        (-1C prop OR storbokstav)
+        (1C prop OR storbokstav)
+        ;
+SELECT:Staffan-de-la-Mistura ("<de>"i) + np IF
+        (-1C prop OR storbokstav)
+        (1 ("<la>"i) LINK 1C prop OR storbokstav)
+        ;
+SELECT:Staffan-de-la-Mistura ("<la>"i) + np IF
+        (-2C prop OR storbokstav LINK 1 ("<de>"i))
+        (1C prop OR storbokstav)
+        ;
+
+
+"<de>" REMOVE:de-np np IF
+	(NOT 1 np)
+        ;
+"<De>" REMOVE:de-np np IF
+	(NOT 1 np)
+        ;
 
 "<De>" REMOVE:de-acc (acc);
 "<de>" REMOVE:de-acc (acc) IF
