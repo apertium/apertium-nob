@@ -835,14 +835,14 @@ BEFORE-SECTIONS
 
 SET not-np-guess = np OR ukjent OR adverbialsubst ;
 
-APPEND:np-guess ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
+APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
         (0 storbokstav)
         (NOT 0 not-np-guess)
         ;
 
-APPEND:np-guess ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
+APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (0 storbokstav)
-        (NOT 0 not-np-guess)
+        (NEGATE 0 not-np-guess - (np cgguess gen))
         ;
 
 # sec 1
@@ -850,10 +850,12 @@ CONSTRAINTS
 
 REMOVE guess;
 
-REMOVE cgguess IF
-        (-1 >>> OR lquot)
+REMOVE:np-guess-safe cgguess IF
+        (NOT -1 storbokstav)    # allow: Ding Liren<cgguess>
+        (NOT 1 storbokstav)
+        (NEGATE 1 %og% LINK 1 storbokstav) # allow: «Letnes<cgguess> og Sandberg er i Iran»
+        (NEGATE -1 %og% LINK -1 storbokstav)
         ;
-# Men, TODO: Letnes og Sandberg …
 
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
