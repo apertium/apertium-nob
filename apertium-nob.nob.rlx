@@ -10,6 +10,9 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 LIST GENDER = m f nt mf;
 LIST NUMBER = sg pl sp;
 
+LIST <<< = <<< ;
+LIST >>> = >>> ;
+
 # Apertium tagset:
 LIST vblex = vblex ;
 LIST pr = pr ;
@@ -43,10 +46,28 @@ LIST sup = sup ;
 LIST pst = pst ;
 LIST lquot = lquot ;
 LIST rquot = rquot ;
+LIST top = top ;
+LIST attr = attr ;
+LIST adj = adj ;
+LIST clb = clb ;
+LIST dem = dem ;
+LIST det = det ;
+LIST gen = gen ;
+LIST un = un ;
+LIST mf = mf ;
 
 LIST %ett% = ("én" nt);
 LIST %én% = ("én" m);
 LIST %éi% = ("én" f);
+
+# TODO: use apertium-deshtml -o
+LIST overskrift = overskrift ;
+
+# TODO: try before/after changing this to cmp
+LIST samset = samset ;
+
+# TODO: what is this in Norsk ordbank?
+LIST @adv = @adv ;
 
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
@@ -324,14 +345,10 @@ LIST %ytterligere% = "ytterligere"  ;
 LIST %øy% = "øy" ;
 LIST %øye% = "øye" ;
 LIST %år% = "år"  ;
-LIST top = top ;
-LIST <<< = <<< ;
 LIST <adj> = adj ;
 LIST <adv> = adv ;
 LIST <perf-part> = (adj pp) ;
 LIST <pres-part> = pprs ;
-LIST >>> = >>> ;
-LIST @adv = @adv ;
 LIST abj#%av% = "av"  ;
 LIST abj#%av/i% = "i"  "av"  ;
 LIST abj#%i/pa/ved% = ("ved"  pr) ("i"  pr) ("på"  pr) ;
@@ -339,7 +356,6 @@ LIST abj#%med% = "med"  ;
 LIST abj#sted = top ;
 LIST abj#subst-prop-gen = (np gen) ;
 LIST aci = "se"  "merke"  "la"  "kjenne"  "høre"  "føle"  "be"  ;
-LIST adj = adj ;
 LIST adj-adv-subst-konj = adv adj n np cnjcoo ;
 LIST adj-be = (adj def) (adj pprs) ;
 LIST adj-ent = (adj sg) (adj pprs) ;
@@ -409,16 +425,13 @@ LIST be-fl-subst/fl-adj = (n pl def) (np pl def) (adj pl) (adj pprs) ;
 LIST be-mask-det = (det pos m) ("hin"  det m) ("denne"  det m) ("den"  det m) ;
 LIST be-nøyt-det = (det pos nt) ("hin"  det nt) ("denne"  det nt) ("den"  det nt) ;
 LIST be-subst = (n def) (np def) ;
-LIST clb = clb ;
 LIST clb-komma = (clb cm) ;
 LIST clb-komma/clb-konj = (clb cm) (clb cnjcoo) ;
 LIST clb-komma/konj = (clb cm) (clb cnjcoo) ;
 LIST clb-konj = (clb cnjcoo) ;
 LIST clb/konj-konj = ("og"  cnjcoo) ("eller"  cnjcoo) ("men"  cnjcoo) ;
 LIST dato = <dato> ;
-LIST dem = dem ;
 LIST dem/poss/gen = dem pos gen ;
-LIST det = det ;
 LIST det-dem = (det dem) ;
 LIST det-ent = (det sg) ;
 LIST det-ent-nøyt-halvt = "halv"  (det nt sg) ;
@@ -476,7 +489,6 @@ LIST fork = acr ;
 LIST ukjent = ("\\*.*"r) ukjent ;
 LIST fork/ukjent-ord = acr ("\\*.*"r) ukjent ;
 LIST fv = (vblex pres) (vblex pret) (vblex imp) ;
-LIST gen = gen ;
 LIST gen-subst = (n gen) (np gen) ;
 LIST gen/%slags% = "slags"  gen ;
 LIST grads-adv = "stor"  "mye"  "liten"  "ille"  "god"  ;
@@ -591,7 +603,6 @@ LIST m-hj-verb = ("få"  vblex) ("skulle"  vblex) ("kunne"  vblex) ("ville"  vbl
 LIST m-hj-verb-fv = ("få"  pres) ("skulle"  pres) ("kunne"  pres) ("ville"  pres) ("måtte"  pres) ("burde"  pres) ("skulle"  pret) ("kunne"  pret) ("ville"  pret) ("måtte"  pret) ("burde"  pret) ("få"  pret) ;
 LIST m-hj-verb-perfpart = ("skulle"  vblex pp) ("kunne"  vblex pp) ("ville"  vblex pp) ("måtte"  vblex pp) ("burde"  vblex pp) ("få"  vblex pp) ;
 LIST m-hj-verb-pret = ("skulle"  pret) ("kunne"  pret) ("ville"  pret) ("måtte"  pret) ("burde"  pret) ("få"  pret) ;
-LIST un = un ;
 LIST mask = m mf (adj def) ;
 LIST mask-adj-det = (adj m) (adj mf) (adj def) (adj pprs) (det m) ;
 LIST mask-be = (m def) ;
@@ -625,7 +636,6 @@ LIST nr2-det-mask-ub = ("noe"  m) ("annen"  m ind) ("eneste") ("slik"  m) ("sån
 LIST nr2-det-nøyt-be = ("noe"  nt) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  nt def) ("eigen"  nt def) ;
 LIST nr2-det-nøyt-ub = ("noe"  nt) ("annen"  nt ind) ("eneste") ("slik"  nt) ("sånn"  nt) ("sådan"  nt) ("egen"  nt ind) ("eigen"  nt ind) ("halvannen"  nt) ("hver"  det nt) ;
 LIST nr2-det-u-fl = "sånn"  "sådan"  "slik"  "samme"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  ("ene"  det) ;
-LIST mf = mf ;
 LIST nøyt = nt ;
 LIST nøyt-adj-det = (adj nt) (det nt) (adj def) (adj pprs) ;
 LIST nøyt-be = (nt def) ;
@@ -637,7 +647,6 @@ LIST objpred-verb = "ønske"  "male"  "lage"  "kalle"  "holde"  "gjøre"  ;
 LIST ord-%andre%-ent/fl-subst = "halvår"  "forsøk"  "avsnitt"  ;
 LIST orden = ("ene"  det qnt) ord ;
 LIST orden-pos = ("ene"  det qnt) (ord pst) ;
-LIST overskrift = overskrift ;
 LIST p-hj-verb = "være"  "ha"  "få"  "bli"  ;
 LIST parentes = lpar rpar ;
 LIST parentes-beg = lpar ;
@@ -716,7 +725,6 @@ LIST s#periode-beg/clb-konj = >>> (clb cnjcoo) ;
 LIST s-gr = "$;" ";" "$:" ":" "$..." "..." "$--" "--" "$-" "-" "$," "," "$\"" "\"" cnjcoo >>> <<< ;
 LIST s-gr/interj = "$;" ";" "$:" ":" "$..." "..." "$--" "--" "$-" "-" "$," "," "$\"" "\"" ij >>> <<< ;
 LIST s-verb = pstv ;
-LIST samset = samset ;
 LIST sanns-adv = "vel"  "så"  "selv"  "meget"  "like"  "hvor"  "for"  "enda"  ;
 LIST sanseverb = "se"  "merke"  "la"  "kjenne"  "høre"  "føle"  "be"  ;
 LIST sbu = "hvor"  "hva"  cnjsub ;
@@ -11781,6 +11789,18 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 
+SELECT:Staffan-de-Mistura np + attr IF
+        (-1C prop OR storbokstav)
+        (1C prop OR storbokstav)
+        ;
+SELECT:Staffan-de-la-Mistura np + attr IF
+        (-1C prop OR storbokstav)
+        (1 np + attr LINK 1C prop OR storbokstav)
+        ;
+SELECT:Staffan-de-la-Mistura np + attr IF
+        (-2C prop OR storbokstav LINK 1 np + attr)
+        (1C prop OR storbokstav)
+        ;
 
 #Her stod 2792
 
@@ -23517,19 +23537,6 @@ CONSTRAINTS
 	(NOT *1 høflig)
 	(-1 >>>)
 ;
-
-SELECT:Staffan-de-Mistura ("<de>"i) + np IF
-        (-1C prop OR storbokstav)
-        (1C prop OR storbokstav)
-        ;
-SELECT:Staffan-de-la-Mistura ("<de>"i) + np IF
-        (-1C prop OR storbokstav)
-        (1 ("<la>"i) LINK 1C prop OR storbokstav)
-        ;
-SELECT:Staffan-de-la-Mistura ("<la>"i) + np IF
-        (-2C prop OR storbokstav LINK 1 ("<de>"i))
-        (1C prop OR storbokstav)
-        ;
 
 
 "<de>" REMOVE:de-np np IF
