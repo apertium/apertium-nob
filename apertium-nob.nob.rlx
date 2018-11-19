@@ -833,7 +833,9 @@ LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 BEFORE-SECTIONS
 
-SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR ("deretter") OR ("videre") ;
+# Typically stuff that's first in a sentence:
+LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" ;
+SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
 APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
         (0 storbokstav)
