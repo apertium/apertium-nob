@@ -711,7 +711,7 @@ LIST rel-pron = "som"  ;
 LIST replikk = "$?" "?" "$;" "$:" ":" "$--" "--" "$-" "-" "$\"" "\"" >>> <<< ;
 LIST replikk-snever = "$:" ":" "$--" "--" "$-" "-" "$\"" "\""  ;
 LIST retning = "øst"  "vest"  "syd"  "nord"  "aust"  "sørøst"  "sørvest"  "nordøst"  "nordaust"  "nordvest"  ;
-LIST romertall = <romertall> ;
+LIST romertall = "M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})"r ;
 LIST s#periode-beg/clb-konj = >>> (clb cnjcoo) ;
 LIST s-gr = "$;" ";" "$:" ":" "$..." "..." "$--" "--" "$-" "-" "$," "," "$\"" "\"" cnjcoo >>> <<< ;
 LIST s-gr/interj = "$;" ";" "$:" ":" "$..." "..." "$--" "--" "$-" "-" "$," "," "$\"" "\"" ij >>> <<< ;
@@ -26640,7 +26640,8 @@ REMOVE subst-nøyt + ("plan") IF
 
 #40730
  REMOVE:40730 prep IF
-	    (1 nominativ)
+        (1 nominativ)
+        (NOT 1 det)
 ;
 
 
