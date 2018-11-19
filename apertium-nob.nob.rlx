@@ -33,6 +33,7 @@ LIST pos = pos ;
 LIST guess = guess ;
 LIST cgguess = cgguess ;
 LIST cmp = cmp ;
+LIST cm = cm ;
 LIST pret = pret ;
 LIST imp = imp ;
 LIST inf = inf ;
@@ -740,7 +741,7 @@ LIST setn-gr/parentes-beg = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$
 LIST setn-gr/prep = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" pr cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" vblex cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
-LIST setn-start-med-strek/anf = <anf> <ANF> guio >>> ;
+LIST setn-start-med-strek/anf = lquot rquot <anf> <ANF> guio >>> ;
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
 LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
 LIST sikre-navn = "svein"  "rune"  "helle"  "dag"  "bjørn"  "arne"  (np m) (np f) ;
@@ -21391,6 +21392,7 @@ REMOVE:2135 (det) IF
 	(NOT 0 %tids%)
 	(NOT 0 samset)
 	(NOT 0 adj-gen)
+        (NOT 0 ("dagens"))
 ;
 #  "felles (adj, ikke gen av felle) struktur
 # NOT 0 SAMSET: fordi denne kan gi underlige
@@ -25709,6 +25711,14 @@ REMOVE:øye ("øye"i) IF
 	(0 %sette/ta%)
 ;
 # KBU: «Satte fyr på huset sitt»
+
+SELECT:Dagens-vinner n + ind IF
+        (-2 >>>)
+        (-1 gen)
+        (0C pres OR n)
+        (1 ("–") OR cm)
+        (*2 fv)
+        ;
 
 #:1732
  SELECT:1732 (vblex pres) IF
