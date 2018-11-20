@@ -56,6 +56,7 @@ LIST det = det ;
 LIST gen = gen ;
 LIST un = un ;
 LIST mf = mf ;
+LIST acc = acc ;
 
 LIST %ett% = ("én" nt);
 LIST %én% = ("én" m);
@@ -238,11 +239,11 @@ LIST %mye/lite/litt% = "mye"  "litt"  "lite"  ;
 LIST %ned% = "ned"  ;
 LIST %neste% = "neste"  ;
 LIST %neste/samme% = ("neste"  det) ("samme"  det) ;
-LIST %noe% = "noe"  ;
-LIST %noen% = "noen"  ;
-LIST %noen%-nøyt = ("noen"  nt) ;
-LIST %noen/ingen% = "noen"  "ingen"  ;
-LIST %noen/noe% = "noen"  "noe"  ;
+LIST %noe% = "<noe>"i  ;
+LIST %noen% = "<noen>"i  ;
+LIST %noen%-nøyt = "<noe>"i ;
+LIST %noen/ingen% = "<noen>"i  "ingen"  ;
+LIST %noen/noe% =  "noe"  ;
 LIST %nok% = "nok"  ;
 LIST %nok/til% = "til"  "nok"  ;
 LIST %nå% = "nå"  ;
@@ -4031,7 +4032,6 @@ SELECT ("ikon") + subst-nøyt IF
 	(NOT 1 %full%)
 ;
 #bare adv ved "sørpe full"
-
 
 "<så>" SELECT:og-så-i-1818 adv IF
         (-1 %og%)
@@ -24059,7 +24059,7 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 
 
-  "<så>"   REMOVE:så   (vblex pret) IF
+"<så>"   REMOVE:så pret IF
 	(-1 nom)
 	(1 prep LINK 1 prep)
 	(NOT 1 %ut%)
@@ -24070,10 +24070,10 @@ SELECT:noen-default <noen> + (neg) ;
 # ikkje «det var likevel fedrene barna så opp til»
 # ikkje «De andre som kjøpte vafler så ut til å...»
 
-  "<så>"   REMOVE:så   (adv) IF
+"<så>"   REMOVE:så   adv IF
 	(*1 %ut% BARRIER ikke-adv)
 ;
-  "<så>"   REMOVE:så   (adv) IF
+"<så>"   REMOVE:så   adv IF
 	(*1 %opp% BARRIER ikke-adv LINK 1 %til%)
 ;
 
@@ -24086,10 +24086,43 @@ SELECT:noen-default <noen> + (neg) ;
         (3 ("ikke"))
         ;
 
+"<så>" SELECT:og-så-på-meg pret IF
+        (*-2 pret)
+        (NOT -2 cm)
+        (-1C %og%)
+        (1C %på%)
+        (2C acc OR n + def)
+        ;
+# Måten du holdt hodet på skakke og så på meg.
+# Tvitydig, men usannsynleg: Vi skulle først på fest og så på konserten.
+
+"<så>" SELECT:så-ned-på-meg-selv pret IF
+        (*-2 pret)
+        (-1C cm)
+        (1 pr)
+        (*2 acc OR n + def)
+        ;
+
+"<så>" SELECT:uten-at-jeg-så-noen pret IF
+        (-1C nominativ)
+        (1 ("noe"))
+        ;
+
+"<så>" SELECT:slik-vi-så-det-uttrykt pret IF
+        (-1C nominativ)
+        (1 %det%)
+        (2C pp)
+        ;
+
+"<så>" SELECT:forrige-gang-så-de-fleste pret IF
+        (-1 %gang% OR ("runde"))
+        (1C det OR n + def)
+        ;
+
 
 
 #:3433
-  "<mens>"   REMOVE:3433   (n) IF
+"<mens>"   REMOVE:3433   n IF
 	(0 sbu)
 ;
 #  "kh jan 2004: vanligst å skrive \"mensen\""
@@ -26867,6 +26900,20 @@ REMOVE:møtes pstv + pp IF
         (NOT -1 %ha%)
         ;
 
+
+"<så>" SELECT:hun-så-gardinene-blåse pret IF
+        (-1C nominativ)
+        (1C acc OR n + def)
+        (2 inf)
+        ;
+
+"<så>" SELECT:så-i-været pret IF
+        (1 pr)
+        (NOT 1 %der%)
+        (*2 acc OR n + def)
+        ;
+
+
 # If still ambiguous, remove unlikely lemmas:
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
@@ -26884,6 +26931,8 @@ SELECT:default ("anklage") IF (0 ("<anklager>"i));
 SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
 SELECT:default ("skrive")  IF (0 ("skrev"));
 SELECT:default ("form")    IF (0 ("former")); # also match compounds
+SELECT:default adv         IF (0 ("så"));
+
 
 REMOVE:default adv   IF (0 ("<det>"i));
 
