@@ -866,6 +866,7 @@ REMOVE:np-guess-safe cgguess IF
         (NOT 1 storbokstav)
         (NEGATE 1 %og% LINK 1 storbokstav) # allow: «Letnes<cgguess> og Sandberg er i Iran»
         (NEGATE -1 %og% LINK -1 storbokstav)
+        (NEGATE 0C np OR n + sg + def LINK -1 ("i"))
         ;
 
 SELECT:over_30._Men clb IF
