@@ -26729,6 +26729,14 @@ REMOVE subst-nøyt + ("plan") IF
 # KBU: Om me har valet mellom identisk passiv og pstv, vel pstv
 # (for å unngå t.d. finnes=>blir funne). Svært heuristisk...
 
+REMOVE:at-Ukjend-bevares inf IF
+        (-2 %at%)
+        (-1C storbokstav OR n + def)
+        (0C pasv)
+        (0 pres)
+;
+
+
 #:4079
  REMOVE:4079 ub-fl-subst IF
 	   (0 ikke-sanns-subst-fl-ub)
