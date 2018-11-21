@@ -5149,6 +5149,22 @@ REMOVE:spille_spile ("spile") + verb IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
+"<begge>" REMOVE:begge-kjønn adv IF
+	(1 n + pl)
+        (NOT 1 gen OR adj + pl)
+;
+
+"<begge>" REMOVE:og-begge-er-i-trøbbel adv IF
+        (-1 %og% OR setn-gr)
+        (1 kop-fv)
+;
+
+"<begge>" REMOVE:begge-til-stede det OR prn IF
+        (1 ("til stede"))
+;
+
+
+
 
 #:3726
   "<dager>"   REMOVE:3726   (vblex pres) IF
