@@ -58,9 +58,10 @@ LIST un = un ;
 LIST mf = mf ;
 LIST acc = acc ;
 
-LIST %ett% = ("én" nt);
-LIST %én% = ("én" m);
-LIST %éi% = ("én" f);
+LIST %ett% = ("én" nt) ;
+LIST %én% = ("én" m) ;
+LIST %éi% = ("én" f) ;
+LIST siffer = "[0-9]+([.,][0-9]+)*"r ;
 
 # TODO: use apertium-deshtml -o
 LIST overskrift = overskrift ;
@@ -883,8 +884,8 @@ SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
         (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
-        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -1 (>>>)) # «: ti drept i …»
-        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 ("[0-9]+"r) LINK -2 (>>>)) # «: minst ti drept i …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         ;
 
 REMOVE:unlikely n + ("lenge") ;
@@ -2446,13 +2447,12 @@ SELECT ("ikon") + subst-nøyt IF
 
 
 "<kroner>" SELECT:milliarder-norsk-kroner n + ("krone") IF
-        (*-1 %hundre/tusen/osv% BARRIER setn-gr)
+        (*-1 %hundre/tusen/osv% OR siffer BARRIER setn-gr)
         ;
 
 "<kroner>" SELECT:norsk-kroner n + ("krone") IF
         (-1 ("norsk"))          # even if wrong form ;)
         ;
-
 
 "<kvoter>" SELECT:kvoter ("kvote");
 
@@ -4771,7 +4771,7 @@ SELECT ("ikon") + subst-nøyt IF
 # 30.11"
 
 SELECT:kroner ("øre") IF (*-1 ("krone"));
-SELECT:kroner ("øre") IF (-1 ("[0-9]+"r));
+SELECT:kroner ("øre") IF (-1 siffer);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 "<øyer>"   SELECT:antall-øyer subst IF
