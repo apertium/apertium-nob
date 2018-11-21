@@ -2084,6 +2084,10 @@ REMOVE:prefer-museum ("musé");
 #  "ha til gode (subst) "))
 
 
+"<grenser>" SELECT:mellom-frihet-og-grenser n IF
+        (-1 %og%)
+        (1 setn-gr OR rquot)
+        ;
 
 #:3581
   "<grunn>"   SELECT:3581   (n) IF
