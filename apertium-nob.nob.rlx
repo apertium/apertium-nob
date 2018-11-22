@@ -26965,6 +26965,7 @@ SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og ør
 SELECT:default ("skrive")  IF (0 ("skrev"));
 SELECT:default ("form")    IF (0 ("former")); # also match compounds
 SELECT:default adv         IF (0 ("så"));
+SELECT:default ("kvarter") IF (0 ("kvarter"));
 
 
 REMOVE:default adv   IF (0 ("<det>"i));
