@@ -1309,6 +1309,10 @@ REMOVE:prefer-museum ("musé");
 
 "<bukkene>" SELECT subst-mask;
 
+"<blitt>" SELECT:er-blitt vblex IF
+        (-1 ("være") + fv)
+        ;
+
 #:3724
   "<den>"   SELECT:3724   (det) IF
 	(-1 %hele%)
@@ -1953,6 +1957,7 @@ REMOVE:prefer-museum ("musé");
 	(1 det-subst)
 	(-1 %det%-pron)
 	(NOT 1 %at%)
+	(NOT 1 %noen/noe%)
 	(NEGATE *-1 fv BARRIER setn-gr)
 	(NOT *1 fv BARRIER setn-gr)
 ;
@@ -1965,6 +1970,7 @@ REMOVE:prefer-museum ("musé");
   "<for>"   SELECT:3633   (vblex) IF
 	(-1 pron/subst)
 	(1C prep)
+	(NOT 1 ("<rundt>") OR ("innenlands") OR ("utenlands"))
 	(NOT *-1 fv BARRIER setn-gr)
 	(NOT *1 fv BARRIER setn-gr)
 
@@ -5044,7 +5050,7 @@ REMOVE:spille_spile ("spile") + verb IF
 
 
 #:3742
-  "<anstrengt>"   REMOVE:3742   (vblex pp) IF
+  "<anstrengt>"   REMOVE:3742   pp IF
 	(NOT 1 pron-akk)
 ;
 #  "Vanlig bruk: har anstrengt (perf-part) seg
@@ -5054,7 +5060,7 @@ REMOVE:spille_spile ("spile") + verb IF
 
 
 #:3743
-  "<anstrengt>"   REMOVE:3743   (vblex pp) IF
+  "<anstrengt>"   REMOVE:3743   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
@@ -5122,7 +5128,6 @@ REMOVE:spille_spile ("spile") + verb IF
         (NOT 1 adj)
 ;
 
-
 #:3731
   "<blikk>"   REMOVE:3731   (adv) IF
 	(NOT 1 %stille%)
@@ -5133,7 +5138,7 @@ REMOVE:spille_spile ("spile") + verb IF
 
 
 #:3727
-  "<bredt>"   REMOVE:3727   (vblex pp) IF
+  "<bredt>"   REMOVE:3727   pp IF
 	(NOT 1 %over%)
 	(NOT 1 %seg%)
 ;
@@ -5145,7 +5150,7 @@ REMOVE:spille_spile ("spile") + verb IF
 
 
 #:3728
-  "<bredt>"   REMOVE:3728   (vblex pp) IF
+  "<bredt>"   REMOVE:3728   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
@@ -5667,7 +5672,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3583
-  "<godta>"   REMOVE:3583   (vblex pp) IF
+  "<godta>"   REMOVE:3583   pp IF
 	(NOT 1 pron-akk)
 ;
 #  "bare: han har godta seg "
@@ -5701,7 +5706,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3575
-  "<grått>"   REMOVE:3575   (vblex pp) IF
+  "<grått>"   REMOVE:3575   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
@@ -5931,7 +5936,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3522
-  "<huset>"   REMOVE:3522   (vblex pp) IF
+  "<huset>"   REMOVE:3522   pp IF
 	(**-1CO setn-gr LINK **1C fv LINK NOT 0 hj-verb)
 ;
 
@@ -5988,7 +5993,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3500
-  "<klart>"   REMOVE:3500   (vblex pp) IF
+  "<klart>"   REMOVE:3500   pp IF
 	(1 %for%)
 	(2 pron-akk)
 	(*-1 %ha% BARRIER setn-gr)
@@ -5998,7 +6003,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3501
-  "<klart>"   REMOVE:3501   (vblex pp) IF
+  "<klart>"   REMOVE:3501   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 #  "Det er klart (adj)
@@ -6043,7 +6048,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3490
-  "<kontra>"   REMOVE:3490   (vblex pp) IF
+  "<kontra>"   REMOVE:3490   pp IF
 	(**-1C setn-gr BARRIER %ha%)
 ;
 #  "bare ved: å ha kontra"
@@ -6100,7 +6105,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3479
-  "<lett>"   REMOVE:3479   (vblex pp) IF
+  "<lett>"   REMOVE:3479   pp IF
 	(NOT 1 %etter/fram/opp%)
 	(NOT 1 pron-akk)
 ;
@@ -6112,7 +6117,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3480
-  "<lett>"   REMOVE:3480   (vblex pp) IF
+  "<lett>"   REMOVE:3480   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
@@ -6280,7 +6285,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3446
-  "<meget>"   REMOVE:3446   (vblex pp) IF
+  "<meget>"   REMOVE:3446   pp IF
 	(0 adv)
 ;
 
@@ -6614,7 +6619,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3361
-  "<opptatt>"   REMOVE:3361   (vblex pp) IF
+  "<opptatt>"   REMOVE:3361   pp IF
 	(NOT 1 %ved%)
 ;
 
@@ -6701,13 +6706,13 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3347
-  "<redd>"   REMOVE:3347   (vblex pp) IF
+"<redd>"   REMOVE:3347   pp IF
 	(*-1 p-hj-verb BARRIER setn-gr)
 ;
 
 
 #:3348
-  "<redd>"   REMOVE:3348   (vblex pp) IF
+"<redd>"   REMOVE:3348   pp IF
 	(NOT 1 %opp%)
 	(*-1 setn-gr BARRIER p-hj-verb)
 	(*1 setn-gr BARRIER %seng%)
@@ -6715,7 +6720,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3345
-  "<rent>"   REMOVE:3345   (vblex pp) IF
+"<rent>"   REMOVE:3345   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 #  "Vannet er rent (adj)
@@ -6891,7 +6896,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3244
-  "<spent>"   REMOVE:3244   (vblex pp) IF
+  "<spent>"   REMOVE:3244   pp IF
 	(NOT 1 %fra/for/ut%)
 ;
 
@@ -6934,7 +6939,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #mest sanns subst ved "gå i stå"
 
 #:3235
-  "<svart>"   REMOVE:3235   (vblex pp) IF
+  "<svart>"   REMOVE:3235   pp IF
 	(*-1 setn-gr BARRIER %ha/få%)
 ;
 
@@ -20252,7 +20257,7 @@ REMOVE:2135 (det) IF
 
 
 #:2099
- REMOVE:2099 (vblex pp) IF
+ REMOVE:2099 pp IF
 	(0 pres/pret)
 	(-1 konj)
 	(NOT -1 adv)
@@ -22544,7 +22549,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1891
- REMOVE:1891 (vblex pp) IF
+ REMOVE:1891 pp IF
 	(0 adj)
 	(1C subst)
 	(-1C komma/konj)
@@ -22558,7 +22563,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1892
- REMOVE:1892 (vblex pp) IF
+ REMOVE:1892 pp IF
 	(NOT 0 %ta%)
 	(-1 pron-akk-mfn/fl)
 	(**-1C setn-gr BARRIER objpred-pron-verb)
@@ -22570,7 +22575,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1893
- REMOVE:1893 (vblex pp) IF
+ REMOVE:1893 pp IF
 	(-1C clb-komma)
 	(**-2C setn-gr BARRIER p-hj-verb)
 	(**-2C setn-gr BARRIER m-hj-verb-pret)
@@ -22580,7 +22585,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1894
- REMOVE:1894 (vblex pp) IF
+ REMOVE:1894 pp IF
 	(-1 clb/konj-konj)
 	(NOT -2 clb-komma)
 	(NOT -2 perf-part)
@@ -22595,7 +22600,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1895
- REMOVE:1895 (vblex pp) IF
+ REMOVE:1895 pp IF
 	(NOT 0 %ta%)
 	(NOT *1 overskrift)
 	(NOT -1 periode-beg/clb/strek)
@@ -22620,7 +22625,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1896
- REMOVE:1896 (vblex pp) IF
+ REMOVE:1896 pp IF
 	(NOT 0 %ta%)
 	(*-1 setn-gr BARRIER p-hj-verb)
 	(*-1O det LINK NOT 0 kvant LINK NOT *1 ikke-adv-adj)
@@ -22631,7 +22636,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1897
- REMOVE:1897 (vblex pp) IF
+ REMOVE:1897 pp IF
 	(-1 %ut%)
 	(NOT -2 %fullt%)
 ;
@@ -22640,7 +22645,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1898
- REMOVE:1898 (vblex pp) IF
+ REMOVE:1898 pp IF
 	(-1 %til%)
 	(-2 %og%)
 	(NOT -3 %av%)
@@ -22650,7 +22655,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1899
- REMOVE:1899 (vblex pp) IF
+ REMOVE:1899 pp IF
 	(-1 %til%)
 	(NOT -2 %og%)
 ;
@@ -22659,7 +22664,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1900
- REMOVE:1900 (vblex pp) IF
+ REMOVE:1900 pp IF
 	(-1 prep)
 	(NOT -1 sbu)
 	(NOT -1 %bla%)
@@ -22677,7 +22682,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1901
- REMOVE:1901 (vblex pp) IF
+ REMOVE:1901 pp IF
 	(-1 subst-gen)
 ;
 #  "Bentes rent (ikke perf-part) primitive glede"))
@@ -22685,7 +22690,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1902
- REMOVE:1902 (vblex pp) IF
+ REMOVE:1902 pp IF
 	(0 perf-gen)
 ;
 #  "drepe landets (ikke perf-part gen) fiender"))
@@ -22693,7 +22698,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1903
- REMOVE:1903 (vblex pp) IF
+ REMOVE:1903 pp IF
 	(0 veldig-farlige-part)
 ;
 #  "Antar at farlige partisipper er adjektiv
@@ -22703,7 +22708,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1904
- REMOVE:1904 (vblex pp) IF
+ REMOVE:1904 pp IF
 	(-1 subst)
 	(NOT *1 overskrift)
 	(NOT -1 adj-komp)
@@ -26396,7 +26401,7 @@ SELECT:har-blitt-oppretta perf-part IF
 
 
 #:1692
- REMOVE:1692 (vblex pp) IF
+ REMOVE:1692 pp IF
 	(0 samset)
 	(0 subst)
 ;
@@ -26480,7 +26485,7 @@ SELECT:har-blitt-oppretta perf-part IF
 
 
 #:1683
- REMOVE:1683 (vblex pp) IF
+ REMOVE:1683 pp IF
 	(NOT 0 farlige-part)
 	(1C prep)
 	(-1C subst)
@@ -26581,13 +26586,13 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 #:4024
- REMOVE:4024 (vblex pp) IF
+ REMOVE:4024 pp IF
  	 (-1C inf)
 	 (0 subst)
 ;
 
 #:4050
- REMOVE:4050 (vblex pp) IF
+ REMOVE:4050 pp IF
  	 (-1C pres/pret)
 	 (NOT -1 hj-verb)
 ;
@@ -26655,7 +26660,7 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 #:4037
-# REMOVE:4037 (vblex pp) IF
+# REMOVE:4037 pp IF
 #	 (0 farlige-part)
 #;
 #Ser ut til å koste for mye
@@ -26734,7 +26739,7 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 #:4077
- REMOVE:4077 (vblex pp) IF
+ REMOVE:4077 pp IF
  	(0 pret)
 	(-1C periode-beg/clb/strek)
 ;
