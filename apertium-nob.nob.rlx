@@ -26966,6 +26966,7 @@ SELECT:default ("skrive")  IF (0 ("skrev"));
 SELECT:default ("form")    IF (0 ("former")); # also match compounds
 SELECT:default adv         IF (0 ("så"));
 SELECT:default ("kvarter") IF (0 ("kvarter"));
+SELECT:default sg          IF (0 ("petroleum"));
 
 
 REMOVE:default adv   IF (0 ("<det>"i));
