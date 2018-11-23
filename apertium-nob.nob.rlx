@@ -6618,6 +6618,13 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 
+"<område>" SELECT:ikkje-områr subst;
+"<områder>" SELECT:ikkje-områr subst;
+"<området>" SELECT:ikkje-områdde subst;
+
+"<ølet>" SELECT:ølet subst;
+
+
 #:3361
   "<opptatt>"   REMOVE:3361   pp IF
 	(NOT 1 %ved%)
@@ -24194,12 +24201,6 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 adv)
 ;
 #tar bort imp-lesning om den ikke er valgt tidligere
-
-"<område>" SELECT:ikkje-områr subst;
-"<områder>" SELECT:ikkje-områr subst;
-"<området>" SELECT:ikkje-områdde subst;
-
-"<ølet>" SELECT:ølet subst;
 
 #:3374
   "<og>"   REMOVE:3374   (clb) IF
