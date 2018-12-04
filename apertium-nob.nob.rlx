@@ -4023,7 +4023,13 @@ SELECT ("ikon") + subst-nøyt IF
 "<støtte>"   SELECT  subst IF
 	(NOT -1 infmerke)
 	(NOT -2 infmerke)
-;
+        ;
+
+"<støtte>" REMOVE ("støte") IF
+	(NOT 1 ("sammen"))
+	(NOT 1 ("på"))
+	(NOT *1 ("bort") OR ("fra") BARRIER setn-gr)
+        ;
 
 
 #:3236
@@ -7331,6 +7337,17 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # sec 2
 CONSTRAINTS
 ## select ndomain
+
+SELECT:Å-støtte inf IF
+        (-1 infmerke)
+        (NOT 1 inf)
+        ;
+
+SELECT:Å-ikke-støtte inf IF
+        (-2 infmerke)
+        (-1C adv)
+        (NOT 1 inf)
+        ;
 
 ###################################################
 # adj pp-dis til bruk i samsvarsbøying i nob→nno: #
@@ -17227,8 +17244,6 @@ SELECT:å-glemme-tapet-mot be-subst + nøyt IF
 ;
 #  "Soldatene kom og hentet ham
 # 22.6.2001: not 0 %la%. Men la meg reise dit!"
-
-
 
 #:2383
  SELECT:2383 (vblex pret) IF
