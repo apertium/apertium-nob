@@ -1952,6 +1952,10 @@ SELECT ("IS" np);
 ;
 #  "..., og behovet for(prep) entydig og klar informasjon blir understreket"))
 
+"<for>" SELECT:for-det-første pr IF
+        (1 ("den"))
+        (2 ("første"))
+        ;
 
 
 #:3632
@@ -1961,7 +1965,7 @@ SELECT ("IS" np);
 	(NOT 1 %at%)
 	(NOT 1 %noen/noe%)
 	(NEGATE *-1 fv BARRIER setn-gr)
-	(NOT *1 fv BARRIER setn-gr)
+	(NEGATE *1 fv BARRIER setn-gr)
 ;
 #  "Det for en ball bortover veien"
 #	(**-1C setn-gr BARRIER fv)
