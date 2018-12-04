@@ -3210,10 +3210,12 @@ SELECT ("ikon") + subst-nøyt IF
 #  "Han har redd (perf-part) opp senga"))
 
 "<redde>"   SELECT:redde-for ("redd") IF
-	(1 ("for"))
+	(NOT 1 %opp%)
+	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
 "<Redde>"   SELECT:redde-for ("redd") IF
-	(1 ("for"))
+	(NOT 1 %opp%)
+	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
 
 
