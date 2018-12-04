@@ -896,6 +896,8 @@ REMOVE:unlikely n + ("lenge") ;
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
+SELECT ("IS" np);
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
