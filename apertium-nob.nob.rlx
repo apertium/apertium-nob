@@ -4025,7 +4025,8 @@ SELECT ("ikon") + subst-nøyt IF
 	(NOT -2 infmerke)
         ;
 
-"<støtte>" REMOVE ("støte") IF
+REMOVE:støtte ("støte") IF
+        (0 ("<støtte>"i))
 	(NOT 1 ("sammen"))
 	(NOT 1 ("på"))
 	(NOT *1 ("bort") OR ("fra") BARRIER setn-gr)
