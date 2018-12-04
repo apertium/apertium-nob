@@ -889,7 +889,8 @@ REMOVE:eitt-amputerte-tips perf-part-pl IF
         ;
 
 REMOVE:unlikely n + ("lenge") ;
-"<verre>" SELECT:unlikely adv;     # unlikely «vondare»
+REMOVE:unlikely ("ond") OR ("vond") IF
+        (0 ("verre") OR ("verst"));     # unlikely «vondare/vondast»
 
 "<OL>" SELECT nt;               # very unlikely «alte»
 
