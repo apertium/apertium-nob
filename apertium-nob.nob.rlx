@@ -894,6 +894,8 @@ REMOVE:unlikely ("ond") OR ("vond") IF
 
 "<OL>" SELECT nt;               # very unlikely «alte»
 
+"<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
+
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
@@ -6998,7 +7000,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(*-1 int-setn-gr BARRIER infmerke)
 ;
 #  "oftast transitivt eller med til"
-
 
 
 #:3200
@@ -15101,6 +15102,7 @@ SELECT:Staffan-de-la-Mistura np + attr IF
  SELECT:2496 subst IF
 	(-1C subst-gen)
 	(NOT 1 adj-subst-konj)
+        (NOT 1 ukjent)
 ;
 #  "fra naturens side (subst)"))
 
