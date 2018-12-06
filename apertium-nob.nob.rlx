@@ -20886,7 +20886,7 @@ REMOVE:2135 (det) IF
 
 #:2038
  REMOVE:2038 (cnjsub) IF
-	(NOT 0 %som/om%)
+	(NOT 0 %som/om% OR ("hvilket"))
 	(NOT 0 %at%)
 	(1 adverb)
 	(NOT 1 ikke-adv-adj)
