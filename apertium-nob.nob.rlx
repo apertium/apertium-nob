@@ -2486,6 +2486,8 @@ SELECT:timer-og-kroner n + ("krone") IF (-1 %og% LINK -1 ("time") + pl);
 SELECT:kroner-i-kassa n + ("krone") IF (*0 ("kasse") + sg + be OR ("konto") OR ("bankkonto") OR mynteining);
 SELECT:mengde-kroner n + ("krone") IF (-1 ("mengde"));
 SELECT:kroner-per n + ("krone") IF (1 ("per"));
+SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 ukjent);
+SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<kvoter>" SELECT:kvoter ("kvote");
 
