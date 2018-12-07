@@ -916,6 +916,15 @@ REMOVE:unlikely ("flask");
 
 SELECT ("IS" np);
 
+LIST porsjon = "mengde" "porsjon" ;
+SELECT:unlikely n + ("snus") IF
+        (NOT -1 m-hj-verb OR nominativ) # det skulle snus 90 grader
+        (NEGATE -1 np OR n LINK NOT 0 porsjon)        # skulle valget av Thyestes snus.
+        ;
+SELECT:unlikely n + ("snus") IF
+        (*0 ("tobakk") OR ("røyk"))
+        ;
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
