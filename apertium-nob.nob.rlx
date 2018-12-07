@@ -1325,6 +1325,11 @@ SELECT ("IS" np);
         (-1 ("være") + fv)
         ;
 
+"<den>" SELECT:er-den-som det IF
+        (-1 kop-fv)
+        (1 %som%)
+        ;
+
 #:3724
   "<den>"   SELECT:3724   (det) IF
 	(-1 %hele%)
