@@ -2110,6 +2110,10 @@ SELECT ("IS" np);
 #  "ha til gode (subst) "))
 
 
+"<grader>" SELECT:grader-C n IF
+        (1 ("C"))
+        ;
+
 "<grenser>" SELECT:mellom-frihet-og-grenser n IF
         (-1 %og%)
         (1 setn-gr OR rquot)
