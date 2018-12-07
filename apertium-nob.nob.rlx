@@ -903,6 +903,12 @@ REMOVE:unlikely ("ond") OR ("vond") IF
 "<fort>" SELECT:unlikely ("fort");
 "<Fort>" SELECT:unlikely ("fort");
 
+LIST plukkbart = "nese" "reke" "sopp" "drue" "stein" "potet" ;
+SELECT:unlikely n + ("pille") IF
+        (NOT 1 plukkbart)
+        (NOT 2 plukkbart)
+        ;
+
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
