@@ -75,7 +75,7 @@ LIST @adv = @adv ;
 
 LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" ;
-SET talord-par-siffer = talord OR ("par") OR siffer;
+SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
 
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
