@@ -58,6 +58,7 @@ LIST un = un ;
 LIST mf = mf ;
 LIST acc = acc ;
 LIST guio = guio ;
+LIST apos = apos ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -4384,11 +4385,14 @@ REMOVE:støtte ("støte") IF
 	(NOT 1 komma)
 	(NOT 1 setn-gr)
 	(NOT 1 inf)
+	(NOT 1 %med%)           # først med X, så med Y
+	(NOT 1 %av%)
+	(NOT 1 apos)
 	(NOT -1 %for%)
 	(NOT -2 %så%)
 	(NOT -2 >>>)
 	(NOT -3 %så%)
-	(*2 setn-gr BARRIER pres/pret)
+	(*2C setn-gr-u-sbu BARRIER pres/pret)
 	(NOT 1 pres/pret)
 	(NOT *-3 %først%)
 ;
