@@ -1339,7 +1339,6 @@ SELECT ("IS" np);
 #  "hele den norske befolkning"
 
 
-
 #:3722
   "<der>"   SELECT:3722   (pr) IF
 	(1 pres/pret)
@@ -4878,6 +4877,8 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 #CONSTRAINTS
 ## remove domain
 REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» – are there exceptions?
+
+REMOVE:ikum-ika (".*kum"r) IF (0 ("<.*ika>"r ".*ika"r));
 
 REMOVE ("sekund") + mask;
 
