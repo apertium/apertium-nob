@@ -57,6 +57,7 @@ LIST gen = gen ;
 LIST un = un ;
 LIST mf = mf ;
 LIST acc = acc ;
+LIST guio = guio ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -71,6 +72,10 @@ LIST samset = samset ;
 
 # TODO: what is this in Norsk ordbank?
 LIST @adv = @adv ;
+
+LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
+LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" ;
+SET talord-par-siffer = talord OR ("par") OR siffer;
 
 # OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
@@ -2468,14 +2473,18 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
 
-
 "<kroner>" SELECT:milliarder-norsk-kroner n + ("krone") IF
-        (*-1 %hundre/tusen/osv% OR siffer BARRIER setn-gr)
+        (*0/* talord-par-siffer BARRIER setn-gr)
         ;
 
 "<kroner>" SELECT:norsk-kroner n + ("krone") IF
-        (-1 ("norsk"))          # even if wrong form ;)
+        (*-1 ("norsk") BARRIER setn-gr)          # even if wrong form ;)
         ;
+SELECT:17-kroner n + ("krone") IF (-1 guio LINK -1 talord-par-siffer);
+SELECT:17cm-kroner n + ("krone") IF (-1 guio LINK -1 cm LINK -1 talord-par-siffer);
+SELECT:timer-og-kroner n + ("krone") IF (-1 %og% LINK -1 ("time") + pl);
+SELECT:kroner-i-kassa n + ("krone") IF (*0 ("kasse") + sg + be OR ("konto") OR ("bankkonto") OR mynteining);
+SELECT:mengde-kroner n + ("krone") IF (-1 ("mengde"));
 
 "<kvoter>" SELECT:kvoter ("kvote");
 
