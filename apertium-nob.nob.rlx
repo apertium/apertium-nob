@@ -900,6 +900,8 @@ REMOVE:unlikely ("ond") OR ("vond") IF
 "<OL>" SELECT nt;               # very unlikely «alte»
 
 "<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
+"<fort>" SELECT:unlikely ("fort");
+"<Fort>" SELECT:unlikely ("fort");
 
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
