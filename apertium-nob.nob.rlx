@@ -24438,8 +24438,8 @@ REMOVE:øye ("øye"i) IF
 ;
 # KBU: tek ein sjans... «siste (50) årene»
 
-  "<årene>"   REMOVE:6209 ("åre" n pl def) IF
-	(-1 tall-fl)
+  "<årene>"   REMOVE:1870-årene ("åre" n pl def) IF
+	(*-1 tall-fl BARRIER (*) - ("-"))
 ;
 
 
@@ -27044,6 +27044,7 @@ SELECT:default ("form")    IF (0 ("former")); # also match compounds
 SELECT:default adv         IF (0 ("så"));
 SELECT:default ("kvarter") IF (0 ("kvarter"));
 SELECT:default sg          IF (0 ("petroleum"));
+SELECT:default ("år")      IF (0 ("åre"));
 
 
 REMOVE:default adv   IF (0 ("<det>"i));
