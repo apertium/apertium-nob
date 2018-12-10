@@ -886,7 +886,8 @@ SELECT:over_30._Men clb IF
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 
-SELECT:default ("bli")     IF (0 ("blive"));
+REMOVE:default ("blive")  IF (0 ("bli"));
+REMOVE:unlikely ("ram")   IF (0 ("ramme"));
 
 REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
