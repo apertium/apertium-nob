@@ -27047,6 +27047,8 @@ SELECT:default adv         IF (0 ("så"));
 SELECT:default ("kvarter") IF (0 ("kvarter"));
 SELECT:default sg          IF (0 ("petroleum"));
 SELECT:default ("år")      IF (0 ("åre"));
+SELECT:default ("lyve")    IF (0 ("løye"));
+SELECT:default ("lyge")    IF (0 ("løye"));
 
 
 REMOVE:default adv   IF (0 ("<det>"i));
