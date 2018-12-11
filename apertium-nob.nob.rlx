@@ -27065,7 +27065,7 @@ SELECT:default ("år")      IF (0 ("åre"));
 SELECT:default ("lyve")    IF (0 ("løye"));
 SELECT:default ("lyge")    IF (0 ("løye"));
 
-
+REMOVE:default ("den¹");
 REMOVE:default adv   IF (0 ("<det>"i));
 
 
