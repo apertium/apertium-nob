@@ -1345,10 +1345,20 @@ SELECT:unlikely n + ("snus") IF
         (-1 ("være") + fv)
         ;
 
-"<den>" SELECT:er-den-som det IF
+
+"<den>" SELECT:er-den-som ("den¹") IF
         (-1 kop-fv)
         (1 %som%)
         ;
+# «Det er den<det> som best ivaretar»
+
+"<den>" SELECT:Også-den-har ("den¹") IF
+        (-2 >>>)
+        (-1 adv)
+        (1 kop-fv OR hj-verb)
+        ;
+# «Også den har fått nytt opplag,»
+
 
 #:3724
   "<den>"   SELECT:3724   (det) IF
@@ -4930,6 +4940,9 @@ REMOVE:spille_spile ("spile") + verb IF
 	(-1 ("som"))
 	(2 ("i"))
 ;
+
+"<Også>" REMOVE:Også-den-har ("også");
+"<også>" REMOVE:Den-har-også ("også¹");
 
 
 #:3782
@@ -24279,6 +24292,7 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 adv)
 ;
 #tar bort imp-lesning om den ikke er valgt tidligere
+
 
 #:3374
   "<og>"   REMOVE:3374   (clb) IF
