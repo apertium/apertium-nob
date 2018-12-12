@@ -1644,6 +1644,9 @@ SELECT:unlikely n + ("snus") IF
 #  "et stort et"
 
 
+"<etterfulgt>" SELECT:følgd-av mf IF
+        (1 %av%)
+        ;
 
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
