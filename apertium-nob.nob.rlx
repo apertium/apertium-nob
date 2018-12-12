@@ -27064,6 +27064,7 @@ SELECT:default sg          IF (0 ("petroleum"));
 SELECT:default ("år")      IF (0 ("åre"));
 SELECT:default ("lyve")    IF (0 ("løye"));
 SELECT:default ("lyge")    IF (0 ("løye"));
+SELECT:default ("seier")   IF (0 ("sei")); # siger vs seiar
 
 REMOVE:default ("den¹");
 REMOVE:default adv   IF (0 ("<det>"i));
