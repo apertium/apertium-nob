@@ -900,7 +900,15 @@ REMOVE:unlikely n + ("lenge") ;
 REMOVE:unlikely ("ond") OR ("vond") IF
         (0 ("verre") OR ("verst"));     # unlikely «vondare/vondast»
 
-"<OL>" SELECT nt;               # very unlikely «alte»
+"<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
+
+"<Bent>" SELECT:Bent-Høie np IF
+        (NOT -1 >>>)
+        ;
+"<Bent>" SELECT:Bent-Høie np IF
+        (-1 >>>)
+        (NOT 1 ("fram") OR ("frem"))
+        ;
 
 "<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
 "<fort>" SELECT:unlikely ("fort");
