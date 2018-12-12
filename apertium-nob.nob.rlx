@@ -888,6 +888,7 @@ SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 
 REMOVE:default ("blive")  IF (0 ("bli"));
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
+REMOVE:unlikely ("roll")  IF (0 ("rolle"));
 
 REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
