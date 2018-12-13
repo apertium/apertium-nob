@@ -7448,6 +7448,11 @@ SELECT:de-var-kjent pp + pl IF
 	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr)
 ;
 
+SELECT:personer-som-ble-meldt-savnet pp + pl IF
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 %som% BARRIER setn-gr LINK -1 fl-subst)
+        (1 pp)
+;
+
 SELECT:det-har-blitt-solgt (adj pp nt sg ind)
 	(-3 subst-nøyt OR %det/dette%-pron)
 	(-2 %ha%-pres/pret)
