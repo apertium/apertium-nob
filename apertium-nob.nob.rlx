@@ -27098,3 +27098,21 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 
 LIST uvanleg = ("områ" vblex) ;
 REMOVE:uvanleg uvanleg;
+
+
+
+# @nkon: simple noun-noun conjunctions under genitive
+ADD (@nkon) ("og") IF
+        (-2 gen OR pos)
+        (-1C n + ind LINK NOT 0 gen)
+        (1C n + ind LINK NOT 0 gen)
+        (NOT 2 ("i"))
+;
+
+ADD (@nkon) ("og") IF
+        (-2 gen OR pos)
+        (-1C n + ind LINK NOT 0 gen)
+        (1C n + cmp)
+        (2C n + ind LINK NOT 0 gen)
+        (NOT 2 ("i"))           # Kritikere av landets regime  og  kilder i CIA mener …
+;

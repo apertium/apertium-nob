@@ -1,3 +1,4 @@
+# -*- cg-pre-pipe: "apertium -d . nob-disam|cg-conv -a 2>/dev/null" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
