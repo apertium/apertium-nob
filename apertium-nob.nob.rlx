@@ -7461,15 +7461,28 @@ SELECT:det-har-blitt-solgt (adj pp nt sg ind)
         (NOT 0 adv OR farlige-part)
         ;
 
+SELECT:Skolene-var-stengt (adj pp pl)
+	(-2C fl-subst)
+	(-1 %var%)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:Skolene-har-vært-stengt (adj pp pl)
+	(-3C fl-subst)
+	(-2 %ha%-pres/pret)
+	(-1 kop)
+        (NOT 0 adv OR farlige-part)
+        ;
+
 SELECT:han-har-vært-sykmeldt (adj pp mf sg ind)
-	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask)
+	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
 SELECT:han-var-sykmeldt (adj pp mf sg ind)
-	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask)
+	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
         ;
