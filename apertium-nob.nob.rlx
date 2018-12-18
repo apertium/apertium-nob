@@ -290,7 +290,7 @@ LIST %siden% = "siden"  ;
 LIST %sin% = ("seg"  det pos m sg) ;
 LIST %sine% = ("seg"  det pos pl) ;
 LIST %sist% = ("sist"  adv) ;
-LIST %siste% = ("sist"  pl) ;
+LIST %siste% = ("sist"  pl) ("sist" def) ;
 LIST %siste%/ordenstall = ("sist"  def) ("sist"  pl) ord ;
 LIST %sitt% = ("seg"  det pos nt sg) ;
 LIST %sjakk% = "sjakk"  ;
@@ -481,7 +481,7 @@ LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
 LIST farlige-part = "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen ;
-LIST farlige-verb = ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres);
+LIST farlige-verb = ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
 LIST fem-det = (det f) ;
@@ -4530,6 +4530,21 @@ REMOVE:støtte ("støte") IF
 #  "..., særlig med sikte på ungdommene
 # 4.3"
 
+"<steget>"   SELECT:har-bare-steget-med ("stige") IF
+        (*-1C hj-verb)
+        (1C %med% OR ("kraftig") OR ("mer"))
+        ;
+
+"<steget>"   SELECT:det-siste-steget n IF
+        (-1C %siste% OR %første% OR %ta%)
+        ;
+
+"<steget>"   SELECT:dette-steget n IF
+        (*-2C vblex - hj-verb)
+        (-1C be-det-ent + nt)
+        ;
+# Jeg syntes det er lettere å gjøre dette steget i to omganger.
+# Men ikkje: Men har det steget ennå?
 
 
 #:3999
@@ -18370,7 +18385,7 @@ REMOVE:4090 (vblex)
 
 
 #:2283
- REMOVE:2283 (adj pp) IF
+REMOVE:at-paret (adj pp) IF
 	(NOT 0 %tiltalte%)
 	(-1 periode-beg/sbu)
 	(NOT 1 subst/adj)
@@ -24419,7 +24434,6 @@ SELECT:noen-default <noen> + (neg) ;
 
 
 
-
 #:3180
   "<tom>"   REMOVE:3180   (n sg) IF
 	(0 subst)
@@ -27096,6 +27110,7 @@ SELECT:default ("år")      IF (0 ("åre"));
 SELECT:default ("lyve")    IF (0 ("løye"));
 SELECT:default ("lyge")    IF (0 ("løye"));
 SELECT:default ("seier")   IF (0 ("sei")); # siger vs seiar
+SELECT:default ("stige")   IF (0 ("<steget>"i));
 
 REMOVE:default ("den¹");
 REMOVE:default adv   IF (0 ("<det>"i));
