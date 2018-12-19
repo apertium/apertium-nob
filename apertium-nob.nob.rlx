@@ -4801,6 +4801,10 @@ REMOVE:støtte ("støte") IF
 #      :group 4
 
 
+"<varsler>" SELECT:det-var-varsler-om ("varsel") IF
+        (-1C fv)
+        (1C %om%)
+        ;
 
 #:3152
   "<veit>"   SELECT:3152   (n) IF
