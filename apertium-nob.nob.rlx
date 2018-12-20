@@ -887,6 +887,7 @@ SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 
 REMOVE:default ("blive")  IF (0 ("bli"));
+REMOVE:default nt  IF (0 ("bestand") LINK 0 m);;
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
 REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely ("roll")  IF (0 ("rolle"));
