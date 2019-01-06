@@ -892,6 +892,7 @@ REMOVE:default m  IF (0 ("intervjuer") + sg + ind);;
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
 REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely ("roll")  IF (0 ("rolle"));
+REMOVE:unlikely nt  IF (0 ("bank") + m);
 
 REMOVE:eitt-amputerte-tips perf-part-pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
