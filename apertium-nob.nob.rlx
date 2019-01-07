@@ -2599,6 +2599,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 	(-1 %ha%)
 ;
 
+"<landet>" SELECT:landet-over. n IF
+        (1 ("over"))
+        (2 clb)
+        ;
+
 
 "<lav>"   SELECT   (adj) IF
         (NOT *-2 ("art") OR ("mose") OR ("blad"))
@@ -6196,7 +6201,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # ikke \"re\" også forekommer i perioden!"
 
 
-
 #:3487
   "<lange>"   REMOVE:3487   (n) IF
 	(0 adj)
@@ -7442,6 +7446,24 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # sec 2
 CONSTRAINTS
 ## select ndomain
+
+SELECT:og-landet-har n IF
+        (-1C clb)
+        (0C pp OR pret OR n + sg + def)
+        (1C fv)
+        ;
+
+SELECT:generelt-er-landet-preget n IF
+        (-2 adv OR ub-ent-nøyt-adj)
+        (-1C fv - hj-verb)
+        (0C pp OR pret OR n + sg + def)
+        (1C pp OR pret OR n + sg + def)
+        ;
+
+SELECT:forlot-nesten-alle-landet n IF
+        (*-1C fv - hj-verb BARRIER ikke-adv-adj-det-subst)
+        (0C pp OR pret OR n + sg + def)
+        ;
 
 SELECT:Å-støtte inf IF
         (-1 infmerke)
