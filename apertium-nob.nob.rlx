@@ -933,6 +933,8 @@ REMOVE:prefer-museum ("musé");
 REMOVE:unlikely ("flask");
 REMOVE:unlikely ("spile") IF (0 ("spille"));
 
+REMOVE:unlikely ("lokal") + m IF (0 ("lokale") + pl + ind);
+
 SELECT ("IS" np);
 
 LIST porsjon = "mengde" "porsjon" ;
