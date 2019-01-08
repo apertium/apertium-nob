@@ -931,6 +931,7 @@ SELECT:unlikely n + ("pille") IF
 REMOVE:prefer-museum ("musé");
 
 REMOVE:unlikely ("flask");
+REMOVE:unlikely ("spile") IF (0 ("spille"));
 
 SELECT ("IS" np);
 
