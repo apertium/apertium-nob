@@ -4343,6 +4343,7 @@ REMOVE:støtte ("støte") IF
 
 #:3217
   "<så>"   SELECT:3217   (clb cnjcoo) IF
+        (*-2 pres/pret)
 	(-1 komma)
 	(NOT 1 adj)
 	(NOT 1 fv)
@@ -4408,11 +4409,25 @@ REMOVE:støtte ("støte") IF
 ;
 #  "Jeg så (pret) deg på trikken"))
 
+"<så>" SELECT:Kommunene-deles-så adv IF
+        (-2 n OR np LINK 0 storbokstav OR >>>)
+        (-1 pasv)
+        ;
 
+"<så>" SELECT adv IF
+        (1 ("<dagens>"))
+        (2 ("<lys>"))
+        ;
 
 
 #:3206
-  "<så>"   SELECT:3206   (vblex pret) IF
+"<så>" SELECT:og-så-hvordan-vi-hadde-det pret IF
+	(NOT *-3 %først%)       # først til Venezuela, og så til USA
+	(NOT -3 %så%)
+	(NOT -2 %så%)
+	(NOT -2 >>>)
+	(NOT -1 %for%)
+	(-*2C pret)
 	(-1 komma/konj)
 	(-1 clb)
 	(NOT 1 %videre%)
@@ -4423,13 +4438,8 @@ REMOVE:støtte ("støte") IF
 	(NOT 1 %med%)           # først med X, så med Y
 	(NOT 1 %av%)
 	(NOT 1 apos)
-	(NOT -1 %for%)
-	(NOT -2 %så%)
-	(NOT -2 >>>)
-	(NOT -3 %så%)
-	(*2C setn-gr-u-sbu BARRIER pres/pret)
 	(NOT 1 pres/pret)
-	(NOT *-3 %først%)
+	(*2C setn-gr-u-sbu BARRIER pres/pret)
 ;
 #  "...og så (pret) hvordan vi hadde det
 # Her er det mange tvetydigheter - her ikke valgt
@@ -4440,6 +4450,26 @@ REMOVE:støtte ("støte") IF
 # En del feil på skjønnlitteraturen som:
 # og så (adv) han kjernesunne karen!"))
 # Ikkje «først til Venezuela, og så til USA» --KBU
+
+"<så>" SELECT:Deretter…så-de-seg-nødt pret IF
+	(NOT *-3 %først%)       # først til Venezuela, og så til USA
+	(NOT -3 %så%)
+	(NOT -2 %så%)
+	(NOT -2 >>>)
+	(NOT -1 %for%)
+	(-*2C cm BARRIER pres/pret)
+	(-1 cm + clb)
+        (1 nominativ OR det)
+	(NOT 1 %videre%)
+	(NOT 1 adverb)
+	(NOT 1 komma)
+	(NOT 1 setn-gr)
+	(NOT 1 inf)
+	(NOT 1 %med%)           # først med X, så med Y
+	(NOT 1 %av%)
+	(NOT 1 apos)
+	(NOT 1 pres/pret)
+;
 
 
 #:3207
