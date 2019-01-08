@@ -20253,6 +20253,7 @@ REMOVE:2135 (det) IF
 	(-1 setn-gr)
 	(NOT 1 %en%)
 	(NOT 1 %nå%)
+	(NOT 1 %så%)
 	(NEGATE 0 subst LINK 1 subst)
 ;
 #  "Tar foreløpig sjansen på at det ikke er imp om det er en
@@ -20309,6 +20310,11 @@ REMOVE:2135 (det) IF
 #  "gir jeg til Gud"
 
 
+REMOVE:Løft-så-ut n IF
+        (0C n OR imp)
+        (-1 >>>)
+        (1 %så% OR ("deretter"))
+        ;
 
 #:2114
  REMOVE:2114 (imp) IF
