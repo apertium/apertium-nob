@@ -6159,6 +6159,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  klokke aldri brukt attributivt
 
 
+"<knyttet>" SELECT:knyttet-til pp IF
+        (1 %til%)
+        (*2 n BARRIER ikke-adv-adj-det)
+        ;
 
 #:3492
   "<kontra>"   REMOVE:3492   (adj) IF
@@ -17735,7 +17739,7 @@ SELECT:alle-de-undertrykte-stammene adj + pl IF
         ;
 
 SELECT:Med-økte-inntekter adj + pl IF
-        (-1C pr OR adv)
+        (-1 pr)
         (0C adj OR vblex)
         (1C n + pl)
         ;
