@@ -892,6 +892,7 @@ REMOVE:default ("blive")  IF (0 ("bli"));
 REMOVE:default nt  IF (0 ("bestand") LINK 0 m);;
 REMOVE:default m  IF (0 ("intervjuer") + sg + ind);;
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
+REMOVE:unlikely ("stem")  IF (0 ("stemme"));
 REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely ("roll")  IF (0 ("rolle"));
 REMOVE:unlikely nt  IF (0 ("bank") + m);
