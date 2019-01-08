@@ -59,6 +59,8 @@ LIST mf = mf ;
 LIST acc = acc ;
 LIST guio = guio ;
 LIST apos = apos ;
+LIST cnjsub = cnjsub ;
+LIST cnjcoo = cnjcoo ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -4971,6 +4973,7 @@ REMOVE:spille_spile ("spile") + verb IF
 ;
 # tt: Vi vil gjerne ha kontekst for "å spile"...
 
+"<Med>" REMOVE:Med n;
 "<ledd>" REMOVE:ledd-unlikely-adj-pp adj;
 "<lyktes>" REMOVE ("lykte");
 
@@ -6973,6 +6976,28 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "Håret vasket jenta sjøl."
 
+"<skrevet>" REMOVE:skrev (n nt sg def) IF
+	(0 adj/perf-part)
+	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
+;
+REMOVE:skrev ("<skrev>"ri n nt ind) IF
+	(0 pret)
+	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
+;
+"<skrevet>" REMOVE:skrev ("skreve") OR ("skrev") IF
+	(0 adj/perf-part)
+	(0 ("skrive"))
+	(NOT *1C %over%)
+;
+SELECT:skrev vblex IF
+	(0 pret)
+	(0 ("skrive") OR ("skrev"))
+	(NOT *1C %over%)
+;
+# skrev<n> og skreve<vblex> er svært sjeldan rett svar, sjølv for ordbokdømet:
+# «Han hadde bare laget seg en blogg og skrevet i vei.»
+# men desse reglane kan sikkert nyanserast litt... -KBU
+
 
 #:3281
   "<skjønner>"   REMOVE:3281   (n) IF
@@ -7461,8 +7486,10 @@ SELECT:generelt-er-landet-preget n IF
         ;
 
 SELECT:forlot-nesten-alle-landet n IF
-        (*-1C fv - hj-verb BARRIER ikke-adv-adj-det-subst)
+        (*-1C fv - hj-verb BARRIER ikke-adv-adj-det-subst OR sbu LINK NOT *-1 sbu)
         (0C pp OR pret OR n + sg + def)
+        (NEGATE 0 adj + $$GENDER + $$NUMBER LINK 1 n + $$GENDER + $$NUMBER) # aktiverer brukeren ønsket vindu
+        (NOT 1 np OR n)
         ;
 
 SELECT:Å-støtte inf IF
@@ -17701,6 +17728,17 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 #      :group 73
 
 
+SELECT:alle-de-undertrykte-stammene adj + pl IF
+        (-2C %begge/selve/alle%)
+        (-1 ("de") OR ("disse"))
+        (1C n + pl)
+        ;
+
+SELECT:Med-økte-inntekter adj + pl IF
+        (-1C pr OR adv)
+        (0C adj OR vblex)
+        (1C n + pl)
+        ;
 
 #:3044
  SELECT:3044 (adj pl) IF
@@ -17730,28 +17768,6 @@ CONSTRAINTS
 ;
 #bad (adj) guy og andre engelske bad
 
-
-"<skrevet>" REMOVE:skrev (n nt sg def) IF
-	(0 adj/perf-part)
-	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
-;
-REMOVE:skrev ("<skrev>"ri n nt ind) IF
-	(0 pret)
-	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
-;
-"<skrevet>" REMOVE:skrev ("skreve") IF
-	(0 adj/perf-part)
-	(0 ("skrive"))
-	(NOT *1C %over%)
-;
-SELECT:skrev vblex IF
-	(0 pret)
-	(0 ("skrive"))
-	(NOT *1C %over%)
-;
-# skrev<n> og skreve<vblex> er svært sjeldan rett svar, sjølv for ordbokdømet:
-# «Han hadde bare laget seg en blogg og skrevet i vei.»
-# men desse reglane kan sikkert nyanserast litt... -KBU
 
 
 #CONSTRAINTS
@@ -21776,7 +21792,7 @@ REMOVE:gen-subst gen-subst IF
 
 
 #:1991
- select:1991 subst IF
+ SELECT:1991 subst IF
 	(0 retning)
 	(-1 %i%)
 ;
@@ -27145,6 +27161,7 @@ SELECT:default sg          IF (0 ("petroleum"));
 SELECT:default ("år")      IF (0 ("åre"));
 SELECT:default ("lyve")    IF (0 ("løye"));
 SELECT:default ("lyge")    IF (0 ("løye"));
+SELECT:default ("by")      IF (0 ("bye"));
 SELECT:default ("seier")   IF (0 ("sei")); # siger vs seiar
 SELECT:default ("stige")   IF (0 ("<steget>"i));
 
