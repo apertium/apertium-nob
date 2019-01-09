@@ -24528,6 +24528,13 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh feb 2004"
 
+"<sukker>" REMOVE pres IF
+        (-1 ("hvit") OR ("litt") OR ("brun") OR ("raffinere"))
+        ;
+
+"<sukker>" REMOVE pres IF
+        (-2 ("salt") OR ("smør") OR ("mjøl") OR ("krydder") OR ("karbohydrat") OR ("bær") OR ("frukt"))
+        ;
 
 
 
@@ -26091,8 +26098,8 @@ SELECT:Dagens-vinner n + ind IF
  SELECT:4028 (vblex pres) IF
  	(-1 nom)
 	(1 pron-akk)
+	(NOT 1 ref)             # ofte hoper  sukker  seg opp
 ;
-
 
 
 
