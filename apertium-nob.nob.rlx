@@ -915,6 +915,15 @@ REMOVE:np-guess-safe cgguess IF
         (NEGATE 0C np OR n + sg + def LINK -1 ("i"))
         ;
 
+
+
+SELECT:Halvor-Egner-Granerud np IF
+        (-1C np)
+        (0 storbokstav)
+        (1C np)
+        ;
+
+
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
         (0 <<< LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
