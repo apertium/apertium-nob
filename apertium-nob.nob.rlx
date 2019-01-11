@@ -27269,11 +27269,18 @@ REMOVE:møtes pstv + pp IF
         (*2 acc OR n + def)
         ;
 
-"<de>" SELECT:nå-oppretter-de-lokallag prn IF
+"<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
-        (1C n + ind)            # usannsynleg det før ind
-        (1 sg OR pl)
+        (*1C n + ind BARRIER ikke-adv-adj LINK 0 sg OR pl) # usannsynleg det før ind
         ;
+# Nå oppretter de lokallag i to nye kommuner.
+# Fem dager senere fikk de også tilsvarende priser av Norsk Fotballtrenerforening.
+
+"<den>" SELECT:Har-den-feks-kake-komma prn IF
+        (-1C fv + storbokstav)
+        (*1 n BARRIER ikke-adv-adj LINK *1 komma)
+        ;
+# Har den for eksempel navnet på en merkevare i seg, som parajumperstilbud.com eller raybansalg.net, kan det være grunn til mistanke.
 
 REMOVE:en-ting pl IF
         (-1C det OR prn LINK 0C sg)
