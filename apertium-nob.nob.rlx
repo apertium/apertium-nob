@@ -38,6 +38,7 @@ LIST pret = pret ;
 LIST imp = imp ;
 LIST inf = inf ;
 LIST pp = pp ;
+LIST pprs = pprs ;
 LIST pstv = pstv ;
 LIST pasv = pasv ;
 LIST qnt = qnt ;
@@ -2586,6 +2587,10 @@ SELECT ("ikon") + subst-nøyt IF
 	(NOT -1 poss-det-nøyt)
 ;
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
+
+"<kortet>" SELECT ("kort") IF
+        (NOT 1 %ned% OR %av%)
+        ;
 
 "<kroner>" SELECT:milliarder-norsk-kroner n + ("krone") IF
         (*0/* talord-par-siffer BARRIER setn-gr)
@@ -17787,6 +17792,14 @@ SELECT:fisken-ble-funnet perf-part-mf IF
 ;
 
 
+SELECT:observert-løpende pprs OR adv IF
+        # (*-2 %være/bli%)
+        (NOT -1 %være/bli%)     # hadde vært spennende
+        (-1C pp)
+        (NOT 0 n)               # endret utseende,
+        (NOT 1 n + ind)
+        (NEGATE 1 adj + ind LINK 1 n + ind)
+        ;
 
 #:2410
  SELECT:2410 (vblex pp) IF
@@ -17998,7 +18011,7 @@ REMOVE:4090 (vblex)
 
 
 #:2323
- REMOVE:2323 (pprs) IF
+REMOVE:2323 pprs IF
 	(0 pos-ub-fl)
 ;
 # group: 51
@@ -18006,7 +18019,7 @@ REMOVE:4090 (vblex)
 
 
 #:2324
- REMOVE:2324 (pprs) IF
+REMOVE:2324 pprs IF
 	(0 pos-be-fl)
 ;
 # group: 51
