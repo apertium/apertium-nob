@@ -27282,6 +27282,12 @@ REMOVE:møtes pstv + pp IF
         ;
 # Har den for eksempel navnet på en merkevare i seg, som parajumperstilbud.com eller raybansalg.net, kan det være grunn til mistanke.
 
+"<det>" SELECT:de-gjorde-med-det-veldig-gode-løp prn IF
+        (-2 fv)
+        (-1 %med%)
+        (NOT 1 def OR sup + ind)
+        ;
+
 REMOVE:en-ting pl IF
         (-1C det OR prn LINK 0C sg)
         (0C n + sg OR n + pl)
