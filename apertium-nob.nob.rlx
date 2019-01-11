@@ -565,6 +565,7 @@ LIST ikke-adv-adj-det/%all%/%mang%/%mange% = "siden"  "mange"  "mang"  "all"  "$
 LIST ikke-adv-adj-det/clb-komma = "siden"  "$:" ":" vblex pr prn cnjsub "å" n np ij <ellipse> (clb cnjcoo) (clb cm) (cnjcoo <adv>) ;
 LIST ikke-adv-adj-det2 = "siden"  "$:" ":" vblex pr prn cnjsub "å" n np ij <ellipse> ;
 LIST ikke-adv-adj-komma = "siden"  "$-" "-" rpar vblex pr prn cnjsub "å" n np ij det <ellipse> ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
+LIST ikke-adv-adj-komma-cnjcoo = "siden"  "$-" "-" rpar vblex pr prn cnjsub "å" n np ij det <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adv-adj-komma-prep-det-pron-prop = "siden"  "$-" "-" rpar vblex cnjsub "å" n ij <ellipse> ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
 LIST ikke-adv-adj-konj = "siden"  "$:" ":" vblex pr prn cnjsub "for å" "å" n np ij det <ellipse> ;
 LIST ikke-adv-adj-kvant = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij <ellipse> (det dem) (det pos) (det emph) ;
@@ -4200,6 +4201,11 @@ REMOVE:støtte ("støte") IF
         (1 %langt%)
         ;
 
+"<så>" SELECT:en-så-vakker-klok-og-gripende-fortelling adv IF
+        (-1 ("en"))
+        (*1C n + ind BARRIER ikke-adv-adj-komma-cnjcoo)
+        ;
+
 "<så>" SELECT:og-så-i-1818 adv IF
         (-1 %og%)
         (1 %i%)
@@ -4224,7 +4230,7 @@ REMOVE:støtte ("støte") IF
 "<så>" SELECT:da-de-så-store-steinblokker-rase pret IF
         (-2 adv OR som/komma/og OR cnjsub)
         (-1 pron-nom)
-        (NEGATE *1 fv BARRIER setn-gr)
+        (NEGATE *1 fv BARRIER setn-gr-u-komma)
         ;
 
 #:3210
