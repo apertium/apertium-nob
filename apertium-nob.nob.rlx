@@ -4195,6 +4195,11 @@ REMOVE:støtte ("støte") IF
 ;
 #bare adv ved "sørpe full"
 
+
+"<så>" SELECT:så-langt adv IF
+        (1 %langt%)
+        ;
+
 "<så>" SELECT:og-så-i-1818 adv IF
         (-1 %og%)
         (1 %i%)
@@ -4205,14 +4210,25 @@ REMOVE:støtte ("støte") IF
         (1 %som%)
         ;
 
+"<så>" SELECT:så-fort-som adv IF
+        (1 adj + nt)
+        (2 %som%)
+        ;
+
 "<så>" SELECT:som-han-så-snudde adv IF
         (-2 %som%)
         (-1 prn OR n)
         (1C fv OR pp)
         ;
 
+"<så>" SELECT:da-de-så-store-steinblokker-rase pret IF
+        (-2 adv OR som/komma/og OR cnjsub)
+        (-1 pron-nom)
+        (NEGATE *1 fv BARRIER setn-gr)
+        ;
+
 #:3210
-  "<så>"   SELECT:3210   (vblex pret) IF
+"<så>" SELECT:på-disse-møtene-så-en-igjen pret IF
 	(-1C pron/subst)
 	(NOT -1 %noen%)
 	(NOT -1 gen)
@@ -4291,7 +4307,7 @@ REMOVE:støtte ("støte") IF
 
 
 #:3224
-  "<så>"   SELECT:3224   (adv) IF
+  "<så>"   SELECT:så-mange   (adv) IF
 	(1C adj-fl)
 ;
 #  "så mange"
