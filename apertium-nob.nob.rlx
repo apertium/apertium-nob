@@ -5691,6 +5691,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # regelen ikke np-er på hver side"
 
 
+"<forteller>" REMOVE:forteller-om n IF
+        (1 %om%)
+        ;
 
 #:3614
   "<fort>"   REMOVE:3614   (n) IF
@@ -7561,6 +7564,18 @@ SELECT:skrev vblex IF
 # sec 2
 CONSTRAINTS
 ## select ndomain
+
+SELECT:de-så-løper-etter-løper-passere n IF
+        (0 ("<(.*)>"r))
+        (1 pr)
+        (2 ("<$1>"v))
+        ;
+SELECT:de-så-løper-etter-løper-passere n IF
+        (-0 ("<(.*)>"r))
+        (-1 pr)
+        (-2 ("<$1>"v))
+        ;
+# mil etter mil, person til person, sted til sted
 
 SELECT:og-landet-har n IF
         (-1C clb)
