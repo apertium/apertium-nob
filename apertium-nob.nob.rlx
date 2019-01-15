@@ -17796,7 +17796,8 @@ SELECT:observert-løpende pprs OR adv IF
         # (*-2 %være/bli%)
         (NOT -1 %være/bli%)     # hadde vært spennende
         (-1C pp)
-        (NOT 0 n)               # endret utseende,
+        (NOT 0 n)               # endret utseende<n>,
+        (NOT 0 sbu/konj)        # hevdet at<cnjsub> ønsket
         (NOT 1 n + ind)
         (NEGATE 1 adj + ind LINK 1 n + ind)
         ;
@@ -18944,14 +18945,14 @@ REMOVE:at-paret (adj pp) IF
 	(0 pres/pret)
 	(NOT 0 nøyt)
 	(NOT 0 sup)
-	(-1C subst)
+	(-1C subst OR storbokstav + ukjent)
 	(NOT 1 adj-adv-subst-konj)
 	(NOT *1 overskrift)
 	(*-1O setn-gr LINK NOT *1C pres/pret)
 	(*1O setn-gr LINK NOT *-1C pres/pret)
 ;
-#  "Martin, som Evelyns sønn het (ikke adj)
-# "
+#  "Martin, som Evelyns sønn het (ikke adj)"
+#  "Opptrinnet ble avsluttet da øvrige NBA-stjerner trådte til."
 
 
 
