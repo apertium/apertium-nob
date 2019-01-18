@@ -935,6 +935,13 @@ SELECT:over_30._Men clb IF
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 
+REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
+        (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
+        ;
+# If we have an all-upper wordform and a reading that's exactly the
+# same, remove lower-case readings.
+# E.g.: AU is an acronym, not adv
+
 REMOVE:default ("blive")  IF (0 ("bli"));
 REMOVE:default nt  IF (0 ("bestand") LINK 0 m);;
 REMOVE:default m  IF (0 ("intervjuer") + sg + ind);;
