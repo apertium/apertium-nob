@@ -78,7 +78,8 @@ LIST samset = samset ;
 LIST @adv = @adv ;
 
 LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
-LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" ;
+LIST talord-sg = "en" "én" ;
+LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
 
 
@@ -7737,6 +7738,11 @@ SELECT:gir-ønsket-utfall (adj pp nt sg ind)
         (2 <<<)
         ;
 
+SELECT:tusenvis-er-isolert (adj pp pl)
+        (-2C talord)
+        (NOT -2 talord-sg)
+        (-1C kop-fv)
+        ;
 
 
 #:6212
