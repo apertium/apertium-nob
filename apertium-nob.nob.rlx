@@ -1437,6 +1437,9 @@ SELECT:unlikely n + ("snus") IF
         (1C fv)
         ;
 # «Mange av landene som har nektet å signere pakten, har reagert på det sistnevnte punktet og hevdet at  den  truer landenes selvbestemmelse og suverenitet.»
+# TODO ikkje her: «Parly sier franske romfartsmyndigheter foretok «nødvendige tiltak» og fortsatte å overvåke satellitten etter at den hadde forlatt den franske.»
+# TODO ikkje her: «Puerto Ricos guvernør oppjusterte nylig det offisielle dødstallet fra orkanen Maria, som forårsaket store ødeleggelser da den slo over det amerikanske øyterritoriet i september i fjor.»
+
 
 "<den>" SELECT:Også-den-har ("den¹") IF
         (-2 >>>)
@@ -27339,6 +27342,7 @@ SELECT:sine-spor $$NUMBER IF
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
 
 # If still ambiguous, remove unlikely lemmas:
+SELECT:default adj OR adj  IF (0 ("<hele>"i));
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
 SELECT:default adv         IF (0 ("<fort>"i));
