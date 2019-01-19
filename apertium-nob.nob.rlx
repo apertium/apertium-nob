@@ -320,8 +320,8 @@ LIST %på/ved% = "på"  ("ved"  pr);
 LIST %re%-subst = ("re"  n) ;
 LIST %redd% = ("redd"  adj) ;
 LIST %samme% = "samme"  ;
-LIST %samme/neste/ene/eneste/forrige% = ("forrige"  det) ("samme"  det) ("neste"  det) ("eneste"  det) ("ene"  det) ;
-LIST %samme/neste/ene/eneste/selve/forrige% = ("selv"  det) ("forrige"  det) ("samme"  det) ("neste"  det) ("eneste"  det) ("ene"  det) ;
+LIST %samme/neste/ene/eneste/forrige%       =           "forrige" "samme" "neste" "eneste" "ene" ;
+LIST %samme/neste/ene/eneste/selve/forrige% = "selv"    "forrige" "samme" "neste" "eneste" "ene" ;
 LIST %se/høres/kjennes% = "se"  "kjennes"  "høres"  ;
 LIST %se%-pret = ("se"  pret) ;
 LIST %seg% = ("seg"  prn) ;
@@ -1431,6 +1431,13 @@ SELECT:unlikely n + ("snus") IF
         ;
 # «Det er den<det> som best ivaretar»
 
+"<den>" SELECT:pakten…den-truer ("den¹") IF
+        (*-2C n + def + sg LINK *-1C fv) # krev eit anafor-mål
+        (-1 setn-gr)
+        (1C fv)
+        ;
+# «Mange av landene som har nektet å signere pakten, har reagert på det sistnevnte punktet og hevdet at  den  truer landenes selvbestemmelse og suverenitet.»
+
 "<den>" SELECT:Også-den-har ("den¹") IF
         (-2 >>>)
         (-1 adv)
@@ -1438,6 +1445,15 @@ SELECT:unlikely n + ("snus") IF
         ;
 # «Også den har fått nytt opplag,»
 
+"<den>" SELECT:den-som ("den¹") IF
+        (1 %som%)
+        ;
+# «I dag er døren stengt for den som fullfører tre år studiespesialisering og finner ut at han eller hun heller vil bli hjelpepleier, sier Lied.»
+
+
+"<den>" SELECT:den-mistenkte det IF
+	(1 ("<mistenkte>") OR %samme/neste/ene/eneste/forrige%)
+;
 
 #:3724
   "<den>"   SELECT:3724   (det) IF
@@ -14325,7 +14341,7 @@ SELECT:Staffan-de-la-Mistura np + attr IF
  SELECT:2602 pron-pers IF
 	(1 pres-part)
 	(-1C verb)
-	(NOT 2 subst/adj)
+	(NOT 2 subst/adj OR ukjent)
 ;
 #  "kom den (pron) vaggende"))
 
@@ -27351,6 +27367,8 @@ SELECT:default ("stige")   IF (0 ("<steget>"i));
 SELECT:default ("liter")   IF (0 ("<liter>"i));
 
 REMOVE:default ("den¹");
+"<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
+
 REMOVE:default adv   IF (0 ("<det>"i));
 
 
