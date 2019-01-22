@@ -954,6 +954,11 @@ REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely nt  IF (0 ("bank") + m);
 REMOVE:unlikely ("bøk")   IF (0 ("bok"));
 
+REMOVE:unlikely-skjøt ("skjøt") IF
+        (0 ("skyte"))
+        (NOT -1 %en%)
+        ;
+
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
         (0 sg)
@@ -983,6 +988,7 @@ REMOVE:unlikely ("ond") OR ("vond") IF
 "<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
 "<fort>" SELECT:unlikely ("fort");
 "<Fort>" SELECT:unlikely ("fort");
+"<saker>" SELECT:unlikely ("sak");
 
 LIST plukkbart = "nese" "reke" "sopp" "drue" "stein" "potet" ;
 SELECT:unlikely n + ("pille") IF
@@ -17775,6 +17781,7 @@ SELECT:2335 (vblex) IF
 	(-1 hj-verb)
 	(NOT 1 komma/konj)
 	(*1 be-subst BARRIER ikke-adv-adj-det)
+        (NOT 0 veldig-farlige-part)
 ;
 #  "å få felt (verb) tømmeret
 # får felt (verb) tømmeret"))
