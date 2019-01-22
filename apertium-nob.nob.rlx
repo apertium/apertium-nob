@@ -527,7 +527,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
-LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen ;
+LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" ;
 LIST farlige-verb = ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -952,6 +952,7 @@ REMOVE:unlikely ("lit")   IF (0 ("liter"));
 REMOVE:unlikely ("roll")  IF (0 ("rolle"));
 REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely nt  IF (0 ("bank") + m);
+REMOVE:unlikely ("bøk")   IF (0 ("bok"));
 
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
@@ -21503,6 +21504,7 @@ REMOVE:Løft-så-ut n IF
 	(NOT 0 gen)
 	(1C subst)
 	(NOT 1 subst-prop)
+        (NOT 0 farlige-part)    # huset
 	(**-1CO setn-gr LINK NOT 1 adverb/komp/ub-sup)
 	(**-1CO setn-gr LINK NOT 1 prep)
 	(*-1 fv LINK NOT -1 komma)
@@ -21876,12 +21878,13 @@ REMOVE:gen-subst gen-subst IF
 
 
 #:1983
- REMOVE:1983 subst IF
+REMOVE:det-grenser-til subst IF
 	(0 mask/fem/adj)
 	(0 ub)
 	(0 fv)
 	(-1 nøyt)
 	(-1 %det%)
+        (NOT 0 farlige-part)
 	(NOT 1 verb)
 	(NOT 1 sbu)
 	(NOT 1 konj)
@@ -21892,26 +21895,17 @@ REMOVE:gen-subst gen-subst IF
 
 
 #:1984
- REMOVE:1984 subst IF
+REMOVE:for-økt-sysselsetting subst IF
 	(0 det/adj)
 	(NOT 0 adj-gen)
 	(NOT 0 farlige-adj)
+	(NOT 0 farlige-part)
 	(NOT 0 samset)
 	(-1 prep)
 	(1C subst)
 	(NOT 1 subst-prop)
 ;
 #  "et enormt potensial for økt (adj) sysselsetting"))
-
-
-
-#:1985
-# REMOVE:1985 subst IF
-#	(-1 iv)
-#	(**1C subst BARRIER ikke-adv-adj-det)
-#	(*-2 ikke-adv LINK 0 pres/pret)
-#;
-#  "Alle våre valg må ses under (ikke subst) den overskriften"))
 
 
 
@@ -21944,6 +21938,7 @@ REMOVE:gen-subst gen-subst IF
 #:1988
  REMOVE:1988 subst IF
 	(0 perf-part)
+        (NOT 0 farlige-part)
 	(NOT 1 %som%-sbu)
 	(*-1 ikke-adv LINK 0 %det%-pron LINK -1 kop)
 ;
@@ -27375,6 +27370,10 @@ SELECT:default ("by")      IF (0 ("bye"));
 SELECT:default ("seier")   IF (0 ("sei")); # siger vs seiar
 SELECT:default ("stige")   IF (0 ("<steget>"i));
 SELECT:default ("liter")   IF (0 ("<liter>"i));
+SELECT:default ("hus")     IF (0 ("<huset>"i));
+
+REMOVE:unlikely ("områ" vblex);
+
 
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
@@ -27390,9 +27389,6 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 	(0 ("deres¹" pos))
 ;
 
-
-LIST uvanleg = ("områ" vblex) ;
-REMOVE:uvanleg uvanleg;
 
 
 
