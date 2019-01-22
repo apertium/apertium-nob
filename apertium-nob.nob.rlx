@@ -16873,6 +16873,12 @@ SELECT:5009 (vblex pres) IF
 # dersom hjelpeverbet er inf med å foran:
 # For å få begrenset (perf-part)"))
 
+SELECT:denne-typen-gjerder subst + ind IF
+        (**-3C fv)
+        (-2 ("denne"))
+        (-1 ("type"))
+        ;
+
 SELECT:å-glemme-tapet-mot be-subst + nøyt IF
         (-2C infmerke)
         (-1C inf)
@@ -26164,6 +26170,7 @@ SELECT:Dagens-vinner n + ind IF
 	(NOT 0 subst-gen)
 	(NOT 1 kolon)
 	(NOT *1 overskrift)
+	(NOT -1 ukjent)
 	(NOT -1 komma/konj)
 	(NOT -1 sbu)
 	(NOT -1 parentes)
@@ -27385,6 +27392,8 @@ SELECT:default ("seier")   IF (0 ("sei")); # siger vs seiar
 SELECT:default ("stige")   IF (0 ("<steget>"i));
 SELECT:default ("liter")   IF (0 ("<liter>"i));
 SELECT:default ("hus")     IF (0 ("<huset>"i));
+SELECT:default ("lekker")  IF (0 ("<lekker>"i));
+SELECT:default ("gjerde") + n IF (0 ("<gjerder>"i));
 
 REMOVE:unlikely ("områ" vblex);
 
