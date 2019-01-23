@@ -888,6 +888,7 @@ LIST veldig-farlige-part = "nære"  "nyte"  "mige"  "make"  "lite"  "hele"  "gal
 LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"  pres) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("grade"  vblex pres) ;
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
+LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 
 BEFORE-SECTIONS
 
@@ -24021,6 +24022,9 @@ CONSTRAINTS
 #  "hele greiene"
 
 
+"<lekker>" SELECT:virkelig-lekker adj IF
+        (-1 forsterkende)
+        ;
 
 #:4055
  "<lettet>"   SELECT:4055   (adj nt) IF
