@@ -27314,7 +27314,7 @@ REMOVE:ble-de-stoppet be-ent-nøyt-subst IF
         ;
 
 SELECT:ett-øre ind + n + nt + sg IF
-        (-1C det)
+        (-1C det + nt)
         (0C adj + pl OR adj + sp OR n)
         (1C setn-gr)
         ;
