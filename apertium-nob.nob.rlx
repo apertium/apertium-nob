@@ -1006,6 +1006,11 @@ SELECT:unlikely n + ("pille") IF
         (NOT 2 plukkbart)
         ;
 
+REMOVE:unlikely ("planlegger") IF
+        (NOT -1 %en%)
+        (0 vblex)
+        ;
+
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
