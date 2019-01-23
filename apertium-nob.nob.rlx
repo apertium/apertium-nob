@@ -7,8 +7,9 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 #PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
-LIST GENDER = m f nt mf;
-LIST NUMBER = sg pl sp;
+LIST GENDER = m f nt mf ;
+LIST NUMBER = sg pl sp ;
+LIST TEMPUS = inf pres pasv pret pp imp ;
 
 LIST <<< = <<< ;
 LIST >>> = >>> ;
@@ -2863,6 +2864,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
   "<Løs>"   SELECT:Løs-ut imp IF
 	(1 ("<ut>"))
 ;
+
+SELECT ("lyve") IF
+        (0 ("<løyet>"i))
+        (1 ("om") OR ("til") OR ("for"))
+        ;
 
 #:3451
   "<man>"   SELECT:3451   (prn) IF
@@ -17533,7 +17539,7 @@ SELECT:å-glemme-tapet-mot be-subst + nøyt IF
 
 
 #:2376
- SELECT:2376 (vblex pret) IF
+ SELECT:kranglet-sukket-og-skrek1 pret IF
 	(NOT 0 farlige-verb)
 	(-1 clb-komma)
 	(*-2O clb-komma LINK 1 pret LINK NOT 0 sier-verb)
@@ -17543,7 +17549,7 @@ SELECT:å-glemme-tapet-mot be-subst + nøyt IF
 
 
 #:2377
- SELECT:2377 (vblex pret) IF
+ SELECT:kranglet-sukket-og-skrek2 pret IF
 	(NOT 0 farlige-verb)
 	(-1 clb-komma)
 	(*1 clb-komma LINK 1 pret)
@@ -27135,7 +27141,7 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 #:4077
- REMOVE:4077 pp IF
+ REMOVE:Falt-i-elva pp IF
  	(0 pret)
 	(-1C periode-beg/clb/strek)
 ;
