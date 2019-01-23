@@ -947,6 +947,7 @@ REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
 REMOVE:default ("blive")  IF (0 ("bli"));
 REMOVE:default nt  IF (0 ("bestand") LINK 0 m);;
 REMOVE:default m  IF (0 ("intervjuer") + sg + ind);;
+REMOVE:unlikely n + ("skåle") IF (0 ("skål")); # but keep skåle<vblex>
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
 REMOVE:unlikely ("stem")  IF (0 ("stemme"));
 REMOVE:unlikely ("lit")   IF (0 ("liter"));
