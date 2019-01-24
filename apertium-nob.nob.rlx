@@ -55,6 +55,7 @@ LIST ant = ant ;
 LIST org = org ;
 LIST attr = attr ;
 LIST adj = adj ;
+LIST ord = ord ;
 LIST clb = clb ;
 LIST dem = dem ;
 LIST det = det ;
@@ -3573,6 +3574,20 @@ SELECT ("lyve") IF
 	(-1 verb)
 ;
 #  "det endrer seg (pron, ikke verb)"))
+
+
+"<seier>" SELECT:7–2-seier sg IF
+        (-1 siffer)
+        ;
+
+"<seier>" SELECT:første-seier sg IF
+        (-1 %forrige/neste/samme/siste/første% OR %andre% OR %annen% OR ord OR ("endelig") OR ("strak") OR ("fortjene"))
+        ;
+
+LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" ;
+"<seier>" SELECT:seier-gir-ett-poeng sg IF
+        (*0 kamp-ord)
+        ;
 
 
 #:3332
@@ -27308,7 +27323,11 @@ REMOVE:det-israelske-militærets (prn) IF
         (2 be-subst LINK 0 $$GENDER)
         ;
 
-REMOVE:hvor-mange-fisker ub-ent IF (-1C fl-det) (0C ub-subst) (0 fl-subst);
+REMOVE:hvor-mange-fisker ub-ent IF
+        (-1C fl-det)
+        (0C ub-subst)
+        (0 fl-subst)
+        ;
 # not "fisker" n m sg ind
 
 REMOVE:Importer-alle (n pl) IF
