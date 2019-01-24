@@ -932,13 +932,32 @@ SELECT:Halvor-Egner-Granerud np IF
         ;
 
 
-SELECT:Simon-Tiller np + cog IF
-        (-1C np + ant)
+SELECT:GRO-Eide-default np + ant IF
+        (0 storbokstav)
+        (1 np + cog)
+        ;
+
+SELECT:Gro-EIDE-default np + cog IF
+        (-1 np + ant)
+        (0 storbokstav)
+        ;
+
+SELECT:Gro-Larsen-EIDE-default np + cog IF
+        (-2 np + ant)
+        (-1 np + cog)
         (0 storbokstav)
         ;
 
 SELECT:Aker-BioMarine np + top IF
         (1 storbokstav + ukjent)
+        ;
+
+SELECT:Skår-cm-EIDE-cm-Bakken np + cog IF
+        (-2 np + cog)
+        (-1 cm)
+        (0 storbokstav)
+        (1 cm)
+        (2 np + cog)
         ;
 
 
