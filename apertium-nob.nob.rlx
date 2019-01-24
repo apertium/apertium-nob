@@ -50,6 +50,9 @@ LIST pst = pst ;
 LIST lquot = lquot ;
 LIST rquot = rquot ;
 LIST top = top ;
+LIST cog = cog ;
+LIST ant = ant ;
+LIST org = org ;
 LIST attr = attr ;
 LIST adj = adj ;
 LIST clb = clb ;
@@ -929,6 +932,16 @@ SELECT:Halvor-Egner-Granerud np IF
         ;
 
 
+SELECT:Simon-Tiller np + cog IF
+        (-1C np + ant)
+        (0 storbokstav)
+        ;
+
+SELECT:Aker-BioMarine np + top IF
+        (1 storbokstav + ukjent)
+        ;
+
+
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
         (0 <<< LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
@@ -1588,6 +1601,7 @@ SELECT:unlikely n + ("snus") IF
 	  (1 %ned%)
 ;
 
+"<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
   "<ei>"   SELECT:3711   (det) IF
