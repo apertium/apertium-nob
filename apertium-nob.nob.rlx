@@ -978,6 +978,9 @@ SELECT:Skår-cm-EIDE-cm-Bakken np + cog IF
         ;
 
 
+LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm";
+SELECT:namn namn-viss-mogleg + np IF (0 storbokstav);
+
 SELECT:over_30._Men clb IF
         (0/1 det-kvant)
         (0 <<< LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
