@@ -7840,12 +7840,12 @@ SELECT:gir-ønsket-utfall (adj pp nt sg ind)
         ;
 
 SELECT:tusenvis-er-isolert (adj pp pl)
-        (*-3C talord-par-siffer BARRIER setn-gr OR fv LINK NOT 0 talord-sg)
+        (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg LINK NOT 0 talord-sg)
         (-1C kop-fv)
         ;
 
 SELECT:Minst-10-er-siden-drept adj + pp + pl
-        (*-3C talord-par-siffer BARRIER setn-gr OR fv LINK NOT 0 talord-sg)
+        (*-3C talord-par-siffer BARRIER setn-gr OR fv OR sg LINK NOT 0 talord-sg)
         (-2 kop-fv)
         (-1 adv)
         ;
