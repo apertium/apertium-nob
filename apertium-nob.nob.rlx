@@ -88,6 +88,7 @@ LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "r
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
+LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r;
 
 
 # Norsk ordbank transitivity codes:
@@ -7849,12 +7850,12 @@ SELECT:gir-ønsket-utfall (adj pp nt sg ind)
         ;
 
 SELECT:tusenvis-er-isolert (adj pp pl)
-        (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg)
+        (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
         ;
 
 SELECT:Minst-10-er-siden-drept adj + pp + pl
-        (*-3C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg)
+        (*-3C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-2 kop-fv)
         (-1 adv)
         ;
@@ -17968,6 +17969,13 @@ SELECT:2335 (vblex) IF
 ;
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
+
+SELECT:fiskene-ble-funnet adj + pp + pl IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + pl BARRIER setn-gr)
+;
 
 SELECT:fisken-ble-funnet perf-part-mf IF
 	(NOT 0 farlige-part)
