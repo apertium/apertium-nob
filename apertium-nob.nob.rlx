@@ -1025,13 +1025,6 @@ REMOVE:en-fot ("fot") + pl IF
         (0 sg)
 ;
 
-REMOVE:eitt-amputerte-tips perf-part-pl IF
-        (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
-        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
-        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
-        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
-        ;
-
 REMOVE:unlikely n + ("lenge") ;
 REMOVE:unlikely ("ond") OR ("vond") IF
         (0 ("verre") OR ("verst"));     # unlikely «vondare/vondast»
@@ -7204,7 +7197,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3291
-  "<sist>"   REMOVE:3291   (adj) IF
+"<sist>"   REMOVE:3291   adj IF
 	(0 adv)
 	(NOT 1 ub-ent-subst)
 ;
@@ -7771,6 +7764,7 @@ SELECT:Å-ikke-støtte inf IF
 
 ###################################################
 # adj pp-dis til bruk i samsvarsbøying i nob→nno: #
+###################################################
 
 SELECT:de-har-blitt-tatt (adj pp pl)
 	(-3 fl-subst OR nom-fl)
@@ -7846,10 +7840,23 @@ SELECT:gir-ønsket-utfall (adj pp nt sg ind)
         ;
 
 SELECT:tusenvis-er-isolert (adj pp pl)
-        (-2C talord)
-        (NOT -2 talord-sg)
+        (*-3C talord-par-siffer BARRIER setn-gr OR fv LINK NOT 0 talord-sg)
         (-1C kop-fv)
         ;
+
+SELECT:Minst-10-er-siden-drept adj + pp + pl
+        (*-3C talord-par-siffer BARRIER setn-gr OR fv LINK NOT 0 talord-sg)
+        (-2 kop-fv)
+        (-1 adv)
+        ;
+
+REMOVE:eitt-amputerte-tips adj + pp + pl IF
+        (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
+        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
+        (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
+        ;
+
 
 
 #:6212
