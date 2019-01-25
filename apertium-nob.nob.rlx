@@ -993,9 +993,9 @@ REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
 # same, remove lower-case readings.
 # E.g.: AU is an acronym, not adv
 
-REMOVE:default ("blive")  IF (0 ("bli"));
-REMOVE:default nt  IF (0 ("bestand") LINK 0 m);;
-REMOVE:default m  IF (0 ("intervjuer") + sg + ind);;
+REMOVE:unlikely ("blive")  IF (0 ("bli"));
+REMOVE:unlikely nt  IF (0 ("bestand") LINK 0 m);;
+REMOVE:unlikely m  IF (0 ("intervjuer") + sg + ind);;
 REMOVE:unlikely nt + ("sel");
 REMOVE:unlikely n + ("skåle") IF (0 ("skål")); # but keep skåle<vblex>
 REMOVE:unlikely ("ram")   IF (0 ("ramme"));
@@ -1005,6 +1005,7 @@ REMOVE:unlikely ("roll")  IF (0 ("rolle"));
 REMOVE:unlikely ("fate")  IF (0 ("fat"));
 REMOVE:unlikely nt  IF (0 ("bank") + m);
 REMOVE:unlikely ("bøk")   IF (0 ("bok"));
+REMOVE:unlikely ("kreft") + pl;
 REMOVE:unlikely ("tal")   IF (0 ("tale") + pl + def);
 
 REMOVE:unlikely-ros ("ro")   IF
@@ -1064,6 +1065,7 @@ REMOVE:unlikely ("planlegger") IF
 REMOVE:prefer-museum ("musé");
 
 REMOVE:unlikely ("flask");
+REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("spile") IF (0 ("spille"));
 
 REMOVE:unlikely ("lokal") + m IF (0 ("lokale") + pl + ind);
@@ -1078,6 +1080,10 @@ SELECT:unlikely n + ("snus") IF
 SELECT:unlikely n + ("snus") IF
         (*0 ("tobakk") OR ("røyk"))
         ;
+
+REMOVE:unlikely ("sekund") + mask;
+REMOVE:unlikely ("øre") + vblex;
+REMOVE:unlikely ("<tier>"i "ti");
 
 ## select domain
 #:3787
@@ -3980,7 +3986,6 @@ LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "rund
 
 
 
-
 #:3278
   "<slags>"   SELECT:3278   (n m) IF
 	(1 subst-mask)
@@ -4820,6 +4825,9 @@ REMOVE:støtte ("støte") IF
 #  "I det hele tatt er det slik"
 
 
+"<tier>" SELECT:andre-tier vblex IF
+        (NOT 0* fv BARRIER setn-start-med-strek/anf OR setn-gr)
+        ;
 
 
 #4000
@@ -5013,6 +5021,10 @@ REMOVE:støtte ("støte") IF
 #  "tvert imot"
 
 
+"<vannet>" SELECT:og-vannet-ut vblex IF
+        (NOT -1 fv)
+        (1 %ut%)
+        ;
 
 #:3159
   "<var>"   SELECT:3159   (adj pst mf) IF
@@ -5192,10 +5204,6 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» – are there exceptions?
 
 REMOVE:ikum-ika (".*kum"r) IF (0 ("<.*ika>"r ".*ika"r));
-
-REMOVE ("sekund") + mask;
-
-REMOVE:unlikely ("øre") + vblex;
 
 REMOVE:spille_spile ("spile") + verb IF
 	(0 ("spille"))
@@ -5674,6 +5682,8 @@ REMOVE:spille_spile ("spile") + verb IF
 #:3689
 "<en>"   REMOVE:default   adv OR ("man") ;
 #  " i RFG ser det ut til at en adv ikke eksisterer"
+"<En>"   REMOVE:default   adv OR ("man") ;
+# "En kvinne i 90-årene ble …"
 
 
 
@@ -5837,7 +5847,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 "<forteller>" REMOVE:forteller-om n IF
-        (1 %om%)
+        (1 %om% OR %at%)
         ;
 
 #:3614
@@ -24352,6 +24362,11 @@ SELECT:noen-default <noen> + (neg) ;
 	  (0 verb)
 ;
 
+"<dette>" REMOVE:er-dette-folk-reagerer-mest-på det IF
+        (1 n + pl + ind)
+        (NOT 1 n + sg + def)
+        ;
+
 
 #:4093
  "<disse>"   REMOVE:4093   (vblex inf) IF
@@ -27458,13 +27473,9 @@ REMOVE:møtes pstv + pp IF
         (NOT 1 def OR sup + ind)
         ;
 
-REMOVE:en-ting pl IF
-        (-1C det OR prn LINK 0C sg)
-        (0C n + sg OR n + pl)
-;
-
 SELECT:sine-spor $$NUMBER IF
         (-1C det OR prn LINK 0C $$NUMBER)
+        (NOT -1C prn)
         (0C n + ind)
 ;
 
@@ -27501,9 +27512,12 @@ SELECT:default ("stige")   IF (0 ("<steget>"i));
 SELECT:default ("liter")   IF (0 ("<liter>"i));
 SELECT:default ("hus")     IF (0 ("<huset>"i));
 SELECT:default ("lekker")  IF (0 ("<lekker>"i));
+SELECT:default adv         IF (0 ("<bare>"i));
 SELECT:default ("gjerde") + n IF (0 ("<gjerder>"i));
+SELECT:default ("samt") + cnjcoo;
+SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 
-REMOVE:unlikely ("områ" vblex);
+REMOVE:default ("områ" vblex);
 
 
 REMOVE:default ("den¹");
