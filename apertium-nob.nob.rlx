@@ -14080,11 +14080,10 @@ SELECT:Staffan-de-la-Mistura np + attr IF
 # Helt fram til landsbyen der (sbu) familien har .."))
 
 
-
 #:2653
- SELECT:2653 (pr) IF
+SELECT:2653 pr IF
 	(0 sbu)
-	(NOT 0 adj)
+	(NOT 0 adj OR n)
 	(NOT 1 perf-part)
 	(**1C setn-gr BARRIER pres/pret)
 ;
@@ -24745,12 +24744,20 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 poss-det)
 ;
 
+"<si>" REMOVE:si-jente prn IF
+	(1 n + f + sg)
+;
+
 "<sin>" REMOVE:sin-ting prn IF
-	(1 n + m OR n + f)
+	(1 n + m + sg OR n + f + sg)
+;
+
+"<sine>" REMOVE:sine-ting prn IF
+	(1 n + pl)
 ;
 
 "<sitt>" REMOVE:sitt-løp prn IF
-	(1 n + nt)
+	(1 n + nt + sg)
 ;
 
 
