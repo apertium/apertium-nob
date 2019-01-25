@@ -1007,6 +1007,7 @@ REMOVE:unlikely nt  IF (0 ("bank") + m);
 REMOVE:unlikely ("bøk")   IF (0 ("bok"));
 REMOVE:unlikely ("kreft") + pl;
 REMOVE:unlikely ("tal")   IF (0 ("tale") + pl + def);
+REMOVE:unlikely ("<planene>"i nt);
 
 REMOVE:unlikely-ros ("ro")   IF
         (0 ("ros"))
