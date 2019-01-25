@@ -3805,17 +3805,22 @@ LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "rund
 
 
 #:3305
-  "<siden>"   SELECT:3305   (adv) IF
+"<siden>" SELECT:3305 adv IF
 	(1 %da%)
 ;
 #  "Siden (adv) da har hun ..."))
 
+"<siden>" SELECT:har-siden-beklaget adv IF
+	(-1 fv)
+	(1 pp)
+;
+
 
 
 #:3299
-  "<siden>"   SELECT:3299   (n m sg def) IF
+"<siden>" SELECT:den-andre-siden-av n + m IF
+	(-1 prep OR adj OR det)
 	(1 %av%)
-	(-1 prep)
 ;
 #  "ved siden av"
 
@@ -7177,19 +7182,19 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3319
-  "<selv>"   REMOVE:3319   (n) IF
+"<selv>"   REMOVE:3319   n IF
 	(NOT -1 nøyt-det)
 ;
 #  "Bare subst i typen: sitt eget selv"
 
 
-
 #:3298
-  "<siden>"   REMOVE:3298   (n) IF
+"<siden>"   REMOVE:3298   n IF
 	(NOT -1 nr2-det-mask-be)
 	(NOT -1 be-mask-det)
 	(NOT -1 be-ent-adj)
 	(NOT -1 prep)
+        (NOT 1 %av%)
 ;
 #  "tar sjansen på adverb hvis det ikke ser ut som
 # om det er \"den ene siden\"
