@@ -24740,6 +24740,14 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 poss-det)
 ;
 
+"<sin>" REMOVE:sin-ting prn IF
+	(1 n + m OR n + f)
+;
+
+"<sitt>" REMOVE:sitt-løp prn IF
+	(1 n + nt)
+;
+
 
 #:3280
   "<skjønner>"   REMOVE:3280   (n) IF
@@ -27475,9 +27483,10 @@ REMOVE:møtes pstv + pp IF
 
 SELECT:sine-spor $$NUMBER IF
         (-1C det OR prn LINK 0C $$NUMBER)
-        (NOT -1C prn)
+        (NOT -1C prn)           # det er dette<prn> folk reagerer på
         (0C n + ind)
 ;
+
 
 
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
