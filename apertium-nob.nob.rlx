@@ -27595,6 +27595,10 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 ;
 
 
+SELECT:Ukjendord-utelukkes-ikke. fv IF
+        (0C vblex)
+        (1 adv)
+        ;
 
 
 # @nkon: simple noun-noun conjunctions under genitive
