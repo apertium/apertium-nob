@@ -57,6 +57,8 @@ LIST attr = attr ;
 LIST adj = adj ;
 LIST ord = ord ;
 LIST clb = clb ;
+LIST sent = sent ;
+LIST remspc = remspc ;
 LIST dem = dem ;
 LIST det = det ;
 LIST gen = gen ;
@@ -895,6 +897,9 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 
+TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
+TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
+
 BEFORE-SECTIONS
 
 # Typically stuff that's first in a sentence:
@@ -909,6 +914,16 @@ APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}
 APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (0 storbokstav)
         (NEGATE 0 not-np-guess - (np cgguess gen))
+        ;
+
+SELECT:hans-14.bursdag ord IF
+        (0 sent)
+        (NEGATE T:nextWordCrossSent LINK 0 storbokstav)
+        ;
+
+SELECT:blir-14.-Det sent IF
+        (0 ord)
+        (T:nextWordCrossSent LINK 0 storbokstav)
         ;
 
 # sec 1
