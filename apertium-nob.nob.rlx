@@ -27525,6 +27525,12 @@ SELECT:sine-spor $$NUMBER IF
         (0C n + ind)
 ;
 
+SELECT:våre-tilbud $$NUMBER IF
+        (-1C det OR prn LINK 0C $$NUMBER)
+        (-1C pos)
+        (0C n + ind)
+;
+
 
 
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
