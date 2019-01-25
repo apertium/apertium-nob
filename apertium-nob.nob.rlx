@@ -24395,9 +24395,13 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 
 "<dette>" REMOVE:er-dette-folk-reagerer-mest-på det IF
+        (*-1 fv)
         (1 n + pl + ind)
         (NOT 1 n + sg + def)
         ;
+# «– Jeg tror ikke det er  dette  folk reagerer mest på. »
+# Men: «Men selv om  dette  partibarometer peker mot et regjeringsskifte, kan Erna Solberg glede seg over at hun fortsatt er mer populær enn Støre.»
+
 
 
 #:4093
