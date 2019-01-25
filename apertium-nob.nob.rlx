@@ -5528,6 +5528,11 @@ REMOVE:spille_spile ("spile") + verb IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
+
+"<Broen>" REMOVE:Broen-er np IF
+        (-1 >>> OR siffer OR punktum/ellipse)
+        ;
+
 "<begge>" REMOVE:begge-kjønn adv IF
 	(1 n + pl)
         (NOT 1 gen OR adj + pl)
@@ -26452,14 +26457,15 @@ SELECT:no-pres-pres subst
 ;
 
 #4086
- SELECT:4086 (np)
+SELECT:men-Valset-sier np
 	(0 storbokstav)
 	(NOT 0 romertall)
 	(NOT -1 >>>)
 	(NOT -1 anf)
 	(NOT -1 strek)
+	(NOT -1 siffer)
 ;
-#Stor bokstav indikerer egennavn om det ikke er først i setningen.
+# Stor bokstav indikerer egennavn om det ikke er først i setningen.
 
 
 #4088
