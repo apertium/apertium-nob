@@ -5236,6 +5236,7 @@ REMOVE:spille_spile ("spile") + verb IF
 	(-1 ("som"))
 	(2 ("i"))
 ;
+REMOVE:unlikely ("<ledes>" "ledes");
 
 "<Også>" REMOVE:Også-den-har ("også");
 "<også>" REMOVE:Den-har-også ("også¹");
