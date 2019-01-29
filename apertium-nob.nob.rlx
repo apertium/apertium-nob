@@ -535,7 +535,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
-LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" ;
+LIST farlige-part = "angripe" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" ;
 LIST farlige-verb = ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -5454,6 +5454,13 @@ REMOVE:unlikely ("<ledes>" "ledes");
 #:3743
   "<anstrengt>"   REMOVE:3743   pp IF
 	(*-1 setn-gr BARRIER %ha%)
+;
+
+"<angrepet>" REMOVE:det-verste-angrepet pp IF
+        (-1 sup)
+;
+"<angrepet>" REMOVE:da-angrepet-startet pp IF
+        (1C fv OR pp)
 ;
 
 
@@ -27556,6 +27563,18 @@ SELECT:våre-tilbud $$NUMBER IF
         (0C n + ind)
 ;
 
+SELECT:Angrepet-han-snakker-om-er n + def IF
+        (0 storbokstav)
+        (0C n OR pp)
+        (1 nominativ)
+        (2 fv)
+        ;
+
+SELECT:cm-er-trolig-angrepet-som n + def IF
+        (*-1 fv BARRIER ikke-adv-adj LINK -1 cm)
+        (0C n OR pp)
+        (*1 %som% LINK 1 fv)
+        ;
 
 
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
