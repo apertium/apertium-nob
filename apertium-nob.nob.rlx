@@ -1088,6 +1088,7 @@ SELECT:unlikely n + ("snus") IF
 REMOVE:unlikely ("sekund") + mask;
 REMOVE:unlikely ("øre") + vblex;
 REMOVE:unlikely ("re") + n;
+REMOVE:unlikely ("vant") + n;
 REMOVE:unlikely ("<tier>"i "ti");
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
