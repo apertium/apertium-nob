@@ -527,7 +527,7 @@ LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST f-subj = ("den" prn nt) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  ;
-LIST farlige-adj = "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
+LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
 LIST farlige-fl-subst = ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
@@ -896,7 +896,9 @@ LIST veldig-farlige-part = "nære"  "nyte"  "mige"  "make"  "lite"  "hele"  "gal
 LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"  pres) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("grade"  vblex pres) ;
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
+
 LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
+LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -1085,6 +1087,7 @@ SELECT:unlikely n + ("snus") IF
 
 REMOVE:unlikely ("sekund") + mask;
 REMOVE:unlikely ("øre") + vblex;
+REMOVE:unlikely ("re") + n;
 REMOVE:unlikely ("<tier>"i "ti");
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
@@ -3610,7 +3613,6 @@ SELECT ("lyve") IF
         (-1 %forrige/neste/samme/siste/første% OR %andre% OR %annen% OR ord OR ("endelig") OR ("strak") OR ("fortjene"))
         ;
 
-LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" ;
 "<seier>" SELECT:seier-gir-ett-poeng sg IF
         (*0 kamp-ord)
         ;
@@ -5030,6 +5032,14 @@ REMOVE:støtte ("støte") IF
 ;
 #  "tvert imot"
 
+"<vant>" SELECT pret IF
+        (NOT *-1 kop-fv)
+        (NOT 1 %med% OR %til%)
+        ;
+
+"<vant>" SELECT pret IF
+        (1 kamp-ord)
+        ;
 
 "<vannet>" SELECT:og-vannet-ut vblex IF
         (NOT -1 fv)
@@ -19220,6 +19230,12 @@ REMOVE:at-paret (adj pp) IF
 #  "27.2.2003: For snart 16 år siden kjøpte (ikke adj)  Leif Heiberg Myrdam huset fra 1850-årene."))
 
 
+REMOVE:og-vant-cupen farlige-adj IF
+	(NOT -1 adv)
+	(-1 konj)
+        (0 pret)
+        (1 n + def)
+        ;
 
 #:2247
  REMOVE:2247 (adj) IF
@@ -23445,8 +23461,7 @@ REMOVE:før-det-legges-fram inf IF
 	(0 mask)
 	(NOT 0 %var%)
 	(1 mask)
-	(NOT -1 pron/subst)
-	(NOT -1 adv)
+	(NOT -1 pron/subst OR ukjent OR adv)
 	(**-1C fv BARRIER setn-gr)
 ;
 #  "(NOT LR0 TRANS2)
@@ -23575,8 +23590,7 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT 0 %gjøre%)
 	(NOT 0 %var%)
 	(NOT -1 parentes)
-	(NOT -1 adv)
-	(NOT -1 pron/subst)
+	(NOT -1 pron/subst OR ukjent OR adv)
 	(*-1O setn-gr LINK **1C fv LINK NOT 0 trans2)
 	(*-1 setn-gr LINK NOT 0 %som%)
 ;
@@ -27578,7 +27592,8 @@ SELECT:default ("hus")     IF (0 ("<huset>"i));
 SELECT:default ("lekker")  IF (0 ("<lekker>"i));
 SELECT:default adv         IF (0 ("<bare>"i));
 SELECT:default ("gjerde") + n IF (0 ("<gjerder>"i));
-SELECT:default ("samt") + cnjcoo;
+SELECT:default ("samt")   + cnjcoo;
+SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 
 REMOVE:default ("områ" vblex);
