@@ -1019,6 +1019,11 @@ REMOVE:unlikely ("<bak>"i pl);
 REMOVE:unlikely ("<skutt>"i "skute");
 REMOVE:unlikely ("<skutt>"i "skutt");
 
+REMOVE:unlikely ("regle") IF
+        (0 ("regel") + pl + def)
+        (NOT 0* ("lek") OR ("stev") OR ("rim") OR ("barnerim") OR ("eventyr") OR ("ordspråk") OR ("sagn") OR ("gåte"))
+        ;
+
 REMOVE:unlikely-ros ("ro")   IF
         (0 ("ros"))
         (NOT -1 %som%)
