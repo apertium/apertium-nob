@@ -5469,6 +5469,10 @@ REMOVE:unlikely ("<ledes>" "ledes");
         (1C fv OR pp)
 ;
 
+"<angrep>" REMOVE:blodig-angrep pret IF
+        (-1C adj + sup OR adj + nt + ind)
+;
+
 
 #:3740
   "<bak>"   REMOVE:3740   (n) IF
