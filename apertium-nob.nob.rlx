@@ -7811,6 +7811,10 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i samsvarsbøying i nob→nno: #
 ###################################################
 
+# TODO: just remove from .dix instead?
+LIST no-samsvar = "bli" "innrømme" ;
+REMOVE:no-samsvar adj + pp + no-samsvar ;
+
 SELECT:de-har-blitt-tatt pp + pl
 	(-3 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
@@ -7890,11 +7894,17 @@ SELECT:tusenvis-er-isolert (adj pp pl)
         ;
 
 SELECT:mannen-som-ble-skadd pp + mf
-        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + mask/fem/mf BARRIER (*) - cog - cm)
+        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + mask/fem/mf BARRIER (*) - cog - cm LINK NOT 0 pl)
         (-1 kop-fv)
         (NOT 0 adv OR farlige-part)
         ;
 # «Ola Nordmann, som ble drept …»
+
+SELECT:mennene-som-ble-skadd pp + pl
+        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + pl BARRIER (*) - cog - cm)
+        (-1 kop-fv)
+        (NOT 0 adv OR farlige-part)
+        ;
 
 SELECT:flere-skadd pp + pl
         (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv)
@@ -16952,7 +16962,7 @@ SELECT:5009 (vblex pres) IF
 
 
 #:2398
- SELECT:2398 (vblex pp) IF
+SELECT:2398 pp IF
 	(NOT 0 be-ent-nøyt-subst)
 	(NOT 0 be-ent-fem-subst)
 	(NOT 0 farlige-part)
