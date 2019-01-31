@@ -7812,7 +7812,7 @@ SELECT:Å-ikke-støtte inf IF
 ###################################################
 
 # TODO: just remove from .dix instead?
-LIST no-samsvar = "bli" "innrømme" ;
+LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" ;
 REMOVE:no-samsvar adj + pp + no-samsvar ;
 
 SELECT:de-har-blitt-tatt pp + pl
