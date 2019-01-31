@@ -899,6 +899,7 @@ LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
+LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -7810,14 +7811,14 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i samsvarsbøying i nob→nno: #
 ###################################################
 
-SELECT:de-har-blitt-tatt (adj pp pl)
+SELECT:de-har-blitt-tatt pp + pl
 	(-3 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:de-som-parkerer-båten-har-vært-nevnt (adj pp pl)
+SELECT:de-som-parkerer-båten-har-vært-nevnt pp + pl
         (*-3 %som%-sbu BARRIER ikke-subst-verb LINK -1 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
@@ -7886,6 +7887,37 @@ SELECT:gir-ønsket-utfall (adj pp nt sg ind)
 SELECT:tusenvis-er-isolert (adj pp pl)
         (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
+        ;
+
+SELECT:mannen-som-ble-skadd pp + mf
+        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + mask/fem/mf BARRIER (*) - cog - cm)
+        (-1 kop-fv)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «Ola Nordmann, som ble drept …»
+
+SELECT:flere-skadd pp + pl
+        (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:to-sivile-skadd pp + pl
+        (-2 qnt + pl)
+        (-1 n + pl)
+        (0C pp)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:ofrene-betegnes-som-skadd pp + pl
+        (*-1 %som% BARRIER ikke-adv-adj LINK -1 betegne-ord LINK -1C pl)
+        (0C pp)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+SELECT:70-skadd pp + pl
+        (-1 qnt + pl)
+        (0C pp)
+        (NOT 0 adv OR farlige-part)
         ;
 
 SELECT:Minst-10-er-siden-drept adj + pp + pl
