@@ -7881,6 +7881,13 @@ SELECT:ble-det-vedtatt (adj pp nt sg ind)
         (0C vblex OR adj + pp)
         ;
 
+SELECT:ble-han-løslatt (adj pp mf sg ind)
+	(-2 %være/bli%)
+	(-1C m OR f)
+        (NOT 0 adv OR farlige-part)
+        (0C vblex OR adj + pp)
+        ;
+
 SELECT:gir-ønsket-utfall (adj pp nt sg ind)
 	(-1C fv)
         (0C n OR vblex OR adj + pp)
