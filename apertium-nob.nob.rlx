@@ -18180,6 +18180,14 @@ SELECT:Med-økte-inntekter adj + pl IF
 
 CONSTRAINTS
 
+
+"<sort>" SELECT:annen-sort n IF
+        (-1 %annen%)
+        (NOT 1 n + m)
+        (NOT 1 ("hvit"))
+        (NOT 2 ("hvit"))
+        ;
+
 #5034
  "<bad>"   REMOVE:5034   (n nt ind pl) IF
    (1 %boy%)
@@ -24360,7 +24368,6 @@ SELECT:noen-default <noen> + (neg) ;
 	  (-1 %den/det/de%)
 ;
 #være den rette
-
 
 
 #:4080
