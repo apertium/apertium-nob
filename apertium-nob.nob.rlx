@@ -1098,6 +1098,7 @@ REMOVE:unlikely ("øre") + vblex;
 REMOVE:unlikely ("re") + n;
 REMOVE:unlikely ("vant") + n;
 REMOVE:unlikely ("<tier>"i "ti");
+REMOVE:unlikely ("<ledet>"i) + n;
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
         ;
@@ -14921,12 +14922,33 @@ SELECT:2653 pr IF
 #      :group 37
 
 
+SELECT:slo-det-unge-paret-seg-ned n + def IF
+        (-3 fv + refl)
+        (-2 det)
+        (-1 adj + def)
+        (1 %seg%)
+        ;
+# «Etter bryllupet slo det unge paret seg ned i Roma»
+
+SELECT:Senere-skilte-paret-seg fv + refl IF
+        (-2C setn-gr)
+        (-1 adv)
+        (1 n + def)
+        (2C %seg%)
+        ;
+
+SELECT:I-1931-skilte-paret-seg fv + refl IF
+	(*-1O setn-gr LINK 1 prep)
+        (1 n + def)
+        (2C %seg%)
+        ;
+
 
 #:2586
- SELECT:2586 (prn) IF
+ SELECT:I-eneveldets-tidsalder-var-det-utenkelig (prn) IF
 	(0 %det/dette%)
 	(-1 fv)
-	(NOT *1 subst-nøyt BARRIER setn-gr)
+	(NEGATE *1 subst-nøyt BARRIER setn-gr)
 	(NOT 1 adj-sup-be)
 	(*-1O setn-gr LINK 1 prep)
 ;
@@ -17663,6 +17685,14 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
 
 
 
+SELECT:Det-paret-som n + def IF
+	(-2C setn-gr)
+	(-1 det)
+        (1C %som%)
+        (*1C fv)
+;
+# «Det paret som meldte det høyeste budet skal da spille kontrakten.»
+
 #:2370
  SELECT:2370 (vblex pret) IF
 	(NOT 0 farlige-forledd-verb)
@@ -17670,6 +17700,7 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
 	(NOT *1 overskrift)
 	(-2C setn-gr)
 	(*1 setn-gr BARRIER pres/pret)
+        (NEGATE 1 %som% LINK *1 fv)           # Det paret som meldte …
 ;
 #  "Det huset (pret) mange folk."
 #      :group 48
@@ -26515,14 +26546,13 @@ SELECT:Dagens-vinner n + ind IF
 ;
 # «blir forsøkt lokket» --KBU
 
-
 #:4027
  SELECT:4027 (vblex pret) IF
  	(-1 nom)
 	(1 pron-akk)
 ;
 
-#Gjensidige skyter seg inn
+# «Gjensidige skyter seg inn»
 
 
 #:4028
