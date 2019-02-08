@@ -1003,6 +1003,7 @@ REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
+REMOVE:unlikely ("sambo");
 REMOVE:unlikely m         IF (0 ("intervjuer") + sg + ind);
 REMOVE:unlikely nt + ("sel");
 REMOVE:unlikely n + ("skåle") IF (0 ("skål")); # but keep skåle<vblex>
@@ -21631,7 +21632,7 @@ REMOVE:Løft-så-ut n IF
 #:20310
  REMOVE:20310 ub-ent-subst IF
 	(0 ub-fl-subst)
-	(1 kop LINK *1 adj-fl BARRIER ikke-adv)
+	(1 kop LINK *1 adj-fl BARRIER ikke-adv LINK NOT 0 adj-ent)
 ;
 # «Barn er store»
 
