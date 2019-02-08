@@ -27706,6 +27706,7 @@ SELECT:default ("gjerde") + n IF (0 ("<gjerder>"i));
 SELECT:default ("samt")   + cnjcoo;
 SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
+SELECT:default ("<paret>"i "par");
 
 REMOVE:default ("områ" vblex);
 
