@@ -3458,6 +3458,14 @@ SELECT ("lyve") IF
 ;
 #en halvliter pils
 
+"<presset>" SELECT:stå-imot-presset n IF
+        (-2 ("stå"))
+        (-1 %mot% OR %imot%)
+        ;
+
+"<presset>" SELECT:motstå-presset n IF
+        (-1 ("motstå"))
+        ;
 
 #:3349
   "<redd>"   SELECT:3349   (vblex pp) IF
@@ -7127,7 +7135,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(NOT -1 adj-fl)
 ;
 #  "alle Romsdalskommunene pluss Eide og Gjemnes"
-
 
 
 #:3351
@@ -17430,6 +17437,12 @@ SELECT:å-glemme-tapet-mot be-subst + nøyt IF
 #  "Den som gråt, lo ikke!"
 
 
+SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
+        (-2C adv)
+        (-1 %som%)
+	(*1C pres/pret BARRIER clb LINK 1 cm)
+        ;
+# "Etter hvert som presset fra isen avtok, …"
 
 #:2352
  SELECT:2352 (vblex pret) IF
