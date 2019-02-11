@@ -526,7 +526,7 @@ LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST f-subj = ("den" prn nt) ;
-LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  ;
+LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
 LIST farlige-fl-subst = ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
@@ -18241,12 +18241,12 @@ CONSTRAINTS
 "<sort>" SELECT:annen-sort n IF
         (-1 %annen%)
         (NOT 1 n + m)
-        (NOT 1 ("hvit"))
-        (NOT 2 ("hvit"))
+        (NOT 1 farger)
+        (NOT 2 farger)
         ;
 
-"<sort>" SELECT:hvitt-og-sort n IF
-        (-2 ("hvit"))
+"<sort>" SELECT:hvitt-og-sort adj IF
+        (-2 farger)
         ;
 
 #5034
