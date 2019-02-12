@@ -7837,6 +7837,15 @@ SELECT:Å-ikke-støtte inf IF
 LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ;
 REMOVE:no-samsvar adj + pp + no-samsvar ;
 
+SELECT:nå-har-likevel-1000-returnert pp + vblex
+        (*-2 %ha% + fv BARRIER ikke-adv)
+        (-1 qnt + pl)
+        (0C pp)
+        ;
+# First avoid samsvar for some plain verb contexts.
+# «Vi har alle   hørt   advarselen om at …»
+# «samt lagkamerat Alexander Stølås har alle   inngått   nye langtidskontrakter»
+
 SELECT:de-har-blitt-tatt pp + pl
 	(-3 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
@@ -7936,9 +7945,10 @@ SELECT:mennene-som-ble-skadd pp + pl
         ;
 
 SELECT:flere-skadd pp + pl
-        (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv)
+        (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv LINK NOT 0 %mye/lite/litt%)
         (NOT 0 adv OR farlige-part)
         ;
+# Men ikkje etter «mye»: «å gjøre endringer i den mye   omtalte   paragraf 2c i abortloven»
 
 SELECT:to-sivile-skadd pp + pl
         (-2 qnt + pl)
@@ -7955,6 +7965,7 @@ SELECT:ofrene-betegnes-som-skadd pp + pl
 
 SELECT:70-skadd pp + pl
         (-1 qnt + pl)
+        (NOT -1 %mye/lite/litt%)
         (0C pp)
         (NOT 0 adv OR farlige-part)
         ;
