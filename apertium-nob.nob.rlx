@@ -981,6 +981,11 @@ SELECT:Skår-cm-EIDE-cm-Bakken np + cog IF
         ;
 
 
+SELECT:Nordre-Aker np IF
+        (-1 np + attr)
+        (0 top)
+        ;
+
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm";
 SELECT:namn namn-viss-mogleg + np IF (0 storbokstav);
 
