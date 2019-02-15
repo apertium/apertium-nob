@@ -5314,6 +5314,7 @@ REMOVE:spille_spile ("spile") + verb IF
 ;
 REMOVE:unlikely ("<ledes>" "ledes");
 REMOVE:unlikely ("<liker>") + n;
+SELECT:unlikely ("<baller>" "ball" m);
 
 "<Også>" REMOVE:Også-den-har ("også");
 "<også>" REMOVE:Den-har-også ("også¹");
@@ -25410,6 +25411,23 @@ REMOVE:øye ("øye"i) IF
 #  "For å unngå:
 # og (ikke CLB) enda mindre den de gjerne (adv) vil være"))
 
+REMOVE:10-bor-her-og-20-bor-der clb + cnjcoo IF
+        (*-1 fv BARRIER clb LINK 0 fv + ("(.*)"r) LINK *-1 qnt)
+        (0 %og%)
+        (1 qnt)
+        (2 fv + ("$1"v))
+        ;
+# «Omtrent 3/4 av befolkningen bor langs kysten  og  97 % bor i den vestlige halvdelen av landet.»
+
+REMOVE:er-en-svenske-og-tre-finner clb + cnjcoo IF
+        (*-1C fv BARRIER clb)
+        (0 %og%)
+        (1 qnt + pl)
+        (2C pres OR n)
+        (3 clb)
+        ;
+# «De savnede er en svensk kvinne og tre finner, opplyser politiet overfor det svenske nyhetsbyrået TT.»
+# Ikkje: «Omtrent 3/4 av befolkningen bor langs kysten  og  97 % bor i den vestlige halvdelen av landet.»
 
 
 #:1812
@@ -26525,6 +26543,25 @@ REMOVE:øye ("øye"i) IF
 	(0 %sette/ta%)
 ;
 # KBU: «Satte fyr på huset sitt»
+
+SELECT:Tre-finner-og-en-svenske n + ind + pl IF
+        (-2 >>>)
+        (-1 qnt + pl)
+        (0C pres OR n)
+        (1 %og%)
+        (*2 fv OR pp)
+        ;
+# «Tre finner og en svenske savnet i skredutsatt fjellområde i Troms.»
+
+SELECT:er-en-svenske-og-tre-finner n + ind + pl IF
+        (*-3C fv BARRIER clb)
+        (-2 %og%)
+        (NOT -2C clb)
+        (-1 qnt + pl)
+        (0C pres OR n)
+        (*1 clb BARRIER fv)
+        ;
+# «De savnede er en svensk kvinne og tre finner, opplyser politiet overfor det svenske nyhetsbyrået TT.»
 
 SELECT:Dagens-vinner n + ind IF
         (-2 >>>)
@@ -27750,6 +27787,12 @@ SELECT:cm-er-trolig-angrepet-som n + def IF
         (*1 %som% LINK 1 fv)
         ;
 
+
+SELECT:ingen-snakker prn IF
+        (0C qnt OR prn)
+        (1C fv)
+        ;
+# «Alle de andre kan gjøre det av og til, og ingen snakker egentlig om det.»
 
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
 
