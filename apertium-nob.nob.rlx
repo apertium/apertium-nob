@@ -5314,7 +5314,9 @@ REMOVE:spille_spile ("spile") + verb IF
 ;
 REMOVE:unlikely ("<ledes>" "ledes");
 REMOVE:unlikely ("<liker>") + n;
-SELECT:unlikely ("<baller>" "ball" m);
+REMOVE:unlikely ("<været>" "være");
+
+SELECT:sel-unlikely ("<baller>" "ball" m);
 
 "<Også>" REMOVE:Også-den-har ("også");
 "<også>" REMOVE:Den-har-også ("også¹");
