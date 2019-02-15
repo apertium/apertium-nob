@@ -69,6 +69,7 @@ LIST guio = guio ;
 LIST apos = apos ;
 LIST cnjsub = cnjsub ;
 LIST cnjcoo = cnjcoo ;
+LIST date = date ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -88,7 +89,7 @@ LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "r
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
-LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r;
+LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
 
 
 # Norsk ordbank transitivity codes:
@@ -930,6 +931,12 @@ SELECT:blir-14.-Det sent IF
         (T:nextWordCrossSent LINK 0 storbokstav)
         ;
 
+SELECT:over_30._Men clb IF
+        (0/1 det-kvant)
+        (0 <<<)
+        (T:nextWordCrossSent LINK 0 storbokstav)
+;
+
 # sec 1
 CONSTRAINTS
 
@@ -988,12 +995,6 @@ SELECT:Nordre-Aker np IF
 
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm";
 SELECT:namn namn-viss-mogleg + np IF (0 storbokstav);
-
-SELECT:over_30._Men clb IF
-        (0/1 det-kvant)
-        (0 <<< LINK 1*> (*) LINK @1 storbokstav) # This is the way to say "I am at a sentence-ending cohort and the one immediately to my right is storbokstav"
-        # TODO: why can't I say >1?
-;
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
@@ -1107,6 +1108,34 @@ REMOVE:unlikely ("<ledet>"i) + n;
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
         ;
+
+SELECT:year date IF
+        (0 ("[0-9]{4}"r))
+        ;
+
+SELECT:i-99-var date IF
+        (-1 %i%)
+        (0 ("[0-9][0-9]"r))
+        (1C fv)
+        ;
+
+SELECT:i-92-og-94-senket date IF
+        (-1 %i%)
+        (0 ("[0-9][0-9]"r))
+        (1 %og%)
+        (2 ("[0-9][0-9]"r))
+        (3C fv)
+        ;
+
+SELECT:i-92-og-94-senket date IF
+        (-3 %i%)
+        (-2 ("[0-9][0-9]"r))
+        (-1 %og%)
+        (0 ("[0-9][0-9]"r))
+        (1C fv)
+        ;
+
+REMOVE:cardinal date;
 
 ## select domain
 #:3787
@@ -7956,6 +7985,7 @@ SELECT:flere-skadd pp + pl
 # Men ikkje etter «mye»: «å gjøre endringer i den mye   omtalte   paragraf 2c i abortloven»
 
 SELECT:to-sivile-skadd pp + pl
+        (NOT -2C date)
         (-2 qnt + pl)
         (-1 n + pl)
         (0C pp)
@@ -7969,6 +7999,7 @@ SELECT:ofrene-betegnes-som-skadd pp + pl
         ;
 
 SELECT:70-skadd pp + pl
+        (NOT -1C date)
         (-1 qnt + pl)
         (NOT -1 %mye/lite/litt%)
         (0C pp)
