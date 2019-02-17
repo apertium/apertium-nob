@@ -27796,6 +27796,13 @@ SELECT:ingen-snakker prn IF
         ;
 # «Alle de andre kan gjøre det av og til, og ingen snakker egentlig om det.»
 
+SELECT:møtte-de-også-Kinas-president prn IF
+        (-1 fv)
+        (0 det + pl)
+        (*1 gen BARRIER ikke-adv LINK 1 n + sg)
+        ;
+# «I Beijing møtte de blant annet Kinas president Xi Jinping og folkekongressformannen.»
+
 SELECT:curling-EMs ("em")    IF (0 ("Ems") LINK 0 ("<.*EM.*>"r));
 
 # If still ambiguous, remove unlikely lemmas:
