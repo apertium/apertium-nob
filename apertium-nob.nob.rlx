@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nob-morph|cg-conv -a 2>/dev/null" -*-
+# -*- cg-pre-pipe: "apertium -d . nob-morph-cg" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
@@ -25004,7 +25004,14 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh feb 2004 Bare ved: en skjønner av vin ..."
 
+"<skred>" REMOVE:ras-skred-flo vblex IF
+        (-1 cm OR %eller%)
+        (1 cm OR %eller% OR sent OR %og%)
+        ;
 
+"<skred>" REMOVE:tatt-av-skred vblex IF
+        (-1 %av%)
+        ;
 
 #:3264
   "<slo>"   REMOVE:3264   (n) IF
