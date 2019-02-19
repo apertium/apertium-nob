@@ -8,6 +8,14 @@
       </program>
     </pipeline>
   </mode>
+  <mode name="nob-morph-cg">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+    </pipeline>
+  </mode>
 
   <mode name="nob-gener" install="yes">
     <pipeline>

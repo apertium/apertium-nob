@@ -17818,6 +17818,7 @@ SELECT:Det-paret-som n + def IF
 	(NOT *1 overskrift)
 	(NOT -1 %ikke/også%)
 	(**-2C setn-gr BARRIER ikke-adv)
+        (NOT 1C fv)
 ;
 #  "Derfor gjaldt det
 # Stadig oftere gjaldt det"
@@ -25011,6 +25012,10 @@ SELECT:noen-default <noen> + (neg) ;
 
 "<skred>" REMOVE:tatt-av-skred vblex IF
         (-1 %av%)
+        ;
+
+"<skred>" REMOVE:utviklinga-skred-fram n IF
+        (-1 be-subst)
         ;
 
 #:3264
