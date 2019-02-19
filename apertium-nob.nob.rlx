@@ -17164,9 +17164,10 @@ SELECT:denne-typen-gjerder subst + ind IF
         (-1 ("type"))
         ;
 
-SELECT:å-glemme-tapet-mot be-subst + nøyt IF
+SELECT:å-glemme-tapet-mot be-subst IF
         (-2C infmerke)
         (-1C inf)
+        (0 nøyt)
         (0C subst OR perf-part OR <perf-part> OR pret)
         (1C prep)
         ;
@@ -27841,6 +27842,7 @@ SELECT:default ("samt")   + cnjcoo;
 SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
+SELECT:default ("studie");
 
 REMOVE:default ("områ" vblex);
 
