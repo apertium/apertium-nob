@@ -26716,6 +26716,13 @@ SELECT:4081 (adj) IF
 	(NOT 1 komma/konj)
 ;
 
+SELECT:de-som-berøres-ligger pres
+        (-3 n)
+        (-2 %som%)
+	(-1 pres + pasv)
+	(0C subst OR pres)
+;
+# «Menighetene som berøres ligger i Vestre Aker prosti, …»
 
 SELECT:no-pres-pres subst
 	(-1 pres)
