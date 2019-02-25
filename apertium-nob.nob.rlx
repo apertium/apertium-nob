@@ -7871,7 +7871,7 @@ SELECT:Å-ikke-støtte inf IF
 ##############################################################
 
 # TODO: just remove from .dix instead?
-LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" "gjøre" "si" "legge" "avgjøre" "avsi" "forsi" "pålegge" ;
+LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ".*gjøre"ri ".*si"ri ".*legge"ri ;
 REMOVE:no-samsvar adj + pp + no-samsvar ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
