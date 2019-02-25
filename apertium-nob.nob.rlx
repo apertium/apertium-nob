@@ -18167,7 +18167,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + pl BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 sanns-årstal)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + pl BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 sanns-årstal LINK NOT -1 det + sg)
 ;
 
 SELECT:fisken-ble-funnet perf-part-mf IF
