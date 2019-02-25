@@ -27862,6 +27862,7 @@ SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
 SELECT:default ("studie");
+SELECT:default ("plan") + m;
 
 REMOVE:default ("områ" vblex);
 
