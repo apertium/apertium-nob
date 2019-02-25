@@ -7866,12 +7866,12 @@ SELECT:Å-ikke-støtte inf IF
         (NOT 1 inf)
         ;
 
-###################################################
-# adj pp-dis til bruk i samsvarsbøying i nob→nno: #
-###################################################
+##############################################################
+# adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
+##############################################################
 
 # TODO: just remove from .dix instead?
-LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ;
+LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" "gjøre" "si" "legge" "avgjøre" "avsi" "forsi" "pålegge" ;
 REMOVE:no-samsvar adj + pp + no-samsvar ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
