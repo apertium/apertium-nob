@@ -5315,6 +5315,7 @@ REMOVE:spille_spile ("spile") + verb IF
 REMOVE:unlikely ("<ledes>" "ledes");
 REMOVE:unlikely ("<liker>") + n;
 REMOVE:unlikely ("<været>" "være");
+REMOVE:unlikely ("<Aker>" "ake");
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
