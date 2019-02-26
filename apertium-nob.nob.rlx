@@ -27863,6 +27863,7 @@ SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
 SELECT:default ("studie");
 SELECT:default ("plan") + m;
+SELECT:default ("presse");      # vs press
 
 REMOVE:default ("områ" vblex);
 
