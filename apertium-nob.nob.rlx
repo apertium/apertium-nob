@@ -1145,7 +1145,7 @@ REMOVE:cardinal date;
 #  "absolutt ikke"
 
 "<at>" SELECT:antas-at sbu IF
-	(-1 %antas%)
+	(-1 %antas% OR ("skyldes"))
 ;
 
 "<LES>" SELECT (vblex imp);
