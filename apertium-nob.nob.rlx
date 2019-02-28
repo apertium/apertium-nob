@@ -5338,6 +5338,7 @@ REMOVE:unlikely ("<ledes>" "ledes");
 REMOVE:unlikely ("<liker>") + n;
 REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
+REMOVE:unlikely ("<spilles>") + n;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -27972,6 +27973,7 @@ SELECT:default ("felles");      # not pasv felle
 REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 
+REMOVE:default inf + pasv IF (0 pres + pasv)
 
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
