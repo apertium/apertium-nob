@@ -5344,8 +5344,30 @@ REMOVE:unlikely ("<spilles>") + n;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-"<Også>" REMOVE:Også-den-har ("også");
-"<også>" REMOVE:Den-har-også ("også¹");
+# "også"  → "òg"
+# "også¹" → "også"
+"<Også>" SELECT:Også-den-har ("også¹");
+"<også>" SELECT:også-i-2019 ("også¹") IF
+        (1 %i% OR %på%)
+        (2 sanns-årstal OR adverbialsubst)
+        ;
+# «Han blir også i 2019 å se i rally-VM.»
+"<også>" SELECT:også-i-2019 ("også¹") IF
+        (1 %i% OR %på%)
+        (2 sanns-årstal OR adverbialsubst)
+        ;
+LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
+"<også>" SELECT:der-også-mindretallet ("også¹") IF
+        (-1 %der% OR %at% OR ("fordi") OR cnjsub OR dermed-således)
+        (1 n + def OR nominativ OR np)
+        ;
+"<også>" SELECT:derfor-også-dømt ("også¹") IF
+        (-1 dermed-således)
+        (1C pp)
+        ;
+
+# «Han blir også i 2019 å se i rally-VM.»
+"<også>" SELECT:Den-har-også ("også");
 
 
 #:3782
