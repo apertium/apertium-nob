@@ -464,7 +464,7 @@ LIST adverb = adv <adv> (adj nt ind) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp = adv <adv> (adj nt ind) (adj comp) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup = adv <adv> (adj nt ind) (adj comp) (adj sup ind) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup/pres-part = adv <adv> (adj nt ind) (adj comp) (adj sup ind) (adj pprs) ;
-LIST adverbialsubst = "øyeblikk"  "år"  "vinter"  "vei"  "uke"  "torsdag"  "tonnkilometer"  "tiår"  "tirsdag"  "time"  "tiendelssekund"  "tidelssekund"  "tid"  "søndag"  "stykke"  "stund"  "steg"  "sted"  "sommer"  "skritt"  "sjømil"  "september"  "sekundmeter"  "sekund"  "påske"  "pinse"  "periode"  "onsdag"  "oktober"  "november"  "noengang"  "natt"  "nanosekund"  "nanometer"  "måned"  "morgen"  "minutt"  "millisekund"  "millimeter"  "mil"  "mikrometer"  "meter"  "mars"  "mandag"  "mai"  "m." "lørdag"  "kveld"  "kvartmil"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "km"  "klokke"  "kilometer"  "juni"  "juli"  "jul"  "januar"  "høst"  "hverdag"  "hundredelssekund"  "helligdag"  "helgedag"  "halvår"  "halvmil"  "halvmeter"  "gang"  "fredag"  "formiddag"  "februar"  "ettermiddag"  "døgn"  "desimeter"  "desember"  "dag"  "centimeter"  "august"  "april"  <dato> ("liv"  sg def) ("vår"  n) ;
+LIST adverbialsubst = "øyeblikk"  "år"  "vinter"  "vei"  "uke"  "torsdag"  "tonnkilometer"  "tiår"  "tirsdag"  "time"  "tiendelssekund"  "tidelssekund"  "tid"  "søndag"  "stykke"  "stund"  "steg"  "sted"  "sommer"  "skritt"  "sjømil"  "september"  "sekundmeter"  "sekund"  "påske"  "pinse"  "periode"  "onsdag"  "oktober"  "november"  "noengang"  "natt"  "nanosekund"  "nanometer"  "måned"  "morgen"  "minutt"  "millisekund"  "millimeter"  "mil"  "mikrometer"  "meter"  "mars"  "mandag"  "mai"  "m." "lørdag"  "kveld"  "kvartmil"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "km"  "klokke"  "kilometer"  "juni"  "juli"  "jul"  "januar"  "høst"  "hverdag"  "hundredelssekund"  "helligdag"  "helgedag"  "halvår"  "halvmil"  "halvmeter"  "gang"  "fredag"  "formiddag"  "februar"  "ettermiddag"  "døgn"  "desimeter"  "desember"  "dag"  "centimeter"  "august"  "april"  <dato> ("liv"  sg def) ("vår"  n) "omgang" "finaleomgang" ;
 LIST advtype-konj = (cnjcoo <adv>) ;
 LIST agens-p = "av"  ;
 LIST alt = "siden"  adj adv vblex pr prn cnjsub "for å" "å" n np ij det cnjcoo <anf> cm <ellipse> <kolon> lpar rpar <semi> guio ;
@@ -5341,6 +5341,7 @@ REMOVE:unlikely ("<liker>") + n;
 REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
 REMOVE:unlikely ("<spilles>") + n;
+REMOVE:unlikely ("<to>") + imp;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -5364,6 +5365,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<også>" SELECT:derfor-også-dømt ("også¹") IF
         (-1 dermed-således)
         (1C pp)
+        ;
+"<også>" SELECT:som-også-blir ("også¹") IF
+        (-1 %som% OR %men%)
+        (1C fv)
+        ;
+"<også>" SELECT:blir-også ("også¹") IF
+        (*-1C kop-fv CBARRIER ikke-adv)
+        (NOT 1 setn-gr)
         ;
 
 # «Han blir også i 2019 å se i rally-VM.»
@@ -27961,6 +27970,12 @@ SELECT:lagets-unge-spanske-trener adj + def IF
         (1C adj)
         (1C pl OR def)
         (2 n)
+        ;
+
+SELECT:konkurransens-to-lengste-svev pl IF
+        (-3C gen)
+        (-2C det + qnt + pl)
+        (-1 sup)
         ;
 
 
