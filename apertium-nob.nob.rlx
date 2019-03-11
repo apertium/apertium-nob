@@ -5370,10 +5370,6 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 %som% OR %men%)
         (1C fv)
         ;
-"<også>" SELECT:blir-også ("også¹") IF
-        (*-1C kop-fv CBARRIER ikke-adv)
-        (NOT 1 setn-gr)
-        ;
 
 # «Han blir også i 2019 å se i rally-VM.»
 "<også>" SELECT:Den-har-også ("også");
