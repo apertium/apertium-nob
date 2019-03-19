@@ -2258,6 +2258,10 @@ REMOVE:cardinal date;
         ;
 
 
+"<for>" SELECT:for-også cnjcoo IF
+        (1 ("også"))
+        ;
+
 #:3632
   "<for>"   SELECT:det-for-en-ball   (vblex) IF
 	(1 det-subst)
