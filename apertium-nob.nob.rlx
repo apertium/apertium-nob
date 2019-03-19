@@ -2388,11 +2388,11 @@ REMOVE:cardinal date;
 
 
 #:3593
-  "<ganger>"   SELECT:3593   (vblex pres) IF
-	(1 tall)
-	(-1 tall)
+"<ganger>" SELECT:en-ganger-en pl + ("gang") IF
+	(1 talord OR siffer)
+	(-1 talord OR siffer)
 ;
-#  "en ganger en er to!"
+#  "en ganger en er to!" (???)
 
 
 
@@ -28028,6 +28028,7 @@ SELECT:default ("felles");      # not pasv felle
 REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
+REMOVE:default ("gange") IF (0 ("gang"));
 
 REMOVE:default inf + pasv IF (0 pres + pasv);
 
