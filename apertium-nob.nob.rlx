@@ -5357,6 +5357,7 @@ SELECT:sel-unlikely ("<baller>" "ball" m);
         (1 %i% OR %på%)
         (2 sanns-årstal OR adverbialsubst)
         ;
+
 LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<også>" SELECT:der-også-mindretallet ("også¹") IF
         (-1 %der% OR %at% OR ("fordi") OR cnjsub OR dermed-således)
@@ -5369,6 +5370,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<også>" SELECT:som-også-blir ("også¹") IF
         (-1 %som% OR %men%)
         (1C fv)
+        ;
+
+"<også>" SELECT:Men-også-der-har-det ("også¹") IF
+        (-1 cnjcoo)
         ;
 
 # «Han blir også i 2019 å se i rally-VM.»
