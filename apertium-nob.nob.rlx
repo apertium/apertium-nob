@@ -17816,11 +17816,21 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
 
 
 
+SELECT:Den-kjente-journalisten adj IF
+	(-2C setn-gr)
+	(-1 det)
+        (0C pret OR adj)
+        (1C n)
+        (*2C fv CBARRIER clb)
+;
+# «Den kjente journalisten og kommentatoren Jamal Kashoggi (59) forsvant etter å ha ha gått inn på Saudi-Arabias konsulat i Istanbul.»
+
+
 SELECT:Det-paret-som n + def IF
 	(-2C setn-gr)
 	(-1 det)
         (1C %som%)
-        (*1C fv)
+        (*2C fv)
 ;
 # «Det paret som meldte det høyeste budet skal da spille kontrakten.»
 
