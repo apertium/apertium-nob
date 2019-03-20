@@ -2258,9 +2258,12 @@ REMOVE:cardinal date;
         ;
 
 
-"<for>" SELECT:for-også cnjcoo IF
+SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
+        (-1 >>> OR guio)
         (1 ("også"))
+        (*1 fv BARRIER inf)
         ;
+
 
 #:3632
   "<for>"   SELECT:det-for-en-ball   (vblex) IF
