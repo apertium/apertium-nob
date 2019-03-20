@@ -6504,8 +6504,12 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 
 "<høy>" REMOVE:meter-høy n IF
-        (NOT 1 %og%)
-        (NEGATE 0* ("halm") OR (".*fôr"r) OR ("gras") OR ("gress") OR ("rundball"))
+        (NEGATE 0* ("korn") OR ("halm") OR (".*fôr"r) OR ("gras") OR ("gress") OR ("rundball"))
+        ;
+
+"<høy>" REMOVE:ekstremt-høy-bruk n IF
+        (-1 adj + $$NUMBER + $$GENDER)
+        (1 n + $$NUMBER + $$GENDER)
         ;
 
 #:3511
