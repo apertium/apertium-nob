@@ -6503,6 +6503,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(0 imp)
 ;
 
+"<høy>" REMOVE:meter-høy n IF
+        (NOT 1 %og%)
+        (NEGATE 0* ("halm") OR (".*fôr"r) OR ("gras") OR ("gress") OR ("rundball"))
+        ;
 
 #:3511
   "<ingenting>"   REMOVE:3511   (n ubøy) IF
@@ -28032,6 +28036,7 @@ REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
 REMOVE:default ("gange") IF (0 ("gang"));
+REMOVE:default ("<høy>"i) + n;
 
 REMOVE:default inf + pasv IF (0 pres + pasv);
 
