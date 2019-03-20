@@ -17824,7 +17824,7 @@ SELECT:Den-kjente-journalisten adj IF
 	(-2C setn-gr)
 	(-1 det)
         (0C pret OR adj)
-        (1C n)
+        (1C n + def)
         (*2C fv CBARRIER clb)
 ;
 # «Den kjente journalisten og kommentatoren Jamal Kashoggi (59) forsvant etter å ha ha gått inn på Saudi-Arabias konsulat i Istanbul.»
