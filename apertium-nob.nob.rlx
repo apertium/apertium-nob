@@ -7932,6 +7932,11 @@ SELECT:Å-ikke-støtte inf IF
 LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå";
 REMOVE:no-samsvar adj + pp + no-samsvar ;
 
+REMOVE:steinete adj + pp IF
+        (0 adj + pst)
+        (0 ("<.*(te|et)>"r))
+        ;
+
 SELECT:nå-har-likevel-1000-returnert pp + vblex
         (*-2 %ha% + fv BARRIER ikke-adv)
         (-1 qnt + pl)
