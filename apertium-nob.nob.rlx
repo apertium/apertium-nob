@@ -3572,6 +3572,9 @@ SELECT ("lyve") IF
 #  "Vannet har rent (perf-part) ned i avløpet
 # Gutten har rent (perf-part) på ski"))
 
+"<rente>" SELECT:uendret-rente n IF
+        (NOT 1 %ned% OR %ut% OR ("<begeret>") OR %det% OR ("mer"))
+        ;
 
 
 #:3343
