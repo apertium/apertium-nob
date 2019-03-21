@@ -7941,7 +7941,7 @@ REMOVE:no-samsvar adj + pp + no-samsvar ;
 
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
-        (0 ("<.*(te|et)>"r))
+        (0 ("<.*(ete|et)>"r))
         ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
