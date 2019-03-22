@@ -94,6 +94,8 @@ LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
 LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
+LIST vekedag = "mandag" "tirsdag" "onsdag" "torsdag" "fredag" "lørdag" "søndag" ;
+LIST månad = "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember" ;
 
 LIST mORf = m f ;
 
@@ -640,7 +642,7 @@ LIST interj = ij ;
 LIST iv = (vblex inf) (vblex pp) ;
 LIST kh#ikke-adv-adj-subst-det-prep = "$-" "-" "$," "," vblex prn cnjsub (cnjcoo clb) "å" ij <<< >>> <ellipse> ;
 LIST kh#ikke-adv-adj-subst-det-prep-pron = "$-" "-" "$," "," vblex cnjsub (cnjcoo clb) "å" ij <<< >>> <ellipse> ;
-LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) <klokke> ;
+LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) <klokke> "[0-2][0-9]?[.:][0-5][0-9]"r ;
 LIST klær = "tøy"  "parkdress"  "klær"  "jakke"  "genser"  "dress"  "bukse"  ;
 LIST kolon = ("$:" clb) (":" clb) ;
 LIST komma = "$," "," ;
@@ -862,7 +864,7 @@ LIST tall-fl = (det qnt pl) "pi" ;
 LIST tall-subst = "tusen"  "trillion"  "titusen"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard" "pi" ;
 LIST tall/tall-subst = "tusen"  "trillion"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard"  "1" (det qnt pl) ("en"  det qnt) ("én" det qnt) "pi" ;
 LIST tegnsetting = cm <ellipse> <kolon> lpar rpar <semi> guio ;
-LIST tidsadv = "tidlig"  "sen"  "sein"  "nå"  "lenge"  "igjen"  "før"  "etterpå"  "da"  ("snar"  nt ind sg) ;
+LIST tidsadv = "tidlig"  "sen"  "sein"  "nå"  "lenge"  "igjen"  "før"  "etterpå"  "da"  ("snar"  nt ind sg) "neste år" "iår" "i år" "i fjor" "ifjor" "igår" "idag" "i går" "i dag" "i overimorgen" "overimorgen" "i forigårs" "forigårs" "snart" "imorgen" "i morgen" ;
 LIST tittel = <tittel> @tittel ;
 LIST tullemengde = n np ;
 LIST ub = ind ;
@@ -28010,6 +28012,12 @@ SELECT:konkurransens-to-lengste-svev pl IF
         (-3C gen)
         (-2C det + qnt + pl)
         (-1 sup)
+        ;
+
+SELECT:Skjelvet-onsdag-morgen n IF
+        (-1 >>>)
+        (0C n + nt + def OR pp)
+        (1 tidsadv OR vekedag OR månad OR klokkeslett)
         ;
 
 
