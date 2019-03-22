@@ -17617,6 +17617,13 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
         ;
 # "Etter hvert som presset fra isen avtok, …"
 
+SELECT:antall-væpna-menn adj + pp IF
+        (-*2 %en/ei/et% BARRIER ikke-adj-adv)
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1 n + ind OR adj)
+        ;
+
 #:2352
  SELECT:2352 (vblex pret) IF
 	(NOT 0 farlige-verb)
