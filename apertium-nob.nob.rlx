@@ -28028,6 +28028,13 @@ SELECT:Skjelvet-onsdag-morgen n IF
         (1 tidsadv OR vekedag OR månad OR klokkeslett)
         ;
 
+SELECT:Institutt-for-kulturstudier ("studium") IF
+        (-2 ("institutt") OR ("fakultet"))
+        (-1 %for%)
+        (0 pl + ind)
+        (0/* cmp)
+        ;
+SELECT:default ("studie");
 
 # If still ambiguous, remove unlikely lemmas:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
@@ -28065,7 +28072,6 @@ SELECT:default ("samt")   + cnjcoo;
 SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
-SELECT:default ("studie");
 SELECT:default ("plan") + m;
 SELECT:default ("presse");      # vs press
 SELECT:default ("bo") IF (0 ("bor"));
