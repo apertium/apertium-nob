@@ -79,7 +79,7 @@ LIST %éi% = ("én" f) ;
 LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
 
 # TODO: use apertium-deshtml -o
-LIST overskrift = overskrift ;
+LIST overskrift = overskrift "❡" ;
 
 # TODO: try before/after changing this to cmp
 LIST samset = samset ;
