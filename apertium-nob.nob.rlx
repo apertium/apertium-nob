@@ -904,9 +904,11 @@ LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
-LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
+# nanowordnet:
+LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
+LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -7195,6 +7197,19 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 "<området>" SELECT:ikkje-områdde subst;
 
 "<ølet>" SELECT:ølet subst;
+
+"<økt>" SELECT:økt-pris adj IF
+        (1 subst OR ukjent OR talord-par-siffer)
+        ;
+
+"<økt>" SELECT:har-støtten-økt adj IF
+        (**-1 n LINK -1 hj-verb)
+        (1 setn-gr)
+        ;
+
+"<økt>" SELECT:økt-pris adj IF
+        (1 %med% LINK 1 talord-par-siffer OR målsubst)
+        ;
 
 
 #:3361
@@ -18446,6 +18461,14 @@ REMOVE:et-faglig-senter subst-mask IF
         (0C subst-mask OR subst-nøyt)
 ;
 
+REMOVE:har-indeksen-trolig-økt n IF
+        (*-1 hj-verb)
+        (*-1 n)
+	(0C n OR pp OR adj)
+	(-1 trolig-ord)
+        ;
+
+
 #:4090
 REMOVE:4090 (vblex)
 	(0 %flekke%)
@@ -18925,7 +18948,6 @@ REMOVE:2324 pprs IF
 #  "...som det hittil har vært (ikke adj nøyt) god norsk
 #
 # politikk å verne om"
-
 
 
 #:2291
@@ -24498,7 +24520,7 @@ CONSTRAINTS
         ;
 
 "<lekker>" SELECT:virkelig-lekker adj IF
-        (-1 forsterkende)
+        (-1 forsterkende-ord)
         ;
 
 #:4055
