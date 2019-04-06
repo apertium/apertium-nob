@@ -28065,6 +28065,43 @@ SELECT:Skjelvet-onsdag-morgen n IF
         (1 tidsadv OR vekedag OR månad OR klokkeslett)
         ;
 
+
+# Typisk fv etter «som»:
+SELECT:på-en-måte-som-styrker-oss fv IF
+        (*-3 fv)
+        (-1 %som%-sbu)
+        (1 acc OR np)
+        (2 setn-gr OR pr)
+        ;
+
+SELECT:er-områder-som-grenser-mot fv IF
+        (*-3 fv)
+        (-1 %som%-sbu)
+        (1 pr)
+        (2 acc OR np)
+        ;
+
+SELECT:personen-cm-som-løp-cm fv IF
+        (-2 cm)
+        (-1 %som%-sbu)
+        (1 pr)
+        (*2 cm LINK 1 fv)
+        ;
+
+SELECT:personen-cm-som-løp-cm fv IF
+        (-2 cm)
+        (-1 %som%-sbu)
+        (1 pr)
+        (*2 cm LINK 1 fv)
+        ;
+
+SELECT:noe-som-holdt fv IF
+        (-3 cm OR setn-gr)
+        (-2 %noe%)
+        (-1 %som%-sbu)
+        ;
+
+
 SELECT:Institutt-for-kulturstudier ("studium") IF
         (-2 ("institutt") OR ("fakultet"))
         (-1 %for%)
