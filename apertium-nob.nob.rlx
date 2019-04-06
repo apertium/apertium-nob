@@ -1038,6 +1038,7 @@ REMOVE:unlikely ("<bak>"i pl);
 REMOVE:unlikely ("<skutt>"i "skute");
 REMOVE:unlikely ("<skutt>"i "skutt");
 REMOVE:unlikely ("råd") + mORf;
+REMOVE:unlikely ("tvinge") + pp IF (0 pst);
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel") + pl + def)
