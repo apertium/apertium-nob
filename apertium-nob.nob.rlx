@@ -6081,10 +6081,13 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 #:3608
   "<før>"   REMOVE:3608   (adv) IF
+        (NEGATE -1 vekedag OR månad OR adverbialsubst LINK 0 def) # onsdagen før
 	(0 adv)
 ;
-#  "referansegrammatikken ser ikke ut til å regne \"før\" som
-# adverb, bare som preposisjon og subjunksjon"
+#  "referansegrammatikken ser ikke ut til å regne \"før\" som adverb,
+# bare som preposisjon og subjunksjon" – men det fører til følgefeil i
+# ordet etterpå viss me har t.d. «et angrep onsdagen før tvang det til
+# å stenge»
 
 
 
@@ -28059,7 +28062,8 @@ SELECT:Institutt-for-kulturstudier ("studium") IF
         ;
 SELECT:default ("studie");
 
-# If still ambiguous, remove unlikely lemmas:
+# If still ambiguous, go by frequency.
+# SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
@@ -28099,6 +28103,9 @@ SELECT:default ("plan") + m;
 SELECT:default ("presse");      # vs press
 SELECT:default ("bo") IF (0 ("bor"));
 SELECT:default ("felles");      # not pasv felle
+SELECT:default ("<tvang>") + pret;
+
+# REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
