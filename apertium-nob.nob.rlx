@@ -7958,9 +7958,16 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
 ##############################################################
 
-# TODO: just remove from .dix instead?
-LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå";
+# We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
+LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri;
 REMOVE:no-samsvar adj + pp + no-samsvar ;
+# Ingen samsvar her:
+# - De ble tatt av skredet.
+# - Pengene ble gitt i gave.
+# - De ble dratt under.
+# - Barna var veloppdratt.
+# - Barna var oppdratt til å takke for maten.
+# - Motorene ble ettersett og overhalt.
 
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
