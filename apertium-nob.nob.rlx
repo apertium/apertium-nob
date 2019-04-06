@@ -5359,6 +5359,8 @@ REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
 REMOVE:unlikely ("<spilles>") + n;
 REMOVE:unlikely ("<to>") + imp;
+REMOVE:unlikely ("<vis>") + m;
+REMOVE:unlikely ("<vis>") + f;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -8121,6 +8123,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         ;
+
 
 
 
@@ -28291,7 +28294,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<Hull>" REMOVE:default-Hol ("hull" n nt pl ind) ;	# keep Hull<np><cog>→Hull
 "<Hull>" REMOVE:default-Hol ("hull" n nt sg ind) ;	# keep Hull<np><cog>→Hull
 "<Hver>" REMOVE:default-Hver ("Hver" np cgguess) ;	# keep Hver<det><qnt><f><sg>→Kvar Hver<det><qnt><m><sg>→Kvar
-"<hvilket>" REMOVE:default-kva-for-eit ("hvilken" det itg nt sg) ;	# keep hvilket<cnjsub>→som
 "<hvor>" REMOVE:default-kor ("hvor" adv) ;	# keep hvor<cnjsub>→der
 "<Hvorfor>" REMOVE:default-Hvorfor ("Hvorfor" np cgguess) ;	# keep Hvorfor<adv>→Kvifor
 "<høgskole>" REMOVE:default-høgskole ("høgskole" np org m) ;	# keep høyskole<n><m><sg><ind>→høgskule
@@ -28351,7 +28353,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
 "<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<leke>" REMOVE:default-leike ("leke" n m sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
-"<leke>" REMOVE:default-leike ("leke" vblex inf) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<lekene>" REMOVE:default-leikane ("lek" n m pl def) ;	# keep leke<n><f><pl><def>→leikene leke<n><m><pl><def>→leikene
 "<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
 "<lette>" REMOVE:default-leita ("leite" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
@@ -28596,10 +28597,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<Vinner>" REMOVE:default-Vinnar ("vinner" n m sg ind) ;	# keep Vinne<vblex><pres>→Vinn
 "<virke>" REMOVE:default-virke ("virke" n nt sg ind) ;	# keep virke<vblex><inf>→verke
 "<virker>" REMOVE:default-virke ("virke" n nt pl ind) ;	# keep virke<vblex><pres>→verker
-"<vis>" REMOVE:default-vis ("vis" n f sg ind) ;	# keep vis<n><f><pl><ind>→viser vis<n><m><pl><ind>→viser
-"<vis>" REMOVE:default-vis ("vis" n m sg ind) ;	# keep vis<n><f><pl><ind>→viser vis<n><m><pl><ind>→viser
-"<vis>" REMOVE:default-vis ("vis" n nt pl ind) ;	# keep vis<n><f><pl><ind>→viser vis<n><m><pl><ind>→viser
-"<vis>" REMOVE:default-vis ("vis" n nt sg ind) ;	# keep vis<n><f><pl><ind>→viser vis<n><m><pl><ind>→viser
 "<vitner>" REMOVE:default-vitnar ("vitne" vblex pres) ;	# keep vitne<n><nt><pl><ind>→vitne
 "<voksen>" REMOVE:default-voksen ("voks" n m sg def) ;	# keep voksen<adj><sint><pst><mf><sg><ind>→vaksen
 "<vokste>" REMOVE:default-voks ("vokse" vblex pret) ;	# keep vokse<adj><pp><pl>→vaksne
@@ -28616,8 +28613,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<øst>" REMOVE:default-øst ("øse" vblex pp) ;	# keep øst<pr>→aust
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
-"<vann>" REMOVE:default-vatn ("vann" n nt pl ind) ;	# keep vann<adv>→vann
-"<vann>" REMOVE:default-vatn ("vann" n nt sg ind) ;	# keep vann<adv>→vann
 
 
 
