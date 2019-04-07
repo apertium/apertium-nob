@@ -8125,6 +8125,10 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         ;
 
 
+SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
+        (-1 vblex + pp + %være/bli% LINK *-1C prn + sg + nom + $$GENDER BARRIER fv LINK -1 fv LINK -1 adv OR sbu)
+        ;
+
 
 
 #:6212
