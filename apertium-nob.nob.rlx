@@ -28076,7 +28076,7 @@ SELECT:Skjelvet-onsdag-morgen n IF
         ;
 
 
-# Typisk fv etter «som»:
+# Reglar for som<cnjsub> fv – typisk fv etter «som»:
 SELECT:på-en-måte-som-styrker-oss fv IF
         (*-3 fv)
         (-1 %som%-sbu)
@@ -28086,17 +28086,12 @@ SELECT:på-en-måte-som-styrker-oss fv IF
 
 SELECT:er-områder-som-grenser-mot fv IF
         (*-3 fv)
+        (NOT -2 ("posisjon") OR ("status") OR ("rolle"))
         (-1 %som%-sbu)
         (1 pr)
-        (2 acc OR np)
+        (2 acc OR np OR n + def)
         ;
-
-SELECT:personen-cm-som-løp-cm fv IF
-        (-2 cm)
-        (-1 %som%-sbu)
-        (1 pr)
-        (*2 cm LINK 1 fv)
-        ;
+# «det var ektemannen som holdt i pistolen»
 
 SELECT:personen-cm-som-løp-cm fv IF
         (-2 cm)
@@ -28111,6 +28106,20 @@ SELECT:noe-som-holdt fv IF
         (-1 %som%-sbu)
         ;
 
+SELECT:når-ungdom-som-søker-trygghet fv IF
+        (-3C cnjsub)
+        (-2C n + pl + ind OR n + sg + def)
+        (-1 %som%-sbu)
+        (1C n + ind)
+        ;
+
+
+SELECT:ham-merker-cm fv IF
+        (-1C prn + acc)
+        (0C n + pl + ind OR pres)
+        (1C clb)
+        ;
+# «Det tror jeg de som jobber sammen med ham merker»
 
 SELECT:Institutt-for-kulturstudier ("studium") IF
         (-2 ("institutt") OR ("fakultet"))
@@ -28119,6 +28128,7 @@ SELECT:Institutt-for-kulturstudier ("studium") IF
         (0/* cmp)
         ;
 SELECT:default ("studie");
+
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
