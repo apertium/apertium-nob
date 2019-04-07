@@ -1123,6 +1123,9 @@ REMOVE:unlikely ("<var>"i "var") + n + ind ; #  bare subst i sms
 REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
 
+REMOVE:unlikely ("<notene>"i "not") IF
+        (NEGATE 0* ("fisk"))
+        ;
 
 
 SELECT:year date IF
