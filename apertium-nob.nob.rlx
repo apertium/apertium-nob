@@ -28119,10 +28119,19 @@ SELECT:når-ungdom-som-søker-trygghet fv IF
 
 SELECT:ham-merker-cm fv IF
         (-1C prn + acc)
-        (0C n + pl + ind OR pres)
+        (0C n + pl + ind OR fv)
         (1C clb)
         ;
 # «Det tror jeg de som jobber sammen med ham merker»
+
+SELECT:etter-dette-løp-en-mann-ut fv IF
+        (*-2C pr BARRIER clb OR fv)
+        (0C n + pl + ind OR fv)
+        (*1C n BARRIER ikke-adv-adj-det)
+        ;
+# «Etter ti spilte minutter mellom lokalrivalene   løp   en mann ut på banen og slo etter Grealish mens spilleren sto med ryggen til»
+# «I tillegg til lokal forurensing   fører   brannene også til enorme utslipp av klimagasser som forsterker den globale oppvarmingen.»
+# Men ikkje: «brannene i Ventura var mindre omfattende, men også de førte til skader verdt 16 milliarder kroner»
 
 SELECT:Institutt-for-kulturstudier ("studium") IF
         (-2 ("institutt") OR ("fakultet"))
