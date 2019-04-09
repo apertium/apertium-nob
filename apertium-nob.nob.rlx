@@ -28110,11 +28110,12 @@ SELECT:noe-som-holdt fv IF
         ;
 
 SELECT:når-ungdom-som-søker-trygghet fv IF
-        (-3C cnjsub)
+        (-3C cnjsub OR ("<inkludert>"))
         (-2C n + pl + ind OR n + sg + def)
         (-1 %som%-sbu)
-        (1C n + ind)
+        (1C n + ind OR pr)
         ;
+# «Ukrainas nasjonalforsamling vedtok mandag innføring av unntakstilstand i flere regioner, inkludert regioner som grenser til områder kontrollert av russiskvennlige opprørere»
 
 
 SELECT:ham-merker-cm fv IF
