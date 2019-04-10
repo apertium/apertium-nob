@@ -8129,8 +8129,9 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         ;
 
 
+LIST nominativ-sg-np = (prn sg nom) (np top) ;
 SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
-        (-1 vblex + pp + %være/bli% LINK *-1C prn + sg + nom + $$GENDER BARRIER fv LINK -1 fv LINK -1 adv OR sbu)
+        (-1 vblex + %være/bli% LINK *-1C nominativ-sg-np + $$GENDER BARRIER fv OR clb LINK -1 hj-verb LINK -1 adv OR sbu)
         ;
 
 
