@@ -305,7 +305,7 @@ LIST %minst% = ("liten"  adj sup ind) ;
 LIST %minste% = ("liten"  sup def) ;
 LIST %mot% = ("mot"  pr) ;
 LIST %motsatt% = "motsatt"  ;
-LIST %mye/lite% = "mye"  "litt"  "lite"  ;
+LIST %mye/lite% = "mye"   "lite"  ;
 LIST %mye/lite/litt% = "mye"  "litt"  "lite"  ;
 LIST %ned% = "ned"  ;
 LIST %neste% = "neste"  ;
@@ -1039,6 +1039,7 @@ REMOVE:unlikely ("<skutt>"i "skute");
 REMOVE:unlikely ("<skutt>"i "skutt");
 REMOVE:unlikely ("råd") + mORf;
 REMOVE:unlikely ("tvinge") + pp IF (0 pst);
+REMOVE:unlikely ("<litt>"i "lite");
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel") + pl + def)
