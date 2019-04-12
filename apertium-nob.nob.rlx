@@ -8134,6 +8134,10 @@ SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
         (-1 vblex + %være/bli% LINK *-1C nominativ-sg-np + $$GENDER BARRIER fv OR clb LINK -1 hj-verb LINK -1 adv OR sbu)
         ;
 
+SELECT:Han-så-nesten-litt-lettet-ut adj + sg + mf IF
+        (*-1 ("se") LINK -1 prn OR n OR np LINK 0C mORf)
+        (1 ("ut") OR ("ut over"))
+        ;
 
 
 #:6212
