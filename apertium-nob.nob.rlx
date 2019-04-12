@@ -28158,6 +28158,14 @@ SELECT:Institutt-for-kulturstudier ("studium") IF
 SELECT:default ("studie");
 
 
+SELECT:fv-etter-innskot fv IF
+        (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
+        (-1 cm)
+        (0C pp OR fv)
+        ;
+# «Demokraten Beto O'Rourke, som i fjor trakk det korteste strået i et overraskende jevnt mellomvalg i den republikanske høyborgen Texas, holdt samtidig et konkurrerende velgermøte i El Paso.»
+
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
