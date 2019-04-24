@@ -1002,8 +1002,8 @@ SELECT:Nordre-Aker np IF
         (0 top)
         ;
 
-LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm";
-SELECT:namn namn-viss-mogleg + np IF (0 storbokstav);
+LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport";
+SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
@@ -18475,6 +18475,22 @@ CONSTRAINTS
         (-2 farger)
         ;
 
+"<sport>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+"<Sport>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+"<SPORT>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+
 #5034
  "<bad>"   REMOVE:5034   (n nt ind pl) IF
    (1 %boy%)
@@ -25226,22 +25242,6 @@ SELECT:noen-default <noen> + (neg) ;
 #  "kh jan 2004: Bare ved spill levende, spill våken"
 
 
-
-
-  "<sport>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
-
-  "<Sport>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
-
-  "<SPORT>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
 
 
 #:3239
