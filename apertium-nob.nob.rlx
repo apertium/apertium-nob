@@ -5368,6 +5368,8 @@ REMOVE:unlikely ("<spilles>") + n;
 REMOVE:unlikely ("<to>") + imp;
 REMOVE:unlikely ("<vis>") + m;
 REMOVE:unlikely ("<vis>") + f;
+REMOVE:unlikely ("<hører>"i) + n;
+REMOVE:unlikely ("<glede>"i) + adj ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
