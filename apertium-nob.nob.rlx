@@ -6521,6 +6521,12 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(**-1C fv BARRIER setn-gr)
 ;
 
+"<huset>" REMOVE:dette-huset-cm vblex OR adj IF
+        (-1 dem)
+	(1 setn-gr)
+;
+
+
 
 #:4084
  "<hør>"   REMOVE:4084   (n) IF
