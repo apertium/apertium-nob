@@ -1042,6 +1042,7 @@ REMOVE:unlikely ("<skutt>"i "skutt");
 REMOVE:unlikely ("råd") + mORf;
 REMOVE:unlikely ("tvinge") + pp IF (0 pst);
 REMOVE:unlikely ("<litt>"i "lite");
+REMOVE:unlikely ("trase"); # trasé
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel") + pl + def)
