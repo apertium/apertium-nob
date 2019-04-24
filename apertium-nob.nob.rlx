@@ -1015,6 +1015,8 @@ REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
 # same, remove lower-case readings.
 # E.g.: AU is an acronym, not adv
 
+REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
+
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
