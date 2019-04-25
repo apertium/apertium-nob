@@ -905,6 +905,7 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
 LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
@@ -18465,6 +18466,9 @@ SELECT:Med-økte-inntekter adj + pl IF
 # de gamle"
 
 
+SELECT:byen-Lima top IF
+        (-1 by-ord + def + sg)
+        ;
 
 CONSTRAINTS
 
