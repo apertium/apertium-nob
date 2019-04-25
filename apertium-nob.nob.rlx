@@ -5371,6 +5371,7 @@ REMOVE:unlikely ("<vis>") + m;
 REMOVE:unlikely ("<vis>") + f;
 REMOVE:unlikely ("<hører>"i) + n;
 REMOVE:unlikely ("<glede>"i) + adj ;
+REMOVE:unlikely ("<pass>"i) + m IF (0 nt + ind) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -28507,9 +28508,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<overhodet>" REMOVE:default-overhovudet ("overhode" n nt sg def) ;	# keep overhodet<adv>→i det heile
 "<Overraskende>" REMOVE:default-Overraskende ("Overraskende" np cgguess) ;	# keep Overraskende<adj><pst><mf><sg><ind>→Overraskande Overraskende<adj><pst><nt><sg><ind>→Overraskande Overraskende<adj><pst><un><pl><ind>→Overraskande Overraskende<adj><pst><un><sp><def>→Overraskande
 "<pakket>" REMOVE:default-pakket ("pakk" n nt sg def) ;	# keep pakke<vblex><pret>→pakka pakke<vblex><pp>→pakka pakke<adj><pp><nt><sg><ind>→pakka pakke<adj><pp><mf><sg><ind>→pakka
-"<pass>" REMOVE:default-pass ("pass" n m sg ind) ;	# keep pass<n><m><pl><ind>→passar
-"<pass>" REMOVE:default-pass ("pass" n nt pl ind) ;	# keep pass<n><m><pl><ind>→passar
-"<pass>" REMOVE:default-pass ("pass" n nt sg ind) ;	# keep pass<n><m><pl><ind>→passar
 "<passet>" REMOVE:default-passa ("passe" vblex pp) ;	# keep pass<n><nt><sg><def>→passet
 "<planter>" REMOVE:default-plantar ("plante" vblex pres) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
 "<planter>" REMOVE:default-plantar ("planter" n m sg ind) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
