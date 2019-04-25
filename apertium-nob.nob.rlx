@@ -28179,6 +28179,7 @@ SELECT:fv-etter-innskot fv IF
 # «Demokraten Beto O'Rourke, som i fjor trakk det korteste strået i et overraskende jevnt mellomvalg i den republikanske høyborgen Texas, holdt samtidig et konkurrerende velgermøte i El Paso.»
 
 SELECT:de-bruker pres IF
+        (NOT -2 %alle%)         # «med alle de farer det vil bringe med seg»
         (-1C det OR prn)
         (-1C pl)
         (-1 nominativ + pers)
