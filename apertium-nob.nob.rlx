@@ -1099,6 +1099,9 @@ REMOVE:unlikely ("planlegger") IF
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
+REMOVE:Lederne ("Lederne") IF
+        (-1 >>>);
+
 REMOVE:unlikely ("flask");
 REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("spile") IF (0 ("spille"));
