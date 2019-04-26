@@ -1754,6 +1754,17 @@ REMOVE:cardinal date;
 	  (1 %ned%)
 ;
 
+"<døde>" SELECT:hente-den-døde-ut adj IF
+        (-2C vblex)
+        (-1 %den%)
+        (1C prep)
+        ;
+
+"<døde>" SELECT:Den-døde-vegetasjonen adj IF
+        (-1 %den%)
+        (1C n)
+        ;
+
 "<døde>" SELECT:27-døde adj IF
         (NOT -2 cnjsub)
         (-1 talord-par-siffer)
@@ -14878,6 +14889,7 @@ SELECT:jeg-så-den-cm-men pron-pers IF
 	(NOT 0 interj)
 	(1C ikke-adv-adj-subst)
 	(NOT 1 nr2-det)
+        (NOT 1/1 det-kvant)     # den 13.
 ;
 #  "jeg så den, men
 # ikke: en av ... en eller annen...en, to, tre"
