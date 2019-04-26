@@ -1003,6 +1003,14 @@ SELECT:Nordre-Aker np IF
         (0 top)
         ;
 
+
+SELECT:Krogh-og-Eide np IF
+        (-2 np + cog + storbokstav)
+        (-1 cnjcoo)
+        (0 np + cog + storbokstav)
+        ;
+
+
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
