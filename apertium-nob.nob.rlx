@@ -535,7 +535,7 @@ LIST ent-ub = (sg ind) ;
 LIST f-subj = ("den" prn nt) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
-LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
+LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
@@ -905,6 +905,7 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
 LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
@@ -1146,6 +1147,10 @@ REMOVE:unlikely ("<varer>"i "var") ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
+        ;
+
+SELECT:unlikely ("<super>"i) + adj IF
+        (NOT 1 vann-ord)
         ;
 
 
@@ -4426,7 +4431,6 @@ REMOVE:støtte ("støte") IF
 	(NOT 1 ("på"))
 	(NOT *1 ("bort") OR ("fra") BARRIER setn-gr)
         ;
-
 
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
@@ -19328,7 +19332,7 @@ REMOVE:at-paret (adj pp) IF
  REMOVE:2266 (adj mf sg) IF
 	(NOT 0 bare-adj)
 	(-1C prep)
-	(NOT 1 subst)
+	(NOT 1 subst OR ukjent)
 	(NOT 1 adj-fem)
 	(NOT 1 komma/konj)
 	(NOT -1 %som%)
@@ -19344,7 +19348,7 @@ REMOVE:at-paret (adj pp) IF
  REMOVE:2267 (adj mf sg) IF
 	(NOT 0 bare-adj)
 	(-1C prep)
-	(NOT 1 subst)
+	(NOT 1 subst OR ukjent)
 	(NOT 1 adj-fem)
 	(NOT 1 komma/konj)
 	(NOT -1 %som%)
@@ -25280,7 +25284,6 @@ SELECT:noen-default <noen> + (neg) ;
         ;
 
 
-
 #:3180
   "<tom>"   REMOVE:3180   (n sg) IF
 	(0 subst)
@@ -28247,6 +28250,7 @@ SELECT:default ("presse");      # vs press
 SELECT:default ("bo") IF (0 ("bor"));
 SELECT:default ("felles");      # not pasv felle
 SELECT:default ("<tvang>") + pret;
+SELECT:default ("<super>"i) + adj;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
