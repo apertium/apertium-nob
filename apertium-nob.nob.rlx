@@ -3086,7 +3086,7 @@ SELECT ("lyve") IF
 
 
 #:3443
-  "<men>"   SELECT:3443   (cnjcoo) IF
+"<men>"   SELECT:men-konj-etter-komma cnjcoo IF
 	(-1 komma)
 ;
 #  "mest sannsynlig at men er konj rett etter komma"
@@ -4403,6 +4403,10 @@ SELECT ("lyve") IF
 ;
 #  "det stikk motsatte"
 
+"<strøk>" SELECT:indre-strøk n IF
+        (-1 adj OR ukjent + (".*e"r))
+        ;
+
 "<støtte>"   SELECT  subst IF
 	(NOT -1 infmerke)
 	(NOT -2 infmerke)
@@ -5380,6 +5384,7 @@ REMOVE:unlikely ("<vis>") + f;
 REMOVE:unlikely ("<hører>"i) + n;
 REMOVE:unlikely ("<glede>"i) + adj ;
 REMOVE:unlikely ("<pass>"i) + m IF (0 nt + ind) ;
+REMOVE:unlikely ("<eier>"i) + nt ;	# keep eie<n><m><pl><ind>→eigar and eie<vblex><pres>→eig
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -8159,6 +8164,18 @@ SELECT:Han-så-nesten-litt-lettet-ut adj + sg + mf IF
         (*-1 ("se") LINK -1 prn OR n OR np LINK 0C mORf)
         (1 ("ut") OR ("ut over"))
         ;
+
+
+
+
+SELECT:og-eier-og-styreleder n IF
+        (-2 n OR np OR ukjent)
+        (-1 %og%)
+        (0C n OR vblex)
+        (1 %og%)
+        (2 n OR np OR ukjent)
+        ;
+
 
 
 #:6212
@@ -20273,7 +20290,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 #
 
 #:2199
- REMOVE:2199 (clb) IF
+REMOVE:2199 clb IF
 	(0 konj)
 	(1 ub-ent-mask-adj)
 	(-1 ub-ent-mask-adj)
@@ -20288,7 +20305,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2200
- REMOVE:2200 (clb) IF
+REMOVE:2200 clb IF
 	(0 konj)
 	(-1 adj)
 	(1C adj)
@@ -20298,12 +20315,12 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2201
- REMOVE:2201 (clb) IF
+REMOVE:2201 clb IF
 	(0 konj)
 	(NOT -1 fv)
 	(NOT -2 replikk)
 	(*-2C setn-gr BARRIER fv)
-	(**1CO setn-gr LINK *-1 fv LINK NOT *-1 fv)
+	(**1C setn-gr LINK *-1 fv LINK NOT *-1 fv)
 ;
 #  "bare ett FV i perioden
 # Ikke: - Men (CLB) hun greide seg godt"))
@@ -20315,50 +20332,32 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2202
- REMOVE:2202 (clb) IF
+REMOVE:Transittlanda-cm-og-da-spesielt clb IF
 	(0 clb/konj-konj)
 	(NOT -1 replikk)
 	(NOT -1 clb)
 	(NOT -2 strek)
+        (NOT 1 fv)
 	(**-1C setn-gr LINK NOT 0 %som%)
 	(**-1C setn-gr BARRIER fv)
 ;
 #  "Transittlanda, og (ikke clb) da spesielt
-# (forts) Mexico har byrja ...
-# Gjeld ikke for konj i begynnelsen av en
-# periode. Disse er CLB
-# NOT -2 STREK: -, men (CLB) han overlevde ..."))
-
-
-
-#:2203
- REMOVE:2203 (clb) IF
-	(0 clb/konj-konj)
-	(NOT -1 replikk)
-	(NOT -1 clb)
-	(**-1C setn-gr LINK NOT 0 %som%)
-	(**-1C setn-gr BARRIER fv)
-;
-#  "Transittlandene, og (ikke clb) da spesielt
 # (forts) Mexico har begynt ...
-# Gjelder ikke for konj i begynnelsen av en
-# periode. Disse er CLB
-# NOT LR0 %SOM%: Høy utdannelse er som (sbu)
-# (forts) kjent (skjult fv) en garanti,
-# (forts) og (CLB) følgelig er ..."))
+# Gjelder ikke for konj i begynnelsen av en periode. Disse er CLB.
+# NOT -2 strek: «-, men (CLB) han overlevde ...»
+# … LINK NOT 0 %som%: «Høy utdannelse er som (sbu) kjent (skjult fv) en garanti, og (CLB) følgelig er ...»
 
 
 
 #:2204
- REMOVE:2204 (clb) IF
+REMOVE:konj-i-skjult-relsetn clb IF
 	(0 clb/konj-konj)
 	(-1C pron/subst)
 	(**1C pron/subst BARRIER ikke-adv-adj-det)
 	(**1CO pron/subst LINK NOT 0 subst-gen LINK NOT 0 subst-prop LINK **1C pron/subst LINK NOT *-1 ikke-adv-adj-subst-pron-konj-det2)
 ;
-#  "konj i skjult relativsetning:
-# sammen med matpakken og (ikke clb)
-# (forts) de to karamellene han fant ..."))
+# konj i skjult relativsetning:
+# «sammen med matpakken og (ikke clb) de to karamellene han fant ...»
 
 
 
@@ -24060,7 +24059,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1867
- REMOVE:1867 (vblex pret) IF
+ REMOVE:hvite-skjorter-og-svarte-slips (vblex pret) IF
 	(-1 konj)
 	(NOT -1 clb)
 	(NOT -1 adv)
@@ -28339,7 +28338,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<eid>" REMOVE:default-eid ("eid" n m sg ind) ;	# keep eie<vblex><pp>→eigd
 "<eid>" REMOVE:default-eid ("eid" n nt pl ind) ;	# keep eie<vblex><pp>→eigd
 "<eid>" REMOVE:default-eid ("eid" n nt sg ind) ;	# keep eie<vblex><pp>→eigd
-"<eier>" REMOVE:default-eigar ("eier" n m sg ind) ;	# keep eie<n><nt><pl><ind>→eige
 "<Ellers>" REMOVE:default-Ellers ("Ellers" np top) ;	# keep Ellers<adv>→Elles
 "<ender>" REMOVE:default-ender ("and" n f pl ind) ;	# keep ende<vblex><pres>→endar ende<n><m><pl><ind>→endar
 "<ender>" REMOVE:default-ender ("and" n m pl ind) ;	# keep ende<vblex><pres>→endar ende<n><m><pl><ind>→endar
