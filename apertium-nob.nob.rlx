@@ -1754,6 +1754,20 @@ REMOVE:cardinal date;
 	  (1 %ned%)
 ;
 
+"<døde>" SELECT:27-døde adj IF
+        (NOT -2 cnjsub)
+        (-1 talord-par-siffer)
+        (NOT -1 sanns-årstal)
+        ;
+# «– Vi har 32 døde på grunn av terrorister.»
+# Ikkje: «Trump benekter at 3.000 døde som følger av Puerto Rico-orkan»
+# Ikkje: «2.500 ble født, 960 døde, 15.800 flyttet til Oslo og 13.900 flyttet fra Oslo.»
+# Ikkje: «I 2018 døde over 3.700 mennesker i slike hendelser.»
+# Tvetydig (overskrift eller ei?): «Over 150 døde etter å ha drukket giftig hjemmebrent i India»
+
+
+
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
