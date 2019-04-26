@@ -18111,6 +18111,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(-1 subst-prop)
 	(NOT -1 subst-gen)
 	(-2C setn-gr)
+        (NOT 1C fv)             # «Den  døde  ble funnet»
 ;
 # group: 49
 
