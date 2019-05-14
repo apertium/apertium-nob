@@ -911,6 +911,7 @@ LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kj
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
 LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
+LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -1009,6 +1010,17 @@ SELECT:Krogh-og-Eide np IF
         (-2 np + cog + storbokstav)
         (-1 cnjcoo)
         (0 np + cog + storbokstav)
+        ;
+
+SELECT:Erna-Sanner-og-Lae np IF
+        (-2 np + cog + storbokstav)
+        (-1 cm)
+        (1 cnjcoo)
+        (2 ukjent + storbokstav)
+        ;
+
+SELECT:nestleder-Sanner np IF
+        (-1 yrkestittel-ord)
         ;
 
 
