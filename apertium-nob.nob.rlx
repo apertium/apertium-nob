@@ -1156,6 +1156,7 @@ REMOVE:unlikely ("<reker>"i) + vblex IF
 REMOVE:unlikely ("<var>"i "var") + n + ind ; #  bare subst i sms
 REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
+REMOVE:unlikely ("<ris>"i gen) ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -3700,6 +3701,14 @@ SELECT ("lyve") IF
 ;
 # de rike
 
+"<ris>" SELECT:ris-og-ros n + nt + sg IF
+        (1 %og%)
+        (2 ("ros"))
+        ;
+"<ros>" SELECT:ris-og-ros n IF
+        (-2 ("ris"))
+        (-1 %og%)
+        ;
 
 #:4002
 
@@ -5434,6 +5443,11 @@ REMOVE:unlikely ("<hører>"i) + n;
 REMOVE:unlikely ("<glede>"i) + adj ;
 REMOVE:unlikely ("<pass>"i) + m IF (0 nt + ind) ;
 REMOVE:unlikely ("<eier>"i) + nt ;	# keep eie<n><m><pl><ind>→eigar and eie<vblex><pres>→eig
+REMOVE:unlikely ("<negler>"i) + vblex ;
+REMOVE:unlikely ("<kan>"i) + n ;
+REMOVE:unlikely ("<spiser>"i) + n ;
+REMOVE:unlikely ("lom") ;
+REMOVE:unlikely ("<saker>" "sake") ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -28327,6 +28341,7 @@ REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
 REMOVE:default ("gange") IF (0 ("gang"));
 REMOVE:default ("<høy>"i) + n;
+REMOVE:default ("<spiser>"i) + n;
 
 REMOVE:default inf + pasv IF (0 pres + pasv);
 
