@@ -12856,6 +12856,13 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 	(*1 fl-subst LINK NOT 1 subst/adj)
 ;
 
+SELECT:det-de-spiser-er-bambus pres IF
+        (-2 prn + acc)
+        (-1 prn + nominativ)
+        (0C pres OR n)
+        (1C pres)
+        (*2C nominativ OR np OR n BARRIER ikke-adv-adj-det)
+        ;
 
 #:2783
  SELECT:2783 (det pl) IF
@@ -24740,6 +24747,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "dette har tvunget fram kravet om (prep) fast ansatt sekretær"))
 
+"<rammer>" SELECT:setter-rammer-for n IF
+        (-1 ("sette"))
+        ;
+
 #:4063
  "<rette>"   SELECT:4063   (n) IF
 	  (-1 %til%)
@@ -26997,8 +27008,16 @@ SELECT:de-som-berøres-ligger pres
 ;
 # «Menighetene som berøres ligger i Vestre Aker prosti, …»
 
+SELECT:hva-de-spiser-varierer pres
+        (-2 spørreadv OR prn + acc)
+        (-1 prn + nominativ)
+	(1 pres)
+;
+# «Hva de spiser varierer med sesongen.»
+# «Bambus er også viktig mat for panda, 99 % av det de spiser er bambus.»
+
 SELECT:no-pres-pres subst
-	(-1 pres)
+	(-1C pres)
 	(0C subst OR pres)
 ;
 
@@ -28244,6 +28263,18 @@ SELECT:de-bruker pres IF
         (-1C pl)
         (-1 nominativ + pers)
         (0C n + ind OR pres)
+        ;
+
+SELECT:Som-spiller-ønsker-man pres IF
+        (-2 %som% LINK -1 setn-gr)
+        (-1C pres OR n + ind)
+        (*1C nominativ OR np OR n + def BARRIER ikke-adv-adj-det)
+        ;
+
+SELECT:de-som-skilles-velger-delt pres IF
+        (-2 %som% LINK -1 prn)
+        (-1C pres OR n + ind)
+        (*1C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
 
 # If still ambiguous, go by frequency.
