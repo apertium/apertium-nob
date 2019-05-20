@@ -11682,10 +11682,14 @@ SELECT:2963 (adj nt ind sg) IF
 #  "den usynlige og underbemanna staben"
 #      :group 30
 
-
+SELECT:mest-omsatte adv IF
+	(0 grads-adv)
+	(1C adj)
+;
+# prefer adv over adj if possible for grads-adv
 
 #:2876
- SELECT:2876 (adj sup) IF
+ SELECT:størst-mulig (adj sup) IF
 	(0 grads-adv)
 	(1C adj)
 ;
@@ -19278,6 +19282,7 @@ REMOVE:2324 pprs IF
 	(NOT 0 %tiltalte%)
 	(-1 prep)
 	(NOT 1 subst/adj)
+	(NOT 1 ukjent)
 	(NOT 1 komma/konj)
 ;
 #  "fjerner i hvert fall overflødige lesninger
@@ -22194,7 +22199,7 @@ REMOVE:Løft-så-ut n IF
 
 
 #:2016
- REMOVE:2016 fl-subst IF
+ REMOVE:daglig-leder fl-subst IF
 	(-1 adj-ent)
 	(NOT -1 ikke-adj)
 	(NOT -1 adj-fl)
@@ -23629,7 +23634,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1895
- REMOVE:1895 pp IF
+ REMOVE:Nautnes-spilte-EM pp IF
 	(NOT 0 %ta%)
 	(NOT *1 overskrift)
 	(NOT -1 periode-beg/clb/strek)
@@ -23643,6 +23648,8 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT -1 pron-akk-mfn/fl)
 	(**-1C setn-gr BARRIER p-hj-verb)
 	(**-1C setn-gr BARRIER m-hj-verb-pret)
+        (NEGATE 0 pp + ind LINK 1C n + ind)
+        (NEGATE 0 pp + pl LINK 1C n + pl)
 ;
 #  "NOT \"OM/ENN/SOM/HVIS\":som dokumentert(perf-part)
 # (NOT -1C PASS): forsøkes solgt (perf-part)
@@ -23684,9 +23691,10 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1899
- REMOVE:1899 pp IF
+REMOVE:til-huset pp IF
 	(-1 %til%)
 	(NOT -2 %og%)
+        (0C n + def OR pp)
 ;
 #  "De kjørte til huset (ikke perf-part)"))
 
@@ -23700,6 +23708,8 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT -1 %til%)
 	(NOT -1 %ut%)
 	(NOT -1 @adv)
+        (NEGATE 0 pp + ind LINK 1C n + ind)
+        (NEGATE 0 pp + pl LINK 1C n + pl)
 ;
 #  "tok seg ut av huset (ikke perf-part)
 # NOT -1 SBU: Som (sbu) kjent (perf-part)
@@ -26914,7 +26924,6 @@ SELECT:ved-Malis-grenser-bor n + ind IF
 	(**1CO pres/pret LINK -1C pron/subst LINK -1 pron/subst)
 ;
 
-
 #:1730
  SELECT:1730 (vblex pp) IF
 	(NOT 0 hj-verb)
@@ -27061,6 +27070,7 @@ SELECT:har-blitt-oppretta perf-part IF
         (-1C perf-part)
         (0C adj OR verb)
 ;
+
 
 #CONSTRAINTS
 ## remove ndomain heur
@@ -28291,6 +28301,16 @@ SELECT:de-som-skilles-velger-delt pres IF
         (*1C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
 
+SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
+        (0C pp OR pret)
+        (1C n + ind)
+        ;
+
+SELECT:de-grønnkledde-holdt-stand pret IF
+        (0C pp OR pret)
+        (NEGATE *0C fv CBARRIER setn-gr)
+        ;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
@@ -28342,12 +28362,9 @@ REMOVE:default ("unge") + n;
 REMOVE:default ("gange") IF (0 ("gang"));
 REMOVE:default ("<høy>"i) + n;
 REMOVE:default ("<spiser>"i) + n;
-
 REMOVE:default inf + pasv IF (0 pres + pasv);
-
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
-
 REMOVE:default adv   IF (0 ("<det>"i));
 
 
