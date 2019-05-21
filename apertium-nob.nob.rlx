@@ -8063,7 +8063,10 @@ SELECT:Å-ikke-støtte inf IF
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri;
-REMOVE:no-samsvar adj + pp + no-samsvar ;
+REMOVE:no-samsvar adj + pp + no-samsvar IF
+        (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
+        (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
+        ;
 # Ingen samsvar her:
 # - De ble tatt av skredet.
 # - Pengene ble gitt i gave.
@@ -11692,7 +11695,7 @@ SELECT:2963 (adj nt ind sg) IF
 
 SELECT:mest-omsatte adv IF
 	(0 grads-adv)
-	(1C adj)
+	(1C adj + pp)
 ;
 # prefer adv over adj if possible for grads-adv
 
@@ -18619,7 +18622,6 @@ CONSTRAINTS
 #bad (adj) guy og andre engelske bad
 
 
-
 #CONSTRAINTS
 ## remove ndomain
 
@@ -23950,7 +23952,22 @@ REMOVE:til-huset pp IF
 # (*-1 SETN-GR *R)
 # (LR0 %SOM%))"))
 
+REMOVE:lar-føringene-for-samarbeidet-være-uvisse pret IF
+        (*-1 fv)
+        (0C pret OR n + def) # Vitner skal i ukene før det dødelige skuddet  falt  ha hørt henne snakke om det.
+        (1C inf)
+        ;
+# «De som er for EU mener avtalen etablerer sperrer mellom Storbritannia og deres største handelspartner, og at den lar mange føringer for det fremtidige samarbeidet være uvisse.»
 
+SELECT:men-de-grønnkledde-holdt-stand pret IF
+        (-3 setn-gr)
+	(-2 prn + nom OR det + dem)
+	(-1 adj + def OR adj + pl OR ukjent)
+        (NOT *-1 fv BARRIER setn-gr)
+        (NOT 0 farlige-verb)
+        (NOT *1 fv BARRIER setn-gr)
+        (NOT 1 setn-gr)
+;
 
 #:1853
  REMOVE:1853 (vblex pret) IF
@@ -23958,6 +23975,7 @@ REMOVE:til-huset pp IF
 	(NOT 0 %var%)
 	(1 mask)
 	(NOT -1 pron/subst OR ukjent OR adv)
+	(NEGATE -1 adj + def OR adj + pl OR ukjent LINK -1 prn + nom OR det + dem) # de grønnkledde holdt stand
 	(**-1C fv BARRIER setn-gr)
 ;
 #  "(NOT LR0 TRANS2)
@@ -28310,6 +28328,7 @@ SELECT:de-som-skilles-velger-delt pres IF
         ;
 
 SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
+        (NOT -1 %som%)
         (0C pp OR pret)
         (1C n + ind)
         ;
@@ -28317,6 +28336,13 @@ SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
 SELECT:de-grønnkledde-holdt-stand pret IF
         (0C pp OR pret)
         (NEGATE *0C fv CBARRIER setn-gr)
+        (NOT 0 farlige-verb)
+        ;
+
+SELECT:den-mest-betydningsfulle sp + def IF
+        (*-2 dem BARRIER ikke-adv)
+        (-1 grads-adv)
+        (0C adj + pst)
         ;
 
 # If still ambiguous, go by frequency.
