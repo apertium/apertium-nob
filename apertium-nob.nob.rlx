@@ -1481,6 +1481,10 @@ REMOVE:cardinal date;
 ;
 #De åpnet Bislet bad..
 
+"<bar>" SELECT:bar-preg pret IF
+        (1 ("preg"))
+        ;
+
 
 #:3739
   "<bare>"   SELECT:3739   (adv) IF
@@ -2092,6 +2096,9 @@ REMOVE:cardinal date;
 ;
 #  "Berre ved: til felles"
 
+"<felles>"   SELECT:felles-mistro adv IF
+        (1 ukjent)
+        ;
 
 
 #:5046
@@ -5448,6 +5455,7 @@ REMOVE:unlikely ("<kan>"i) + n ;
 REMOVE:unlikely ("<spiser>"i) + n ;
 REMOVE:unlikely ("lom") ;
 REMOVE:unlikely ("<saker>" "sake") ;
+REMOVE:unlikely ("<fanger>" "fange") ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
