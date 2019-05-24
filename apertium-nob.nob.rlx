@@ -17422,6 +17422,23 @@ SELECT:denne-typen-gjerder subst + ind IF
         (-1 ("type"))
         ;
 
+SELECT:er-det-varslet-en-offentliggjøring pp IF
+        (*-1 expl BARRIER ikke-adv LINK *-1 hj-verb BARRIER setn-gr)
+        (0C pp OR n + sg + def)
+        (NOT 0 farlige-part)
+        (NOT -1 adj)
+        ;
+# «Deretter er det varslet en offentliggjøring av en beslutning.»
+# «Blant annet var det tegnet et hakekors»
+
+SELECT:det-klart-beste-laget n + nt + sg + def IF
+        (*-1 det + dem + nt + sg BARRIER ikke-adv-adj LINK NOT *-1 m-hj-verb BARRIER setn-gr)
+        (0C pp OR n + sg + def)
+        (NOT 0 farlige-nøyt-subst)
+        (NEGATE *1 n BARRIER ikke-adv-adj-det-subst LINK *-1x hj-verb) # ble<hj-verb> det varslet<pp> en offentliggjøring<n>
+        ;
+# «De kunne ha fått sin tredje seier på rappen i mai, men slik skulle det ikke gå selv om de var det klart beste laget veldig lenge.»
+
 SELECT:å-glemme-tapet-mot be-subst IF
         (-2C infmerke)
         (-1C inf)
@@ -18646,7 +18663,6 @@ REMOVE:mot-angivelig-russisk-støtte adv IF
         (1C pst)
         ;
 
-
 #:4090
 REMOVE:4090 (vblex)
 	(0 %flekke%)
@@ -19092,16 +19108,14 @@ REMOVE:2324 pprs IF
 # 6.3.2001: not 1 adj-fl: hans påstått frynsete jakker"
 
 
-
-#:2294
- REMOVE:2294 (adj nt ind sg) IF
-	(NOT -1 kop-u-%hete/kalle OR prep)
-	(0 adv)
-	(NOT 0 samset)
-;
-#  "6.3.2001: Denne regelen ble lagt til i GF"
-
-
+REMOVE:hans-rolle-i-den-spesielt adj + nt + ind + sg IF
+ 	(NOT -1 kop-u-%hete/kalle OR prep)
+        (0C adv OR adj + ind + nt + sg)
+ 	(NOT 0 samset)
+        (1 setn-gr OR prep)
+        ;
+# «Situasjonen innen amerikansk politikk, og presidentens rolle i den spesielt, innbyr jo virkelig til satire.»
+# «Skyll den så i kaldt vann, og tørk den godt med et kjøkkenpapir.»
 
 #:2293
  REMOVE:2293 (adj nt ind) IF
