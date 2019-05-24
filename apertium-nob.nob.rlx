@@ -5458,6 +5458,7 @@ REMOVE:unlikely ("<saker>" "sake") ;
 REMOVE:unlikely ("<fanger>" "fange") ;
 REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
+REMOVE:unlikely ("<begynner>"i) + n ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -8150,7 +8151,7 @@ SELECT:han-var-sykmeldt (adj pp mf sg ind)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:ble-det-vedtatt (adj pp nt sg ind)
+SELECT:ble-det-vedtatt (adj pp nt sg ind) OR (vblex pp)
 	(-2 %være/bli%)
 	(-1 %det%)
         (NOT 0 adv OR farlige-part)
@@ -17427,6 +17428,8 @@ SELECT:er-det-varslet-en-offentliggjøring pp IF
         (0C pp OR n + sg + def)
         (NOT 0 farlige-part)
         (NOT -1 adj)
+        (*1 n OR adj OR adv)
+        (NOT 1 %som% OR setn-gr OR fv)
         ;
 # «Deretter er det varslet en offentliggjøring av en beslutning.»
 # «Blant annet var det tegnet et hakekors»
@@ -17435,7 +17438,6 @@ SELECT:det-klart-beste-laget n + nt + sg + def IF
         (*-1 det + dem + nt + sg BARRIER ikke-adv-adj LINK NOT *-1 m-hj-verb BARRIER setn-gr)
         (0C pp OR n + sg + def)
         (NOT 0 farlige-nøyt-subst)
-        (NEGATE *1 n BARRIER ikke-adv-adj-det-subst LINK *-1x hj-verb) # ble<hj-verb> det varslet<pp> en offentliggjøring<n>
         ;
 # «De kunne ha fått sin tredje seier på rappen i mai, men slik skulle det ikke gå selv om de var det klart beste laget veldig lenge.»
 
