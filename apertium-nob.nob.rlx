@@ -912,6 +912,7 @@ LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "rund
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
 LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
 LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
+LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -22229,6 +22230,12 @@ REMOVE:Løft-så-ut n IF
 
 
 
+SELECT:særlig-purker fl-subst IF
+        (-2 cm)
+	(-1 spesielt-ord)
+        (1 cm)
+;
+
 #:2016
  REMOVE:daglig-leder fl-subst IF
 	(-1 adj-ent)
@@ -25790,6 +25797,24 @@ REMOVE:er-en-svenske-og-tre-finner clb + cnjcoo IF
 # «De savnede er en svensk kvinne og tre finner, opplyser politiet overfor det svenske nyhetsbyrået TT.»
 # Ikkje: «Omtrent 3/4 av befolkningen bor langs kysten  og  97 % bor i den vestlige halvdelen av landet.»
 
+REMOVE:hos-hanngris-og-purker clb + cnjcoo IF
+        (*-3 fv)
+        (-2C pr)
+        (-1C n)
+        (1C n OR pres)
+        (2 setn-gr)
+        ;
+
+REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
+        (*-4 fv)
+        (-3C n)
+        (-2C pr)
+        (-1C n)
+        (1C n OR pres)
+        (2C pr)
+        (3 n)
+        (4 setn-gr)
+        ;
 
 #:1812
  SELECT:1812 (clb cnjcoo) IF
