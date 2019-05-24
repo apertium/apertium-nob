@@ -7777,6 +7777,9 @@ SELECT:skrev vblex IF
 #  "bare trans"
 
 
+"<utelukket>" SELECT pst IF
+        (-1 ("<helt>"i))
+        ;
 
 #:3164
   "<under>"   REMOVE:3164   (n sg) IF
