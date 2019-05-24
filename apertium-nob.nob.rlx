@@ -17429,7 +17429,7 @@ SELECT:er-det-varslet-en-offentliggjøring pp IF
         (NOT 0 farlige-part)
         (NOT -1 adj)
         (*1 n OR adj OR adv)
-        (NOT 1 %som% OR setn-gr OR fv)
+        (NOT 1 %som% OR setn-gr OR fv OR %ikke/også%)
         ;
 # «Deretter er det varslet en offentliggjøring av en beslutning.»
 # «Blant annet var det tegnet et hakekors»
