@@ -7782,6 +7782,10 @@ SELECT:skrev vblex IF
         (-1 ("<helt>"i))
         ;
 
+"<utelukket>" SELECT pst IF
+        (1 ("<å>"i))
+        ;
+
 #:3164
   "<under>"   REMOVE:3164   (n sg) IF
 	(*-1 det-nøyt-ent BARRIER ub-det)
