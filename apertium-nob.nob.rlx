@@ -28396,6 +28396,11 @@ SELECT:den-mest-betydningsfulle sp + def IF
         (0C adj + pst)
         ;
 
+SELECT:ansatte-fl fl IF
+        (0 ("ansatt"))
+        (NOT -1 det + def OR adj + def)
+        ;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
