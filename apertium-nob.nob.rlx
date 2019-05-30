@@ -5461,6 +5461,7 @@ REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
 REMOVE:unlikely ("<begynner>"i) + n ;
 REMOVE:unlikely ("<østers>"i "øst") ;
+REMOVE:unlikely ("<bomber>"i "bomber") ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
