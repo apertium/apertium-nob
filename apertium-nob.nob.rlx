@@ -920,7 +920,7 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 BEFORE-SECTIONS
 
 # Typically stuff that's first in a sentence:
-LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" ;
+LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" ;
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
@@ -5460,6 +5460,7 @@ REMOVE:unlikely ("<fanger>" "fange") ;
 REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
 REMOVE:unlikely ("<begynner>"i) + n ;
+REMOVE:unlikely ("<østers>"i "øst") ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
