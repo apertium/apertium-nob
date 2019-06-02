@@ -77,7 +77,7 @@ LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
 LIST %éi% = ("én" f) ;
 LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
-
+LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
 LIST overskrift = overskrift "❡" ;
 
@@ -920,7 +920,7 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 BEFORE-SECTIONS
 
 # Typically stuff that's first in a sentence:
-LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" ;
+LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<.*rammede>"ri  "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "<.*forfatter>"ri "<Reguleringer>" "<Frykter>";
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
@@ -954,6 +954,7 @@ SELECT:over_30._Men clb IF
 CONSTRAINTS
 
 REMOVE guess;
+
 
 REMOVE:np-guess-safe cgguess IF
         (NOT -1 storbokstav)    # allow: Ding Liren<cgguess>
@@ -1022,6 +1023,25 @@ SELECT:Erna-Sanner-og-Lae np IF
 
 SELECT:nestleder-Sanner np IF
         (-1 yrkestittel-ord)
+        ;
+
+REMOVE:Golflegenden-Tiger-Woods cgguess IF
+        (-1 >>>)
+        (0 n + sg + def)
+        (1 storbokstav)
+        ;
+
+REMOVE:-Golflegenden-Tiger-Woods cgguess IF
+        (-2 >>>)
+        (-1 emdash-endash)
+        (0 n + sg + def)
+        (1 storbokstav)
+        ;
+
+REMOVE:Brannmannskap-har cgguess IF
+        (-1 >>>)
+        (0C n + def OR n + pl OR np)
+        (1C fv)
         ;
 
 
