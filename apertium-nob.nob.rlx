@@ -1094,7 +1094,7 @@ REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
 
 REMOVE:unlikely ("regle") IF
-        (0 ("regel") + pl + def)
+        (0 ("regel"))
         (NOT 0* ("lek") OR ("stev") OR ("rim") OR ("barnerim") OR ("eventyr") OR ("ordspråk") OR ("sagn") OR ("gåte"))
         ;
 
