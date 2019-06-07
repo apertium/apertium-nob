@@ -5484,6 +5484,7 @@ REMOVE:unlikely ("lage") + n ;
 REMOVE:unlikely ("<begynner>"i) + n ;
 REMOVE:unlikely ("<østers>"i "øst") ;
 REMOVE:unlikely ("<bomber>"i "bomber") ;
+REMOVE:unlikely ("<lokk>"i) + m IF (NOT (-1 %en%)) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
