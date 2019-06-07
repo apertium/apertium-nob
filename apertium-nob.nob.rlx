@@ -9,6 +9,7 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 LIST GENDER = m f nt mf ;
 LIST NUMBER = sg pl sp ;
+LIST DEFNES = def ind ;
 LIST TEMPUS = inf pres pasv pret pp imp ;
 
 LIST <<< = <<< ;
@@ -34,6 +35,7 @@ LIST pos = pos ;
 LIST guess = guess ;
 LIST cgguess = cgguess ;
 LIST cmp = cmp ;
+LIST cmp-split = cmp-split ;
 LIST cm = cm ;
 LIST pret = pret ;
 LIST imp = imp ;
@@ -466,8 +468,7 @@ LIST adverb = adv <adv> (adj nt ind) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp = adv <adv> (adj nt ind) (adj comp) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup = adv <adv> (adj nt ind) (adj comp) (adj sup ind) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup/pres-part = adv <adv> (adj nt ind) (adj comp) (adj sup ind) (adj pprs) ;
-LIST adverbialsubst = "øyeblikk"  "år"  "vinter"  "vei"  "uke"  "torsdag"  "tonnkilometer"  "tiår"  "tirsdag"  "time"  "tiendelssekund"  "tidelssekund"  "tid"  "søndag"  "stykke"  "stund"  "steg"  "sted"  "sommer"  "skritt"  "sjømil"  "september"  "sekundmeter"  "sekund"  "påske"  "pinse"  "periode"  "onsdag"  "oktober"  "november"  "noengang"  "natt"  "nanosekund"  "nanometer"  "måned"  "morgen"  "minutt"  "millisekund"  "millimeter"  "mil"  "mikrometer"  "meter"  "mars"  "mandag"  "mai"  "m." "lørdag"  "kveld"  "kvartmil"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "km"  "klokke"  "kilometer"  "juni"  "juli"  "jul"  "januar"  "høst"  "hverdag"  "hundredelssekund"  "helligdag"  "helgedag"  "halvår"  "halvmil"  "halvmeter"  "gang"  "fredag"  "formiddag"  "februar"  "ettermiddag"  "døgn"  "desimeter"  "desember"  "dag"  "centimeter"  "august"  "april"  <dato> ("liv"  sg def) ("vår"  n) "omgang" "finaleomgang" ;
-LIST advtype-konj = (cnjcoo <adv>) ;
+LIST adverbialsubst = "april" "august" "centiliter" "centimeter" "dag" <dato> "dekaliter" "dekameter" "desember" "desiliter" "desimeter" "døgn" "ellevedel" "ellevtedel" "ettermiddag" "februar" "femdel" "femtedel" "finaleomgang" "firedel" "fjerdedel" "fjorår" "formiddag" "fredag" "gang" "gårsdag" "halvmeter" "halvmil" "halvår" "hektoliter" "helg" "helgedag" "helligdag" "hundredel" "hundredelssekund" "hverdag" "høst" "januar" "jord" "jul" "juli" "juni" "kilometer" "kilopondmeter" "klokke" "km" "kubikkcentimeter" "kubikkdesimeter" "kubikkmeter" "kubikkmillimeter" "kvadratcentimeter" "kvadratdesimeter" "kvadratkilometer" "kvadratmeter" "kvadratmillimeter" "kvarter" "kvartmil" "kveld" "laupemeter" "liter" ("liv" sg def) "løpemeter" "lørdag" "m." "mai" "mandag" "mars" "meter" "mikrometer" "mil" "milliliter" "millimeter" "millisekund" "minutt" "morgen" "mål" "måned" "nanometer" "nanosekund" "natt" "nidel" "niendedel" "noengang" "november" "oktober" "omgang" "onsdag" "passasjerkilometer" "periode" "pinse" "poeng" "prosent" "påske" "rutemeter" "seksdel" "sekund" "sekundmeter" "september" "sjettedel" "sjudel" "sjuendedel" "sjømil" "skritt" "sommer" "spaltemillimeter" "sted" "steg" "stund" "stykke" "syvdel" "syvendedel" "søndag" "tid" "tidel" "tidelssekund" "tiendedel" "tiendelssekund" "time" "tirsdag" "tiår" "tjuedel" "tjuendedel" "tolvdel" "tolvtedel" "tonnkilometer" "torsdag" "tredel" "tredjedel" "tyvedel" "tyvendedel" "uke" "vei" "vinter" ("vår" n) "øyeblikk" "år" "åttedel" "åttendedel"  ;LIST advtype-konj = (cnjcoo <adv>) ;
 LIST agens-p = "av"  ;
 LIST alt = "siden"  adj adv vblex pr prn cnjsub "for å" "å" n np ij det cnjcoo lquot rquot cm <ellipse> <kolon> lpar rpar <semi> guio ;
 LIST anf = lquot rquot ;
@@ -920,7 +921,7 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 BEFORE-SECTIONS
 
 # Typically stuff that's first in a sentence:
-LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<.*rammede>"ri  "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "<.*forfatter>"ri "<Reguleringer>" "<Frykter>";
+LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<.*rammede>"ri  "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "<.*forfatter>"ri "<Reguleringer>" "<Frykter>" "<.*siktet>"ri ;
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
@@ -28985,17 +28986,49 @@ SELECT:Ukjendord-utelukkes-ikke. fv IF
 
 
 # @nkon: simple noun-noun conjunctions under genitive
-ADD (@nkon) ("og") IF
+ADD:dyrenes-velferd-og-livsforhold (@nkon) ("og") IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
         (1C n + ind LINK NOT 0 gen)
         (NOT 2 ("i"))
 ;
 
-ADD (@nkon) ("og") IF
+ADD:dyrenes-velferd-og-mobilitetsforhold (@nkon) ("og") IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
         (1C n + cmp)
         (2C n + ind LINK NOT 0 gen)
-        (NOT 2 ("i"))           # Kritikere av landets regime  og  kilder i CIA mener …
+        (NOT 2 ("i"))           # «Kritikere av landets regime  og  kilder i CIA mener …»
+;
+
+ADD:bussene-og-båtenes (@nkon) ("og") IF
+        (NOT -2 adverbialsubst) # «Med gårsdagens oppgang på 1,36 prosent og dagens opptur på 1,17 prosent er fallet innhentet»
+        (NOT -2 qnt)            # «fra han var 15 år og verdens yngste rallycrossjåfør»
+        (NOT -2 cm)             # «forhold som arbeidstid, lønn og kontraktens varighet»
+        (NOT -2 gen)            # «påtalemyndighetens innledning og kvinnens forklaring»
+        (-1C n + $$NUMBER + $$DEFNES LINK NOT 0 gen)
+        (1C n + $$NUMBER + $$DEFNES + gen)
+;
+# $$DEFNES to avoid: «kan sette både menneskeliv og isbjørnens liv i fare»
+# $$NUMBER to avoid: «av hensyn til ofrene og sakens opplysning»
+
+ADD:bussene-og-kaffebåtenes (@nkon) ("og") IF
+        (NOT -2 adverbialsubst) # «Med gårsdagens oppgang på 1,36 prosent og dagens opptur på 1,17 prosent er fallet innhentet»
+        (NOT -2 qnt)            # «fra han var 15 år og verdens yngste rallycrossjåfør»
+        (NOT -2 cm)             # «forhold som arbeidstid, lønn og kontraktens varighet»
+        (NOT -2 gen)            # «påtalemyndighetens innledning og kvinnens forklaring»
+        (-1C n + $$NUMBER + $$DEFNES LINK NOT 0 gen)
+        (1C n + cmp)
+        (2C n + $$NUMBER + $$DEFNES + gen)
+;
+
+ADD:Famile--og-kulturkomitéens-leder (@nkon) ("og") IF
+        (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (1C n + gen)
+;
+
+ADD:Famile--og-kulturkomitéens-leder (@nkon) ("og") IF
+        (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (1C n + cmp)
+        (2C n + gen)
 ;
