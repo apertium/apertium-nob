@@ -609,6 +609,7 @@ LIST ikke-adv-subst-pron-konj-det = "siden"  vblex pr cnjsub ij <ellipse> (det d
 LIST ikke-adv-subst-pron-konj-det-verb = "siden"  pr cnjsub ij <ellipse> (det dem) (adj mf) (adj m) (adj f) (adj mf) (adj pl) (adj def) (adj pprs) (n gen) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
 LIST ikke-adv-verb = "siden"  "$," "," pr prn cnjsub cnjcoo "å" ij n np det <ellipse> (adj m) (adj f) (adj pl) (adj mf) (adj comp) (adj sup) (adj pprs) (adj def) ;
 LIST ikke-det = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adj adv ;
+LIST ikke-adj-det = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adv ;
 LIST ikke-det-prep = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adj adv ;
 LIST ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @<p-utfyll @løs-np @<sbu @<sbu-rel @s-gr @adv ;
 LIST ikke-mod-@<p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @løs-np @<sbu @<sbu-rel @s-gr ;
@@ -29016,4 +29017,16 @@ MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
 MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + $$DEFNES)
         (1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+;
+
+MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER + def)
+        (1 dem)
+        (*2C n + gen LINK 0 $$NUMBER BARRIER ikke-adj-det) # allow single-defnes
+;
+
+MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER) # ind or def both fine here
+        (1 adj)
+        (*2C n + gen LINK 0 $$NUMBER + ind BARRIER ikke-adj-det) # no dem, must be ind
 ;
