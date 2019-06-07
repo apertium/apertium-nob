@@ -28137,7 +28137,15 @@ REMOVE:har-et-håp-om fl-subst IF
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
+        (NOT -1 pos + pl)
         (**-1C ent LINK -1 >>>)
+        ;
+
+REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
+        (0C subst)
+        (0 ent-subst)
+        (NOT -1 pos + pl)
+        (**-1C ent LINK -1 guio LINK -1 >>>)
         ;
 
 REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
