@@ -190,7 +190,8 @@ LIST %dømme% = "dømme"  ;
 LIST %ei% = ("en"  f) ;
 LIST %eksempel% = "eksempel"  ;
 LIST %eksklusiv/e% = "eksklusive"  "eksklusiv"  ;
-LIST %ektefelle/hustru/mann/kone% = "mann"  "kone"  "hustru"  "ektefelle"  ;
+LIST %ektefelle/hustru/mann/kone% = "mann"  "kone"  "hustru"  "ektefelle" "ektemann"  ;
+LIST %ektefelle/hustru/kone% = "kone"  "hustru"  "ektefelle" "ektemann" ;
 LIST %eller% = "eller"  ;
 LIST %en% = ("en"  m) ;
 LIST %en%-pron = ("en"  prn) ;
@@ -28987,49 +28988,32 @@ SELECT:Ukjendord-utelukkes-ikke. fv IF
 
 
 # @nkon: simple noun-noun conjunctions under genitive
-ADD:dyrenes-velferd-og-livsforhold (@nkon) ("og") IF
+MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
         (1C n + ind LINK NOT 0 gen)
         (NOT 2 ("i"))
 ;
 
-ADD:dyrenes-velferd-og-mobilitetsforhold (@nkon) ("og") IF
-        (-2 gen OR pos)
-        (-1C n + ind LINK NOT 0 gen)
-        (1C n + cmp)
-        (2C n + ind LINK NOT 0 gen)
-        (NOT 2 ("i"))           # «Kritikere av landets regime  og  kilder i CIA mener …»
-;
+MAP:barn-og-unges (@nkon) %og/eller% IF
+        (-1 ("<barn>"i))
+        (1 ("<unges>"i))
+        ;
+MAP:menn-og-kvinners (@nkon) %og/eller% IF
+        (-1 ("<menn>"i))
+        (1 ("<kvinners>"i))
+        ;
+MAP:kvinner-og-menns (@nkon) %og/eller% IF
+        (-1 ("<kvinner>"i))
+        (1 ("<menns>"i))
+        ;
 
-ADD:bussene-og-båtenes (@nkon) ("og") IF
-        (NOT -2 adverbialsubst) # «Med gårsdagens oppgang på 1,36 prosent og dagens opptur på 1,17 prosent er fallet innhentet»
-        (NOT -2 qnt)            # «fra han var 15 år og verdens yngste rallycrossjåfør»
-        (NOT -2 cm)             # «forhold som arbeidstid, lønn og kontraktens varighet»
-        (NOT -2 gen)            # «påtalemyndighetens innledning og kvinnens forklaring»
-        (-1C n + $$NUMBER + $$DEFNES LINK NOT 0 gen)
-        (1C n + $$NUMBER + $$DEFNES + gen)
-;
-# $$DEFNES to avoid: «kan sette både menneskeliv og isbjørnens liv i fare»
-# $$NUMBER to avoid: «av hensyn til ofrene og sakens opplysning»
-
-ADD:bussene-og-kaffebåtenes (@nkon) ("og") IF
-        (NOT -2 adverbialsubst) # «Med gårsdagens oppgang på 1,36 prosent og dagens opptur på 1,17 prosent er fallet innhentet»
-        (NOT -2 qnt)            # «fra han var 15 år og verdens yngste rallycrossjåfør»
-        (NOT -2 cm)             # «forhold som arbeidstid, lønn og kontraktens varighet»
-        (NOT -2 gen)            # «påtalemyndighetens innledning og kvinnens forklaring»
-        (-1C n + $$NUMBER + $$DEFNES LINK NOT 0 gen)
-        (1C n + cmp)
-        (2C n + $$NUMBER + $$DEFNES + gen)
-;
-
-ADD:Famile--og-kulturkomitéens-leder (@nkon) ("og") IF
+MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
         (-1C n + ind + cmp-split LINK NOT 0 gen)
         (1C n + gen)
 ;
 
-ADD:Famile--og-kulturkomitéens-leder (@nkon) ("og") IF
-        (-1C n + ind + cmp-split LINK NOT 0 gen)
-        (1C n + cmp)
-        (2C n + gen)
+MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+        (1C n + gen LINK 0 $$NUMBER + $$DEFNES)
 ;
