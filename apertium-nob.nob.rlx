@@ -28142,6 +28142,13 @@ REMOVE:har-et-håp-om fl-subst IF
         (0C subst + $$GENDER)
         ;
 
+REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
+        (0C subst)
+        (0 pl)
+        (-1C det + qnt OR talord)
+        (-1C pl)
+        ;
+
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
