@@ -5832,6 +5832,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 >>> OR siffer OR punktum/ellipse)
         ;
 
+"<bruk>" REMOVE:gruppas-bruk-av nt IF
+        (NOT *-1 det + nt BARRIER ikke-adj)
+        ;
+
 "<begge>" REMOVE:begge-kjønn adv IF
 	(1 n + pl)
         (NOT 1 gen OR adj + pl)
