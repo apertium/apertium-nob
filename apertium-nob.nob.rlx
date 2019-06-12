@@ -29022,11 +29022,11 @@ MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
 MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + def)
         (1 dem)
-        (*2C n + gen LINK 0 $$NUMBER BARRIER ikke-adj-det) # allow single-defnes
+        (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER) # allow single-defnes
 ;
 
 MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER) # ind or def both fine here
         (1 adj)
-        (*2C n + gen LINK 0 $$NUMBER + ind BARRIER ikke-adj-det) # no dem, must be ind
+        (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
