@@ -28435,6 +28435,13 @@ SELECT:ansatte-fl fl IF
         (NOT -1 det + def OR adj + def)
         ;
 
+REMOVE:Oversett-dette imp IF
+        (-1 >>>)
+        (0 storbokstav)
+        (1C def OR dem)
+        ;
+# «Oversett teksten»
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
