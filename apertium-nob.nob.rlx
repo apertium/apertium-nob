@@ -28157,7 +28157,7 @@ REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
-        (NOT -1 pos + pl)
+        (NOT -1 pos + pl OR gen)
         (**-1C ent LINK -1 >>>)
         ;
 
