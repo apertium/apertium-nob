@@ -5872,6 +5872,11 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 
 "<domene>" REMOVE ("dom");
 
+"<dommer>" SELECT:kampens-dommer ("dommer") IF
+        (*0 ("kamp"))
+        (NOT -1 det + pl OR adj + pl OR %flere%)
+        ;
+
 
 
 #:3713
