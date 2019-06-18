@@ -1095,6 +1095,7 @@ REMOVE:unlikely ("<litt>"i "lite");
 REMOVE:unlikely ("trase"); # trasé
 REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
+REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
