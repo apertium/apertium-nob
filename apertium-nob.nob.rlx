@@ -28453,6 +28453,26 @@ REMOVE:Oversett-dette imp IF
         ;
 # «Oversett teksten»
 
+
+# Use coordination as number-hint:
+SELECT:kundens-ANLEGG-og-bygninger $$NUMBER IF
+        (-1C gen)
+        (0C n + ind)
+        (0 n + $$NUMBER)
+	(1C %og/eller%)
+        (2C n + ind)
+        (2C n + $$NUMBER)
+        ;
+
+SELECT:kundens-bygninger-og-ANLEGG $$NUMBER IF
+        (-3C gen)
+        (-2C n + ind)
+        (-2C n + $$NUMBER)
+	(-1C %og/eller%)
+        (0C n + ind)
+        (0 n + $$NUMBER)
+        ;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
