@@ -28453,6 +28453,11 @@ REMOVE:Oversett-dette imp IF
         ;
 # «Oversett teksten»
 
+REMOVE:selskapets-ansatte def IF
+        (-1C gen)
+        (0C n + pl)
+        (0 ind)
+        ;
 
 # Use coordination as number-hint:
 SELECT:kundens-ANLEGG-og-bygninger $$NUMBER IF
