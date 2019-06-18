@@ -5490,11 +5490,6 @@ REMOVE:unlikely ("<lokk>"i) + m IF (NOT (-1 %en%)) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-SELECT:ansatte-fl fl IF
-        (0 ("ansatt"))
-        (NOT -1 det + def OR adj + def)
-        ;
-
 # "også"  → "òg"
 # "også¹" → "også"
 "<Også>" SELECT:Også-den-har ("også¹");
@@ -28444,6 +28439,11 @@ SELECT:den-mest-betydningsfulle sp + def IF
         (*-2 dem BARRIER ikke-adv)
         (-1 grads-adv)
         (0C adj + pst)
+        ;
+
+SELECT:ansatte-fl fl IF
+        (0 ("ansatt"))
+        (NOT -1 det + def OR adj + def)
         ;
 
 REMOVE:Oversett-dette imp IF
