@@ -28448,8 +28448,13 @@ SELECT:den-mest-betydningsfulle sp + def IF
         ;
 
 SELECT:ansatte-fl fl IF
-        (0 ("ansatt"))
+        (0 ("ansatt"i))
         (NOT -1 det + def OR adj + def)
+        ;
+
+SELECT:ansatte-def def IF
+        (0 ("ansatt"i))
+        (*-1 dem OR gen OR pos BARRIER ikke-adv-adj-kvant)
         ;
 
 REMOVE:Oversett-dette imp IF
