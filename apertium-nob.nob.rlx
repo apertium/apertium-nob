@@ -54,6 +54,7 @@ LIST pst = pst ;
 LIST lquot = lquot ;
 LIST rquot = rquot ;
 LIST top = top ;
+LIST al = al ;
 LIST cog = cog ;
 LIST ant = ant ;
 LIST org = org ;
@@ -1048,6 +1049,7 @@ REMOVE:Brannmannskap-har cgguess IF
         (0C n + def OR n + pl OR np)
         (1C fv)
         ;
+
 
 
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport";
@@ -3237,8 +3239,6 @@ SELECT ("lyve") IF
 	(-1 komma)
 ;
 #  "mest sannsynlig at mens er sbu rett etter komma"
-
-
 
 
 
@@ -6713,6 +6713,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
     (-1 det + m)
     ;
 
+
 #:3500
   "<klart>"   REMOVE:3500   pp IF
 	(1 %for%)
@@ -6720,7 +6721,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(*-1 %ha% BARRIER setn-gr)
 ;
 #  "Ha noe klart (adj) for seg"))
-
 
 
 #:3501
@@ -6941,7 +6941,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # NOT -1 POSS-DET: det finnes ikke hans like
 #
 # NOT -1 SUBST-GEN: det finnes ikke Pers like"
-
 
 
 #:3460
@@ -8165,75 +8164,95 @@ SELECT:personer-som-ble-meldt-savnet pp + pl IF
         (1 pp)
 ;
 
-SELECT:det-har-blitt-solgt (adj pp nt sg ind)
+SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:Skolene-var-stengt (adj pp pl)
+SELECT:Skolene-var-stengt pp + pl IF
 	(-2C fl-subst)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:Skolene-har-vært-stengt (adj pp pl)
+SELECT:Skolene-har-vært-stengt pp + pl IF
 	(-3C fl-subst)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:han-har-vært-sykmeldt (adj pp mf sg ind)
+SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:han-var-sykmeldt (adj pp mf sg ind)
+SELECT:han-var-sykmeldt pp + mf IF
 	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:ble-det-vedtatt (adj pp nt sg ind) OR (vblex pp)
+SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 	(-2 %være/bli%)
 	(-1 %det%)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
 
-SELECT:ble-han-løslatt (adj pp mf sg ind)
+SELECT:ble-han-løslatt pp + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
 
-SELECT:gir-ønsket-utfall (adj pp nt sg ind)
+
+SELECT:gir-ønsket-utfall pp + nt IF
 	(-1C fv)
         (0C n OR vblex OR adj + pp)
         (1C n + nt + ind)
         (2 <<<)
         ;
 
-SELECT:tusenvis-er-isolert (adj pp pl)
+SELECT:tusenvis-er-isolert pp + pl IF
         (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
         ;
 
+SELECT:et-aspekt-som-er-blitt-diskutert pp + nt
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + nt               # aspekt
+         BARRIER (*) - cog - cm         # ,
+         LINK NOT 0 pl OR mask/fem/mf)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «Ola Nordmann, som ble drept …»
+
 SELECT:mannen-som-ble-skadd pp + mf
-        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + mask/fem/mf BARRIER (*) - cog - cm LINK NOT 0 pl)
-        (-1 kop-fv)
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + mask/fem/mf      # Ola/mannen
+         BARRIER (*) - cog - cm         # Nordmann,
+         LINK NOT 0 pl OR nt)
         (NOT 0 adv OR farlige-part)
         ;
 # «Ola Nordmann, som ble drept …»
 
 SELECT:mennene-som-ble-skadd pp + pl
-        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + pl BARRIER (*) - cog - cm)
-        (-1 kop-fv)
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + pl               # mennene
+         BARRIER (*) - cm               # ,
+         LINK NOT 0 sg)
         (NOT 0 adv OR farlige-part)
         ;
 
@@ -8273,13 +8292,20 @@ SELECT:Minst-10-er-siden-drept adj + pp + pl
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
-        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
+        (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         ;
 
+SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
+        (NOT 0 adv OR farlige-part)
+        (1 %og/eller%)
+        (2C adj + $$ADJ_NUMGEN)
+        ;
+# «Han jobbet i tospann med Knut Bjørnsen i NRK-systemet i 30 år og ble like kjent og populær som kommentatorlegenden.»
+
 SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
-        (-2C pp + mf)
+        (-2C pp + $$ADJ_NUMGEN)
         (-1 %og/eller%)
         (NOT 0 adv OR farlige-part)
         ;
@@ -8294,6 +8320,14 @@ SELECT:Han-så-nesten-litt-lettet-ut adj + sg + mf IF
         (*-1 ("se") LINK -1 prn OR n OR np LINK 0C mORf)
         (1 ("ut") OR ("ut over"))
         ;
+
+SET pr-adv-årstal = pr OR sanns-årstal OR adv ;
+SELECT:Monsen-ble-i-2009-tildelt vblex + pp
+        (*-1 kop-fv BARRIER (*) - pr-adv-årstal LINK -1C cog OR org OR al OR top LINK NOT *-1 GENDER)
+        (0C pp)
+        (NOT 0 adv OR farlige-part)
+        ;
+
 
 
 
@@ -12861,9 +12895,9 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 
 
 #:2777
- SELECT:2777 (det pl) IF
+ SELECT:de-gamle (det pl) IF
 	(NOT 0 nøyt-det)
-	(1 adj-fl)
+	(1 adj-fl - pp)
 	(NOT 1 fv)
 	(NOT 1 adv)
 	(NOT 1 fv)
@@ -17503,19 +17537,6 @@ SELECT:å-glemme-tapet-mot be-subst IF
         ;
 # pp vs nt.def gives lots of bad translations like «å gløyme tapt mot»
 
-#:2406
- SELECT:2406 (vblex pp) IF
-	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
-	(*-1 p-hj-verb BARRIER fv)
-	(*-1 p-hj-verb BARRIER perf-part)
-	(*-1 p-hj-verb BARRIER setn-gr)
-	(*-1 som/komma/og BARRIER setn-gr)
-;
-#  "med som, komma, og som setningsgrense må det
-# ikke være et nominalt ledd før
-# perf-part: som har fått ..."
-
 
 
 #:2407
@@ -18515,14 +18536,23 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + pl BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 sanns-årstal LINK NOT -1 det + sg)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 nom + pl
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         LINK NOT 0 sanns-årstal
+         LINK NOT -1 det + sg)
 ;
 
-SELECT:fisken-ble-funnet perf-part-mf IF
+SELECT:fisken-ble-funnet pp + mf IF
 	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + mask/fem/mf BARRIER setn-gr OR fv)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
+         LINK *-1 nom + mask/fem/mf
+         BARRIER setn-gr OR fv
+         LINK NOT 0 pl OR nt)
 ;
 
 
@@ -18642,6 +18672,7 @@ SELECT:Med-økte-inntekter adj + pl IF
 	(NOT 0 subst)
 	(NOT 0 fv)
 	(-1C fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 subst/adj)
 ;
 #  "(NOT 1 KOMMA/KONJ)
@@ -19150,6 +19181,7 @@ REMOVE:2324 pprs IF
 #:2295
  REMOVE:2295 (adj nt sg) IF
 	(-1 fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 komma/konj)
 	(NOT 1 setn-gr)
 	(NOT 1 adj-ent)
@@ -19433,6 +19465,7 @@ REMOVE:at-paret (adj pp) IF
 #:2263
  REMOVE:2263 (adj mf sg) IF
 	(-1 fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 komma/konj)
 	(NOT 1 adj-ent)
 	(NOT 1 ent-subst)
@@ -28167,7 +28200,7 @@ REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
         (NOT -1 pos + pl OR gen)
-        (**-1C ent LINK -1 >>>)
+        (**-1C ent - gen LINK -1 >>>)
         ;
 
 REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
