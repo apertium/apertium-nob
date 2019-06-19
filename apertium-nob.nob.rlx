@@ -12,6 +12,8 @@ LIST NUMBER = sg pl sp ;
 LIST DEFNES = def ind ;
 LIST TEMPUS = inf pres pasv pret pp imp ;
 
+LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
+
 LIST <<< = <<< ;
 LIST >>> = >>> ;
 
@@ -8276,6 +8278,12 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         ;
 
+SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
+        (-2C pp + mf)
+        (-1 %og/eller%)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «mannen som ble skutt og drept av israelske soldater»
 
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
 SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
