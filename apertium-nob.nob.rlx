@@ -8158,7 +8158,7 @@ SELECT:de-var-kjent pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr OR nominativ + prn + sg)
 ;
 
 SELECT:personer-som-ble-meldt-savnet pp + pl IF
