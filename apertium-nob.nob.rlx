@@ -8174,6 +8174,7 @@ SELECT:det-har-blitt-solgt pp + nt IF
         ;
 
 SELECT:Skolene-var-stengt pp + pl IF
+        (NEGATE -3 pr LINK *-1 n + sg)
 	(-2C fl-subst)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
