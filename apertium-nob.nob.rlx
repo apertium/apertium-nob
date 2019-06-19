@@ -1195,7 +1195,7 @@ REMOVE:unlikely ("<notene>"i "not") IF
 SELECT:unlikely ("<super>"i) + adj IF
         (NOT 1 vann-ord)
         ;
-
+"<Monsen>" SELECT:unlikely-mons np;
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
@@ -5490,6 +5490,8 @@ REMOVE:unlikely ("<begynner>"i) + n ;
 REMOVE:unlikely ("<østers>"i "øst") ;
 REMOVE:unlikely ("<bomber>"i "bomber") ;
 REMOVE:unlikely ("<lokk>"i) + m IF (NOT (-1 %en%)) ;
+REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
+REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -25029,6 +25031,9 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  de fleste "bare"  er ikke adj
 
+"<bygget>" REMOVE n IF
+        (1 %på%)
+        ;
 
 
 #:3725
@@ -28682,7 +28687,7 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<falt fra>" REMOVE:default-falle-frå ("falle# fra" vblex pp) ;	# keep falle# fra<vblex><pret>→fall frå
 "<falt i>" REMOVE:default-falle-i ("falle# i" vblex pp) ;	# keep falle# i<vblex><pret>→fall i
 "<falt>" REMOVE:default-falle ("falle" vblex pp) ;	# keep falle<vblex><pret>→fall
-"<fangene>" REMOVE:default-fangane ("fange" n m pl def) ;	# keep fang<n><nt><pl><def>→fanga fange<n><nt><pl><def>→fanga
+"<fangene>" REMOVE:default-fanga (n nt pl def) ;	# keep fange<n><m><pl><def>→fangane
 "<fanger>" REMOVE:default-fangar ("fange" n m pl ind) ;	# keep fange<n><nt><pl><ind>→fange
 "<fanget>" REMOVE:default-fanget ("fang" n nt sg def) ;	# keep fange<vblex><pp>→fanga
 "<fanget>" REMOVE:default-fanget ("fange" n nt sg def) ;	# keep fange<vblex><pp>→fanga
