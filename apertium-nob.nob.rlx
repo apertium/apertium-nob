@@ -5495,6 +5495,10 @@ REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
+SELECT ("<Rana>") + np IF
+        (1 ("kommune"))
+        ;
+
 # "også"  → "òg"
 # "også¹" → "også"
 "<Også>" SELECT:Også-den-har ("også¹");
