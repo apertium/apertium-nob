@@ -5492,6 +5492,7 @@ REMOVE:unlikely ("<bomber>"i "bomber") ;
 REMOVE:unlikely ("<lokk>"i) + m IF (NOT (-1 %en%)) ;
 REMOVE:unlikely ("<skriver>"i) + m IF (NEGATE *-1 %en% CBARRIER ikke-adj) ;
 REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
+REMOVE:unlikely ("<trekkene>"i) + m ;
 REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
