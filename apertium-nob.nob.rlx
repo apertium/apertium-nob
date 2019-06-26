@@ -24984,6 +24984,9 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh feb 2004: Hjemmebrent er det verste jeg veit!"
 
+"<vingene>" SELECT ("vinge") IF
+        (NOT 0* ("ball") OR ("sparke"))
+        ;
 
 #:4049
   "<visst>"   SELECT:4049   (adj pst nt ind sg) IF
