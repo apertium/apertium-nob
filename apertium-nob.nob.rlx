@@ -5498,6 +5498,7 @@ REMOVE:unlikely ("<skriver>"i) + m IF (NEGATE *-1 %en% CBARRIER ikke-adj) ;
 REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
 REMOVE:unlikely ("<trekkene>"i) + m ;
 REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
+REMOVE:unlikely ("<profil>"i) + nt;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -7481,7 +7482,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Vannet har rent (perf-part) ned
 # Bare ved \"ha\"?"
 
-
+"<rotter>" SELECT:rotter n IF
+        (NOT 1 %seg%)
+        ;
 
 #:3337
   "<røde>"   REMOVE:røde-ting subst IF
@@ -24839,6 +24842,9 @@ CONSTRAINTS
 ;
 #sannsynlig at det er lo
 
+"<lov>" SELECT:norsk-lov sg IF
+        (NOT -1 ("om"))         # be om lov
+        ;
 
 #:4046
   "<mine>"   SELECT:4046   (n m sg ind) IF
@@ -28875,7 +28881,7 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<Premier>" REMOVE:default-Premiar ("premie" n m pl ind) ;	# keep Premier<np><cgguess>→Premier
 "<priser>" REMOVE:default-priser ("prise" vblex pres) ;	# keep pris<n><m><pl><ind>→prisar
 "<produsert>" REMOVE:default-produserte ("produsere" adj pp pl) ;	# keep produsere<adj><pp><nt><sg><ind>→produsert produsere<vblex><pp>→produsert
-"<profiler>" REMOVE:default-profilar ("profil" n m pl ind) ;	# keep profil<n><nt><pl><ind>→profil
+"<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
 "<purker>" REMOVE:default-purkar ("purk" n m pl ind) ;	# keep purke<n><m><pl><ind>→purker purke<n><f><pl><ind>→purker
 "<rammer>" REMOVE:default-rammer ("ramme" n f pl ind) ;	# keep ramme<vblex><pres>→rammar
 "<rammer>" REMOVE:default-rammer ("ramme" n m pl ind) ;	# keep ramme<vblex><pres>→rammar
