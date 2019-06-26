@@ -1119,6 +1119,8 @@ REMOVE:unlikely-skjøt ("skjøt") IF
         (NOT -1 %en%)
         ;
 
+REMOVE:unlikely-visar ("<viser>") + n IF (NOT -1 %en%) ;
+
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
         (0 sg)
