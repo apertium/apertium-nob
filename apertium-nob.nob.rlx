@@ -919,6 +919,7 @@ LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" 
 LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
 LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
 LIST spesielt-ord = "<spesielt>" "<særlig>" ;
+LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -5499,6 +5500,8 @@ REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
 REMOVE:unlikely ("<trekkene>"i) + m ;
 REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 REMOVE:unlikely ("<profil>"i) + nt;
+REMOVE:unlikely ("<tallet>"i) + adj OR vblex;
+REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -24984,9 +24987,6 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh feb 2004: Hjemmebrent er det verste jeg veit!"
 
-"<vingene>" SELECT ("vinge") IF
-        (NOT 0* ("ball") OR ("sparke"))
-        ;
 
 #:4049
   "<visst>"   SELECT:4049   (adj pst nt ind sg) IF
