@@ -1102,6 +1102,7 @@ REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
 REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
+REMOVE:unlikely ("sult") + n + pl;
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -28556,6 +28557,13 @@ SELECT:kundens-bygninger-og-ANLEGG $$NUMBER IF
         (0C n + ind)
         (0 n + $$NUMBER)
         ;
+
+SELECT:og-dermed-sulter-den-ihjel nominativ IF
+        (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
+        (-1 pres)
+        (*1 setn-gr BARRIER ikke-adv)
+        ;
+
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
