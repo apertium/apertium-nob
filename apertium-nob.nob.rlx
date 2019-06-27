@@ -5503,7 +5503,8 @@ REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
 REMOVE:unlikely ("<trekkene>"i) + m ;
 REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 REMOVE:unlikely ("<profil>"i) + nt;
-REMOVE:unlikely ("<tallet>"i) + adj OR vblex;
+REMOVE:unlikely ("<tallet>"i) + adj ;
+REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
