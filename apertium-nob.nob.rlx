@@ -28521,6 +28521,12 @@ SELECT:ansatte-def def IF
         (*-1 dem OR pos BARRIER ikke-adv-adj-kvant)
         ;
 
+SELECT:universitetets-1.200-ansatte-def def IF
+        (0 ("ansatt"i))
+        (*-2 gen BARRIER ikke-adv-adj-kvant)
+        ;
+# Men ikkje: «universitetets ansatte»
+
 REMOVE:Oversett-dette imp IF
         (-1 >>>)
         (0 storbokstav)
