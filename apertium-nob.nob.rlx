@@ -7269,7 +7269,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3383
-  "<når>"   REMOVE:3383   (adv) IF
+"<når>"   REMOVE:3383   adv IF
 	(NOT 1 fv)
 	(NOT 1 prep)
 ;
@@ -7278,8 +7278,28 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 
+
+# «og» clb cnjcoo's:
+"<og>" REMOVE:inn-og-ut  clb IF (-1 ("inn"))                      (1 ("ut") OR ("ut av")) ;
+"<og>" REMOVE:opp-og-ned clb IF (-1 ("opp"))                      (1 ("ned")) ;
+"<og>" REMOVE:av-og-til  clb IF (-1 ("av"))                       (1 ("til") OR ("på")) ;
+"<og>" REMOVE:til-og-fra clb IF (-1 ("til"))                      (1 ("fra")) ;
+"<og>" REMOVE:av-og-til  clb IF (-1 ("til"))                      (1 ("fra")) ;
+"<og>" REMOVE:mer-og-mer clb IF (-1 ("<mer>"))                    (1 ("<mer>")) ;
+"<og>" REMOVE:om-og-med  clb IF (-1 ("om") OR ("fra") OR ("til")) (1 ("med")) ;
+# «for å finne ut om og med hvem de bør slå seg sammen»
+"<og>" REMOVE:7.og-sist  clb IF (-1 %syvende%)                    (1 ("sist")) ;
+# «til syvende (sjuende) og sist»
+"<og>" REMOVE:så-og-si   clb IF (-1 ("så"))                       (1 ("<si>")) ;
+"<og>" REMOVE:ny-og-ne   clb IF (-1 ("<ny>"))                     (1 ("ne")) ;
+"<og>" REMOVE:her-og-der clb IF (-1 ("her"))                      (1 ("der")) ;
+"<og>" REMOVE:der-og-da  clb IF (-1 ("der"))                      (1 ("da")) ;
+"<og>" REMOVE:en-og-en   clb IF (-1 ("en"))                       (1 ("en")) ;
+"<og>" REMOVE:vel-og-bra clb IF (-1 ("vel"))                      (1 ("bra")) ;
+
+
 #:3375
-  "<og>"   REMOVE:3375   (clb) IF
+"<og>"   REMOVE:3375   clb IF
 	(1 %ikke%)
 	(NOT -1 >>>)
 	(2 %minst%)
@@ -7290,43 +7310,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Ikke: feiltolkninger og (clb) ikke minst er det slik at "))
 
 
-
-#:3376
-  "<og>"   REMOVE:3376   (clb) IF
-	(1 %sist%)
-	(-1 %syvende%)
-;
-#  "til syvende (sjuende) og sist"))
-
-
-
-#:3377
-  "<og>"   REMOVE:3377   (clb) IF
-	(1 %til%)
-	(-1 %av%)
-;
-#  "av og til"
-
-
-
-#:3378
-  "<og>"   REMOVE:3378   (clb) IF
-	(1 %si%-inf)
-	(-1 %så%)
-;
-#  "så og si!"
-
-
-
-#:3379
-  "<og>"   REMOVE:3379   (clb) IF
-	(1 %fra%)
-	(-1 %til%)
-;
-
-
 #:3380
-  "<og>"   REMOVE:3380   (clb) IF
+"<og>"   REMOVE:3380   clb IF
 	(-1C subst)
 	(**1C subst LINK 1 komma LINK 1 clb-konj)
 	(**1C subst BARRIER ikke-adv-adj-det)
@@ -7336,14 +7321,15 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Norge, og vekker lykkelig latter begge steder"
 
 
-
 #:3381
-  "<og>"   REMOVE:3381   (clb) IF
+"<og>"   REMOVE:3381   clb IF
 	(1 %som%)
 	(*2 ikke-adv-adj-substmgen-pron-konj-detmdem-prep LINK 0 pres/pret LINK 1 iv)
 	(**1CO setn-gr LINK *-1 fv LINK NOT *-1 fv)
 ;
 #  "...og som han hadde båret med seg"
+
+
 
 #:5030
  "<ol>"   REMOVE:5030   (vblex pret)
@@ -18753,6 +18739,8 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove ndomain
 
+
+
 REMOVE:et-faglig-senter subst-mask IF
         (-2C ub-nøyt-det)
         (-1C adj-mask/nøyt)
@@ -25616,7 +25604,6 @@ REMOVE:øye ("øye"i) IF
 ## select ndomain heur
 
 
-
 #:2792
 # SELECT:2792 (clb) IF
 #	(0 komma)
@@ -27174,7 +27161,7 @@ SELECT:ved-Malis-grenser-bor n + ind IF
 
 
 #:1728
- SELECT:1728 (vblex pret) IF
+ SELECT:1verb-per-setn (vblex pret) IF
 	(NOT 0 farlige-verb)
 	(NOT 0 imp)
 	(NOT 0 subst-gen)
