@@ -5542,11 +5542,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         ;
 "<også>" SELECT:som-også-blir ("også¹") IF
         (-1 %som% OR %men%)
-        (1C fv)
+        (1 fv OR %til%)
         ;
-
-"<også>" SELECT:Men-også-der-har-det ("også¹") IF
-        (-1 cnjcoo)
+"<også>" SELECT:cm-også-inkluderte ("også¹") IF
+        (-2 cm)
+        (-1 %som% OR %men%)
+        ;
+"<også>" SELECT:cm-også-inkluderte ("også¹") IF
+        (-1 cm OR cnjsub OR cnjcoo + clb)
         ;
 
 # «Han blir også i 2019 å se i rally-VM.»
