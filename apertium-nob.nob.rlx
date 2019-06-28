@@ -28570,6 +28570,11 @@ SELECT:at-dette-tas-på-alvor prn + nominativ IF
         (1C pres + pasv)
         ;
 
+SELECT:søndag-gås-det-renn expl IF
+        (-1C pres + pasv)
+        (1C n + ind)
+        ;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
