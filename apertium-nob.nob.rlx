@@ -5520,6 +5520,10 @@ SELECT ("<Rana>") + np IF
 
 # "også"  → "òg"
 # "også¹" → "også"
+"<også>" SELECT:cm-også-om ("også") IF
+        (-1 cm OR cnjsub OR cnjcoo + clb)
+        (1 ("om") OR cnjsub)
+        ;
 "<Også>" SELECT:Også-den-har ("også¹");
 "<også>" SELECT:også-i-2019 ("også¹") IF
         (1 %i% OR %på%)
