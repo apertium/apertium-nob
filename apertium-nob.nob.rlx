@@ -7876,6 +7876,10 @@ SELECT:skrev vblex IF
         (-1 dem OR gen OR pos)
         ;
 
+"<vakte>" REMOVE ("vake") IF
+        (1 ("oppsikt"))
+        ;
+
 #:3161
   "<vann>"   REMOVE:3161   (vblex pret) IF
 	(0 subst)
