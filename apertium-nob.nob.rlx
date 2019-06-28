@@ -28559,6 +28559,10 @@ SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*1 setn-gr BARRIER ikke-adv)
         ;
 
+SELECT:at-dette-tas-på-alvor prn + nominativ IF
+        (-1C cnjsub OR clb)
+        (1C pres + pasv)
+        ;
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
