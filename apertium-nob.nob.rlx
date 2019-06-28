@@ -5399,6 +5399,10 @@ SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
 SELECT:kroner ("øre") + nt IF (-1 siffer);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
+"<øst>" SELECT:øst-i-England pr IF
+        (NOT 1 ("ut"))
+        ;
+
 "<øyer>"   SELECT:antall-øyer subst IF
         (NEGATE -1C pron)
 ;
