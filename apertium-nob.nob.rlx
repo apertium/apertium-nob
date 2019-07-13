@@ -18612,8 +18612,13 @@ REMOVE:2324 pprs IF
 ;
 #  "med bustete (ikke be) hår"))
 
-
-
+#:år
+REMOVE:aar ("åre") IF
+	(-2 (det qnt pl))
+	(-1 guio)
+	(0 %år%)
+	;
+# "30-årene var harde."
 
 
 #:2315
