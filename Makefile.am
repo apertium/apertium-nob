@@ -2,8 +2,6 @@
 ## Makefile for apertium-nob
 ###############################################################################
 
-RELEASE=0.9
-VERSION=0.9.0
 LANG1=nob
 BASENAME=apertium-$(LANG1)
 
@@ -25,7 +23,7 @@ $(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
 
 $(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $<
-	./test-scandivoc
+	test ! -f ./test-scandivoc || ./test-scandivoc
 	lt-comp lr $< $@
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.bin

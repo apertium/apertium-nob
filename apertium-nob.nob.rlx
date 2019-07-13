@@ -9,7 +9,10 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 
 LIST GENDER = m f nt mf ;
 LIST NUMBER = sg pl sp ;
+LIST DEFNES = def ind ;
 LIST TEMPUS = inf pres pasv pret pp imp ;
+
+LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
 LIST <<< = <<< ;
 LIST >>> = >>> ;
@@ -34,6 +37,7 @@ LIST pos = pos ;
 LIST guess = guess ;
 LIST cgguess = cgguess ;
 LIST cmp = cmp ;
+LIST cmp-split = cmp-split ;
 LIST cm = cm ;
 LIST pret = pret ;
 LIST imp = imp ;
@@ -50,6 +54,7 @@ LIST pst = pst ;
 LIST lquot = lquot ;
 LIST rquot = rquot ;
 LIST top = top ;
+LIST al = al ;
 LIST cog = cog ;
 LIST ant = ant ;
 LIST org = org ;
@@ -77,9 +82,9 @@ LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
 LIST %éi% = ("én" f) ;
 LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
-
+LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
-LIST overskrift = overskrift ;
+LIST overskrift = overskrift "❡" ;
 
 # TODO: try before/after changing this to cmp
 LIST samset = samset ;
@@ -94,6 +99,8 @@ LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
 LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
+LIST vekedag = "mandag" "tirsdag" "onsdag" "torsdag" "fredag" "lørdag" "søndag" ;
+LIST månad = "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember" ;
 
 LIST mORf = m f ;
 
@@ -186,7 +193,8 @@ LIST %dømme% = "dømme"  ;
 LIST %ei% = ("en"  f) ;
 LIST %eksempel% = "eksempel"  ;
 LIST %eksklusiv/e% = "eksklusive"  "eksklusiv"  ;
-LIST %ektefelle/hustru/mann/kone% = "mann"  "kone"  "hustru"  "ektefelle"  ;
+LIST %ektefelle/hustru/mann/kone% = "mann"  "kone"  "hustru"  "ektefelle" "ektemann"  ;
+LIST %ektefelle/hustru/kone% = "kone"  "hustru"  "ektefelle" "ektemann" ;
 LIST %eller% = "eller"  ;
 LIST %en% = ("en"  m) ;
 LIST %en%-pron = ("en"  prn) ;
@@ -303,7 +311,7 @@ LIST %minst% = ("liten"  adj sup ind) ;
 LIST %minste% = ("liten"  sup def) ;
 LIST %mot% = ("mot"  pr) ;
 LIST %motsatt% = "motsatt"  ;
-LIST %mye/lite% = "mye"  "litt"  "lite"  ;
+LIST %mye/lite% = "mye"   "lite"  ;
 LIST %mye/lite/litt% = "mye"  "litt"  "lite"  ;
 LIST %ned% = "ned"  ;
 LIST %neste% = "neste"  ;
@@ -464,11 +472,10 @@ LIST adverb = adv <adv> (adj nt ind) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp = adv <adv> (adj nt ind) (adj comp) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup = adv <adv> (adj nt ind) (adj comp) (adj sup ind) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup/pres-part = adv <adv> (adj nt ind) (adj comp) (adj sup ind) (adj pprs) ;
-LIST adverbialsubst = "øyeblikk"  "år"  "vinter"  "vei"  "uke"  "torsdag"  "tonnkilometer"  "tiår"  "tirsdag"  "time"  "tiendelssekund"  "tidelssekund"  "tid"  "søndag"  "stykke"  "stund"  "steg"  "sted"  "sommer"  "skritt"  "sjømil"  "september"  "sekundmeter"  "sekund"  "påske"  "pinse"  "periode"  "onsdag"  "oktober"  "november"  "noengang"  "natt"  "nanosekund"  "nanometer"  "måned"  "morgen"  "minutt"  "millisekund"  "millimeter"  "mil"  "mikrometer"  "meter"  "mars"  "mandag"  "mai"  "m." "lørdag"  "kveld"  "kvartmil"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "km"  "klokke"  "kilometer"  "juni"  "juli"  "jul"  "januar"  "høst"  "hverdag"  "hundredelssekund"  "helligdag"  "helgedag"  "halvår"  "halvmil"  "halvmeter"  "gang"  "fredag"  "formiddag"  "februar"  "ettermiddag"  "døgn"  "desimeter"  "desember"  "dag"  "centimeter"  "august"  "april"  <dato> ("liv"  sg def) ("vår"  n) ;
-LIST advtype-konj = (cnjcoo <adv>) ;
+LIST adverbialsubst = "april" "august" "centiliter" "centimeter" "dag" <dato> "dekaliter" "dekameter" "desember" "desiliter" "desimeter" "døgn" "ellevedel" "ellevtedel" "ettermiddag" "februar" "femdel" "femtedel" "finaleomgang" "firedel" "fjerdedel" "fjorår" "formiddag" "fredag" "gang" "gårsdag" "halvmeter" "halvmil" "halvår" "hektoliter" "helg" "helgedag" "helligdag" "hundredel" "hundredelssekund" "hverdag" "høst" "januar" "jord" "jul" "juli" "juni" "kilometer" "kilopondmeter" "klokke" "km" "kubikkcentimeter" "kubikkdesimeter" "kubikkmeter" "kubikkmillimeter" "kvadratcentimeter" "kvadratdesimeter" "kvadratkilometer" "kvadratmeter" "kvadratmillimeter" "kvarter" "kvartmil" "kveld" "laupemeter" "liter" ("liv" sg def) "løpemeter" "lørdag" "m." "mai" "mandag" "mars" "meter" "mikrometer" "mil" "milliliter" "millimeter" "millisekund" "minutt" "morgen" "mål" "måned" "nanometer" "nanosekund" "natt" "nidel" "niendedel" "noengang" "november" "oktober" "omgang" "onsdag" "passasjerkilometer" "periode" "pinse" "poeng" "prosent" "påske" "rutemeter" "seksdel" "sekund" "sekundmeter" "september" "sjettedel" "sjudel" "sjuendedel" "sjømil" "skritt" "sommer" "spaltemillimeter" "sted" "steg" "stund" "stykke" "syvdel" "syvendedel" "søndag" "tid" "tidel" "tidelssekund" "tiendedel" "tiendelssekund" "time" "tirsdag" "tiår" "tjuedel" "tjuendedel" "tolvdel" "tolvtedel" "tonnkilometer" "torsdag" "tredel" "tredjedel" "tyvedel" "tyvendedel" "uke" "vei" "vinter" ("vår" n) "øyeblikk" "år" "åttedel" "åttendedel"  ;LIST advtype-konj = (cnjcoo <adv>) ;
 LIST agens-p = "av"  ;
-LIST alt = "siden"  adj adv vblex pr prn cnjsub "for å" "å" n np ij det cnjcoo <anf> cm <ellipse> <kolon> lpar rpar <semi> guio ;
-LIST anf = <anf> <ANF>;
+LIST alt = "siden"  adj adv vblex pr prn cnjsub "for å" "å" n np ij det cnjcoo lquot rquot cm <ellipse> <kolon> lpar rpar <semi> guio ;
+LIST anf = lquot rquot ;
 LIST bare-adj = "vedkommende"  "ugjort"  "tilsvarende"  "skrå"  "nær"  "ny"  "middels"  "kort"  "iført"  "halv"  "fånyttes"  "fri"  ;
 LIST be = def ;
 LIST be-adj = (adj def) (adj pprs) ;
@@ -533,13 +540,13 @@ LIST ent-ub = (sg ind) ;
 LIST f-subj = ("den" prn nt) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"   ;
-LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n);
+LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
-LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ;
+LIST farlige-nøyt-subst = "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ;
 LIST fem = f mf (adj def) ;
@@ -567,8 +574,8 @@ LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("
 LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
 LIST ikke-@p<utfyll = vblex pp @det> @<det @adj> @adv> @<adv @subst> @<subst @tittel @kon ;
 LIST ikke-@p<utfyll2 = @fv @iv @subj @i-obj @s-pred @o-pred @adv @adv> @<adv @app @tittel @det> @<det @subst> @<subst @obj @interj @adj> @kon @løs-np @<sbu @<sbu-rel @s-gr ;
-LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) <anf> <ellipse> (cnjcoo <adv>) ("$»" <ANF>) ("»" <ANF>);
-LIST ikke-adj-adv = vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) <anf> <ellipse> (cnjcoo <adv>) ;
+LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
+LIST ikke-adj-adv = vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-subst = "siden"  adv vblex pr prn cnjsub cnjcoo "å" ij det <<< <ellipse> ;
 LIST ikke-adj-verb = "siden"  n np adv pr prn cnjsub cnjcoo "å" ij det <<< <ellipse> ;
 LIST ikke-adv = "siden"  "$," "," vblex pr prn cnjsub cnjcoo "å" ij n np det <ellipse> (adj m) (adj f) (adj mf) (adj pl) (adj comp) (adj sup) (adj pprs) (adj def) ;
@@ -605,13 +612,14 @@ LIST ikke-adv-subst-pron-konj-det = "siden"  vblex pr cnjsub ij <ellipse> (det d
 LIST ikke-adv-subst-pron-konj-det-verb = "siden"  pr cnjsub ij <ellipse> (det dem) (adj mf) (adj m) (adj f) (adj mf) (adj pl) (adj def) (adj pprs) (n gen) ("$," clb) ("," clb) (clb cnjcoo) (cnjcoo <adv>) ;
 LIST ikke-adv-verb = "siden"  "$," "," pr prn cnjsub cnjcoo "å" ij n np det <ellipse> (adj m) (adj f) (adj pl) (adj mf) (adj comp) (adj sup) (adj pprs) (adj def) ;
 LIST ikke-det = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adj adv ;
+LIST ikke-adj-det = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adv ;
 LIST ikke-det-prep = "siden"  vblex pr prn cnjsub cnjcoo "å" n np ij adj adv ;
 LIST ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @<p-utfyll @løs-np @<sbu @<sbu-rel @s-gr @adv ;
 LIST ikke-mod-@<p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @løs-np @<sbu @<sbu-rel @s-gr ;
 LIST ikke-poss-det = "siden"  "$," "," adj adv vblex pr prn cnjsub cnjcoo "å" ij n np <ellipse> (det def) (det dem) (det emph) (det qnt) (det itg) ;
 LIST ikke-premod-@kon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @<adv @app @<det @<subst @<p-utfyll @interj @løs-np @<sbu @<sbu-rel @s-gr ;
-LIST ikke-prep = cnjsub adv adj vblex prn "å" n np ij det (clb cnjcoo) <anf> <ellipse> ;
-LIST ikke-prep-sbu = adv adj vblex prn "for å" "å" n np ij det (clb cnjcoo) <anf> <ellipse> ;
+LIST ikke-prep = cnjsub adv adj vblex prn "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> ;
+LIST ikke-prep-sbu = adv adj vblex prn "for å" "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> ;
 LIST ikke-pres-pret = "siden"  det pr prn cnjsub cnjcoo "å" n np ij adj adv inf vblex pp ;
 LIST ikke-sanns-adj = "kurr"  ("regne"  adj pp) ("grepet"  adj)("sette"  adj pp) ("pågå"  adj pp) ("løye"  adj pp) ("overholde"  adj pp) ("befinne"  adj pp) ("spekulere"  adj pp) ("forbryte"  adj pp) ("frabe"  adj pp) ("tore"  adj pp) ("bistå"  adj pp) ("rådføre"  adj pp) ("foreligge"  adj pp) ("fornemme"  adj pp) ("driste"  adj pp) ("forholde"  adj pp) ("håndtere"  adj pp) ("håndtere"  adj pp) ("avfinne"  adj pp) ("dikke"  adj pp) ("dikke"  adj pp) ("overstige"  adj pp) ("kvie"  adj pp) ("rotte"  adj pp) ("håve"  adj pp) ("karre"  adj pp) ("dorme"  adj pp) ("feriere"  adj pp) ("luske"  adj pp) ("forestå"  adj pp) ("forregne"  adj pp) ("stride"  adj pp) ("stride"  adj pp) ("sysle"  adj pp) ("tilflyte"  adj pp) ("forelese"  adj pp) ("grafse"  adj pp) ("hige"  adj pp) ("punge"  adj pp) ("vedde"  adj pp) ("blafre"  adj pp) ("fremgå"  adj pp) ("fremgå"  adj pp) ("klarne"  adj pp) ("klyve"  adj pp) ("letne"  adj pp) ("oversitte"  adj pp) ("påminne"  adj pp) ("dvele"  adj pp) ("forsove"  adj pp) ("ordlegge"  adj pp) ("prakke"  adj pp) ("smyge"  adj pp) ("tillyse"  adj pp) ("beflitte"  adj pp) ("bemektige"  adj pp) ("gamble"  adj pp) ("gjalle"  adj pp) ("hinke"  adj pp) ("livne"  adj pp) ("motstå"  adj pp) ("skorte"  adj pp) ("tø"  adj pp) ("ynke"  adj pp) ("angå"  adj pp) ("danke"  adj pp) ("framgå"  adj pp) ("framgå"  adj pp) ("gnikke"  adj pp) ("gnikke"  adj pp) ("gumle"  adj pp) ("gyve"  adj pp) ("herse"  adj pp) ("hoie"  adj pp) ("huie"  adj pp) ("jule"  adj pp) ("mekre"  adj pp) ("myldre"  adj pp) ("nedkomme"  adj pp) ("paradere"  adj pp) ("plinge"  adj pp) ("prute"  adj pp) ("sparre"  adj pp) ("tyste"  adj pp) ("avvike"  adj pp) ("bale"  adj pp) ("befatte"  adj pp) ("beile"  adj pp) ("briske"  adj pp) ("campe"  adj pp) ("duellere"  adj pp) ("dulle"  adj pp) ("duve"  adj pp) ("flotte"  adj pp) ("frø"  adj pp) ("gaule"  adj pp) ("gnu"  adj pp) ("gnugge"  adj pp) ("grabbe"  adj pp) ("hånle"  adj pp) ("innebære"  adj pp) ("klakke"  adj pp) ("knise"  adj pp) ("knuffe"  adj pp) ("kulse"  adj pp) ("mukke"  adj pp) ("nage"  adj pp) ("pikke"  adj pp) ("pimpe"  adj pp) ("plumpe"  adj pp) ("posere"  adj pp) ("prelle"  adj pp) ("pønse"  adj pp) ("rippe"  adj pp) ("risle"  adj pp) ("slingre"  adj pp) ("sluntre"  adj pp) ("sondre"  adj pp) ("teoretisere"  adj pp) ("tilsnike"  adj pp) ("tvære"  adj pp) ("undergå"  adj pp) ("andøve"  adj pp) ("avhenge"  adj pp) ("bekvemme"  adj pp) ("bemøye"  adj pp) ("betle"  adj pp) ("bevre"  adj pp) ("bleikne"  adj pp) ("bleikne"  adj pp) ("blunde"  adj pp) ("daffe"  adj pp) ("defilere"  adj pp) ("delje"  adj pp) ("drasse"  adj pp) ("feide"  adj pp) ("fiffe"  adj pp) ("foresveve"  adj pp) ("gla"  adj pp) ("gnukke"  adj pp) ("gnåle"  adj pp) ("grine"  adj pp) ("handhelse"  adj pp) ("handhelse"  adj pp) ("handse"  adj pp) ("hospitere"  adj pp) ("husere"  adj pp) ("hysse"  adj pp) ("hysse"  adj pp) ("hånflire"  adj pp) ("innestå"  adj pp) ("isne"  adj pp) ("jamme"  adj pp) ("jamme"  adj pp) ("kauke"  adj pp) ("kjekle"  adj pp) ("klenge"  adj pp) ("klenge"  adj pp) ("knoge"  adj pp) ("kokettere"  adj pp) ("kollokvere"  adj pp) ("konsertere"  adj pp) ("konspirere"  adj pp) ("konvergere"  adj pp) ("krible"  adj pp) ("krokkere"  adj pp) ("kvede"  adj pp) ("køe"  adj pp) ("lefle"  adj pp) ("ljome"  adj pp) ("loffe"  adj pp) ("loffe"  adj pp) ("logre"  adj pp) ("menge"  adj pp) ("misjonere"  adj pp) ("morske"  adj pp) ("nugge"  adj pp) ("okke"  adj pp) ("patte"  adj pp) ("peise"  adj pp) ("perle"  adj pp) ("piffe"  adj pp) ("propagandere"  adj pp) ("revansjere"  adj pp) ("rolle"  adj pp) ("rushe"  adj pp) ("rutsje"  adj pp) ("samtykke"  adj pp) ("skingre"  adj pp) ("skralle"  adj pp) ("skråne"  adj pp) ("skrømte"  adj pp) ("skvaldre"  adj pp) ("sluffe"  adj pp) ("smaske"  adj pp) ("småløpe"  adj pp) ("solidarisere"  adj pp) ("soppe"  adj pp) ("spinke"  adj pp) ("spjette"  adj pp) ("stiltre"  adj pp) ("storkose"  adj pp) ("stulle"  adj pp) ("subskribere"  adj pp) ("sykne"  adj pp) ("sykne"  adj pp) ("tendere"  adj pp) ("trikke"  adj pp) ("tysse"  adj pp) ("vedstå"  adj pp) ("vintre"  adj pp) ("visle"  adj pp) ("vitse"  adj pp) ("ætte"  adj pp) ("økonomisere"  adj pp) ("adherere"  adj pp) ("akke"  adj pp) ("akke"  adj pp) ("akkedere"  adj pp) ("akkordere"  adj pp) ("alboge"  adj pp) ("alternere"  adj pp) ("ambulere"  adj pp) ("anmasse"  adj pp) ("anstå"  adj pp) ("ansøke"  adj pp) ("baisse"  adj pp) ("barske"  adj pp) ("bede"  adj pp) ("bede"  adj pp) ("beinflyge"  adj pp) ("bekomme"  adj pp) ("belje"  adj pp) ("belje"  adj pp) ("besitte"  adj pp) ("beve"  adj pp) ("bile"  adj pp) ("bivuakkere"  adj pp) ("blakne"  adj pp) ("blakre"  adj pp) ("blitse"  adj pp) ("blive"  adj pp) ("blive"  adj pp) ("boge"  adj pp) ("boge"  adj pp) ("bogne"  adj pp) ("bolne"  adj pp) ("bonge"  adj pp) ("bramme"  adj pp) ("braske"  adj pp) ("bratne"  adj pp) ("braute"  adj pp) ("breste"  adj pp) ("breste"  adj pp) ("brotne"  adj pp) ("brotsje"  adj pp) ("brumle"  adj pp) ("bryske"  adj pp) ("bulne"  adj pp) ("burde"  adj pp) ("bykse"  adj pp) ("bæsje"  adj pp) ("bølgje"  adj pp) ("changere"  adj pp) ("chevrotere"  adj pp) ("choke"  adj pp) ("clinche"  adj pp) ("clutche"  adj pp) ("clutche"  adj pp) ("dalke"  adj pp) ("dalte"  adj pp) ("darre"  adj pp) ("daude"  adj pp) ("differere"  adj pp) ("dinere"  adj pp) ("dragse"  adj pp) ("drette"  adj pp) ("drøse"  adj pp) ("dutte"  adj pp) ("dutte"  adj pp) ("dy"  adj pp) ("eksellere"  adj pp) ("fagne"  adj pp) ("fantegå"  adj pp) ("fastne"  adj pp) ("fise"  adj pp) ("fjeske"  adj pp) ("flakne"  adj pp) ("flanere"  adj pp) ("flaue"  adj pp) ("flekse"  adj pp) ("floppe"  adj pp) ("floppe"  adj pp) ("fluktuere"  adj pp) ("fluorescere"  adj pp) ("fluoridere"  adj pp) ("flyge"  adj pp) ("flyge"  adj pp) ("flåse"  adj pp) ("flømme"  adj pp) ("flømme"  adj pp) ("forføye"  adj pp) ("forhandsstemme"  adj pp) ("forhandsstemme"  adj pp) ("forhåndsstemme"  adj pp) ("forhåndsstemme"  adj pp) ("forivre"  adj pp) ("forkjøpe"  adj pp) ("forlyde"  adj pp) ("forlyste"  adj pp) ("formaste"  adj pp) ("formene"  adj pp) ("forpleie"  adj pp) ("forrekne"  adj pp) ("forsynde"  adj pp) ("fortryte"  adj pp) ("fossregne"  adj pp) ("frege"  adj pp) ("frilanse"  adj pp) ("frukte"  adj pp) ("fråde"  adj pp) ("fråsse"  adj pp) ("føyse"  adj pp) ("gaple"  adj pp) ("garpe"  adj pp) ("gauke"  adj pp) ("geberde"  adj pp) ("gjenlyde"  adj pp) ("gjenstå"  adj pp) ("gjøne"  adj pp) ("gleppe"  adj pp) ("gleppe"  adj pp) ("gli"  adj pp) ("gli"  adj pp) ("glideflyge"  adj pp) ("glipe"  adj pp) ("glire"  adj pp) ("gnike"  adj pp) ("gnike"  adj pp) ("gnikse"  adj pp) ("gnisle"  adj pp) ("gny"  adj pp) ("godsnakke"  adj pp) ("gramse"  adj pp) ("grassere"  adj pp) ("grisne"  adj pp) ("grøde"  adj pp) ("grøde"  adj pp) ("grønke"  adj pp) ("gulke"  adj pp) ("guste"  adj pp) ("gyse"  adj pp) ("halvsove"  adj pp) ("handhilse"  adj pp) ("handhilse"  adj pp) ("handhilse"  adj pp) ("harme"  adj pp) ("harske"  adj pp) ("helse"  adj pp) ("helse"  adj pp) ("henhøre"  adj pp) ("henstå"  adj pp) ("heppe"  adj pp) ("herdne"  adj pp) ("hikstegråte"  adj pp) ("hildre"  adj pp) ("hire"  adj pp) ("hofferde"  adj pp) ("horse"  adj pp) ("hufse"  adj pp) ("hugsvale"  adj pp) ("husholdere"  adj pp) ("husholderere"  adj pp) ("høkre"  adj pp) ("høljeregne"  adj pp) ("idke"  adj pp) ("illskrike"  adj pp) ("ilske"  adj pp) ("ilskne"  adj pp) ("interferere"  adj pp) ("intervenere"  adj pp) ("jalme"  adj pp) ("jibbe"  adj pp) ("jorte"  adj pp) ("junke"  adj pp) ("jøye"  adj pp) ("kadreie"  adj pp) ("kaldflire"  adj pp) ("kalligrafere"  adj pp) ("kampere"  adj pp) ("kavere"  adj pp) ("kikne"  adj pp) ("kikre"  adj pp) ("kimse"  adj pp) ("kjangse"  adj pp) ("kjase"  adj pp) ("kjave"  adj pp) ("kjee"  adj pp) ("kjese"  adj pp) ("kjeske"  adj pp) ("kjæte"  adj pp) ("kleie"  adj pp) ("kleime"  adj pp) ("kloroformere"  adj pp) ("klukkle"  adj pp) ("klunke"  adj pp) ("klå"  adj pp) ("kløne"  adj pp) ("kløtsje"  adj pp) ("kløtsje"  adj pp) ("kløvne"  adj pp) ("knarke"  adj pp) ("knatre"  adj pp) ("knege"  adj pp) ("knepre"  adj pp) ("kneste"  adj pp) ("knette"  adj pp) ("knisle"  adj pp) ("knockoute"  adj pp) ("knurke"  adj pp) ("knurpe"  adj pp) ("knuspe"  adj pp) ("knuspre"  adj pp) ("knustre"  adj pp) ("kny"  adj pp) ("kokkelere"  adj pp) ("kokkerere"  adj pp) ("kokre"  adj pp) ("konnotere"  adj pp) ("kontribuere"  adj pp) ("kope"  adj pp) ("kovne"  adj pp) ("kramse"  adj pp) ("krasle"  adj pp) ("kraume"  adj pp) ("krille"  adj pp) ("kringgå"  adj pp) ("krinse"  adj pp) ("krisle"  adj pp) ("krisle"  adj pp) ("kritle"  adj pp) ("kritle"  adj pp) ("kro"  adj pp) ("kruke"  adj pp) ("krøkne"  adj pp) ("krøsse"  adj pp) ("kukelure"  adj pp) ("kull-lyse" adj pp) ("kullyse"  adj pp) ("kulske"  adj pp) ("kurre"  adj pp) ("kursere"  adj pp) ("kvakke"  adj pp) ("kvamne"  adj pp) ("kverulere"  adj pp) ("kvine"  adj pp) ("kvine"  adj pp) ("la"  adj pp) ("la"  adj pp) ("lauslate"  adj pp) ("lauslate"  adj pp) ("layoute"  adj pp) ("lekre"  adj pp) ("lepe"  adj pp) ("less"  adj pp) ("less"  adj pp) ("lest"  adj pp) ("lest"  adj pp) ("li"  adj pp) ("li"  adj pp) ("li"  adj pp) ("linne"  adj pp) ("loge"  adj pp) ("loge"  adj pp) ("loope"  adj pp) ("luffe"  adj pp) ("lunsje"  adj pp) ("lægre"  adj pp) ("mankere"  adj pp) ("marme"  adj pp) ("merle"  adj pp) ("midle"  adj pp) ("misfare"  adj pp) ("missnakke"  adj pp) ("mjaue"  adj pp) ("mjukne"  adj pp) ("mjukne"  adj pp) ("mompe"  adj pp) ("moralisere"  adj pp) ("muge"  adj pp) ("mumse"  adj pp) ("mussere"  adj pp) ("naue"  adj pp) ("nedstamme"  adj pp) ("nevehelse"  adj pp) ("nevehilse"  adj pp) ("nufse"  adj pp) ("nuske"  adj pp) ("nusle"  adj pp) ("nyse"  adj pp) ("nøffe"  adj pp) ("nøyte"  adj pp) ("obstruere"  adj pp) ("oie"  adj pp) ("olme"  adj pp) ("omrømme"  adj pp) ("oppebie"  adj pp) ("oppstamme"  adj pp) ("optere"  adj pp) ("orme"  adj pp) ("oscillere"  adj pp) ("ovre"  adj pp) ("paffe"  adj pp) ("pale"  adj pp) ("panegyrere"  adj pp) ("parlamentere"  adj pp) ("parlere"  adj pp) ("passiare"  adj pp) ("pausere"  adj pp) ("perennere"  adj pp) ("permutere"  adj pp) ("pinke"  adj pp) ("pinke"  adj pp) ("pippe"  adj pp) ("piruettere"  adj pp) ("piste"  adj pp) ("pjalle"  adj pp) ("pjoltre"  adj pp) ("plaffe"  adj pp) ("pløse"  adj pp) ("pokre"  adj pp) ("pokulere"  adj pp) ("prale"  adj pp) ("prasle"  adj pp) ("presidere"  adj pp) ("prille"  adj pp) ("proe"  adj pp) ("proe"  adj pp) ("prompe"  adj pp) ("protte"  adj pp) ("protte"  adj pp) ("proviantere"  adj pp) ("prunke"  adj pp) ("pruppe"  adj pp) ("prøvebore"  adj pp) ("ptroe"  adj pp) ("ptroe"  adj pp) ("ptrotte"  adj pp) ("ptrotte"  adj pp) ("puge"  adj pp) ("puldre"  adj pp) ("pulsere"  adj pp) ("purle"  adj pp) ("påligge"  adj pp) ("radiere"  adj pp) ("rafse"  adj pp) ("ralle"  adj pp) ("ratle"  adj pp) ("rebellere"  adj pp) ("reike"  adj pp) ("remse"  adj pp) ("renonsere"  adj pp) ("residere"  adj pp) ("respirere"  adj pp) ("restere"  adj pp) ("revoltere"  adj pp) ("rikle"  adj pp) ("rikte"  adj pp) ("rine"  adj pp) ("rivalisere"  adj pp) ("rulte"  adj pp) ("ryte"  adj pp) ("rådlegge"  adj pp) ("røfle"  adj pp) ("røkte"  adj pp) ("røle"  adj pp) ("røyte"  adj pp) ("saluttere"  adj pp) ("sameksistere"  adj pp) ("sangre"  adj pp) ("sesongdebutere"  adj pp) ("sexdebutere"  adj pp) ("shake"  adj pp) ("sikksakke"  adj pp) ("silregne"  adj pp) ("silrenne"  adj pp) ("siregne"  adj pp) ("sjabbe"  adj pp) ("sjakre"  adj pp) ("sjevre"  adj pp) ("sjofle"  adj pp) ("sjoge"  adj pp) ("sjogse"  adj pp) ("sjonglere"  adj pp) ("sjukne"  adj pp) ("sjukne"  adj pp) ("skalte"  adj pp) ("skeine"  adj pp) ("skeise"  adj pp) ("skillinge"  adj pp) ("skimre"  adj pp) ("skjelle"  adj pp) ("skjelle"  adj pp) ("skoggerle"  adj pp) ("skogre"  adj pp) ("skose"  adj pp) ("skrappe"  adj pp) ("skrasle"  adj pp) ("skratle"  adj pp) ("skrattle"  adj pp) ("skrense"  adj pp) ("skreppe"  adj pp) ("skrø"  adj pp) ("skrøne"  adj pp) ("skumle"  adj pp) ("skutle"  adj pp) ("skutle"  adj pp) ("skvadronere"  adj pp) ("skvale"  adj pp) ("skvatre"  adj pp) ("skøye"  adj pp) ("slapne"  adj pp) ("slaure"  adj pp) ("slave"  adj pp) ("sleske"  adj pp) ("sletne"  adj pp) ("sleve"  adj pp) ("slitne"  adj pp) ("slubbe"  adj pp) ("slufse"  adj pp) ("slure"  adj pp) ("slute"  adj pp) ("sløvne"  adj pp) ("smatre"  adj pp) ("smeike"  adj pp) ("smekte"  adj pp) ("snadre"  adj pp) ("snafse"  adj pp) ("snapse"  adj pp) ("snike"  adj pp) ("snike"  adj pp) ("snorksove"  adj pp) ("snøgge"  adj pp) ("sose"  adj pp) ("spase"  adj pp) ("spekse"  adj pp) ("sprengkjøre"  adj pp) ("sprutregne"  adj pp) ("stane"  adj pp) ("stanke"  adj pp) ("stanke"  adj pp) ("stoltsere"  adj pp) ("storle"  adj pp) ("storskrike"  adj pp) ("streite"  adj pp) ("strende"  adj pp) ("strende"  adj pp) ("stri"  adj pp) ("stri"  adj pp) ("stridgråte"  adj pp) ("stridgråte"  adj pp) ("strigråte"  adj pp) ("strigråte"  adj pp) ("sturte"  adj pp) ("stutne"  adj pp) ("stylte"  adj pp) ("styltre"  adj pp) ("styrtblø"  adj pp) ("sukle"  adj pp) ("suksedere"  adj pp) ("sulle"  adj pp) ("sulle"  adj pp) ("supe"  adj pp) ("surle"  adj pp) ("surmule"  adj pp) ("susle"  adj pp) ("sutenere"  adj pp) ("svage"  adj pp) ("svalne"  adj pp) ("svanse"  adj pp) ("svelte"  adj pp) ("svire"  adj pp) ("svive"  adj pp) ("svæve"  adj pp) ("synfare"  adj pp) ("tagne"  adj pp) ("takse"  adj pp) ("taktere"  adj pp) ("tamse"  adj pp) ("tevle"  adj pp) ("tilligge"  adj pp) ("tiltru"  adj pp) ("tinkle"  adj pp) ("tiple"  adj pp) ("tisle"  adj pp) ("tjatre"  adj pp) ("tjatte"  adj pp) ("tjone"  adj pp) ("tjukne"  adj pp) ("tjukne"  adj pp) ("tjåke"  adj pp) ("trabelere"  adj pp) ("transfigurere"  adj pp) ("transpirere"  adj pp) ("trasse"  adj pp) ("tretne"  adj pp) ("tretne"  adj pp) ("trinse"  adj pp) ("trivle"  adj pp) ("tryte"  adj pp) ("tråve"  adj pp) ("trøtne"  adj pp) ("trøtne"  adj pp) ("twiste"  adj pp) ("ty"  adj pp) ("tystne"  adj pp) ("tyvtitte"  adj pp) ("tyvtitte"  adj pp) ("tøfle"  adj pp) ("ulke"  adj pp) ("umake"  adj pp) ("understå"  adj pp) ("unnbe"  adj pp) ("unnfly"  adj pp) ("unngjelde"  adj pp) ("unnvike"  adj pp) ("uteske"  adj pp) ("utlyde"  adj pp) ("utspeide"  adj pp) ("vabbe"  adj pp) ("vagabondere"  adj pp) ("valandere"  adj pp) ("vandle"  adj pp) ("vavre"  adj pp) ("vedkomme"  adj pp) ("vege"  adj pp) ("vege"  adj pp) ("versne"  adj pp) ("voffe"  adj pp) ("vrinske"  adj pp) ("våle"  adj pp) ("vånde"  adj pp) ("våre"  adj pp) ("yle"  adj pp) ("ynge"  adj pp) ("åe"  adj pp) ("ågre"  adj pp) ("åke"  adj pp) ("åvirke"  adj pp) ("øksle"  adj pp) ("økte"  adj pp) ("ømme"  adj pp) ("øsregne"  adj pp) ("forgripe"  adj pp) ("hisse"  adj pp) ("funke"  adj pp) ("forskåne"  adj pp) ("gjeninnføre"  adj pp) ("hauste"  adj pp) ("aktorere"  adj pp) ("beinfly"  adj pp) ("beligge"  adj pp) ("bråsnu"  adj pp) ("dvaske"  adj pp) ("ire"  adj pp) ("kjeppe"  adj pp) ("knuppe"  adj pp) ("lurke"  adj pp) ("trasle"  adj pp) ("ukependle"  adj pp) ("avreise"  adj pp) ("berope"  adj pp) ("berøve"  adj pp) ("bisne"  adj pp) ("bivre"  adj pp) ("bondske"  adj pp) ("bøle"  adj pp) ("dagne"  adj pp) ("dagpendle"  adj pp) ("dalle"  adj pp) ("dorske"  adj pp) ("drulte"  adj pp) ("drunte"  adj pp) ("dunse"  adj pp) ("eitre"  adj pp) ("fikte"  adj pp) ("fistle"  adj pp) ("fjonge"  adj pp) ("floe"  adj pp) ("floe"  adj pp) ("flu"  adj pp) ("forråtne"  adj pp) ("forsmekte"  adj pp) ("fye"  adj pp) ("fælne"  adj pp) ("geine"  adj pp) ("gine"  adj pp) ("glisne"  adj pp) ("gløse"  adj pp) ("gnaske"  adj pp) ("gnavle"  adj pp) ("grimasere"  adj pp) ("grisekjøre"  adj pp) ("grunke"  adj pp) ("guffe"  adj pp) ("gustne"  adj pp) ("gysje"  adj pp) ("gøye"  adj pp) ("haie"  adj pp) ("harangere"  adj pp) ("henregne"  adj pp) ("hikstele"  adj pp) ("historisere"  adj pp) ("hutle"  adj pp) ("håndhelse"  adj pp) ("hønse"  adj pp) ("igle"  adj pp) ("innføle"  adj pp) ("innsnike"  adj pp) ("julle"  adj pp) ("kappsvømme"  adj pp) ("karske"  adj pp) ("kille"  adj pp) ("kjake"  adj pp) ("kjaste"  adj pp) ("kjastre"  adj pp) ("kloppe"  adj pp) ("knarre"  adj pp) ("konformere"  adj pp) ("koseprate"  adj pp) ("krye"  adj pp) ("kryssreagere"  adj pp) ("kulsne"  adj pp) ("kvalme"  adj pp) ("leste"  adj pp) ("lumske"  adj pp) ("makramere"  adj pp) ("mannekenge"  adj pp) ("miserere"  adj pp) ("munke"  adj pp) ("muse"  adj pp) ("nibe"  adj pp) ("nikse"  adj pp) ("niskrike"  adj pp) ("nitridere"  adj pp) ("overensstemme"  adj pp) ("overstrømme"  adj pp) ("petisjonere"  adj pp) ("platedebutere"  adj pp) ("plente"  adj pp) ("prøveflyge"  adj pp) ("prøvesitte"  adj pp) ("pudle"  adj pp) ("radde"  adj pp) ("rekylere"  adj pp) ("romandebutere"  adj pp) ("ruffe"  adj pp) ("runse"  adj pp) ("sensibilisere"  adj pp) ("sigge"  adj pp) ("skjekte"  adj pp) ("skokke"  adj pp) ("skrale"  adj pp) ("skute"  adj pp) ("sleide"  adj pp) ("sleipe"  adj pp) ("sleipne"  adj pp) ("slunke"  adj pp) ("slunkne"  adj pp) ("slunte"  adj pp) ("smukke"  adj pp) ("småkoke"  adj pp) ("småputre"  adj pp) ("småspringe"  adj pp) ("småtøffe"  adj pp) ("snabbe"  adj pp) ("snikksnakke"  adj pp) ("snorkle"  adj pp) ("snurte"  adj pp) ("spøle"  adj pp) ("stinte"  adj pp) ("stormflørte"  adj pp) ("strile"  adj pp) ("sulfatere"  adj pp) ("sulfidere"  adj pp) ("sulre"  adj pp) ("sva"  adj pp) ("svasse"  adj pp) ("svipe"  adj pp) ("tandre"  adj pp) ("tantre"  adj pp) ("tilgå"  adj pp) ("tjoe"  adj pp) ("usse"  adj pp) ("viltre"  adj pp) ("vipse"  adj pp) ("vitre"  adj pp) ("beskyte"  adj pp) ("avmarsjere"  adj pp) ("blaffe"  adj pp) ("divergere"  adj pp) ("flippe"  adj pp) ("folle"  adj pp) ("fosskoke"  adj pp) ("frøse"  adj pp) ("gymnastisere"  adj pp) ("halle"  adj pp) ("hikke"  adj pp) ("hovere"  adj pp) ("hungre"  adj pp) ("hustre"  adj pp) ("hute"  adj pp) ("jodle"  adj pp) ("kaue"  adj pp) ("kjappe"  adj pp) ("kneise"  adj pp) ("krasse"  adj pp) ("kåsere"  adj pp) ("maure"  adj pp) ("otre"  adj pp) ("parasittere"  adj pp) ("ploge"  adj pp) ("rumle"  adj pp) ("rutte"  adj pp) ("råkjøre"  adj pp) ("rødne"  adj pp) ("sisle"  adj pp) ("snylte"  adj pp) ("snåve"  adj pp) ("snøse"  adj pp) ("stage"  adj pp) ("sveipe"  adj pp) ("svimle"  adj pp) ("svimre"  adj pp) ("teve"  adj pp) ("etterleve"  adj pp) ("kurere"  adj pp) ("forveksle"  adj pp) ("konsultere"  adj pp) ("proppe"  adj pp) ("tilta"  adj pp) ("albue"  adj pp) ("begi"  adj pp) ("frafalle"  adj pp) ("fyllekjøre"  adj pp) ("gapskratte"  adj pp) ("gjøgle"  adj pp) ("halse"  adj pp) ("ironisere"  adj pp) ("jumpe"  adj pp) ("klapse"  adj pp) ("klimpre"  adj pp) ("knikse"  adj pp) ("kondolere"  adj pp) ("kopulere"  adj pp) ("meie"  adj pp) ("mugne"  adj pp) ("plire"  adj pp) ("raljere"  adj pp) ("revurdere"  adj pp) ("snegle"  adj pp) ("spankulere"  adj pp) ("sympatisere"  adj pp) ("syte"  adj pp) ("tindre"  adj pp) ("trege"  adj pp) ("vibrere"  adj pp) ("vralte"  adj pp) ("vrimle"  adj pp) ("deflatere"  adj pp)	-16 ("agitere"  adj pp) ("blånekte"  adj pp) ("drodle"  adj pp) ("florere"  adj pp) ("flø"  adj pp) ("hentyde"  adj pp) ("kakke"  adj pp) ("knake"  adj pp) ("larme"  adj pp) ("musisere"  adj pp) ("skarre"  adj pp) ("skvulpe"  adj pp) ("sprade"  adj pp) ("styrtregne"  adj pp) ("sutte"  adj pp) ("syde"  adj pp) ("tykne"  adj pp) ("tykne"  adj pp) ("vone"  adj pp) ("deportere"  adj pp) ("dunste"  adj pp) ("fnyse"  adj pp) ("fyke"  adj pp) ("geire"  adj pp) ("krakse"  adj pp) ("skratte"  adj pp) ("skvalpe"  adj pp) ("slentre"  adj pp) ("smette"  adj pp) ("småpludre"  adj pp) ("sprinte"  adj pp) ("sprudle"  adj pp) ("tørste"  adj pp) ("unnsleppe"  adj pp) ("abonnere"  adj pp) ("gjennomstrømme"  adj pp) ("jafse"  adj pp) ("klapre"  adj pp) ("krafse"  adj pp) ("monne"  adj pp) ("rasle"  adj pp) ("slumpe"  adj pp) ("tiske"  adj pp) ("urinere"  adj pp) ("adlyde"  adj pp) ("fenge"  adj pp) ("filosofere"  adj pp) ("henfalle"  adj pp) ("hygge"  adj pp) ("innkvartere"  adj pp) ("pendle"  adj pp) ("sige"  adj pp) ("ødsle"  adj pp) ("fable"  adj pp) ("gremme"  adj pp) ("harselere"  adj pp) ("håndhilse"  adj pp) ("håndhilse"  adj pp) ("håndhilse"  adj pp) ("sprelle"  adj pp) ("stavre"  adj pp) ("surfe"  adj pp) ("sømme"  adj pp) ("årsake"  adj pp) ("bestrebe"  adj pp) ("dabbe"  adj pp) ("forbarme"  adj pp) ("framstå"  adj pp) ("framstå"  adj pp) ("innlate"  adj pp) ("kapitulere"  adj pp) ("klipe"  adj pp) ("skusle"  adj pp) ("skusle"  adj pp) ("tilkjennegi"  adj pp) ("trå"  adj pp) ("trå"  adj pp) ("votere"  adj pp) ("fremstå"  adj pp) ("fremstå"  adj pp) ("huke"  adj pp) ("innfinne"  adj pp) ("pipe"  adj pp) ("drille"  adj pp) ("drille"  adj pp) ("drille"  adj pp) ("drille"  adj pp) ("esle"  adj pp) ("esle"  adj pp) ("forske"  adj pp) ("forutsi"  adj pp) ("kategorisere"  adj pp) ("konkurrere"  adj pp) ("krype"  adj pp) ("sakke"  adj pp) ("skjøtte"  adj pp) ("avfeie"  adj pp) ("bestikke"  adj pp) ("dysse"  adj pp) ("frasi"  adj pp) ("imøtekomme"  adj pp) ("kverke"  adj pp) ("streke"  adj pp) ("daue"  adj pp) ("bekjentgjøre"  adj pp) ("frase"  adj pp) ("kreditere"  adj pp) ("avhjelpe"  adj pp) ("avstedkomme"  adj pp) ("fraskrive"  adj pp) ("håne"  adj pp) ("tilsi"  adj pp) ("ul"  adj);
 LIST ikke-sanns-adv = "dam" ;
@@ -640,7 +648,7 @@ LIST interj = ij ;
 LIST iv = (vblex inf) (vblex pp) ;
 LIST kh#ikke-adv-adj-subst-det-prep = "$-" "-" "$," "," vblex prn cnjsub (cnjcoo clb) "å" ij <<< >>> <ellipse> ;
 LIST kh#ikke-adv-adj-subst-det-prep-pron = "$-" "-" "$," "," vblex cnjsub (cnjcoo clb) "å" ij <<< >>> <ellipse> ;
-LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) <klokke> ;
+LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) <klokke> "[0-2][0-9]?[.:][0-5][0-9]"r ;
 LIST klær = "tøy"  "parkdress"  "klær"  "jakke"  "genser"  "dress"  "bukse"  ;
 LIST kolon = ("$:" clb) (":" clb) ;
 LIST komma = "$," "," ;
@@ -808,7 +816,7 @@ LIST setn-gr/parentes-beg = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$
 LIST setn-gr/prep = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" pr cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva"  "$--" "--" "$-" "-" vblex cnjsub @sbu >>> <<< ("$:" clb) (":" clb) ("$;" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
-LIST setn-start-med-strek/anf = lquot rquot <anf> <ANF> guio >>> ;
+LIST setn-start-med-strek/anf = lquot rquot lquot guio >>> ;
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
 LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
 LIST sikre-navn = "svein"  "rune"  "helle"  "dag"  "bjørn"  "arne"  (np m) (np f) ;
@@ -824,7 +832,7 @@ LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
 LIST strek = guio ;
 LIST strek/parentes = guio lpar rpar ;
-LIST strek/parentes-beg/anf = guio lpar <anf> ;
+LIST strek/parentes-beg/anf = guio lpar lquot ;
 LIST subst = n np ;
 LIST subst-appell = (n) ; 				    # (n appell)
 LIST subst-appell-ub-ent = (n sg ind) ; 		    # (n appell sg ind)
@@ -862,7 +870,7 @@ LIST tall-fl = (det qnt pl) "pi" ;
 LIST tall-subst = "tusen"  "trillion"  "titusen"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard" "pi" ;
 LIST tall/tall-subst = "tusen"  "trillion"  "mrd." "million"  "milliard"  "mill." "kvadrillion"  "hundre"  "halvmillion"  "billion"  "billiard"  "1" (det qnt pl) ("en"  det qnt) ("én" det qnt) "pi" ;
 LIST tegnsetting = cm <ellipse> <kolon> lpar rpar <semi> guio ;
-LIST tidsadv = "tidlig"  "sen"  "sein"  "nå"  "lenge"  "igjen"  "før"  "etterpå"  "da"  ("snar"  nt ind sg) ;
+LIST tidsadv = "tidlig"  "sen"  "sein"  "nå"  "lenge"  "igjen"  "før"  "etterpå"  "da"  ("snar"  nt ind sg) "neste år" "iår" "i år" "i fjor" "ifjor" "igår" "idag" "i går" "i dag" "i overimorgen" "overimorgen" "i forigårs" "forigårs" "snart" "imorgen" "i morgen" ;
 LIST tittel = <tittel> @tittel ;
 LIST tullemengde = n np ;
 LIST ub = ind ;
@@ -902,9 +910,16 @@ LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
-LIST forsterkende = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
+# nanowordnet:
+LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
+LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
+LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
+LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
+LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
+LIST spesielt-ord = "<spesielt>" "<særlig>" ;
+LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -912,7 +927,8 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 BEFORE-SECTIONS
 
 # Typically stuff that's first in a sentence:
-LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Hvis>" ;
+LIST not-np-guess-words = "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Hvis>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<.*rammede>"ri  "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "<.*forfatter>"ri "<Reguleringer>" "<Frykter>" "<.*siktet>"ri ;
+# sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
 APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
@@ -945,6 +961,7 @@ SELECT:over_30._Men clb IF
 CONSTRAINTS
 
 REMOVE guess;
+
 
 REMOVE:np-guess-safe cgguess IF
         (NOT -1 storbokstav)    # allow: Ding Liren<cgguess>
@@ -997,8 +1014,47 @@ SELECT:Nordre-Aker np IF
         (0 top)
         ;
 
-LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm";
-SELECT:namn namn-viss-mogleg + np IF (0 storbokstav);
+
+SELECT:Krogh-og-Eide np IF
+        (-2 np + cog + storbokstav)
+        (-1 cnjcoo)
+        (0 np + cog + storbokstav)
+        ;
+
+SELECT:Erna-Sanner-og-Lae np IF
+        (-2 np + cog + storbokstav)
+        (-1 cm)
+        (1 cnjcoo)
+        (2 ukjent + storbokstav)
+        ;
+
+SELECT:nestleder-Sanner np IF
+        (-1 yrkestittel-ord)
+        ;
+
+REMOVE:Golflegenden-Tiger-Woods cgguess IF
+        (-1 >>>)
+        (0 n + sg + def)
+        (1 storbokstav)
+        ;
+
+REMOVE:-Golflegenden-Tiger-Woods cgguess IF
+        (-2 >>>)
+        (-1 emdash-endash)
+        (0 n + sg + def)
+        (1 storbokstav)
+        ;
+
+REMOVE:Brannmannskap-har cgguess IF
+        (-1 >>>)
+        (0C n + def OR n + pl OR np)
+        (1C fv)
+        ;
+
+
+
+LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport";
+SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
@@ -1010,6 +1066,13 @@ REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
 # same, remove lower-case readings.
 # E.g.: AU is an acronym, not adv
 
+REMOVE:acronym-samecase-gen ("[a-zæøå]+"r) IF
+        (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)s>"r "$1"v) + gen)
+        ;
+
+REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
+
+REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
@@ -1032,9 +1095,18 @@ REMOVE:unlikely ("<bak>"i pl);
 REMOVE:unlikely ("<skutt>"i "skute");
 REMOVE:unlikely ("<skutt>"i "skutt");
 REMOVE:unlikely ("råd") + mORf;
+REMOVE:unlikely ("tvinge") + pp IF (0 pst);
+REMOVE:unlikely ("<litt>"i "lite");
+REMOVE:unlikely ("trase"); # trasé
+REMOVE:unlikely ("fly") + mORf IF (0 nt);
+REMOVE:unlikely ("skjede") IF (0 ("kjede"));
+REMOVE:unlikely ("motstand") IF (0 ("motstander"));
+REMOVE:unlikely ("gaupe") + vblex;
+REMOVE:unlikely ("sult") + n + pl;
+REMOVE:unlikely ("lave") + pp + ind;
 
 REMOVE:unlikely ("regle") IF
-        (0 ("regel") + pl + def)
+        (0 ("regel"))
         (NOT 0* ("lek") OR ("stev") OR ("rim") OR ("barnerim") OR ("eventyr") OR ("ordspråk") OR ("sagn") OR ("gåte"))
         ;
 
@@ -1048,6 +1120,8 @@ REMOVE:unlikely-skjøt ("skjøt") IF
         (0 ("skyte"))
         (NOT -1 %en%)
         ;
+
+REMOVE:unlikely-visar ("<viser>") + n IF (NOT -1 %en%) ;
 
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
@@ -1087,6 +1161,9 @@ REMOVE:unlikely ("planlegger") IF
 "<mens>" REMOVE ("men");
 REMOVE:prefer-museum ("musé");
 
+REMOVE:Lederne ("Lederne") IF
+        (-1 >>>);
+
 REMOVE:unlikely ("flask");
 REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("spile") IF (0 ("spille"));
@@ -1115,8 +1192,16 @@ REMOVE:unlikely ("<reker>"i) + vblex IF
 REMOVE:unlikely ("<var>"i "var") + n + ind ; #  bare subst i sms
 REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
+REMOVE:unlikely ("<ris>"i gen) ;
 
+REMOVE:unlikely ("<notene>"i "not") IF
+        (NEGATE 0* ("fisk"))
+        ;
 
+SELECT:unlikely ("<super>"i) + adj IF
+        (NOT 1 vann-ord)
+        ;
+"<Monsen>" SELECT:unlikely-mons np;
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
@@ -1432,6 +1517,10 @@ REMOVE:cardinal date;
 ;
 #De åpnet Bislet bad..
 
+"<bar>" SELECT:bar-preg pret IF
+        (1 ("preg"))
+        ;
+
 
 #:3739
   "<bare>"   SELECT:3739   (adv) IF
@@ -1717,6 +1806,31 @@ REMOVE:cardinal date;
 	  (-1 infmerke)
 	  (1 %ned%)
 ;
+
+"<døde>" SELECT:hente-den-døde-ut adj IF
+        (-2C vblex)
+        (-1 %den%)
+        (1C prep)
+        ;
+
+"<døde>" SELECT:Den-døde-vegetasjonen adj IF
+        (-1 %den%)
+        (1C n)
+        ;
+
+"<døde>" SELECT:27-døde adj IF
+        (NOT -2 cnjsub)
+        (-1 talord-par-siffer)
+        (NOT -1 sanns-årstal)
+        ;
+# «– Vi har 32 døde på grunn av terrorister.»
+# Ikkje: «Trump benekter at 3.000 døde som følger av Puerto Rico-orkan»
+# Ikkje: «2.500 ble født, 960 døde, 15.800 flyttet til Oslo og 13.900 flyttet fra Oslo.»
+# Ikkje: «I 2018 døde over 3.700 mennesker i slike hendelser.»
+# Tvetydig (overskrift eller ei?): «Over 150 døde etter å ha drukket giftig hjemmebrent i India»
+
+
+
 
 "<Eggen>" SELECT:Nils-Arne np;
 
@@ -2018,6 +2132,9 @@ REMOVE:cardinal date;
 ;
 #  "Berre ved: til felles"
 
+"<felles>"   SELECT:felles-mistro adv IF
+        (1 ukjent)
+        ;
 
 
 #:5046
@@ -2258,6 +2375,13 @@ REMOVE:cardinal date;
         ;
 
 
+SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
+        (-1 >>> OR guio)
+        (1 ("også"))
+        (*1 fv BARRIER inf)
+        ;
+
+
 #:3632
   "<for>"   SELECT:det-for-en-ball   (vblex) IF
 	(1 det-subst)
@@ -2384,11 +2508,11 @@ REMOVE:cardinal date;
 
 
 #:3593
-  "<ganger>"   SELECT:3593   (vblex pres) IF
-	(1 tall)
-	(-1 tall)
+"<ganger>" SELECT:en-ganger-en pl + ("gang") IF
+	(1 talord OR siffer)
+	(-1 talord OR siffer)
 ;
-#  "en ganger en er to!"
+#  "en ganger en er to!" (???)
 
 
 
@@ -3056,7 +3180,7 @@ SELECT ("lyve") IF
 
 
 #:3443
-  "<men>"   SELECT:3443   (cnjcoo) IF
+"<men>"   SELECT:men-konj-etter-komma cnjcoo IF
 	(-1 komma)
 ;
 #  "mest sannsynlig at men er konj rett etter komma"
@@ -3121,8 +3245,6 @@ SELECT ("lyve") IF
 	(-1 komma)
 ;
 #  "mest sannsynlig at mens er sbu rett etter komma"
-
-
 
 
 
@@ -3565,6 +3687,9 @@ SELECT ("lyve") IF
 #  "Vannet har rent (perf-part) ned i avløpet
 # Gutten har rent (perf-part) på ski"))
 
+"<rente>" SELECT:uendret-rente n IF
+        (NOT 1 %ned% OR %ut% OR ("<begeret>") OR %det% OR ("mer"))
+        ;
 
 
 #:3343
@@ -3617,6 +3742,14 @@ SELECT ("lyve") IF
 ;
 # de rike
 
+"<ris>" SELECT:ris-og-ros n + nt + sg IF
+        (1 %og%)
+        (2 ("ros"))
+        ;
+"<ros>" SELECT:ris-og-ros n IF
+        (-2 ("ris"))
+        (-1 %og%)
+        ;
 
 #:4002
 
@@ -4370,6 +4503,10 @@ SELECT ("lyve") IF
 ;
 #  "det stikk motsatte"
 
+"<strøk>" SELECT:indre-strøk n IF
+        (-1 adj OR ukjent + (".*e"r))
+        ;
+
 "<støtte>"   SELECT  subst IF
 	(NOT -1 infmerke)
 	(NOT -2 infmerke)
@@ -4381,7 +4518,6 @@ REMOVE:støtte ("støte") IF
 	(NOT 1 ("på"))
 	(NOT *1 ("bort") OR ("fra") BARRIER setn-gr)
         ;
-
 
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
@@ -5119,6 +5255,9 @@ REMOVE:støtte ("støte") IF
 ;
 #  "tvert imot"
 
+"<vanhellig>" SELECT adj;
+"<vanhellige>" SELECT adj;
+
 "<vant>" SELECT pret IF
         (NOT *-1 kop-fv)
         (NOT 1 %med% OR %til%)
@@ -5260,6 +5399,10 @@ SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
 SELECT:kroner ("øre") + nt IF (-1 siffer);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
+"<øst>" SELECT:øst-i-England pr IF
+        (NOT 1 ("ut"))
+        ;
+
 "<øyer>"   SELECT:antall-øyer subst IF
         (NEGATE -1C pron)
 ;
@@ -5341,11 +5484,80 @@ REMOVE:unlikely ("<liker>") + n;
 REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
 REMOVE:unlikely ("<spilles>") + n;
+REMOVE:unlikely ("<to>") + imp;
+REMOVE:unlikely ("<vis>") + m;
+REMOVE:unlikely ("<vis>") + f;
+REMOVE:unlikely ("<hører>"i) + n;
+REMOVE:unlikely ("<glede>"i) + adj ;
+REMOVE:unlikely ("<pass>"i) + m IF (0 nt + ind) ;
+REMOVE:unlikely ("<eier>"i) + nt ;	# keep eie<n><m><pl><ind>→eigar and eie<vblex><pres>→eig
+REMOVE:unlikely ("<negler>"i) + vblex ;
+REMOVE:unlikely ("<kan>"i) + n ;
+REMOVE:unlikely ("<spiser>"i) + n ;
+REMOVE:unlikely ("lom") ;
+REMOVE:unlikely ("<saker>" "sake") ;
+REMOVE:unlikely ("<fanger>" "fange") ;
+REMOVE:unlikely ("hyll") ;
+REMOVE:unlikely ("lage") + n ;
+REMOVE:unlikely ("<begynner>"i) + n ;
+REMOVE:unlikely ("<østers>"i "øst") ;
+REMOVE:unlikely ("<bomber>"i "bomber") ;
+REMOVE:unlikely ("<lokk>"i) + m IF (NOT (-1 %en%)) ;
+REMOVE:unlikely ("<skriver>"i) + m IF (NEGATE *-1 %en% CBARRIER ikke-adj) ;
+REMOVE:unlikely ("<liket>"i) + pp IF (NOT *-1 kop-fv);
+REMOVE:unlikely ("<trekkene>"i) + m ;
+REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
+REMOVE:unlikely ("<profil>"i) + nt;
+REMOVE:unlikely ("<tallet>"i) + adj ;
+REMOVE:unlikely ("<tallet>"i) + vblex;
+REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-"<Også>" REMOVE:Også-den-har ("også");
-"<også>" REMOVE:Den-har-også ("også¹");
+SELECT ("<Rana>") + np IF
+        (1 ("kommune"))
+        ;
+
+# "også"  → "òg"
+# "også¹" → "også"
+"<også>" SELECT:cm-også-om ("også") IF
+        (-1 cm OR cnjsub OR cnjcoo + clb)
+        (1 ("om") OR cnjsub)
+        ;
+"<Også>" SELECT:Også-den-har ("også¹");
+"<også>" SELECT:også-i-2019 ("også¹") IF
+        (1 %i% OR %på%)
+        (2 sanns-årstal OR adverbialsubst)
+        ;
+# «Han blir også i 2019 å se i rally-VM.»
+"<også>" SELECT:også-i-2019 ("også¹") IF
+        (1 %i% OR %på%)
+        (2 sanns-årstal OR adverbialsubst)
+        ;
+
+LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
+"<også>" SELECT:der-også-mindretallet ("også¹") IF
+        (-1 %der% OR %at% OR ("fordi") OR cnjsub OR dermed-således)
+        (1 n + def OR nominativ OR np)
+        ;
+"<også>" SELECT:derfor-også-dømt ("også¹") IF
+        (-1 dermed-således)
+        (1C pp)
+        ;
+"<også>" SELECT:som-også-blir ("også¹") IF
+        (-1 %som% OR %men%)
+        (1 fv OR %til%)
+        ;
+"<også>" SELECT:cm-også-inkluderte ("også¹") IF
+        (-2 cm)
+        (-1 %som% OR %men%)
+        ;
+"<også>" SELECT:cm-også-inkluderte ("også¹") IF
+        (-1 cm OR cnjsub OR cnjcoo + clb)
+        ;
+
+# «Han blir også i 2019 å se i rally-VM.»
+"<også>" SELECT:Den-har-også ("også");
 
 
 #:3782
@@ -5655,6 +5867,10 @@ SELECT:sel-unlikely ("<baller>" "ball" m);
         (-1 >>> OR siffer OR punktum/ellipse)
         ;
 
+"<bruk>" REMOVE:gruppas-bruk-av nt IF
+        (NOT *-1 det + nt BARRIER ikke-adj)
+        ;
+
 "<begge>" REMOVE:begge-kjønn adv IF
 	(1 n + pl)
         (NOT 1 gen OR adj + pl)
@@ -5689,6 +5905,11 @@ SELECT:sel-unlikely ("<baller>" "ball" m);
 
 
 "<domene>" REMOVE ("dom");
+
+"<dommer>" SELECT:kampens-dommer ("dommer") IF
+        (*0 ("kamp"))
+        (NOT -1 det + pl OR adj + pl OR %flere%)
+        ;
 
 
 
@@ -6033,10 +6254,13 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 #:3608
   "<før>"   REMOVE:3608   (adv) IF
+        (NEGATE -1 vekedag OR månad OR adverbialsubst LINK 0 def) # onsdagen før
 	(0 adv)
 ;
-#  "referansegrammatikken ser ikke ut til å regne \"før\" som
-# adverb, bare som preposisjon og subjunksjon"
+#  "referansegrammatikken ser ikke ut til å regne \"før\" som adverb,
+# bare som preposisjon og subjunksjon" – men det fører til følgefeil i
+# ordet etterpå viss me har t.d. «et angrep onsdagen før tvang det til
+# å stenge»
 
 
 
@@ -6458,12 +6682,26 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(**-1C fv BARRIER setn-gr)
 ;
 
+"<huset>" REMOVE:dette-huset-cm vblex OR adj IF
+        (-1 dem)
+	(1 setn-gr)
+;
+
+
 
 #:4084
  "<hør>"   REMOVE:4084   (n) IF
 	(0 imp)
 ;
 
+"<høy>" REMOVE:meter-høy n IF
+        (NEGATE 0* ("korn") OR ("halm") OR (".*fôr"r) OR ("gras") OR ("gress") OR ("rundball"))
+        ;
+
+"<høy>" REMOVE:ekstremt-høy-bruk n IF
+        (-1 adj + $$NUMBER + $$GENDER)
+        (1 n + $$NUMBER + $$GENDER)
+        ;
 
 #:3511
   "<ingenting>"   REMOVE:3511   (n ubøy) IF
@@ -6507,6 +6745,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
     (-1 det + m)
     ;
 
+
 #:3500
   "<klart>"   REMOVE:3500   pp IF
 	(1 %for%)
@@ -6514,7 +6753,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(*-1 %ha% BARRIER setn-gr)
 ;
 #  "Ha noe klart (adj) for seg"))
-
 
 
 #:3501
@@ -6735,7 +6973,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # NOT -1 POSS-DET: det finnes ikke hans like
 #
 # NOT -1 SUBST-GEN: det finnes ikke Pers like"
-
 
 
 #:3460
@@ -7044,7 +7281,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3383
-  "<når>"   REMOVE:3383   (adv) IF
+"<når>"   REMOVE:3383   adv IF
 	(NOT 1 fv)
 	(NOT 1 prep)
 ;
@@ -7053,8 +7290,28 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 
+
+# «og» clb cnjcoo's:
+"<og>" REMOVE:inn-og-ut  clb IF (-1 ("inn"))                      (1 ("ut") OR ("ut av")) ;
+"<og>" REMOVE:opp-og-ned clb IF (-1 ("opp"))                      (1 ("ned")) ;
+"<og>" REMOVE:av-og-til  clb IF (-1 ("av"))                       (1 ("til") OR ("på")) ;
+"<og>" REMOVE:til-og-fra clb IF (-1 ("til"))                      (1 ("fra")) ;
+"<og>" REMOVE:av-og-til  clb IF (-1 ("til"))                      (1 ("fra")) ;
+"<og>" REMOVE:mer-og-mer clb IF (-1 ("<mer>"))                    (1 ("<mer>")) ;
+"<og>" REMOVE:om-og-med  clb IF (-1 ("om") OR ("fra") OR ("til")) (1 ("med")) ;
+# «for å finne ut om og med hvem de bør slå seg sammen»
+"<og>" REMOVE:7.og-sist  clb IF (-1 %syvende%)                    (1 ("sist")) ;
+# «til syvende (sjuende) og sist»
+"<og>" REMOVE:så-og-si   clb IF (-1 ("så"))                       (1 ("<si>")) ;
+"<og>" REMOVE:ny-og-ne   clb IF (-1 ("<ny>"))                     (1 ("ne")) ;
+"<og>" REMOVE:her-og-der clb IF (-1 ("her"))                      (1 ("der")) ;
+"<og>" REMOVE:der-og-da  clb IF (-1 ("der"))                      (1 ("da")) ;
+"<og>" REMOVE:en-og-en   clb IF (-1 ("en"))                       (1 ("en")) ;
+"<og>" REMOVE:vel-og-bra clb IF (-1 ("vel"))                      (1 ("bra")) ;
+
+
 #:3375
-  "<og>"   REMOVE:3375   (clb) IF
+"<og>"   REMOVE:3375   clb IF
 	(1 %ikke%)
 	(NOT -1 >>>)
 	(2 %minst%)
@@ -7065,43 +7322,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Ikke: feiltolkninger og (clb) ikke minst er det slik at "))
 
 
-
-#:3376
-  "<og>"   REMOVE:3376   (clb) IF
-	(1 %sist%)
-	(-1 %syvende%)
-;
-#  "til syvende (sjuende) og sist"))
-
-
-
-#:3377
-  "<og>"   REMOVE:3377   (clb) IF
-	(1 %til%)
-	(-1 %av%)
-;
-#  "av og til"
-
-
-
-#:3378
-  "<og>"   REMOVE:3378   (clb) IF
-	(1 %si%-inf)
-	(-1 %så%)
-;
-#  "så og si!"
-
-
-
-#:3379
-  "<og>"   REMOVE:3379   (clb) IF
-	(1 %fra%)
-	(-1 %til%)
-;
-
-
 #:3380
-  "<og>"   REMOVE:3380   (clb) IF
+"<og>"   REMOVE:3380   clb IF
 	(-1C subst)
 	(**1C subst LINK 1 komma LINK 1 clb-konj)
 	(**1C subst BARRIER ikke-adv-adj-det)
@@ -7111,14 +7333,15 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Norge, og vekker lykkelig latter begge steder"
 
 
-
 #:3381
-  "<og>"   REMOVE:3381   (clb) IF
+"<og>"   REMOVE:3381   clb IF
 	(1 %som%)
 	(*2 ikke-adv-adj-substmgen-pron-konj-detmdem-prep LINK 0 pres/pret LINK 1 iv)
 	(**1CO setn-gr LINK *-1 fv LINK NOT *-1 fv)
 ;
 #  "...og som han hadde båret med seg"
+
+
 
 #:5030
  "<ol>"   REMOVE:5030   (vblex pret)
@@ -7141,6 +7364,19 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 "<området>" SELECT:ikkje-områdde subst;
 
 "<ølet>" SELECT:ølet subst;
+
+"<økt>" SELECT:økt-pris adj IF
+        (1 subst OR ukjent OR talord-par-siffer)
+        ;
+
+"<økt>" SELECT:har-støtten-økt adj IF
+        (**-1 n LINK -1 hj-verb)
+        (1 setn-gr)
+        ;
+
+"<økt>" SELECT:økt-pris adj IF
+        (1 %med% LINK 1 talord-par-siffer OR målsubst)
+        ;
 
 
 #:3361
@@ -7251,7 +7487,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # Vannet har rent (perf-part) ned
 # Bare ved \"ha\"?"
 
-
+"<rotter>" SELECT:rotter n IF
+        (NOT 1 %seg%)
+        ;
 
 #:3337
   "<røde>"   REMOVE:røde-ting subst IF
@@ -7532,6 +7770,9 @@ SELECT:skrev vblex IF
 # osv) NOT -2 SUBST: Bordet (subst) jeg så (pret)
 # kh jan 2004: not -2 at/om: Gutten mente jeg at Per så (verb)."))
 
+"<tankens>" REMOVE ("tank") IF
+        (NOT 1 ("atmosfære") OR ("mål") OR ("høyde") OR ("diameter") OR ("kapasitet"))
+        ;
 
 #:3198
   "<tanker>"   REMOVE:3198   (vblex pres) IF
@@ -7598,6 +7839,13 @@ SELECT:skrev vblex IF
 #  "bare trans"
 
 
+"<utelukket>" SELECT pst IF
+        (-1 ("<helt>"i))
+        ;
+
+"<utelukket>" SELECT pst IF
+        (1 ("<å>"i))
+        ;
 
 #:3164
   "<under>"   REMOVE:3164   (n sg) IF
@@ -7638,6 +7886,10 @@ SELECT:skrev vblex IF
 
 "<unge>" REMOVE:den-unge n IF
         (-1 dem OR gen OR pos)
+        ;
+
+"<vakte>" REMOVE ("vake") IF
+        (1 ("oppsikt"))
         ;
 
 #:3161
@@ -7885,9 +8137,24 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
 ##############################################################
 
-# TODO: just remove from .dix instead?
-LIST no-samsvar = "bli" "innrømme" "ha" "få" "gå" "møte" "slå" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå";
-REMOVE:no-samsvar adj + pp + no-samsvar ;
+# We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
+LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
+REMOVE:no-samsvar adj + pp + no-samsvar IF
+        (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
+        (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
+        ;
+# Ingen samsvar her:
+# - De ble tatt av skredet.
+# - Pengene ble gitt i gave.
+# - De ble dratt under.
+# - Barna var veloppdratt.
+# - Barna var oppdratt til å takke for maten.
+# - Motorene ble ettersett og overhalt.
+
+REMOVE:steinete adj + pp IF
+        (0 adj + pst)
+        (0 ("<.*(ete|et)>"r))
+        ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
         (*-2 %ha% + fv BARRIER ikke-adv)
@@ -7916,7 +8183,7 @@ SELECT:de-var-kjent pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr)
+	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr OR nominativ + prn + sg)
 ;
 
 SELECT:personer-som-ble-meldt-savnet pp + pl IF
@@ -7924,75 +8191,96 @@ SELECT:personer-som-ble-meldt-savnet pp + pl IF
         (1 pp)
 ;
 
-SELECT:det-har-blitt-solgt (adj pp nt sg ind)
+SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:Skolene-var-stengt (adj pp pl)
+SELECT:Skolene-var-stengt pp + pl IF
+        (NEGATE -3 pr LINK *-1 n + sg)
 	(-2C fl-subst)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:Skolene-har-vært-stengt (adj pp pl)
+SELECT:Skolene-har-vært-stengt pp + pl IF
 	(-3C fl-subst)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:han-har-vært-sykmeldt (adj pp mf sg ind)
+SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:han-var-sykmeldt (adj pp mf sg ind)
+SELECT:han-var-sykmeldt pp + mf IF
 	(-2 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-1 %var%)
         (NOT 0 adv OR farlige-part)
         ;
 
-SELECT:ble-det-vedtatt (adj pp nt sg ind)
+SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 	(-2 %være/bli%)
 	(-1 %det%)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
 
-SELECT:ble-han-løslatt (adj pp mf sg ind)
+SELECT:ble-han-løslatt pp + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
 
-SELECT:gir-ønsket-utfall (adj pp nt sg ind)
+
+SELECT:gir-ønsket-utfall pp + nt IF
 	(-1C fv)
         (0C n OR vblex OR adj + pp)
         (1C n + nt + ind)
         (2 <<<)
         ;
 
-SELECT:tusenvis-er-isolert (adj pp pl)
+SELECT:tusenvis-er-isolert pp + pl IF
         (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
         ;
 
+SELECT:et-aspekt-som-er-blitt-diskutert pp + nt
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + nt               # aspekt
+         BARRIER (*) - cog - cm         # ,
+         LINK NOT 0 pl OR mask/fem/mf)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «Ola Nordmann, som ble drept …»
+
 SELECT:mannen-som-ble-skadd pp + mf
-        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + mask/fem/mf BARRIER (*) - cog - cm LINK NOT 0 pl)
-        (-1 kop-fv)
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + mask/fem/mf      # Ola/mannen
+         BARRIER (*) - cog - cm         # Nordmann,
+         LINK NOT 0 pl OR nt)
         (NOT 0 adv OR farlige-part)
         ;
 # «Ola Nordmann, som ble drept …»
 
 SELECT:mennene-som-ble-skadd pp + pl
-        (*-2 %som% BARRIER ikke-adv LINK *-1C subst + pl BARRIER (*) - cog - cm)
-        (-1 kop-fv)
+        (*-1 kop-fv                     # er
+         BARRIER ikke-adv-adj-det - kop # blitt mye
+         LINK *-1 %som%                 # som
+         LINK *-1C n + pl               # mennene
+         BARRIER (*) - cm               # ,
+         LINK NOT 0 sg)
         (NOT 0 adv OR farlige-part)
         ;
 
@@ -8032,9 +8320,52 @@ SELECT:Minst-10-er-siden-drept adj + pp + pl
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
-        (NEGATE -1 %være/bli%) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
+        (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
+        ;
+
+SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
+        (NOT 0 adv OR farlige-part)
+        (1 %og/eller%)
+        (2C adj + $$ADJ_NUMGEN)
+        ;
+# «Han jobbet i tospann med Knut Bjørnsen i NRK-systemet i 30 år og ble like kjent og populær som kommentatorlegenden.»
+
+SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
+        (-2C pp + $$ADJ_NUMGEN)
+        (-1 %og/eller%)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «mannen som ble skutt og drept av israelske soldater»
+
+LIST nominativ-sg-np = (prn sg nom) (np top) ;
+SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
+        (-1 vblex + %være/bli% LINK *-1C nominativ-sg-np + $$GENDER BARRIER fv OR clb LINK -1 hj-verb LINK -1 adv OR sbu)
+        ;
+
+SELECT:Han-så-nesten-litt-lettet-ut adj + sg + mf IF
+        (*-1 ("se") LINK -1 prn OR n OR np LINK 0C mORf)
+        (1 ("ut") OR ("ut over"))
+        ;
+
+SET pr-adv-årstal = pr OR sanns-årstal OR adv ;
+SELECT:Monsen-ble-i-2009-tildelt vblex + pp
+        (*-1 kop-fv BARRIER (*) - pr-adv-årstal LINK -1C cog OR org OR al OR top LINK NOT *-1 GENDER)
+        (0C pp)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+
+
+
+
+SELECT:og-eier-og-styreleder n IF
+        (-2 n OR np OR ukjent)
+        (-1 %og%)
+        (0C n OR vblex)
+        (1 %og%)
+        (2 n OR np OR ukjent)
         ;
 
 
@@ -11480,10 +11811,14 @@ SELECT:2963 (adj nt ind sg) IF
 #  "den usynlige og underbemanna staben"
 #      :group 30
 
-
+SELECT:mest-omsatte adv IF
+	(0 grads-adv)
+	(1C adj + pp)
+;
+# prefer adv over adj if possible for grads-adv
 
 #:2876
- SELECT:2876 (adj sup) IF
+ SELECT:størst-mulig (adj sup) IF
 	(0 grads-adv)
 	(1C adj)
 ;
@@ -12588,9 +12923,9 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 
 
 #:2777
- SELECT:2777 (det pl) IF
+ SELECT:de-gamle (det pl) IF
 	(NOT 0 nøyt-det)
-	(1 adj-fl)
+	(1 adj-fl - pp)
 	(NOT 1 fv)
 	(NOT 1 adv)
 	(NOT 1 fv)
@@ -12668,6 +13003,13 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 	(*1 fl-subst LINK NOT 1 subst/adj)
 ;
 
+SELECT:det-de-spiser-er-bambus pres IF
+        (-2 prn + acc)
+        (-1 prn + nominativ)
+        (0C pres OR n)
+        (1C pres)
+        (*2C nominativ OR np OR n BARRIER ikke-adv-adj-det)
+        ;
 
 #:2783
  SELECT:2783 (det pl) IF
@@ -14713,6 +15055,7 @@ SELECT:jeg-så-den-cm-men pron-pers IF
 	(NOT 0 interj)
 	(1C ikke-adv-adj-subst)
 	(NOT 1 nr2-det)
+        (NOT 1/1 det-kvant)     # den 13.
 ;
 #  "jeg så den, men
 # ikke: en av ... en eller annen...en, to, tre"
@@ -17195,6 +17538,24 @@ SELECT:denne-typen-gjerder subst + ind IF
         (-1 ("type"))
         ;
 
+SELECT:er-det-varslet-en-offentliggjøring pp IF
+        (*-1 expl BARRIER ikke-adv LINK *-1 hj-verb BARRIER setn-gr)
+        (0C pp OR n + sg + def)
+        (NOT 0 farlige-part)
+        (NOT -1 adj)
+        (*1 n OR adj OR adv)
+        (NOT 1 %som% OR setn-gr OR fv OR %ikke/også%)
+        ;
+# «Deretter er det varslet en offentliggjøring av en beslutning.»
+# «Blant annet var det tegnet et hakekors»
+
+SELECT:det-klart-beste-laget n + nt + sg + def IF
+        (*-1 det + dem + nt + sg BARRIER ikke-adv-adj LINK NOT *-1 m-hj-verb BARRIER setn-gr)
+        (0C pp OR n + sg + def)
+        (NOT 0 farlige-nøyt-subst)
+        ;
+# «De kunne ha fått sin tredje seier på rappen i mai, men slik skulle det ikke gå selv om de var det klart beste laget veldig lenge.»
+
 SELECT:å-glemme-tapet-mot be-subst IF
         (-2C infmerke)
         (-1C inf)
@@ -17203,19 +17564,6 @@ SELECT:å-glemme-tapet-mot be-subst IF
         (1C prep)
         ;
 # pp vs nt.def gives lots of bad translations like «å gløyme tapt mot»
-
-#:2406
- SELECT:2406 (vblex pp) IF
-	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
-	(*-1 p-hj-verb BARRIER fv)
-	(*-1 p-hj-verb BARRIER perf-part)
-	(*-1 p-hj-verb BARRIER setn-gr)
-	(*-1 som/komma/og BARRIER setn-gr)
-;
-#  "med som, komma, og som setningsgrense må det
-# ikke være et nominalt ledd før
-# perf-part: som har fått ..."
 
 
 
@@ -17560,6 +17908,13 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
         ;
 # "Etter hvert som presset fra isen avtok, …"
 
+SELECT:antall-væpna-menn adj + pp IF
+        (-*2 %en/ei/et% BARRIER ikke-adj-adv)
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1 n + ind OR adj)
+        ;
+
 #:2352
  SELECT:2352 (vblex pret) IF
 	(NOT 0 farlige-verb)
@@ -17768,11 +18123,21 @@ SELECT:Etterhvert-som-presset-fra-isen-avtok n IF
 
 
 
+SELECT:Den-kjente-journalisten adj IF
+	(-2C setn-gr)
+	(-1 det)
+        (0C pret OR adj)
+        (1C n + def)
+        (*2C fv CBARRIER clb)
+;
+# «Den kjente journalisten og kommentatoren Jamal Kashoggi (59) forsvant etter å ha ha gått inn på Saudi-Arabias konsulat i Istanbul.»
+
+
 SELECT:Det-paret-som n + def IF
 	(-2C setn-gr)
 	(-1 det)
         (1C %som%)
-        (*1C fv)
+        (*2C fv)
 ;
 # «Det paret som meldte det høyeste budet skal da spille kontrakten.»
 
@@ -17972,6 +18337,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(-1 subst-prop)
 	(NOT -1 subst-gen)
 	(-2C setn-gr)
+        (NOT 1C fv)             # «Den  døde  ble funnet»
 ;
 # group: 49
 
@@ -18198,14 +18564,23 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + pl BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 sanns-årstal LINK NOT -1 det + sg)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 nom + pl
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         LINK NOT 0 sanns-årstal
+         LINK NOT -1 det + sg)
 ;
 
-SELECT:fisken-ble-funnet perf-part-mf IF
+SELECT:fisken-ble-funnet pp + mf IF
 	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nom + mask/fem/mf BARRIER setn-gr OR fv)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
+         LINK *-1 nom + mask/fem/mf
+         BARRIER setn-gr OR fv
+         LINK NOT 0 pl OR nt)
 ;
 
 
@@ -18325,12 +18700,16 @@ SELECT:Med-økte-inntekter adj + pl IF
 	(NOT 0 subst)
 	(NOT 0 fv)
 	(-1C fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 subst/adj)
 ;
 #  "(NOT 1 KOMMA/KONJ)
 # de gamle"
 
 
+SELECT:byen-Lima top IF
+        (-1 by-ord + def + sg)
+        ;
 
 CONSTRAINTS
 
@@ -18346,6 +18725,22 @@ CONSTRAINTS
         (-2 farger)
         ;
 
+"<sport>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+"<Sport>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+"<SPORT>"  SELECT:sport n IF
+    (0 subst)
+;
+# «sport» åleine er nok substantivet
+
+
 #5034
  "<bad>"   REMOVE:5034   (n nt ind pl) IF
    (1 %boy%)
@@ -18360,15 +18755,29 @@ CONSTRAINTS
 #bad (adj) guy og andre engelske bad
 
 
-
 #CONSTRAINTS
 ## remove ndomain
+
+
 
 REMOVE:et-faglig-senter subst-mask IF
         (-2C ub-nøyt-det)
         (-1C adj-mask/nøyt)
         (0C subst-mask OR subst-nøyt)
 ;
+
+REMOVE:har-indeksen-trolig-økt n IF
+        (*-1 hj-verb)
+        (*-1 n)
+	(0C n OR pp OR adj)
+	(-1 trolig-ord)
+        ;
+
+REMOVE:mot-angivelig-russisk-støtte adv IF
+        (0 trolig-ord)
+	(0C adv OR pst)
+        (1C pst)
+        ;
 
 #:4090
 REMOVE:4090 (vblex)
@@ -18807,6 +19216,7 @@ REMOVE:aar ("åre") IF
 #:2295
  REMOVE:2295 (adj nt sg) IF
 	(-1 fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 komma/konj)
 	(NOT 1 setn-gr)
 	(NOT 1 adj-ent)
@@ -18820,16 +19230,14 @@ REMOVE:aar ("åre") IF
 # 6.3.2001: not 1 adj-fl: hans påstått frynsete jakker"
 
 
-
-#:2294
- REMOVE:2294 (adj nt ind sg) IF
-	(NOT -1 kop-u-%hete/kalle OR prep)
-	(0 adv)
-	(NOT 0 samset)
-;
-#  "6.3.2001: Denne regelen ble lagt til i GF"
-
-
+REMOVE:hans-rolle-i-den-spesielt adj + nt + ind + sg IF
+ 	(NOT -1 kop-u-%hete/kalle OR prep)
+        (0C adv OR adj + ind + nt + sg)
+ 	(NOT 0 samset)
+        (1 setn-gr OR prep)
+        ;
+# «Situasjonen innen amerikansk politikk, og presidentens rolle i den spesielt, innbyr jo virkelig til satire.»
+# «Skyll den så i kaldt vann, og tørk den godt med et kjøkkenpapir.»
 
 #:2293
  REMOVE:2293 (adj nt ind) IF
@@ -18854,7 +19262,6 @@ REMOVE:aar ("åre") IF
 #  "...som det hittil har vært (ikke adj nøyt) god norsk
 #
 # politikk å verne om"
-
 
 
 #:2291
@@ -19023,6 +19430,7 @@ REMOVE:aar ("åre") IF
 	(NOT 0 %tiltalte%)
 	(-1 prep)
 	(NOT 1 subst/adj)
+	(NOT 1 ukjent)
 	(NOT 1 komma/konj)
 ;
 #  "fjerner i hvert fall overflødige lesninger
@@ -19092,6 +19500,7 @@ REMOVE:at-paret (adj pp) IF
 #:2263
  REMOVE:2263 (adj mf sg) IF
 	(-1 fl-det)
+        (NOT -1 sanns-årstal)
 	(NOT 1 komma/konj)
 	(NOT 1 adj-ent)
 	(NOT 1 ent-subst)
@@ -19136,7 +19545,7 @@ REMOVE:at-paret (adj pp) IF
  REMOVE:2266 (adj mf sg) IF
 	(NOT 0 bare-adj)
 	(-1C prep)
-	(NOT 1 subst)
+	(NOT 1 subst OR ukjent)
 	(NOT 1 adj-fem)
 	(NOT 1 komma/konj)
 	(NOT -1 %som%)
@@ -19152,7 +19561,7 @@ REMOVE:at-paret (adj pp) IF
  REMOVE:2267 (adj mf sg) IF
 	(NOT 0 bare-adj)
 	(-1C prep)
-	(NOT 1 subst)
+	(NOT 1 subst OR ukjent)
 	(NOT 1 adj-fem)
 	(NOT 1 komma/konj)
 	(NOT -1 %som%)
@@ -20106,7 +20515,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 #
 
 #:2199
- REMOVE:2199 (clb) IF
+REMOVE:2199 clb IF
 	(0 konj)
 	(1 ub-ent-mask-adj)
 	(-1 ub-ent-mask-adj)
@@ -20121,7 +20530,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2200
- REMOVE:2200 (clb) IF
+REMOVE:2200 clb IF
 	(0 konj)
 	(-1 adj)
 	(1C adj)
@@ -20131,12 +20540,12 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2201
- REMOVE:2201 (clb) IF
+REMOVE:2201 clb IF
 	(0 konj)
 	(NOT -1 fv)
 	(NOT -2 replikk)
 	(*-2C setn-gr BARRIER fv)
-	(**1CO setn-gr LINK *-1 fv LINK NOT *-1 fv)
+	(**1C setn-gr LINK *-1 fv LINK NOT *-1 fv)
 ;
 #  "bare ett FV i perioden
 # Ikke: - Men (CLB) hun greide seg godt"))
@@ -20148,50 +20557,32 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2202
- REMOVE:2202 (clb) IF
+REMOVE:Transittlanda-cm-og-da-spesielt clb IF
 	(0 clb/konj-konj)
 	(NOT -1 replikk)
 	(NOT -1 clb)
 	(NOT -2 strek)
+        (NOT 1 fv)
 	(**-1C setn-gr LINK NOT 0 %som%)
 	(**-1C setn-gr BARRIER fv)
 ;
 #  "Transittlanda, og (ikke clb) da spesielt
-# (forts) Mexico har byrja ...
-# Gjeld ikke for konj i begynnelsen av en
-# periode. Disse er CLB
-# NOT -2 STREK: -, men (CLB) han overlevde ..."))
-
-
-
-#:2203
- REMOVE:2203 (clb) IF
-	(0 clb/konj-konj)
-	(NOT -1 replikk)
-	(NOT -1 clb)
-	(**-1C setn-gr LINK NOT 0 %som%)
-	(**-1C setn-gr BARRIER fv)
-;
-#  "Transittlandene, og (ikke clb) da spesielt
 # (forts) Mexico har begynt ...
-# Gjelder ikke for konj i begynnelsen av en
-# periode. Disse er CLB
-# NOT LR0 %SOM%: Høy utdannelse er som (sbu)
-# (forts) kjent (skjult fv) en garanti,
-# (forts) og (CLB) følgelig er ..."))
+# Gjelder ikke for konj i begynnelsen av en periode. Disse er CLB.
+# NOT -2 strek: «-, men (CLB) han overlevde ...»
+# … LINK NOT 0 %som%: «Høy utdannelse er som (sbu) kjent (skjult fv) en garanti, og (CLB) følgelig er ...»
 
 
 
 #:2204
- REMOVE:2204 (clb) IF
+REMOVE:konj-i-skjult-relsetn clb IF
 	(0 clb/konj-konj)
 	(-1C pron/subst)
 	(**1C pron/subst BARRIER ikke-adv-adj-det)
 	(**1CO pron/subst LINK NOT 0 subst-gen LINK NOT 0 subst-prop LINK **1C pron/subst LINK NOT *-1 ikke-adv-adj-subst-pron-konj-det2)
 ;
-#  "konj i skjult relativsetning:
-# sammen med matpakken og (ikke clb)
-# (forts) de to karamellene han fant ..."))
+# konj i skjult relativsetning:
+# «sammen med matpakken og (ikke clb) de to karamellene han fant ...»
 
 
 
@@ -21956,8 +22347,14 @@ REMOVE:Løft-så-ut n IF
 
 
 
+SELECT:særlig-purker fl-subst IF
+        (-2 cm)
+	(-1 spesielt-ord)
+        (1 cm)
+;
+
 #:2016
- REMOVE:2016 fl-subst IF
+ REMOVE:daglig-leder fl-subst IF
 	(-1 adj-ent)
 	(NOT -1 ikke-adj)
 	(NOT -1 adj-fl)
@@ -23392,7 +23789,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1895
- REMOVE:1895 pp IF
+ REMOVE:Nautnes-spilte-EM pp IF
 	(NOT 0 %ta%)
 	(NOT *1 overskrift)
 	(NOT -1 periode-beg/clb/strek)
@@ -23406,6 +23803,8 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT -1 pron-akk-mfn/fl)
 	(**-1C setn-gr BARRIER p-hj-verb)
 	(**-1C setn-gr BARRIER m-hj-verb-pret)
+        (NEGATE 0 pp + ind LINK 1C n + ind)
+        (NEGATE 0 pp + pl LINK 1C n + pl)
 ;
 #  "NOT \"OM/ENN/SOM/HVIS\":som dokumentert(perf-part)
 # (NOT -1C PASS): forsøkes solgt (perf-part)
@@ -23447,9 +23846,10 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1899
- REMOVE:1899 pp IF
+REMOVE:til-huset pp IF
 	(-1 %til%)
 	(NOT -2 %og%)
+        (0C n + def OR pp)
 ;
 #  "De kjørte til huset (ikke perf-part)"))
 
@@ -23463,6 +23863,8 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT -1 %til%)
 	(NOT -1 %ut%)
 	(NOT -1 @adv)
+        (NEGATE 0 pp + ind LINK 1C n + ind)
+        (NEGATE 0 pp + pl LINK 1C n + pl)
 ;
 #  "tok seg ut av huset (ikke perf-part)
 # NOT -1 SBU: Som (sbu) kjent (perf-part)
@@ -23695,7 +24097,22 @@ REMOVE:før-det-legges-fram inf IF
 # (*-1 SETN-GR *R)
 # (LR0 %SOM%))"))
 
+REMOVE:lar-føringene-for-samarbeidet-være-uvisse pret IF
+        (*-1 fv)
+        (0C pret OR n + def) # Vitner skal i ukene før det dødelige skuddet  falt  ha hørt henne snakke om det.
+        (1C inf)
+        ;
+# «De som er for EU mener avtalen etablerer sperrer mellom Storbritannia og deres største handelspartner, og at den lar mange føringer for det fremtidige samarbeidet være uvisse.»
 
+SELECT:men-de-grønnkledde-holdt-stand pret IF
+        (-3 setn-gr)
+	(-2 prn + nom OR det + dem)
+	(-1 adj + def OR adj + pl OR ukjent)
+        (NOT *-1 fv BARRIER setn-gr)
+        (NOT 0 farlige-verb)
+        (NOT *1 fv BARRIER setn-gr)
+        (NOT 1 setn-gr)
+;
 
 #:1853
  REMOVE:1853 (vblex pret) IF
@@ -23703,6 +24120,7 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT 0 %var%)
 	(1 mask)
 	(NOT -1 pron/subst OR ukjent OR adv)
+	(NEGATE -1 adj + def OR adj + pl OR ukjent LINK -1 prn + nom OR det + dem) # de grønnkledde holdt stand
 	(**-1C fv BARRIER setn-gr)
 ;
 #  "(NOT LR0 TRANS2)
@@ -23893,7 +24311,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1867
- REMOVE:1867 (vblex pret) IF
+ REMOVE:hvite-skjorter-og-svarte-slips (vblex pret) IF
 	(-1 konj)
 	(NOT -1 clb)
 	(NOT -1 adv)
@@ -24427,7 +24845,7 @@ CONSTRAINTS
         ;
 
 "<lekker>" SELECT:virkelig-lekker adj IF
-        (-1 forsterkende)
+        (-1 forsterkende-ord)
         ;
 
 #:4055
@@ -24443,6 +24861,9 @@ CONSTRAINTS
 ;
 #sannsynlig at det er lo
 
+"<lov>" SELECT:norsk-lov sg IF
+        (NOT -1 ("om"))         # be om lov
+        ;
 
 #:4046
   "<mine>"   SELECT:4046   (n m sg ind) IF
@@ -24523,6 +24944,10 @@ SELECT:noen-default <noen> + (neg) ;
 	(*-1O setn-gr LINK *1 fv LINK 0 %ha% LINK *1 perf-part)
 ;
 #  "dette har tvunget fram kravet om (prep) fast ansatt sekretær"))
+
+"<rammer>" SELECT:setter-rammer-for n IF
+        (-1 ("sette"))
+        ;
 
 #:4063
  "<rette>"   SELECT:4063   (n) IF
@@ -24642,6 +25067,9 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  de fleste "bare"  er ikke adj
 
+"<bygget>" REMOVE n IF
+        (1 %på%)
+        ;
 
 
 #:3725
@@ -25091,22 +25519,6 @@ SELECT:noen-default <noen> + (neg) ;
 
 
 
-  "<sport>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
-
-  "<Sport>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
-
-  "<SPORT>"  REMOVE:sport   (vblex) IF
-	(0 subst)
-;
-# «sport» åleine er nok substantivet
-
-
 #:3239
   "<steder>"   REMOVE:3239   (vblex pres) IF
 	(0 subst)
@@ -25120,7 +25532,6 @@ SELECT:noen-default <noen> + (neg) ;
 "<sukker>" REMOVE pres IF
         (-2 ("salt") OR ("smør") OR ("mjøl") OR ("krydder") OR ("karbohydrat") OR ("bær") OR ("frukt"))
         ;
-
 
 
 #:3180
@@ -25215,7 +25626,6 @@ REMOVE:øye ("øye"i) IF
 # sec 4
 #CONSTRAINTS
 ## select ndomain heur
-
 
 
 #:2792
@@ -25509,6 +25919,24 @@ REMOVE:er-en-svenske-og-tre-finner clb + cnjcoo IF
 # «De savnede er en svensk kvinne og tre finner, opplyser politiet overfor det svenske nyhetsbyrået TT.»
 # Ikkje: «Omtrent 3/4 av befolkningen bor langs kysten  og  97 % bor i den vestlige halvdelen av landet.»
 
+REMOVE:hos-hanngris-og-purker clb + cnjcoo IF
+        (*-3 fv)
+        (-2C pr)
+        (-1C n)
+        (1C n OR pres)
+        (2 setn-gr)
+        ;
+
+REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
+        (*-4 fv)
+        (-3C n)
+        (-2C pr)
+        (-1C n)
+        (1C n OR pres)
+        (2C pr)
+        (3 n)
+        (4 setn-gr)
+        ;
 
 #:1812
  SELECT:1812 (clb cnjcoo) IF
@@ -26690,7 +27118,6 @@ SELECT:ved-Malis-grenser-bor n + ind IF
 	(**1CO pres/pret LINK -1C pron/subst LINK -1 pron/subst)
 ;
 
-
 #:1730
  SELECT:1730 (vblex pp) IF
 	(NOT 0 hj-verb)
@@ -26758,7 +27185,7 @@ SELECT:ved-Malis-grenser-bor n + ind IF
 
 
 #:1728
- SELECT:1728 (vblex pret) IF
+ SELECT:1verb-per-setn (vblex pret) IF
 	(NOT 0 farlige-verb)
 	(NOT 0 imp)
 	(NOT 0 subst-gen)
@@ -26798,8 +27225,16 @@ SELECT:de-som-berøres-ligger pres
 ;
 # «Menighetene som berøres ligger i Vestre Aker prosti, …»
 
+SELECT:hva-de-spiser-varierer pres
+        (-2 spørreadv OR prn + acc)
+        (-1 prn + nominativ)
+	(1 pres)
+;
+# «Hva de spiser varierer med sesongen.»
+# «Bambus er også viktig mat for panda, 99 % av det de spiser er bambus.»
+
 SELECT:no-pres-pres subst
-	(-1 pres)
+	(-1C pres)
 	(0C subst OR pres)
 ;
 
@@ -26829,6 +27264,7 @@ SELECT:har-blitt-oppretta perf-part IF
         (-1C perf-part)
         (0C adj OR verb)
 ;
+
 
 #CONSTRAINTS
 ## remove ndomain heur
@@ -27793,10 +28229,25 @@ REMOVE:har-et-håp-om fl-subst IF
         (0C subst + $$GENDER)
         ;
 
+REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
+        (0C subst)
+        (0 pl)
+        (-1C det + qnt OR talord)
+        (-1C pl)
+        ;
+
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
-        (**-1C ent LINK -1 >>>)
+        (NOT -1 pos + pl OR gen)
+        (**-1C ent - gen LINK -1 >>>)
+        ;
+
+REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
+        (0C subst)
+        (0 ent-subst)
+        (NOT -1 pos + pl)
+        (**-1C ent LINK -1 guio LINK -1 >>>)
         ;
 
 REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
@@ -27946,8 +28397,203 @@ SELECT:lagets-unge-spanske-trener adj + def IF
         (2 n)
         ;
 
+SELECT:konkurransens-to-lengste-svev pl IF
+        (-3C gen)
+        (-2C det + qnt + pl)
+        (-1 sup)
+        ;
 
-# If still ambiguous, remove unlikely lemmas:
+SELECT:Skjelvet-onsdag-morgen n IF
+        (-1 >>>)
+        (0C n + nt + def OR pp)
+        (1 tidsadv OR vekedag OR månad OR klokkeslett)
+        ;
+
+
+# Reglar for som<cnjsub> fv – typisk fv etter «som»:
+SELECT:på-en-måte-som-styrker-oss fv IF
+        (*-3 fv)
+        (-1 %som%-sbu)
+        (1 acc OR np)
+        (2 setn-gr OR pr)
+        ;
+
+SELECT:er-områder-som-grenser-mot fv IF
+        (*-3 fv)
+        (NOT -2 ("posisjon") OR ("status") OR ("rolle"))
+        (-1 %som%-sbu)
+        (1 pr)
+        (2 acc OR np OR n + def)
+        ;
+# «det var ektemannen som holdt i pistolen»
+
+SELECT:personen-cm-som-løp-cm fv IF
+        (-2 cm)
+        (-1 %som%-sbu)
+        (1 pr)
+        (*2 cm LINK 1 fv)
+        ;
+
+SELECT:noe-som-holdt fv IF
+        (-3 cm OR setn-gr)
+        (-2 %noe%)
+        (-1 %som%-sbu)
+        ;
+
+SELECT:når-ungdom-som-søker-trygghet fv IF
+        (-3C cnjsub OR ("<inkludert>") OR ("<for>"))
+        (-2C n + pl + ind OR n + def)
+        (-1 %som%-sbu)
+        (1C n + ind OR pr)
+        ;
+# «Ukrainas nasjonalforsamling vedtok mandag innføring av unntakstilstand i flere regioner, inkludert regioner som grenser til områder kontrollert av russiskvennlige opprørere»
+# «Han fulgte opp med å spørre om Solberg ser at det kan være en tilleggsbelastning for kvinnene som søker om abort,»
+
+
+SELECT:ham-merker-cm fv IF
+        (-1C prn + acc)
+        (0C n + pl + ind OR fv)
+        (1C clb)
+        ;
+# «Det tror jeg de som jobber sammen med ham merker»
+
+SELECT:etter-dette-løp-en-mann-ut fv IF
+        (*-2C pr BARRIER clb OR fv)
+        (0C n + pl + ind OR fv)
+        (*1C n BARRIER ikke-adv-adj-det)
+        ;
+# «Etter ti spilte minutter mellom lokalrivalene   løp   en mann ut på banen og slo etter Grealish mens spilleren sto med ryggen til»
+# «I tillegg til lokal forurensing   fører   brannene også til enorme utslipp av klimagasser som forsterker den globale oppvarmingen.»
+# Men ikkje: «brannene i Ventura var mindre omfattende, men også de førte til skader verdt 16 milliarder kroner»
+
+
+SELECT:da-X-mandag-landet pret IF
+        (-1 adverbialsubst)
+        (0C n + def OR pret)
+        ;
+# «Jubelen sto i taket i NASAs kontrollrom da den amerikanske romsonden InSight mandag landet på Mars, seks måneder etter at den ble skutt opp fra California»
+
+
+SELECT:Institutt-for-kulturstudier ("studium") IF
+        (-2 ("institutt") OR ("fakultet"))
+        (-1 %for%)
+        (0 pl + ind)
+        (0/* cmp)
+        ;
+SELECT:default ("studie");
+
+
+SELECT:fv-etter-innskot fv IF
+        (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
+        (-1 cm)
+        (0C pp OR fv)
+        ;
+# «Demokraten Beto O'Rourke, som i fjor trakk det korteste strået i et overraskende jevnt mellomvalg i den republikanske høyborgen Texas, holdt samtidig et konkurrerende velgermøte i El Paso.»
+
+SELECT:de-bruker pres IF
+        (NOT -2 %alle%)         # «med alle de farer det vil bringe med seg»
+        (-1C det OR prn)
+        (-1C pl)
+        (-1 nominativ + pers)
+        (0C n + ind OR pres)
+        ;
+
+SELECT:Som-spiller-ønsker-man pres IF
+        (-2 %som% LINK -1 setn-gr)
+        (-1C pres OR n + ind)
+        (*1C nominativ OR np OR n + def BARRIER ikke-adv-adj-det)
+        ;
+
+SELECT:de-som-skilles-velger-delt pres IF
+        (-2 %som% LINK -1 prn)
+        (-1C pres OR n + ind)
+        (*1C nominativ OR np OR n BARRIER ikke-adv-adj-det)
+        ;
+
+SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
+        (NOT -1 %som%)
+        (0C pp OR pret)
+        (1C n + ind)
+        ;
+
+SELECT:de-grønnkledde-holdt-stand pret IF
+        (0C pp OR pret)
+        (NEGATE *0C fv CBARRIER setn-gr)
+        (NOT 0 farlige-verb)
+        ;
+
+SELECT:den-mest-betydningsfulle sp + def IF
+        (*-2 dem BARRIER ikke-adv)
+        (-1 grads-adv)
+        (0C adj + pst)
+        ;
+
+SELECT:ansatte-fl fl IF
+        (0 ("ansatt"i))
+        (NOT -1 det + def OR adj + def)
+        ;
+
+SELECT:ansatte-def def IF
+        (0 ("ansatt"i))
+        (*-1 dem OR pos BARRIER ikke-adv-adj-kvant)
+        ;
+
+SELECT:universitetets-1.200-ansatte-def def IF
+        (0 ("ansatt"i))
+        (*-2 gen BARRIER ikke-adv-adj-kvant)
+        ;
+# Men ikkje: «universitetets ansatte»
+
+REMOVE:Oversett-dette imp IF
+        (-1 >>>)
+        (0 storbokstav)
+        (1C def OR dem)
+        ;
+# «Oversett teksten»
+
+REMOVE:selskapets-ansatte def IF
+        (-1C gen)
+        (0C n + pl)
+        (0 ind)
+        ;
+
+# Use coordination as number-hint:
+SELECT:kundens-ANLEGG-og-bygninger $$NUMBER IF
+        (-1C gen)
+        (0C n + ind)
+        (0 n + $$NUMBER)
+	(1C %og/eller%)
+        (2C n + ind)
+        (2C n + $$NUMBER)
+        ;
+
+SELECT:kundens-bygninger-og-ANLEGG $$NUMBER IF
+        (-3C gen)
+        (-2C n + ind)
+        (-2C n + $$NUMBER)
+	(-1C %og/eller%)
+        (0C n + ind)
+        (0 n + $$NUMBER)
+        ;
+
+SELECT:og-dermed-sulter-den-ihjel nominativ IF
+        (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
+        (-1 pres)
+        (*1 setn-gr BARRIER ikke-adv)
+        ;
+
+SELECT:at-dette-tas-på-alvor prn + nominativ IF
+        (-1C cnjsub OR clb)
+        (1C pres + pasv)
+        ;
+
+SELECT:søndag-gås-det-renn expl IF
+        (-1C pres + pasv)
+        (1C n + ind)
+        ;
+
+# If still ambiguous, go by frequency.
+# SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
@@ -27983,21 +28629,505 @@ SELECT:default ("samt")   + cnjcoo;
 SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
-SELECT:default ("studie");
 SELECT:default ("plan") + m;
 SELECT:default ("presse");      # vs press
 SELECT:default ("bo") IF (0 ("bor"));
 SELECT:default ("felles");      # not pasv felle
+SELECT:default ("<tvang>") + pret;
+SELECT:default ("<super>"i) + adj;
+
+# REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
-
+REMOVE:default ("gange") IF (0 ("gang"));
+REMOVE:default ("<høy>"i) + n;
+REMOVE:default ("<spiser>"i) + n;
 REMOVE:default inf + pasv IF (0 pres + pasv);
-
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
-
 REMOVE:default adv   IF (0 ("<det>"i));
+
+
+# Corpus-based default rules:
+"<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
+"<Alvorlig>" REMOVE:default-Alvorlig ("Alvorlig" np cgguess) ;	# keep Alvorlig<adj><sint><pst><mf><sg><ind>→Alvorleg Alvorlig<adj><sint><pst><nt><sg><ind>→Alvorleg
+"<analysert>" REMOVE:default-analyserte ("analysere" adj pp pl) ;	# keep analysere<adj><pp><nt><sg><ind>→analysert analysere<adj><pp><mf><sg><ind>→analysert analysere<vblex><pp>→analysert
+"<angivelig>" REMOVE:default-påstått ("angivelig" adj pst mf sg ind) ;	# keep angivelig<adv>→truleg
+"<angivelig>" REMOVE:default-påstått ("angivelig" adj pst nt sg ind) ;	# keep angivelig<adv>→truleg
+"<angrep>" REMOVE:default-angreip ("angripe" vblex pret) ;	# keep angrep<n><nt><pl><ind>→angrep angrep<n><nt><sg><ind>→angrep
+"<angrepet>" REMOVE:default-angripen ("angripe" adj pp mf sg ind) ;	# keep angripe<vblex><pp>→angripe angripe<adj><pp><nt><sg><ind>→angripe
+"<anmeldt>" REMOVE:default-meld ("anmelde" adj pp mf sg ind) ;	# keep anmelde<adj><pp><nt><sg><ind>→meldt anmelde<vblex><pp>→meldt
+"<annenhver>" REMOVE:default-annakvar ("annenhver" det qnt f sg) ;	# keep annenhver<det><qnt><m><sg>→annankvar
+"<annerledes>" REMOVE:default-forskjellige ("annerledes" adj pst un pl ind) ;	# keep annerledes<adv>→annleis
+"<annerledes>" REMOVE:default-forskjellige ("annerledes" adj pst un sp def) ;	# keep annerledes<adv>→annleis
+"<arbeider>" REMOVE:default-arbeidar ("arbeider" n m sg ind) ;	# keep arbeid<n><nt><pl><ind>→arbeid arbeide<n><nt><pl><ind>→arbeid
+"<arbeidet>" REMOVE:default-arbeidd ("arbeide" adj pp mf sg ind) ;	# keep arbeid<n><nt><sg><def>→arbeidet arbeide<n><nt><sg><def>→arbeidet
+"<arbeidet>" REMOVE:default-arbeidd ("arbeide" adj pp nt sg ind) ;	# keep arbeid<n><nt><sg><def>→arbeidet arbeide<n><nt><sg><def>→arbeidet
+"<arrangert>" REMOVE:default-arrangerte ("arrangere" adj pp pl) ;	# keep arrangere<vblex><pp>→arrangert arrangere<adj><pp><nt><sg><ind>→arrangert
+"<arrestert>" REMOVE:default-arresterte ("arrestere" adj pp pl) ;	# keep arrestere<vblex><pp>→arrestert
+"<arter>" REMOVE:default-arter ("art" n f pl ind) ;	# keep arte<vblex><pres>→artar
+"<arter>" REMOVE:default-arter ("art" n m pl ind) ;	# keep arte<vblex><pres>→artar
+"<atskilt>" REMOVE:default-skild ("atskilt" adj pst mf sg ind) ;	# keep atskilt<adj><pst><nt><sg><ind>→skilt
+"<avdekket>" REMOVE:default-avdekte ("avdekke" vblex pret) ;	# keep avdekke<vblex><pp>→avdekt avdekke<adj><pp><nt><sg><ind>→avdekt avdekke<adj><pp><mf><sg><ind>→avdekt
+"<Avganger>" REMOVE:default-Avganger ("Avganger" np cgguess) ;	# keep Avgang<n><m><pl><ind>→Avgangar
+"<avholdt>" REMOVE:default-halden ("avholde" adj pp mf sg ind) ;	# keep avholde<vblex><pp>→halde avholde<adj><pp><nt><sg><ind>→halde
+"<avtaler>" REMOVE:default-avtaler ("avtale" vblex pres) ;	# keep avtale<n><m><pl><ind>→avtalar
+"<banket>" REMOVE:default-banket ("bank" n nt sg def) ;	# keep banke<adj><pp><nt><sg><ind>→banka banke<vblex><pret>→banka banke<adj><pp><mf><sg><ind>→banka banke<vblex><pp>→banka
+"<bar>" REMOVE:default-barar ("bar" n m pl ind) ;	# keep bære<vblex><pret>→bar bar<n><nt><pl><ind>→bar
+"<basert>" REMOVE:default-baserte ("basere" adj pp pl) ;	# keep basere<vblex><pp>→basert basere<adj><pp><nt><sg><ind>→basert
+"<bedt>" REMOVE:default-bede ("bede" vblex pp) ;	# keep be<vblex><pp>→bedt
+"<begravd>" REMOVE:default-gravlagd ("begrave" adj pp mf sg ind) ;	# keep begrave<vblex><pp>→gravlagt begrave<adj><pp><nt><sg><ind>→gravlagt
+"<beholder>" REMOVE:default-behaldar ("beholder" n m sg ind) ;	# keep beholde<vblex><pres>→beheld
+"<beholdt>" REMOVE:default-beheldt ("beholde" vblex pret) ;	# keep beholde<vblex><pp>→behalde
+"<beinet>" REMOVE:default-beinet ("bein" n nt sg def) ;	# keep beine<adj><pp><nt><sg><ind>→beina beine<adj><pp><mf><sg><ind>→beina beine<vblex><pp>→beina beine<vblex><pret>→beina
+"<berget>" REMOVE:default-berget ("berg" n nt sg def) ;	# keep berge<vblex><pp>→berga berge<adj><pp><nt><sg><ind>→berga berge<vblex><pret>→berga
+"<besluttet>" REMOVE:default-vedtatt ("beslutte" vblex pp) ;	# keep beslutte<vblex><pret>→vedtok
+"<bestemt>" REMOVE:default-bestemd ("bestemt" adj sint pst mf sg ind) ;	# keep bestemme<vblex><pp>→avgjort
+"<bestemte>" REMOVE:default-bestemde ("bestemt" adj sint pst un pl ind) ;	# keep bestemme<vblex><pret>→avgjorde
+"<bestemte>" REMOVE:default-bestemde ("bestemt" adj sint pst un sp def) ;	# keep bestemme<vblex><pret>→avgjorde
+"<besøker>" REMOVE:default-vitjar ("besøker" n m sg ind) ;	# keep besøke<vblex><pres>→besøkjer
+"<bevege>" REMOVE:default-røre ("bevege" vblex inf) ;	# keep bevege<adj><pp><nt><sg><ind>→rørt bevege<adj><pp><mf><sg><ind>→rørt
+"<beviser>" REMOVE:default-beviser ("bevise" vblex pres) ;	# keep bevis<n><nt><pl><ind>→bevis
+"<biler>" REMOVE:default-biler ("bile" vblex pres) ;	# keep bil<n><m><pl><ind>→bilar
+"<biter>" REMOVE:default-bit ("bite" vblex pres) ;	# keep bit<n><m><pl><ind>→bitar
+"<blåst>" REMOVE:default-blåst ("blåse" adj pp nt sg ind) ;	# keep blåse<vblex><pp>→blåse
+"<blåst>" REMOVE:default-blåst ("blåst" n m sg ind) ;	# keep blåse<vblex><pp>→blåse
+"<bo>" REMOVE:default-bo ("bo" n m sg ind) ;	# keep bo<n><nt><pl><ind>→bu
+"<bo>" REMOVE:default-bo ("bo" n mf sp) ;	# keep bo<n><nt><pl><ind>→bu
+"<bordet>" REMOVE:default-borda ("borde" vblex pp) ;	# keep bord<n><nt><sg><def>→bordet
+"<brast>" REMOVE:default-brasa ("brase" adj pp mf sg ind) ;	# keep breste<vblex><pret>→brast
+"<brast>" REMOVE:default-brasa ("brase" adj pp nt sg ind) ;	# keep breste<vblex><pret>→brast
+"<brast>" REMOVE:default-brasa ("brase" vblex pp) ;	# keep breste<vblex><pret>→brast
+"<brent>" REMOVE:default-brunnen ("brenne" adj pp mf sg ind) ;	# keep brenne<vblex><pp>→brunne brenne<adj><pp><nt><sg><ind>→brunne
+"<brukt>" REMOVE:default-brukte ("bruke" adj pp pl) ;	# keep bruke<vblex><pp>→brukt bruke<adj><pp><nt><sg><ind>→brukt
+"<brutt>" REMOVE:default-broten ("bryte" adj pp mf sg ind) ;	# keep bryte<vblex><pp>→brote bryte<adj><pp><nt><sg><ind>→brote
+"<budskap>" REMOVE:default-bodskapar ("budskap" n nt pl ind) ;	# keep budskap<n><nt><sg><ind>→bodskap
+"<bussen>" REMOVE:default-bussa ("busse" n m sg def) ;	# keep buss<n><m><sg><def>→bussen
+"<busser>" REMOVE:default-busser ("busse" n f pl ind) ;	# keep buss<n><m><pl><ind>→bussar
+"<busser>" REMOVE:default-busser ("busse" n m pl ind) ;	# keep buss<n><m><pl><ind>→bussar
+"<bygd>" REMOVE:default-bygt ("bygge" adj pp nt sg ind) ;	# keep bygd<n><m><sg><ind>→bygd bygge<adj><pp><mf><sg><ind>→bygd bygge<vblex><pp>→bygd bygd<n><f><sg><ind>→bygd
+"<bygget>" REMOVE:default-bygt ("bygge" adj pp nt sg ind) ;	# keep bygge<adj><pp><mf><sg><ind>→bygd bygge<vblex><pp>→bygd
+"<bytter>" REMOVE:default-byter ("bytte" vblex pres) ;	# keep bytte<n><nt><pl><ind>→byte
+"<byttet>" REMOVE:default-bytet ("bytte" n nt sg def) ;	# keep bytte<vblex><pp>→bytt bytte<adj><pp><nt><sg><ind>→bytt
+"<dekket>" REMOVE:default-dekket ("dekk" n nt sg def) ;	# keep dekke<vblex><pp>→dekt dekke<adj><pp><nt><sg><ind>→dekt
+"<dekket>" REMOVE:default-dekket ("dekke" n nt sg def) ;	# keep dekke<vblex><pp>→dekt dekke<adj><pp><nt><sg><ind>→dekt
+"<Deler>" REMOVE:default-Deler ("dele" vblex pres) ;	# keep Del<n><m><pl><ind>→Delar
+"<deler>" REMOVE:default-deler ("dele" vblex pres) ;	# keep del<n><m><pl><ind>→delar
+"<dere>" REMOVE:default-dykk ("dere" prn pers p2 un pl acc) ;	# keep dere<prn><pers><p2><un><pl><nom>→de
+"<Disse>" REMOVE:default-Disse ("disse" n f sg ind) ;	# keep Denne<det><dem><un><pl>→Desse Denne<prn><dem><un><pl><acc>→Desse Denne<prn><dem><un><pl><nom>→Desse
+"<Disse>" REMOVE:default-Disse ("disse" n m sg ind) ;	# keep Denne<det><dem><un><pl>→Desse Denne<prn><dem><un><pl><acc>→Desse Denne<prn><dem><un><pl><nom>→Desse
+"<Domen>" REMOVE:default-Domen ("Domen" np cgguess) ;	# keep Dom<n><m><sg><def>→Dommen
+"<Dommer>" REMOVE:default-Dommer ("Dommer" np cog) ;	# keep Dommer<n><m><sg><ind>→Dommar Dom<n><m><pl><ind>→Dommar
+"<drepte>" REMOVE:default-drap ("drepe" vblex pret) ;	# keep drepe<adj><pp><pl>→drepne
+"<drev>" REMOVE:default-drev ("drev" n nt pl ind) ;	# keep drive<vblex><pret>→dreiv
+"<drev>" REMOVE:default-drev ("drev" n nt sg ind) ;	# keep drive<vblex><pret>→dreiv
+"<driver>" REMOVE:default-drivar ("driv" n m pl ind) ;	# keep drive<n><f><pl><ind>→driver
+"<driver>" REMOVE:default-drivar ("drive" n m pl ind) ;	# keep drive<n><f><pl><ind>→driver
+"<droppet>" REMOVE:default-droppet ("dropp" n nt sg def) ;	# keep droppe<vblex><pp>→droppa
+"<dus>" REMOVE:default-dus ("dus" adv) ;	# keep dus<adj><sint><pst><mf><sg><ind>→mild
+"<dømte>" REMOVE:default-dømte ("dømme" vblex pret) ;	# keep dømme<adj><pp><sg><def>→dømde
+"<dør>" REMOVE:default-dør ("dør" n f sg ind) ;	# keep dø<vblex><pres>→døyr
+"<dør>" REMOVE:default-dør ("dør" n m sg ind) ;	# keep dø<vblex><pres>→døyr
+"<eid>" REMOVE:default-eid ("eid" n m sg ind) ;	# keep eie<vblex><pp>→eigd
+"<eid>" REMOVE:default-eid ("eid" n nt pl ind) ;	# keep eie<vblex><pp>→eigd
+"<eid>" REMOVE:default-eid ("eid" n nt sg ind) ;	# keep eie<vblex><pp>→eigd
+"<Ellers>" REMOVE:default-Ellers ("Ellers" np top) ;	# keep Ellers<adv>→Elles
+"<ender>" REMOVE:default-ender ("and" n f pl ind) ;	# keep ende<vblex><pres>→endar ende<n><m><pl><ind>→endar
+"<ender>" REMOVE:default-ender ("and" n m pl ind) ;	# keep ende<vblex><pres>→endar ende<n><m><pl><ind>→endar
+"<ender>" REMOVE:default-ender ("ender" adv) ;	# keep ende<vblex><pres>→endar ende<n><m><pl><ind>→endar
+"<endt>" REMOVE:default-end ("ende" adj pp mf sg ind) ;	# keep ende<vblex><pp>→enda
+"<endte>" REMOVE:default-ende ("ende" adj pp pl) ;	# keep ende<vblex><pret>→enda
+"<erklæring>" REMOVE:default-erklæring ("erklæring" n m sg ind) ;	# keep erklæring<n><f><sg><ind>→fråsegn
+"<etterfølger>" REMOVE:default-etterfølgjar ("etterfølger" n m sg ind) ;	# keep etterfølge<vblex><pres>→følgjer
+"<evner>" REMOVE:default-evnar ("evne" vblex pres) ;	# keep evne<n><m><pl><ind>→evner evne<n><f><pl><ind>→evner
+"<falt fra>" REMOVE:default-falle-frå ("falle# fra" vblex pp) ;	# keep falle# fra<vblex><pret>→fall frå
+"<falt i>" REMOVE:default-falle-i ("falle# i" vblex pp) ;	# keep falle# i<vblex><pret>→fall i
+"<falt>" REMOVE:default-falle ("falle" vblex pp) ;	# keep falle<vblex><pret>→fall
+"<fangene>" REMOVE:default-fanga (n nt pl def) ;	# keep fange<n><m><pl><def>→fangane
+"<fanger>" REMOVE:default-fangar ("fange" n m pl ind) ;	# keep fange<n><nt><pl><ind>→fange
+"<fanget>" REMOVE:default-fanget ("fang" n nt sg def) ;	# keep fange<vblex><pp>→fanga
+"<fanget>" REMOVE:default-fanget ("fange" n nt sg def) ;	# keep fange<vblex><pp>→fanga
+"<farene>" REMOVE:default-farane ("fare" n m pl def) ;	# keep far<n><nt><pl><def>→fara
+"<Fart>" REMOVE:default-Fart ("fart" n m sg ind) ;	# keep Fare<adj><pp><mf><sg><ind>→Faren
+"<fart>" REMOVE:default-fart ("fart" n m sg ind) ;	# keep fare<vblex><pp>→fare
+"<fatter>" REMOVE:default-fatter ("fatter" n m sg ind) ;	# keep fatte<vblex><pres>→fattar
+"<fengslet>" REMOVE:default-fengselet ("fengsel" n nt sg def) ;	# keep fengsle<vblex><pp>→fengsla
+"<finnes>" REMOVE:default-finnes ("finne" n m sg ind gen) ;	# keep finnes<vblex><pstv><pres>→finst
+"<fjæra>" REMOVE:default-fjæra ("fjære" vblex pret) ;	# keep fjære<n><f><sg><def>→fjøra fjær<n><f><sg><def>→fjøra
+"<Flere>" REMOVE:default-Flere ("Flere" np cgguess) ;	# keep Mange<adj><sint><comp><un><sp>→Fleire
+"<flommer>" REMOVE:default-fløymer ("flomme" vblex pres) ;	# keep flom<n><m><pl><ind>→flaumar
+"<flyene>" REMOVE:default-flyene ("fly" n f pl def) ;	# keep fly<n><nt><pl><def>→flya
+"<flyene>" REMOVE:default-flyene ("fly" n m pl def) ;	# keep fly<n><nt><pl><def>→flya
+"<forbeholdt>" REMOVE:default-øyremerkt ("forbeholde" vblex pp) ;	# keep forbeholde<vblex><pret>→øyremerkte
+"<forbruker>" REMOVE:default-forbruker ("forbruke" vblex pres) ;	# keep forbruker<n><m><sg><ind>→forbrukar
+"<forbudt>" REMOVE:default-forboden ("forby" adj pp mf sg ind) ;	# keep forby<vblex><pp>→forbode forby<adj><pp><nt><sg><ind>→forbode
+"<forbundet>" REMOVE:default-forbunde ("forbinde" adj pp nt sg ind) ;	# keep forbund<n><nt><sg><def>→forbundet
+"<forbundet>" REMOVE:default-forbunde ("forbinde" vblex pp) ;	# keep forbund<n><nt><sg><def>→forbundet
+"<forstått>" REMOVE:default-forstådd ("forstå" adj pp mf sg ind) ;	# keep forstå<vblex><pp>→forstått forstå<adj><pp><nt><sg><ind>→forstått
+"<forteller>" REMOVE:default-forteljar ("forteller" n m sg ind) ;	# keep fortelle<vblex><pres>→fortel
+"<fostret>" REMOVE:default ("foster") ;
+"<fot>" REMOVE:default-føter ("fot" n m pl ind) ;	# keep fot<n><m><sg><ind>→fot
+"<framholdt>" REMOVE:default-peikt-på ("framholde" vblex pp) ;	# keep framholde<vblex><pret>→peika på
+"<frifunnet>" REMOVE:default-frifunnen ("frifinne" adj pp mf sg ind) ;	# keep frifinne<vblex><pp>→frifunne frifinne<adj><pp><nt><sg><ind>→frifunne
+"<friskmeldt>" REMOVE:default-friskmeldt ("friskmelde" adj pp nt sg ind) ;	# keep friskmelde<adj><pp><mf><sg><ind>→friskmeld
+"<friskmeldt>" REMOVE:default-friskmeldt ("friskmelde" vblex pp) ;	# keep friskmelde<adj><pp><mf><sg><ind>→friskmeld
+"<frykter>" REMOVE:default-frykter ("frykt" n m pl ind) ;	# keep frykte<vblex><pres>→fryktar
+"<fulgt>" REMOVE:default-følgd ("følge" adj pp mf sg ind) ;	# keep følge<vblex><pp>→følgt følge<adj><pp><nt><sg><ind>→følgt
+"<Funnet>" REMOVE:default-Funne ("finne" vblex pp) ;	# keep Funn<n><nt><sg><def>→Funnet
+"<funnet>" REMOVE:default-funnet ("funn" n nt sg def) ;	# keep finne<vblex><pp>→funne
+"<føler>" REMOVE:default-følar ("føler" n m sg ind) ;	# keep føle<vblex><pres>→føler
+"<fører>" REMOVE:default-fører ("føre" vblex pres) ;	# keep føre<n><nt><pl><ind>→føre
+"<glede>" REMOVE:default-gledd ("glede" adj pp nt sg ind) ;	# keep glede<n><f><sg><ind>→glede glede<n><m><sg><ind>→glede
+"<glede>" REMOVE:default-gledde ("glede" adj pp pl) ;	# keep glede<n><f><sg><ind>→glede glede<n><m><sg><ind>→glede
+"<glemt>" REMOVE:default-gløymd ("glemme" adj pp mf sg ind) ;	# keep glemme<adj><pp><nt><sg><ind>→gløymt glemme<vblex><pp>→gløymt
+"<glimt>" REMOVE:default-glima ("glime" adj pp mf sg ind) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
+"<glimt>" REMOVE:default-glima ("glime" adj pp nt sg ind) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
+"<glimt>" REMOVE:default-glima ("glime" vblex pp) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
+"<goder>" REMOVE:default-godar ("gode" n m pl ind) ;	# keep gode<n><nt><pl><ind>→gode
+"<godkjent>" REMOVE:default-godkjente ("godkjenne" adj pp pl) ;	# keep godkjenne<vblex><pp>→godkjent godkjenne<adj><pp><nt><sg><ind>→godkjent
+"<gren>" REMOVE:default-gren ("gren" n nt pl ind) ;	# keep gren<n><f><sg><ind>→grein gren<n><m><sg><ind>→grein grine<vblex><pret>→grein
+"<gren>" REMOVE:default-gren ("gren" n nt sg ind) ;	# keep gren<n><f><sg><ind>→grein gren<n><m><sg><ind>→grein grine<vblex><pret>→grein
+"<grenser>" REMOVE:default-grensar ("grense" vblex pres) ;	# keep grense<n><f><pl><ind>→grenser grense<n><m><pl><ind>→grenser
+"<grep>" REMOVE:default-greip ("gripe" vblex pret) ;	# keep grep<n><nt><sg><ind>→grep grep<n><nt><pl><ind>→grep
+"<Grunnen>" REMOVE:default-Grunna ("grunne" n m sg def) ;	# keep Grunn<n><m><sg><def>→Grunnen
+"<grunner>" REMOVE:default-grunner ("grunne" n f pl ind) ;	# keep grunn<n><m><pl><ind>→grunnar
+"<grunner>" REMOVE:default-grunner ("grunne" n m pl ind) ;	# keep grunn<n><m><pl><ind>→grunnar
+"<grunnlegger>" REMOVE:default-grunnlegg ("grunnlegge" vblex pres) ;	# keep grunnlegger<n><m><sg><ind>→grunnleggjar
+"<Grunnloven>" REMOVE:default-Grunnloven ("Grunnloven" np org) ;	# keep Grunnlov<n><m><sg><def>→Grunnlova
+"<havner>" REMOVE:default-hamner ("havn" n f pl ind) ;	# keep havne<vblex><pres>→hamnar
+"<havner>" REMOVE:default-hamner ("havn" n m pl ind) ;	# keep havne<vblex><pres>→hamnar
+"<heftet>" REMOVE:default-hefta ("hefte" vblex pret) ;	# keep hefte<n><nt><sg><def>→heftet
+"<helgen>" REMOVE:default-helgen ("helgen" n m sg ind) ;	# keep helg<n><m><sg><def>→helga
+"<henger>" REMOVE:default-henger ("henge¹" vblex pres) ;	# keep henge<vblex><pres>→heng
+"<hindre>" REMOVE:default-hinder ("hinder" n nt pl ind) ;	# keep hindre<vblex><inf>→hindre
+"<hindret>" REMOVE:default-hinderet ("hinder" n nt sg def) ;	# keep hindre<vblex><pret>→hindra hindre<vblex><pp>→hindra
+"<hjem>" REMOVE:default-heimar ("hjem" n nt pl ind) ;	# keep hjem<pr>→heim hjem<n><nt><sg><ind>→heim
+"<Hjemmet>" REMOVE:default-Hjemmet ("Hjemmet" np org) ;	# keep Hjem<n><nt><sg><def>→Heimen
+"<Hold>" REMOVE:default-Hold ("hold" n nt sg ind) ;	# keep Holde<vblex><imp>→Hald
+"<holdt på>" REMOVE:default-heldt-på ("holde# på" vblex pret) ;	# keep holde# på<vblex><pp>→halde på
+"<holdt>" REMOVE:default-heldt ("holde" vblex pret) ;	# keep holde<vblex><pp>→halde
+"<hoppet>" REMOVE:default-hoppet ("hopp" n nt sg def) ;	# keep hoppe<vblex><pp>→hoppa
+"<Hull>" REMOVE:default-Hol ("hull" n nt pl ind) ;	# keep Hull<np><cog>→Hull
+"<Hull>" REMOVE:default-Hol ("hull" n nt sg ind) ;	# keep Hull<np><cog>→Hull
+"<Hver>" REMOVE:default-Hver ("Hver" np cgguess) ;	# keep Hver<det><qnt><f><sg>→Kvar Hver<det><qnt><m><sg>→Kvar
+"<hvor>" REMOVE:default-kor ("hvor" adv) ;	# keep hvor<cnjsub>→der
+"<Hvorfor>" REMOVE:default-Hvorfor ("Hvorfor" np cgguess) ;	# keep Hvorfor<adv>→Kvifor
+"<høgskole>" REMOVE:default-høgskole ("høgskole" np org m) ;	# keep høyskole<n><m><sg><ind>→høgskule
+"<hørt>" REMOVE:default-høyrd ("høre" adj pp mf sg ind) ;	# keep høre<vblex><pp>→høyrt høre<adj><pp><nt><sg><ind>→høyrt
+"<iden>" REMOVE:default-iden ("id" n m sg def) ;	# keep ide<n><m><sg><def>→ideen
+"<Ifølge>" REMOVE:default-Ifølge ("Ifølge" np cgguess) ;	# keep Ifølge<pr>→Ifølgje
+"<ingen>" REMOVE:default-inga ("ingen" det qnt f sg) ;	# keep ingen<det><qnt><m><sg>→ingen ingen<prn><ind><un><pl><acc>→ingen ingen<det><qnt><un><pl>→ingen ingen<prn><ind><mf><sg><acc>→ingen
+"<Ingen>" REMOVE:default-Inga ("ingen" det qnt f sg) ;	# keep Ingen<prn><ind><un><pl><nom>→Ingen Ingen<prn><ind><un><pl><acc>→Ingen Ingen<det><qnt><un><pl>→Ingen Ingen<det><qnt><m><sg>→Ingen Ingen<prn><ind><mf><sg><nom>→Ingen Ingen<prn><ind><mf><sg><acc>→Ingen
+"<innført>" REMOVE:default-innførte ("innføre" adj pp pl) ;	# keep innføre<vblex><pp>→innført
+"<Jakter>" REMOVE:default-Jaktar ("jakte" vblex pres) ;	# keep Jakt<n><m><pl><ind>→Jakter Jakt<n><f><pl><ind>→Jakter
+"<Jakter>" REMOVE:default-Jaktar ("jakter" n m sg ind) ;	# keep Jakt<n><m><pl><ind>→Jakter Jakt<n><f><pl><ind>→Jakter
+"<julemarked>" REMOVE:default-julemarknader ("julemarked" n nt pl ind) ;	# keep julemarked<n><nt><sg><ind>→julemarknad
+"<kantene>" REMOVE:default-kantane ("kant" n m pl def) ;	# keep kant<n><nt><pl><def>→kanta
+"<kaster>" REMOVE:default-kaster ("kaste" n m pl ind) ;	# keep kaste<vblex><pres>→kastar
+"<kastet>" REMOVE:default-kastet ("kast" n nt sg def) ;	# keep kaste<vblex><pret>→kasta
+"<Kilde>" REMOVE:default-Kjelde ("kilde" n m sg ind) ;	# keep Kilde<np><cog>→Kilde
+"<kjemper>" REMOVE:default-kjemper ("kjempe" n f pl ind) ;	# keep kjempe<vblex><pres>→kjempar
+"<kjemper>" REMOVE:default-kjemper ("kjempe" n m pl ind) ;	# keep kjempe<vblex><pres>→kjempar
+"<kjenner>" REMOVE:default-kjenne ("kjenne" n nt pl ind) ;	# keep kjenne<vblex><pres>→kjenner
+"<kjent>" REMOVE:default-kjend ("kjent" adj pst mf sg ind) ;	# keep kjent<adj><pst><nt><sg><ind>→kjent
+"<kjørt>" REMOVE:default-køyrt ("kjøre" adj pp nt sg ind) ;	# keep kjøre<adj><pp><pl>→køyrde
+"<kjørt>" REMOVE:default-køyrt ("kjøre" vblex pp) ;	# keep kjøre<adj><pp><pl>→køyrde
+"<kjøttet>" REMOVE:default-kjøttet ("kjøtt" n nt sg def) ;	# keep kjøtte<adj><pp><nt><sg><ind>→kjøtt kjøtte<vblex><pp>→kjøtt
+"<klarer>" REMOVE:default-klarar ("klare" n f pl ind) ;	# keep klare<vblex><pres>→klarer
+"<klarer>" REMOVE:default-klarar ("klare" n m pl ind) ;	# keep klare<vblex><pres>→klarer
+"<kneet>" REMOVE:default-knea ("knee" vblex pp) ;	# keep kne<n><nt><sg><def>→kneet
+"<knivstukket>" REMOVE:default-knivstukke ("knivstikke" adj pp nt sg ind) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
+"<knivstukket>" REMOVE:default-knivstukke ("knivstikke" vblex pp) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
+"<knytter>" REMOVE:default-knyte ("knytte" n nt pl ind) ;	# keep knytte<vblex><pres>→knyter
+"<kommet>" REMOVE:default-kommen ("komme" adj pp mf sg ind) ;	# keep komme<adj><pp><nt><sg><ind>→komme komme<vblex><pp>→komme
+"<kostet>" REMOVE:default-kostet ("kost" n nt sg def) ;	# keep koste<vblex><pp>→kosta
+"<krangler>" REMOVE:default-kranglar ("krangel" n m pl ind) ;	# keep krangel<n><nt><pl><ind>→krangel
+"<Kravet>" REMOVE:default-Krava ("krave" vblex pp) ;	# keep Krav<n><nt><sg><def>→Kravet
+"<krysset>" REMOVE:default-krysset ("kryss" n nt sg def) ;	# keep krysse<vblex><pret>→kryssa
+"<kursene>" REMOVE:default-kursane ("kurs" n m pl def) ;	# keep kurs<n><nt><pl><def>→kursa
+"<kuttet>" REMOVE:default-kuttet ("kutt" n nt sg def) ;	# keep kutte<vblex><pret>→kutta
+"<kvitter>" REMOVE:default-kvitter ("kvitter" n nt pl ind) ;	# keep kvitte<vblex><pres>→kvittar
+"<kvitter>" REMOVE:default-kvitter ("kvitter" n nt sg ind) ;	# keep kvitte<vblex><pres>→kvittar
+"<kåret>" REMOVE:default-kåret ("kår" n nt sg def) ;	# keep kåre<vblex><pret>→kåra
+"<lager>" REMOVE:default-lager ("lager" n nt pl ind) ;	# keep lage<n><nt><pl><ind>→lage
+"<Lager>" REMOVE:default-Lager ("lager" n nt pl ind) ;	# keep Lage<vblex><pres>→Lagar Lage<n><m><pl><ind>→Lagar
+"<Laget>" REMOVE:default-Laga ("lage" vblex pret) ;	# keep Lage<n><nt><sg><def>→Laget Lag<n><nt><sg><def>→Laget
+"<laks>" REMOVE:default-laksar ("laks" n m pl ind) ;	# keep laks<n><m><sg><ind>→laks
+"<landet>" REMOVE:default-landa ("lande" vblex pret) ;	# keep land<n><nt><sg><def>→landet
+"<led>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
+"<Leder>" REMOVE:default-Leder ("Leder" np cgguess) ;	# keep Leder<n><m><sg><ind>→Leiar
+"<leder>" REMOVE:default-leier ("lede" vblex pres) ;	# keep leder<n><m><sg><ind>→leiar
+"<lege>" REMOVE:default-leke ("leg" adj sint pst un pl ind) ;	# keep lege<n><m><sg><ind>→lege
+"<lege>" REMOVE:default-leke ("leg" adj sint pst un sp def) ;	# keep lege<n><m><sg><ind>→lege
+"<legger>" REMOVE:default-legger ("legg" n m pl ind) ;	# keep legge<vblex><pres>→legg
+"<lei>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
+"<leid>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
+"<leid>" REMOVE:default-leigd ("leie" vblex pp) ;	# keep li<vblex><pret>→lei
+"<leie>" REMOVE:default-leige ("leie" n f sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
+"<leie>" REMOVE:default-leige ("leie" n m sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
+"<leiren>" REMOVE:default-leira ("leire" n m sg def) ;	# keep leir<n><m><sg><def>→leiren
+"<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
+"<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
+"<leke>" REMOVE:default-leike ("leke" n m sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
+"<lekene>" REMOVE:default-leikane ("lek" n m pl def) ;	# keep leke<n><f><pl><def>→leikene leke<n><m><pl><def>→leikene
+"<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
+"<lette>" REMOVE:default-leita ("leite" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
+"<lette>" REMOVE:default-leita ("lete" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
+"<ligget>" REMOVE:default-legen ("ligge" adj pp mf sg ind) ;	# keep ligge<vblex><pp>→lege ligge<adj><pp><nt><sg><ind>→lege
+"<Loven>" REMOVE:default-Loven ("Loven" np cog) ;	# keep Lov<n><m><sg><def>→Lova
+"<lover>" REMOVE:default-lóvar ("love" n m pl ind) ;	# keep lov<n><m><pl><ind>→lover
+"<lyst>" REMOVE:default-lyste ("lyse" adj pp pl) ;	# keep lyse<vblex><pp>→lyst lys<adj><sint><pst><nt><sg><ind>→lyst lyst<n><f><sg><ind>→lyst lyst<n><m><sg><ind>→lyst
+"<lærer>" REMOVE:default-lærar ("lærer" n m sg ind) ;	# keep lære<n><nt><pl><ind>→lære
+"<løfter>" REMOVE:default-løftar ("løfte" vblex pres) ;	# keep løfte<n><nt><pl><ind>→løfte
+"<løftet>" REMOVE:default-løftet ("løft" n nt sg def) ;	# keep løfte<vblex><pret>→løfta
+"<løftet>" REMOVE:default-løftet ("løfte" n nt sg def) ;	# keep løfte<vblex><pret>→løfta
+"<løp>" REMOVE:default-laupte ("løpe" vblex pret) ;	# keep løp<n><nt><sg><ind>→løp løp<n><nt><pl><ind>→løp
+"<løslatt>" REMOVE:default-lauslate ("løslate" adj pp nt sg ind) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
+"<løslatt>" REMOVE:default-lauslate ("løslate" vblex pp) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
+"<løst>" REMOVE:default-laust ("løs" adj sint pst nt sg ind) ;	# keep løse<vblex><pp>→løyst
+"<mark>" REMOVE:default-marker ("mark" n f pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
+"<Mark>" REMOVE:default-Marker ("mark" n f pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
+"<mark>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
+"<Mark>" REMOVE:default-Marker ("mark" n m pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
+"<materiale>" REMOVE:default-material ("materiale" n nt sg ind) ;	# keep material<adj><pst><un><pl><ind>→materiale material<adj><pst><un><sp><def>→materiale
+"<medlem>" REMOVE:default-medlem ("medlem" n nt sg ind) ;	# keep medlem<n><nt><pl><ind>→medlemmer
+"<meldt>" REMOVE:default-meld ("melde" adj pp mf sg ind) ;	# keep melde<vblex><pp>→meldt melde<adj><pp><nt><sg><ind>→meldt
+"<merker>" REMOVE:default-marker ("mark" n f pl ind) ;	# keep merke<n><nt><pl><ind>→merke
+"<merker>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep merke<n><nt><pl><ind>→merke
+"<merket>" REMOVE:default-merkte ("merke" vblex pret) ;	# keep merke<vblex><pp>→merkt
+"<Meteorologene>" REMOVE:default-Meteorologene ("Meteorologene" np org) ;	# keep Meteorolog<n><m><pl><def>→Meteorologane
+"<midlene>" REMOVE:default-midla ("middel" n nt pl def) ;	# keep middel<n><m><pl><def>→midlane midel<n><m><pl><def>→midlane
+"<mister>" REMOVE:default-mister ("mister" n m sg ind) ;	# keep miste<vblex><pres>→mistar
+"<måler>" REMOVE:default-målar ("måler" n m sg ind) ;	# keep måle<vblex><pres>→måler
+"<møter>" REMOVE:default-møter ("møte" vblex pres) ;	# keep møte<n><nt><pl><ind>→møte
+"<Nederlenderen>" REMOVE:default-Nederlenderen ("Nederlenderen" np cgguess) ;	# keep Nederlender<n><m><sg><def>→Nederlendaren
+"<netter>" REMOVE:default-nettar ("nette" vblex pres) ;	# keep natt<n><f><pl><ind>→netter natt<n><m><pl><ind>→netter
+"<noen>" REMOVE:default-noka ("noe" det qnt f sg) ;	# keep noe<det><qnt><m><sg>→nokon noe<prn><ind><mf><sg><acc>→nokon noe<prn><ind><mf><sg><nom>→nokon
+"<noen>" REMOVE:default-noka ("noe" prn ind f sg acc) ;	# keep noe<det><qnt><m><sg>→nokon noe<prn><ind><mf><sg><acc>→nokon noe<prn><ind><mf><sg><nom>→nokon
+"<noen>" REMOVE:default-noka ("noe" prn ind f sg nom) ;	# keep noe<det><qnt><m><sg>→nokon noe<prn><ind><mf><sg><acc>→nokon noe<prn><ind><mf><sg><nom>→nokon
+"<nødt>" REMOVE:default-nøydt ("nødt" adj pst nt sg ind) ;	# keep nødt<adj><pst><un><sp><def>→nøydde
+"<ofre>" REMOVE:default-ofre ("ofre" vblex imp) ;	# keep offer<n><nt><pl><ind>→offer
+"<omkommet>" REMOVE:default-omkommen ("omkomme" adj pp mf sg ind) ;	# keep omkomme<vblex><pp>→omkomme
+"<overbevist>" REMOVE:default-overtydde ("overbevise" adj pp pl) ;	# keep overbevise<vblex><pp>→overtydd overbevise<adj><pp><nt><sg><ind>→overtydd
+"<overhodet>" REMOVE:default-overhovudet ("overhode" n nt sg def) ;	# keep overhodet<adv>→i det heile
+"<Overraskende>" REMOVE:default-Overraskende ("Overraskende" np cgguess) ;	# keep Overraskende<adj><pst><mf><sg><ind>→Overraskande Overraskende<adj><pst><nt><sg><ind>→Overraskande Overraskende<adj><pst><un><pl><ind>→Overraskande Overraskende<adj><pst><un><sp><def>→Overraskande
+"<pakket>" REMOVE:default-pakket ("pakk" n nt sg def) ;	# keep pakke<vblex><pret>→pakka pakke<vblex><pp>→pakka pakke<adj><pp><nt><sg><ind>→pakka pakke<adj><pp><mf><sg><ind>→pakka
+"<passet>" REMOVE:default-passa ("passe" vblex pp) ;	# keep pass<n><nt><sg><def>→passet
+"<planter>" REMOVE:default-plantar ("plante" vblex pres) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
+"<planter>" REMOVE:default-plantar ("planter" n m sg ind) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
+"<plasser>" REMOVE:default-plasser ("plassere" vblex imp) ;	# keep plass<n><m><pl><ind>→plassar
+"<preget>" REMOVE:default-preget ("preg" n nt sg def) ;	# keep prege<adj><pp><nt><sg><ind>→prega prege<adj><pp><mf><sg><ind>→prega prege<vblex><pp>→prega
+"<Premier>" REMOVE:default-Premiar ("premie" n m pl ind) ;	# keep Premier<np><cgguess>→Premier
+"<priser>" REMOVE:default-priser ("prise" vblex pres) ;	# keep pris<n><m><pl><ind>→prisar
+"<produsert>" REMOVE:default-produserte ("produsere" adj pp pl) ;	# keep produsere<adj><pp><nt><sg><ind>→produsert produsere<vblex><pp>→produsert
+"<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
+"<purker>" REMOVE:default-purkar ("purk" n m pl ind) ;	# keep purke<n><m><pl><ind>→purker purke<n><f><pl><ind>→purker
+"<rammer>" REMOVE:default-rammer ("ramme" n f pl ind) ;	# keep ramme<vblex><pres>→rammar
+"<rammer>" REMOVE:default-rammer ("ramme" n m pl ind) ;	# keep ramme<vblex><pres>→rammar
+"<raste>" REMOVE:default-raste ("raste" vblex inf) ;	# keep rase<vblex><pret>→rasa rase<adj><pp><pl>→rasa
+"<redusert>" REMOVE:default-reduserte ("redusere" adj pp pl) ;	# keep redusere<vblex><pp>→redusert redusere<adj><pp><nt><sg><ind>→redusert
+"<reglene>" REMOVE:default-reglene ("regle" n f pl def) ;	# keep regel<n><m><pl><def>→reglane
+"<reglene>" REMOVE:default-reglene ("regle" n m pl def) ;	# keep regel<n><m><pl><def>→reglane
+"<regnet>" REMOVE:default-regnet ("regn" n nt sg def) ;	# keep regne<vblex><pret>→rekna
+"<reisene>" REMOVE:default-reisene ("reis" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
+"<reisene>" REMOVE:default-reisene ("reis" n m pl def) ;	# keep reis<n><nt><pl><def>→reisa
+"<reisene>" REMOVE:default-reisene ("reise" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
+"<reisene>" REMOVE:default-reisene ("reise" n m pl def) ;	# keep reis<n><nt><pl><def>→reisa
+"<rekker>" REMOVE:default-rekker ("rekke" n f pl ind) ;	# keep rekke<vblex><pres>→rekk
+"<rekker>" REMOVE:default-rekker ("rekke" n m pl ind) ;	# keep rekke<vblex><pres>→rekk
+"<rennene>" REMOVE:default-rennene ("renne" n f pl def) ;	# keep renn<n><nt><pl><def>→renna
+"<rennene>" REMOVE:default-rennene ("renne" n m pl def) ;	# keep renn<n><nt><pl><def>→renna
+"<renner>" REMOVE:default-renner ("renne" n f pl ind) ;	# keep renne<vblex><pres>→renn
+"<renner>" REMOVE:default-renner ("renne" n m pl ind) ;	# keep renne<vblex><pres>→renn
+"<representert>" REMOVE:default-representerte ("representere" adj pp pl) ;	# keep representere<vblex><pp>→representert representere<adj><pp><nt><sg><ind>→representert
+"<respektive>" REMOVE:default-respektive ("respektiv" adj pst un pl ind) ;	# keep respektive<adv>→høvesvis
+"<respektive>" REMOVE:default-respektive ("respektiv" adj pst un sp def) ;	# keep respektive<adv>→høvesvis
+"<revene>" REMOVE:default-reva ("rev" n nt pl def) ;	# keep rev<n><m><pl><def>→revane
+"<revet>" REMOVE:default-reva ("reve" adj pp nt sg ind) ;	# keep rive<adj><pp><nt><sg><ind>→rive rive<vblex><pp>→rive
+"<revet>" REMOVE:default-reva ("reve" vblex pp) ;	# keep rive<adj><pp><nt><sg><ind>→rive rive<vblex><pp>→rive
+"<rommet>" REMOVE:default-romma ("romme" vblex pp) ;	# keep rom<n><nt><sg><def>→rommet
+"<roser>" REMOVE:default-rosar ("ros" n m pl ind) ;	# keep rose<n><f><pl><ind>→roser rose<n><m><pl><ind>→roser
+"<rukket>" REMOVE:default-rukka ("rukke" vblex pp) ;	# keep rekke<vblex><pp>→rokke
+"<rykk>" REMOVE:default-rykk ("rykk" n m sg ind) ;	# keep rykk<n><m><pl><ind>→rykker
+"<rykk>" REMOVE:default-rykk ("rykk" n nt pl ind) ;	# keep rykk<n><m><pl><ind>→rykker
+"<rykk>" REMOVE:default-rykk ("rykk" n nt sg ind) ;	# keep rykk<n><m><pl><ind>→rykker
+"<rykket>" REMOVE:default-rykket ("rykk" n nt sg def) ;	# keep rykke<vblex><pret>→rykte
+"<rådene>" REMOVE:default-rådane ("råde" n m pl def) ;	# keep råd<n><nt><pl><def>→råda
+"<rådet>" REMOVE:default-rådde ("rå" vblex pret) ;	# keep råd<n><nt><sg><def>→rådet
+"<Rød>" REMOVE:default-Raud ("rød" adj sint pst mf sg ind) ;	# keep Rød<np><cog>→Rød
+"<Saken>" REMOVE:default-Saken ("sake" n m sg def) ;	# keep Sak<n><m><sg><def>→Saka
+"<saken>" REMOVE:default-saken ("sake" n m sg def) ;	# keep sak<n><m><sg><def>→saka
+"<samarbeider>" REMOVE:default-samarbeide ("samarbeide" n nt pl ind) ;	# keep samarbeid<n><nt><pl><ind>→samarbeid
+"<samarbeidet>" REMOVE:default-samarbeidde ("samarbeide" vblex pret) ;	# keep samarbeid<n><nt><sg><def>→samarbeidet samarbeide<n><nt><sg><def>→samarbeidet
+"<samtaler>" REMOVE:default-samtaler ("samtale" vblex pres) ;	# keep samtale<n><m><pl><ind>→samtalar
+"<satt>" REMOVE:default-sat ("sitte" vblex pret) ;	# keep sette<vblex><pp>→sett
+"<selger>" REMOVE:default-seljar ("selger" n m sg ind) ;	# keep selge<vblex><pres>→sel
+"<sen>" REMOVE:default-sener ("sen" n m pl ind) ;	# keep sen<adj><sint><pst><mf><sg><ind>→sein
+"<sender>" REMOVE:default-sendar ("sender" n m sg ind) ;	# keep sende<vblex><pres>→sender
+"<sendt>" REMOVE:default-send ("sende" adj pp mf sg ind) ;	# keep sende<vblex><pp>→sendt sende<adj><pp><nt><sg><ind>→sendt
+"<senest>" REMOVE:default-seinst ("senest" adv) ;	# keep sen<adj><sint><sup><un><sp><ind>→seinast
+"<sentre>" REMOVE:default-senter ("senter" n nt pl ind) ;	# keep sentrum<n><nt><pl><ind>→sentrum
+"<seter>" REMOVE:default-seter ("seter" n f sg ind) ;	# keep sete<n><nt><pl><ind>→sete
+"<seter>" REMOVE:default-seter ("seter" n m sg ind) ;	# keep sete<n><nt><pl><ind>→sete
+"<sikter>" REMOVE:default-sikter ("sikt" n f pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
+"<sikter>" REMOVE:default-sikter ("sikt" n m pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
+"<siktet>" REMOVE:default-siktet ("sikte" n nt sg def) ;	# keep sikte<adj><pp><pl>→sikta sikte<adj><pp><nt><sg><ind>→sikta sikte<vblex><pp>→sikta
+"<Sjelden>" REMOVE:default-Sjelden ("Sjelden" np cgguess) ;	# keep Sjelden<adj><sint><pst><mf><sg><ind>→Sjeldan Sjelden<adv>→Sjeldan
+"<skade>" REMOVE:default-skade ("skade" n m sg ind) ;	# keep skade<adj><pp><pl>→skadde
+"<skade>" REMOVE:default-skade ("skade" vblex inf) ;	# keep skade<adj><pp><pl>→skadde
+"<skader>" REMOVE:default-skader ("skade" vblex pres) ;	# keep skade<n><m><pl><ind>→skadar
+"<skaper>" REMOVE:default-skapar ("skaper" n m sg ind) ;	# keep skape<vblex><pres>→skaper
+"<skiftet>" REMOVE:default-skiftet ("skift" n nt sg def) ;	# keep skifte<vblex><pp>→skifta skifte<vblex><pret>→skifta
+"<skiftet>" REMOVE:default-skiftet ("skifte" n nt sg def) ;	# keep skifte<vblex><pp>→skifta skifte<vblex><pret>→skifta
+"<skilt>" REMOVE:default-skild ("skilt" adj pst mf sg ind) ;	# keep skilt<adj><pst><nt><sg><ind>→skilt skilt<n><nt><sg><ind>→skilt skille<vblex><pp>→skilt skilt<n><nt><pl><ind>→skilt
+"<skipet>" REMOVE:default-skipa ("skipe" vblex pret) ;	# keep skip<n><nt><sg><def>→skipet
+"<skjedd>" REMOVE:default-skjedd ("skje" adj pp mf sg ind) ;	# keep skje<adj><pp><pl>→skjedde
+"<skjedd>" REMOVE:default-skjedd ("skje" adj pp nt sg ind) ;	# keep skje<adj><pp><pl>→skjedde
+"<skjedd>" REMOVE:default-skjedd ("skje" vblex pp) ;	# keep skje<adj><pp><pl>→skjedde
+"<skjell>" REMOVE:default-skjel ("skjell" n f sg ind) ;	# keep skjell<n><nt><sp>→skil
+"<skjell>" REMOVE:default-skjel ("skjell" n m sg ind) ;	# keep skjell<n><nt><sp>→skil
+"<skjell>" REMOVE:default-skjel ("skjell" n nt pl ind) ;	# keep skjell<n><nt><sp>→skil
+"<skjell>" REMOVE:default-skjel ("skjell" n nt sg ind) ;	# keep skjell<n><nt><sp>→skil
+"<skjerpet>" REMOVE:default-skjerpte ("skjerpe" vblex pret) ;	# keep skjerpe<vblex><pp>→skjerpt
+"<skoler>" REMOVE:default-skuler ("skole" vblex pres) ;	# keep skole<n><m><pl><ind>→skular
+"<skrev>" REMOVE:default-skrev ("skreve" vblex imp) ;	# keep skrive<vblex><pret>→skreiv
+"<skrevet>" REMOVE:default-skriven ("skrive" adj pp mf sg ind) ;	# keep skrive<vblex><pp>→skrive skrive<adj><pp><nt><sg><ind>→skrive
+"<skriver>" REMOVE:default-skrivar ("skriver" n m sg ind) ;	# keep skrive<vblex><pres>→skriv
+"<skøyter>" REMOVE:default-skøytar ("skøyte" vblex pres) ;	# keep skøyte<n><f><pl><ind>→skøyter skøyte<n><m><pl><ind>→skøyter
+"<slaget>" REMOVE:default-slaga ("slage" vblex pp) ;	# keep slag<n><nt><sg><def>→slaget
+"<sluppet>" REMOVE:default-sloppen ("sleppe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
+"<sluppet>" REMOVE:default-sloppen ("slippe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
+"<snakket>" REMOVE:default-snakket ("snakk" n nt sg def) ;	# keep snakke<vblex><pp>→snakka snakke<vblex><pret>→snakka snakke<adj><pp><mf><sg><ind>→snakka
+"<snittet>" REMOVE:default-snitta ("snitte" vblex pp) ;	# keep snitt<n><nt><sg><def>→snittet
+"<solgt>" REMOVE:default-seld ("selge" adj pp mf sg ind) ;	# keep selge<vblex><pp>→selt selge<adj><pp><nt><sg><ind>→selt
+"<sort>" REMOVE:default-sort ("sort" n m sg ind) ;	# keep sort<adj><sint><pst><mf><sg><ind>→svart sort<adj><sint><pst><nt><sg><ind>→svart
+"<spille>" REMOVE:default-spille ("spille" n mf sp) ;	# keep spille<vblex><inf>→spele
+"<sporet>" REMOVE:default-spora ("spore" vblex pp) ;	# keep spor<n><nt><sg><def>→sporet
+"<sporet>" REMOVE:default-spora ("spore" vblex pret) ;	# keep spor<n><nt><sg><def>→sporet
+"<sport>" REMOVE:default-sport ("sport" n m sg ind) ;	# keep spore<adj><pp><mf><sg><ind>→spora spore<adj><pp><nt><sg><ind>→spora
+"<statsrådene>" REMOVE:default-statsråda ("statsråd" n nt pl def) ;	# keep statsråd<n><m><pl><def>→statsrådane
+"<steg>" REMOVE:default-steg ("steg" n nt pl ind) ;	# keep stige<vblex><pret>→steig
+"<steg>" REMOVE:default-steg ("steg" n nt sg ind) ;	# keep stige<vblex><pret>→steig
+"<steget>" REMOVE:default-stigen ("stige" adj pp mf sg ind) ;	# keep stige<vblex><pp>→stige stige<adj><pp><nt><sg><ind>→stige
+"<stemt>" REMOVE:default-stemd ("stemme" adj pp mf sg ind) ;	# keep stemme<vblex><pp>→stemt stemme<adj><pp><nt><sg><ind>→stemt
+"<stemte>" REMOVE:default-stemte ("stemme" vblex pret) ;	# keep stemme<adj><pp><pl>→stemde stemme<adj><pp><sg><def>→stemde
+"<stenger>" REMOVE:default-stenge ("stenge" n nt pl ind) ;	# keep stenge<vblex><pres>→stenger
+"<Sterkere>" REMOVE:default-Sterkere ("Sterkere" np cgguess) ;	# keep Sterk<adj><sint><comp><un><sp>→Sterkare
+"<sto>" REMOVE:default-sto ("sto" n nt pl ind) ;	# keep stå<vblex><pret>→stod
+"<sto>" REMOVE:default-sto ("sto" n nt sg ind) ;	# keep stå<vblex><pret>→stod
+"<stoffet>" REMOVE:default-stoffa ("stoffe" vblex pp) ;	# keep stoff<n><nt><sg><def>→stoffet
+"<stolt>" REMOVE:default-stolte ("stole" adj pp pl) ;	# keep stolt<adj><sint><pst><nt><sg><ind>→stolt stolt<adj><sint><pst><mf><sg><ind>→stolt
+"<stoppet>" REMOVE:default-stoppet ("stopp" n nt sg def) ;	# keep stoppe<adj><pp><nt><sg><ind>→stoppa stoppe<vblex><pp>→stoppa stoppe<adj><pp><pl>→stoppa
+"<strider>" REMOVE:default-strider ("strid" n m pl ind) ;	# keep stride<vblex><pres>→strid
+"<strøk>" REMOVE:default-strauk ("stryke" vblex pret) ;	# keep strøk<n><nt><sg><ind>→strøk strøk<n><nt><pl><ind>→strøk
+"<styret>" REMOVE:default-styrte ("styre" vblex pret) ;	# keep styre<n><nt><sg><def>→styret
+"<styrker>" REMOVE:default-styrker ("styrke" vblex pres) ;	# keep styrke<n><m><pl><ind>→styrkar
+"<styrket>" REMOVE:default-styrkte ("styrke" vblex pret) ;	# keep styrke<vblex><pp>→styrkt
+"<sukk>" REMOVE:default-sukk ("sukk" n m sg ind) ;	# keep sukk<n><m><pl><ind>→sukkar
+"<sukk>" REMOVE:default-sukk ("sukk" n nt pl ind) ;	# keep sukk<n><m><pl><ind>→sukkar
+"<sukk>" REMOVE:default-sukk ("sukk" n nt sg ind) ;	# keep sukk<n><m><pl><ind>→sukkar
+"<svar>" REMOVE:default-svar ("svar" n nt pl ind) ;	# keep svare<adj><pp><pl>→svarte
+"<svar>" REMOVE:default-svar ("svar" n nt sg ind) ;	# keep svare<adj><pp><pl>→svarte
+"<svekket>" REMOVE:default-svekte ("svekke" adj pp pl) ;	# keep svekke<vblex><pp>→svekt svekke<adj><pp><nt><sg><ind>→svekt
+"<sykehjem>" REMOVE:default-sjukeheimar ("sykehjem" n nt pl ind) ;	# keep sykehjem<n><nt><sg><ind>→sjukeheim
+"<synes>" REMOVE:default-synast ("synes" vblex pstv inf) ;	# keep synes<vblex><pstv><pres>→synest
+"<syns>" REMOVE:default-syns ("syn" n nt pl ind gen) ;	# keep synes<vblex><pstv><pres>→synest
+"<syns>" REMOVE:default-syns ("syn" n nt sg ind gen) ;	# keep synes<vblex><pstv><pres>→synest
+"<såret>" REMOVE:default-såret ("sår" n nt sg def) ;	# keep såre<vblex><pret>→såra såre<vblex><pp>→såra såre<adj><pp><nt><sg><ind>→såra såre<adj><pp><mf><sg><ind>→såra
+"<søker>" REMOVE:default-søker ("søke" vblex pres) ;	# keep søker<n><m><sg><ind>→søkar
+"<søkt>" REMOVE:default-sokke ("søkke" vblex pp) ;	# keep søke<vblex><pp>→søkt
+"<takker>" REMOVE:default-takker ("takk" n f pl ind) ;	# keep takke<vblex><pres>→takkar
+"<takker>" REMOVE:default-takker ("takk" n m pl ind) ;	# keep takke<vblex><pres>→takkar
+"<taler>" REMOVE:default-taler ("tale" vblex pres) ;	# keep tale<n><m><pl><ind>→talar taler<n><m><sg><ind>→talar
+"<tall>" REMOVE:default-tall ("talle" vblex imp) ;	# keep tall<n><nt><sg><ind>→tal tall<n><nt><pl><ind>→tal
+"<tallet>" REMOVE:default-talla ("talle" vblex pp) ;	# keep tall<n><nt><sg><def>→talet
+"<talte>" REMOVE:default-talde ("telle" vblex pret) ;	# keep tale<vblex><pret>→talte
+"<tang>" REMOVE:default-tang ("tang" n nt pl ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
+"<tang>" REMOVE:default-tang ("tang" n nt sg ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
+"<Taper>" REMOVE:default-Taper ("tape" vblex pres) ;	# keep Taper<n><m><sg><ind>→Tapar Tape<n><m><pl><ind>→Tapar
+"<tapet>" REMOVE:default-tapet ("tap" n nt sg def) ;	# keep tape<vblex><pret>→tapte
+"<tapet>" REMOVE:default-tapet ("tapet" n nt pl ind) ;	# keep tape<vblex><pret>→tapte
+"<tapet>" REMOVE:default-tapet ("tapet" n nt sg ind) ;	# keep tape<vblex><pret>→tapte
+"<tegnet>" REMOVE:default-teiknet ("tegn" n nt sg def) ;	# keep tegne<vblex><pp>→teikna tegne<vblex><pret>→teikna
+"<tenker>" REMOVE:default-tenkjar ("tenker" n m sg ind) ;	# keep tenke<vblex><pres>→tenker
+"<Tiden>" REMOVE:default-Tiden ("Tiden" np org) ;	# keep Tid<n><m><sg><def>→Tida
+"<tilhører>" REMOVE:default-tilhøyrar ("tilhører" n m sg ind) ;	# keep tilhøre<vblex><pres>→tilhøyrer
+"<Tilsett>" REMOVE:default-Tilset ("tilsette" vblex imp) ;	# keep Tilse<vblex><pp>→Tilsett
+"<tjener>" REMOVE:default-tenar ("tjener" n m sg ind) ;	# keep tjene<vblex><pres>→tener
+"<toget>" REMOVE:default-toga ("toge" vblex pp) ;	# keep tog<n><nt><sg><def>→toget
+"<Toget>" REMOVE:default-Toga ("toge" vblex pret) ;	# keep Tog<n><nt><sg><def>→Toget
+"<trakk>" REMOVE:default-trakk ("trakke" vblex imp) ;	# keep trekke<vblex><pret>→trekte
+"<trener>" REMOVE:default-trener ("trenere" vblex imp) ;	# keep trene<vblex><pres>→trenar trener<n><m><sg><ind>→trenar
+"<trengte>" REMOVE:default-trengde ("trengt" adj pst un pl ind) ;	# keep trenge<vblex><pret>→trong
+"<trengte>" REMOVE:default-trengde ("trengt" adj pst un sp def) ;	# keep trenge<vblex><pret>→trong
+"<trofeer>" REMOVE:default-trofear ("trofé" n m pl ind) ;	# keep trofé<n><nt><pl><ind>→trofé
+"<troner>" REMOVE:default-troner ("trone" n f pl ind) ;	# keep trone<vblex><pres>→tronar
+"<troner>" REMOVE:default-troner ("trone" n m pl ind) ;	# keep trone<vblex><pres>→tronar
+"<trosset>" REMOVE:default-trosset ("tross" n nt sg def) ;	# keep trosse<vblex><pret>→trassa
+"<truer>" REMOVE:default-truer ("tru" n f pl ind) ;	# keep true<vblex><pres>→truar
+"<truer>" REMOVE:default-truer ("tru" n m pl ind) ;	# keep true<vblex><pres>→truar
+"<trykket>" REMOVE:default-trykket ("trykk" n nt sg def) ;	# keep trykke<vblex><pret>→trykte
+"<tømt>" REMOVE:default-tømde ("tømme" adj pp pl) ;	# keep tømme<adj><pp><nt><sg><ind>→tømt tømme<vblex><pp>→tømt
+"<Tørken>" REMOVE:default-Tørka ("tørke" n m sg def) ;	# keep Tørk<n><m><sg><def>→Tørken
+"<uavklart>" REMOVE:default-uavklarte ("uavklart" adj pst un pl ind) ;	# keep uavklart<adj><pst><nt><sg><ind>→uavklart uavklart<adj><pst><mf><sg><ind>→uavklart
+"<uavklart>" REMOVE:default-uavklarte ("uavklart" adj pst un sp def) ;	# keep uavklart<adj><pst><nt><sg><ind>→uavklart uavklart<adj><pst><mf><sg><ind>→uavklart
+"<ukjent>" REMOVE:default-ukjend ("ukjent" adj pst mf sg ind) ;	# keep ukjent<adj><pst><nt><sg><ind>→ukjent
+"<utarbeidet>" REMOVE:default-utarbeidde ("utarbeide" vblex pret) ;	# keep utarbeide<vblex><pp>→utarbeidd
+"<utelatt>" REMOVE:default-utelaten ("utelate" adj pp mf sg ind) ;	# keep utelate<adj><pp><nt><sg><ind>→utelate utelate<vblex><pp>→utelate
+"<Uten>" REMOVE:default-Uten ("Uten" np cgguess) ;	# keep Uten<pr>→Utan
+"<utestengt>" REMOVE:default-utestengd ("utestenge" adj pp mf sg ind) ;	# keep utestenge<vblex><pp>→utestengt utestenge<adj><pp><nt><sg><ind>→utestengt
+"<utsagn>" REMOVE:default-utsegner ("utsagn" n nt pl ind) ;	# keep utsagn<n><nt><sg><ind>→utsegn
+"<utsatt>" REMOVE:default-utsette ("utsette" adj pp pl) ;	# keep utsatt<adj><pst><mf><sg><ind>→utsett utsette<vblex><pp>→utsett utsatt<adj><pst><nt><sg><ind>→utsett
+"<utskrevet>" REMOVE:default-utskriven ("utskrive" adj pp mf sg ind) ;	# keep utskrive<vblex><pp>→utskrive
+"<utstedt>" REMOVE:default-utskriven ("utstede" adj pp mf sg ind) ;	# keep utstede<vblex><pp>→utskrive utstede<adj><pp><nt><sg><ind>→utskrive
+"<utvist>" REMOVE:default-utviste ("utvise" adj pp pl) ;	# keep utvise<adj><pp><nt><sg><ind>→utvist utvise<vblex><pp>→utvist
+"<utøver>" REMOVE:default-utøver ("utøve" vblex pres) ;	# keep utøver<n><m><sg><ind>→utøvar
+"<vakter>" REMOVE:default-vakter ("vakt" n f pl ind) ;	# keep vakte<vblex><pres>→vaktar
+"<vakter>" REMOVE:default-vakter ("vakt" n m pl ind) ;	# keep vakte<vblex><pres>→vaktar
+"<vannet>" REMOVE:default-vatna ("vanne" vblex pret) ;	# keep vann<n><nt><sg><def>→vatnet
+"<varene>" REMOVE:default-varene ("vare" n f pl def) ;	# keep var<n><m><pl><def>→vara
+"<varene>" REMOVE:default-varene ("vare" n m pl def) ;	# keep var<n><m><pl><def>→vara
+"<Varsler>" REMOVE:default-Varsel ("varsel" n nt pl ind) ;	# keep Varsle<vblex><pres>→Varslar
+"<varsler>" REMOVE:default-varsel ("varsel" n nt pl ind) ;	# keep varsler<n><m><sg><ind>→varslar varsle<vblex><pres>→varslar
+"<vassdrag->" REMOVE:default-vassdrag- ("vassdrag" n nt pl ind cmp-split) ;	# keep vassdrag<n><nt><sg><ind><cmp-split>→vassdrags-
+"<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adj pst mf sg ind) ;	# keep vedrørende<pr>→rundt
+"<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adj pst un pl ind) ;	# keep vedrørende<pr>→rundt
+"<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adj pst un sp def) ;	# keep vedrørende<pr>→rundt
+"<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adv) ;	# keep vedrørende<pr>→rundt
+"<veid>" REMOVE:default-vege ("veie" adj pp nt sg ind) ;	# keep veie<adj><pp><mf><sg><ind>→vegen
+"<veid>" REMOVE:default-vege ("veie" vblex pp) ;	# keep veie<adj><pp><mf><sg><ind>→vegen
+"<veier>" REMOVE:default-vegar ("vei" n m pl ind) ;	# keep veie<vblex><pres>→veg
+"<vekket>" REMOVE:default-vekte ("vekke" vblex pret) ;	# keep vekke<vblex><pp>→vekt vekke<adj><pp><nt><sg><ind>→vekt
+"<Velger>" REMOVE:default-Veljar ("velger" n m sg ind) ;	# keep Velge<vblex><pres>→Vel
+"<veltet>" REMOVE:default-velt ("velte" adj pp mf sg ind) ;	# keep velte<vblex><pp>→velta velte<vblex><pret>→velta
+"<vendt>" REMOVE:default-vend ("vende" adj pp mf sg ind) ;	# keep vende<vblex><pp>→vendt vende<adj><pp><nt><sg><ind>→vendt
+"<Verden>" REMOVE:default-Verd ("verden" n m sg ind) ;	# keep Verd<n><m><sg><def>→Verda
+"<verden>" REMOVE:default-verd ("verden" n m sg ind) ;	# keep verd<n><m><sg><def>→verda
+"<verker>" REMOVE:default-verk ("verk" n nt pl ind) ;	# keep verk<n><m><pl><ind>→verkar verker<n><m><sg><ind>→verkar
+"<vernet>" REMOVE:default-vernet ("vern" n nt sg def) ;	# keep verne<vblex><pret>→verna
+"<vervet>" REMOVE:default-verva ("verve" vblex pret) ;	# keep verv<n><nt><sg><def>→vervet
+"<ville>" REMOVE:default-vilje ("ville" vblex inf) ;	# keep ville<vblex><pret>→ville vill<adj><sint><pst><un><sp><def>→ville
+"<Vinner>" REMOVE:default-Vinnar ("vinner" n m sg ind) ;	# keep Vinne<vblex><pres>→Vinn
+"<virke>" REMOVE:default-virke ("virke" n nt sg ind) ;	# keep virke<vblex><inf>→verke
+"<virker>" REMOVE:default-virke ("virke" n nt pl ind) ;	# keep virke<vblex><pres>→verker
+"<vitner>" REMOVE:default-vitnar ("vitne" vblex pres) ;	# keep vitne<n><nt><pl><ind>→vitne
+"<voksen>" REMOVE:default-voksen ("voks" n m sg def) ;	# keep voksen<adj><sint><pst><mf><sg><ind>→vaksen
+"<vokste>" REMOVE:default-voks ("vokse" vblex pret) ;	# keep vokse<adj><pp><pl>→vaksne
+"<Været>" REMOVE:default-Var ("være" vblex pret) ;	# keep Vær<n><nt><sg><def>→Vêret
+"<yrker>" REMOVE:default-yrker ("yrke" n f pl ind) ;	# keep yrke<n><nt><pl><ind>→yrke
+"<yrker>" REMOVE:default-yrker ("yrke" n m pl ind) ;	# keep yrke<n><nt><pl><ind>→yrke
+"<åpenbart>" REMOVE:default-openberra ("åpenbare" vblex pp) ;	# keep åpenbar<adj><pst><nt><sg><ind>→openbert
+"<Økt>" REMOVE:default-Økt ("økt" n f sg ind) ;	# keep Øke<vblex><pp>→Auka Øke<adj><pp><mf><sg><ind>→Auka
+"<økt>" REMOVE:default-økt ("økt" n f sg ind) ;	# keep øke<vblex><pp>→auka øke<adj><pp><nt><sg><ind>→auka
+"<Økt>" REMOVE:default-Økt ("økt" n m sg ind) ;	# keep Øke<vblex><pp>→Auka Øke<adj><pp><mf><sg><ind>→Auka
+"<økt>" REMOVE:default-økt ("økt" n m sg ind) ;	# keep øke<vblex><pp>→auka øke<adj><pp><nt><sg><ind>→auka
+"<øst>" REMOVE:default-øst ("øse" adj pp mf sg ind) ;	# keep øst<pr>→aust
+"<øst>" REMOVE:default-øst ("øse" adj pp nt sg ind) ;	# keep øst<pr>→aust
+"<øst>" REMOVE:default-øst ("øse" vblex pp) ;	# keep øst<pr>→aust
+"<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
+"<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
+
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
@@ -28016,17 +29146,44 @@ SELECT:Ukjendord-utelukkes-ikke. fv IF
 
 
 # @nkon: simple noun-noun conjunctions under genitive
-ADD (@nkon) ("og") IF
+MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
         (1C n + ind LINK NOT 0 gen)
         (NOT 2 ("i"))
 ;
 
-ADD (@nkon) ("og") IF
-        (-2 gen OR pos)
-        (-1C n + ind LINK NOT 0 gen)
-        (1C n + cmp)
-        (2C n + ind LINK NOT 0 gen)
-        (NOT 2 ("i"))           # Kritikere av landets regime  og  kilder i CIA mener …
+MAP:barn-og-unges (@nkon) %og/eller% IF
+        (-1 ("<barn>"i))
+        (1 ("<unges>"i))
+        ;
+MAP:menn-og-kvinners (@nkon) %og/eller% IF
+        (-1 ("<menn>"i))
+        (1 ("<kvinners>"i))
+        ;
+MAP:kvinner-og-menns (@nkon) %og/eller% IF
+        (-1 ("<kvinner>"i))
+        (1 ("<menns>"i))
+        ;
+
+MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
+        (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (1C n + gen)
+;
+
+MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+        (1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+;
+
+MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER + def)
+        (1 dem)
+        (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER) # allow single-defnes
+;
+
+MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
+        (-1C n + gen LINK 0 $$NUMBER) # ind or def both fine here
+        (1 adj)
+        (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
