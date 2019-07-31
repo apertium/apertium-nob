@@ -1616,6 +1616,9 @@ REMOVE:cardinal date;
 	(1 subst)
 ;
 
+"<bitte>" SELECT ("bitte") IF
+        (1 ("liten"))
+        ;
 
 #:3729
   "<bredt>"   SELECT:3729   (vblex pp) IF
