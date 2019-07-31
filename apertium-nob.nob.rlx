@@ -24868,6 +24868,11 @@ CONSTRAINTS
         (NOT -1 ("om"))         # be om lov
         ;
 
+"<lovs>" SELECT:norsk-lovs-historie sg IF
+        (NOT -1 ("om"))         # be om lov
+        ;
+
+
 #:4046
   "<mine>"   SELECT:4046   (n m sg ind) IF
 	(*-1 mask-det BARRIER ikke-adv-adj)
