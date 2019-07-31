@@ -2,16 +2,18 @@
 
 # Simple test for consistency across scandipairs
 
+[[ -n "${AP_NOSCANDITEST}" ]] && exit 0
+
 set -u
 
 cd "$(dirname "$0")" || exit 1
 
 
 declare -a dixen=(
-    ../../languages/apertium-nob/apertium-nob.nob.dix
-    ../../languages/apertium-swe/apertium-swe.swe.dix
-    ../../languages/apertium-nno/apertium-nno.nno.dix
-    ../../languages/apertium-dan/apertium-dan.dan.dix
+    ../apertium-nob/apertium-nob.nob.dix
+    ../apertium-swe/apertium-swe.swe.dix
+    ../apertium-nno/apertium-nno.nno.dix
+    ../apertium-dan/apertium-dan.dan.dix
 )
 
 for dix in "${dixen[@]}"; do
