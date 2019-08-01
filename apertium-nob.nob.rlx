@@ -28605,6 +28605,8 @@ SELECT:søndag-gås-det-renn expl IF
         (1C n + ind)
         ;
 
+SELECT:talord-det det + talord;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj OR adj  IF (0 ("<hele>"i));
