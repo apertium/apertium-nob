@@ -14625,7 +14625,7 @@ SELECT:det-de-spiser-er-bambus pres IF
 
 
 #:2653
-SELECT:2653 pr IF
+SELECT:ingen-fv-før-setn-gr pr IF
 	(0 sbu)
 	(NOT 0 adj OR n)
 	(NOT 1 perf-part)
@@ -18700,6 +18700,7 @@ SELECT:alle-de-undertrykte-stammene adj + pl IF
 
 SELECT:Med-økte-inntekter adj + pl IF
         (-1 pr)
+        (NEGATE -1 cnjsub LINK 1 fv)
         (0C adj OR vblex)
         (1C n + pl)
         ;
