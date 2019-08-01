@@ -1104,6 +1104,8 @@ REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
 REMOVE:unlikely ("sult") + n + pl;
 REMOVE:unlikely ("lave") + pp + ind;
+REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
+REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
