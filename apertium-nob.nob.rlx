@@ -1655,6 +1655,11 @@ REMOVE:cardinal date;
         (-1 ("være") + fv)
         ;
 
+"<buen>" SELECT ("bue") IF
+        (NEGATE -2 ("inne") LINK 1 ("i"))
+        (NEGATE -2 ("innerst") LINK 1 ("i"))
+        (NEGATE -2 ("ut") LINK 1 ("av"))
+        ;
 
 ####################################################
 # "den¹" blir «den» på nno òg; "den" blir «han/ho» #
