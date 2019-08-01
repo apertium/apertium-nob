@@ -28650,6 +28650,7 @@ SELECT:default ("bo") IF (0 ("bor"));
 SELECT:default ("felles");      # not pasv felle
 SELECT:default ("<tvang>") + pret;
 SELECT:default ("<super>"i) + adj;
+SELECT:default ("<strider>"i) + pres;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
