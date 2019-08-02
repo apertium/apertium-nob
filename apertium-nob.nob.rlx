@@ -114,6 +114,7 @@ LIST d6 = "anklage" "anmode" "anspore" "avskrekke" "avstå" "be" "bede" "bemyndi
 LIST d7 = "egge" "påby" "pålegge" "påtvinge" "tilholde" "tillate" "tilrå" "tilstede" "utrope" "vie" "vigsle" ;
 LIST d8 = "anse" "befale" "esle" "etle" "innvie" "krone" "omskape" "ordinere" "salve" "samle" "utpeke" ;
 LIST d9 = "arve" "forandre" ;
+
 LIST rl1 = "avspeile" "avtegne" "basere" "begrave" "bekymre" "beløpe" "bringe" "datere" "engste" "ergre" "eve" "finne" "flytte" "forelske" "forgape" "forgreine" "forgrene" "forlibe" "forlove" "forme" "forstikke" "fortape" "fortørne" "forundre" "fryde" "fryse" "føye" "få" "gjenspeile" "godgjøre" "godte" "gremme" "grue" "harme" "hufse" "hvelve" "hygge" "innfinne" "innforlive" "innlosjere" "installere" "irritere" "kaste" "keie" "kjøre" "klabbe" "kle" "klebe" "klede" "kleie" "klemme" "klistre" "klø" "klå" "knipe" "komme" "kose" "krenge" "kveike" "kvelve" "kvi" "kvie" "lee" "legge" "lekre" "lepje" "lette" "like" "lire" "løfte" "meske" "more" "måte" "naske" "nedfelle" "pine" "pirke" "range" "raspe" "regalere" "relatere" "renne" "rikke" "rive" "rufse" "rulle" "røre" "sjenere" "skake" "skamme" "skjule" "skjære" "skylle" "sleike" "slenge" "slikke" "slå" "smette" "smugle" "smøye" "sole" "spandere" "speile" "spenne" "stryke" "suge" "supe" "sverte" "ta" "trekke" "træ" "tørke" "uroe" "utkrystallisere" "utsette" "utvikle" "vaske" "velte" "vokse" "vrenge" "vrikke" "ønske" ;
 LIST rl2 = "forelske" "forlove" "forsone" "gifte" "late" "nedverdige" "sammensverge" "samrå" ;
 LIST rl3 = "avholde" "bare" "befatte" "beflitte" "bekvemme" "berede" "beslutte" "bestemme" "bestrebe" "betakke" "driste" "egne" "ernære" "forbanne" "forberede" "fordriste" "formaste" "fornedre" "forplikte" "fri" "få" "gi" "grue" "innrette" "innskrenke" "interessere" "konsentrere" "lure" "muntre" "nedlate" "nedverdige" "prøve" "skjønne" "stjele" "tvinge" "utgi" "vegre" "venne" "våge" "ydmyke" ;
@@ -134,8 +135,27 @@ LIST rl17 = "hygge" ;
 LIST rl18 = "forelske" "forlibe" "fortape" ;
 LIST rl19 = "forlove" ;
 LIST rl20 = "late" ;
+
 LIST nullv = "bakke" "bedage" "blåse" "brake" "brenne" "brise" "brumle" "bruse" "buldre" "dage" "dages" "demre" "dimme" "dryppe" "drønne" "dugge" "dundre" "dure" "duskregne" "dønne" "ebbe" "fate" "flø" "fossregne" "gråne" "gufse" "gule" "guste" "hagle" "høljeregne" "høljregne" "ise" "kime" "kitle" "klarne" "klikke" "klinge" "klirre" "klukke" "klunke" "klynke" "knake" "knase" "knatre" "knatte" "kneste" "knette" "knirke" "knitre" "knyste" "krase" "krasle" "krible" "krisle" "kritle" "kry" "kvakke" "kvekke" "kvelde" "kåre" "letne" "li" "linne" "ljome" "lyne" "lysne" "løye" "maure" "morgne" "mulne" "murre" "mørkne" "plinge" "prikke" "prikle" "rable" "rasle" "ratle" "regne" "rime" "ringe" "rumle" "runge" "ryke" "sabbe" "sildre" "silregne" "siregne" "sisle" "sitre" "skorte" "skrakle" "skrappe" "skrelle" "skumre" "skye" "sludde" "smale" "smelle" "sno" "snø" "somres" "sprake" "sprutregne" "stilne" "stokke" "storme" "stridregne" "striregne" "styrtregne" "støkke" "støve" "surre" "suse" "svartne" "svimle" "svimre" "svuppe" "søkke" "tjukne" "tordne" "trekke" "tusle" "tusse" "tykne" "tø" "tørne" "ulme" "verke" "vintres" "våre" "våres" "yre" "øsregne" ;
 
+# LIST t1 = huge set not included
+LIST t2 = "affektere" "ane" "anta" "avgjøre" "avtale" "bebude" "bedyre" "befale" "bekjentgjøre" "beklage" "bekrefte" "bemerke" "benekte"
+# LIST t3 = huge set not included
+LIST t4 = "angi" "be" "bede" "begjære" "betrakte" "ete" "formidle" "høre" "observere" "se" "skjøte" "spise" ;
+# LIST t5 = huge set not included
+LIST t6 = "angå" "begripe" "behøve" "bekomme" "dufte" "dø" "feile" "gjelde" "gjennomstrømme" "gjennomsyre" "ha" "implisere" "interessere" "mangle" "mankere" "miskle" "måtte" "omgi" "omgås" "omhandle" "omslutte" "oppleve" "romme" "runde" "tape" "tekkes" "tilfalle" "tilflyte" "tilhøre" "tilkomme" "tilsi" "tilstøte" "tilstøyte" "tilsvare" "tryte" "turve" "tyde" "undergå" "unnsleppe" "unnvære" "utstråle" "vante" "vederfares" "vederkvege" "vedkomme" "vite" "vone" "øyne" ;
+LIST t7 = "avkrefte" "fascinere" "henrive" "incitere" "keie" "kildre" "klemme" "kløkke" "kvege" "martre" "mette" "mishage" "more" "nage" "opprøre" "pirre" "plage" "satisfisere" "skake" "skremme" "smerte" "støkke" ;
+LIST t8 = "attrå" "avskrekke" "begjære" "døye" "fordra" "foretrekke" "forgude" "frykte" "føle" "gjenoppleve" "gutere" "hate" "kjenne" "kjeske" "like" "lyste" "minnes" "misbillige" "mislike" "nyte" "oppleve" "persipere" "sakne" "sanse" "savne" "skatte" "utholde" "utstå" ;
+# LIST t9 = huge set not included
+# LIST t10 = huge set not included
+LIST t11 = "vrikle" ;
+LIST t14 = "arve" "erholde" "erverve" "få" "motta" ;
+LIST t16 = "drømme" "foretrekke" "frykte" "føle" "hate" "like" "mislike" "presumere" ;
+LIST t17 = "foretrekke" "hate" "like" "lyste" "nyte";
+LIST t18 = "begripe" "ense" "erfare" "erindre" "fatte" "fortjene" "implisere" "indikere" "innebære" "involvere" "merke" "oppfatte" "oppleve" "skjønne" "tro" "tru" "tyde" "tåle" "unnskylde" "vente" "vite" "vone" "ønske" ;
+LIST t19 = "behøve" "fortjene" "innebære" "involvere" "oppleve" "trenge" "tåle" "vone" "ønske";
+
+SET trans-med-inf = d3 OR t17 OR t19 ; # incomplete TODO
 SET ditrans = ("donere") OR d1 OR d2 OR d3 OR d6 OR d7 OR rl6 OR rl7 OR rl8 ;
 SET refl = rl1 OR rl2 OR rl3 OR rl4 OR rl5 OR rl6 OR rl7 OR rl8 OR rl9 OR rl10 OR rl11 OR rl12 OR rl13 OR rl14 OR rl15 OR rl16 OR rl17 OR rl18 OR rl19 OR rl20 ;
 SET n1 = nullv ;                # what is n1?
@@ -1651,6 +1671,10 @@ REMOVE:cardinal date;
 ;
 #  skal en forsker bry seg
 
+"<bryter>" SELECT:bryter-med vblex IF
+        (1 %med%)
+        ;
+
 "<bukkene>" SELECT subst-mask;
 
 "<blitt>" SELECT:er-blitt vblex IF
@@ -2843,6 +2867,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 "<Hvor>" SELECT:Hvor-stor-er-du (adv) IF
         (1 adj)
+;
+
+"<hvor>" SELECT:uansett-hvor-pene-de-er (adv) IF
+        (-1 ("uansett"))
 ;
 
 "<i>" SELECT:i-LeBron-debut prep IF
@@ -5406,7 +5434,7 @@ REMOVE:støtte ("støte") IF
 # 30.11"
 
 SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
-SELECT:kroner ("øre") + nt IF (-1 siffer);
+SELECT:kroner ("øre") + nt IF (-1 siffer OR talord);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 "<øst>" SELECT:øst-i-England pr IF
@@ -13021,8 +13049,36 @@ SELECT:det-de-spiser-er-bambus pres IF
         (*2C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
 
+SELECT:halvparten-av-gavene-de-får-skal prn + pers IF
+        (-1C n + def)
+        (0C prn OR det + dem)
+        (1 fv)
+        (NOT 1 def)
+        (2C fv)
+        ;
+# «Kreftforeningen har som målsetting at minst halvparten av pengegavene   de   får skal gå til forskning.»
+
+SELECT:uansett-hvor-de-bor-skal prn + pers IF
+        (-2C ("uansett"))
+        (-1C adv OR cnjsub)
+        (0C prn OR det + dem)
+        (1 fv)
+        (NOT 1 def)
+        (2C fv)
+        ;
+# «Skolekonsertene er garantien for at alle barn, uansett hvor de   bor   skal få muligheten for en god konsertopplevelse, sier Birkeland.»
+
+SELECT:alt-de-gir-er fv IF
+        (-2C det + nt)
+        (-1 prn OR det + dem)
+        (-1C pl)
+        (0C n + ind OR vblex)
+        (1C fv)
+        ;
+# «De har fått et faglig råd fra Vegvesenet om at her trengs bevilgninger på opp mot 75 milliarder, men alt de   gir   er 17,5 milliarder, sier leder av Stortingets transportkomité Knut Arild Hareide (KrF) til TV 2.»
+
 #:2783
- SELECT:2783 (det pl) IF
+SELECT:disse-fine-bilene det + pl IF
 	(NOT 0 %hundre/tusen%)
 	(NOT 0 %andre%)
 	(NOT 0 det-ent)
@@ -13035,7 +13091,7 @@ SELECT:det-de-spiser-er-bambus pres IF
 # sidan «de» har lesingane <np>/<pr>/<det>/<prn>, og «disse» har
 # lesingane <prn>/<det>
 # «og de grunnleggende friheter»
-
+# «Kreftforeningen har som målsetting at minst halvparten av pengegavene   de   får skal gå til forskning.»
 
 #:2784
  SELECT:2784 (det pl) IF
@@ -24636,10 +24692,11 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 
 
 #:1831
- REMOVE:1831 (vblex) IF
+REMOVE:mange-timer-kan vblex IF
 	(0 fv)
 	(1C pres/pret)
 	(NOT *-1 %som% BARRIER setn-gr)
+        (NEGATE -1C prn + pers LINK -1 n + def) # «pengegavene de får skal»
 ;
 #  "mange timer (ikke verb) kan ..."))
 
@@ -27284,6 +27341,13 @@ SELECT:har-blitt-oppretta perf-part IF
 
 #CONSTRAINTS
 ## remove ndomain heur
+
+REMOVE:seks-av-ti-leser n + sg IF
+        (-1C det + pl)
+        (NOT -1 sanns-årstal)
+        ;
+# «Seks av ti svensker ser ikke nyhetssendinger på TV, og fire av ti leser heller ikke aviser.»
+
 #:1723
  REMOVE:1723 (adj def sg) IF
 	(0 fl)
@@ -27894,10 +27958,10 @@ SELECT:har-blitt-oppretta perf-part IF
 #	(*1 pres/pret BARRIER setn-gr)
 
 #:1678
- REMOVE:1678 (vblex) IF
+REMOVE:1678 vblex IF
 	(NOT 0 ikke-subst-verb)
 	(-1C tall)
-	(NOT -1 ikke-tall)
+	(NOT -1 ikke-tall OR sanns-årstal)
 ;
 #  "subst mer sannsynlig enn verb etter tall"
 
@@ -28609,6 +28673,10 @@ SELECT:søndag-gås-det-renn expl IF
         ;
 
 SELECT:talord-det det + talord;
+
+SELECT:ønsket-å vblex + trans-med-inf IF
+        (1 ("å"))
+        ;
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
