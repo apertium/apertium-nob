@@ -6095,7 +6095,7 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
   "<enn>"   REMOVE:4001   (cnjsub) IF
 	(NOT 1 adj-komp)
 	(NOT 1 pres/pret)
-	(NOT *1 pres/pret BARRIER setn-gr)
+	(NEGATE *1 pres/pret BARRIER clb)
 ;
 
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
