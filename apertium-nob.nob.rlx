@@ -2011,6 +2011,10 @@ REMOVE:cardinal date;
 #  "enn videre"
 
 
+"<enn>" SELECT:mer-enn-50-intervjutimer pr IF
+	(-1 adj + comp)
+        (1 det + qnt OR det + dem)
+;
 
 #:3683
   "<enn>"   SELECT:3683   (pr) IF
@@ -5548,6 +5552,7 @@ REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 REMOVE:unlikely ("<profil>"i) + nt;
 REMOVE:unlikely ("<tallet>"i) + adj ;
 REMOVE:unlikely ("<tallet>"i) + vblex;
+REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
@@ -28722,6 +28727,7 @@ SELECT:default ("felles");      # not pasv felle
 SELECT:default ("<tvang>") + pret;
 SELECT:default ("<super>"i) + adj;
 SELECT:default ("<strider>"i) + pres;
+SELECT:default ("<ruter>"i) + n + pl;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
