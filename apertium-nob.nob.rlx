@@ -1264,6 +1264,11 @@ REMOVE:cardinal date;
 	(-1 %antas% OR ("skyldes"))
 ;
 
+"<at>" SELECT:førte-til-at sbu IF
+	(-2 %føre%)
+        (-1 %til%)
+;
+
 "<LES>" SELECT (vblex imp);
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
