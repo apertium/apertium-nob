@@ -6106,6 +6106,15 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
 
 
+"<enn>" REMOVE:at-mye-annet-enn-klima-kan cnjsub IF
+        (-3 %at%)
+        (-2 qnt OR adj-komp OR grads-adv OR %langt%)
+        (-1 dem OR adj-komp OR grads-adv OR n + pl + ind)
+	(NOT 1 adj-komp)
+;
+# «Det understrekes at mye annet enn klimaendringer også kan påvirke naturtyper.»
+# «Undersøkelsen viser dessuten at flere menn enn kvinner med samme utdanning begynner i privat sektor og blir oftere ledere.»
+
 
 
  "<far>"   REMOVE:far   (n nt) IF
