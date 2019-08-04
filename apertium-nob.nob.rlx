@@ -1677,8 +1677,10 @@ REMOVE:cardinal date;
 #  skal en forsker bry seg
 
 "<bryter>" SELECT:bryter-med vblex IF
+        (NEGATE -1 %samme/neste/ene/eneste/forrige% OR %en%)
         (1 %med%)
         ;
+# Ikkje: «Yordanov er eneste bryter med ti VM-medaljer i premieskapet.»
 
 "<bukkene>" SELECT subst-mask;
 
