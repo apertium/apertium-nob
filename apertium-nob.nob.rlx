@@ -28644,6 +28644,13 @@ SELECT:ansatte-def def IF
         (*-1 dem OR pos BARRIER ikke-adv-adj-kvant)
         ;
 
+SELECT:de-ansatte adj + pl IF
+        (-1 det + pl)
+        (-1 dem OR pos)
+        (0 ("ansatt"i))
+        ;
+
+
 SELECT:universitetets-1.200-ansatte-def def IF
         (0 ("ansatt"i))
         (*-2 gen BARRIER ikke-adv-adj-kvant)
