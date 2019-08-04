@@ -8147,6 +8147,12 @@ SELECT:skrev vblex IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:Som-forteller-kjennetegnes-Gaute-av n + ind + sg IF
+        (-1 %som% LINK 0 setn-gr)
+        (0C n OR pres)
+        (1C pasv)
+        ;
+
 SELECT:de-så-løper-etter-løper-passere n IF
         (0 ("<(.*)>"r))
         (1 pr)
