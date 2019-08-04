@@ -11911,7 +11911,7 @@ SELECT:mest-omsatte adv IF
 
 
 #:2868
- SELECT:2868 (adj) IF
+SELECT:Selv-om-de-døde-ikke-kan adj OR n + ind IF
 	(NOT 0 sbu)
 	(NOT 0 adv)
 	(NOT 0 pres)
@@ -11920,7 +11920,8 @@ SELECT:mest-omsatte adv IF
 	(2C pres/pret)
 	(**-2C setn-gr LINK 0 sbu)
 ;
-#  "22.6.2001 Selv om de døde ikke kan snakke, er det slik"
+#  "22.6.2001 Selv om de  døde  ikke kan snakke, er det slik"
+# «På Vega i Nordland vil endringene føre til at en  lege  der må på jobb alle dagene i året»
 
 
 
