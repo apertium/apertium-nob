@@ -568,7 +568,7 @@ LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" ;
-LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ;
+LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
 LIST fem-det = (det f) ;
@@ -1075,6 +1075,8 @@ REMOVE:Brannmannskap-har cgguess IF
 
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
+
+SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
@@ -24641,17 +24643,38 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 #  "3.10.2003: hvem som (ikke) satte bygget(ikke verb) i brann"))
 
 
-
-#:1825
- REMOVE:1825 (vblex) IF
-	(0 fv)
+REMOVE:overleve-i-dette-huset vblex IF
+	(-2C prep)
 	(-1 det)
 	(NOT -1 tall)
 	(NOT -1 %hvert%)
-	(-2C prep)
+	(0 fv)
+        (0 def)
 ;
 #  "Jeg må overleve i dette huset (ikke verb)"))
 # Men ikkje: «Av disse skal 50 legges ned»
+
+REMOVE:tusenvis-av-andre-deler-som vblex IF
+	(-2C prep)
+	(-1 det + pl)
+	(NOT -1 tall)
+	(NOT -1 %hvert%)
+	(0 fv)
+        (0 pl)
+        (1 %som% OR <<<)
+;
+# «NASA må håndtere tidligere rakettdeler, avdankede satellitter og tusenvis av andre deler som utgjør romsøppel.»
+
+REMOVE:med-andre-banker-mot vblex IF
+	(-2C prep)
+	(-1 %annen%)
+	(NOT -1 tall)
+	(NOT -1 %hvert%)
+	(0 fv)
+        (0 n + pl)
+        (1 %som% OR <<< OR pr OR adv)
+;
+# «– Vi samarbeider med andre banker mot denne type kriminalitet.»
 
 
 #:1826
@@ -28604,12 +28627,25 @@ SELECT:fv-etter-innskot fv IF
         ;
 # «Demokraten Beto O'Rourke, som i fjor trakk det korteste strået i et overraskende jevnt mellomvalg i den republikanske høyborgen Texas, holdt samtidig et konkurrerende velgermøte i El Paso.»
 
+SELECT:brudd-på-de-plikter n + pl IF
+        (-2 pr)
+        (-1C det OR prn)
+        (-1C pl)
+        (-1 dem)
+        (0C n + ind OR pres)
+	(NOT 0 farlige-fl-subst)
+        (*1 fv OR %som% BARRIER setn-gr)
+        ;
+# «… da han i november tok til orde for en forsiktig gjenåpning av de  deler  av Nordland VI, sørvest for Lofoten, som ble formelt åpnet …»
+# «må anses som et grovt brudd på de  plikter  en tillitsvalgt har»
+
 SELECT:de-bruker pres IF
         (NOT -2 %alle%)         # «med alle de farer det vil bringe med seg»
         (-1C det OR prn)
         (-1C pl)
         (-1 nominativ + pers)
         (0C n + ind OR pres)
+	(NOT 0 farlige-verb)
         ;
 
 SELECT:Som-spiller-ønsker-man pres IF
