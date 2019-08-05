@@ -28769,6 +28769,13 @@ SELECT:Vi-er-i-Olden-og-samtaler fv + $$TEMPUS IF
         (0C fv OR n + pl)
         ;
 # «– Vi er   på plass i Olden og  samtaler  med de involverte, sier havariinspektør Tønis T.»
+
+
+SELECT:samme-rammer-som-før n IF
+        (-1 %samme%)
+        (0C n OR vblex)
+        (1 %som%)
+        ;
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
         (-1 pres)
