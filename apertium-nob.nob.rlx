@@ -5889,6 +5889,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 ;
 #  "bare adj i kontekster som: det bare treet"
 
+"<bare>" REMOVE:bare-inf inf IF
+        (NOT -1 infmerke)
+        (NOT 1 %seg%)
+        ;
 
 "<blottende>" REMOVE:blotte (adv) IF
         (NOT 1 adj)
