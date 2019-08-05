@@ -28667,6 +28667,7 @@ SELECT:brudd-på-de-plikter n + pl IF
         ;
 # «… da han i november tok til orde for en forsiktig gjenåpning av de  deler  av Nordland VI, sørvest for Lofoten, som ble formelt åpnet …»
 # «må anses som et grovt brudd på de  plikter  en tillitsvalgt har»
+# Ikkje: «De får ingen glede av de store inntektene, for de  jobber  for en lønn de ikke kan leve av.»
 
 SELECT:de-bruker pres IF
         (NOT -2 %alle%)         # «med alle de farer det vil bringe med seg»
@@ -28776,6 +28777,14 @@ SELECT:samme-rammer-som-før n IF
         (0C n OR vblex)
         (1 %som%)
         ;
+
+SELECT:cm-fastholdt-han fv IF
+        (-1 cm + clb)
+        (0C pp OR fv)
+        (1 nominativ)
+        (2 <<<)
+        ;
+
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
         (-1 pres)
