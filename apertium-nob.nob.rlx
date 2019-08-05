@@ -1743,16 +1743,20 @@ REMOVE:cardinal date;
 ;
 
 #:3724
-  "<den>"   SELECT:3724   (det) IF
+"<den>" SELECT:hele-den-norske-befolkning   det IF
 	(-1 %hele%)
 	(2 subst/adj)
 	(2 mask/fem/adj)
 ;
 #  "hele den norske befolkning"
 
+"<den>" SELECT:Konklusjonen-den-gang-var det IF
+        (1 ("<gang>"))
+        ;
+
 
 #:3722
-  "<der>"   SELECT:3722   (pr) IF
+"<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
 	(-1 setn-gr)
 	(NOT 2 pres/pret)
