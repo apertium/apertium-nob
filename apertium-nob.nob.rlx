@@ -23167,7 +23167,7 @@ REMOVE:for-økt-sysselsetting subst IF
 
 
 #:1943
- REMOVE:1943 (vblex pres) IF
+REMOVE:1943 vblex + pres IF
 	(*-1 periode-beg/konj-clb BARRIER setn-gr)
 	(*-1 periode-beg/konj-clb BARRIER komma/konj)
 	(**1C fv BARRIER ikke-adv)
@@ -29063,6 +29063,7 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<knivstukket>" REMOVE:default-knivstukke ("knivstikke" adj pp nt sg ind) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
 "<knivstukket>" REMOVE:default-knivstukke ("knivstikke" vblex pp) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
 "<knytter>" REMOVE:default-knyte ("knytte" n nt pl ind) ;	# keep knytte<vblex><pres>→knyter
+"<knyttet>" REMOVE:default-knytt ("knytte" vblex pret) ;	# keep knytte<vblex><pp>→knytt
 "<kommet>" REMOVE:default-kommen ("komme" adj pp mf sg ind) ;	# keep komme<adj><pp><nt><sg><ind>→komme komme<vblex><pp>→komme
 "<kostet>" REMOVE:default-kostet ("kost" n nt sg def) ;	# keep koste<vblex><pp>→kosta
 "<krangler>" REMOVE:default-kranglar ("krangel" n m pl ind) ;	# keep krangel<n><nt><pl><ind>→krangel
