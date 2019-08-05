@@ -8150,10 +8150,12 @@ CONSTRAINTS
 ## select ndomain
 
 SELECT:Som-forteller-kjennetegnes-Gaute-av n + ind + sg IF
-        (-1 %som% LINK 0 setn-gr)
+        (-1 %som% LINK *-1 setn-start-med-strek/anf BARRIER fv OR n OR spørreadv)
         (0C n OR pres)
+        (NOT 0 hj-verb)
         (1C pasv)
         ;
+# Ikkje: «… hva/og som  bør  inkluderes i en tiltale»
 
 SELECT:de-så-løper-etter-løper-passere n IF
         (0 ("<(.*)>"r))
