@@ -27232,6 +27232,13 @@ SELECT:ved-Malis-grenser-bor n + ind IF
         ;
 # «Innenfor Malis grenser bor det mange ulike folkeslag.»
 
+SELECT:med-andre-kjeder-cm n + pl IF
+        (-2 pr)
+        (-1 %annen%)
+        (0C n OR fv)
+        (1 cm)
+        ;
+
 #:1732
  SELECT:1732 (vblex pres) IF
 	(NOT 0 pret)
