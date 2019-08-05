@@ -1094,6 +1094,7 @@ REMOVE:acronym-samecase-gen ("[a-zæøå]+"r) IF
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
+REMOVE:unlikely ("knytte") + n IF (0 fv);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
@@ -5567,6 +5568,7 @@ REMOVE:unlikely ("<tallet>"i) + adj ;
 REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
+REMOVE:unlikely-ansane ("<anser>") + n ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
