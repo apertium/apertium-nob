@@ -28615,6 +28615,14 @@ SELECT:ham-merker-cm fv IF
         ;
 # «Det tror jeg de som jobber sammen med ham merker»
 
+SELECT:Interessen-for-hvilke-lyder-fisk-lager n IF
+        (-2C pr)
+        (-1 %hvilken%)
+        (0C n + pl + ind OR fv)
+        (*1C n BARRIER ikke-adv-adj-det LINK *1 fv)
+        ;
+# «Interessen for hvilke lyder fisk lager har vokst de siste årene.»
+
 SELECT:etter-dette-løp-en-mann-ut fv IF
         (*-2C pr BARRIER clb OR fv)
         (0C n + pl + ind OR fv)
