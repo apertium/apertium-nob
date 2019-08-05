@@ -12051,13 +12051,14 @@ SELECT:Selv-om-de-døde-ikke-kan adj OR n + ind IF
 
 
 #:2850
- SELECT:2850 (adv) IF
+SELECT:handler-utelukkende-med adv IF
 	(NOT 0 %så/og/selv%)
 	(NOT 0 subst)
 	(-1C verb)
 	(NOT 1 anf)
 	(NOT 1 pron/subst/det)
 	(NOT 1 ukjent)          # god sjanse for subst
+        (NEGATE 1 adj LINK 1 subst) # «som knyttes til<not adv> voldelig ekstremisme»
  	(NOT -1 kop)
  	(NOT -1 %ha%)
 	(NOT 1 infmerke)
