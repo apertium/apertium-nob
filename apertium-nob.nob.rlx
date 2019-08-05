@@ -6807,6 +6807,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "\"et egentlig jeg\".."
 
+"<jobber>" REMOVE:de-jobber-for-luselønn n IF
+        (-1 nominativ)
+        (1 %for%)
+        ;
 
 "<kar>" SELECT:en-kar m IF
     (-1 det + m)
@@ -25690,7 +25694,11 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "Hun skulle tre inn i forsamlingen"
 
-
+"<trakter>" REMOVE:på-de-trakter vblex IF
+        (-2 pr)
+        (-1 det + pl)
+        (NOT 1 %etter%)
+        ;
 
 #:3175
   "<tro>"   REMOVE:3175   (adj) IF
@@ -25698,6 +25706,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh jan 2004: Lite sannsynlig at \"tro\" er adj når adj-regler og spesialregler har virket."
 
+"<typer>" REMOVE:de-typer-organisk-avfall vblex IF
+        (-1 det)
+        (*1 n + ind BARRIER ikke-adv-adj-det)
+        ;
 
 #:4057
   "<ved>"   REMOVE:4057   (pr) IF
