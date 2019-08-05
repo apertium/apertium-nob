@@ -28762,6 +28762,13 @@ SELECT:kundens-bygninger-og-ANLEGG $$NUMBER IF
         (0 n + $$NUMBER)
         ;
 
+SELECT:Vi-er-i-Olden-og-samtaler fv + $$TEMPUS IF
+        (*-3C $$TEMPUS)
+        (-2 np)
+        (-1 clb)
+        (0C fv OR n + pl)
+        ;
+# «– Vi er   på plass i Olden og  samtaler  med de involverte, sier havariinspektør Tønis T.»
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
         (-1 pres)
