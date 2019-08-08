@@ -324,7 +324,7 @@ LIST %meget% = "meget"  ;
 LIST %men% = "men"  ;
 LIST %mene% = ("mene"  vblex) ;
 LIST %mens% = "mens"  ;
-LIST %mest/minst% = ("mye"  sup ind) ("liten"  sup ind) ;
+LIST %mest/minst% = ("mye"  sup ind) ("liten"  sup ind) "mest" ;
 LIST %meste% = ("mye"  sup def) ;
 LIST %meste/minste% = ("mye"  sup def) ("liten"  sup def) ;
 LIST %minst% = ("liten"  adj sup ind) ;
@@ -365,6 +365,7 @@ LIST %redd% = ("redd"  adj) ;
 LIST %samme% = "samme"  ;
 LIST %samme/neste/ene/eneste/forrige%       =           "forrige" "samme" "neste" "eneste" "ene" ;
 LIST %samme/neste/ene/eneste/selve/forrige% = "selv"    "forrige" "samme" "neste" "eneste" "ene" ;
+LIST %uansett/samme/likegyldig% = "uansett" "samme" "likegyldig" ;
 LIST %se/høres/kjennes% = "se"  "kjennes"  "høres"  ;
 LIST %se%-pret = ("se"  pret) ;
 LIST %seg% = ("seg"  prn) ;
@@ -565,7 +566,7 @@ LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("le
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
-LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) ;
+LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ;
@@ -845,7 +846,7 @@ LIST slik-adv = ("slik"  adv) ;
 LIST som-sbu = ("som"  cnjsub) ;
 LIST som/komma/og = "$," "," ("og"  cnjcoo) ("som"  cnjsub) ;
 LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "keltisk"  "italiensk"  "fransk"  "finsk"  "engelsk"  "dansk"  "bosnisk"  "amerikansk"  ;
-LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" ;
+LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
@@ -2880,16 +2881,81 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #      :group 2
 
 # If it's really a cnjsub, it's typically handled by earlier rules:
-"<hvor>" SELECT:hvor-pene-de-er (adv) IF
+# (though by nno-frequency we also select cnjsub for this word as the end-of-file default)
+"<hvor>" SELECT:hvor-pene-de-er adv IF
         (1 adj)
 ;
-"<Hvor>" SELECT:Hvor-stor-er-du (adv) IF
+"<Hvor>" SELECT:Hvor-stor-er-du adv IF
         (1 adj)
 ;
 
-"<hvor>" SELECT:uansett-hvor-pene-de-er (adv) IF
-        (-1 ("uansett"))
+"<hvor>" SELECT:uansett-hvor-pene-de-er adv IF
+        (-1 %uansett/samme/likegyldig% OR ("om"))
 ;
+# «detaljerte opplysninger om hvor du kan vente …»
+
+"<hvor>" SELECT:eller-hvor-det-skal-finne-sted adv IF
+        (-1 %og/eller% OR %men%)
+        (1 pers OR np)
+        (NEGATE 2 %være/bli%) # «hvor noen har opplevd vold, eller hvor det er fare for dette»
+        ;
+# «det er ikke kjent hva foreldreparet er siktet for, eller hvor de er hjemmehørende»
+
+"<hvor>" SELECT:eller-hvor-det-skal-finne-sted adv IF
+        (-1 %og/eller% OR %men%)
+        (1 pers OR np)
+        (NEGATE 2 %være/bli%) # «hvor noen har opplevd vold, eller hvor det er fare for dette»
+        ;
+# «det er ikke kjent hva foreldreparet er siktet for, eller hvor de er hjemmehørende»
+
+"<hvor>" SELECT:viser-bl.a.-hvor-veien-er-smalest adv IF
+        (1C pers OR np OR n)
+        (NOT 1 prn + nt)     # «tilfeller hvor det er store differanser» (should be det.expl?)
+        (2 %være/bli%)
+        (3C adj OR %mest/minst% LINK NOT 0 pp OR ("såkalt") OR ("uklar") OR ("betydelig") OR ("uendret"))
+        ;
+
+"<hvor>" SELECT:eller-hvor-vi-var-KONKRET adv IF # konkret kor, not der
+        (-1 %og/eller% OR %men% OR cm)
+        (1 pers OR np)
+        (2 %være/bli%)
+        (3 (*) LINK ( # høgrekontekstar for «hvor» som gjer det til konkret stad:
+               (0 ("bli") LINK 1 ("av"))
+            OR (0 ("på") LINK 1 ("vei") OR ("veg"))
+            OR (0C adj LINK NOT 0 pp OR ("såkalt") OR ("uklar")) # , hvor veien er smalest
+            OR (0 punktum/ellipse)
+            )
+        )
+        ;
+
+"<hvor>" SELECT:altså-hvor-går-grensen adv IF
+        (1C fv)
+        ;
+# «Altså hvor går grensen for ytringene?»
+
+"<hvor>" SELECT:og-hvor-ligger-de-traktene adv IF
+        (1C fv OR n + m)
+        (1 farlige-mask-subst OR ("grense") + def OR ("bære") + pres)
+        ;
+
+"<hvor>" SELECT:finne-ut-hvor-vi-er adv IF
+        (-1C vblex)
+        (1C pers)
+        (2C fv)
+        ;
+
+"<hvor>" SELECT:hvem-og-hvor adv IF
+        (-2 spørreadv)
+        (-1 %og/eller%)
+        ;
+
+"<hvor>" SELECT:hvor-og-hvem adv IF
+        (1 %og/eller%)
+        (2 spørreadv)
+        ;
+
+
+
 
 "<i>" SELECT:i-LeBron-debut prep IF
         (1 subst OR ukjent)
@@ -6517,6 +6583,11 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(*-1 setn-gr BARRIER %ha%)
 ;
 
+"<går>" REMOVE:hvor-går-grensa n IF
+        (NOT -3 pr)             # «i hele jævla går»
+        (NOT -2 pr)             # «i hele går»
+        (NOT -1 pr)             # «i går»
+        ;
 
 #:3574
   "<ha>"   REMOVE:3574   (symb) IF
@@ -13111,7 +13182,7 @@ SELECT:halvparten-av-gavene-de-får-skal prn + pers IF
 # «Kreftforeningen har som målsetting at minst halvparten av pengegavene   de   får skal gå til forskning.»
 
 SELECT:uansett-hvor-de-bor-skal prn + pers IF
-        (-2C ("uansett"))
+        (-2C %uansett/samme/likegyldig%)
         (-1C adv OR cnjsub)
         (0C prn OR det + dem)
         (1 fv)
@@ -23340,16 +23411,19 @@ REMOVE:1943 vblex + pres IF
 
 
 #:1956
- REMOVE:1956 (vblex pres) IF
+REMOVE:1956 pres IF
 	(-1 sbu-ren)
 	(NOT -1 %der%)
 	(NOT -1 adv)
 	(NOT -1 %at%)
 	(NOT -1 %som%)
+        (0* fv)
 ;
-#  "fordi når (ikke verb pres) våren kommer
-# Ikke: da (sbu/adv) kjenner jeg at ...
-# Ikke: Der hører jeg hjemme"
+#  «fordi når (ikke verb pres) våren kommer»
+# Ikke: «da (sbu/adv) kjenner jeg at ...»
+# Ikke: «Der hører jeg hjemme»
+# Ikke: «Altså hvor  går  grensen for ytringene?»
+# Ikke: «Men hvor  bærer  det videre?»
 
 
 
@@ -24849,8 +24923,9 @@ CONSTRAINTS
 #  bare ben
 
 #:3721
-  "<der>"   SELECT:3721   (pr) IF
+"<der>"   SELECT:korrespondansen-der   pr IF
 	(*1O subst/pron/fl-adj/%all%/%mang%/%mange% LINK *-1 ikke-adv-adj-det)
+        (NOT 1 expl)
 ;
 #  "det aller meste av korrespondansen der (prep) går på norsk"))
 
