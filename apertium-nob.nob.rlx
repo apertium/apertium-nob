@@ -2880,6 +2880,23 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #  "Dette er en kvinne hvis bedrifter vil huskes"
 #      :group 2
 
+"<hvor>" SELECT:men-hvor-det-bare-skal-avgjøres cnjsub IF
+        (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
+        (-2 cm)
+        (-1 %men%)
+        (1 expl)
+        (NEGATE *3 cm OR %og% LINK *1 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
+        ;
+
+"<hvor>" SELECT:cm-og-hvor-de-kan-spille-en-rolle cnjsub IF
+        (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
+        (-2 cm)
+        (-1 %og%) # «men/eller» ofte brukt negativt: «Vi ønsker ikke å si noe om hvem som var om bord, eller hvor<adv> de kom fra»
+        (1C det OR prn OR np OR n)
+        (NEGATE *3 cm OR %og% LINK *1 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
+        ;
+# «Jeg håper vi kan bygge en ny verdensorden som respekterer folkeretten, og hvor FN kan spille en fredsbevarende rolle.»
+
 # If it's really a cnjsub, it's typically handled by earlier rules:
 # (though by nno-frequency we also select cnjsub for this word as the end-of-file default)
 "<hvor>" SELECT:hvor-pene-de-er adv IF
