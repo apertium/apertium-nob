@@ -8284,12 +8284,14 @@ SELECT:forlot-nesten-alle-landet n IF
 SELECT:Å-støtte inf IF
         (-1 infmerke)
         (NOT 1 inf)
+        (NEGATE 0 adv LINK 1 ukjent)
         ;
 
 SELECT:Å-ikke-støtte inf IF
         (-2 infmerke)
         (-1C adv)
         (NOT 1 inf)
+        (NEGATE 0 adv LINK 2 ukjent)
         ;
 
 ##############################################################
@@ -24840,10 +24842,10 @@ REMOVE:med-andre-banker-mot vblex IF
 
 #:1831
 REMOVE:mange-timer-kan vblex IF
+        (NEGATE -1 prn + pers LINK -1 n + def) # «pengegavene de får skal»
 	(0 fv)
 	(1C pres/pret)
 	(NOT *-1 %som% BARRIER setn-gr)
-        (NEGATE -1C prn + pers LINK -1 n + def) # «pengegavene de får skal»
 ;
 #  "mange timer (ikke verb) kan ..."))
 
