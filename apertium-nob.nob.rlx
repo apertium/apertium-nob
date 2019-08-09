@@ -568,7 +568,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
-LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" ;
+LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -8428,6 +8428,7 @@ SELECT:gir-ønsket-utfall pp + nt IF
 SELECT:tusenvis-er-isolert pp + pl IF
         (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
+        (NEGATE 1C n + ind)
         ;
 
 SELECT:et-aspekt-som-er-blitt-diskutert pp + nt
