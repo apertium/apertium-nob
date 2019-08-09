@@ -2880,6 +2880,20 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #  "Dette er en kvinne hvis bedrifter vil huskes"
 #      :group 2
 
+SELECT:lurer-på-hvor adv IF
+        (  (-1 ("lure på"))
+        OR (-1 ("på") LINK -1 ("lure")))
+        (0 spørreadv OR %når%)
+        ;
+
+"<hvor>" SELECT:situasjon-hvor cnjsub IF
+        (-1 ("situasjon"))
+        ;
+
+"<hvor>" SELECT:hvor-nærme adv IF
+        (1 ("<nærme>"))
+        ;
+
 "<hvor>" SELECT:men-hvor-det-bare-skal-avgjøres cnjsub IF
         (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
         (-2 cm)
