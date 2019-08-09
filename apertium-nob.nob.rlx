@@ -8428,6 +8428,7 @@ SELECT:gir-ønsket-utfall pp + nt IF
 SELECT:tusenvis-er-isolert pp + pl IF
         (*-2C talord-par-siffer BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav LINK NOT 0 talord-sg OR sanns-årstal)
         (-1C kop-fv)
+        (NEGATE 0 farlige-part)
         (NEGATE 1C n + ind)
         ;
 
@@ -9259,29 +9260,29 @@ SELECT:4089 (vblex)
 
 
 #:3022
- SELECT:3022 (adj pl) IF
+ SELECT:3022 (adj pl) - farlige-part IF
+	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> OR pr LINK -1C adj-fl LINK NOT 0 ent)
 	(NOT 0 pres/pret)
 	(1 komma)
 	(NOT 2 fl-adj/adverb)
-	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C adj-fl LINK NOT 0 ent)
 ;
 # group: 9
 
 
 
 #:3023
- SELECT:3023 (adj pl) IF
+SELECT:fine-og-gode (adj pl) - farlige-part IF
+	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> OR pr LINK -1C adj-fl LINK NOT 0 ent)
 	(NOT 0 pres/pret)
 	(NOT 1 ub-fl-subst)
 	(NOT 1 komma)
-	(*-1 ikke-adv LINK 0 konj LINK NOT 0 <adv> LINK -1C adj-fl LINK NOT 0 ent)
 ;
 # group: 9
 
 
 
 #:3024
- SELECT:3024 (adj pl) IF
+ SELECT:De-kjente-seg-litt-glade (adj pl) IF
 	(NOT 0 farlige-adj)
 	(NOT 1 subst/adj)
 	(NOT -1 det)
