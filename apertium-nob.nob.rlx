@@ -2906,7 +2906,7 @@ SELECT:lurer-på-hvor adv IF
         (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
         (-2 cm)
         (-1 %og%) # «men/eller» ofte brukt negativt: «Vi ønsker ikke å si noe om hvem som var om bord, eller hvor<adv> de kom fra»
-        (1C det OR prn OR np OR n)
+        (1C det OR prn OR np OR n OR ("<man>"))
         (NEGATE *3 cm OR %og% LINK *1 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
         ;
 # «Jeg håper vi kan bygge en ny verdensorden som respekterer folkeretten, og hvor FN kan spille en fredsbevarende rolle.»
