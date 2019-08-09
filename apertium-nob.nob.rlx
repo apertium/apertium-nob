@@ -2926,18 +2926,13 @@ SELECT:lurer-på-hvor adv IF
 # «detaljerte opplysninger om hvor du kan vente …»
 
 "<hvor>" SELECT:eller-hvor-det-skal-finne-sted adv IF
+        (NEGATE *-3 ("der") OR ("hvor") BARRIER spørreadv - cnjsub LINK 0 cnjsub)
         (-1 %og/eller% OR %men%)
         (1 pers OR np)
         (NEGATE 2 %være/bli%) # «hvor noen har opplevd vold, eller hvor det er fare for dette»
         ;
 # «det er ikke kjent hva foreldreparet er siktet for, eller hvor de er hjemmehørende»
-
-"<hvor>" SELECT:eller-hvor-det-skal-finne-sted adv IF
-        (-1 %og/eller% OR %men%)
-        (1 pers OR np)
-        (NEGATE 2 %være/bli%) # «hvor noen har opplevd vold, eller hvor det er fare for dette»
-        ;
-# «det er ikke kjent hva foreldreparet er siktet for, eller hvor de er hjemmehørende»
+# Ikkje: «SSBs definisjon av tettsted er steder hvor det bor minst 200 mennesker, og hvor det ikke er lenger avstand mellom husene enn 50 meter.»
 
 "<hvor>" SELECT:viser-bl.a.-hvor-veien-er-smalest adv IF
         (1C pers OR np OR n)
