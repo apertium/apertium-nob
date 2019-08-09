@@ -14832,7 +14832,6 @@ SELECT:disse-fine-bilene det + pl IF
 # perioder med der som sbu:
 # Helt fram til landsbyen der (sbu) familien har .."))
 
-
 #:2653
 SELECT:ingen-fv-før-setn-gr pr IF
 	(0 sbu)
@@ -27355,7 +27354,7 @@ SELECT:med-andre-kjeder-cm n + pl IF
         ;
 
 #:1732
- SELECT:1732 (vblex pres) IF
+SELECT:generell-pres (vblex pres) IF
 	(NOT 0 pret)
 	(NOT 0 farlige-verb)
 	(NOT 0 subst-gen)
@@ -27372,7 +27371,7 @@ SELECT:med-andre-kjeder-cm n + pl IF
 	(**1C setn-gr BARRIER pres/pret)
 ;
 #  "Generell regel som tar sjanser!"
-
+# «To av de største LO-forbundene og tre av de største arbeidsgiverorganisasjonene i Norge går nå sammen om å snu trenden og tette igjen handelslekkasjen, som de omtaler som «kritisk».»
 
 
 #:1729
@@ -28772,7 +28771,7 @@ SELECT:fv-etter-innskot fv IF
 # «Demokraten Beto O'Rourke, som i fjor trakk det korteste strået i et overraskende jevnt mellomvalg i den republikanske høyborgen Texas, holdt samtidig et konkurrerende velgermøte i El Paso.»
 
 SELECT:brudd-på-de-plikter n + pl IF
-        (-2 pr)
+        (-2 pr LINK NOT 0 cnjsub)
         (-1C det OR prn)
         (-1C pl)
         (-1 dem)
