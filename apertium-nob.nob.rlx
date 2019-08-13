@@ -18844,6 +18844,12 @@ SELECT:tilknyttet-de-tiltalte %de%-det IF
         (1 pl)
         ;
 
+SELECT:ble-funnet-drept pp + $$GENDER IF
+        (-1C pp + $$GENDER)
+        (-2 %være/bli%)
+        ;
+# «Det var i dette området de ble funnet drept mandag.»
+
 #:2410
  SELECT:2410 (vblex pp) IF
 	(NOT 0 farlige-part)
