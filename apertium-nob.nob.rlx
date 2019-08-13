@@ -2592,6 +2592,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 setn-gr OR rquot)
         ;
 
+"<grepet>" SELECT:feste-grepet n IF
+        (-1 ("feste"))
+        ;
+
 #:3581
   "<grunn>"   SELECT:3581   (n) IF
 	(NOT 0 %for/altfor%)
