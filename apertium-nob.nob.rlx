@@ -93,7 +93,6 @@ LIST samset = samset ;
 LIST @adv = @adv ;
 
 LIST porsjon = "mengde" "porsjon" ;
-LIST omtale-ol = "omtale" "behandle" "traktere" "bruke" ;
 LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
@@ -934,6 +933,7 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
 LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
@@ -1744,7 +1744,7 @@ REMOVE:cardinal date;
 # «Også den har fått nytt opplag,»
 
 "<den>" SELECT:omtaler-den-som ("den") + prn + acc IF
-        (-1 omtale-ol)
+        (-1 omtale-ord)
         (1 %som%)
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
@@ -2484,6 +2484,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
+
+"<funnet>" SELECT:omtaler-funnet n IF
+	(-1 omtale-ord)
+;
 
 "<før>"  REMOVE:fø-unlikely ("fø") IF
         (NOT 1 poss)               # før mine sauer
