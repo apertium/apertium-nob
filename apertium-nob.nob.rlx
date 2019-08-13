@@ -29100,6 +29100,7 @@ REMOVE:default inf + pasv IF (0 pres + pasv);
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
 REMOVE:default adv   IF (0 ("<det>"i));
+REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene blir brukt riktig, sier Mollekleiv.»
 
 
 # Corpus-based default rules:
