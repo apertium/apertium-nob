@@ -1219,6 +1219,7 @@ REMOVE:unlikely ("<var>"i "var") + n + ind ; #  bare subst i sms
 REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
 REMOVE:unlikely ("<ris>"i gen) ;
+REMOVE:unlikely ("<kvart>"i pp) ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
