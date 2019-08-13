@@ -1622,6 +1622,11 @@ REMOVE:cardinal date;
 #  "venner og bekjente"
 
 
+"<beløpet>" SELECT:ble-beløpet-økt n IF
+        (NOT 1 %seg%)
+        (NOT 2 %seg%)
+        ;
+
 
 #:3732
   "<BEST>"   SELECT:3732   (adj sup ind) IF
