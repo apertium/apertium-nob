@@ -27545,6 +27545,13 @@ SELECT:har-blitt-oppretta perf-part IF
         (0C adj OR verb)
 ;
 
+SELECT:skal-være-funnet-omkommet pp IF
+        (-2 m-hj-verb)
+        (-1 %være/bli% OR %ha%)
+        (0C n OR pp)
+        (1C pp)
+        ;
+# «Om lag 200 mennesker er savnet og flere skal være funnet omkommet etter at en demning brast»
 
 #CONSTRAINTS
 ## remove ndomain heur
