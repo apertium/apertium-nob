@@ -18860,6 +18860,7 @@ SELECT:ble-funnet-drept pp + $$GENDER IF
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
         (NEGATE 0 adv LINK 1 perf-part)
+        (NEGATE 0 n + def LINK 1 perf-part)
 ;
 #  "Nå har de i løpet av den første uka skrevet (perf-part
 # vi har hoppet (perf)
