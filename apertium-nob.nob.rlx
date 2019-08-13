@@ -750,7 +750,9 @@ LIST parentes = lpar rpar ;
 LIST parentes-beg = lpar ;
 LIST parentes-slutt = rpar ;
 LIST pass = (vblex pasv) ;
-LIST pass_tar_pp = "forsøke" "anta" "meddele" "få" "frykte" "gjøre" "dokumentere" "anse" "begjære" "søke" "holde" "vente" "vurdere" "foreslå" "kreve" ; # blir forsøkt lokket, antas forsvunnet
+LIST pasv_pp = pasv pp ;
+LIST pasvpp_tar_%som%pr = "regne" "beskrive" "skildre" "se" "se på" ;
+LIST pasvpp_tar_pp = "forsøke" "anta" "meddele" "få" "frykte" "gjøre" "dokumentere" "anse" "begjære" "søke" "holde" "vente" "vurdere" "foreslå" "kreve" "finne" "stadfeste" "bekrefte" "regne" "rekne" ; # blir forsøkt lokket, antas forsvunnet
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" ;
 LIST perf-gen = (adj pp gen) (vblex pp pasv) ;
 LIST perf-part = (vblex pp) ;
@@ -3834,6 +3836,68 @@ SELECT ("lyve") IF
 "<Redde>"   SELECT:redde-for ("redd") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
+        ;
+
+
+LIST regne_ut = ("regne" vblex) ;
+LIST regne_vann = ("regne¹" vblex) ;
+LIST regn_vann = ("regn" n) ;
+LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" ; # regnet som uteble, regnet utover mandag, regnet fra vest
+
+"<regnet>" SELECT:kommer-regnet regn_vann IF
+        (-1 ("komme") OR ("falle") OR ("hølje") OR ("se"))
+        (-1C vblex)
+        ;
+
+"<regnet>" SELECT:grovt-regnet regne_ut IF
+        (-1 ("<grovt>") OR ("<rundt>"))
+        ;
+
+"<regnet>" SELECT:var-regnet-som-utryddet regne_ut IF
+        (1 %som%)
+        (2 n + pl OR n + def OR adj OR qnt OR dem OR ukjent)
+        (2C n + pl OR n + def OR adj OR qnt OR dem OR ukjent OR vblex)
+        ;
+
+
+"<regnet>" SELECT:regnet-ikke-med regne_ut IF
+        (NEGATE 0 n LINK -1C pr) # «Finnmark holder seg unna regnet med oppholdsvær.»
+        (*1 pr BARRIER ikke-adv LINK NOT 0 pr_etter_regnvann)
+        ;
+
+"<regnet>" SELECT:regnet-lørdag-ettermiddag-med regne_ut IF
+        (NEGATE 0 n LINK -1C pr) # «Finnmark holder seg unna regnet med oppholdsvær.»
+        (1 vekedag)
+        (2 adverbialsubst)
+        (3 pr LINK NOT 0 pr_etter_regnvann)
+        ;
+
+"<regnet>" SELECT:regnet-forskerne regne_ut IF
+        (1C n + def OR ("<riktig>") OR ("<feil>"))
+        ;
+
+"<regnet>" SELECT:5.4-prosent-regnet regne_ut IF
+        (-1C ("prosent"))
+        ;
+
+"<regnet>" SELECT:regnet-det-ikke regne_ut IF
+        (1 lo#animat-pron/det OR lo#animat)
+        (NOT 1 %mye/lite/litt%)
+        (NOT 1 pr_etter_regnvann)
+        ;
+
+"<regnet>" SELECT:regnet-det-i-Seefeld regne_vann IF
+        (1 expl)
+        (2 pr_etter_regnvann)
+        ;
+
+"<regnet>" SELECT:regnet-det-ikke vblex IF
+        (1 expl)
+        ;
+
+"<regnet>" SELECT:regnet-høljet regn_vann OR regne_vann IF
+        (NOT 1 pr)      # regne med
+        (NOT 2 pr)      # regner ikke med
         ;
 
 
@@ -18854,10 +18918,12 @@ SELECT:tilknyttet-de-tiltalte %de%-det IF
         ;
 
 SELECT:ble-funnet-drept pp + $$GENDER IF
-        (-1C pp + $$GENDER)
         (-2 %være/bli%)
+        (-1 pp + $$GENDER + pasvpp_tar_pp)
+        (NOT 0 adv OR det)
         ;
 # «Det var i dette området de ble funnet drept mandag.»
+# Men ikkje: «Nettsiden har frem til den ble stengt tilbydt piratversjoner av filmer.»
 
 #:2410
  SELECT:2410 (vblex pp) IF
@@ -18962,6 +19028,13 @@ SELECT:Med-økte-inntekter adj + pl IF
 
 SELECT:byen-Lima top IF
         (-1 by-ord + def + sg)
+        ;
+
+SELECT:regnet-som-fattige pp IF
+        (0C n OR pp OR pret)
+        (1C %som%)
+        (2C adj)
+        (3C setn-gr)
         ;
 
 CONSTRAINTS
@@ -25258,9 +25331,13 @@ SELECT:noen-default <noen> + (neg) ;
 	(*-1O >>> LINK NOT *1 fv)
 	(**1CO <<< LINK *-1C fv LINK NOT *-1 fv)
 ;
-
 #I et marked med et etterspørselspotensial som markedet for havbruksprodukter er
 #må ha unntak for setninger som ", tær som sover",
+
+"<som>" SELECT:regnet-som-bremser pr IF
+        (-1 pasvpp_tar_%som%pr + pasv_pp)
+        (1 n + pl OR n + def OR adj OR det + qnt)
+        ;
 
 
 #:4058
@@ -25316,7 +25393,7 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 subst)
 	(1 nr2-det)
 	(**2 ub-ent-mask/fem-subst BARRIER ikke-adv-adj-det)
-;
+        ;
 #  "vår egen historie")
 
 #:4044
@@ -27441,12 +27518,12 @@ SELECT:generell-pres (vblex pres) IF
 
 #:24020
  SELECT:24020 (vblex pp) IF
-	(-1 pass_tar_pp LINK 0 pass)
+	(-1 pasvpp_tar_pp LINK 0 pass)
 ;
 # «ansees sonet» --KBU
 #:24021
  SELECT:24021 (vblex pp) IF
-	(-1 pass_tar_pp LINK 0 perf-part LINK -1 %være/bli% LINK 0 fv)
+	(-1 pasvpp_tar_pp LINK 0 perf-part LINK -1 %være/bli% LINK 0 fv)
 ;
 # «blir forsøkt lokket» --KBU
 
@@ -29302,7 +29379,6 @@ REMOVE:default adv   IF (0 ("<det>"i));
 "<redusert>" REMOVE:default-reduserte ("redusere" adj pp pl) ;	# keep redusere<vblex><pp>→redusert redusere<adj><pp><nt><sg><ind>→redusert
 "<reglene>" REMOVE:default-reglene ("regle" n f pl def) ;	# keep regel<n><m><pl><def>→reglane
 "<reglene>" REMOVE:default-reglene ("regle" n m pl def) ;	# keep regel<n><m><pl><def>→reglane
-"<regnet>" REMOVE:default-regnet ("regn" n nt sg def) ;	# keep regne<vblex><pret>→rekna
 "<reisene>" REMOVE:default-reisene ("reis" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
 "<reisene>" REMOVE:default-reisene ("reis" n m pl def) ;	# keep reis<n><nt><pl><def>→reisa
 "<reisene>" REMOVE:default-reisene ("reise" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
@@ -29513,6 +29589,7 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 
 
 SELECT:Ukjendord-utelukkes-ikke. fv IF
+        (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
         (0C vblex)
         (1 adv)
         ;
