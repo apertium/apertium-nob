@@ -6460,6 +6460,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "for er ikke transitivt: derfor godtar
 # regelen ikke np-er på hver side"
 
+"<for>" REMOVE:for-første-gang vblex IF
+        (1 %første% OR %siste%)
+        ;
 
 "<forteller>" REMOVE:forteller-om n IF
         (1 %om% OR %at%)
