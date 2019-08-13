@@ -4061,6 +4061,10 @@ SELECT ("lyve") IF
 
 
 
+"<Sent>" SELECT:Sent-fredag-kveld adv IF
+        (1 vekedag)
+        ;
+
 #:3318
   "<sett>"   SELECT:3318   (n nt sg ind) IF
 	(NOT 1 nom)
@@ -4668,6 +4672,11 @@ SELECT ("lyve") IF
 
 "<strøk>" SELECT:indre-strøk n IF
         (-1 adj OR ukjent + (".*e"r))
+        ;
+
+
+"<styret>" SELECT:styret-vedtatt n + ("styre") IF
+        (1 ("vedta") OR ("beslutte") OR ("avgjøre") OR ("erfare"))
         ;
 
 "<støtte>"   SELECT  subst IF
@@ -6488,7 +6497,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(NOT -1 adj-komp)
 	(NOT -1 konj)
 	(NOT -1 kop)
-;
+        ;
 #  "\"før\" adj er sjelden. Bare ved: føre karer, de er føre,
 # de er mer føre. (??)"))
 
