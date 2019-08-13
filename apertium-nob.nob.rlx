@@ -6431,9 +6431,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3608
-  "<før>"   REMOVE:3608   (adv) IF
+"<før>"   REMOVE   adv IF
         (NEGATE -1 vekedag OR månad OR adverbialsubst LINK 0 def) # onsdagen før
-	(0 adv)
 ;
 #  "referansegrammatikken ser ikke ut til å regne \"før\" som adverb,
 # bare som preposisjon og subjunksjon" – men det fører til følgefeil i
@@ -6477,6 +6476,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # bare verb ved: før opp/fram/på en gris
 # hun før mann og barn"
 
+"<før>" REMOVE:måneden-før pr OR cnjsub IF
+        (-1 vekedag OR månad OR adverbialsubst LINK 0 def) # onsdagen før
+	(0 adv)
+;
 
 
 #:3596
