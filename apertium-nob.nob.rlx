@@ -3847,9 +3847,10 @@ LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
 LIST regn_vann = ("regn" n) ;
 LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" ; # regnet som uteble, regnet utover mandag, regnet fra vest
+LIST regn-verb = "komme" "falle" "hølje" "se";
 
 "<regnet>" SELECT:kommer-regnet regn_vann IF
-        (-1 ("komme") OR ("falle") OR ("hølje") OR ("se"))
+        (-1 regn-verb)
         (-1C vblex)
         ;
 
@@ -3859,8 +3860,7 @@ LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" ; # 
 
 "<regnet>" SELECT:var-regnet-som-utryddet regne_ut IF
         (1 %som%)
-        (2 n + pl OR n + def OR adj OR qnt OR dem OR ukjent)
-        (2C n + pl OR n + def OR adj OR qnt OR dem OR ukjent OR vblex)
+        (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
 
 
