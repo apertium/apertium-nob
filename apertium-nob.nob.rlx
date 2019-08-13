@@ -1274,6 +1274,11 @@ REMOVE:cardinal date;
         (-1 %til%)
 ;
 
+"<at>" SELECT:etter-at sbu IF
+        (-1 %etter%)
+        (1 nominativ OR expl)
+;
+
 "<LES>" SELECT (vblex imp);
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
