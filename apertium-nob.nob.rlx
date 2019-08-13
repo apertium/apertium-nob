@@ -5753,6 +5753,7 @@ REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
+REMOVE:unlikely-reva ("reve") ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
