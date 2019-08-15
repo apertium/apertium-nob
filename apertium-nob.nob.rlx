@@ -3001,6 +3001,19 @@ SELECT:lurer-på-hvor adv IF
         (2 spørreadv)
         ;
 
+"<hvor>" SELECT:på-hvor-man-ligger adv IF
+        (-1 pr)
+        ;
+# «Dette har mange tatt til seg som en bekreftelse på hvor hoppsporten er på vei.»
+
+"<Hvor>" SELECT:Hvor-vi-går-vet-vi-ei adv ;
+# «Hvor denne turneringen tar oss framover, vet vi ikke.»
+
+"<hvor>" SELECT:på-hvor-man-ligger adv IF
+        (1 prn)
+        (2 ("burde"))
+        ;
+
 
 
 
