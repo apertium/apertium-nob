@@ -29646,3 +29646,17 @@ MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (1 adj)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
+
+
+# Workarounds for https://github.com/apertium/apertium/issues/37 – try
+# to remove ambiguity as much as possible when there are subreadings,
+# doesn't matter so much what we pick at this point:
+SELECT:issue37 SUB:1 np ;
+SELECT:issue37 SUB:1 n ;
+SELECT:issue37 SUB:1 sg ;
+SELECT:issue37 SUB:1 m ;
+SELECT:issue37 SUB:1 f ;
+SELECT:issue37 SUB:1 nt ;
+SELECT:issue37 SUB:1 org ;
+SELECT:issue37 SUB:1 al ;
+SELECT:issue37 SUB:1 top ;
