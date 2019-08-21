@@ -3014,6 +3014,9 @@ SELECT:lurer-på-hvor adv IF
         (2 ("burde"))
         ;
 
+"<hvor>" SELECT:ver-ikke-hvor-bilen-er adv IF
+        (-1 %ikke%)
+        ;
 
 
 
@@ -5767,6 +5770,7 @@ REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
+REMOVE:unlikely-husker ("<husker>"i) + n IF (NOT -1 det + fl) ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -25413,7 +25417,7 @@ SELECT:noen-default <noen> + (neg) ;
  "<vår>"   SELECT:4043   (det pos) IF
 	(0 subst)
 	(1 nr2-det)
-	(**2 ub-ent-mask/fem-subst BARRIER ikke-adv-adj-det)
+	(*2 ub-ent-mask/fem-subst BARRIER ikke-adv-adj-det)
         ;
 #  "vår egen historie")
 
