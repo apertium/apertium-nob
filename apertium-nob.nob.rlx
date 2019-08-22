@@ -5771,6 +5771,7 @@ REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
 REMOVE:unlikely-husker ("<husker>"i) + n IF (NOT -1 det + fl) ;
+REMOVE:unlikely-lenge ("<lenge>"i) + vblex ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
