@@ -8379,6 +8379,11 @@ SELECT:skrev vblex IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:må-gjøres inf + pasv IF
+        (-1 m-hj-verb)
+        (0C pasv)
+        ;
+
 SELECT:Så-lenge-dette-gjøres-ser-vi fv + pasv IF
         (*-1 ("så lenge") BARRIER fv OR setn-gr LINK -1 setn-gr OR guio)
         (1 fv)
