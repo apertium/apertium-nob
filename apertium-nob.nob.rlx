@@ -7770,6 +7770,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "Bare ved post mortem osv som er uttr i basen."
 
 
+"<rant>" REMOVE:rant-ut ("rane") IF
+        (1 %ut%)
+        ;
 
 #:3347
 "<redd>"   REMOVE:3347   pp IF
