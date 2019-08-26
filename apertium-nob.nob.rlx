@@ -5772,6 +5772,8 @@ REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
 REMOVE:unlikely-husker ("<husker>"i) + n IF (NOT -1 det + fl) ;
 REMOVE:unlikely-lenge ("<lenge>"i) + vblex ;
+REMOVE:unlikely-laten ("<ladd>"i "la");
+REMOVE:unlikely-lét ("<ladde>"i "la");
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -17537,11 +17539,10 @@ SELECT:I-1931-skilte-paret-seg fv + refl IF
 #  "kh 6. mai 2003: For å disamb en del verb som ikke er disamb tidligere, feks: Det er det han om ei ukes tid venter (verb) seg."))
 
 
-
 #:2491
- SELECT:2491 (vblex pres) IF
+SELECT:drikke-gjør-hun-aldri pres IF
 	(0 %gjøre%)
-	(-1 inf/pres/pret)
+	(-1 inf)
 	(-2 setn-gr)
 ;
 #  "8.10.2003: Drikke gjør hun aldri"
