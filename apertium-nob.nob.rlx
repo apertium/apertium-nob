@@ -1084,16 +1084,27 @@ SELECT:Aker-ASA np IF (1 ("ASA"));
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
 
-REMOVE:acronym-samecase ("[a-zæøå]+"r) IF
+REMOVE:acronym-samecase ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
         ;
 # If we have an all-upper wordform and a reading that's exactly the
 # same, remove lower-case readings.
 # E.g.: AU is an acronym, not adv
 
-REMOVE:acronym-samecase-gen ("[a-zæøå]+"r) IF
+REMOVE:acronym-samecase-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)s>"r "$1"v) + gen)
         ;
+
+REMOVE:acronym-samecase-cmp ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
+        (0/1 cmp)
+        (0 ("<.*-([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
+        ;
+
+REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
+        (0/1 cmp)
+        (0 ("<.*-([A-ZÆØÅ][A-ZÆØÅ]+)s>"r "$1"v) + gen)
+        ;
+# «curling-EMs B-divisjon»
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
