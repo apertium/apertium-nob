@@ -103,6 +103,7 @@ LIST månad = "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "se
 
 LIST mORf = m f ;
 
+# OBT sets converted to Apertium
 # Norsk ordbank transitivity codes:
 LIST d1 = "allokere" "anbefale" "anordne" "anvise" "avkle" "avkreve" "avlegge" "avlevere" "avlokke" "avlure" "avskjære" "avtvinge" "bake" "befale" "belære" "berøve" "beskikke" "beta" "betale" "betro" "bevilge" "bibringe" "blåse" "booke" "bringe" "by" "diktere" "erklære" "esle" "etle" "ettergi" "etterlate" "ettersende" "fakse" "forbeholde" "forby" "forebringe" "foredra" "foreholde" "forelegge" "foreskrive" "forespeile" "forevise" "forgi" "forklare" "forkynne" "forlate" "fortelle" "fortenke" "forunne" "forvolde" "forære" "frabeordre" "fradømme" "frakjenne" "fralokke" "franarre" "frarane" "frarå" "fraråde" "fraskille" "fraskrive" "frastjele" "frata" "fravriste" "gi" "gjengi" "godskrive" "handgi" "heimle" "hjemle" "hviske" "håndgi" "iberegne" "idømme" "ilegge" "iligne" "ilikne" "innberette" "innbetale" "innbille" "innbringe" "innpode" "innprente" "innvilge" "kaste" "kjøpe" "kreditere" "kviskre" "levere" "levne" "love" "lære" "låne" "meddele" "nekte" "nippe" "offerere" "ofre" "overbringe" "overlate" "overlevere" "overrekke" "oversende" "overtrekke" "poste" "presentere" "påføre" "pålegge" "påtvinge" "rekke" "selge" "sende" "servere" "si" "skaffe" "skjenke" "skrive" "skylde" "slenge" "spå" "svare" "syne" "testamentere" "tilbakebetale" "tilby" "tildele" "tildømme" "tilegne" "tilføre" "tilføye" "tilgi" "tilholde" "tilkjenne" "tilkjøre" "tilknytte" "tillate" "tillegge" "tilrå" "tilsende" "tilsette" "tilskrive" "tilstede" "tilstille" "tiltenke" "tiltro" "tiltru" "tilvise" "undergi" "underkaste" "underlegge" "underordne" "unne" "utbetale" "utlevere" "utlove" "vende" "verdige" "vie" "ville" "vise" "yte" ;
 LIST d2 = "bebreide" "betro" "forespeile" "forklare" "fortelle" "forunne" "innbille" "love" "meddele" "svare" "syne" "tilføre" "vise" ;
@@ -166,7 +167,6 @@ LIST trans-u11-upresent = tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 rl1 rl4 
 LIST trans12/til = tr12/til ;
 LIST trans2 = tr2 tr18 ;
 
-# OBT sets converted to Apertium:
 LIST -ende = ".*ende"r  ;
 LIST %aldri% = "aldri"  ;
 LIST %all% = "all"  ;
