@@ -74,6 +74,8 @@ LIST mf = mf ;
 LIST acc = acc ;
 LIST guio = guio ;
 LIST apos = apos ;
+LIST lpar = lpar ;
+LIST rpar = rpar ;
 LIST cnjsub = cnjsub ;
 LIST cnjcoo = cnjcoo ;
 LIST date = date ;
@@ -987,6 +989,12 @@ REMOVE guess;
 
 SELECT:titlecase-midsent cgguess IF
         (NOT -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
+        ;
+
+SELECT:titlecase-paren1word cgguess IF
+        (NOT -2 rquot)          # «English» (Norsk)
+        (-1 lpar)
+        (1 rpar)
         ;
 
 REMOVE:np-guess-safe cgguess IF
