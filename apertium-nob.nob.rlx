@@ -28665,8 +28665,9 @@ REMOVE:sitt-nye-verk fl-subst IF
 ;
 
 REMOVE:mine-data ent-subst IF
-        (0 fl-subst)
         (-1 poss-det + fl)
+        (NOT -1 poss-det + ent)
+        (0 fl-subst)
         (1 clb OR fl)
 ;
 
