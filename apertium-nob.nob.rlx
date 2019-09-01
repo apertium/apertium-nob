@@ -29130,7 +29130,7 @@ SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
         ;
-LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" ;
+LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" ;
 SELECT:default-sg-after-poss sg + default-sg-after-poss IF
         (-1 poss-det + sg)
         (0C subst)
