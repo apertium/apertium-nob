@@ -8536,6 +8536,7 @@ SELECT:de-var-kjent pp + pl IF
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
 	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 nominativ + prn + pl BARRIER setn-gr OR nominativ + prn + sg)
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb)
 ;
 
 SELECT:personer-som-ble-meldt-savnet pp + pl IF
@@ -18959,6 +18960,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
          BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
          LINK NOT 0 sanns-årstal
          LINK NOT -1 det + sg)
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
 
 SELECT:fisken-ble-funnet pp + mf IF
