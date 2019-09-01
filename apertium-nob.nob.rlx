@@ -8587,7 +8587,7 @@ SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 
 SELECT:ble-de-bedt-om pp + pl IF
 	(-2 %være/bli%)
-	(-1C pl)
+	(-1C pl - gen)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
@@ -29126,6 +29126,13 @@ SELECT:talord-det det + talord;
 
 SELECT:ønsket-å vblex + trans-med-inf IF
         (1 ("å"))
+        ;
+
+SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
+        (-3C n + sg OR np LINK NOT 0 pl)
+        (-2 kop-fv)
+        (-1 gen)
+        (0C adj OR n)
         ;
 
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" ;
