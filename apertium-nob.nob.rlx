@@ -29125,7 +29125,7 @@ SELECT:ønsket-å vblex + trans-med-inf IF
         (1 ("å"))
         ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" ;
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
@@ -29135,6 +29135,14 @@ SELECT:default-sg-after-poss sg + default-sg-after-poss IF
         (-1 poss-det + sg)
         (0C subst)
         ;
+# As a fallback, several owners often own own several things, one owns one:
+SELECT:det-pos-fallback ("deres¹") + pl;
+SELECT:det-pos-fallback ("deres²") + pl;
+SELECT:det-pos-fallback ("hans") + sg;
+SELECT:det-pos-fallback ("hens") + sg;
+SELECT:det-pos-fallback ("hennes") + sg;
+SELECT:det-pos-fallback ("dens") + sg;
+SELECT:det-pos-fallback ("dets") + sg;
 
 
 # If still ambiguous, go by frequency.
