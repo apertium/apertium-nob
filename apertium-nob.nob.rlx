@@ -25732,7 +25732,7 @@ SELECT:noen-default <noen> + (neg) ;
 
 
 "<leder>" REMOVE:Paulsen-cm-leder-i pres IF
-        (-2 np)
+        (-2 np OR storbokstav)
         (-1 cm)
         (1 %i%)
         ;
