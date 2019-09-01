@@ -5184,6 +5184,7 @@ REMOVE:støtte ("støte") IF
 	(NOT 1 %av%)
 	(NOT 1 apos)
 	(NOT 1 pres/pret)
+        (NEGATE 1 nominativ LINK 1 pres/pret) # , så den vil
 ;
 
 
