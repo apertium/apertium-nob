@@ -25714,6 +25714,12 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 
 
+"<leder>" REMOVE:Paulsen-cm-leder-i pres IF
+        (-2 np)
+        (-1 cm)
+        (1 %i%)
+        ;
+
 #:3483
   "<lei>"   REMOVE:3483   (n) IF
 	(0 adj)
