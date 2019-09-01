@@ -5730,7 +5730,10 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
-REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp); # e.g. «førte_til brannar» – are there exceptions?
+REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp)
+        (NEGATE 0 ("be# om") LINK *-1 ("bli"))
+;
+# «førte_til brannar»
 
 REMOVE:ikum-ika (".*kum"r) IF (0 ("<.*ika>"r ".*ika"r));
 
@@ -8569,6 +8572,13 @@ SELECT:han-var-sykmeldt pp + mf IF
 SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 	(-2 %være/bli%)
 	(-1 %det%)
+        (NOT 0 adv OR farlige-part)
+        (0C vblex OR adj + pp)
+        ;
+
+SELECT:ble-de-bedt-om pp + pl IF
+	(-2 %være/bli%)
+	(-1C pl)
         (NOT 0 adv OR farlige-part)
         (0C vblex OR adj + pp)
         ;
