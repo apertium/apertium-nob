@@ -29561,6 +29561,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<skjell>" REMOVE:default-skjel ("skjell" n nt sg ind) ;	# keep skjell<n><nt><sp>→skil
 "<skjerpet>" REMOVE:default-skjerpte ("skjerpe" vblex pret) ;	# keep skjerpe<vblex><pp>→skjerpt
 "<skoler>" REMOVE:default-skuler ("skole" vblex pres) ;	# keep skole<n><m><pl><ind>→skular
+"<skoles>" REMOVE:default-skules ("skole" vblex pasv) ;
 "<skrev>" REMOVE:default-skrev ("skreve" vblex imp) ;	# keep skrive<vblex><pret>→skreiv
 "<skrevet>" REMOVE:default-skriven ("skrive" adj pp mf sg ind) ;	# keep skrive<vblex><pp>→skrive skrive<adj><pp><nt><sg><ind>→skrive
 "<skriver>" REMOVE:default-skrivar ("skriver" n m sg ind) ;	# keep skrive<vblex><pres>→skriv
