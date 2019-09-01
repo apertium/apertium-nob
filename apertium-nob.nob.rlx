@@ -6456,6 +6456,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "Bare ved: det folket seg"
 
 
+"<forbundet>" REMOVE:kostnadene-forbundet-med n IF
+        (-1 n)
+        (1 %med%)
+        ;
 
 #:3627
   "<for>"   REMOVE:3627   (adv) IF
