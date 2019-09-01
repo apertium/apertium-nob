@@ -5799,6 +5799,7 @@ REMOVE:unlikely ("<kjent>"i) + adv; # when does this happen?
 REMOVE:unlikely ("<profil>"i) + nt;
 REMOVE:unlikely ("<tallet>"i) + adj ;
 REMOVE:unlikely ("<tallet>"i) + vblex;
+REMOVE:unlikely ("<tallene>"i "talle");
 REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
