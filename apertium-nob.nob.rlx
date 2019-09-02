@@ -6103,6 +6103,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 # her godtas bare en naken bak - et varmt bak (bakdel/oppvarming)"))
 
 
+"<ballet>" REMOVE pp IF
+        (-1 ("åpne") OR ("starte") OR ("avslutte"))
+        ;
+
 
 #:3734
   "<bare>"   REMOVE:3734   (cnjsub) IF
