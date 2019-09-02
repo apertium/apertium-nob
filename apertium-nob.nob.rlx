@@ -3192,6 +3192,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 	(-1 %ha%)
 ;
 
+"<landet>" SELECT:over-hele-landet n IF
+        (-1 ("hele"))
+        ;
+
 "<landet>" SELECT:landet-over. n IF
         (1 ("over"))
         (2 clb)
