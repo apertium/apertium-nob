@@ -5811,6 +5811,7 @@ REMOVE:unlikely-husker ("<husker>"i) + n IF (NOT -1 det + fl) ;
 REMOVE:unlikely-lenge ("<lenge>"i) + vblex ;
 REMOVE:unlikely-laten ("<ladd>"i "la");
 REMOVE:unlikely-lét ("<ladde>"i "la");
+REMOVE:unlikely-verven ("<verv>"i) + m;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
