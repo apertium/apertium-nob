@@ -18971,6 +18971,14 @@ SELECT:2335 (vblex) IF
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
+SELECT:Baglerne-kontrollerte-området-han-ble-født-i adj + pp + &&ADJ_N_AGR IF
+	(NOT 0 farlige-part)
+	(-1 %være/bli% LINK -1 nominativ + &&ADJ_N_AGR LINK 0C &&ADJ_N_AGR LINK -1C n + def LINK *-1 fv)
+;
+# «Baglerne kontrollerte området han ble født i,»
+# Pick subj of relative sent without «som», overrides main subj-rule
+# (Oppskriften-ble-presentert)
+
 SELECT:Oppskriften-ble-presentert adj + pp + &&ADJ_N_AGR IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
