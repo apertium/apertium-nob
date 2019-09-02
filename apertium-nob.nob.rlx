@@ -8443,6 +8443,22 @@ SELECT:skrev vblex IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:det-tredje-norske-valg n + &&ADJ_N_AGR IF
+        (-3C dem + &&ADJ_N_AGR)
+        (-2C ord)
+        (-1C adj)
+        (-1 def OR pl)
+        (0C n)
+        ;
+
+SELECT:til-den-nye-måleren dem + $$GENDER IF
+        (-1C pr)
+        (1C adj OR vblex)
+        (1 def OR pl)
+        (2C n + def + $$GENDER)
+        (3 fv OR periode-slutt)
+        ;
+
 SELECT:må-gjøres inf + pasv IF
         (-1 m-hj-verb)
         (0C pasv)
