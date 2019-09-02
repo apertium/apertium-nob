@@ -12,6 +12,14 @@ LIST NUMBER = sg pl sp ;
 LIST DEFNES = def ind ;
 LIST TEMPUS = inf pres pasv pret pp imp ;
 
+# For use with http://beta.visl.sdu.dk/cg3/single/#set-unification-set
+# as &&ADJ_N_AGR:
+LIST AGR_MF = f mf m ;
+SET AGR_MF_SG = (sg) + AGR_MF ;
+SET AGR_NT_SG = (nt) + (sg) ;
+LIST AGR_PL = pl ;
+SET ADJ_N_AGR = AGR_MF_SG OR AGR_NT_SG OR AGR_PL ;
+
 LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
 LIST <<< = <<< ;
@@ -18958,6 +18966,21 @@ SELECT:2335 (vblex) IF
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
+SELECT:Oppskriften-ble-presentert adj + pp + &&ADJ_N_AGR IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr
+         LINK *-1C nom + &&ADJ_N_AGR + def
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         LINK NOT 0 sanns-årstal OR gen
+         LINK -1 setn-start-med-strek/anf)
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
+;
+# Prefer subject:
+# «Oppskriften på hvordan de norske klimamålene skal nås ble presentert onsdag, etter å ha vært utsatt flere ganger som følge av rødgrønn uenighet.»
+
 SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -18968,7 +18991,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
          BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
          LINK NOT 0 sanns-årstal
          LINK NOT -1 det + sg)
-        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
 
 SELECT:fisken-ble-funnet pp + mf IF
