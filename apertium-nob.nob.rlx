@@ -7176,6 +7176,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "Tar sjansen på at det er svært lite sannsynlig
 # at det er snakk om en torskefisk"
 
+"<lave>" REMOVE:unlikely pp;
 
 #:5028
  "<le>"   REMOVE:5028   (adj) IF
