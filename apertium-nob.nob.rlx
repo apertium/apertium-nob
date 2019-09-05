@@ -4998,7 +4998,7 @@ REMOVE:støtte ("støte") IF
 
 
 #:3228
-  "<så>"   SELECT:3228   (adv) IF
+"<så>"   SELECT:å-være-så-stor adv IF
 	(1C adj)
 	(-1C inf)
 ;
@@ -5007,25 +5007,25 @@ REMOVE:støtte ("støte") IF
 
 
 #:3229
-  "<så>"   SELECT:3229   (adv) IF
-	(1C adj)
+"<så>"   SELECT:er-så-stor adv IF
 	(-1C fv)
+	(1C adj)
 ;
 #  "er så stor"
 
 
 
 #:3230
-  "<så>"   SELECT:3230   (adv) IF
-	(1 adj)
+"<så>"   SELECT:svært-så-offisiell adv IF
 	(-1 adverb)
+	(1 adj)
 ;
 #  "svært så offisiell"
 
 
 
 #:3231
-  "<så>"   SELECT:3231   (adv) IF
+"<så>"   SELECT:så-og-si adv IF
 	(1 %og%)
 	(2 %si%-inf)
 ;
@@ -5034,7 +5034,7 @@ REMOVE:støtte ("støte") IF
 
 
 #:3232
-  "<så>"   SELECT:3232   (adv) IF
+"<så>"   SELECT:så-å-si adv IF
 	(1 infmerke)
 	(2 %si%-inf)
 ;
@@ -5042,9 +5042,17 @@ REMOVE:støtte ("støte") IF
 
 
 
+"<så>" SELECT:Det-så-lenge-ut pret IF
+        (NEGATE *-1 ("se"))
+        (1 adv)
+        (2 %ut%)
+        (3 %til% OR %som%)
+        ;
+
 #:3233
-  "<så>"   SELECT:3233   (adv) IF
+"<så>"   SELECT:så-lenge-han-er-her   adv IF
 	(1 %lenge%)
+        (*1 fv)
 ;
 #  "så lenge han er her
 # 4.2"
@@ -25839,6 +25847,7 @@ SELECT:noen-default <noen> + (neg) ;
   "<straks>"   REMOVE:5006   (adj gen) IF
 	(0 adv)
 ;
+
 
 
 "<så>"   REMOVE:så pret IF
