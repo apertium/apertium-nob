@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <analysis-chars>
 <!-- Make apostrophe variants equal ' -->
-  <char value="'">
+  <char value="’">
     <equiv-char value="&#x2019;"/>
     <equiv-char value="&#x2BC;"/>
     <equiv-char value="&#8217;"/>
