@@ -5833,6 +5833,7 @@ REMOVE:unlikely-laten ("<ladd>"i "la");
 REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
+REMOVE:unlikely-laut ("<lytte>"i "lyte");
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
