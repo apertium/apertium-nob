@@ -5832,6 +5832,7 @@ REMOVE:unlikely-lenge ("<lenge>"i) + vblex ;
 REMOVE:unlikely-laten ("<ladd>"i "la");
 REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
+REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -25841,6 +25842,13 @@ SELECT:noen-default <noen> + (neg) ;
 	(0 subst/adj)
 ;
 
+"<lysten>" REMOVE n IF
+        (1 %på%)
+        ;
+
+"<lysten>" REMOVE adj IF
+        (NOT 1 %på%)
+        ;
 
 
 #5006
