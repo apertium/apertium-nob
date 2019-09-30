@@ -3919,7 +3919,7 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-1 ("<grovt>") OR ("<rundt>"))
         ;
 
-"<regnet>" SELECT:var-regnet-som-utryddet regne_ut IF
+"<regnet>" SELECT:arten-var-regnet-som-utryddet regne_ut IF
         (1 %som%)
         (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
