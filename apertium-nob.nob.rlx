@@ -5835,6 +5835,7 @@ REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
+REMOVE:unlikely n        IF (0 ("<i>"i));
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -29272,7 +29273,6 @@ SELECT:default ("hånd")    IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
 SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
-SELECT:default prep        IF (0 ("<i>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
 SELECT:default ("tørre")   IF (0 ("<turt>"i));
