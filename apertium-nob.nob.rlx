@@ -29212,6 +29212,7 @@ SELECT:cm-fastholdt-han fv IF
         (1 nominativ)
         (2 <<<)
         ;
+# Sånn var det, fastholdt han.
 
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
