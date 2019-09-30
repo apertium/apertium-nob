@@ -5836,8 +5836,23 @@ REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
 REMOVE:unlikely n        IF (0 ("<i>"i));
+REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
+REMOVE:unlikely-næringslivstopparen ("stopper") IF
+        (0 ("topp"))
+        (0/* cmp)
+        ;
+REMOVE:unlikely-næringslivstoppane ("stopp") IF
+        (0 ("topp"))
+        (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
+        (0/* cmp)
+        ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
+
+LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" ;
+REMOVE:unlikely-actio n + sg + unlikely-actio IF
+        (0 n + pl)
+        (NOT -1 det + sg) ;
 
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
@@ -29802,6 +29817,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 
+"<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
