@@ -29840,8 +29840,7 @@ SELECT:Ukjendord-utelukkes-ikke. fv IF
 MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (1C n + ind LINK NOT 0 gen)
-        (NOT 2 ("i"))
+        (*1C n + ind BARRIER ikke-adj LINK NOT 0 gen LINK NOT 1 ("i"))
 ;
 
 MAP:barn-og-unges (@nkon) %og/eller% IF
