@@ -502,7 +502,8 @@ LIST adverb = adv <adv> (adj nt ind) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp = adv <adv> (adj nt ind) (adj comp) ("nær"  sup def) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup = adv <adv> (adj nt ind) (adj comp) (adj sup ind) ("noen"  det nt) ;
 LIST adverb/komp/ub-sup/pres-part = adv <adv> (adj nt ind) (adj comp) (adj sup ind) (adj pprs) ;
-LIST adverbialsubst = "april" "august" "centiliter" "centimeter" "dag" <dato> "dekaliter" "dekameter" "desember" "desiliter" "desimeter" "døgn" "ellevedel" "ellevtedel" "ettermiddag" "februar" "femdel" "femtedel" "finaleomgang" "firedel" "fjerdedel" "fjorår" "formiddag" "fredag" "gang" "gårsdag" "halvmeter" "halvmil" "halvår" "hektoliter" "helg" "helgedag" "helligdag" "hundredel" "hundredelssekund" "hverdag" "høst" "januar" "jord" "jul" "juli" "juni" "kilometer" "kilopondmeter" "klokke" "km" "kubikkcentimeter" "kubikkdesimeter" "kubikkmeter" "kubikkmillimeter" "kvadratcentimeter" "kvadratdesimeter" "kvadratkilometer" "kvadratmeter" "kvadratmillimeter" "kvarter" "kvartmil" "kveld" "laupemeter" "liter" ("liv" sg def) "løpemeter" "lørdag" "m." "mai" "mandag" "mars" "meter" "mikrometer" "mil" "milliliter" "millimeter" "millisekund" "minutt" "morgen" "mål" "måned" "nanometer" "nanosekund" "natt" "nidel" "niendedel" "noengang" "november" "oktober" "omgang" "onsdag" "passasjerkilometer" "periode" "pinse" "poeng" "prosent" "påske" "rutemeter" "seksdel" "sekund" "sekundmeter" "september" "sjettedel" "sjudel" "sjuendedel" "sjømil" "skritt" "sommer" "spaltemillimeter" "sted" "steg" "stund" "stykke" "syvdel" "syvendedel" "søndag" "tid" "tidel" "tidelssekund" "tiendedel" "tiendelssekund" "time" "tirsdag" "tiår" "tjuedel" "tjuendedel" "tolvdel" "tolvtedel" "tonnkilometer" "torsdag" "tredel" "tredjedel" "tyvedel" "tyvendedel" "uke" "vei" "vinter" ("vår" n) "øyeblikk" "år" "åttedel" "åttendedel"  ;LIST advtype-konj = (cnjcoo <adv>) ;
+LIST adverbialsubst = "april" "august" "centiliter" "centimeter" "dag" <dato> "dekaliter" "dekameter" "desember" "desiliter" "desimeter" "døgn" "ellevedel" "ellevtedel" "ettermiddag" "februar" "femdel" "femtedel" "finaleomgang" "firedel" "fjerdedel" "fjorår" "formiddag" "fredag" "gang" "gårsdag" "halvmeter" "halvmil" "halvår" "hektoliter" "helg" "helgedag" "helligdag" "hundredel" "hundredelssekund" "hverdag" "høst" "januar" "jord" "jul" "juli" "juni" "kilometer" "kilopondmeter" "klokke" "km" "kubikkcentimeter" "kubikkdesimeter" "kubikkmeter" "kubikkmillimeter" "kvadratcentimeter" "kvadratdesimeter" "kvadratkilometer" "kvadratmeter" "kvadratmillimeter" "kvarter" "kvartmil" "kveld" "laupemeter" "liter" ("liv" sg def) "løpemeter" "lørdag" "m." "mai" "mandag" "mars" "meter" "mikrometer" "mil" "milliliter" "millimeter" "millisekund" "minutt" "morgen" "mål" "måned" "nanometer" "nanosekund" "natt" "nidel" "niendedel" "noengang" "november" "oktober" "omgang" "onsdag" "passasjerkilometer" "periode" "pinse" "poeng" "prosent" "påske" "rutemeter" "seksdel" "sekund" "sekundmeter" "september" "sjettedel" "sjudel" "sjuendedel" "sjømil" "skritt" "sommer" "spaltemillimeter" "sted" "steg" "stund" "stykke" "syvdel" "syvendedel" "søndag" "tid" "tidel" "tidelssekund" "tiendedel" "tiendelssekund" "time" "tirsdag" "tiår" "tjuedel" "tjuendedel" "tolvdel" "tolvtedel" "tonnkilometer" "torsdag" "tredel" "tredjedel" "tyvedel" "tyvendedel" "uke" "vei" "vinter" ("vår" n) "øyeblikk" "år" "åttedel" "åttendedel"  ;
+LIST advtype-konj = (cnjcoo <adv>) ;
 LIST agens-p = "av"  ;
 LIST alt = "siden"  adj adv vblex pr prn cnjsub "for å" "å" n np ij det cnjcoo lquot rquot cm <ellipse> <kolon> lpar rpar <semi> guio ;
 LIST anf = lquot rquot ;
@@ -3918,7 +3919,7 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-1 ("<grovt>") OR ("<rundt>"))
         ;
 
-"<regnet>" SELECT:var-regnet-som-utryddet regne_ut IF
+"<regnet>" SELECT:arten-var-regnet-som-utryddet regne_ut IF
         (1 %som%)
         (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
@@ -5834,8 +5835,24 @@ REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
+REMOVE:unlikely n        IF (0 ("<i>"i));
+REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
+REMOVE:unlikely-næringslivstopparen ("stopper") IF
+        (0 ("topp"))
+        (0/* cmp)
+        ;
+REMOVE:unlikely-næringslivstoppane ("stopp") IF
+        (0 ("topp"))
+        (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
+        (0/* cmp)
+        ;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
+
+LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" ;
+REMOVE:unlikely-actio n + sg + unlikely-actio IF
+        (0 n + pl)
+        (NOT -1 det + sg) ;
 
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
@@ -29210,6 +29227,7 @@ SELECT:cm-fastholdt-han fv IF
         (1 nominativ)
         (2 <<<)
         ;
+# Sånn var det, fastholdt han.
 
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
@@ -29271,7 +29289,6 @@ SELECT:default ("hånd")    IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
 SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
-SELECT:default prep        IF (0 ("<i>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
 SELECT:default ("tørre")   IF (0 ("<turt>"i));
@@ -29800,6 +29817,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 
+"<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
