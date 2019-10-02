@@ -28856,6 +28856,7 @@ REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0 ent-subst)
         (NOT -1 pos + pl OR gen)
         (**-1C ent - gen LINK -1 >>>)
+        (*-1 hj-verb)
         ;
 
 REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
@@ -28863,6 +28864,7 @@ REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0 ent-subst)
         (NOT -1 pos + pl)
         (**-1C ent LINK -1 guio LINK -1 >>>)
+        (*-1 hj-verb)
         ;
 
 REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
