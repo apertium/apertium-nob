@@ -29251,6 +29251,14 @@ SELECT:ønsket-å vblex + trans-med-inf IF
         (1 ("å"))
         ;
 
+SELECT:nasjonens-ledere-og-unge-folk pl IF
+        (-4 gen)
+        (-3C n + pl)
+        (-2 %og/eller%)
+        (-1 adj + pl)
+        (0C n)
+        ;
+
 SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (-3C n + sg OR np LINK NOT 0 pl)
         (-2 kop-fv)
