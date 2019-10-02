@@ -29267,12 +29267,20 @@ SELECT:ønsket-å vblex + trans-med-inf IF
         (1 ("å"))
         ;
 
-SELECT:nasjonens-ledere-og-unge-folk pl IF
+SELECT:nasjonens-ledere-og-unge-folk $$NUMBER IF
         (-4 gen)
-        (-3C n + pl)
+        (-3C n + $$NUMBER)
         (-2 %og/eller%)
-        (-1 adj + pl)
+        (-1 adj + $$NUMBER)
         (0C n)
+        ;
+
+SELECT:Historiker-og-medlem-av $$NUMBER IF
+        (-3 >>>)
+        (-2C n + $$NUMBER)
+        (-1 %og/eller%)
+        (0C n)
+        (*1 cm BARRIER fv)
         ;
 
 SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
