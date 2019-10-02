@@ -252,6 +252,7 @@ LIST %for/før/når% = "når"  "før"  "for"  ;
 LIST %forrige/neste/samme/siste/første% = "neste"  "forrige" "samme" ("sist" pl) ("sist" def) "første"  ;
 LIST %fra% = "fra"  ;
 LIST %fra/for/ut% = "ut"  "fra"  "for"  ;
+LIST %fram% = ("fram"  pr) ("frem"  pr) ;
 LIST %fram/inn/opp% = ("fram"  pr) ("frem"  pr) ("inn"  pr) ("opp"  pr) ;
 LIST %fram/opp/på% = ("på" ) ("fram"  pr) ("frem"  pr) ("opp"  pr) ;
 LIST %full%  = ("full"  adj nt ind sg) ;
@@ -1136,6 +1137,7 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
@@ -1263,6 +1265,8 @@ REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
 REMOVE:unlikely ("<ris>"i gen) ;
 REMOVE:unlikely ("<kvart>"i pp) ;
+REMOVE:unlikely ("<fører>"i "føre") + n ;
+REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -2607,6 +2611,15 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(*-1 m-hj-verb BARRIER inf)
 ;
 #  "det kan føre til at ..."
+
+"<fører>" SELECT:fører-til vblex IF
+	(1 %til% OR %fram% OR ("sak"))
+        ;
+
+"<fører>" SELECT:fører-en-sak vblex IF
+	(1 det)
+	(2 ("sak"))
+        ;
 
 
 #:3594
@@ -5825,6 +5838,7 @@ REMOVE:unlikely ("<tallet>"i) + adj ;
 REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely ("<tallene>"i "talle");
 REMOVE:unlikely ("gifte") + n + pl;
+REMOVE:unlikely ("<lærer>") + pl;
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
