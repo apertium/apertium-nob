@@ -29266,7 +29266,7 @@ SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (0C adj OR n)
         ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" "sko" ;
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
