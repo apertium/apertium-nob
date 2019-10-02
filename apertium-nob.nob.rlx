@@ -29864,18 +29864,26 @@ MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
         (NOT -3 ("mellom")) # «differansen mellom [hjemlandets ytelser] og [norske ytelser]»
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (*1C n + ind BARRIER ikke-adj OR ("mange") LINK NOT 0 gen LINK NOT 1 ("i") OR %og%)
+        (*1C n + ind BARRIER ikke-adj OR ("mange") LINK NOT 0 gen LINK NOT 1 ("i") OR %og% OR ("på"))
 ;
 # «guttens far og kjære søsken», men ikkje: «guttens far og flere søsken»
-# Ikkje: sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk
+# Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
+# Ikkje: «Nattens snøfall<n>  og  milde<adj> temperaturer<n> på morgenen»
+
 
 MAP:mellom-statens-inntekter-og-utgifter (@nkon) %og/eller% IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (1C n + ind  LINK NOT 0 gen LINK NOT 1 ("i") OR %og%)
+        (1C n + ind  LINK NOT 0 gen LINK NOT 1 ("i") OR %og% OR ("på"))
 ;
 # tillat «mellom» viss andre substantiv kjem rett etter, då er det tryggare å rekna med genitiven styrer heile [n og n]
-# Ikkje: sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk
+# Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
+
+MAP:pasientens-helse-og-omsorgstjeneste (@nkon) %og/eller% IF
+        (-2 gen OR pos)
+        (-1C n + ind LINK NOT 0 gen LINK 0 ("<.*->"r))
+        (1C n + ind  LINK NOT 0 gen)
+;
 
 MAP:barn-og-unges (@nkon) %og/eller% IF
         (-1 ("<barn>"i))
