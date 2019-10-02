@@ -5863,7 +5863,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" ;
+LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" ;
 REMOVE:unlikely-actio n + sg + unlikely-actio IF
         (0 n + pl)
         (NOT -1 det + sg) ;
@@ -29313,6 +29313,7 @@ SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
+SELECT:default ("passasjer") IF (0 ("<passasjer>"i));
 SELECT:default ("tørre")   IF (0 ("<turt>"i));
 SELECT:default ("anklage") IF (0 ("<anklager>"i));
 SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
@@ -29602,7 +29603,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<mark>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
 "<Mark>" REMOVE:default-Marker ("mark" n m pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
 "<materiale>" REMOVE:default-material ("materiale" n nt sg ind) ;	# keep material<adj><pst><un><pl><ind>→materiale material<adj><pst><un><sp><def>→materiale
-"<medlem>" REMOVE:default-medlem ("medlem" n nt sg ind) ;	# keep medlem<n><nt><pl><ind>→medlemmer
+"<medlem>" REMOVE:default-medlem ("medlem" n nt pl ind) ;	# keep medlem<n><nt><sg><ind>→medlem
 "<meldt>" REMOVE:default-meld ("melde" adj pp mf sg ind) ;	# keep melde<vblex><pp>→meldt melde<adj><pp><nt><sg><ind>→meldt
 "<merker>" REMOVE:default-marker ("mark" n f pl ind) ;	# keep merke<n><nt><pl><ind>→merke
 "<merker>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep merke<n><nt><pl><ind>→merke
