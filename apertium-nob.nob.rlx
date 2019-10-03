@@ -27764,6 +27764,7 @@ SELECT:generell-pres (vblex pres) IF
 	(NOT -1 inf)
 	(**-1C setn-gr BARRIER pres/pret)
 	(**1C setn-gr BARRIER pres/pret)
+        (NEGATE 0 $$NUMBER LINK -1 adj + $$NUMBER) # «Lignende avtaler med Litauen og Bulgaria er under arbeid.»
 ;
 #  "Generell regel som tar sjanser!"
 # «To av de største LO-forbundene og tre av de største arbeidsgiverorganisasjonene i Norge går nå sammen om å snu trenden og tette igjen handelslekkasjen, som de omtaler som «kritisk».»
