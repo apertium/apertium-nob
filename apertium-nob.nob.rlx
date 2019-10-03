@@ -29935,13 +29935,18 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 
 
 
+#### @nkon: simple noun-noun conjunctions under genitive
 
-# @nkon: simple noun-noun conjunctions under genitive
+# If the right-hand noun of a conjunction is immediately followed by a non-clb "og", we don't dare chunk it
+# (might be part of a triple conjunction)
+SET simple-nkon-border-right = ("i") OR ("på") OR ("og") - (clb) ;
+
 MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
         (NOT -3 ("mellom")) # «differansen mellom [hjemlandets ytelser] og [norske ytelser]»
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (*1C n + ind BARRIER ikke-adj OR ("mange") LINK NOT 0 gen LINK NOT 1 ("i") OR %og% OR ("på"))
+        (NOT 0 clb)
+        (*1C n + ind BARRIER ikke-adj OR ("mange") LINK NOT 0 gen LINK NOT 1 simple-nkon-border-right)
 ;
 # «guttens far og kjære søsken», men ikkje: «guttens far og flere søsken»
 # Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
@@ -29951,42 +29956,58 @@ MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
 MAP:mellom-statens-inntekter-og-utgifter (@nkon) %og/eller% IF
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (1C n + ind  LINK NOT 0 gen LINK NOT 1 ("i") OR %og% OR ("på"))
+        (NOT 0 clb)
+        ( 1C n + ind LINK NOT 0 gen LINK NOT 1 simple-nkon-border-right)
 ;
 # tillat «mellom» viss andre substantiv kjem rett etter, då er det tryggare å rekna med genitiven styrer heile [n og n]
 # Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
+# TODO, ikkje: «forholdet mellom foreldrenes utdannelse og barnedødelighet.»
+
 
 MAP:pasientens-helse-og-omsorgstjeneste (@nkon) %og/eller% IF
         (-2 gen OR pos)
-        (-1C n + ind LINK NOT 0 gen LINK 0 ("<.*->"r))
-        (1C n + ind  LINK NOT 0 gen)
+        (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (NOT 0 clb)
+        ( 1C n + ind             LINK NOT 0 gen) # allow på/i/og here – the split-cmp dash makes it safer
 ;
 
+# TODO: «Kåringen av årets kino var basert på kinoenes innsats og resultater på Den store kinodagen»
+# and «de ber ham redegjøre for deres ansvar og strategi på området.»
+# do not hit due to following «på» – should we allow «på» if same $$NUMBER + ind on the nouns?
+# Would avoid «Nattens snøfall<sg> og milde temperaturer<pl> på morgenen»
+
 MAP:barn-og-unges (@nkon) %og/eller% IF
-        (-1 ("<barn>"i))
-        (1 ("<unges>"i))
+        (-1 ("<barn>"))
+        (1 ("unge") OR ("ung"))
         ;
 MAP:menn-og-kvinners (@nkon) %og/eller% IF
-        (-1 ("<menn>"i))
-        (1 ("<kvinners>"i))
+        (-1 ("mann") + pl LINK NOT 0 gen)
+        (1 ("kvinne") + pl)
         ;
 MAP:kvinner-og-menns (@nkon) %og/eller% IF
-        (-1 ("<kvinner>"i))
-        (1 ("<menns>"i))
+        (-1 ("kvinne") + pl LINK NOT 0 gen)
+        (1 ("mann") + pl)
+        ;
+MAP:helse-og-velferd (@nkon) %og/eller% IF
+        (-1 ("helse") + pl LINK NOT 0 gen)
+        (1 ("velferd") + pl)
         ;
 
 MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
         (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (NOT 0 clb)
         (1C n + gen)
 ;
 
 MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+        (NOT 0 clb)
         (1C n + gen LINK 0 $$NUMBER + $$DEFNES)
 ;
 
 MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + def)
+        (NOT 0 clb)
         (1 dem)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER) # allow single-defnes
 ;
@@ -29994,6 +30015,7 @@ MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
 MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER) # ind or def both fine here
         (1 adj)
+        (NOT 0 clb)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
 
