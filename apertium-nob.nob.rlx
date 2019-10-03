@@ -5850,6 +5850,9 @@ REMOVE:unlikely ("<tallene>"i "talle");
 REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely ("<lærer>") + pl;
 REMOVE:unlikely ("<pepper>") + pl;
+REMOVE:unlikely ("<kostet>") + n;
+REMOVE:unlikely ("<leverer>") + n;
+REMOVE:unlikely ("<skylder>") + n;
 REMOVE:unlikely ("<reder>" "red");
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
@@ -25834,11 +25837,14 @@ SELECT:noen-default <noen> + (neg) ;
 
 
 
+"<følger>" REMOVE:følger-med n IF
+        (1 %med%)
+        ;
+
 #:3602
   "<før>"   REMOVE:3602   (adj ind sg) IF
 	(*-1O ub-ent-mask/fem-det LINK *1 ikke-adv-adj)
 ;
-
 
 "<funnet>" REMOVE:fragment-funnet subst IF
 	(NOT 0* fv)
@@ -29691,7 +29697,8 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<merker>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep merke<n><nt><pl><ind>→merke
 "<merket>" REMOVE:default-merkte ("merke" vblex pret) ;	# keep merke<vblex><pp>→merkt
 "<Meteorologene>" REMOVE:default-Meteorologene ("Meteorologene" np org) ;	# keep Meteorolog<n><m><pl><def>→Meteorologane
-"<midlene>" REMOVE:default-midla ("middel" n nt pl def) ;	# keep middel<n><m><pl><def>→midlane midel<n><m><pl><def>→midlane
+"<midlene>" REMOVE:default-midla ("middel" n m) ;
+"<midler>" REMOVE:default-midlar ("middel" n m) ;
 "<mister>" REMOVE:default-mister ("mister" n m sg ind) ;	# keep miste<vblex><pres>→mistar
 "<måler>" REMOVE:default-målar ("måler" n m sg ind) ;	# keep måle<vblex><pres>→måler
 "<møter>" REMOVE:default-møter ("møte" vblex pres) ;	# keep møte<n><nt><pl><ind>→møte
