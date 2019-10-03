@@ -252,6 +252,7 @@ LIST %for/før/når% = "når"  "før"  "for"  ;
 LIST %forrige/neste/samme/siste/første% = "neste"  "forrige" "samme" ("sist" pl) ("sist" def) "første"  ;
 LIST %fra% = "fra"  ;
 LIST %fra/for/ut% = "ut"  "fra"  "for"  ;
+LIST %fram% = ("fram"  pr) ("frem"  pr) ;
 LIST %fram/inn/opp% = ("fram"  pr) ("frem"  pr) ("inn"  pr) ("opp"  pr) ;
 LIST %fram/opp/på% = ("på" ) ("fram"  pr) ("frem"  pr) ("opp"  pr) ;
 LIST %full%  = ("full"  adj nt ind sg) ;
@@ -1136,6 +1137,7 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
 REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
@@ -1173,6 +1175,7 @@ REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
+REMOVE:unlikely ("kader");
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -1263,6 +1266,9 @@ REMOVE:unlikely ("vare") + imp ;
 REMOVE:unlikely ("<varer>"i "var") ;
 REMOVE:unlikely ("<ris>"i gen) ;
 REMOVE:unlikely ("<kvart>"i pp) ;
+REMOVE:unlikely ("<fører>"i "føre") + n ;
+REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
+REMOVE:unlikely ("<fører>"i "føre") + n ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -1271,7 +1277,11 @@ REMOVE:unlikely ("<notene>"i "not") IF
 SELECT:unlikely ("<super>"i) + adj IF
         (NOT 1 vann-ord)
         ;
-"<Monsen>" SELECT:unlikely-mons np;
+
+REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
+REMOVE:unlikely ("hu") + gen ; # hus
+
+"<Monsen>" SELECT:Monsen-not-mons np;
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
@@ -2530,7 +2540,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-1 omtale-ord)
 ;
 
-"<før>"  REMOVE:fø-unlikely ("fø") IF
+"<før>"  REMOVE:før-not-fø ("fø") IF
         (NOT 1 poss)               # før mine sauer
         (NEGATE 1 def LINK 2 poss) # før sauene mine
         (NOT 1 qnt)                # før 10 barn
@@ -2608,6 +2618,15 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 #  "det kan føre til at ..."
 
+"<fører>" SELECT:fører-til vblex IF
+	(1 %til% OR %fram% OR ("sak"))
+        ;
+
+"<fører>" SELECT:fører-en-sak vblex IF
+	(1 det)
+	(2 %til% OR %fram% OR ("sak"))
+        ;
+# da fører dette til
 
 #:3594
   "<galt>"   SELECT:3594   (n) IF
@@ -3901,6 +3920,10 @@ SELECT ("lyve") IF
 "<Redde>"   SELECT:redde-for ("redd") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
+        ;
+
+"<reder>" SELECT:reder-Torstein ("reder") IF
+        (1 np OR storbokstav)
         ;
 
 
@@ -5825,6 +5848,9 @@ REMOVE:unlikely ("<tallet>"i) + adj ;
 REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely ("<tallene>"i "talle");
 REMOVE:unlikely ("gifte") + n + pl;
+REMOVE:unlikely ("<lærer>") + pl;
+REMOVE:unlikely ("<pepper>") + pl;
+REMOVE:unlikely ("<reder>" "red");
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
@@ -5849,7 +5875,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" ;
+LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" ;
 REMOVE:unlikely-actio n + sg + unlikely-actio IF
         (0 n + pl)
         (NOT -1 det + sg) ;
@@ -6242,7 +6268,6 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-2 %av%)
         (-1 ("disse"))
         ;
-
 
 
 #:3726
@@ -8557,6 +8582,8 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
 ##############################################################
 
+# Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
+
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
 REMOVE:no-samsvar adj + pp + no-samsvar IF
@@ -8574,6 +8601,21 @@ REMOVE:no-samsvar adj + pp + no-samsvar IF
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
         (0 ("<.*(ete|et)>"r))
+        ;
+
+TEMPLATE antall = (0 ("antall") OR ("mengde")) OR (0 ("på") LINK -1 ("tall")) ;
+SELECT:Antallet-DREPTE-og-returnerte-stiger-også pp + pl IF
+        (-1 T:antall)
+        (1 %og/eller%)
+        (2 pp + pl)
+        (3 fv)
+        ;
+
+SELECT:Antallet-på-drepte-og-RETURNERTE-stiger-også pp + pl IF
+        (-3 T:antall)
+        (-2 pp + pl)
+        (-1 %og/eller%)
+        (1 fv)
         ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
@@ -16155,6 +16197,7 @@ SELECT:I-1931-skilte-paret-seg fv + refl IF
 	(NOT -1 ent)
 	(NOT -1 pres-part)
 	(NOT -1 %mange%)
+        (*0 fv BARRIER cm OR setn-gr) # «Tallet på drepte og returnerte stiger også, men saktere, tilføyde hun.»
 ;
 #  "
 # med håndskrevne ark
@@ -19018,6 +19061,9 @@ SELECT:2335 (vblex) IF
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
+
+### Fleire reglar for partisipp og samsvar / adj pp-dis:
+
 SELECT:Baglerne-kontrollerte-området-han-ble-født-i adj + pp + &&ADJ_N_AGR IF
 	(NOT 0 farlige-part)
 	(-1 %være/bli% LINK -1 nominativ + &&ADJ_N_AGR LINK 0C &&ADJ_N_AGR LINK -1C n + def LINK *-1 fv)
@@ -19114,6 +19160,7 @@ SELECT:ble-funnet-drept pp + $$GENDER IF
         ;
 # «Det var i dette området de ble funnet drept mandag.»
 # Men ikkje: «Nettsiden har frem til den ble stengt tilbydt piratversjoner av filmer.»
+
 
 #:2410
  SELECT:2410 (vblex pp) IF
@@ -21101,9 +21148,24 @@ REMOVE:konj-i-skjult-relsetn clb IF
 # «sammen med matpakken og (ikke clb) de to karamellene han fant ...»
 
 
+REMOVE:vår-taktikk-og-strategi-har clb + %og/eller% IF
+        (-2 pos + sg)
+        (-1C n + ind + sg)
+        (1C n + ind + sg) # since it's indefinite, it's unlikely to be subject of following fv
+        (2 fv)
+        ;
+
+REMOVE:vår-taktikk-og-ambisjon-om-at clb + %og/eller% IF
+        (-2 pos + $$NUMBER)
+        (-1C n + ind + $$NUMBER)
+        (1C n + ind + $$NUMBER)
+        (2 %om%)
+        (3 %at%)
+        ;
+
 
 #:2205
- REMOVE:2205 (clb) IF
+REMOVE:2205 clb IF
 	(0 clb/konj-konj)
 	(1C nom)
 	(-1C pron/subst)
@@ -21119,7 +21181,7 @@ REMOVE:konj-i-skjult-relsetn clb IF
 
 
 #:2206
- REMOVE:2206 (clb) IF
+REMOVE:2206 clb IF
 	(0 clb/konj-konj)
 	(-1C pron/subst)
 	(**-2CO pron/subst LINK NOT 0 subst-gen LINK NOT 0 subst-prop LINK NOT *1 ikke-adv-adj-subst-pron-konj-det2)
@@ -21132,7 +21194,7 @@ REMOVE:konj-i-skjult-relsetn clb IF
 
 
 #:2207
- REMOVE:2207 (clb) IF
+REMOVE:2207 clb IF
 	(0 clb/konj-konj)
 	(*1O %som% LINK NOT 0 prep LINK NOT *-1 fv)
 	(*1 %som% LINK **1C fv LINK NOT *1 fv)
@@ -21142,7 +21204,7 @@ REMOVE:konj-i-skjult-relsetn clb IF
 
 
 #:2208
- REMOVE:2208 (clb) IF
+REMOVE:2208 clb IF
 	(0 clb/konj-konj)
 	(NOT -1 parentes)
 	(*-2O parentes LINK 0 parentes-beg LINK NOT *1 fv)
@@ -21152,14 +21214,14 @@ REMOVE:konj-i-skjult-relsetn clb IF
 
 
 #:2209
- REMOVE:2209 (clb) IF
+REMOVE:2209 clb IF
 	(0 clb/konj-konj)
 	(*1O parentes LINK 0 parentes-slutt LINK NOT *-1 fv)
 ;
 
 
 #:2210
-REMOVE:2210 (clb) IF
+REMOVE:2210 clb IF
 	(0 clb/konj-konj)
 	(**1CO setn-gr LINK NOT 0 %som% LINK NOT *-1 fv)
 ;
@@ -21170,7 +21232,7 @@ REMOVE:2210 (clb) IF
 
 
 #:2211
- REMOVE:2211 (clb) IF
+REMOVE:2211 clb IF
 	(0 clb/konj-konj)
 	(1 sbu)
 	(-1 >>>)
@@ -21184,7 +21246,7 @@ REMOVE:2210 (clb) IF
 
 
 #:2212
- REMOVE:2212 (clb) IF
+REMOVE:2212 clb IF
 	(1 spørreadv)
 	(2 pres/pret)
 ;
@@ -21194,7 +21256,7 @@ REMOVE:2210 (clb) IF
 
 
 #:2213
- REMOVE:2213 (clb) IF
+REMOVE:2213 clb IF
 	(NOT 1 sbu)
 	(**1CO periode-slutt/konj-clb LINK *-1 fv LINK **-1C setn-gr LINK *-1 fv LINK **-1C setn-gr LINK *-1 fv LINK **-1C setn-gr LINK NOT *-1 fv)
 	(**1CO periode-slutt/konj-clb LINK *-1 setn-gr LINK *-1 setn-gr LINK *-1 setn-gr LINK NOT *-1 fv)
@@ -21204,7 +21266,7 @@ REMOVE:2210 (clb) IF
 
 
 #:2214
- REMOVE:2214 (clb) IF
+REMOVE:2214 clb IF
 	(NOT 1 sbu)
 	(**1CO periode-slutt/konj-clb LINK *-1 fv LINK **-1C setn-gr LINK *-1 fv LINK **-1C setn-gr LINK NOT *-1 fv)
 	(**1CO periode-slutt/konj-clb LINK *-1 setn-gr LINK *-1 setn-gr LINK NOT *-1 fv)
@@ -21212,7 +21274,7 @@ REMOVE:2210 (clb) IF
 
 
 #:2215
- REMOVE:2215 (clb) IF
+REMOVE:2215 clb IF
 	(NOT 1 sbu)
 	(**1CO periode-slutt/konj-clb LINK *-1 fv LINK **-1C setn-gr LINK NOT *-1 fv)
 	(**1CO periode-slutt/konj-clb LINK *-1 setn-gr LINK NOT *-1 fv)
@@ -27813,6 +27875,14 @@ SELECT:hva-de-spiser-varierer pres
 # «Hva de spiser varierer med sesongen.»
 # «Bambus er også viktig mat for panda, 99 % av det de spiser er bambus.»
 
+SELECT:Forskningsprosjektet-han-leder-arbeider-nå pres
+        (-4 >>> OR strek)
+        (-3 storbokstav)
+        (-2 nominativ)
+	(-1C pres)
+	(0C subst OR pres)
+;
+
 SELECT:no-pres-pres subst
 	(-1C pres)
 	(0C subst OR pres)
@@ -28842,6 +28912,7 @@ REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0 ent-subst)
         (NOT -1 pos + pl OR gen)
         (**-1C ent - gen LINK -1 >>>)
+        (*-1 hj-verb)
         ;
 
 REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
@@ -28849,6 +28920,7 @@ REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0 ent-subst)
         (NOT -1 pos + pl)
         (**-1C ent LINK -1 guio LINK -1 >>>)
+        (*-1 hj-verb)
         ;
 
 REMOVE:noen-av-hans-mest-berømte-utsagn ent-subst IF
@@ -29251,6 +29323,22 @@ SELECT:ønsket-å vblex + trans-med-inf IF
         (1 ("å"))
         ;
 
+SELECT:nasjonens-ledere-og-unge-folk $$NUMBER IF
+        (-4 gen)
+        (-3C n + $$NUMBER)
+        (-2 %og/eller%)
+        (-1 adj + $$NUMBER)
+        (0C n)
+        ;
+
+SELECT:Historiker-og-medlem-av $$NUMBER IF
+        (-3 >>>)
+        (-2C n + $$NUMBER)
+        (-1 %og/eller%)
+        (0C n)
+        (*1 cm BARRIER fv)
+        ;
+
 SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (-3C n + sg OR np LINK NOT 0 pl)
         (-2 kop-fv)
@@ -29258,7 +29346,21 @@ SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (0C adj OR n)
         ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" "sko" ;
+SELECT:Ukjendord-utelukkes-ikke. fv IF
+        (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
+        (0C vblex)
+        (1 adv)
+        ;
+
+REMOVE:norske-sykehus-mangler-leger n + ind IF
+        (-1C n)
+        (0C fv OR n + ind)
+        (1 n)
+        ;
+
+
+#### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
@@ -29291,6 +29393,7 @@ SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
+SELECT:default ("passasjer") IF (0 ("<passasjer>"i));
 SELECT:default ("tørre")   IF (0 ("<turt>"i));
 SELECT:default ("anklage") IF (0 ("<anklager>"i));
 SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
@@ -29384,6 +29487,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<bo>" REMOVE:default-bo ("bo" n m sg ind) ;	# keep bo<n><nt><pl><ind>→bu
 "<bo>" REMOVE:default-bo ("bo" n mf sp) ;	# keep bo<n><nt><pl><ind>→bu
 "<bordet>" REMOVE:default-borda ("borde" vblex pp) ;	# keep bord<n><nt><sg><def>→bordet
+"<borger>" REMOVE:default-borger pl OR vblex ; # keep borgar
 "<brast>" REMOVE:default-brasa ("brase" adj pp mf sg ind) ;	# keep breste<vblex><pret>→brast
 "<brast>" REMOVE:default-brasa ("brase" adj pp nt sg ind) ;	# keep breste<vblex><pret>→brast
 "<brast>" REMOVE:default-brasa ("brase" vblex pp) ;	# keep breste<vblex><pret>→brast
@@ -29441,6 +29545,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<fart>" REMOVE:default-fart ("fart" n m sg ind) ;	# keep fare<vblex><pp>→fare
 "<fatter>" REMOVE:default-fatter ("fatter" n m sg ind) ;	# keep fatte<vblex><pres>→fattar
 "<fengslet>" REMOVE:default-fengselet ("fengsel" n nt sg def) ;	# keep fengsle<vblex><pp>→fengsla
+"<fester>" REMOVE:default-feste ("feste") OR ("fester") ;	# keep fest<n><m><pl><ind>→festar
 "<finnes>" REMOVE:default-finnes ("finne" n m sg ind gen) ;	# keep finnes<vblex><pstv><pres>→finst
 "<fjæra>" REMOVE:default-fjæra ("fjære" vblex pret) ;	# keep fjære<n><f><sg><def>→fjøra fjær<n><f><sg><def>→fjøra
 "<Flere>" REMOVE:default-Flere ("Flere" np cgguess) ;	# keep Mange<adj><sint><comp><un><sp>→Fleire
@@ -29580,7 +29685,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<mark>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
 "<Mark>" REMOVE:default-Marker ("mark" n m pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
 "<materiale>" REMOVE:default-material ("materiale" n nt sg ind) ;	# keep material<adj><pst><un><pl><ind>→materiale material<adj><pst><un><sp><def>→materiale
-"<medlem>" REMOVE:default-medlem ("medlem" n nt sg ind) ;	# keep medlem<n><nt><pl><ind>→medlemmer
+"<medlem>" REMOVE:default-medlem ("medlem" n nt pl ind) ;	# keep medlem<n><nt><sg><ind>→medlem
 "<meldt>" REMOVE:default-meld ("melde" adj pp mf sg ind) ;	# keep melde<vblex><pp>→meldt melde<adj><pp><nt><sg><ind>→meldt
 "<merker>" REMOVE:default-marker ("mark" n f pl ind) ;	# keep merke<n><nt><pl><ind>→merke
 "<merker>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep merke<n><nt><pl><ind>→merke
@@ -29829,46 +29934,80 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 ;
 
 
-SELECT:Ukjendord-utelukkes-ikke. fv IF
-        (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
-        (0C vblex)
-        (1 adv)
-        ;
 
+#### @nkon: simple noun-noun conjunctions under genitive
 
-# @nkon: simple noun-noun conjunctions under genitive
+# If the right-hand noun of a conjunction is immediately followed by a non-clb "og", we don't dare chunk it
+# (might be part of a triple conjunction)
+SET simple-nkon-border-right = ("i") OR ("på") OR ("og") - (clb) ;
+
 MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
+        (NOT -3 ("mellom")) # «differansen mellom [hjemlandets ytelser] og [norske ytelser]»
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
-        (1C n + ind LINK NOT 0 gen)
-        (NOT 2 ("i"))
+        (NOT 0 clb)
+        (*1C n + ind BARRIER ikke-adj OR ("mange") LINK NOT 0 gen LINK NOT 1 simple-nkon-border-right)
+;
+# «guttens far og kjære søsken», men ikkje: «guttens far og flere søsken»
+# Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
+# Ikkje: «Nattens snøfall<n>  og  milde<adj> temperaturer<n> på morgenen»
+
+
+MAP:mellom-statens-inntekter-og-utgifter (@nkon) %og/eller% IF
+        (-2 gen OR pos)
+        (-1C n + ind LINK NOT 0 gen)
+        (NOT 0 clb)
+        ( 1C n + ind LINK NOT 0 gen LINK NOT 1 simple-nkon-border-right)
+;
+# tillat «mellom» viss andre substantiv kjem rett etter, då er det tryggare å rekna med genitiven styrer heile [n og n]
+# Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
+# TODO, ikkje: «forholdet mellom foreldrenes utdannelse og barnedødelighet.»
+
+
+MAP:pasientens-helse-og-omsorgstjeneste (@nkon) %og/eller% IF
+        (-2 gen OR pos)
+        (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (NOT 0 clb)
+        ( 1C n + ind             LINK NOT 0 gen) # allow på/i/og here – the split-cmp dash makes it safer
 ;
 
+# TODO: «Kåringen av årets kino var basert på kinoenes innsats og resultater på Den store kinodagen»
+# and «de ber ham redegjøre for deres ansvar og strategi på området.»
+# do not hit due to following «på» – should we allow «på» if same $$NUMBER + ind on the nouns?
+# Would avoid «Nattens snøfall<sg> og milde temperaturer<pl> på morgenen»
+
 MAP:barn-og-unges (@nkon) %og/eller% IF
-        (-1 ("<barn>"i))
-        (1 ("<unges>"i))
+        (-1 ("<barn>"))
+        (1 ("unge") OR ("ung"))
         ;
 MAP:menn-og-kvinners (@nkon) %og/eller% IF
-        (-1 ("<menn>"i))
-        (1 ("<kvinners>"i))
+        (-1 ("mann") + pl LINK NOT 0 gen)
+        (1 ("kvinne") + pl)
         ;
 MAP:kvinner-og-menns (@nkon) %og/eller% IF
-        (-1 ("<kvinner>"i))
-        (1 ("<menns>"i))
+        (-1 ("kvinne") + pl LINK NOT 0 gen)
+        (1 ("mann") + pl)
+        ;
+MAP:helse-og-velferd (@nkon) %og/eller% IF
+        (-1 ("helse") + pl LINK NOT 0 gen)
+        (1 ("velferd") + pl)
         ;
 
 MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
         (-1C n + ind + cmp-split LINK NOT 0 gen)
+        (NOT 0 clb)
         (1C n + gen)
 ;
 
 MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + $$DEFNES)
+        (NOT 0 clb)
         (1C n + gen LINK 0 $$NUMBER + $$DEFNES)
 ;
 
 MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER + def)
+        (NOT 0 clb)
         (1 dem)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER) # allow single-defnes
 ;
@@ -29876,6 +30015,7 @@ MAP:bransjens-og-den-enkelte-bedrifts-situasjon (@nkon) %og/eller% IF
 MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (-1C n + gen LINK 0 $$NUMBER) # ind or def both fine here
         (1 adj)
+        (NOT 0 clb)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
 
