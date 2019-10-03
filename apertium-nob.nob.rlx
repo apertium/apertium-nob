@@ -29372,6 +29372,7 @@ SELECT:Ukjendord-utelukkes-ikke. fv IF
 
 REMOVE:norske-sykehus-mangler-leger n + ind IF
         (-1C n)
+        (NOT -1 ("type") OR ("antall") OR ("mengde")) # og mengde vitner peker mot
         (0C fv OR n + ind)
         (1 n)
         ;
