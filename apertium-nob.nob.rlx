@@ -29323,6 +29323,20 @@ SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (0C adj OR n)
         ;
 
+SELECT:Ukjendord-utelukkes-ikke. fv IF
+        (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
+        (0C vblex)
+        (1 adv)
+        ;
+
+REMOVE:norske-sykehus-mangler-leger n + ind IF
+        (-1C n)
+        (0C fv OR n + ind)
+        (1 n)
+        ;
+
+
+#### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
@@ -29897,11 +29911,6 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 ;
 
 
-SELECT:Ukjendord-utelukkes-ikke. fv IF
-        (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
-        (0C vblex)
-        (1 adv)
-        ;
 
 
 # @nkon: simple noun-noun conjunctions under genitive
