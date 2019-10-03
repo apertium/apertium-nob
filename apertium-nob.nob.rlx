@@ -8582,6 +8582,8 @@ SELECT:Å-ikke-støtte inf IF
 # adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
 ##############################################################
 
+# Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
+
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
 REMOVE:no-samsvar adj + pp + no-samsvar IF
@@ -8599,6 +8601,21 @@ REMOVE:no-samsvar adj + pp + no-samsvar IF
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
         (0 ("<.*(ete|et)>"r))
+        ;
+
+TEMPLATE antall = (0 ("antall") OR ("mengde")) OR (0 ("på") LINK -1 ("tall")) ;
+SELECT:Antallet-DREPTE-og-returnerte-stiger-også pp + pl IF
+        (-1 T:antall)
+        (1 %og/eller%)
+        (2 pp + pl)
+        (3 fv)
+        ;
+
+SELECT:Antallet-på-drepte-og-RETURNERTE-stiger-også pp + pl IF
+        (-3 T:antall)
+        (-2 pp + pl)
+        (-1 %og/eller%)
+        (1 fv)
         ;
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
@@ -16180,6 +16197,7 @@ SELECT:I-1931-skilte-paret-seg fv + refl IF
 	(NOT -1 ent)
 	(NOT -1 pres-part)
 	(NOT -1 %mange%)
+        (*0 fv BARRIER cm OR setn-gr) # «Tallet på drepte og returnerte stiger også, men saktere, tilføyde hun.»
 ;
 #  "
 # med håndskrevne ark
@@ -19043,6 +19061,9 @@ SELECT:2335 (vblex) IF
 #  "Det er vel (adv) forskjell
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
+
+### Fleire reglar for partisipp og samsvar / adj pp-dis:
+
 SELECT:Baglerne-kontrollerte-området-han-ble-født-i adj + pp + &&ADJ_N_AGR IF
 	(NOT 0 farlige-part)
 	(-1 %være/bli% LINK -1 nominativ + &&ADJ_N_AGR LINK 0C &&ADJ_N_AGR LINK -1C n + def LINK *-1 fv)
@@ -19139,6 +19160,7 @@ SELECT:ble-funnet-drept pp + $$GENDER IF
         ;
 # «Det var i dette området de ble funnet drept mandag.»
 # Men ikkje: «Nettsiden har frem til den ble stengt tilbydt piratversjoner av filmer.»
+
 
 #:2410
  SELECT:2410 (vblex pp) IF
