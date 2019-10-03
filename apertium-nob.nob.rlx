@@ -1175,6 +1175,7 @@ REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
+REMOVE:unlikely ("kader");
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -1267,6 +1268,7 @@ REMOVE:unlikely ("<ris>"i gen) ;
 REMOVE:unlikely ("<kvart>"i pp) ;
 REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
+REMOVE:unlikely ("<fører>"i "føre") + n ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -1275,7 +1277,11 @@ REMOVE:unlikely ("<notene>"i "not") IF
 SELECT:unlikely ("<super>"i) + adj IF
         (NOT 1 vann-ord)
         ;
-"<Monsen>" SELECT:unlikely-mons np;
+
+REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
+REMOVE:unlikely ("hu") + gen ; # hus
+
+"<Monsen>" SELECT:Monsen-not-mons np;
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
@@ -2534,7 +2540,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-1 omtale-ord)
 ;
 
-"<før>"  REMOVE:fø-unlikely ("fø") IF
+"<før>"  REMOVE:før-not-fø ("fø") IF
         (NOT 1 poss)               # før mine sauer
         (NEGATE 1 def LINK 2 poss) # før sauene mine
         (NOT 1 qnt)                # før 10 barn
@@ -2618,9 +2624,9 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 "<fører>" SELECT:fører-en-sak vblex IF
 	(1 det)
-	(2 ("sak"))
+	(2 %til% OR %fram% OR ("sak"))
         ;
-
+# da fører dette til
 
 #:3594
   "<galt>"   SELECT:3594   (n) IF
@@ -3914,6 +3920,10 @@ SELECT ("lyve") IF
 "<Redde>"   SELECT:redde-for ("redd") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
+        ;
+
+"<reder>" SELECT:reder-Torstein ("reder") IF
+        (1 np OR storbokstav)
         ;
 
 
@@ -5839,6 +5849,8 @@ REMOVE:unlikely ("<tallet>"i) + vblex;
 REMOVE:unlikely ("<tallene>"i "talle");
 REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely ("<lærer>") + pl;
+REMOVE:unlikely ("<pepper>") + pl;
+REMOVE:unlikely ("<reder>" "red");
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
 REMOVE:unlikely-ansane ("<anser>") + n ;
 REMOVE:unlikely-reva ("reve") ;
@@ -6256,7 +6268,6 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-2 %av%)
         (-1 ("disse"))
         ;
-
 
 
 #:3726
@@ -29417,6 +29428,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<bo>" REMOVE:default-bo ("bo" n m sg ind) ;	# keep bo<n><nt><pl><ind>→bu
 "<bo>" REMOVE:default-bo ("bo" n mf sp) ;	# keep bo<n><nt><pl><ind>→bu
 "<bordet>" REMOVE:default-borda ("borde" vblex pp) ;	# keep bord<n><nt><sg><def>→bordet
+"<borger>" REMOVE:default-borger pl OR vblex ; # keep borgar
 "<brast>" REMOVE:default-brasa ("brase" adj pp mf sg ind) ;	# keep breste<vblex><pret>→brast
 "<brast>" REMOVE:default-brasa ("brase" adj pp nt sg ind) ;	# keep breste<vblex><pret>→brast
 "<brast>" REMOVE:default-brasa ("brase" vblex pp) ;	# keep breste<vblex><pret>→brast
@@ -29474,6 +29486,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<fart>" REMOVE:default-fart ("fart" n m sg ind) ;	# keep fare<vblex><pp>→fare
 "<fatter>" REMOVE:default-fatter ("fatter" n m sg ind) ;	# keep fatte<vblex><pres>→fattar
 "<fengslet>" REMOVE:default-fengselet ("fengsel" n nt sg def) ;	# keep fengsle<vblex><pp>→fengsla
+"<fester>" REMOVE:default-feste ("feste") OR ("fester") ;	# keep fest<n><m><pl><ind>→festar
 "<finnes>" REMOVE:default-finnes ("finne" n m sg ind gen) ;	# keep finnes<vblex><pstv><pres>→finst
 "<fjæra>" REMOVE:default-fjæra ("fjære" vblex pret) ;	# keep fjære<n><f><sg><def>→fjøra fjær<n><f><sg><def>→fjøra
 "<Flere>" REMOVE:default-Flere ("Flere" np cgguess) ;	# keep Mange<adj><sint><comp><un><sp>→Fleire
