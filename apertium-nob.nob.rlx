@@ -21148,9 +21148,24 @@ REMOVE:konj-i-skjult-relsetn clb IF
 # «sammen med matpakken og (ikke clb) de to karamellene han fant ...»
 
 
+REMOVE:vår-taktikk-og-strategi-har clb + %og/eller% IF
+        (-2 pos + sg)
+        (-1C n + ind + sg)
+        (1C n + ind + sg) # since it's indefinite, it's unlikely to be subject of following fv
+        (2 fv)
+        ;
+
+REMOVE:vår-taktikk-og-ambisjon-om-at clb + %og/eller% IF
+        (-2 pos + $$NUMBER)
+        (-1C n + ind + $$NUMBER)
+        (1C n + ind + $$NUMBER)
+        (2 %om%)
+        (3 %at%)
+        ;
+
 
 #:2205
- REMOVE:2205 (clb) IF
+REMOVE:2205 clb IF
 	(0 clb/konj-konj)
 	(1C nom)
 	(-1C pron/subst)
