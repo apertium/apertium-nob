@@ -864,6 +864,7 @@ LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
+LIST titlecase = "<\\p{Lu}\\p{Ll}+>"r ;
 LIST strek = guio ;
 LIST strek/parentes = guio lpar rpar ;
 LIST strek/parentes-beg/anf = guio lpar lquot ;
@@ -26309,6 +26310,10 @@ REMOVE:øye ("øye"i) IF
 #CONSTRAINTS
 ## select ndomain heur
 
+SELECT:titlecase-np np + titlecase IF
+        (NOT -1 >>>)
+        (NOT -1 guio OR lpar LINK -1 >>>)
+        ;
 
 #:2792
 # SELECT:2792 (clb) IF
