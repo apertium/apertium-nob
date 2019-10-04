@@ -29469,6 +29469,22 @@ SELECT:nye-minner pl IF
         (*0 fv)
         ;
 
+SELECT:Hvis-han-virkelig-leser-post fv IF
+        (NOT *-1 fv)
+        (*-2 subst OR nominativ LINK *-1 cnjsub)
+        (-1C adv OR adj + ind)
+        (-1 adv)
+        (0C n OR vblex)
+        ;
+# «Hvis Jens Stoltenberg virkelig leser e-post rett på iPad, så kan jeg nesten uten problemer lese e-posten hans.»
+
+
+
+REMOVE:og-Svein-Harberg-leder-arbeidet n IF
+        (*-1 clb BARRIER (*) - titlecase)
+        (0C n OR fv)
+        (1C n + def OR pp)
+        ;
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:selskapenes-system-BSP sg IF
