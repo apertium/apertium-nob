@@ -27807,6 +27807,8 @@ SELECT:med-andre-kjeder-cm n + pl IF
         (1 cm)
         ;
 
+
+
 #:1732
 SELECT:generell-pres (vblex pres) IF
 	(NOT 0 pret)
@@ -29484,6 +29486,22 @@ REMOVE:og-Svein-Harberg-leder-arbeidet n IF
         (*-1 clb BARRIER (*) - titlecase)
         (0C n OR fv)
         (1C n + def OR pp)
+        ;
+
+SELECT:store-vann--og-røykskader n + sg + cmp-split IF
+        (1 %og/eller%)
+        (2 n)
+        ;
+
+SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
+        (-1 adj + def)
+        (-2 dem + $$GENDER + $$NUMBER)
+        ;
+# «For det norske TV-publikum er han kjent for sin rolle i ‘Koselig med peis’, som skaffet ham en høythengende Emmy-nominasjon.»
+
+SELECT:det-norske-publikum dem + $$GENDER + $$NUMBER - expl IF
+        (1 adj + def)
+        (2 n + $$GENDER + $$NUMBER)
         ;
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
