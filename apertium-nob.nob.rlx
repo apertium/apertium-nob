@@ -8524,6 +8524,13 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:hvilke-deler n + pl IF
+        (-1 %hvilken% + pl)
+        ;
+SELECT:hvilken-del n + $$GENDER + sg IF
+        (-1 %hvilken% + $$GENDER + sg)
+        ;
+
 SELECT:det-tredje-norske-valg n + &&ADJ_N_AGR IF
         (-3C dem + &&ADJ_N_AGR)
         (-2C ord)
