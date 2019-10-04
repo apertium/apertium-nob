@@ -21325,6 +21325,13 @@ REMOVE:Fiskeri--og-havbruksnæringens-landsforbund clb IF
         (1 n)
         ;
 
+REMOVE:oppramsing clb + %og/eller% IF
+        (-3C n + def OR np)
+        (-2 cm)
+        (-1C n + def OR np)
+        (1 ("<andre>"))
+        ;
+
 
 #:2163
  REMOVE:2163 (det def sg) IF
