@@ -21049,7 +21049,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 
 
 #:2195
- REMOVE:2195 (clb) IF
+REMOVE:sportsfiskere-og-elveeiere-er (clb) IF
 	(0 konj)
 	(1 subst)
 	(-1 subst)
@@ -21058,7 +21058,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 	(NOT 1 pres/pret)
 	(NOT 1 %jeg%)
 	(NOT 1 %så%)
-	(*-1O setn-gr LINK NOT 0 %bare% LINK NOT *1 fv)
+	(*-1 setn-gr LINK NOT 0 %bare% LINK NOT *1 fv)
 ;
 #  "sportsfiskere og elveeiere er ...
 # ikke: .. kiler henne i nakken og (skal være clb)
