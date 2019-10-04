@@ -1821,6 +1821,12 @@ REMOVE:cardinal date;
         (2 n + pl)
         ;
 
+"<den>" SELECT:Og-den-mener-han-er ("den¹") IF
+        (-1 setn-gr)
+        (1 fv)
+        (2 nominativ)
+        ;
+
 
 "<den>" SELECT:den-mistenkte det IF
 	(1 ("<mistenkte>") OR ("<okkuperte>") OR ("<domfelte>") OR %samme/neste/ene/eneste/forrige%)
