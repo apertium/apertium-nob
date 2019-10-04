@@ -29394,6 +29394,21 @@ SELECT:Spania-var-nordmenns-foretrukne-reisemål sg IF
         (0C adj OR n)
         ;
 
+SELECT:blir-ofte-brent-på-bål-eller-SATT-igjen pp IF
+        # «blir … brent … og/eller …» finst til venstre utan (utvetydig) clb:
+        (*-1 %og/eller% LINK *-1 pp LINK *-1 %være/bli% LINK NOT *1C clb)
+        (0C vblex)
+        ;
+
+SELECT:private-bruker-mindre-strøm fv IF
+        (-1C adj)
+        (-1 def)
+        (0C n OR fv)
+        (1C comp OR adv)
+        (2C n + ind)
+        (NOT *0 fv BARRIER setn-gr)
+        ;
+
 SELECT:Ukjendord-utelukkes-ikke. fv IF
         (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
         (0C vblex)
