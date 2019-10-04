@@ -19006,14 +19006,14 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 #  "8.10.2003: Drikke gjorde hun aldri"
 
 
-
-#:2393
- SELECT:2393 (vblex pret) IF
-	(-1 %at/om%)
-	(NOT -1 prep)
-	(**1C setn-gr BARRIER pres/pret)
-;
-#  "kh jan 2004: Gutten så jeg at leste boka."
+# #:2393
+# SELECT:Gutten-så-jeg-at-leste-boka pret IF
+# 	(-1 %at/om%)
+# 	(NOT -1 prep)
+# 	(**1C setn-gr BARRIER pres/pret)
+# ;
+# #  "kh jan 2004: Gutten så jeg at leste boka."
+# # … den høyrest jo heilt merkeleg ut.
 
 
 
