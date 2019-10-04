@@ -27889,6 +27889,7 @@ SELECT:generell-pres (vblex pres) IF
 	(NOT -1 overskrift)
 	(**-1C setn-gr BARRIER pres/pret)
 	(**1C setn-gr BARRIER pres/pret)
+        (NEGATE *-1 guio LINK *-1 pres/pret BARRIER setn-gr) # «kan gi 150 kroner – fem ganger mer enn snittet<n!> de siste ti årene.»
 ;
 #  "Pga mange feil har jeg forsøkt å legge på
 # en del begrensninger på hovedregelen
