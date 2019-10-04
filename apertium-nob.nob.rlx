@@ -1772,6 +1772,11 @@ REMOVE:cardinal date;
 # "den¹" blir «den» på nno òg; "den" blir «han/ho» #
 ####################################################
 
+"<den>" SELECT:den-det-gjelder ("den¹") IF
+        (1 ("den"))
+        (2 ("gjelde"))
+        ;
+
 "<den>" SELECT:enn-den-de ("den¹") IF
         (-1 %enn%)
         (1 prn)
@@ -1811,9 +1816,14 @@ REMOVE:cardinal date;
         ;
 # «I dag er døren stengt for den som fullfører tre år studiespesialisering og finner ut at han eller hun heller vil bli hjelpepleier, sier Lied.»
 
+"<den>" SELECT:den-av-statsrådene ("den¹") IF
+        (1 %av%)
+        (2 n + pl)
+        ;
+
 
 "<den>" SELECT:den-mistenkte det IF
-	(1 ("<mistenkte>") OR %samme/neste/ene/eneste/forrige%)
+	(1 ("<mistenkte>") OR ("<okkuperte>") OR ("<domfelte>") OR %samme/neste/ene/eneste/forrige%)
 ;
 
 #:3724
@@ -1827,6 +1837,7 @@ REMOVE:cardinal date;
 "<den>" SELECT:Konklusjonen-den-gang-var det IF
         (1 ("<gang>"))
         ;
+
 
 
 #:3722
