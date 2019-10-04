@@ -14948,7 +14948,7 @@ SELECT:disse-fine-bilene det + pl IF
 
 
 #:2639
- SELECT:2639 (pr) IF
+SELECT:Jeg-så-mot-vinduet pr IF
 	(0 subst)
 	(NOT 0 fv)
 	(NOT 0 %den%)
@@ -15635,6 +15635,7 @@ SELECT:jeg-så-den-cm-men pron-pers IF
 	(NOT 0 gen)
 	(NOT 0 subst)
 	(1C adv)
+        (NOT 1 %mest/minst%)
 	(NOT 2 subst/adj/det-kvant-%av%)
 ;
 #  "NOT 0 GEN: hans (pers pron gen)
