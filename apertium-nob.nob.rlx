@@ -945,6 +945,8 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
+LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
@@ -2422,7 +2424,7 @@ REMOVE:cardinal date;
 
 
 #:3636
-  "<for>"   SELECT:3636   (pr) IF
+  "<for>"   SELECT:for-å-hjelpe-til   (pr) IF
 	(1 infmerke)
 ;
 #  "for å hjelpe til"
@@ -3223,7 +3225,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 
 "<lav>"   SELECT   (adj) IF
-        (NOT *-2 ("art") OR ("mose") OR ("blad"))
+        (NOT *-2 lav-ord)
 ;
 
 
@@ -5376,6 +5378,10 @@ REMOVE:støtte ("støte") IF
 # «talle» og eit tal må då vere svært lågfrekvent.
 
 
+"<taler>" SELECT:mye-taler-for vblex IF
+        (1 %for%)
+        ;
+
 
 #:3196
   "<tapt>"   SELECT:3196   (vblex pp) IF
@@ -5705,7 +5711,7 @@ REMOVE:støtte ("støte") IF
 
 
 #:3138
-  "<vi>"   SELECT:3138   (prn) IF
+"<vi>" SELECT:vi-fv prn IF
 	(*1 fv BARRIER setn-gr)
 ;
 
@@ -5765,7 +5771,7 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 
 #:3122
-  "<å>"   SELECT:3122   ("å" part) IF
+  "<å>"   SELECT:å-leke   ("å" part) IF
 	(1 inf)
 ;
 #  "å leke"
@@ -5801,8 +5807,9 @@ REMOVE:spille_spile ("spile") + verb IF
 "<ledd>" REMOVE:ledd-unlikely-adj-pp adj;
 "<lyktes>" REMOVE ("lykte");
 
-"<leder>" REMOVE (vblex) IF
+"<leder>" REMOVE vblex IF
   	(-1 fork/ukjent-ord OR ("tidligere") OR ("parlamentarisk") OR ("<egentlige>") OR ("<egne>") OR ("eneste") OR berre-storbokstav)
+        (NOT 1 n)
 ;
 "<leder>" REMOVE (vblex) IF
 	(1 ("for") OR ("av"))
@@ -5851,6 +5858,7 @@ REMOVE:unlikely ("gifte") + n + pl;
 REMOVE:unlikely ("<lærer>") + pl;
 REMOVE:unlikely ("<pepper>") + pl;
 REMOVE:unlikely ("<kostet>") + n;
+REMOVE:unlikely ("<snakker>") + pl;
 REMOVE:unlikely ("<leverer>") + n;
 REMOVE:unlikely ("<skylder>") + n;
 REMOVE:unlikely ("<reder>" "red");
@@ -6776,7 +6784,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3587
-  "<gode>"   REMOVE:3587   (n) IF
+"<gode>" REMOVE:gode-kaker n IF
 	(NOT *-1 ub-nøyt-det)
 	(NOT -1 %til%)
 ;
@@ -7101,6 +7109,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 "<høy>" REMOVE:ekstremt-høy-bruk n IF
         (-1 adj + $$NUMBER + $$GENDER)
         (1 n + $$NUMBER + $$GENDER)
+        ;
+
+"<høye>" REMOVE:høye-doser vblex IF
+        (1 n + pl OR n + def)
         ;
 
 #:3511
@@ -7812,6 +7824,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 
 
+"<par>" REMOVE:siste-par-årene pl IF
+        (1 %år%)
+        ;
+
 #:3354
   "<per>"   REMOVE:3354   (pr) IF
 	(1 fv)
@@ -7889,6 +7905,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(*-1 setn-gr BARRIER p-hj-verb)
 	(*1 setn-gr BARRIER %seng%)
 ;
+
+"<reder>" REMOVE:fuglerede ("reder") IF
+        (*0/* fugl-ord)
+        ;
 
 
 #:3345
@@ -8305,10 +8325,12 @@ SELECT:skrev vblex IF
         ;
 
 #:3161
-  "<vann>"   REMOVE:3161   (vblex pret) IF
+REMOVE:Vann  vblex OR adv IF
+        (0 ("vann"))
 	(0 subst)
 ;
 #  "lite vanlig bøying i bm"
+
 
 
 
@@ -29472,7 +29494,8 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<annenhver>" REMOVE:default-annakvar ("annenhver" det qnt f sg) ;	# keep annenhver<det><qnt><m><sg>→annankvar
 "<annerledes>" REMOVE:default-forskjellige ("annerledes" adj pst un pl ind) ;	# keep annerledes<adv>→annleis
 "<annerledes>" REMOVE:default-forskjellige ("annerledes" adj pst un sp def) ;	# keep annerledes<adv>→annleis
-"<arbeider>" REMOVE:default-arbeidar ("arbeider" n m sg ind) ;	# keep arbeid<n><nt><pl><ind>→arbeid arbeide<n><nt><pl><ind>→arbeid
+"<arbeider>" REMOVE:default-arbeide ("arbeid") ;
+"<arbeider>" REMOVE:default-arbeidar n ;
 "<arbeidet>" REMOVE:default-arbeidd ("arbeide" adj pp mf sg ind) ;	# keep arbeid<n><nt><sg><def>→arbeidet arbeide<n><nt><sg><def>→arbeidet
 "<arbeidet>" REMOVE:default-arbeidd ("arbeide" adj pp nt sg ind) ;	# keep arbeid<n><nt><sg><def>→arbeidet arbeide<n><nt><sg><def>→arbeidet
 "<arrangert>" REMOVE:default-arrangerte ("arrangere" adj pp pl) ;	# keep arrangere<vblex><pp>→arrangert arrangere<adj><pp><nt><sg><ind>→arrangert
@@ -29520,7 +29543,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<busser>" REMOVE:default-busser ("busse" n m pl ind) ;	# keep buss<n><m><pl><ind>→bussar
 "<bygd>" REMOVE:default-bygt ("bygge" adj pp nt sg ind) ;	# keep bygd<n><m><sg><ind>→bygd bygge<adj><pp><mf><sg><ind>→bygd bygge<vblex><pp>→bygd bygd<n><f><sg><ind>→bygd
 "<bygget>" REMOVE:default-bygt ("bygge" adj pp nt sg ind) ;	# keep bygge<adj><pp><mf><sg><ind>→bygd bygge<vblex><pp>→bygd
-"<bytter>" REMOVE:default-byter ("bytte" vblex pres) ;	# keep bytte<n><nt><pl><ind>→byte
+"<bytter>" REMOVE:default-byter ("bytte" n nt pl in) ;	# keep byttar
 "<byttet>" REMOVE:default-bytet ("bytte" n nt sg def) ;	# keep bytte<vblex><pp>→bytt bytte<adj><pp><nt><sg><ind>→bytt
 "<dekket>" REMOVE:default-dekket ("dekk" n nt sg def) ;	# keep dekke<vblex><pp>→dekt dekke<adj><pp><nt><sg><ind>→dekt
 "<dekket>" REMOVE:default-dekket ("dekke" n nt sg def) ;	# keep dekke<vblex><pp>→dekt dekke<adj><pp><nt><sg><ind>→dekt
@@ -29672,6 +29695,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<led>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
 "<Leder>" REMOVE:default-Leder ("Leder" np cgguess) ;	# keep Leder<n><m><sg><ind>→Leiar
 "<leder>" REMOVE:default-leier ("lede" vblex pres) ;	# keep leder<n><m><sg><ind>→leiar
+"<leier>" REMOVE:default n ;	# keep leige
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un pl ind) ;	# keep lege<n><m><sg><ind>→lege
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un sp def) ;	# keep lege<n><m><sg><ind>→lege
 "<legger>" REMOVE:default-legger ("legg" n m pl ind) ;	# keep legge<vblex><pres>→legg
@@ -29814,7 +29838,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<sluppet>" REMOVE:default-sloppen ("sleppe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
 "<sluppet>" REMOVE:default-sloppen ("slippe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
 "<snakket>" REMOVE:default-snakket ("snakk" n nt sg def) ;	# keep snakke<vblex><pp>→snakka snakke<vblex><pret>→snakka snakke<adj><pp><mf><sg><ind>→snakka
-"<snittet>" REMOVE:default-snitta ("snitte" vblex pp) ;	# keep snitt<n><nt><sg><def>→snittet
+"<snittet>" REMOVE:default-snitta ("snitte" vblex) ;	# keep snitt<n><nt><sg><def>→snittet
 "<solgt>" REMOVE:default-seld ("selge" adj pp mf sg ind) ;	# keep selge<vblex><pp>→selt selge<adj><pp><nt><sg><ind>→selt
 "<sort>" REMOVE:default-sort ("sort" n m sg ind) ;	# keep sort<adj><sint><pst><mf><sg><ind>→svart sort<adj><sint><pst><nt><sg><ind>→svart
 "<spille>" REMOVE:default-spille ("spille" n mf sp) ;	# keep spille<vblex><inf>→spele
@@ -29854,7 +29878,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 "<søkt>" REMOVE:default-sokke ("søkke" vblex pp) ;	# keep søke<vblex><pp>→søkt
 "<takker>" REMOVE:default-takker ("takk" n f pl ind) ;	# keep takke<vblex><pres>→takkar
 "<takker>" REMOVE:default-takker ("takk" n m pl ind) ;	# keep takke<vblex><pres>→takkar
-"<taler>" REMOVE:default-taler ("tale" vblex pres) ;	# keep tale<n><m><pl><ind>→talar taler<n><m><sg><ind>→talar
+"<taler>" REMOVE:default ("tale") + n ;	# keep taler
 "<tall>" REMOVE:default-tall ("talle" vblex imp) ;	# keep tall<n><nt><sg><ind>→tal tall<n><nt><pl><ind>→tal
 "<tallet>" REMOVE:default-talla ("talle" vblex pp) ;	# keep tall<n><nt><sg><def>→talet
 "<talte>" REMOVE:default-talde ("telle" vblex pret) ;	# keep tale<vblex><pret>→talte
