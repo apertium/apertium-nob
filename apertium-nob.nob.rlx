@@ -1811,21 +1811,23 @@ REMOVE:cardinal date;
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
 
-"<den>" SELECT:den-som ("den¹") IF
+SELECT:den-som ("den¹") IF
         (1 %som%)
         ;
 # «I dag er døren stengt for den som fullfører tre år studiespesialisering og finner ut at han eller hun heller vil bli hjelpepleier, sier Lied.»
 
-"<den>" SELECT:den-av-statsrådene ("den¹") IF
+SELECT:den-av-statsrådene ("den¹") IF
         (1 %av%)
         (2 n + pl)
         ;
 
-"<den>" SELECT:Og-den-mener-han-er ("den¹") IF
+SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 setn-gr)
         (1 fv)
         (2 nominativ)
         ;
+# «– Den har vi alle!»
+# «Og den mener han er klart bondefiendtlig.»
 
 
 "<den>" SELECT:den-mistenkte det IF
