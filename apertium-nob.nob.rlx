@@ -27931,6 +27931,16 @@ SELECT:Forskningsprosjektet-han-leder-arbeider-nå pres
 	(0C subst OR pres)
 ;
 
+SELECT:hvilken-energiklasse-hvitevarene-de-kjøper-tilhører pres
+        (-5 %hvilken%)
+        (-4 n)
+        (-3 def)
+        (-2 nominativ)
+	(-1C pres)
+	(0C subst OR pres)
+;
+
+# If none of the above rules matched, assume pres-pres impossible:
 SELECT:no-pres-pres subst
 	(-1C pres)
 	(0C subst OR pres)
