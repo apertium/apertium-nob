@@ -29504,6 +29504,15 @@ SELECT:det-norske-publikum dem + $$GENDER + $$NUMBER - expl IF
         (2 n + $$GENDER + $$NUMBER)
         ;
 
+REMOVE:høye-doser n + sg IF
+        (NOT -2 gen)            # «Politiets generelle inntrykk»
+        (-1C adj + pl OR adj + def)
+        (0C n)
+        (NOT 0 cmp-split)
+        (0 pl)
+        ;
+# Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
+
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:selskapenes-system-BSP sg IF
         (-1 poss-det OR gen)
