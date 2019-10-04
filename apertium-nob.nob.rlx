@@ -8327,7 +8327,7 @@ SELECT:skrev vblex IF
 
 #:3161
 REMOVE:Vann  vblex OR adv IF
-        (0 ("vann"))
+        (0 ("<vann>"i))
 	(0 subst)
 ;
 #  "lite vanlig bøying i bm"
@@ -26332,6 +26332,17 @@ SELECT:titlecase-np np + titlecase IF
         (NOT -1 guio OR lpar LINK -1 >>>)
         ;
 
+SELECT:fredag-ventes-det expl IF
+        (-2 vekedag OR adverbialsubst OR adv)
+        (-1 pasv)
+        ;
+
+SELECT:Ifølge-tollvesenet-er-det-store-mørketall expl IF
+        (*-2 ("ifølge") BARRIER ikke-subst)
+        (-1 %være/bli%)
+        ;
+
+
 #:2792
 # SELECT:2792 (clb) IF
 #	(0 komma)
@@ -29494,8 +29505,8 @@ SELECT:store-vann--og-røykskader n + sg + cmp-split IF
         ;
 
 SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
-        (-1 adj + def)
         (-2 dem + $$GENDER + $$NUMBER)
+        (-1 adj + def)
         ;
 # «For det norske TV-publikum er han kjent for sin rolle i ‘Koselig med peis’, som skaffet ham en høythengende Emmy-nominasjon.»
 
@@ -29514,6 +29525,10 @@ REMOVE:høye-doser n + sg IF
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
+SELECT:73-av-verdens-fattigste-land pl IF
+        (*-1 poss-det OR gen BARRIER ikke-adv-adj LINK -1 %av% LINK -1 qnt)
+        (0C subst)
+        ;
 SELECT:selskapenes-system-BSP sg IF
         (-1 poss-det OR gen)
         (0C subst)
