@@ -19200,9 +19200,15 @@ SELECT:ble-funnet-drept pp + $$GENDER IF
 # «Det var i dette området de ble funnet drept mandag.»
 # Men ikkje: «Nettsiden har frem til den ble stengt tilbydt piratversjoner av filmer.»
 
+SELECT:at-arbeidet-som-ble-utført n + def OR n + pl IF
+        (-1 cnjsub)
+        (1 %som%)
+        (2 pasv OR hj-verb)
+        (2 fv)
+        ;
 
 #:2410
- SELECT:2410 (vblex pp) IF
+SELECT:2410 vblex + pp IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
