@@ -29463,6 +29463,12 @@ REMOVE:norske-sykehus-mangler-leger n + ind IF
         (1 n)
         ;
 
+SELECT:nye-minner pl IF
+        (-1C adj + pl)
+        (0C n OR vblex)
+        (*0 fv)
+        ;
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:selskapenes-system-BSP sg IF
