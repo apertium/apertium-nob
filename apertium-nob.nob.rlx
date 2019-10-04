@@ -23821,8 +23821,6 @@ REMOVE:1943 vblex + pres IF
 ;
 #  ""
 
-
-
 #:1953
  REMOVE:1953 (vblex pres) IF
 	(NOT 0 pass)
@@ -24756,7 +24754,7 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
         (NOT *-1 fv BARRIER setn-gr)
         (NOT 0 farlige-verb)
         (NOT *1 fv BARRIER setn-gr)
-        (NOT 1 setn-gr)
+        (NOT 1 setn-gr OR cm)
 ;
 
 #:1853
@@ -26409,6 +26407,14 @@ SELECT:titlecase-np np + titlecase IF
 ;
 #  "25.11.2002: Jeg kikket til siden."
 #040908: endret til velg subst (må ha vært feil fra bergensversjonen
+
+SELECT:planlegge-smarte-grep-for-å n + ind + pl IF
+        (-2C vblex)
+        (-1 adj + pl)
+        (-1C adj)
+        (0C n OR vblex)
+        (*1 cnjsub OR infmerke CBARRIER ikke-prep)
+        ;
 
 #:1798
  SELECT:1798 (clb cnjcoo) IF
