@@ -13395,6 +13395,16 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 ;
 #  "- Men Oscar W var ..."
 
+SELECT:finne-deres-X-og-Y-og-gi clb IF
+        (*-4 fv CBARRIER clb)
+        (-3 n)
+        (-2 %og/eller%)
+        (-1 n)
+        (0 %og/eller%)
+        (1 inf)
+        ;
+# «Vi må konstatere deres identitet og nasjonalitet og gi dem et norsk statsborgerskap hvis de har norske foreldre.»
+# If we're immediately following a simple noun-noun-coordination, we're a clause boundary.
 
 
 #:2772
