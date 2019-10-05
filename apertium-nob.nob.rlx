@@ -99,6 +99,8 @@ LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
 LIST overskrift = overskrift "❡" ;
 
+LIST mwe-verb = "<.* .*>"r ;
+
 # TODO: try before/after changing this to cmp
 LIST samset = samset ;
 
@@ -5813,7 +5815,7 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
-REMOVE:mwe-verb-unlikely-adj ("<.* .*>"r adj pp)
+REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
         (NEGATE 0 ("be# om") LINK *-1 ("bli"))
 ;
 # «førte_til brannar»
@@ -19257,6 +19259,14 @@ SELECT:at-arbeidet-som-ble-utført n + def OR n + pl IF
         (2 pasv OR hj-verb)
         (2 fv)
         ;
+
+SELECT:dette-var-det-vi-håpet-på pret IF
+        (0C pret OR pp)
+        (-1C nominativ)
+        (-2C prn)
+        ;
+# «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
+
 
 #:2410
 SELECT:2410 vblex + pp IF
