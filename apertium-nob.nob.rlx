@@ -1590,7 +1590,7 @@ REMOVE:cardinal date;
 "<annet>" REMOVE:annet-og def IF
         (NOT 1 n + ind + nt)
         ;
-LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsliv" "jordbruk" "syn" ;
+LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsliv" "jordbruk" "syn" "husdyrhold" "grunnlag" "visumgrunnlag" ;
 "<annet>" REMOVE:annet-arbeid def IF
         (1 annet-utellelig)
         ;
@@ -21473,7 +21473,12 @@ REMOVE:aller-minst-har-de-kunnet det + pl IF
 #  "Aller minst har de (pron) kunnet
 # (forts) (adj nøyt!) forberede ..."))
 
-
+REMOVE:skjermes-de-mest-sentrale prn IF
+        (-1 fv)
+        (0 det + dem)
+        (1 %mest/minst%)
+        (2C adj)
+        ;
 
 #:2160
  REMOVE:2160 (det pl) IF
