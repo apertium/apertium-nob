@@ -26229,7 +26229,9 @@ SELECT:noen-default <noen> + (neg) ;
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
 
-
+"<sammenstøt>" REMOVE:samanstøytar sg IF
+        (NOT -1 det + sg)
+        ;
 
 #:3336
   "<satt>"   REMOVE:3336   (adj ind sg) IF
