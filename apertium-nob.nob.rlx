@@ -1145,6 +1145,7 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
 REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
