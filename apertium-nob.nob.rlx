@@ -7349,6 +7349,21 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 #bare ved "i le", "gir le"
 
+REMOVE:plastleker ("lek") IF
+        (0 ("leke"))
+        (0/* ("plast"))
+        ;
+
+REMOVE:spill-og-leker ("lek") IF
+        (-2 ("spill"))
+        (-1 %og/eller%)
+        (0 ("leke"))
+        ;
+
+REMOVE:forbudt-i-leker ("lek") IF
+        (-2 ("forby") OR ("kjemikalie") OR ("stoff") OR ("giftstoff") OR ("kosmetikk"))
+        (0 ("leke"))
+        ;
 
 #:3485
   "<legger>"   REMOVE:3485   (n m sg ind) IF
