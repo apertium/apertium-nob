@@ -8344,6 +8344,17 @@ SELECT:skrev vblex IF
 ;
 #  "bare trans"
 
+"<tykke>" REMOVE:tjukke vblex IF
+        (NOT -1 infmerke)
+        ;
+
+"<tykke>" REMOVE:tjukke n IF
+        (1 n OR ukjent)
+        ;
+
+"<tykke>" REMOVE:få-atomlag-tjukke n IF
+        (-1C n OR ("<relativt>"))
+        ;
 
 "<utelukket>" SELECT pst IF
         (-1 ("<helt>"i))
