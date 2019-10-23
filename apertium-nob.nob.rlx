@@ -4385,6 +4385,9 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 #  "så å si"
 
 
+"<siden>"   SELECT:sikre-siden   n IF
+        (-1 ("<sikre>"))
+        ;
 
 #:3304
   "<siden>"   SELECT:3304   (adv) IF
@@ -4697,6 +4700,9 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 ;
 #  "til slutt"
 
+"<skiftet>" SELECT:grønne-skiftet ("skifte") + n IF
+        (-1 ("<grønne>"))
+        ;
 
 
 #:3255
