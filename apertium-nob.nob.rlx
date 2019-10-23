@@ -29702,6 +29702,7 @@ SELECT:default ("<tvang>") + pret;
 SELECT:default ("<super>"i) + adj;
 SELECT:default ("<strider>"i) + pres;
 SELECT:default ("<ruter>"i) + n + pl;
+SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -29944,7 +29945,6 @@ REMOVE:default ("<annet>"i) + def;
 "<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
 "<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<leke>" REMOVE:default-leike ("leke" n m sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
-"<lekene>" REMOVE:default-leikane ("leke") ;	# keep lek<n><m><pl><def>→leikane, OL-lekene
 "<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
 "<lette>" REMOVE:default-leita ("leite" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
 "<lette>" REMOVE:default-leita ("lete" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
