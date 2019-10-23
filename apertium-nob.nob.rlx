@@ -5947,6 +5947,7 @@ REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
 REMOVE:unlikely n        IF (0 ("<i>"i));
 REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
+REMOVE:unlikely n + ("tykke") IF (NOT -1 ("<sitt>")) ;
 REMOVE:unlikely-næringslivstopparen ("stopper") IF
         (0 ("topp"))
         (0/* cmp)
@@ -8348,13 +8349,6 @@ SELECT:skrev vblex IF
         (NOT -1 infmerke)
         ;
 
-"<tykke>" REMOVE:tjukke n IF
-        (1 n OR ukjent)
-        ;
-
-"<tykke>" REMOVE:få-atomlag-tjukke n IF
-        (-1C n OR ("<relativt>"))
-        ;
 
 "<utelukket>" SELECT pst IF
         (-1 ("<helt>"i))
