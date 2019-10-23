@@ -1290,6 +1290,7 @@ SELECT:unlikely ("<super>"i) + adj IF
 
 REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
 REMOVE:unlikely ("hu") + gen ; # hus
+REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 
 "<Monsen>" SELECT:Monsen-not-mons np;
 
