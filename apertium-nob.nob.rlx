@@ -956,7 +956,7 @@ LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
-LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" ;
+LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" "helt" ;
 LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
 LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
@@ -1145,6 +1145,7 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
 REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
 REMOVE:unlikely ("blive") IF (0 ("bli"));
@@ -1578,6 +1579,32 @@ REMOVE:cardinal date;
 # IKKE: i andre (ordenstall, ikke det dem) og siste halvår"))
 
 
+
+"<annet>" REMOVE:noe-annet def IF
+        (-1 qnt OR %og/eller% OR %ikke%)
+        ;
+# et annet ord, ikke annet utstyr, lønnsøkning eller annet
+"<annet>" REMOVE:noe-helt-annet def IF
+        (-2 qnt)                # et helt annet
+        (-1 adv OR forsterkende-ord)
+        ;
+"<annet>" REMOVE:annet-og def IF
+        (NOT 1 n + ind + nt)
+        ;
+LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsliv" "jordbruk" "syn" "husdyrhold" "grunnlag" "visumgrunnlag" ;
+"<annet>" REMOVE:annet-arbeid def IF
+        (1 annet-utellelig)
+        ;
+
+"<annet>" REMOVE:sitt-annet-NM-gull ind IF
+        (-1 pos)
+        ;
+# «Aalesund vant cupfinalen 2-1 og tok sitt annet NM-gull på tre sesonger.»
+
+"<annet>" REMOVE:annet-kvartal ind IF
+        (1C n + ind + nt)
+        ;
+# «annet kvartal»
 
 
 
@@ -21447,7 +21474,12 @@ REMOVE:aller-minst-har-de-kunnet det + pl IF
 #  "Aller minst har de (pron) kunnet
 # (forts) (adj nøyt!) forberede ..."))
 
-
+REMOVE:skjermes-de-mest-sentrale prn IF
+        (-1 fv)
+        (0 det + dem)
+        (1 %mest/minst%)
+        (2C adj)
+        ;
 
 #:2160
  REMOVE:2160 (det pl) IF
@@ -26197,7 +26229,9 @@ SELECT:noen-default <noen> + (neg) ;
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
 
-
+"<sammenstøt>" REMOVE:samanstøytar sg IF
+        (NOT -1 det + sg)
+        ;
 
 #:3336
   "<satt>"   REMOVE:3336   (adj ind sg) IF
@@ -27875,7 +27909,7 @@ SELECT:ved-Malis-grenser-bor n + ind IF
 
 SELECT:med-andre-kjeder-cm n + pl IF
         (-2 pr)
-        (-1 %annen%)
+        (-1 %annen% + pl)
         (0C n OR fv)
         (1 cm)
         ;
@@ -29681,6 +29715,7 @@ REMOVE:default ("den¹");
 REMOVE:default adv   IF (0 ("<det>"i));
 REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene blir brukt riktig, sier Mollekleiv.»
 
+REMOVE:default ("<annet>"i) + def;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
