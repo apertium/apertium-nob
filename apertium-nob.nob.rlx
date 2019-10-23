@@ -1709,8 +1709,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 
 
-#:3733
-  "<bekjente>"   SELECT:3733   (adj pl) IF
+"<bekjente>" SELECT:venner-og-bekjente n + sp IF
 	(-1 %og%)
 	(-2 ub-fl-subst)
 ;
