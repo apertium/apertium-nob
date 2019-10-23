@@ -7350,7 +7350,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 REMOVE:plastleker ("lek") IF
         (0 ("leke"))
-        (0/* ("plast"))
+        (0/* ("plast") OR ("bursdag"))
         ;
 
 REMOVE:spill-og-leker ("lek") IF
@@ -7361,6 +7361,11 @@ REMOVE:spill-og-leker ("lek") IF
 
 REMOVE:forbudt-i-leker ("lek") IF
         (-2 ("forby") OR ("kjemikalie") OR ("stoff") OR ("giftstoff") OR ("kosmetikk"))
+        (0 ("leke"))
+        ;
+
+REMOVE:tilbakekaller-leker ("lek") IF
+        (-1 ("tilbakekalle") OR ("forby") OR ("gammel"))
         (0 ("leke"))
         ;
 
