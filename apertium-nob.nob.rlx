@@ -5950,6 +5950,7 @@ REMOVE:unlikely-næringslivstopparen ("stopper") IF
         (0 ("topp"))
         (0/* cmp)
         ;
+REMOVE:unlikely n + ("have") IF (0 ("hav")) ; # havene våre
 REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (0 ("topp"))
         (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
