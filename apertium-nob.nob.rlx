@@ -402,7 +402,7 @@ LIST %sitt% = ("seg"  det pos nt sg) ;
 LIST %sjakk% = "sjakk"  ;
 LIST %sjelden% = "sjelden"  ;
 LIST %skifte/bytte% = ("skifte"  vblex) ("bytte"  vblex) ;
-LIST %slags% = "slags"  ;
+LIST %slags% = "slags" "en slags"  ;
 LIST %slettes% = ("slette"  pasv) ;
 LIST %slik%-adv = ("slik"  adv) ;
 LIST %slutt% = ("slutt"  n m) ;
@@ -6623,6 +6623,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 "<forbundet>" REMOVE:kostnadene-forbundet-med n IF
         (-1 n)
         (1 %med%)
+        ;
+
+"<forløper>" REMOVE vblex IF
+        (-1 %slags%) 
         ;
 
 #:3627
