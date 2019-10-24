@@ -1290,6 +1290,7 @@ SELECT:unlikely ("<super>"i) + adj IF
 
 REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
 REMOVE:unlikely ("hu") + gen ; # hus
+REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 
 "<Monsen>" SELECT:Monsen-not-mons np;
 
@@ -1708,8 +1709,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 
 
-#:3733
-  "<bekjente>"   SELECT:3733   (adj pl) IF
+"<bekjente>" SELECT:venner-og-bekjente n + sp IF
 	(-1 %og%)
 	(-2 ub-fl-subst)
 ;
@@ -4384,6 +4384,9 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 #  "så å si"
 
 
+"<siden>"   SELECT:sikre-siden   n IF
+        (-1 ("<sikre>"))
+        ;
 
 #:3304
   "<siden>"   SELECT:3304   (adv) IF
@@ -4696,6 +4699,9 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 ;
 #  "til slutt"
 
+"<skiftet>" SELECT:grønne-skiftet ("skifte") + n IF
+        (-1 ("<grønne>"))
+        ;
 
 
 #:3255
@@ -5587,6 +5593,7 @@ REMOVE:støtte ("støte") IF
 ;
 #  "tross alt"
 
+"<trær>" SELECT:likely-tre n;
 
 
 #:3171
@@ -5946,10 +5953,12 @@ REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
 REMOVE:unlikely n        IF (0 ("<i>"i));
 REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
+REMOVE:unlikely n + ("tykke") IF (NOT -1 ("<sitt>")) ;
 REMOVE:unlikely-næringslivstopparen ("stopper") IF
         (0 ("topp"))
         (0/* cmp)
         ;
+REMOVE:unlikely n + ("have") IF (0 ("hav")) ; # havene våre
 REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (0 ("topp"))
         (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
@@ -7339,6 +7348,26 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 #bare ved "i le", "gir le"
 
+REMOVE:plastleker ("lek") IF
+        (0 ("leke"))
+        (0/* ("plast") OR ("bursdag"))
+        ;
+
+REMOVE:spill-og-leker ("lek") IF
+        (-2 ("spill"))
+        (-1 %og/eller%)
+        (0 ("leke"))
+        ;
+
+REMOVE:forbudt-i-leker ("lek") IF
+        (-2 ("forby") OR ("kjemikalie") OR ("stoff") OR ("giftstoff") OR ("kosmetikk"))
+        (0 ("leke"))
+        ;
+
+REMOVE:tilbakekaller-leker ("lek") IF
+        (-1 ("tilbakekalle") OR ("forby") OR ("gammel"))
+        (0 ("leke"))
+        ;
 
 #:3485
   "<legger>"   REMOVE:3485   (n m sg ind) IF
@@ -8341,6 +8370,10 @@ SELECT:skrev vblex IF
 	(NOT 1 %at%)
 ;
 #  "bare trans"
+
+"<tykke>" REMOVE:tjukke vblex IF
+        (NOT -1 infmerke)
+        ;
 
 
 "<utelukket>" SELECT pst IF
@@ -29701,6 +29734,7 @@ SELECT:default ("<tvang>") + pret;
 SELECT:default ("<super>"i) + adj;
 SELECT:default ("<strider>"i) + pres;
 SELECT:default ("<ruter>"i) + n + pl;
+SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -29943,7 +29977,6 @@ REMOVE:default ("<annet>"i) + def;
 "<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
 "<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<leke>" REMOVE:default-leike ("leke" n m sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
-"<lekene>" REMOVE:default-leikane ("lek" n m pl def) ;	# keep leke<n><f><pl><def>→leikene leke<n><m><pl><def>→leikene
 "<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
 "<lette>" REMOVE:default-leita ("leite" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
 "<lette>" REMOVE:default-leita ("lete" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
