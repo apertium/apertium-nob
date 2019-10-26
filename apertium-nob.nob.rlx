@@ -2178,6 +2178,10 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1 %av%)
         ;
 
+"<fart>" SELECT:skyte-fart n IF
+        (-1 ("skyte"))
+        ;
+
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
 	(NOT 0 farlige-adj)
