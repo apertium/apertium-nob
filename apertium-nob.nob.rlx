@@ -13442,6 +13442,11 @@ SELECT:handler-utelukkende-med adv IF
 # (forts) regimet, (clb) støtter jeg UDs standpunkt"))
 
 
+"<la>" SELECT pret IF
+        (NOT -1 ("<viva>"i) OR ("<hasta>"i) OR ("<de>"i) OR ("<à>"i) OR ("<a>"i) OR ("<pour>"i))
+        (-1C np OR storbokstav)
+        (1C np OR storbokstav)
+        ;
 
 SELECT:Staffan-de-Mistura np + attr IF
         (-1C np OR storbokstav)
