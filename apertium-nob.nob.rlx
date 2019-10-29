@@ -1185,6 +1185,7 @@ REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
 REMOVE:unlikely ("kader");
+REMOVE:unlikely ("<ruser>"i "rus");
 REMOVE:unlikely ("stall") IF (0 ("tall")) (0/1 cmp);
 
 REMOVE:unlikely ("regle") IF
@@ -29767,6 +29768,7 @@ REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
 REMOVE:default adv   IF (0 ("<det>"i));
 REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene blir brukt riktig, sier Mollekleiv.»
+REMOVE:default-skyer ("<skyer>") + vblex ;
 
 REMOVE:default ("<annet>"i) + def;
 
