@@ -20811,6 +20811,7 @@ REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
         (-1C n)
         (1 n)
         (2C setn-gr)
+        (NOT 2 ord) # leverte 129 meter og holdt 8.-plass etter ett svev
         ;
 
 
