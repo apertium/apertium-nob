@@ -19307,6 +19307,14 @@ SELECT:fisken-ble-funnet pp + mf IF
 ;
 
 
+SELECT:ungdom-etterlatt-i-utlandet vblex + pp IF
+        (NOT -2 %hvilken%)      # hvilke konsekvenser funnet får
+        (-1C n + ind)
+        (0C pp OR n)
+	(NOT 0 farlige-part)
+        (NEGATE 0 &&ADJ_N_AGR LINK 1C n LINK 0 &&ADJ_N_AGR) # 10 tonn fryst laks
+        ;
+
 SELECT:observert-løpende pprs OR adv IF
         # (*-2 %være/bli%)
         (NOT -1 %være/bli%)     # hadde vært spennende
