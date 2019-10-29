@@ -4902,16 +4902,18 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (1 ("vedta") OR ("beslutte") OR ("avgjøre") OR ("erfare"))
         ;
 
-"<støtte>"   SELECT  subst IF
-	(NOT -1 infmerke)
-	(NOT -2 infmerke)
+"<støtte>" REMOVE:skal-støtte-arbeidet n IF
+        (1 ("<arbeidet>"))
         ;
 
-REMOVE:støtte ("støte") IF
+REMOVE:støtte-sammen ("støte") IF
         (0 ("<støtte>"i))
 	(NOT 1 ("sammen"))
 	(NOT 1 ("på"))
 	(NOT *1 ("bort") OR ("fra") BARRIER setn-gr)
+        ;
+REMOVE:avoid-støytte ("støte") IF
+        (0 ("<støtte>"i))
         ;
 
 #:3236
