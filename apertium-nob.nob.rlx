@@ -1977,6 +1977,10 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 	  (1 %ned%)
 ;
 
+"<dekket>" SELECT:dekket-kostnadene vblex IF
+        (1C n)
+        ;
+
 "<døde>" SELECT:hente-den-døde-ut adj IF
         (-2C vblex)
         (-1 %den%)
