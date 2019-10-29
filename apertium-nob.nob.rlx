@@ -20805,6 +20805,12 @@ REMOVE:og-vant-cupen farlige-adj IF
 ;
 #  "en eller annen"
 
+REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
+        (-2 kvant-med-flere OR %mye/lite/litt%)
+        (-1C n)
+        (1 n)
+        (2C setn-gr)
+        ;
 
 
 #:2164
