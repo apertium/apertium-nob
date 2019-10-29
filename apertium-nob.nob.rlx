@@ -10312,6 +10312,14 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 # De har aldri vært fine"
 
 
+SELECT:jeg-er-utrolig-takknemlig adj + mf + sg + ind IF
+        (*-1 %være/bli% BARRIER setn-gr LINK -1 p1 + sg)
+        ;
+
+SELECT:er-jeg-både-takknemlig-og-rørt adj + mf + sg + ind IF
+        (*-1 p1 + sg BARRIER setn-gr LINK -1 %være/bli%)
+        ;
+
 
 #:3020
  SELECT:3020 (adj nt sg) IF
