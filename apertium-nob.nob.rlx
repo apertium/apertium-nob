@@ -30049,8 +30049,7 @@ REMOVE:default ("<annet>"i) + def;
 "<redusert>" REMOVE:default-reduserte ("redusere" adj pp pl) ;	# keep redusere<vblex><pp>→redusert redusere<adj><pp><nt><sg><ind>→redusert
 "<reglene>" REMOVE:default-reglene ("regle" n f pl def) ;	# keep regel<n><m><pl><def>→reglane
 "<reglene>" REMOVE:default-reglene ("regle" n m pl def) ;	# keep regel<n><m><pl><def>→reglane
-"<reisene>" REMOVE:default-reisene ("reis" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
-"<reisene>" REMOVE:default-reisene ("reis" n m pl def) ;	# keep reis<n><nt><pl><def>→reisa
+"<reisene>" REMOVE:default-reisene ("reis" n nt) ;	# keep reisene f/m
 "<reisene>" REMOVE:default-reisene ("reise" n f pl def) ;	# keep reis<n><nt><pl><def>→reisa
 "<reisene>" REMOVE:default-reisene ("reise" n m pl def) ;	# keep reis<n><nt><pl><def>→reisa
 "<rekker>" REMOVE:default-rekker ("rekke" n f pl ind) ;	# keep rekke<vblex><pres>→rekk
