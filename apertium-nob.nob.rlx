@@ -30305,7 +30305,8 @@ REMOVE:anaphora ("deres²" pos) IF # default: p3
 SET simple-nkon-border-right = ("i") OR ("på") OR ("og") - (clb) ;
 
 MAP:dyrenes-velferd-og-livsforhold (@nkon) %og/eller% IF
-        (NOT -3 ("mellom")) # «differansen mellom [hjemlandets ytelser] og [norske ytelser]»
+        (NOT -3 ("mellom")) # «differansen mellom [hjemlandets ytelser] og [norske ytelser]», «forholdet mellom foreldrenes utdannelse og barnedødelighet»
+        (NOT -2 ("rike") LINK 1 ("sikkerhet") OR ("tilstand")) # «rikets sikkerhet og utenrikspolitiske hensyn», «tale om rikets tilstand og utsikter for norsk økonomi»
         (-2 gen OR pos)
         (-1C n + ind LINK NOT 0 gen)
         (NOT 0 clb)
