@@ -7136,8 +7136,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "Dette er ikke noe hjem (ikke prep)!"))
 
 #:3535
-  "<hjem>"   REMOVE:3535   (n) IF
+"<hjem>"   REMOVE:3535   n IF
 	(-1 adj-nøyt)
+        (NOT -1 språk)
 	(NOT -2 nøyt-det)
 ;
 #  "han leverte også tøyet (subst/adj-NØYT) hjem"))
