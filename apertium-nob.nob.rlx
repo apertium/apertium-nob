@@ -1604,11 +1604,15 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         ;
 # «Aalesund vant cupfinalen 2-1 og tok sitt annet NM-gull på tre sesonger.»
 
+"<annet>" SELECT:hvilken-som-helst-annet det + ind IF
+        (-2 %som%)
+        (-1 %helst%)
+        ;
+
 "<annet>" REMOVE:annet-kvartal ind IF
         (1C n + ind + nt)
         ;
 # «annet kvartal»
-
 
 
 
@@ -2069,6 +2073,13 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 	(-2 tall)
 ;
 #  "en ganger en"
+
+
+"<en>" SELECT:en-hvilken-som-helst det IF
+	(1 %hvilken%)
+	(2 %som%)
+        (3 %helst%)
+;
 
 
 
@@ -4718,6 +4729,11 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         ;
 
 
+"<som>" SELECT:hvilken-som-helst pr IF
+	(-1 %hvilken%)
+        (1 %helst%)
+;
+
 #:3255
   "<som>"   SELECT:3255   (pr) IF
 	(NOT 1 perf-part)
@@ -7081,6 +7097,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # (ser foreløpig bort fra (\"dagen heller.\")"))
 
 
+"<helst>" REMOVE:hvilken-som-helst vblex IF
+        (-2 %hvilken%)
+        (-1 %som%)
+        ;
 
 #:3544
   "<helt>"   REMOVE:3544   (n) IF
