@@ -28027,6 +28027,12 @@ SELECT:med-andre-kjeder-cm n + pl IF
         (1 cm)
         ;
 
+SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
+        (-4 %hvilken% + $$GENDER)
+	(-3 %som%)
+	(-2 %helst%)
+	(-1 det + $$GENDER)
+        ;
 
 
 #:1732
