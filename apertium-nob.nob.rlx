@@ -2728,6 +2728,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 setn-gr OR rquot)
         ;
 
+"<grep>" SELECT:små-grep n + pl IF
+        (-1 ("liten") + pl)
+        ;
+
 "<grepet>" SELECT:feste-grepet n IF
         (-1 ("feste"))
         ;
@@ -7192,6 +7196,11 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(1 setn-gr)
 ;
 
+"<hvilket>" REMOVE:hvilket-annet-gull cnjsub IF
+        (1 ("<annet>"))
+        (*2 n BARRIER ikke-adv-adj-det-subst)
+        ;
+# «han dro litt på det da han fikk spørsmål om hvilket annet gull enn i skiskyting han kunne ha tenkt seg »
 
 
 #:4084
@@ -16257,7 +16266,7 @@ SELECT:I-1931-skilte-paret-seg fv + refl IF
 
 
 #:2579
- SELECT:2579 (cnjsub) IF
+SELECT:da-gruvedriften-tok-til cnjsub IF
 	(NOT 0 %enda%)
 	(NOT 0 %bare%)
 	(NOT 0 %så%)
