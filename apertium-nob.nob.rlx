@@ -2911,6 +2911,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 # Unngå "hele" (å «heile vatnet»)
 
 
+"<helst>" SELECT:hvilken-som-helst adv IF
+        (-2 %hvilken%)
+        (-1 %som%)
+        ;
+
 #:3543
   "<henne>"   SELECT:3543   (prn) IF
 	(0 prep)
@@ -7096,11 +7101,6 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # heller vann (nom) i flaska
 # (ser foreløpig bort fra (\"dagen heller.\")"))
 
-
-"<helst>" REMOVE:hvilken-som-helst vblex IF
-        (-2 %hvilken%)
-        (-1 %som%)
-        ;
 
 #:3544
   "<helt>"   REMOVE:3544   (n) IF
