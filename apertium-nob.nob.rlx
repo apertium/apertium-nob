@@ -7155,6 +7155,13 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "Dette er ikke noe hjem (ikke prep)!"))
 
+"<hjem>" REMOVE:hvilket-som-helst-hjem pr IF
+        (-4 %et%)
+        (-3 %hvilken%)
+        (-2 %som%)
+        (-1 %helst%)
+        ;
+
 #:3535
 "<hjem>"   REMOVE:3535   n IF
 	(-1 adj-nøyt)
@@ -7164,7 +7171,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "han leverte også tøyet (subst/adj-NØYT) hjem"))
 
 #:3536
-  "<hjem>"   REMOVE:3536   (n) IF
+"<hjem>"   REMOVE:3536   n IF
 	(NOT -1 nøyt-adj-det)
 	(NOT -1 fl-adj/fl-det)
 	(NOT -1 subst-gen)
