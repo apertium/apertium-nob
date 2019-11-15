@@ -8682,6 +8682,14 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:hvilken-fin-del &&ADJ_N_AGR + sg + adj IF
+        (-1C &&ADJ_N_AGR + sg + %hvilken%)
+        (1   &&ADJ_N_AGR + sg + n)
+        ;
+SELECT:hvilken-fin-del &&ADJ_N_AGR + sg + n IF
+        (-2C &&ADJ_N_AGR + sg + %hvilken%)
+        (-1  &&ADJ_N_AGR + sg + adj)
+        ;
 SELECT:hvilke-deler n + pl IF
         (-1 %hvilken% + pl)
         ;
