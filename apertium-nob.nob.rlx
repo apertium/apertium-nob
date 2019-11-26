@@ -14254,6 +14254,7 @@ SELECT:disse-fine-bilene det + pl IF
  SELECT:2725 (det nt) IF
 	(0 be-nøyt-det)
 	(NOT 0 fl-det)
+        (NEGATE 0 det + mORf LINK 1 n + mORf)
 	(1 be-ent-nøyt-adj)
 	(-1 fv)
 	(NOT 1 adv)
