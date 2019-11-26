@@ -287,7 +287,7 @@ LIST %ha%-pres/pret = ("ha"  pres) ("ha"  pret) ;
 LIST %ha/få% = "ha"  "få"  ;
 LIST %halvliter% = "halvliter"  ;
 LIST %han% = ("han"  prn p3) ;
-LIST %hele% = ("hel"  adj def sg) ;
+LIST %hele% = ("hel"  adj def sp) ;
 LIST %helhet% = ("helhet" ) ;
 LIST %helst% = ("helst"  adv) ;
 LIST %henne% = "henne"  ;
@@ -2792,9 +2792,13 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 
 
+"<hele>" SELECT:hele-tirsdagens-kamp det IF
+	(1C gen)
+        (2C n + ind)
+;
 
 #:3564
-  "<hele>"   SELECT:3564   (adj def sg) IF
+  "<hele>"   SELECT:3564   (adj def sp) IF
 	(1 poss-det)
 ;
 #  "hele min verden"
@@ -2802,7 +2806,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 
 #:3565
-  "<hele>"   SELECT:3565   (adj def sg) IF
+  "<hele>"   SELECT:3565   (adj def sp) IF
 	(1 be-det)
 ;
 #  "hele den siste tida"
@@ -2810,7 +2814,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 
 #:3566
-  "<hele>"   SELECT:3566   (adj def sg) IF
+  "<hele>"   SELECT:3566   (adj def sp) IF
 	(-1 %det%)
 ;
 #  "Hun har fortalt dem det hele"
