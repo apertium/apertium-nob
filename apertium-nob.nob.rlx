@@ -17058,7 +17058,7 @@ SELECT:fra-naturens-side subst + $$GENDER IF
 	(NOT -1 adj-sup)
 	(NOT -1 ikke-adj)
 	(NOT -1 adj-ub)
-	(NOT -2 det)
+	(NOT -2 det OR %de%)    # Mange av de overlevende hoppet
 	(**-1C setn-gr BARRIER kop)
 ;
 #  "fra hele landet
