@@ -20716,6 +20716,11 @@ REMOVE:og-vant-cupen farlige-adj IF
 ;
 #  "kh feb 2004: I opprydningen etter farens (ikke adj) begravelse:"))
 
+REMOVE:det-høyre-kneet pp IF
+        (-2C det + dem + $$GENDER)
+        (-1C adj + def)
+        (0 n + def + $$GENDER)
+        ;
 
 
 
@@ -30047,7 +30052,7 @@ REMOVE:default ("<annet>"i) + def;
 "<kjøttet>" REMOVE:default-kjøttet ("kjøtt" n nt sg def) ;	# keep kjøtte<adj><pp><nt><sg><ind>→kjøtt kjøtte<vblex><pp>→kjøtt
 "<klarer>" REMOVE:default-klarar ("klare" n f pl ind) ;	# keep klare<vblex><pres>→klarer
 "<klarer>" REMOVE:default-klarar ("klare" n m pl ind) ;	# keep klare<vblex><pres>→klarer
-"<kneet>" REMOVE:default-knea ("knee" vblex pp) ;	# keep kne<n><nt><sg><def>→kneet
+"<kneet>" REMOVE:default-knea ("knee" pp) ;	# keep kne<n><nt><sg><def>→kneet
 "<knivstukket>" REMOVE:default-knivstukke ("knivstikke" adj pp nt sg ind) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
 "<knivstukket>" REMOVE:default-knivstukke ("knivstikke" vblex pp) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
 "<knytter>" REMOVE:default-knyte ("knytte" n nt pl ind) ;	# keep knytte<vblex><pres>→knyter
