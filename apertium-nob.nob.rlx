@@ -9085,6 +9085,17 @@ SELECT:og-eier-og-styreleder n IF
         (2 n OR np OR ukjent)
         ;
 
+SELECT:kom-det-bevegelser-og-lyder n + $$NUMBER IF
+        (*-3 fv BARRIER setn-gr)
+        (-3C prn OR fv OR dem)
+        (-3 %det% OR fv)
+        (-2C n + $$NUMBER)
+        (-1 %og/eller% - clb)
+        (NOT 0 adv)
+        (1 pr OR adv)
+        ;
+# «Men da politimannen ankom sykehuset og skulle undersøke det han trodde var et lik, kom det bevegelser og lyder fra den antatt døde kvinnen.»
+# Ikkje: «Andre der igjen ønsker foreldre som er med i en organisasjon eller bor i et spesielt borettslag.»
 
 
 #:6212
