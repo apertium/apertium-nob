@@ -8588,28 +8588,33 @@ REMOVE:Vann  vblex OR adv IF
 
 
 
+"<ville>" SELECT:sin-ville-ferd adj IF
+	(-1 %sin% + $$GENDER)
+        (1 n + ind + $$GENDER)
+;
+
 #:3133
-  "<ville>"   REMOVE:3133   (adj def sg) IF
+  "<ville>"   REMOVE:3133   (adj def sp) IF
 	(1 komma/konj)
 	(NOT 2 subst/adj-ent-be)
 ;
 
 
 #:3134
-  "<ville>"   REMOVE:3134   (adj def sg) IF
+  "<ville>"   REMOVE:3134   (adj def sp) IF
 	(NOT 1 subst-ent/komma/konj)
 	(*-1 be-det-ent BARRIER ikke-adv-adj)
 ;
 
 
 #:3135
-  "<ville>"   REMOVE:3135   (adj def sg) IF
+  "<ville>"   REMOVE:3135   (adj def sp) IF
 	(*-1O be-det-ent LINK *1 ikke-adv-adj)
 ;
 
 
 #:3136
-  "<ville>"   REMOVE:3136   (adj def sg) IF
+  "<ville>"   REMOVE:3136   (adj def sp) IF
 	(NOT *-1 be-det-ent)
 ;
 #  "Bare: den ville stuten!"
