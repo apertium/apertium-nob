@@ -8701,6 +8701,12 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
+        (-2C np + gen)
+        (-1C adj + def)
+        (0 pret)
+        ;
+
 SELECT:hvilken-fin-del &&ADJ_N_AGR + sg + adj IF
         (-1C &&ADJ_N_AGR + sg + %hvilken%)
         (1   &&ADJ_N_AGR + sg + n)
