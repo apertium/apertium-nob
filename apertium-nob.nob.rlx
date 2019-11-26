@@ -1990,6 +1990,11 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1C n)
         ;
 
+"<de>" SELECT:de-sakkyndige dem IF
+        (1C adjn)
+        (1 def)
+        ;
+
 "<døde>" SELECT:hente-den-døde-ut adj IF
         (-2C vblex)
         (-1 %den%)
