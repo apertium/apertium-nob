@@ -14269,6 +14269,15 @@ SELECT:disse-fine-bilene det + pl IF
 # Ikke: I går smakte det (pron) godt
 # Ikke: ,skal det (pron) sannelig bli"))
 
+SELECT:er-hans-feil det + pos + sg + $$GENDER IF
+	(1 n + ind + sg + $$GENDER)
+	(-1 fv)
+	(NOT 1 adv)
+	(NOT 1 fv)
+	(NOT 2 komma/konj)
+	(NOT -2 setn-gr)
+;
+
 
 
 #:2726
