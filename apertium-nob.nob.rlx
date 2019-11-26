@@ -16846,8 +16846,9 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 
 
 #:2496
- SELECT:2496 subst IF
-	(-1C subst-gen)
+SELECT:fra-naturens-side subst + $$GENDER IF
+        (NEGATE -1 pos LINK -1C n + def)    # «måtte bussen hennes passere<vblex!>», «hvor framtiden hans ligger»
+	(-1C subst-gen OR pos + $$GENDER)
 	(NOT 1 adj-subst-konj)
         (NOT 1 ukjent)
 ;
