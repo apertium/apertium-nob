@@ -29573,6 +29573,7 @@ SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
         (NOT -1 %som%)
         (0C pp OR pret)
         (1C n + ind)
+        (NOT 1 adverbialsubst)
         ;
 
 SELECT:de-grønnkledde-holdt-stand pret IF
