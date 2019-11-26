@@ -1305,6 +1305,7 @@ SELECT:unlikely ("<super>"i) + adj IF
 REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
 REMOVE:unlikely ("hu") + gen ; # hus
 REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
+"<Laget>" REMOVE:unlikely-bos np IF (-1 >>>);
 
 "<Monsen>" SELECT:Monsen-not-mons np;
 
@@ -3318,6 +3319,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 	(-1 %ha%)
 ;
 
+
 "<landet>" SELECT:over-hele-landet n IF
         (-1 ("hele"))
         ;
@@ -4019,6 +4021,9 @@ SELECT ("lyve") IF
 ;
 #  "Han har redd (perf-part) opp senga"))
 
+"<redde>"   SELECT:å-redde inf IF
+	(-1 infmerke)
+        ;
 "<redde>"   SELECT:redde-for ("redd") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
@@ -6022,6 +6027,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
         (0/* cmp)
         ;
+REMOVE:unlikely ("<dumpet>"i) + n;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -6282,6 +6288,11 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 ;
 "<angrepet>" REMOVE:da-angrepet-startet pp IF
         (1C fv OR pp)
+;
+
+"<angrepet>" REMOVE:deltatt-i-angrepet pp IF
+        (-2 ("delta"))
+        (-1 %i%)
 ;
 
 "<angrep>" REMOVE:blodig-angrep pret IF
@@ -9091,7 +9102,7 @@ SELECT:kom-det-bevegelser-og-lyder n + $$NUMBER IF
         (-3 %det% OR fv)
         (-2C n + $$NUMBER)
         (-1 %og/eller% - clb)
-        (NOT 0 adv)
+        (NOT 0 adv OR ikke-sanns-subst-ent-ub)
         (1 pr OR adv)
         ;
 # «Men da politimannen ankom sykehuset og skulle undersøke det han trodde var et lik, kom det bevegelser og lyder fra den antatt døde kvinnen.»
@@ -16905,10 +16916,11 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 
 #:2496
 SELECT:fra-naturens-side subst + $$GENDER IF
-        (NEGATE -1 pos LINK -1C n + def)    # «måtte bussen hennes passere<vblex!>», «hvor framtiden hans ligger»
+        (NEGATE -1 pos LINK -1 n + def)    # «måtte bussen hennes passere<vblex!>», «hvor framtiden hans ligger»
 	(-1C subst-gen OR pos + $$GENDER)
 	(NOT 1 adj-subst-konj)
         (NOT 1 ukjent)
+        (NOT 0 ikke-sanns-subst-ent-ub)
 ;
 #  "fra naturens side (subst)"))
 
@@ -20033,6 +20045,7 @@ SELECT:mange-av-de-syke adj-def-sg-sp IF
 
 #:4998
 REMOVE:satte-ny-rekord adj-def-sg-sp IF
+        (NEGATE -1 %sin% OR %den% LINK *-1 fv) # «sin døde kone», «den stolte far»
 	(0 pret)
 	(1C ub-ent)
 ;
@@ -21488,7 +21501,7 @@ REMOVE:konj-i-skjult-relsetn clb IF
 REMOVE:vår-taktikk-og-strategi-har clb + %og/eller% IF
         (-2 pos + sg OR gen)
         (-1C n + ind + sg)
-        (1C n + ind + sg) # since it's indefinite, it's unlikely to be subject of following fv
+        (1C n + ind + sg) # since it's indefinite, it's not likely to be subject of following fv
         (2 fv OR setn-gr)
         ;
 
@@ -23257,6 +23270,7 @@ REMOVE:Løft-så-ut n IF
  REMOVE:2022 be-subst IF
 	(NOT 0 gen)
 	(1C subst)
+        (NOT 1 adverbialsubst)
 	(NOT 1 subst-prop)
         (NOT 0 farlige-part)    # huset
 	(**-1CO setn-gr LINK NOT 1 adverb/komp/ub-sup)
@@ -23663,7 +23677,7 @@ REMOVE:for-økt-sysselsetting subst IF
 	(NOT 0 samset)
 	(-1 prep)
 	(1C subst)
-	(NOT 1 subst-prop)
+	(NOT 1 subst-prop OR adverbialsubst)
 ;
 #  "et enormt potensial for økt (adj) sysselsetting"))
 
@@ -26493,6 +26507,10 @@ SELECT:noen-default <noen> + (neg) ;
         (-1 be-subst)
         ;
 
+
+"<slaget>" REMOVE:av-det-flate-slaget vblex OR adj;
+# when is this ever a verb/pp?
+
 #:3264
   "<slo>"   REMOVE:3264   (n) IF
 	(0 verb)
@@ -28401,7 +28419,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 
 
 #:1726
- REMOVE:1726 adj-def-sg-sp IF
+REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
 	(NOT 0 %tiltalte%)
@@ -29117,7 +29135,7 @@ REMOVE subst-nøyt + ("plan") IF
 ;
 
 #:4067
- REMOVE:4067 subst-appell-ub-ent IF
+REMOVE:ikke-sanns-subst-ent-ub subst-appell-ub-ent IF
 	   (0 ikke-sanns-subst-ent-ub)
 ;
 
