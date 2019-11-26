@@ -12571,6 +12571,11 @@ SELECT:mest-omsatte adv IF
 ;
 #  "en størst mulig del av..."
 
+SELECT:aller-mest-betydningsfulle adj + def IF
+        (-2 %aller%)
+        (-1 %mest/minst%)
+        (0C def OR pl)
+        ;
 
 
 #:2873
