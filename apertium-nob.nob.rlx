@@ -1183,7 +1183,8 @@ REMOVE:unlikely ("skjede") IF (0 ("kjede"));
 REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
 REMOVE:unlikely ("sult") + n + pl;
-REMOVE:unlikely ("lave") + pp + ind;
+REMOVE:unlikely ("<lave>"i "lave") + pp;
+REMOVE:unlikely ("hans") + adv;
 REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
 REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 REMOVE:unlikely ("bile") IF (0 ("bil"));
