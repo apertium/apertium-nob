@@ -23370,10 +23370,10 @@ SELECT:særlig-purker fl-subst IF
 
 
 #:2011
- REMOVE:2011 ent-nøyt-subst IF
+REMOVE:2011 ent-nøyt-subst IF
 	(0 adj)
         (NOT -1C det + nt)
-	(**-1C det LINK NOT 0 nt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
+	(**-1C det BARRIER det-nøyt-ent LINK NOT 0 nt LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
 	(**-1C det BARRIER ikke-adv-adj)
 ;
 
