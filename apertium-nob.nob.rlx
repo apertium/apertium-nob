@@ -4503,7 +4503,7 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 "<siden>" SELECT:den-lyse-siden n IF
 	(*-1O be-mask-det LINK *1 be-ent-adj)
 	(*-1 be-mask-det BARRIER ikke-adv-adj)
-        (NEGATE 1 qnt OR ord)      # «siden 2017.»
+        (NEGATE 1/* qnt OR ord)      # «siden 2017.»
 ;
 #  "den lyse siden"
 
