@@ -20002,9 +20002,15 @@ REMOVE:aar ("åre") IF
 #  "det er lite"
 #      :group 54
 
+SELECT:mange-av-de-syke adj-def-sg-sp IF
+        (-3 %mange%)
+        (-2 %av%)
+        (-1 %de%)
+        (0C pret OR adj)
+        ;
 
 #:4998
- REMOVE:4998 (adj def sg) IF
+REMOVE:satte-ny-rekord adj-def-sg-sp IF
 	(0 pret)
 	(1C ub-ent)
 ;
