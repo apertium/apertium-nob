@@ -9040,6 +9040,16 @@ SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
         ;
 # «mannen som ble skutt og drept av israelske soldater»
 
+
+# non-pp:
+SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
+        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK -1 >>>)
+        (-1C kop)
+        (0C adj)
+        ;
+# «Skoler i byen har også vært nødt til å holde stengt.»
+
+
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
 SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
         (-1 vblex + %være/bli% LINK *-1C nominativ-sg-np + $$GENDER BARRIER fv OR clb LINK -1 hj-verb LINK -1 adv OR sbu)
