@@ -9043,7 +9043,7 @@ SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
 
 # non-pp:
 SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
-        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK -1 >>>)
+        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK -1 >>>)
         (-1C kop)
         (0C adj)
         ;
