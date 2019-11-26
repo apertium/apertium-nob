@@ -28287,6 +28287,28 @@ SELECT:skal-være-funnet-omkommet pp IF
         ;
 # «Om lag 200 mennesker er savnet og flere skal være funnet omkommet etter at en demning brast»
 
+SELECT:måtte-bussen-hennes-passere inf IF
+        (*-1 n + def BARRIER inf OR setn-gr LINK *-1 m-hj-verb BARRIER inf OR setn-gr)
+        (0C inf OR n)
+        ;
+# «På vei inn mot sentrum måtte bussen hennes passere den delvis utskjelte bomringen»
+# Ikkje: «Odd Økland i eierselskapet Havsula Invest AS bekrefter at de har fått en liste<n!> over mangler om bord i Ottar.»
+
+SELECT:i-så-fall-vil-det-skille-fire-poeng inf IF
+        (-3 adv OR cnjsub)
+        (-2 m-hj-verb)
+        (-1 expl)
+        (0C inf OR n)
+        ;
+
+SELECT:det-femte-strake-tapet n + $$GENDER IF
+        (-3 det + $$GENDER)
+        (-2C adj + def)
+        (-1C adj + def)
+        (0C n OR pp)
+        ;
+# «0-1 i Lørenskog ishall var det femte strake tapet mot nordisk motstand.»
+
 #CONSTRAINTS
 ## remove ndomain heur
 
