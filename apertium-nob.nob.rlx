@@ -1096,6 +1096,12 @@ SELECT:nestleder-Sanner np IF
         (-1 yrkestittel-ord)
         ;
 
+SELECT:Zuccas-Rangers np IF
+        (-2 >>>)
+        (-1C np)
+        (0C n OR np)
+        ;
+
 REMOVE:Golflegenden-Tiger-Woods cgguess IF
         (-1 >>>)
         (0 n + sg + def)
