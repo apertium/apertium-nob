@@ -397,17 +397,17 @@ LIST %selv% = "sjøl"  "sjæl"  "selv"  ;
 LIST %seng% = "seng"  ;
 LIST %sett% = ("se"  vblex pp) ;
 LIST %sette/ta% = ("sette" vblex) ("ta" vblex) ;
-LIST %si% = ("seg"  det pos f sg) ;
+LIST %si% = ("sin"  det pos f sg) ;
 LIST %si%-inf = ("si"  inf) ;
 LIST %side% = "side"  ;
 LIST %side%-be = ("side"  def) ;
 LIST %siden% = "siden"  ;
-LIST %sin% = ("seg"  det pos m sg) ;
-LIST %sine% = ("seg"  det pos pl) ;
+LIST %sin% = ("sin"  det pos m sg) ;
+LIST %sine% = ("sin"  det pos pl) ;
 LIST %sist% = ("sist"  adv) ;
 LIST %siste% = ("sist"  pl) ("sist" def) ;
 LIST %siste%/ordenstall = ("sist"  def) ("sist"  pl) ord ;
-LIST %sitt% = ("seg"  det pos nt sg) ;
+LIST %sitt% = ("sin"  det pos nt sg) ;
 LIST %sjakk% = "sjakk"  ;
 LIST %sjelden% = "sjelden"  ;
 LIST %skifte/bytte% = ("skifte"  vblex) ("bytte"  vblex) ;
@@ -529,19 +529,20 @@ LIST be-det = "hin"  "dette"  "det"  "denne"  "den"  ;
 LIST be-det-ent = ("hin"  sg) ("denne"  sg) ("den"  sg) ("de"  sg) (det def sg) (n gen) (np gen) ;
 LIST be-det-ent/fl = "hin"    "det"  "denne"  "den"  "de"  (det def) ;
 LIST be-ent = (def sg) ;
-LIST be-ent-adj/komp-be-sup-adj = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
-LIST be-ent-fem-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-fem-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST adj-def-sg-sp = (adj def sg) (adj def sp) ;
+LIST be-ent-adj/komp-be-sup-adj = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-fem-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-fem-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-fem-subst = (n f sg def) (np f sg def) ;
-LIST be-ent-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-mask-subst = (n m sg def) (np m sg def) ;
 LIST be-ent-mask/fem-subst = (n m sg def) (np m sg def) (n f sg def) (np f sg def) ;
-LIST be-ent-nøyt-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-nøyt-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-nøyt-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-nøyt-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-nøyt-subst = (n nt sg def) (np nt sg def) ;
 LIST be-ent-subst = (n sg def) (np sg def) ;
-LIST be-ent-subst/be-ent-adj = (n sg def) (np sg def) (adj def sg) (adj pprs) ;
+LIST be-ent-subst/be-ent-adj = (n sg def) (np sg def) (adj def sg) (adj def sp) (adj pprs) ;
 LIST be-fem-det = (det pos f) ("hin"  det f) ("denne"  det f) ("den"  det f) ;
 LIST be-fl-subst = (n pl def) (np pl def) ;
 LIST be-fl-subst/fl-adj = (n pl def) (np pl def) (adj pl) (adj pprs) ;
@@ -896,7 +897,7 @@ LIST subst-prop = (np) ;
 LIST subst-ub = (n ind) (np ind) ;
 LIST subst-ubøy = (n ubøy) (np ubøy) ;
 LIST subst/adj = n np adj ;
-LIST subst/adj-ent-be = (n sg def) (np sg def) (adj def sg) (adj pprs) ;
+LIST subst/adj-ent-be = (n sg def) (np sg def) (adj def sg) (adj def sp) (adj pprs) ;
 LIST subst/adj-fl = (n pl) (np pl) (adj pl) (adj pprs) ;
 LIST subst/adj-gen = (adj gen) (n gen) (np gen) ;
 LIST subst/adj-pos = n np (adj pst) ;
@@ -1684,7 +1685,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 
 #:3738
-  "<bare>"   SELECT:3738   (adj def sg) IF
+  "<bare>"   SELECT:3738   (adj def sp) IF
 	(**-1C det-ent BARRIER ikke-adv-adj)
 	(*1 ent-subst BARRIER ikke-adv-adj)
 ;
@@ -6345,7 +6346,7 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 
 
 #:4012
-  "<bare>"   REMOVE:4012   (adj def sg) IF
+  "<bare>"   REMOVE:4012   (adj def sp) IF
 	(NOT *-1C det-ent BARRIER ikke-adv-adj)
 ;
 #  "bare adj i kontekster som: det bare treet"
@@ -8162,7 +8163,6 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "Bare subst i typen: sitt eget selv"
 
-
 #:3298
 "<siden>"   REMOVE:3298   n IF
 	(NOT -1 nr2-det-mask-be)
@@ -9216,7 +9216,7 @@ SELECT:4089 (vblex)
 
 
 #:3064
- SELECT:3064 (adj def sg) IF
+ SELECT:3064 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 pres/pret)
 	(NOT 0 inf)
@@ -9229,7 +9229,7 @@ SELECT:4089 (vblex)
 
 
 #:3065
- SELECT:3065 (adj def sg) IF
+ SELECT:3065 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 pres/pret)
 	(NOT 0 inf)
@@ -9242,7 +9242,7 @@ SELECT:4089 (vblex)
 
 
 #:3066
- SELECT:3066 (adj def sg) IF
+ SELECT:3066 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 pres/pret)
 	(NOT 0 inf)
@@ -9256,7 +9256,7 @@ SELECT:4089 (vblex)
 
 
 #:3067
- SELECT:3067 (adj def sg) IF
+ SELECT:3067 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9268,7 +9268,7 @@ SELECT:4089 (vblex)
 
 
 #:3068
- SELECT:3068 (adj def sg) IF
+ SELECT:3068 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9282,7 +9282,7 @@ SELECT:4089 (vblex)
 
 
 #:3069
- SELECT:3069 (adj def sg) IF
+ SELECT:3069 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9299,7 +9299,7 @@ SELECT:4089 (vblex)
 
 
 #:3070
- SELECT:3070 (adj def sg) IF
+ SELECT:3070 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 det)
 	(NOT 0 subst)
@@ -9317,7 +9317,7 @@ SELECT:4089 (vblex)
 
 
 #:3071
- SELECT:3071 (adj def sg) IF
+ SELECT:3071 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 %andre%)
 	(**-1C prop-det-ent BARRIER ikke-adv-adj)
@@ -9329,7 +9329,7 @@ SELECT:4089 (vblex)
 
 
 #:3072
- SELECT:3072 (adj def sg) IF
+ SELECT:3072 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 %andre%)
 	(**-1C prop-det-ent BARRIER ikke-adv-adj)
@@ -9341,7 +9341,7 @@ SELECT:4089 (vblex)
 
 
 #:3073
- SELECT:3073 (adj def sg) IF
+ SELECT:3073 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9355,7 +9355,7 @@ SELECT:4089 (vblex)
 
 
 #:3074
- SELECT:3074 (adj def sg) IF
+ SELECT:3074 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(**-1C subst-gen BARRIER ikke-adv-adj)
@@ -9368,7 +9368,7 @@ SELECT:4089 (vblex)
 
 
 #:3075
- SELECT:3075 (adj def sg) IF
+ SELECT:3075 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9382,7 +9382,7 @@ SELECT:4089 (vblex)
 
 
 #:3076
- SELECT:3076 (adj def sg) IF
+ SELECT:3076 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(**-1C subst-gen BARRIER ikke-adv-adj)
@@ -9395,7 +9395,7 @@ SELECT:4089 (vblex)
 
 
 #:3077
- SELECT:3077 (adj def sg) IF
+ SELECT:3077 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9409,7 +9409,7 @@ SELECT:4089 (vblex)
 
 
 #:3078
- SELECT:3078 (adj def sg) IF
+ SELECT:3078 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-mask-ub BARRIER ikke-adv-adj)
@@ -9422,7 +9422,7 @@ SELECT:4089 (vblex)
 
 
 #:3079
- SELECT:3079 (adj def sg) IF
+ SELECT:3079 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9436,7 +9436,7 @@ SELECT:4089 (vblex)
 
 
 #:3080
- SELECT:3080 (adj def sg) IF
+ SELECT:3080 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-fem-ub BARRIER ikke-adv-adj)
@@ -9449,7 +9449,7 @@ SELECT:4089 (vblex)
 
 
 #:3081
- SELECT:3081 (adj def sg) IF
+ SELECT:3081 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9463,7 +9463,7 @@ SELECT:4089 (vblex)
 
 
 #:3082
- SELECT:3082 (adj def sg) IF
+ SELECT:3082 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-nøyt-ub BARRIER ikke-adv-adj)
@@ -9477,7 +9477,7 @@ SELECT:4089 (vblex)
 
 
 #:3083
- SELECT:3083 (adj def sg) IF
+ SELECT:3083 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9490,7 +9490,7 @@ SELECT:4089 (vblex)
 
 
 #:3084
- SELECT:3084 (adj def sg) IF
+ SELECT:3084 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-mask-be BARRIER ikke-adv-adj)
@@ -9502,7 +9502,7 @@ SELECT:4089 (vblex)
 
 
 #:3085
- SELECT:3085 (adj def sg) IF
+ SELECT:3085 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9515,7 +9515,7 @@ SELECT:4089 (vblex)
 
 
 #:3086
- SELECT:3086 (adj def sg) IF
+ SELECT:3086 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-fem-be BARRIER ikke-adv-adj)
@@ -9527,7 +9527,7 @@ SELECT:4089 (vblex)
 
 
 #:3087
- SELECT:3087 (adj def sg) IF
+ SELECT:3087 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9540,7 +9540,7 @@ SELECT:4089 (vblex)
 
 
 #:3088
- SELECT:3088 (adj def sg) IF
+ SELECT:3088 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 nr2-det-nøyt-be BARRIER ikke-adv-adj)
@@ -9552,7 +9552,7 @@ SELECT:4089 (vblex)
 
 
 #:3089
- SELECT:3089 (adj def sg) IF
+ SELECT:3089 adj-def-sg-sp IF
 	(NOT 0 subst-gen)
 	(NOT 0 adj-sup-be)
 	(NOT 0 farlige-adj)
@@ -9566,7 +9566,7 @@ SELECT:4089 (vblex)
 
 
 #:3090
- SELECT:3090 (adj def sg) IF
+ SELECT:3090 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(NOT 0 ikke-sanns-adj-fra-perf-part)
@@ -9580,7 +9580,7 @@ SELECT:4089 (vblex)
 
 
 #:3091
- SELECT:3091 (adj def sg) IF
+ SELECT:3091 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ikke-sanns-adj-fra-perf-part)
 	(NOT 1C adj)
@@ -9595,7 +9595,7 @@ SELECT:4089 (vblex)
 
 
 #:3092
- SELECT:3092 (adj def sg) IF
+ SELECT:3092 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 ub-ent-nøyt-adj)
 	(1 adj)
@@ -9608,7 +9608,7 @@ SELECT:4089 (vblex)
 
 
 #:3093
- SELECT:3093 (adj def sg) IF
+ SELECT:3093 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1O be-fem-det LINK NOT 0 ikke-det LINK NOT *1 ikke-adv-adj)
@@ -9620,7 +9620,7 @@ SELECT:4089 (vblex)
 
 
 #:3094
- SELECT:3094 (adj def sg) IF
+ SELECT:3094 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9633,7 +9633,7 @@ SELECT:4089 (vblex)
 
 
 #:3095
- SELECT:3095 (adj def sg) IF
+ SELECT:3095 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1O be-nøyt-det LINK NOT 0 ikke-det LINK NOT 0 fl-det LINK NOT *1 ikke-adv-adj)
@@ -9646,7 +9646,7 @@ SELECT:4089 (vblex)
 
 
 #:3096
- SELECT:3096 (adj def sg) IF
+ SELECT:3096 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9659,7 +9659,7 @@ SELECT:4089 (vblex)
 
 
 #:3097
- SELECT:3097 (adj def sg) IF
+ SELECT:3097 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 be-mask-det BARRIER ikke-adv-adj)
@@ -9672,7 +9672,7 @@ SELECT:4089 (vblex)
 
 
 #:3098
- SELECT:3098 (adj def sg) IF
+ SELECT:3098 adj-def-sg-sp IF
 	(NOT 0 adj-sup-be)
 	(NOT 0 farlige-adj)
 	(**-1C be-fem-det BARRIER ikke-adv-adj)
@@ -9684,7 +9684,7 @@ SELECT:4089 (vblex)
 
 
 #:3099
- SELECT:3099 (adj def sg) IF
+ SELECT:3099 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9697,7 +9697,7 @@ SELECT:4089 (vblex)
 
 
 #:3100
- SELECT:3100 (adj def sg) IF
+ SELECT:3100 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 be-fem-det BARRIER ikke-adv-adj)
@@ -9710,7 +9710,7 @@ SELECT:4089 (vblex)
 
 
 #:3101
- SELECT:3101 (adj def sg) IF
+ SELECT:3101 adj-def-sg-sp IF
 	(NOT 0 adj-sup-be)
 	(NOT 0 farlige-adj)
 	(**-1C be-nøyt-det BARRIER ikke-adv-adj)
@@ -9722,7 +9722,7 @@ SELECT:4089 (vblex)
 
 
 #:3102
- SELECT:3102 (adj def sg) IF
+ SELECT:3102 adj-def-sg-sp IF
 	(NOT 0 ub-ent-nøyt-adj)
 	(NOT 0 farlige-adj)
 	(1 adj)
@@ -9735,7 +9735,7 @@ SELECT:4089 (vblex)
 
 
 #:3103
- SELECT:3103 (adj def sg) IF
+ SELECT:3103 adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 be-nøyt-det BARRIER ikke-adv-adj)
@@ -19459,8 +19459,10 @@ SELECT:dette-var-det-vi-håpet-på pret IF
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
 
 
+
+
 #:2410
-SELECT:2410 vblex + pp IF
+SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
@@ -19471,8 +19473,8 @@ SELECT:2410 vblex + pp IF
         (NEGATE 0 adv LINK 1 perf-part)
         (NEGATE 0 n + def LINK 1 perf-part)
 ;
-#  "Nå har de i løpet av den første uka skrevet (perf-part
-# vi har hoppet (perf)
+# - Nå har de i løpet av den første uka skrevet<pp>
+# - vi har hoppet<pp>
 #  (ikke da har hoppet (subst) vært for dårlig)
 #
 # (NOT -2 BE-NØYT-DET:
@@ -19532,7 +19534,6 @@ SELECT:2410 vblex + pp IF
 # *L PRON NOT *L SUBST: Sikrer mot skjult
 # relativsetning: som stjernestoffet vi så"
 #      :group 73
-
 
 SELECT:alle-de-undertrykte-stammene adj + pl IF
         (-2C %begge/selve/alle%)
@@ -19803,7 +19804,7 @@ REMOVE:2324 pprs IF
 
 
 #:2306
- REMOVE:2306 (adj def sg) IF
+ REMOVE:2306 adj-def-sg-sp IF
 	(1 komma/konj)
 	(-1 fl-det)
 	(NOT -1 det-ent)
@@ -19812,7 +19813,7 @@ REMOVE:2324 pprs IF
 
 
 #:2307
- REMOVE:2307 (adj def sg) IF
+ REMOVE:2307 adj-def-sg-sp IF
 	(-1 fl-det)
 	(NOT 1 komma/konj)
 	(NOT 1 adj-ent)
@@ -19822,7 +19823,7 @@ REMOVE:2324 pprs IF
 
 
 #:2308
- REMOVE:2308 (adj def sg) IF
+ REMOVE:2308 adj-def-sg-sp IF
 	(0 adj-fl)
 	(NOT 0 %siste%/ordenstall)
 	(NOT -1 adj-sup-be)
@@ -19832,7 +19833,7 @@ REMOVE:2324 pprs IF
 
 
 #:2309
- REMOVE:2309 (adj def sg) IF
+ REMOVE:2309 adj-def-sg-sp IF
 	(0 adj-fl)
 	(NOT 0 %siste%/ordenstall)
 	(NOT -1 adj-sup-be)
@@ -19844,7 +19845,7 @@ REMOVE:2324 pprs IF
 
 
 #:2310
- REMOVE:2310 (adj def sg) IF
+ REMOVE:2310 adj-def-sg-sp IF
 	(0 adj-ub-ent)
 	(NOT 0 %siste%/ordenstall)
 	(*-1CO ikke-adv-adj-det LINK NOT 0 subst-gen LINK NOT *1 dem/poss/gen)
@@ -19852,7 +19853,7 @@ REMOVE:2324 pprs IF
 
 
 #:2311
- REMOVE:2311 (adj def sg) IF
+ REMOVE:2311 adj-def-sg-sp IF
 	(0 adj-ub-ent)
 	(NOT 0 %siste%/ordenstall)
 	(*-1 setn-gr BARRIER dem/poss/gen)
@@ -19860,7 +19861,7 @@ REMOVE:2324 pprs IF
 
 
 #:2312
- REMOVE:2312 (adj def sg) IF
+ REMOVE:2312 adj-def-sg-sp IF
 	(NOT 0 %siste%)
 	(NOT 0 ikke-adj)
 	(*-1 ub-det BARRIER ikke-adv-adj)
@@ -19870,7 +19871,7 @@ REMOVE:2324 pprs IF
 
 
 #:2313
- REMOVE:2313 (adj def sg) IF
+ REMOVE:2313 adj-def-sg-sp IF
 	(0 ub-ent)
 	(NOT 0 orden)
 	(NOT 0 ikke-adj)
@@ -19891,7 +19892,7 @@ REMOVE:aar ("åre") IF
 
 
 #:2315
- REMOVE:2315 (adj def sg) IF
+ REMOVE:2315 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 orden)
 	(NOT 0 ikke-adj)
@@ -19910,7 +19911,7 @@ REMOVE:aar ("åre") IF
 
 
 #:2316
- REMOVE:2316 (adj def sg) IF
+ REMOVE:2316 adj-def-sg-sp IF
 	(NOT 0 fl)
 	(NOT 0 orden)
 	(NOT 0 ikke-adj)
@@ -19926,7 +19927,7 @@ REMOVE:aar ("åre") IF
 
 
 #:2317
- REMOVE:2317 (adj def sg) IF
+ REMOVE:2317 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 orden)
 	(NOT 0 ikke-adj)
@@ -19949,7 +19950,7 @@ REMOVE:aar ("åre") IF
 
 
 #:2318
- REMOVE:2318 (adj def sg) IF
+ REMOVE:2318 adj-def-sg-sp IF
 	(NOT 0 orden)
 	(NOT 0 ikke-adj)
 	(NOT 0 %tiltalte%)
@@ -27591,7 +27592,7 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
 
 
 #:1755
- SELECT:1755 (cnjsub) IF
+SELECT:1755 cnjsub IF
 	(NOT 0 %som%)
 	(NOT 1 pres/pret)
 	(*1 pres/pret BARRIER setn-gr)
@@ -27599,6 +27600,7 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
 ;
 #  "å studere der de selv vil"
 #      :group 73
+# TODO: Ikkje «Kompany varslet at et nytt innlegg om kort tid vil fortelle hvor<adv!> framtiden hans ligger.»
 
 
 
@@ -28340,7 +28342,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 # «Seks av ti svensker ser ikke nyhetssendinger på TV, og fire av ti leser heller ikke aviser.»
 
 #:1723
- REMOVE:1723 (adj def sg) IF
+ REMOVE:1723 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
 	(NOT *1 pron/subst)
@@ -28352,7 +28354,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 
 
 #:1724
- REMOVE:1724 (adj def sg) IF
+ REMOVE:1724 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
 	(NOT 0 %tiltalte%)
@@ -28365,7 +28367,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 
 
 #:1725
- REMOVE:1725 (adj def sg) IF
+ REMOVE:1725 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
 	(NOT 0 %tiltalte%)
@@ -28378,7 +28380,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 
 
 #:1726
- REMOVE:1726 (adj def sg) IF
+ REMOVE:1726 adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
 	(NOT 0 %tiltalte%)
