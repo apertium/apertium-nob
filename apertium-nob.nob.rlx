@@ -6028,6 +6028,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (0/* cmp)
         ;
 REMOVE:unlikely ("<dumpet>"i) + n;
+REMOVE:unlikely ("<da>"i) + n;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -6665,7 +6666,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 "<fløy>" REMOVE:fløy-oppover n IF
         (1 pr)
         ;
-
+# «Han fikk oppdrift og fløy oppover»
 
 
 
@@ -9334,12 +9335,13 @@ SELECT:4089 (vblex)
 
 
 #:3070
- SELECT:3070 adj-def-sg-sp IF
+SELECT:den-eneste adj-def-sg-sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 det)
 	(NOT 0 subst)
 	(NOT 0 fv)
 	(-1C be-mask-det)
+        (NEGATE -1 pos + $$GENDER LINK -1 n + def + $$GENDER)
 	(NOT 1 subst/adj)
 	(NOT 1 komma/konj)
 	(NOT -1 ikke-det)
@@ -9585,14 +9587,13 @@ SELECT:4089 (vblex)
 #  "det andre gule huset"
 
 
-
 #:3089
- SELECT:3089 adj-def-sg-sp IF
+SELECT:den-unge-Gunther adj-def-sg-sp IF
 	(NOT 0 subst-gen)
 	(NOT 0 adj-sup-be)
 	(NOT 0 farlige-adj)
 	(**-1C be-mask-det BARRIER ikke-adv-adj)
-	(*1 subst-prop BARRIER ikke-adv-adj)
+	(*1 subst-prop BARRIER ikke-adv-adj OR %da%)
 	(*1O subst-prop LINK NOT -1 komma)
 ;
 #  "den unge Gunther
@@ -18869,7 +18870,7 @@ SELECT:antall-væpna-menn adj + pp IF
 
 
 #:2364
- SELECT:2364 (vblex pret) IF
+SELECT:Vanskene-mine-hørte-ikke-til-dem pret IF
 	(NOT 0 farlige-verb)
 	(NOT 0 pres)
 	(-1C poss-det)
@@ -23096,8 +23097,8 @@ REMOVE:Løft-så-ut n IF
 
 
 #:2046
- REMOVE:2046 (cnjsub) IF
-	(**1C setn-gr BARRIER pres/pret)
+REMOVE:før-min-tid (cnjsub) IF
+	(**1C setn-gr-u-strek BARRIER pres/pret)
 ;
 #  "før (ikke sbu) min tid. "))
 # Merk: setn-gr kan vere på pres/pret-ordet: «visste ikke hvor<adv> høy farten var<pret><setn-gr>» -KBU
@@ -24954,7 +24955,7 @@ REMOVE:til-huset pp IF
 
 
 #:1845
- REMOVE:1845 (vblex pret) IF
+REMOVE:1845 pret IF
 	(NOT 1 %gjøre%)
 	(*-1 periode-beg/konj-clb BARRIER setn-gr)
 	(*-1 periode-beg/konj-clb BARRIER komma/konj)
@@ -27639,7 +27640,7 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
 
 
 #:1755
-SELECT:1755 cnjsub IF
+SELECT:å-studere-der-de-selv-vil cnjsub IF
 	(NOT 0 %som%)
 	(NOT 1 pres/pret)
 	(*1 pres/pret BARRIER setn-gr)
