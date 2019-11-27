@@ -6662,6 +6662,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 
 
+"<fløy>" REMOVE:fløy-oppover n IF
+        (1 pr)
+        ;
 
 
 
