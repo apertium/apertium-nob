@@ -7281,6 +7281,11 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         ;
 # «han dro litt på det da han fikk spørsmål om hvilket annet gull enn i skiskyting han kunne ha tenkt seg »
 
+"<hvilket>" REMOVE:15-kom-i-ligaen-hvilket-var-rekort det IF
+        (-1 cm)
+        (1C fv)
+        ;
+
 
 #:4084
  "<hør>"   REMOVE:4084   (n) IF
