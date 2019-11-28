@@ -6892,6 +6892,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "bare ved \"å være føre var\"!"
 
+"<førte>" REMOVE:førte-til adj IF
+	(1 %til%)
+;
 
 #:4017
   "<galt>"   REMOVE:4017   (n) IF
