@@ -3671,6 +3671,15 @@ SELECT ("lyve") IF
 #  "hvor mye er klokka"
 
 
+"<noe>" REMOVE:ikke-noe-mer adv IF
+        (*-1 %ikke%)
+        ;
+# Vil ikkje ha «ikkje litt meir pengar» frå «ikke noe mer penger»
+
+"<noe>" SELECT:noe-mindre adv IF
+        (NEGATE *-1 %ikke%)
+        (1 ("<mindre>"))
+        ;
 
 #:3412
   "<noe>"   SELECT:3412   (det nt sg) IF
