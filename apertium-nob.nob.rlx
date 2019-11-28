@@ -13,7 +13,7 @@ LIST DEFNES = def ind ;
 LIST TEMPUS = inf pres pasv pret pp imp ;
 
 # For use with http://beta.visl.sdu.dk/cg3/single/#set-unification-set
-# as &&ADJ_N_AGR:
+# as &&ADJ_N_AGR (also works for demonstratives):
 LIST AGR_MF = f mf m ;
 SET AGR_MF_SG = (sg) + AGR_MF ;
 SET AGR_NT_SG = (nt) + (sg) ;
@@ -29869,6 +29869,12 @@ SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
 SELECT:det-norske-publikum dem + $$GENDER + $$NUMBER - expl IF
         (1 adj + def)
         (2 n + $$GENDER + $$NUMBER)
+        ;
+
+SELECT:det-økende-tapet def + &&ADJ_N_AGR IF
+        (-2C dem + &&ADJ_N_AGR)
+        (-1C adj + def)
+        (0C n)
         ;
 
 REMOVE:høye-doser n + sg IF
