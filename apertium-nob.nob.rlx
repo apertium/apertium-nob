@@ -1761,8 +1761,8 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 # Merk: Best<np> blir aldri valt...
 
 #:nn4956
- "<beste>"   SELECT:nn4956   (adj sup) IF
-	(-1C be-det)
+ "<beste>"   SELECT:det-aller-beste   (adj sup) IF
+	(-1C be-det OR %aller%)
 ;
 
 
