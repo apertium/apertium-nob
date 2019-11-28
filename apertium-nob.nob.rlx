@@ -1337,6 +1337,11 @@ SELECT:i-92-og-94-senket date IF
 
 REMOVE:cardinal date;
 
+SELECT ("hvorav¹") IF
+        (NEGATE *1 fv)
+        ;
+REMOVE ("hvorav¹") ;
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
