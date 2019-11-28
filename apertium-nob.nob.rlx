@@ -185,7 +185,7 @@ LIST trans12/til = tr12/til ;
 LIST trans2 = tr2 tr18 ;
 
 # «to sivile ble»
-LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" ;
+LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" ;
 SET n-adjn = n OR adjn ;
 
 LIST pres-part = (adj pprs) ;
