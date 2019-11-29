@@ -3665,6 +3665,8 @@ SELECT ("lyve") IF
         (1 ("<mindre>") OR ("<mer>"))
         ;
 "<noe>" REMOVE:ikke-noe-mer adv ;
+"<Noe>" REMOVE:ikke-noe-mer adv ;
+"<NOE>" REMOVE:ikke-noe-mer adv ;
 # Vil ikkje ha «ikkje litt meir pengar» frå «ikke noe mer penger»
 
 
