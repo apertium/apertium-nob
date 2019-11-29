@@ -6,8 +6,9 @@ LANG1=nob
 BASENAME=apertium-$(LANG1)
 
 TARGETS_COMMON = $(LANG1).automorf.bin $(LANG1).autogen.bin \
-	$(LANG1).automorf.att.gz $(LANG1).autogen.att.gz \
-        $(LANG1).rlx.bin \
+	$(LANG1).automorf.att.gz $(LANG1).autogen.att.gz    \
+        $(LANG1).rlx.bin                                    \
+        $(LANG1).seg.rlx.bin                                \
         $(LANG1).syn.rlx.bin
 
 # This include defines goals for install-modes, .deps/.d and .mode files:
@@ -40,6 +41,9 @@ $(LANG1).automorf.att.gz: $(LANG1).automorf.bin
 $(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx $(CGCOMP)
 	$(CGCOMP) $< $@
 
+$(LANG1).seg.rlx.bin: $(BASENAME).$(LANG1).seg.rlx $(CGCOMP)
+	$(CGCOMP) $< $@
+
 $(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx $(CGCOMP)
 	$(CGCOMP) $< $@
 
@@ -48,6 +52,7 @@ $(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx $(CGCOMP)
 ###############################################################################
 EXTRA_DIST=$(BASENAME).$(LANG1).dix \
            $(BASENAME).$(LANG1).rlx \
+	   $(BASENAME).$(LANG1).seg.rlx \
 	   $(BASENAME).$(LANG1).syn.rlx \
            $(LANG1).prob            \
 	   $(BASENAME).$(LANG1).tsx \
@@ -74,6 +79,7 @@ install-data-local: install-modes
 	test -d $(DESTDIR)$(apertium_nob_srcdir) || mkdir -p $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_nob_srcdir)
+	$(INSTALL_DATA) $(BASENAME).$(LANG1).seg.rlx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).syn.rlx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
 

@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nob-morph-cg" -*-
+# -*- cg-pre-pipe: "apertium -d . nob-seg | cg-conv a" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
@@ -991,22 +991,6 @@ APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}
         (0 storbokstav)
         (NEGATE 0 not-np-guess - (np cgguess gen))
         ;
-
-SELECT:hans-14.bursdag ord IF
-        (0 sent)
-        (NEGATE T:nextWordCrossSent LINK 0 storbokstav)
-        ;
-
-SELECT:blir-14.-Det sent IF
-        (0 ord)
-        (T:nextWordCrossSent LINK 0 storbokstav)
-        ;
-
-SELECT:over_30._Men clb IF
-        (0/1 det-kvant)
-        (0 <<<)
-        (T:nextWordCrossSent LINK 0 storbokstav)
-;
 
 # sec 1
 CONSTRAINTS

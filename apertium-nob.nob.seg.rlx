@@ -1,0 +1,38 @@
+# -*- cg-pre-pipe: "apertium -d . nob-morph-cg" -*-
+# GPL-2
+
+SOFT-DELIMITERS = "<,>" cm ;
+DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" sent ;
+
+LIST <<< = <<< ;
+LIST >>> = >>> ;
+
+LIST sent = sent ;
+LIST storbokstav = "<\\p{Lu}.*>"r ;
+LIST ord = ord ;
+LIST clb = clb ;
+
+LIST det-kvant = (det qnt) ;
+
+TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
+TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
+
+BEFORE-SECTIONS
+
+# «Kommunenes<not np> utfordring i forhold til Kommunenes<np> Hus på torsdag.»
+SELECT:hans-14.bursdag ord IF
+        (0 sent)
+        (NEGATE T:nextWordCrossSent LINK 0 storbokstav)
+        ;
+
+SELECT:blir-14.-Det sent IF
+        (0 ord)
+        (T:nextWordCrossSent LINK 0 storbokstav)
+        ;
+
+SELECT:over_30._Men clb IF
+        (0/1 det-kvant)
+        (0 <<<)
+        (T:nextWordCrossSent LINK 0 storbokstav)
+;
+
