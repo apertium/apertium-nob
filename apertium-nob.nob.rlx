@@ -1277,6 +1277,7 @@ REMOVE:unlikely ("<kvart>"i pp) ;
 REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
 REMOVE:unlikely ("<fører>"i "føre") + n ;
+REMOVE:unlikely ("<vente>"i "venne") + pp ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
