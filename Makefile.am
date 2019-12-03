@@ -38,14 +38,14 @@ $(LANG1).automorf.att.gz: $(LANG1).automorf.bin
 ## Disambiguation rules
 ###############################################################################
 
-$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx $(CGCOMP)
-	$(CGCOMP) $< $@
+$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
+	cg-comp $< $@
 
-$(LANG1).seg.rlx.bin: $(BASENAME).$(LANG1).seg.rlx $(CGCOMP)
-	$(CGCOMP) $< $@
+$(LANG1).seg.rlx.bin: $(BASENAME).$(LANG1).seg.rlx
+	cg-comp $< $@
 
-$(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx $(CGCOMP)
-	$(CGCOMP) $< $@
+$(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx
+	cg-comp $< $@
 
 ###############################################################################
 ## Distribution
