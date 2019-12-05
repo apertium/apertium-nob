@@ -25,7 +25,7 @@
     </pipeline>
   </mode>
 
-  <mode name="nob-seg" install="yes">
+  <mode name="nob-segment" install="yes">
     <pipeline>
       <program name="lt-proc -w -e">
         <file name="nob.automorf.bin"/>
