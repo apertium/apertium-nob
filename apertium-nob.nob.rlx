@@ -1278,6 +1278,7 @@ REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
 REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("<vente>"i "venne") + pp ;
+REMOVE:unlikely ("<vente>"i "venne") + pret ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -8593,6 +8594,10 @@ REMOVE:Vann  vblex OR adv IF
 #  "bare subst ved \"ve og vel\", \"et vel\",
 #  \"flere vel\" eller PROP vel"
 
+
+"<vente>" REMOVE:ikkje-i-vente subst IF
+        (NOT -1 %i%)
+        ;
 
 
 #:3139
