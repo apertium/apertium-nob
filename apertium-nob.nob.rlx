@@ -1295,6 +1295,8 @@ REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 
 "<Monsen>" SELECT:Monsen-not-mons np;
 
+REMOVE:unlikely ("negl") IF (0 ("snegl")) ; # åkersnegl, vintersnegl
+
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
         ;
