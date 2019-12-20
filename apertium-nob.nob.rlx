@@ -19898,7 +19898,12 @@ REMOVE:2324 pprs IF
 ;
 #  "å verne norske ord og norske (ikke be ent) språkelementer"))
 
-
+REMOVE:for-fremadstormende-Jessie adj + ind IF
+        (0C adj + pst)
+        (-1 %for%-prep)
+        (1C ant OR cog)
+        (NOT 1 pl)
+        ;
 
 #:2310
  REMOVE:2310 adj-def-sg-sp IF
