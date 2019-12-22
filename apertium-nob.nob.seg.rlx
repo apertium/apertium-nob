@@ -12,6 +12,8 @@ LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST ord = ord ;
 LIST clb = clb ;
 
+LIST sg = sg ;
+LIST def = def ;
 LIST det-kvant = (det qnt) ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
@@ -19,7 +21,17 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 
 BEFORE-SECTIONS
 
-# «Kommunenes<not np> utfordring i forhold til Kommunenes<np> Hus på torsdag.»
+
+SELECT:EOF sent IF
+        (0 ord)
+        (T:nextWordCrossSent LINK 0 <<<)
+        ;
+
+SELECT:klokka-14. sent IF
+        (-1 ("klokke") + sg + def)
+        (0 ord)
+        ;
+
 SELECT:hans-14.bursdag ord IF
         (0 sent)
         (NEGATE T:nextWordCrossSent LINK 0 storbokstav)
