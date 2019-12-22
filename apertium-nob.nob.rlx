@@ -6790,6 +6790,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "bare subst ved \"et stort fort\"
 # eller ved \"mange fort\""
 
+"<frøs>" REMOVE ("frø") IF
+        (NOT -1 hj-verb)
+        ;
 
 
 #:3609
