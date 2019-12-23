@@ -6030,6 +6030,8 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 
+REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
+
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
 LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" ;
