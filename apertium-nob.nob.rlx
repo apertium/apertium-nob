@@ -8525,8 +8525,12 @@ SELECT:skrev vblex IF
         (-1 dem OR gen OR pos)
         ;
 
-"<vakte>" REMOVE ("vake") IF
+SELECT ("vekke") IF
         (1 ("oppsikt"))
+        ;
+
+"<vakt>" REMOVE adj OR ("vake") IF
+        (-1 ("ha") + pres)
         ;
 
 #:3161
