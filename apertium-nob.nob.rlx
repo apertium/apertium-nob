@@ -6027,6 +6027,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (NOT 0 sg + ind + ("stopp")) # nyord av typen pelsdyrstopp, vêrstopp
         (0/* cmp)
         ;
+REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 
@@ -7997,6 +7998,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
         (1 %med% LINK 1 talord-par-siffer OR målsubst)
         ;
 
+"<ønsket>" SELECT:ønsket-om-å n IF
+        (1 %om%)
+        (2 infmerke)
+        ;
+
 
 #:3361
   "<opptatt>"   REMOVE:3361   pp IF
@@ -8353,6 +8359,11 @@ SELECT:skrev vblex IF
 	(NOT -1 %i%)
 ;
 #mest sanns subst ved "gå i stå"
+
+"<stoler>" REMOVE:stoler-på n IF
+	(NOT -1 qnt + pl)
+	(1 %på%)
+        ;
 
 #:3235
   "<svart>"   REMOVE:3235   pp IF
@@ -29987,6 +29998,7 @@ SELECT:default ("felles");      # not pasv felle
 SELECT:default ("<tvang>") + pret;
 SELECT:default ("<super>"i) + adj;
 SELECT:default ("<strider>"i) + pres;
+SELECT:default ("<stoler>"i) + pres IF (1 %på%);
 SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 
