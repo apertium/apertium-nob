@@ -6040,6 +6040,8 @@ REMOVE:unlikely-actio n + sg + unlikely-actio IF
         (0 n + pl)
         (NOT -1 det + sg) ;
 
+"<Viken>" SELECT:typically-np-if-caps np;
+
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
         ;
