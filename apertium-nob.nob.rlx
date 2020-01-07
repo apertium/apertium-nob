@@ -25787,6 +25787,7 @@ CONSTRAINTS
 
 "<de>" REMOVE:de-np np IF
 	(NOT 1 np)
+	(NOT 1 ukjent + storbokstav)
         ;
 "<De>" REMOVE:de-np np IF
 	(NOT 1 np)
