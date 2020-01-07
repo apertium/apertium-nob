@@ -25852,6 +25852,10 @@ CONSTRAINTS
 	(*-1 m-hj-verb BARRIER perf-part)
 ;
 
+"<fylket>" SELECT:unlikely-fylke n IF
+        (NOT 1 ("hær"))
+        (NOT 1 %seg%)
+        ;
 
 
 #:3559
