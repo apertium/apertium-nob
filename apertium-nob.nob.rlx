@@ -6040,6 +6040,8 @@ REMOVE:unlikely-actio n + sg + unlikely-actio IF
         (0 n + pl)
         (NOT -1 det + sg) ;
 
+"<Viken>" SELECT:typically-np-if-caps np;
+
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
         ;
@@ -25785,8 +25787,16 @@ CONSTRAINTS
 ;
 
 
+"<de>" REMOVE:møter-de-Partizan np IF
+	(-1 ("møte") + pres)
+	(1 ukjent + storbokstav)
+        ;
+"<de>" REMOVE:har-de-Høyre-styrte-kommunene np IF
+	(1 ("<.*-.*>"r))
+        ;
 "<de>" REMOVE:de-np np IF
 	(NOT 1 np)
+	(NOT 1 ukjent + storbokstav)
         ;
 "<De>" REMOVE:de-np np IF
 	(NOT 1 np)
@@ -25842,6 +25852,10 @@ CONSTRAINTS
 	(*-1 m-hj-verb BARRIER perf-part)
 ;
 
+"<fylket>" SELECT:unlikely-fylke n IF
+        (NOT 1 ("hær"))
+        (NOT 1 %seg%)
+        ;
 
 
 #:3559
