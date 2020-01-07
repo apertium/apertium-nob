@@ -25785,6 +25785,13 @@ CONSTRAINTS
 ;
 
 
+"<de>" REMOVE:møter-de-Partizan np IF
+	(-1 ("møte") + pres)
+	(1 ukjent + storbokstav)
+        ;
+"<de>" REMOVE:har-de-Høyre-styrte-kommunene np IF
+	(1 ("<.*-.*>"r))
+        ;
 "<de>" REMOVE:de-np np IF
 	(NOT 1 np)
 	(NOT 1 ukjent + storbokstav)
