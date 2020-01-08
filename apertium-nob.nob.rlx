@@ -5918,6 +5918,13 @@ REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
 ;
 # «førte_til brannar»
 
+SELECT:torden-brakar ("brake") IF
+        (-1 ("torden"))
+        ;
+REMOVE:bringe-brakar ("brake") IF
+        (0 ("bringe"))
+        ;
+
 REMOVE:ikum-ika (".*kum"r) IF (0 ("<.*ika>"r ".*ika"r));
 
 REMOVE:spille_spile ("spile") + verb IF
@@ -5949,6 +5956,10 @@ REMOVE:spille_spile ("spile") + verb IF
 ;
 # «Han arbeider i dag med forsoning mellom Taliban og afghanske myndigheter som leder i Det afghanske høyrådet for fred.»
 # «Tingretten var lydhøre overfor de overlevende og etterlatte, og pressen respekterte dem som ikke ønsket å bli intervjuet, sier Trond Blattmann som leder Støttegruppen for 22.»
+
+"<leder>" SELECT:leder-an vblex IF
+        (1 ("an"))
+        ;
 
 "<leder>" SELECT:hennes-framtid-som-leder-stå n IF
 	(-1 ("som"))
@@ -23811,6 +23822,7 @@ REMOVE:for-økt-sysselsetting subst IF
  REMOVE:1992 subst IF
 	(0 språk)
 	(1 subst)
+        (NOT 1C np)
 	(NOT 1 %alt%)
 ;
 #  "norsk (adj) språk"
