@@ -1201,7 +1201,6 @@ REMOVE:unlikely-skjøt ("skjøt") IF
         (NOT -1 %en%)
         ;
 
-REMOVE:unlikely-visar ("<viser>") + n IF (NOT -1 %en%) ;
 
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
@@ -6046,10 +6045,10 @@ REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-LIST unlikely-actio = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" ;
-REMOVE:unlikely-actio n + sg + unlikely-actio IF
-        (0 n + pl)
-        (NOT -1 det + sg) ;
+LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" ;
+REMOVE:unlikely-agent-noun n + sg + ind + unlikely-agent-noun IF
+        (NOT -1 det + sg + m)
+        ;
 
 "<Viken>" SELECT:typically-np-if-caps np;
 
