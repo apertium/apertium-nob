@@ -6045,9 +6045,13 @@ REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" ;
+LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" ;
 REMOVE:unlikely-agent-noun n + sg + ind + unlikely-agent-noun IF
         (NOT -1 det + sg + m)
+        ;
+REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
+        (0 adj)
+        (1 n)
         ;
 
 "<Viken>" SELECT:typically-np-if-caps np;
