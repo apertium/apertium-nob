@@ -6052,7 +6052,7 @@ REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
 # At least unlikely in (sg) ind:
-LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" ;
+LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" "klipper" ;
 REMOVE:unlikely-agent-noun n + sg + ind + unlikely-agent-noun IF
         (NOT -1 det + sg + m)
         ;
