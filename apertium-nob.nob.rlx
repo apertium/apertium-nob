@@ -3311,6 +3311,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 ;
 
 
+"<landet>" SELECT:at-et-fly-tirsdag-landet-på pret IF
+        (0* ("fly"))
+        (1 %på%)
+        ;
+
 "<landet>" SELECT:over-hele-landet n IF
         (-1 ("hele"))
         ;
