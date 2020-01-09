@@ -6051,13 +6051,13 @@ REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
-LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" ;
+# At least unlikely in (sg) ind:
+LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" ;
 REMOVE:unlikely-agent-noun n + sg + ind + unlikely-agent-noun IF
         (NOT -1 det + sg + m)
         ;
 REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
         (0 adj)
-        (1 n)
         ;
 
 "<Viken>" SELECT:typically-np-if-caps np;
@@ -30050,6 +30050,7 @@ REMOVE:default ("den¹");
 REMOVE:default adv   IF (0 ("<det>"i));
 REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene blir brukt riktig, sier Mollekleiv.»
 REMOVE:default-skyer ("<skyer>") + vblex ;
+REMOVE:default-betalar ("betaler");
 
 REMOVE:default ("<annet>"i) + def;
 
