@@ -30158,7 +30158,7 @@ REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 "<fanger>" REMOVE:default-fangar ("fange" n m pl ind) ;	# keep fange<n><nt><pl><ind>→fange
 "<fanget>" REMOVE:default-fanget ("fang" n nt sg def) ;	# keep fange<vblex><pp>→fanga
 "<fanget>" REMOVE:default-fanget ("fange" n nt sg def) ;	# keep fange<vblex><pp>→fanga
-"<farene>" REMOVE:default-farane ("fare" n m pl def) ;	# keep far<n><nt><pl><def>→fara
+"<farene>" REMOVE:default-fara ("far" n nt pl def) ;	# keep farene<n><m><pl><def>→farene
 "<Fart>" REMOVE:default-Fart ("fart" n m sg ind) ;	# keep Fare<adj><pp><mf><sg><ind>→Faren
 "<fart>" REMOVE:default-fart ("fart" n m sg ind) ;	# keep fare<vblex><pp>→fare
 "<fatter>" REMOVE:default-fatter ("fatter" n m sg ind) ;	# keep fatte<vblex><pres>→fattar
