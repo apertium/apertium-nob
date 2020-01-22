@@ -184,6 +184,8 @@ LIST trans-u11-upresent = tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 rl1 rl4 
 LIST trans12/til = tr12/til ;
 LIST trans2 = tr2 tr18 ;
 
+LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
+
 # «to sivile ble»
 LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" ;
 SET n-adjn = n OR adjn ;
@@ -779,7 +781,6 @@ LIST pass = (vblex pasv) ;
 LIST pasv_pp = pasv pp ;
 LIST pasvpp_tar_%som%pr = "regne" "beskrive" "skildre" "se" "se på" ;
 LIST pasvpp_tar_pp = "forsøke" "anta" "meddele" "få" "frykte" "gjøre" "dokumentere" "anse" "begjære" "søke" "holde" "vente" "vurdere" "foreslå" "kreve" "finne" "stadfeste" "bekrefte" "regne" "rekne" ; # blir forsøkt lokket, antas forsvunnet
-LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" ;
 LIST perf-gen = (adj pp gen) (vblex pp pasv) ;
 LIST perf-part = (vblex pp) ;
 LIST perf-part/<perf-part> = (vblex pp) (adj pp) ;
@@ -15286,6 +15287,7 @@ SELECT:Jeg-så-mot-vinduet pr IF
 	(NOT 1 komma/konj)
 	(NOT -1 det)
 	(*1 subst BARRIER ikke-adv-adj-det LINK NOT 0 fv)
+        (NEGATE 0 %om% LINK -1 verb_tar_%om%cnjsub)
 ;
 #  "Jeg så mot (prep, ikke subst) vinduet"))
 # KBU: men "De (prn, ikke prep) høye kvinnene"
@@ -29913,7 +29915,6 @@ SELECT:Hvis-han-virkelig-leser-post fv IF
         (0C n OR vblex)
         ;
 # «Hvis Jens Stoltenberg virkelig leser e-post rett på iPad, så kan jeg nesten uten problemer lese e-posten hans.»
-
 
 
 REMOVE:og-Svein-Harberg-leder-arbeidet n IF
