@@ -8901,6 +8901,11 @@ REMOVE:steinete adj + pp IF
         (0 ("<.*(ete|et)>"r))
         ;
 
+REMOVE:er-kommet mf OR pl IF
+        (-1 %være/bli%)
+        (0 ("<kommet>"i))
+        ;
+
 TEMPLATE antall = (0 ("antall") OR ("mengde")) OR (0 ("på") LINK -1 ("tall")) ;
 SELECT:Antallet-DREPTE-og-returnerte-stiger-også pp + pl IF
         (-1 T:antall)
