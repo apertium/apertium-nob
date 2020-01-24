@@ -1288,6 +1288,8 @@ REMOVE:unlikely ("<notene>"i "not") IF
 SELECT:unlikely ("<super>"i) + adj IF
         (NOT 1 vann-ord)
         ;
+"<Tina>" SELECT:unlikely np;
+"<Gros>" SELECT:unlikely np;
 
 REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
 REMOVE:unlikely ("hu") + gen ; # hus
@@ -5497,6 +5499,7 @@ REMOVE:avoid-støytte ("støte") IF
         (1 %under% LINK 1 ("fot"))
         ;
 "<skjelvet>" SELECT:merka-skjelvet-her n;
+
 
 #:3999
   "<tallet>"   SELECT:3999   (n nt sg def) IF
