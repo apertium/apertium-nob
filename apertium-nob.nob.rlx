@@ -26145,6 +26145,12 @@ SELECT:noen-default <noen> + (neg) ;
         ;
 
 
+"<dere>" SELECT:frå-dykk. acc IF
+        (-1 pr)
+        (-1C pr OR adv)
+        (1 <<<)
+        ;
+
 #:3725
   "<dels>"   REMOVE:3725   (n gen) IF
 	(0 adv)
@@ -29962,6 +29968,7 @@ REMOVE:høye-doser n + sg IF
         (0 pl)
         ;
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
