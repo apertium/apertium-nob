@@ -958,6 +958,7 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
 LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
@@ -6728,7 +6729,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         ;
 
 "<forløper>" REMOVE vblex IF
-        (-1 %slags%) 
+        (-1 %slags%)
         ;
 
 #:3627
@@ -25748,6 +25749,9 @@ REMOVE:mange-timer-kan vblex IF
 CONSTRAINTS
 ## select domain heur
 
+"<anket>" SELECT:anket-dommen pret IF
+        (1 def + dom-ord)
+        ;
 
 #:4053
   "<bare>"   SELECT:4053   (adj pl) IF
@@ -29973,6 +29977,12 @@ REMOVE:høye-doser n + sg IF
         (0 pl)
         ;
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
+
+REMOVE:anket-dommen pp IF
+        (0C pp OR pret)
+        (*-1 fv BARRIER hj-verb)
+        (1 n + def)
+        ;
 
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
