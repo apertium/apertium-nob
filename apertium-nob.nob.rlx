@@ -1188,6 +1188,7 @@ REMOVE:unlikely ("kader");
 REMOVE:unlikely ("<ruser>"i "rus");
 REMOVE:unlikely ("stall") IF (0 ("tall")) (0/1 cmp);
 REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
+REMOVE:unlikely ("ska") IF (0 ("skade"));
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -9133,6 +9134,13 @@ SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
         (0C adj)
         ;
 # «Skoler i byen har også vært nødt til å holde stengt.»
+
+SELECT:antallet-drepte-av-skytevåpen pp IF
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1C pr OR vblex)
+        ;
+
 
 
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
@@ -30068,6 +30076,7 @@ SELECT:default ("<strider>"i) + pres;
 SELECT:default ("<stoler>"i) + pres IF (1 %på%);
 SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
+SELECT:default ("<skadde>"i) + pp ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
