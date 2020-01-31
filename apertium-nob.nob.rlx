@@ -8659,6 +8659,9 @@ REMOVE:Vann  vblex OR adv IF
 	(NOT *-1 ub-nøyt-det)
 ;
 
+"<verdige>" REMOVE:verdige-unlikely inf IF
+        (NOT -1 infmerke)
+        ;
 
 #:3137
 "<via>" REMOVE:via ("vie") IF
@@ -17111,14 +17114,27 @@ SELECT:den-selvstyrte-demokratiske-øya adj + sp + def IF
         (-1 cm)
         (1 n + def + $$NUMBER)
         ;
-# «Spenningsnivået mellom det kommunistiske Kina og den selvstyrte, demokratiske øya har steget den siste tiden.»
+# «Spenningsnivået mellom det kommunistiske Kina og den selvstyrte,  demokratiske  øya har steget den siste tiden.»
 
 SELECT:gode-verdige-liv adj + &&ADJ_N_AGR IF
         (-2 adj + &&ADJ_N_AGR)
         (-1 cm)
+        (NOT 0 fv)
         (1 n + &&ADJ_N_AGR)
         ;
-# «Det skal være mulig å leve gode, verdige liv i distriktene»
+# «Det skal være mulig å leve gode,  verdige  liv i distriktene»
+# Ikkje: «Da beslutningen ble kjent,  falt  aksjekursene på de amerikanske børsene.»
+# Ikkje: «Bare få dager etter at Dillinger ble begravet,  sørget  faren hans for å åpne graven og begrave kisten på nytt.»
+# Ikkje: «Etter at reglene ble skjerpet,  falt  antallet til 829 i 2010, sier hun.»
+# Ikkje: «Haitiere marsjerte i gatene hvor de ropte,  brente  bildekk og gikk med plakater.»
+
+SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
+        (-3 ("en") + &&ADJ_N_AGR)
+        (-2 adj + &&ADJ_N_AGR)
+        (-1 cm)
+        (1 n + &&ADJ_N_AGR + ind)
+        ;
+# «Ja, for når det skapes uklarhet rundt en lov som er et grundig,  gjennomarbeidet  kompromiss, så går det galt.»
 
 #:4026
  SELECT:4026 gen-subst IF
