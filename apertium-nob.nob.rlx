@@ -958,6 +958,7 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
 # nanowordnet:
+LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
 LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
@@ -1187,6 +1188,7 @@ REMOVE:unlikely ("kader");
 REMOVE:unlikely ("<ruser>"i "rus");
 REMOVE:unlikely ("stall") IF (0 ("tall")) (0/1 cmp);
 REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
+REMOVE:unlikely ("ska") IF (0 ("skade"));
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -3128,12 +3130,11 @@ SELECT:lurer-på-hvor adv IF
         (-1 %og/eller% OR %men% OR cm)
         (1 pers OR np)
         (2 %være/bli%)
-        (3 (*) LINK ( # høgrekontekstar for «hvor» som gjer det til konkret stad:
+        (3 (*) LINK # høgrekontekstar for «hvor» som gjer det til konkret stad:
                (0 ("bli") LINK 1 ("av"))
             OR (0 ("på") LINK 1 ("vei") OR ("veg"))
             OR (0C adj LINK NOT 0 pp OR ("såkalt") OR ("uklar")) # , hvor veien er smalest
             OR (0 punktum/ellipse)
-            )
         )
         ;
 
@@ -6729,7 +6730,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         ;
 
 "<forløper>" REMOVE vblex IF
-        (-1 %slags%) 
+        (-1 %slags%)
         ;
 
 #:3627
@@ -8658,6 +8659,9 @@ REMOVE:Vann  vblex OR adv IF
 	(NOT *-1 ub-nøyt-det)
 ;
 
+"<verdige>" REMOVE:verdige-unlikely inf IF
+        (NOT -1 infmerke)
+        ;
 
 #:3137
 "<via>" REMOVE:via ("vie") IF
@@ -8887,18 +8891,24 @@ SELECT:Å-ikke-støtte inf IF
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
-LIST no-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
-REMOVE:no-samsvar adj + pp + no-samsvar IF
+LIST no-pred-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
+REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
         ;
-# Ingen samsvar her:
+# Ingen predikativ samsvar her:
 # - De ble tatt av skredet.
 # - Pengene ble gitt i gave.
 # - De ble dratt under.
 # - Barna var veloppdratt.
 # - Barna var oppdratt til å takke for maten.
 # - Motorene ble ettersett og overhalt.
+
+LIST unlikely-attr-samsvar = "få";
+REMOVE:unlikely-attr-samsvar adj + pp + unlikely-attr-samsvar ;
+# Usannsynleg med attributiv samsvar for visse ord:
+# - dermed har 95 fått søknadene sine avvist
+
 
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
@@ -9127,6 +9137,13 @@ SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
         (0C adj)
         ;
 # «Skoler i byen har også vært nødt til å holde stengt.»
+
+SELECT:antallet-drepte-av-skytevåpen pp IF
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1C pr OR vblex)
+        ;
+
 
 
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
@@ -17090,6 +17107,34 @@ SELECT:fra-naturens-side subst + $$GENDER IF
 	(0 -ende)
 ;
 #  "så å si ikkeeksisterende"
+
+SELECT:den-selvstyrte-demokratiske-øya adj + sp + def IF
+        (-3 be-det + $$NUMBER)
+        (-2 adj + sp + def)
+        (-1 cm)
+        (1 n + def + $$NUMBER)
+        ;
+# «Spenningsnivået mellom det kommunistiske Kina og den selvstyrte,  demokratiske  øya har steget den siste tiden.»
+
+SELECT:gode-verdige-liv adj + &&ADJ_N_AGR IF
+        (-2 adj + &&ADJ_N_AGR)
+        (-1 cm)
+        (NOT 0 fv)
+        (1 n + &&ADJ_N_AGR)
+        ;
+# «Det skal være mulig å leve gode,  verdige  liv i distriktene»
+# Ikkje: «Da beslutningen ble kjent,  falt  aksjekursene på de amerikanske børsene.»
+# Ikkje: «Bare få dager etter at Dillinger ble begravet,  sørget  faren hans for å åpne graven og begrave kisten på nytt.»
+# Ikkje: «Etter at reglene ble skjerpet,  falt  antallet til 829 i 2010, sier hun.»
+# Ikkje: «Haitiere marsjerte i gatene hvor de ropte,  brente  bildekk og gikk med plakater.»
+
+SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
+        (-3 ("en") + &&ADJ_N_AGR)
+        (-2 adj + &&ADJ_N_AGR)
+        (-1 cm)
+        (1 n + &&ADJ_N_AGR + ind)
+        ;
+# «Ja, for når det skapes uklarhet rundt en lov som er et grundig,  gjennomarbeidet  kompromiss, så går det galt.»
 
 #:4026
  SELECT:4026 gen-subst IF
@@ -25743,6 +25788,9 @@ REMOVE:mange-timer-kan vblex IF
 CONSTRAINTS
 ## select domain heur
 
+"<anket>" SELECT:anket-dommen pret IF
+        (1 def + dom-ord)
+        ;
 
 #:4053
   "<bare>"   SELECT:4053   (adj pl) IF
@@ -29969,6 +30017,12 @@ REMOVE:høye-doser n + sg IF
         ;
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
 
+REMOVE:anket-dommen pp IF
+        (0C pp OR pret)
+        (*-1 fv BARRIER hj-verb)
+        (1 n + def)
+        ;
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
@@ -30053,6 +30107,7 @@ SELECT:default ("<strider>"i) + pres;
 SELECT:default ("<stoler>"i) + pres IF (1 %på%);
 SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
+SELECT:default ("<skadde>"i) + pp ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
