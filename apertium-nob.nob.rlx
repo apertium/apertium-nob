@@ -1225,6 +1225,9 @@ REMOVE:unlikely ("ond") OR ("vond") IF
         (-1 >>>)
         (NOT 1 ("fram") OR ("frem"))
         ;
+"<Berger>" SELECT:Noah-Berger np IF
+        (NOT -1 >>>)
+        ;
 
 "<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
 "<fort>" SELECT:unlikely ("fort");
