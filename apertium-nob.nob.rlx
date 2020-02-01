@@ -6057,6 +6057,7 @@ REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
+REMOVE:unlikely ("<helt>"i "helle") + pp;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -9110,6 +9111,14 @@ SELECT:Minst-10-er-siden-drept adj + pp + pl
         (-2 kop-fv)
         (-1 adv)
         ;
+
+SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
+        (*-1 kop-fv CBARRIER setn-gr)
+        (*-1 kop-fv BARRIER n + sg OR %ha% OR %at%)
+        (-1C n + pl)
+        (NEGATE -1 def LINK -2 %av%) # «yngste av mennene»
+        ;
+# «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
