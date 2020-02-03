@@ -2884,7 +2884,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #  "(Den store) mannen heller til at
 # mannen heller melka i glasset"
 
-
+"<helt>" SELECT:helt-eller-delvis adv IF
+        (1 %eller%)
+        ;
+# «Det viser en ny undersøkelse gjort av amerikanske Pew Research Center hvor 58 prosent av nordmennene sa seg  helt  eller hovedsakelig enig i utsagnet.»
 
 #:3546
   "<helt>"   SELECT:3546   (adj nt) IF
