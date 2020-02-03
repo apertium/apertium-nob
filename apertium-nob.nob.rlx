@@ -3188,6 +3188,10 @@ SELECT:lurer-på-hvor adv IF
         (-1 %ikke%)
         ;
 
+"<hvor>" SELECT:finne-ut-hvor adv IF
+        (-1 ("finne# ut") OR ("vise"))
+        ;
+# «Regjeringen setter ned et utvalg som skal finne ut hvor(kor) behovet for økt kompetanse gjennom etter- og videreutdanning er størst.»
 
 
 "<i>" SELECT:i-LeBron-debut prep IF
