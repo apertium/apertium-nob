@@ -2886,6 +2886,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 "<helt>" SELECT:helt-eller-delvis adv IF
         (1 %eller%)
+        (NOT 2C n)              # «helt eller syndebukk»
         ;
 # «Det viser en ny undersøkelse gjort av amerikanske Pew Research Center hvor 58 prosent av nordmennene sa seg  helt  eller hovedsakelig enig i utsagnet.»
 
