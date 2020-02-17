@@ -8797,17 +8797,18 @@ CONSTRAINTS
 ## select ndomain
 
 REMOVE:antallet-solgte-billetter vblex IF
-        (-1 ("antall") + sg + def)
+        (-1 ("antall"))
         (0C vblex OR adj LINK 0 &&ADJ_N_AGR)
         (1 n LINK 0 &&ADJ_N_AGR)
         ;
 
 REMOVE:antallet-angrep vblex IF
-        (-1 ("antall") + sg + def)
+        (-1 ("antall"))
         (0C vblex OR n + ind)
         (0 n + pl + ind)
         (*1 fv)
         ;
+# «Tidligere har SVT meldt at også  antall angrep  med håndgranater har økt kraftig i Sverige de åtte siste årene.»
 
 REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
         (-2C np + gen)
