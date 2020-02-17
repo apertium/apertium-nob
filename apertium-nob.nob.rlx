@@ -18873,10 +18873,16 @@ SELECT:antall-væpna-menn adj + pp IF
         ;
 
 SELECT:antallet-felte-elg-øker adj + pp IF
-        (-1 ("antall") + def)
+        (-1 ("antall"))
         (0C pp OR pret)
         (1 n + ind OR adj)
-        (2C fv)
+        (2 fv OR pp)
+        ;
+
+SELECT:har-antall-drepte-økt adj + pp IF
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1 fv OR pp)
         ;
 
 #:2352
@@ -19828,6 +19834,9 @@ CONSTRAINTS
 ## remove ndomain
 
 
+REMOVE:antall-registrerte fv IF
+        (-1 ("antall"))
+        ;
 
 REMOVE:et-faglig-senter subst-mask IF
         (-2C ub-nøyt-det)
