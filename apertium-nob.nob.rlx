@@ -8796,6 +8796,19 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+REMOVE:antallet-solgte-billetter vblex IF
+        (-1 ("antall") + sg + def)
+        (0C vblex OR adj LINK 0 &&ADJ_N_AGR)
+        (1 n LINK 0 &&ADJ_N_AGR)
+        ;
+
+REMOVE:antallet-angrep vblex IF
+        (-1 ("antall") + sg + def)
+        (0C vblex OR n + ind)
+        (0 n + pl + ind)
+        (*1 fv)
+        ;
+
 REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
         (-2C np + gen)
         (-1C adj + def)
@@ -18856,6 +18869,13 @@ SELECT:antall-væpna-menn adj + pp IF
         (-1 ("antall"))
         (0C pp OR pret)
         (1 n + ind OR adj)
+        ;
+
+SELECT:antallet-felte-elg-øker adj + pp IF
+        (-1 ("antall") + def)
+        (0C pp OR pret)
+        (1 n + ind OR adj)
+        (2C fv)
         ;
 
 #:2352
