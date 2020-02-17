@@ -8796,19 +8796,25 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:var-antallet-redusert vblex + pp IF
+        (*-2 p-hj-verb BARRIER ikke-adv)
+        (-1 ("antall"))
+        (0C pp)
+        (NEGATE 1 n OR adj)
+        ;
+# Eit av dei uvanlege døma der «antallet» ikkje modifiserer noko …
+# «Mens Frp før 2015 hadde tolv ordførere, var antallet redusert til fem før årets valg»
+
+# TODO:
+# «Det er fortsatt en lav andel influensasyke i landet, men antallet stiger svakt.»
+
 REMOVE:antallet-solgte-billetter vblex IF
         (-1 ("antall"))
-        (0C vblex OR adj LINK 0 &&ADJ_N_AGR)
-        (1 n LINK 0 &&ADJ_N_AGR)
-        ;
-
-REMOVE:antallet-angrep vblex IF
-        (-1 ("antall"))
-        (0C vblex OR n + ind)
-        (0 n + pl + ind)
-        (*1 fv)
+        (0C vblex OR adj OR n + ind)
         ;
 # «Tidligere har SVT meldt at også  antall angrep  med håndgranater har økt kraftig i Sverige de åtte siste årene.»
+# «Nesten 800.000 personer tar sitt eget liv hvert år i verden, flere enn antall drept i krig og som følge av kriminelle handlinger»
+
 
 REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
         (-2C np + gen)
@@ -9147,6 +9153,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
+        (NEGATE -1 ("antall"))
         ;
 
 SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
@@ -18443,7 +18450,7 @@ SELECT:2398 pp IF
 #Her stod 2402
 
 #:2403
- SELECT:2403 (vblex pp) IF
+SELECT:2403 pp IF
 	(NOT 0 subst)
 	(NOT 0 farlige-part)
 	(NOT 0 pres/pret)
@@ -19618,7 +19625,7 @@ SELECT:fisken-ble-funnet pp + mf IF
 ;
 
 
-SELECT:ungdom-etterlatt-i-utlandet vblex + pp IF
+SELECT:ungdom-etterlatt-i-utlandet pp IF
         (NOT -2 %hvilken%)      # hvilke konsekvenser funnet får
         (-1C n + ind)
         (0C pp OR n)
