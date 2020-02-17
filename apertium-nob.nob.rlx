@@ -23425,6 +23425,13 @@ REMOVE:før-min-tid (cnjsub) IF
 	(*1 setn-gr BARRIER pres/pret)
 ;
 
+SELECT:tildeles-den-utøver-som n + ind + &&ADJ_N_AGR IF
+        (-2C vblex)
+        (-1 det + dem + sg + &&ADJ_N_AGR)
+        (0C n + ind OR pres)
+        (1 %som%)
+        ;
+# «Gullmedaljen kan etter enstemmig vedtak av sentralstyret i et antall av høyst en hvert år tildeles   den utøver   som gjennom flere år har vist fremragende dyktighet»
 
 #:2027
  REMOVE:2027 subst-ub IF
@@ -23437,7 +23444,6 @@ REMOVE:før-min-tid (cnjsub) IF
 #  enn vanlig fordi be-mask-det + ub er mer uvanlig)
 # den gir også et levende bilde av noe der
 # (ikke disamb. - regelen stopper her) det er"))
-
 
 
 #:2022
