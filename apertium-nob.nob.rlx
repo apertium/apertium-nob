@@ -971,6 +971,7 @@ LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok"
 LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
 LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
+LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -26530,6 +26531,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh jan 2004: Mest vanlig i eggehvite"
 
+"<håpet>" REMOVE vblex OR adj IF
+        (-2 ("gi"))
+        (-1 %opp%)
+        ;
 
 #:3498
   "<komme>"   REMOVE:3498   (n) IF
@@ -26537,6 +26542,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh jan 2004: Bare ved Kristi komme osv"
 
+"<landet>" REMOVE:hvis-landet-ikke-har vblex IF
+        (-1 dersom-ord)
+        (*1 fv)
+        ;
 
 #:5002
  "<langs>"   REMOVE:5002   (adj gen) IF
@@ -29850,6 +29859,14 @@ SELECT:Interessen-for-hvilke-lyder-fisk-lager n IF
         (*1C n BARRIER ikke-adv-adj-det LINK *1 fv)
         ;
 # «Interessen for hvilke lyder fisk lager har vokst de siste årene.»
+
+SELECT:med-to-innbyrdes-møter n + pl IF
+        (*-3C fv CBARRIER setn-gr)
+        (-2C det + qnt + pl)
+        (-1C adj + pl)
+        (0C n OR vblex)
+        ;
+# «Både Norge og Danmark hadde tapt to ganger hver mot Sverige og Finland før de gjør opp om tredjeplassen i den nordiske oppkjøringsturneringen med to innbyrdes møter fredag og lørdag.»
 
 SELECT:etter-dette-løp-en-mann-ut fv IF
         (*-2C pr BARRIER clb OR fv)
