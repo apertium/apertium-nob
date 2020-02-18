@@ -8808,18 +8808,24 @@ CONSTRAINTS
 SELECT:var-antallet-redusert vblex + pp IF
         (*-2 p-hj-verb BARRIER ikke-adv)
         (-1 ("antall"))
-        (0C pp)
+        (0C pp OR pret)
         (NEGATE 1 n OR adj)
         ;
 # Eit av dei uvanlege døma der «antallet» ikkje modifiserer noko …
 # «Mens Frp før 2015 hadde tolv ordførere, var antallet redusert til fem før årets valg»
+# «De tre siste månedene er antallet tredoblet, og aller mest aktiv var han den andre uken i oktober»
 
-# TODO:
-# «Det er fortsatt en lav andel influensasyke i landet, men antallet stiger svakt.»
-
-REMOVE:antallet-solgte-billetter vblex IF
+REMOVE:har-antallet-solgte-billetter vblex IF
         (-1 ("antall"))
         (0C vblex OR adj OR n + ind)
+        (NOT 0 farlige-mask-subst OR farlige-nøyt-subst OR farlige-adj OR farlige-adj-subst)
+        (*-1 fv BARRIER clb)
+        ;
+REMOVE:antallet-solgte-billetter-har vblex IF
+        (-1 ("antall"))
+        (0C vblex OR adj OR n + ind)
+        (NOT 0 farlige-mask-subst OR farlige-nøyt-subst OR farlige-adj OR farlige-adj-subst)
+        (*1 fv BARRIER clb)
         ;
 # «Tidligere har SVT meldt at også  antall angrep  med håndgranater har økt kraftig i Sverige de åtte siste årene.»
 # «Nesten 800.000 personer tar sitt eget liv hvert år i verden, flere enn antall drept i krig og som følge av kriminelle handlinger»
