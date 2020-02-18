@@ -29671,9 +29671,10 @@ REMOVE:møtes pstv + pp IF
 
 "<så>" SELECT:så-i-været pret IF
         (1 pr)
-        (NOT 1 %der%)
+        (NEGATE 1 %der% OR cnjsub LINK *1 fv)
         (*2 acc OR n + def)
         ;
+# Ikkje: «Det er en lang behandling, men han er ung, så om ting går som vi håper, ser jeg ikke noen grunn til at han ikke skal komme tilbake. »
 
 "<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
