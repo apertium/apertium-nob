@@ -30149,6 +30149,12 @@ SELECT:en-tidligere-spiller n + &&ADJ_N_AGR IF
         ;
 # «Statsadvokaten ber om mer etterforskning i en voldtektssak mot en tidligere spiller på Moldes eliteserielag i fotball.»
 
+SELECT:hans-egen-søster det + &&ADJ_N_AGR IF
+        (1C emph + &&ADJ_N_AGR)
+        (2C n + &&ADJ_N_AGR)
+        ;
+# «Han minnet om at hans egen søster har sluttet»
+
 REMOVE:anket-dommen pp IF
         (0C pp OR pret)
         (*-1 fv BARRIER hj-verb)
