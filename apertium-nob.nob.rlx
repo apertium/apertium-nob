@@ -6069,9 +6069,11 @@ REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
+REMOVE:unlikely ("<om>"i) + n;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<helt>"i "helle") + pp;
+REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 
 SELECT:sel-unlikely ("<baller>" "ball" m);
 
@@ -26446,6 +26448,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "Sletter verbene som står igjen"
 
+"<forsvarer>" REMOVE:Cappelens-forsvarer vblex IF
+        (-1C gen)
+        ;
+# «Elden varsler blant annet at han vil stevne Gjermund Cappelens forsvarer Benedict de Vibe som vitne.»
 
 
 #:3613
