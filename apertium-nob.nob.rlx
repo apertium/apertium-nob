@@ -30146,6 +30146,13 @@ REMOVE:anket-dommen pp IF
         (1 n + def)
         ;
 
+REMOVE:orientert-om-funnet vblex + pp IF
+        (*-2 vblex BARRIER ikke-adv-verb)
+        (-1 pr)
+        (0 n + def)
+        (1 setn-gr)
+        ;
+# «- Pårørende var på stedet og er orientert om funnet, opplyser Sandberg.»
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
