@@ -4958,6 +4958,11 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 # 26.3"
 
 
+LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "mye" "mest" "gradvis" "framover";
+"<stiger>" SELECT:stiger-svakt vblex IF
+        (1 stige-måte)
+        ;
+# «Det er fortsatt en lav andel influensasyke i landet, men antallet stiger svakt.»
 
 #:3238
   "<stikk>"   SELECT:3238   (adv) IF
@@ -7055,6 +7060,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
   "<grått>"   REMOVE:3575   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
+
+"<gir>" REMOVE n IF
+        (1 ("bort"))
+        ;
 
 "<går>" REMOVE:hvor-går-grensa n IF
         (NOT -3 pr)             # «i hele jævla går»
