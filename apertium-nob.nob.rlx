@@ -30141,6 +30141,14 @@ REMOVE:høye-doser n + sg IF
         ;
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
 
+SELECT:en-tidligere-spiller n + &&ADJ_N_AGR IF
+        (*-3 fv)
+        (-2C det + qnt + &&ADJ_N_AGR)
+        (-1C adj + &&ADJ_N_AGR)
+        (0C vblex OR n)
+        ;
+# «Statsadvokaten ber om mer etterforskning i en voldtektssak mot en tidligere spiller på Moldes eliteserielag i fotball.»
+
 REMOVE:anket-dommen pp IF
         (0C pp OR pret)
         (*-1 fv BARRIER hj-verb)
