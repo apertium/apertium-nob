@@ -8982,6 +8982,23 @@ SELECT:Antallet-på-drepte-og-RETURNERTE-stiger-også pp + pl IF
         (1 fv)
         ;
 
+SELECT:antall-DREPTE-og-hardt-skadde pp + pl IF
+	(-1 T:antall)
+	(1 %og/eller%)
+	(2 adv)
+	(3 pp + pl)
+        (*4 fv BARRIER setn-gr)
+;
+SELECT:antall-drepte-og-hardt-SKADDE pp + pl IF
+	(-4 T:antall)
+	(-3 pp + pl)
+	(-2 %og/eller%)
+	(-1 adv)
+        (*1 fv BARRIER setn-gr)
+;
+# «Både antall drepte og hardt skadde i trafikken var lavere i april i år enn gjennomsnittet.»
+
+
 SELECT:nå-har-likevel-1000-returnert pp + vblex
         (*-2 %ha% + fv BARRIER ikke-adv)
         (-1 qnt + pl)
