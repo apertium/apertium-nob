@@ -6068,6 +6068,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
+REMOVE:unlikely ("<sida>"i) + m;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<helt>"i "helle") + pp;
