@@ -8949,6 +8949,11 @@ SELECT:Å-ikke-støtte inf IF
 
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
+SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «gitte» in nno
+        (-1 ("<ethvert>"))
+        (0 ("<gitt>"))
+        ;
+
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-pred-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
 REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
