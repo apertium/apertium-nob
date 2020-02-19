@@ -30876,6 +30876,13 @@ MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
 ;
 
+MAP:enhver-debatt-og-diskusjon (@nkon) %og/eller% IF
+        (-2 ("enhver"))
+        (-1C n + sg + ind LINK NOT 0 gen)
+        (NOT 0 clb)
+        (*1C n + sg + ind BARRIER ikke-adj-det LINK NOT 0 gen)
+;
+
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
