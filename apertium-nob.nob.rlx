@@ -594,7 +594,7 @@ LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("le
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
-LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ;
+LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ;
@@ -971,13 +971,14 @@ LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok"
 LIST yrkestittel-ord = "partileder" "programleder" "leder" "nestleder" "styreleder" "minister" "president" "varapresident" "visepresident" "ministerpresident" "snekker" "lege" "komiteleder" "komitéleder" "innsatsleder" "psykolog" "sykepleier" "professor" "frøken" "driftsleder" "adjunkt" "direktør" ;
 LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
+LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
 BEFORE-SECTIONS
 
-LIST not-np-guess-words = "<Flere>" "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Sen>" "<Velg>" "<Egenvekt>" "buss" "<Blant>" "<Hvis>" "demonstrasjon" "demonstrant" "skade" "eksplosjon" "skolemat" "forbud" "<Seriemester>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "dykker" "mulig" "endring" "kritiker" "sterk" "østerriksk" "russer" "turist" "notis" "vinge" "børs" "antall" "mannskap" "ordfører" "<Reguleringer>" "<Beklagelig>" "<Frykter>" "<Tall>" "<Tallet>" "<Tallene>" "<Kommuner>" "<Myndighetene>" "<Ledelsen>" "<Komiteens>" "<Kvinnens>" "<Krigens>" "<Naturens>" "<Nordmannens>" "<Miljøbevisst>" "<Mannens>" "<Valgets>" "<.*(forfatter|rammede|kommunene|myndighetene|forsker|forskern?e|profilen|pendler|leder|løperen|kjeden|selskapene|prisene|grupper|siktet)>"ri ;
+LIST not-np-guess-words = "<Flere>" "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Sen>" "<Velg>" "<Egenvekt>" "buss" "<Blant>" "<Hvis>" "demonstrasjon" "demonstrant" "skade" "eksplosjon" "skolemat" "forbud" "<Seriemester>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "dykker" "mulig" "endring" "kritiker" "sterk" "østerriksk" "russer" "turist" "notis" "vinge" "børs" "antall" "mannskap" "ordfører" "<Reguleringer>" "<Beklagelig>" "<Frykter>" "<Tall>" "<Tallet>" "<Tallene>" "<Kommuner>" "<Myndighetene>" "<Ledelsen>" "<Komiteens>" "<Kvinnens>" "<Krigens>" "<Naturens>" "<Nordmannens>" "<Miljøbevisst>" "<Mannens>" "<Valgets>" "<Foruten>" "<.*(forfatter|rammede|kommunene|myndighetene|forsker|forskern?e|profilen|pendler|leder|løperen|kjeden|selskapene|prisene|grupper|siktet)>"ri ;
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words ;
 
@@ -4958,6 +4959,11 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 # 26.3"
 
 
+LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "mye" "mest" "gradvis" "framover";
+"<stiger>" SELECT:stiger-svakt vblex IF
+        (1 stige-måte)
+        ;
+# «Det er fortsatt en lav andel influensasyke i landet, men antallet stiger svakt.»
 
 #:3238
   "<stikk>"   SELECT:3238   (adv) IF
@@ -6063,11 +6069,16 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
+REMOVE:unlikely ("<sida>"i) + m;
+REMOVE:unlikely ("<om>"i) + n;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<helt>"i "helle") + pp;
+REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 
-SELECT:sel-unlikely ("<baller>" "ball" m);
+SELECT:sel-unlikely ("<kravet>"i) + n;
+SELECT:sel-unlikely ("<baller>"i "ball" m);
+SELECT:sel-unlikely ("<disses>"i) + prn;
 
 # At least unlikely in (sg) ind:
 LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" "klipper" "stryker" ;
@@ -6833,6 +6844,12 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "bare subst ved \"et stort fort\"
 # eller ved \"mange fort\""
 
+"<fortsatte>" REMOVE:cm-fortsatte-Neymar pp IF
+        (-1 cm)
+        (*1 storbokstav)
+        ;
+# «Jeg er her for å hjelpe klubben og for å gjøre en jobb som en utøver for klubben, fortsatte Neymar.»
+
 "<frøs>" REMOVE ("frø") IF
         (NOT -1 hj-verb)
         ;
@@ -7055,6 +7072,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
   "<grått>"   REMOVE:3575   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
+
+"<gir>" REMOVE n IF
+        (1 ("bort"))
+        ;
 
 "<går>" REMOVE:hvor-går-grensa n IF
         (NOT -3 pr)             # «i hele jævla går»
@@ -8796,6 +8817,32 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:var-antallet-redusert vblex + pp IF
+        (*-2 p-hj-verb BARRIER ikke-adv)
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (NEGATE 1 n OR adj)
+        ;
+# Eit av dei uvanlege døma der «antallet» ikkje modifiserer noko …
+# «Mens Frp før 2015 hadde tolv ordførere, var antallet redusert til fem før årets valg»
+# «De tre siste månedene er antallet tredoblet, og aller mest aktiv var han den andre uken i oktober»
+
+REMOVE:har-antallet-solgte-billetter vblex IF
+        (-1 ("antall"))
+        (0C vblex OR adj OR n + ind)
+        (NOT 0 farlige-mask-subst OR farlige-nøyt-subst OR farlige-adj OR farlige-adj-subst)
+        (*-1 fv BARRIER clb)
+        ;
+REMOVE:antallet-solgte-billetter-har vblex IF
+        (-1 ("antall"))
+        (0C vblex OR adj OR n + ind)
+        (NOT 0 farlige-mask-subst OR farlige-nøyt-subst OR farlige-adj OR farlige-adj-subst)
+        (*1 fv BARRIER clb)
+        ;
+# «Tidligere har SVT meldt at også  antall angrep  med håndgranater har økt kraftig i Sverige de åtte siste årene.»
+# «Nesten 800.000 personer tar sitt eget liv hvert år i verden, flere enn antall drept i krig og som følge av kriminelle handlinger»
+
+
 REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
         (-2C np + gen)
         (-1C adj + def)
@@ -8902,6 +8949,11 @@ SELECT:Å-ikke-støtte inf IF
 
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
+SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «gitte» in nno
+        (-1 ("<ethvert>"))
+        (0 ("<gitt>"))
+        ;
+
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-pred-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
 REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
@@ -8946,6 +8998,23 @@ SELECT:Antallet-på-drepte-og-RETURNERTE-stiger-også pp + pl IF
         (-1 %og/eller%)
         (1 fv)
         ;
+
+SELECT:antall-DREPTE-og-hardt-skadde pp + pl IF
+	(-1 T:antall)
+	(1 %og/eller%)
+	(2 adv)
+	(3 pp + pl)
+        (*4 fv BARRIER setn-gr)
+;
+SELECT:antall-drepte-og-hardt-SKADDE pp + pl IF
+	(-4 T:antall)
+	(-3 pp + pl)
+	(-2 %og/eller%)
+	(-1 adv)
+        (*1 fv BARRIER setn-gr)
+;
+# «Både antall drepte og hardt skadde i trafikken var lavere i april i år enn gjennomsnittet.»
+
 
 SELECT:nå-har-likevel-1000-returnert pp + vblex
         (*-2 %ha% + fv BARRIER ikke-adv)
@@ -9133,6 +9202,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
+        (NEGATE -1 ("antall"))
         ;
 
 SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
@@ -17247,7 +17317,6 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #  "9.3.2001: Slik er der for både lærer og elev. "
 
 
-
 #:2510
  SELECT:2510 subst IF
 	(NOT 0 ikke-subst-verb)
@@ -18429,7 +18498,7 @@ SELECT:2398 pp IF
 #Her stod 2402
 
 #:2403
- SELECT:2403 (vblex pp) IF
+SELECT:2403 pp IF
 	(NOT 0 subst)
 	(NOT 0 farlige-part)
 	(NOT 0 pres/pret)
@@ -18856,6 +18925,19 @@ SELECT:antall-væpna-menn adj + pp IF
         (-1 ("antall"))
         (0C pp OR pret)
         (1 n + ind OR adj)
+        ;
+
+SELECT:antallet-felte-elg-øker adj + pp IF
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1 n + ind OR adj)
+        (2 fv OR pp)
+        ;
+
+SELECT:har-antall-drepte-økt adj + pp IF
+        (-1 ("antall"))
+        (0C pp OR pret)
+        (1 fv OR pp)
         ;
 
 #:2352
@@ -19550,6 +19632,21 @@ SELECT:Fylkesmannens-anbefalinger-ble-presentert adj + pp + &&ADJ_N_AGR IF
 # Prefer subject under genitive:
 # «– Fylkesmennenes anbefalinger<pl> skal være basert<pl!> på lokale vedtak …»
 
+SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp + pl IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK -1 n LINK *-1 ("til") BARRIER ikke-adv-adj LINK -1 ("forbindelse") LINK -1 ("med")
+         LINK *-1 nom + pl
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         LINK NOT 0 sanns-årstal
+         LINK NOT -1 det + sg)
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
+;
+# TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
+
 SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -19576,7 +19673,7 @@ SELECT:fisken-ble-funnet pp + mf IF
 ;
 
 
-SELECT:ungdom-etterlatt-i-utlandet vblex + pp IF
+SELECT:ungdom-etterlatt-i-utlandet pp IF
         (NOT -2 %hvilken%)      # hvilke konsekvenser funnet får
         (-1C n + ind)
         (0C pp OR n)
@@ -19792,6 +19889,9 @@ CONSTRAINTS
 ## remove ndomain
 
 
+REMOVE:antall-registrerte fv IF
+        (-1 ("antall"))
+        ;
 
 REMOVE:et-faglig-senter subst-mask IF
         (-2C ub-nøyt-det)
@@ -23390,6 +23490,13 @@ REMOVE:før-min-tid (cnjsub) IF
 	(*1 setn-gr BARRIER pres/pret)
 ;
 
+SELECT:tildeles-den-utøver-som n + ind + &&ADJ_N_AGR IF
+        (-2C vblex)
+        (-1 det + dem + sg + &&ADJ_N_AGR)
+        (0C n + ind OR pres)
+        (1 %som%)
+        ;
+# «Gullmedaljen kan etter enstemmig vedtak av sentralstyret i et antall av høyst en hvert år tildeles   den utøver   som gjennom flere år har vist fremragende dyktighet»
 
 #:2027
  REMOVE:2027 subst-ub IF
@@ -23402,7 +23509,6 @@ REMOVE:før-min-tid (cnjsub) IF
 #  enn vanlig fordi be-mask-det + ub er mer uvanlig)
 # den gir også et levende bilde av noe der
 # (ikke disamb. - regelen stopper her) det er"))
-
 
 
 #:2022
@@ -26356,6 +26462,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "Sletter verbene som står igjen"
 
+"<forsvarer>" REMOVE:Cappelens-forsvarer vblex IF
+        (-1C gen)
+        ;
+# «Elden varsler blant annet at han vil stevne Gjermund Cappelens forsvarer Benedict de Vibe som vitne.»
 
 
 #:3613
@@ -26427,6 +26537,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh jan 2004: Mest vanlig i eggehvite"
 
+"<håpet>" REMOVE vblex OR adj IF
+        (-2 ("gi"))
+        (-1 %opp%)
+        ;
 
 #:3498
   "<komme>"   REMOVE:3498   (n) IF
@@ -26434,6 +26548,10 @@ SELECT:noen-default <noen> + (neg) ;
 ;
 #  "kh jan 2004: Bare ved Kristi komme osv"
 
+"<landet>" REMOVE:hvis-landet-ikke-har vblex IF
+        (-1 dersom-ord)
+        (*1 fv)
+        ;
 
 #:5002
  "<langs>"   REMOVE:5002   (adj gen) IF
@@ -29213,7 +29331,7 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 #:4033
- REMOVE:4033 subst-mask IF
+REMOVE:farlige-mask-subst n + m OR n + f IF
 	 (0 farlige-mask-subst)
 	 (NOT 0 %gode%)
 ;
@@ -29568,9 +29686,10 @@ REMOVE:møtes pstv + pp IF
 
 "<så>" SELECT:så-i-været pret IF
         (1 pr)
-        (NOT 1 %der%)
+        (NEGATE 1 %der% OR cnjsub LINK *1 fv)
         (*2 acc OR n + def)
         ;
+# Ikkje: «Det er en lang behandling, men han er ung, så om ting går som vi håper, ser jeg ikke noen grunn til at han ikke skal komme tilbake. »
 
 "<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
@@ -29746,6 +29865,14 @@ SELECT:Interessen-for-hvilke-lyder-fisk-lager n IF
         (*1C n BARRIER ikke-adv-adj-det LINK *1 fv)
         ;
 # «Interessen for hvilke lyder fisk lager har vokst de siste årene.»
+
+SELECT:med-to-innbyrdes-møter n + pl IF
+        (*-3C fv CBARRIER setn-gr)
+        (-2C det + qnt + pl)
+        (-1C adj + pl)
+        (0C n OR vblex)
+        ;
+# «Både Norge og Danmark hadde tapt to ganger hver mot Sverige og Finland før de gjør opp om tredjeplassen i den nordiske oppkjøringsturneringen med to innbyrdes møter fredag og lørdag.»
 
 SELECT:etter-dette-løp-en-mann-ut fv IF
         (*-2C pr BARRIER clb OR fv)
@@ -30037,12 +30164,33 @@ REMOVE:høye-doser n + sg IF
         ;
 # Assumes we've fixed stuff like «daglige<def> leder<sg><ind>» already
 
+SELECT:en-tidligere-spiller n + &&ADJ_N_AGR IF
+        (*-3 fv)
+        (-2C det + qnt + &&ADJ_N_AGR)
+        (-1C adj + &&ADJ_N_AGR)
+        (0C vblex OR n)
+        ;
+# «Statsadvokaten ber om mer etterforskning i en voldtektssak mot en tidligere spiller på Moldes eliteserielag i fotball.»
+
+SELECT:hans-egen-søster det + &&ADJ_N_AGR IF
+        (1C emph + &&ADJ_N_AGR)
+        (2C n + &&ADJ_N_AGR)
+        ;
+# «Han minnet om at hans egen søster har sluttet»
+
 REMOVE:anket-dommen pp IF
         (0C pp OR pret)
         (*-1 fv BARRIER hj-verb)
         (1 n + def)
         ;
 
+REMOVE:orientert-om-funnet vblex + pp IF
+        (*-2 vblex BARRIER ikke-adv-verb)
+        (-1 pr)
+        (0 n + def)
+        (1 setn-gr)
+        ;
+# «- Pårørende var på stedet og er orientert om funnet, opplyser Sandberg.»
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
@@ -30143,6 +30291,7 @@ REMOVE:default adv   IF (0 ("<det>"i));
 REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene blir brukt riktig, sier Mollekleiv.»
 REMOVE:default-skyer ("<skyer>") + vblex ;
 REMOVE:default-betalar ("betaler");
+REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabiliteringssenter
 
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
@@ -30377,6 +30526,7 @@ REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 "<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
 "<lette>" REMOVE:default-leita ("leite" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
 "<lette>" REMOVE:default-leita ("lete" vblex pret) ;	# keep lette<n><m><sg><ind>→lette
+"<leveres>" REMOVE:default-blir-levert ("lever" n) ;	# keep levere<vblex><inf><pasv>→blir levert
 "<ligget>" REMOVE:default-legen ("ligge" adj pp mf sg ind) ;	# keep ligge<vblex><pp>→lege ligge<adj><pp><nt><sg><ind>→lege
 "<Loven>" REMOVE:default-Loven ("Loven" np cog) ;	# keep Lov<n><m><sg><def>→Lova
 "<lover>" REMOVE:default-lóvar ("love" n m pl ind) ;	# keep lov<n><m><pl><ind>→lover
@@ -30472,6 +30622,8 @@ REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 "<sentre>" REMOVE:default-senter ("senter" n nt pl ind) ;	# keep sentrum<n><nt><pl><ind>→sentrum
 "<seter>" REMOVE:default-seter ("seter" n f sg ind) ;	# keep sete<n><nt><pl><ind>→sete
 "<seter>" REMOVE:default-seter ("seter" n m sg ind) ;	# keep sete<n><nt><pl><ind>→sete
+"<si>" REMOVE:default-seie ("si" n) ;	# keep seie
+"<si>" REMOVE:default-seie ("sin") ;	# keep seie
 "<sikter>" REMOVE:default-sikter ("sikt" n f pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
 "<sikter>" REMOVE:default-sikter ("sikt" n m pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
 "<siktet>" REMOVE:default-siktet ("sikte" n nt sg def) ;	# keep sikte<adj><pp><pl>→sikta sikte<adj><pp><nt><sg><ind>→sikta sikte<vblex><pp>→sikta
@@ -30727,6 +30879,13 @@ MAP:bransjers-og-enkelte-bedrifters-situasjon (@nkon) %og/eller% IF
         (1 adj)
         (NOT 0 clb)
         (*2C n + gen BARRIER ikke-adj-det LINK 0 $$NUMBER + ind) # no dem, must be ind
+;
+
+MAP:enhver-debatt-og-diskusjon (@nkon) %og/eller% IF
+        (-2 ("enhver"))
+        (-1C n + sg + ind LINK NOT 0 gen)
+        (NOT 0 clb)
+        (*1C n + sg + ind BARRIER ikke-adj-det LINK NOT 0 gen)
 ;
 
 
