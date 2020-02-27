@@ -15,10 +15,16 @@ LIST TEMPUS = inf pres pasv pret pp imp ;
 # For use with http://beta.visl.sdu.dk/cg3/single/#set-unification-set
 # as &&ADJ_N_AGR (also works for demonstratives):
 LIST AGR_MF = f mf m ;
-SET AGR_MF_SG = (sg) + AGR_MF ;
-SET AGR_NT_SG = (nt) + (sg) ;
-LIST AGR_PL = pl ;
+LIST AGR_SP = (sp un) ;
+SET AGR_MF_SG = (sg) + AGR_MF OR AGR_SP ;
+SET AGR_NT_SG = (sg) + (nt) OR AGR_SP ;
+SET AGR_PL = (pl) OR AGR_SP ;
 SET ADJ_N_AGR = AGR_MF_SG OR AGR_NT_SG OR AGR_PL ;
+# ADD:agrtest (@agrtest) &&ADJ_N_AGR IF (-1 &&ADJ_N_AGR);
+# sitt telefoner. sine telefoner. si telefoner. sin telefoner.
+# sitt telefon. sine telefon. si telefon. sin telefon.
+# sitt bidrag. sine bidrag. si bidrag. sin bidrag.
+# sitt hus. sine hus. si hus. sin hus.
 
 LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
