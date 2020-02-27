@@ -30155,6 +30155,15 @@ SELECT:det-økende-tapet def + &&ADJ_N_AGR IF
         (0C n)
         ;
 
+SELECT:sitt-sosiale-og-økonomiske-liv n + sg IF
+        (-4 det + pos + sg)
+        (-3C adj LINK 0 def)
+        (-2C %og/eller% LINK NOT 0 clb)
+        (-1C adj LINK 0 def)
+        (0C n)
+        ;
+# «Sarah mottok femti amerikanske dollar i støtte, et beløp som transitthuset vårt Dorcas gir til kvinner som ønsker å bygge opp igjen sitt sosiale og økonomiske liv.»
+
 REMOVE:høye-doser n + sg IF
         (NOT -2 gen)            # «Politiets generelle inntrykk»
         (-1C adj + pl OR adj + def)
