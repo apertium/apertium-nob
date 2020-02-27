@@ -30305,6 +30305,7 @@ REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabilit
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
+REMOVE:default nt IF (0 ("<tingene>"i));
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
