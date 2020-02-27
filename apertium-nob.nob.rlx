@@ -30888,6 +30888,12 @@ MAP:enhver-debatt-og-diskusjon (@nkon) %og/eller% IF
         (*1C n + sg + ind BARRIER ikke-adj-det LINK NOT 0 gen)
 ;
 
+MAP:dedikert-og-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
+        (-1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (NOT 0 clb)
+        (1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (2C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+;
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
