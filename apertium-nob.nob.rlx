@@ -5015,7 +5015,6 @@ REMOVE:avoid-støytte ("støte") IF
 
 
 
-
 #:5025
  "<sørpe>"   SELECT:5025   (adv) IF
 	(1 %full%)
@@ -5951,6 +5950,10 @@ REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
         (NEGATE 0 ("be# om") LINK *-1 ("bli"))
 ;
 # «førte_til brannar»
+
+SELECT:svei-som-… ("svi") IF
+        (1 ("som")) ;
+SELECT ("svi¹") ;
 
 SELECT:torden-brakar ("brake") IF
         (-1 ("torden"))
