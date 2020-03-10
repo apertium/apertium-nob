@@ -1030,6 +1030,14 @@ REMOVE:np-guess-safe cgguess IF
         (NEGATE 0C np OR n + sg + gen LINK 1 pres) # «– Jets gambler med Kåre Vedvik som sin nye kicker»
         ;
 
+LIST storbokstav-ok-etter = >>> guio lquot rquot rpar "[0-9]{4,4}"r ;
+SELECT:storbokstav-np np IF
+        (0 storbokstav)
+        (NOT -1 storbokstav-ok-etter)
+        (NEGATE -1 ("[0-9.]+"r) LINK -1 storbokstav-ok-etter)
+        ;
+
+
 
 
 SELECT:Halvor-Egner-Granerud np IF
