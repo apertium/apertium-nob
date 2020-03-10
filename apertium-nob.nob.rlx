@@ -1317,6 +1317,7 @@ REMOVE:unlikely ("hu") + gen ; # hus
 REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 "<Laget>" REMOVE:unlikely-bos np IF (-1 >>>);
 
+"<Åtte>" REMOVE:unlikely vblex;   # remove even if no verb in sent (probably headline)
 "<Monsen>" SELECT:Monsen-not-mons np;
 
 SELECT:year date IF
