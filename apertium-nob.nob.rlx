@@ -6097,6 +6097,7 @@ REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
 SELECT:sel-unlikely ("<disses>"i) + prn;
+SELECT:sel-unlikely ("<AS>" "AS");
 
 # At least unlikely in (sg) ind:
 LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" "klipper" "stryker" ;
