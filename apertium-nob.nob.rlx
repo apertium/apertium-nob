@@ -1011,6 +1011,12 @@ REMOVE:titlecase-sentstart cgguess IF
         (0 not-np-guess-at-sentstart)
         ;
 
+REMOVE:Trenerne-A-og-B cgguess IF
+        (0 yrkestittel-ord + pl)
+        (1 storbokstav LINK *1 cnjcoo BARRIER ikke-adv-adj-substmgen-pron-konj-detmdem-prep2 LINK 1 storbokstav)
+        ;
+# «Trenerne Nicolej Krickau (GOG herrer) og Jesper Jensen (Esbjerg kvinner) ønsker videodømmingen velkommen.»
+
 SELECT:titlecase-midsent cgguess IF
         (NOT -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
         ;
