@@ -1097,6 +1097,7 @@ SELECT:Erna-Sanner-og-Lae np IF
 
 SELECT:nestleder-Sanner np IF
         (-1 yrkestittel-ord)
+        (0 storbokstav)         # «Jan Jönsson forblir Stabæks trener   de   tre neste årene.»
         ;
 
 SELECT:Zuccas-Rangers np IF
