@@ -6070,7 +6070,8 @@ REMOVE:unlikely ("<lærer>") + pl;
 REMOVE:unlikely ("<pepper>") + pl;
 REMOVE:unlikely ("<kostet>") + n;
 REMOVE:unlikely ("<snakker>") + pl;
-REMOVE:unlikely ("<leverer>") + n;
+REMOVE:unlikely ("<leverer>"i) + n;
+REMOVE:unlikely ("<levere>"i) + n;
 REMOVE:unlikely ("<skylder>") + n;
 REMOVE:unlikely ("<reder>" "red");
 REMOVE:unlikely-vingane ("ving") + pl + def IF (NOT 0* fotball-ord) ;
@@ -30270,7 +30271,7 @@ SELECT:sg-after-første sg IF
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
-SELECT:default adj OR adj  IF (0 ("<hele>"i));
+SELECT:default adj         IF (0 ("<hele>"i));
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
 SELECT:default adv         IF (0 ("<fort>"i));
