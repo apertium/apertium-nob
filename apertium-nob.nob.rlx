@@ -29538,6 +29538,36 @@ REMOVE:at-Ukjend-bevares inf IF
 	   (0 bare-adj)
 ;
 
+
+#################################################################
+# Transitive/causative vs intransitive                          #
+#                                                               #
+# SUPERSCRIPT ONE is used on transitives in trans/intrans pairs #
+#################################################################
+
+SELECT:henge-fra-seg-trans ("henge¹"r) + vblex IF
+        (1 %fra%)
+        (2 %seg%)
+        ;
+# «Han henger fra seg.»
+
+REMOVE:trans-has-object ("(.*)"r) + vblex IF
+        (0 ("$1¹"v) + vblex)
+        (*1 prn + acc OR n BARRIER ikke-adv)
+        ;
+# «Han henger noe opp.»
+
+REMOVE:intrans-no-object ("(.*)¹"r) + vblex IF
+        (0 ("$1"v) + vblex)
+        (NEGATE *1 prn + acc OR n BARRIER ikke-adv)
+        ;
+# «Han står og henger.»
+
+
+
+####################################
+# Late rules, taking more chances: #
+####################################
 REMOVE:musikkverk m IF          # compunds like "hodeverk" less likely
         (0 ("verk"))
         (0/1 cmp)
