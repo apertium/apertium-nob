@@ -29545,11 +29545,36 @@ REMOVE:at-Ukjend-bevares inf IF
 # SUPERSCRIPT ONE is used on transitives in trans/intrans pairs #
 #################################################################
 
+SELECT:rekke-opp-trans ("rekke¹"r) + vblex IF
+        (1 %opp%)
+        ;
+# «Å rekke opp hånden.»
 SELECT:henge-fra-seg-trans ("henge¹"r) + vblex IF
         (1 %fra%)
         (2 %seg%)
         ;
 # «Han henger fra seg.»
+
+# rekke¹ meg fatet
+# rekke¹ opp hånden
+# rekke toget
+REMOVE:intrans-no-indobject ("rekke¹") + vblex IF
+        (*1 prn + acc OR n BARRIER ikke-adv LINK NEGATE *1 prn + acc OR n)
+        ;
+REMOVE:intrans-no-indobject ("rekke¹") + vblex IF
+        (NEGATE *1 prn + acc)
+        ;
+# «Han rekker toget.»
+SELECT:trans-indobject ("rekke") + vblex IF
+        (*1 prn + acc OR n BARRIER ikke-adv LINK *1 prn + acc OR n)
+        ;
+# «Han rekker meg toget.»
+
+REMOVE:trans-has-object ("(.*)"r) + vblex IF
+        (0 ("$1¹"v) + vblex)
+        (*1 prn + acc OR n BARRIER ikke-adv)
+        ;
+# «Han henger noe opp.»
 
 REMOVE:trans-has-object ("(.*)"r) + vblex IF
         (0 ("$1¹"v) + vblex)
@@ -30363,6 +30388,7 @@ REMOVE:default-netta ("<nettene>") + nt ; # TODO: «Dette sørger for at nettene
 REMOVE:default-skyer ("<skyer>") + vblex ;
 REMOVE:default-betalar ("betaler");
 REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabiliteringssenter
+REMOVE:default-rekte ("rake") + pret;
 
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
