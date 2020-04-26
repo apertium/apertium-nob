@@ -1216,6 +1216,8 @@ REMOVE:unlikely ("<ruser>"i "rus");
 REMOVE:unlikely ("stall") IF (0 ("tall")) (0/1 cmp);
 REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
 REMOVE:unlikely ("ska") IF (0 ("skade"));
+REMOVE:unlikely ("<lenger>"i) + verb;
+REMOVE:unlikely ("<lenger>"i) + n;
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
