@@ -65,6 +65,7 @@ LIST pprs = pprs ;
 LIST pstv = pstv ;
 LIST pasv = pasv ;
 LIST qnt = qnt ;
+LIST neg = neg ;
 LIST ref = ref ;
 LIST comp = comp ;
 LIST sup = sup ;
@@ -26169,16 +26170,22 @@ REMOVE:noen-betydning <noen> + pl IF
 	(1C sg)
 ;
 
-SELECT:noen-d   <noen> + (det qnt neg) IF
+SELECT:noen-d   <noen> + det + neg IF
 	(0C det-kvant + fl)
 	(*-1 %ikke% BARRIER setn-gr)
 ;
-SELECT:noen-p   <noen> + (prn neg) IF
+SELECT:noen-p   <noen> + prn + neg IF
 	(0C pron + fl)
 	(*-1 %ikke% BARRIER setn-gr)
 ;
 # «Jeg hadde ikke noen gode poeng i min.»
-REMOVE:noen-d   <noen> + (det qnt neg) IF
+
+SELECT:noen-konklusjon   <noen> + det + neg IF
+	(*1 ("konklusjon") BARRIER ikke-adv-adj)
+;
+# «Jeg hadde ikke noen gode poeng i min.»
+
+REMOVE:noen-d   <noen> + det + neg IF
 	(0C det-kvant + fl)
 	(NEGATE *-1 %ikke% BARRIER setn-gr)
 	(NEGATE *1 spørsmål-t)
@@ -26188,27 +26195,27 @@ REMOVE:noen-d   <noen> + (det qnt neg) IF
 # Ikkje: «Sa læreren at jeg hadde noen(nokon) gode poeng i oppgaven min?»
 # Men: «Sa læreren at jeg kunne låne noen(nokre) pengar til oppgaven min?»
 # Ikkje: «før noen(nokon) kommer»
-REMOVE:noen-p   <noen> + (prn neg) IF
+REMOVE:noen-p   <noen> + prn + neg IF
 	(0C pron + fl)
 	(NEGATE *-1 %ikke% BARRIER setn-gr)
 ;
 # «Læreren sa jeg hadde noen gode poeng i oppgaven min»
-SELECT:noen-p   <noen> + (prn neg) IF
+SELECT:noen-p   <noen> + prn + neg IF
 	(NOT 0 det)
 ;
 # «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
-SELECT:noen-d   <noen> + (det neg) IF
+SELECT:noen-d   <noen> + det + neg IF
 	(NOT 0 pron)
 ;
 # «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
 
-REMOVE:noen-års-tid <noen> + (neg) IF
+REMOVE:noen-års-tid <noen> + neg IF
         (0 fl-det)
 	(1 ub-fl-nøyt-subst)
 	(1C subst-nøyt + ub)
 ;
 # Default:
-SELECT:noen-default <noen> + (neg) ;
+SELECT:noen-default <noen> + neg ;
 # Viss me har kome så langt, tek me «nokon»
 
 
