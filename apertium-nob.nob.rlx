@@ -1209,6 +1209,7 @@ REMOVE:unlikely ("<lave>"i "lave") + pp;
 REMOVE:unlikely ("hans") + adv;
 REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
 REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
+REMOVE:unlikely ("bygg" "<bygger>"i);       # very unlikely form
 REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
