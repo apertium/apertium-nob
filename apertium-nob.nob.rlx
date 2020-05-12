@@ -8992,9 +8992,10 @@ SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «git
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-pred-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
-REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
+REMOVE:no-pred-samsvar-unless-attrc adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
+        (NEGATE 0 adj + pp + sg + ind LINK 1C n + sg + ind LINK NOT 0 vekedag) # «en beslaglagt gjenstand», men ikkje «offentliggjort søndag»
         ;
 # Ingen predikativ samsvar her:
 # - De ble tatt av skredet.
@@ -9003,6 +9004,13 @@ REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
 # - Barna var veloppdratt.
 # - Barna var oppdratt til å takke for maten.
 # - Motorene ble ettersett og overhalt.
+
+LIST no-pred-samsvar-sgind = "bli" "ta" ;
+REMOVE:no-pred-samsvar-sgind adj + pp + no-pred-samsvar-sgind IF
+        (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
+        (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def)
+        ;
+# avoid «blitt popstjerne» → «vorten popstjerne»
 
 LIST unlikely-attr-samsvar = "få";
 REMOVE:unlikely-attr-samsvar adj + pp + unlikely-attr-samsvar ;
