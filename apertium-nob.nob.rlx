@@ -1220,6 +1220,7 @@ REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
 REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
+REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
