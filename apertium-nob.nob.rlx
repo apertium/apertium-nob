@@ -9018,6 +9018,13 @@ REMOVE:unlikely-attr-samsvar adj + pp + unlikely-attr-samsvar ;
 # Usannsynleg med attributiv samsvar for visse ord:
 # - dermed har 95 fått søknadene sine avvist
 
+REMOVE:har-kartlagt-norske adj + pp IF
+        (0 vblex)
+        (0C pp)
+        (-1 ("ha") + fv)
+        (1C adj OR n)
+        ;
+# «Har kartlagt norske kommuners oppfølging.»
 
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
