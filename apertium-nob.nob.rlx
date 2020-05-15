@@ -9229,6 +9229,16 @@ SELECT:ofrene-betegnes-som-skadd pp + pl
         (NOT 0 adv OR farlige-part)
         ;
 
+REMOVE:har-nær-alle-kunngjort adj + pp
+        (*-2 ("ha") CBARRIER ikke-adv)
+        (*-2 ("ha") BARRIER pp LINK NOT -1 nominativ LINK *-1 adv OR cnjsub)
+        (-1C qnt + pl OR prn + pl)
+        (0 vblex + pp)
+        ;
+# «Allerede i natt begynte han samtaler med alliansepartier, og ifølge Netanyahu selv har nær samtlige kunngjort at de vil anbefale ham som statsminister.»
+# MEN IKKJE: «at de har registrert over 90.000 drepte i krigen i Jemen siden 2015»
+#            «Hun har 17 aldersbestemte landskamper »
+
 SELECT:70-skadd pp + pl
         (NOT -1C date)
         (-1 qnt + pl)
