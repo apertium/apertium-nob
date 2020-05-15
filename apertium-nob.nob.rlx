@@ -6107,6 +6107,8 @@ REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
 REMOVE:unlikely ("<om>"i) + n;
+REMOVE:unlikely ("følle") + vblex;
+REMOVE:unlikely ("følle") + adj;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<helt>"i "helle") + pp;
