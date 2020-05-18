@@ -6111,6 +6111,7 @@ REMOVE:unlikely ("følle") + vblex;
 REMOVE:unlikely ("følle") + adj;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
+REMOVE:unlikely ("<alter>"i) + pl;
 REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 
