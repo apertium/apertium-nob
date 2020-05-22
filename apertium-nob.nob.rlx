@@ -1209,6 +1209,7 @@ REMOVE:unlikely ("<lave>"i "lave") + pp;
 REMOVE:unlikely ("hans") + adv;
 REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
 REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
+REMOVE:unlikely ("bygg" "<bygger>"i);       # very unlikely form
 REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
@@ -1219,6 +1220,7 @@ REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
 REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
+REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -6105,8 +6107,11 @@ REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
 REMOVE:unlikely ("<om>"i) + n;
+REMOVE:unlikely ("følle") + vblex;
+REMOVE:unlikely ("følle") + adj;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
+REMOVE:unlikely ("<alter>"i) + pl;
 REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 
@@ -8990,10 +8995,11 @@ SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «git
         ;
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
-LIST no-pred-samsvar = "bli" "innrømme" "ha" "møte" ".*gjøre"ri ".*si"ri ".*legge"ri "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
-REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
+LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
+REMOVE:no-pred-samsvar-unless-attrc adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
+        (NEGATE 0 adj + pp + sg + ind LINK 1C n + sg + ind LINK NOT 0 vekedag) # «en beslaglagt gjenstand», men ikkje «offentliggjort søndag»
         ;
 # Ingen predikativ samsvar her:
 # - De ble tatt av skredet.
@@ -9003,11 +9009,25 @@ REMOVE:no-pred-samsvar adj + pp + no-pred-samsvar IF
 # - Barna var oppdratt til å takke for maten.
 # - Motorene ble ettersett og overhalt.
 
+LIST no-pred-samsvar-sgind = "bli" ;
+REMOVE:no-pred-samsvar-sgind adj + pp + no-pred-samsvar-sgind IF
+        (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
+        (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def)
+        ;
+# avoid «blitt popstjerne» → «vorten popstjerne»
+
 LIST unlikely-attr-samsvar = "få";
 REMOVE:unlikely-attr-samsvar adj + pp + unlikely-attr-samsvar ;
 # Usannsynleg med attributiv samsvar for visse ord:
 # - dermed har 95 fått søknadene sine avvist
 
+REMOVE:har-kartlagt-norske adj + pp IF
+        (0 vblex)
+        (0C pp)
+        (-1 ("ha") + fv)
+        (1C adj OR n)
+        ;
+# «Har kartlagt norske kommuners oppfølging.»
 
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
@@ -9209,6 +9229,16 @@ SELECT:ofrene-betegnes-som-skadd pp + pl
         (0C pp)
         (NOT 0 adv OR farlige-part)
         ;
+
+REMOVE:har-nær-alle-kunngjort adj + pp
+        (*-2 ("ha") CBARRIER ikke-adv)
+        (*-2 ("ha") BARRIER pp LINK NOT -1 nominativ LINK *-1 adv OR cnjsub)
+        (-1C qnt + pl OR prn + pl)
+        (0 vblex + pp)
+        ;
+# «Allerede i natt begynte han samtaler med alliansepartier, og ifølge Netanyahu selv har nær samtlige kunngjort at de vil anbefale ham som statsminister.»
+# MEN IKKJE: «at de har registrert over 90.000 drepte i krigen i Jemen siden 2015»
+#            «Hun har 17 aldersbestemte landskamper »
 
 SELECT:70-skadd pp + pl
         (NOT -1C date)
