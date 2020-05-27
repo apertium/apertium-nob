@@ -877,7 +877,7 @@ LIST skipsmengde = "trosse"  "tofte"  "skip"  "seil"  "ror"  "rekke"  "ombord"  
 LIST slik-adv = ("slik"  adv) ;
 LIST som-sbu = ("som"  cnjsub) ;
 LIST som/komma/og = "$," "," ("og"  cnjcoo) ("som"  cnjsub) ;
-LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "keltisk"  "italiensk"  "fransk"  "finsk"  "engelsk"  "dansk"  "bosnisk"  "amerikansk"  ;
+LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "keltisk"  "italiensk"  "fransk"  "finsk"  "engelsk"  "dansk"  "bosnisk"  "amerikansk"  "samisk" "nordsamisk" ;
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
@@ -6103,6 +6103,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
         (0/* cmp)
         ;
 REMOVE:unlikely ("<strende>"i);
+REMOVE:unlikely ("rette") + n;  # rette og vrange
 REMOVE:unlikely ("<dumpet>"i) + n;
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
@@ -26788,6 +26789,11 @@ SELECT:noen-default <noen> + neg ;
 	    (0 adj)
 ;
 
+"<retter>" REMOVE ("rett¹") IF
+        (0 ("rett") + n)
+        (NOT 2 ("interesse"))   # samiske retter og interesser
+        ;
+
 
 #:3341
   "<rom>"   REMOVE:3341   (adj) IF
@@ -27009,6 +27015,12 @@ SELECT:Ifølge-tollvesenet-er-det-store-mørketall expl IF
         (-1 %være/bli%)
         ;
 
+SELECT:pytt-i-panne-retter ("rett") IF
+        (0 ("rett¹"))
+        (0/* cmp)
+        ;
+# Samansetjingar som «menneskerett» er allereie leksikaliserte.
+# «Findus trekker tilbake pytt i panne-retter fra danske butikker etter funn av hestekjøtt»
 
 #:2792
 # SELECT:2792 (clb) IF
