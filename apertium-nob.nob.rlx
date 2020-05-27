@@ -1180,6 +1180,7 @@ REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
 REMOVE:unlikely ("sambo");
 REMOVE:unlikely ("skjøt");
+REMOVE:unlikely ("åt");
 REMOVE:unlikely m         IF (0 ("intervjuer") + sg + ind);
 REMOVE:unlikely nt + ("sel");
 REMOVE:unlikely n + ("skåle") IF (0 ("skål")); # but keep skåle<vblex>
