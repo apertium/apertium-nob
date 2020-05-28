@@ -6112,6 +6112,7 @@ REMOVE:unlikely ("<sida>"i) + m;
 REMOVE:unlikely ("<om>"i) + n;
 REMOVE:unlikely ("følle") + vblex;
 REMOVE:unlikely ("følle") + adj;
+REMOVE:unlikely ("<en>"i "ene") + vblex;
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<alter>"i) + pl;
@@ -6667,7 +6668,6 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 	(0 verb)
 ;
 #  "tar sjansen på at man ikke eller så mye ..."
-
 
 
 #:3689
