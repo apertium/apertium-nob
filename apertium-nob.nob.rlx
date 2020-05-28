@@ -7403,6 +7403,39 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         (1 n + pl OR n + def)
         ;
 
+
+LIST greiner-lm = "høyde" "lengde" ;
+SET greiner = greiner-lm + mf ;
+SELECT:hoppe-høgde greiner IF
+        (-1 ("hoppe"))
+        ;
+SELECT:meter-i-høgde greiner IF
+        (-2 ("meter") OR ("borteseier") OR ("hjemmeseier") OR ("seier") OR ("OL"))
+        (-1 ("i"))
+        ;
+SELECT:høgde-grein greiner IF
+        (-1 ("("))
+        (1 (")"))
+        ;
+SELECT:høgde-grein greiner IF
+        (-1 ("("))
+        (1 (")"))
+        ;
+# Oda Utsi Onstad (lengde),Tonje Angelsen (høyde)
+REMOVE:høgd greiner;
+
+"<vidde>" SELECT:vidde-og-fjell mf IF
+        (2 ("skog") OR ("fjell") OR ("høyfjell"))
+        ;
+# «det beste fra skog og vidde»
+"<vidde>" SELECT:fjell-og-vidde mf IF
+        (-2 ("skog") OR ("fjell") OR ("høyfjell"))
+        ;
+# «det beste fra skog og vidde»
+"<vidde>" REMOVE:vidd mf;
+# «både i vidde og i lengde»
+
+
 #:3511
   "<ingenting>"   REMOVE:3511   (n ubøy) IF
 	(0 pron)
