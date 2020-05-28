@@ -6113,6 +6113,7 @@ REMOVE:unlikely ("<om>"i) + n;
 REMOVE:unlikely ("følle") + vblex;
 REMOVE:unlikely ("følle") + adj;
 REMOVE:unlikely ("<en>"i "ene") + vblex;
+REMOVE:unlikely ("stile") IF (0 ("stille")); # stilt seg kritisk
 
 REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<alter>"i) + pl;
