@@ -1856,6 +1856,12 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 # "den¹" blir «den» på nno òg; "den" blir «han/ho» #
 ####################################################
 
+"<Den>" REMOVE:Han-farleg-først-i-setning ("den") + prn;
+# Utan anaforresolusjon er det tryggare å halda på «Den».
+# I tillegg er det ofte vekt på førsteordet, t.d.: «… meiningsmålinga vart offentleggjort torsdag. Den viste at Sosialdemokratene (SDP) framleis leier med 19 prosent oppslutning.»
+# og difor akseptabelt med «Den».
+
+
 "<den>" SELECT:den-det-gjelder ("den¹") IF
         (1 ("den"))
         (2 ("gjelde"))
