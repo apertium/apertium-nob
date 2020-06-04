@@ -1221,6 +1221,7 @@ REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
 REMOVE:unlikely ("ska") IF (0 ("skade"));
 REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
+REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
 
 SELECT:det-blir-nok-ei-råd ("råd") + mORf IF
