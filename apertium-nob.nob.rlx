@@ -2806,9 +2806,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 setn-gr OR rquot)
         ;
 
+LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange" "viktig" "få" "stor" "andre" "konkret" "organisatorisk" "radikal" "drastisk" "strategisk" "sterk" "fast" "sentral" "litterær" "effektiv" "bevisst" "taktisk" "viss" "omfattende" "helhetlig" ;
 "<grep>" SELECT:små-grep n + pl IF
-        (-1 ("liten") + pl)
+        (-1 grep-adj + AGR_PL)
         ;
+# «Som svar på USAs stadig sterkere økonomiske grep rundt Iran, uttalte Irans president Hassan Rouhani 8.»
 
 "<grepet>" SELECT:feste-grepet n IF
         (-1 ("feste"))
