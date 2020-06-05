@@ -21734,7 +21734,7 @@ REMOVE:sportsfiskere-og-elveeiere-er (clb) IF
 #:2196
  REMOVE:2196 (clb) IF
 	(0 konj)
-	(1 adj)
+	(1 adj OR %nok%)
 	(-1 subst)
 	(NOT 1 pres/pret)
 	(NOT -1 pres/pret)
