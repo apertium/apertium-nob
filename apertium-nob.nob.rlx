@@ -19751,6 +19751,23 @@ SELECT:Fylkesmannens-anbefalinger-ble-presentert adj + pp + &&ADJ_N_AGR IF
 # Prefer subject under genitive:
 # «– Fylkesmennenes anbefalinger<pl> skal være basert<pl!> på lokale vedtak …»
 
+SELECT:Vannprøver-er-blitt-tatt adj + pp + &&ADJ_N_AGR IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr
+         LINK -1 %være/bli%
+         LINK *-1C nom + &&ADJ_N_AGR
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         LINK NOT 0 sanns-årstal OR gen
+         LINK -1 setn-start-med-strek/anf
+        )
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
+;
+# Prefer subject, allow indefinite because «er blitt»:
+# «Vannprøver er blitt tatt ved renseanleggene Henriksdals og Bromma.»
+
 SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -19845,7 +19862,6 @@ SELECT:dette-var-det-vi-håpet-på pret IF
         (-2C prn)
         ;
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
-
 
 
 
