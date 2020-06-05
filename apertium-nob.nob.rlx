@@ -5990,8 +5990,9 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
+LIST allow-mwe-adj-after-bli = "be# om" "ta# opp" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
-        (NEGATE 0 ("be# om") LINK *-1 ("bli"))
+        (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 ("bli") BARRIER fv)
 ;
 # «førte_til brannar»
 
