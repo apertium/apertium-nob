@@ -15592,8 +15592,9 @@ SELECT:Jeg-så-mot-vinduet pr IF
 
 
 #:2643
- SELECT:2643 (pr) IF
+SELECT:2643 (pr) IF
 	(0 adj)
+        (NOT 0 pp)  # «Barn under seks år er   unntatt   fra regelen.»
 	(NOT 0 %eksklusiv/e%)
 	(NOT 0 adv)
 	(NOT 0 sbu)
