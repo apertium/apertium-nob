@@ -9134,6 +9134,16 @@ SELECT:nå-har-likevel-1000-returnert pp + vblex
 # «Vi har alle   hørt   advarselen om at …»
 # «samt lagkamerat Alexander Stølås har alle   inngått   nye langtidskontrakter»
 
+REMOVE:om-tema-han-er-opptatt-av pp + pl
+	(-4 pr)
+	(-3 n)
+	(-2 prn + nominativ + mORf)
+        (-1 %være/bli%)
+        (NOT 0 adv OR farlige-part)
+        (0 pp + mf)
+        ;
+# «På spørsmål om han vil snakke om temaer han er opptatt av, svarte han nei.»
+
 SELECT:de-har-blitt-tatt pp + pl
 	(-3 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
@@ -9195,25 +9205,27 @@ SELECT:han-var-sykmeldt pp + mf IF
         (NOT 0 adv OR farlige-part)
         ;
 
+SET vblexORpp = vblex OR adj + pp OR ("<opptatt>") ; # override adj.pst reading of opptatt
+
 SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 	(-2 %være/bli%)
 	(-1 %det%)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp)
+        (0C vblexORpp)
         ;
 
 SELECT:ble-de-bedt-om pp + pl IF
 	(-2 %være/bli%)
 	(-1C pl - gen)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp OR ("<opptatt>")) # override adj.pst reading of opptatt
+        (0C vblexORpp)
         ;
 
 SELECT:ble-han-løslatt pp + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp)
+        (0C vblexORpp)
         ;
 
 
