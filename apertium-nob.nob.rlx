@@ -9173,9 +9173,28 @@ SELECT:de-var-kjent pp + pl IF
 ;
 
 SELECT:personer-som-ble-meldt-savnet pp + pl IF
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 %som% BARRIER setn-gr LINK -1 fl-subst)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 %som%
+         BARRIER setn-gr
+         LINK -1 fl-subst
+         LINK NOT 0 ("[0-9]+-år"ri) # (i) 50-årene
+        )
         (1 pp)
 ;
+
+SELECT:mannen-i-50-årene-som-ble-meldt-savnet pp + mf IF
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 %som%
+         BARRIER setn-gr
+         LINK -1 ("[0-9]+-år"r) LINK -1 pr
+        )
+        (1 pp)
+;
+# «pr [0-9]-årene … som» er ganske trygg kontekst for mf+sg
+# «Politiet fortsetter tirsdag søket etter mannen i (slutten av) 50-årene som er antatt omkommet etter raset i Jølster.»
+# «Saken handlet om en dagmamma i slutten av 40-årene som i 2006 ble siktet for å ha ristet et barn»
 
 SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
