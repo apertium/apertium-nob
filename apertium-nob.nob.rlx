@@ -9045,6 +9045,8 @@ SELECT:Å-ikke-støtte inf IF
 ### adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: ###
 ##################################################################
 
+# TODO: This might be easier if we first do syntactic function labelling (at least @SUBJ)
+
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
 SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «gitte» in nno
@@ -9230,6 +9232,13 @@ SELECT:ble-han-løslatt pp + mf IF
 	(-1C m OR f)
         (NOT 0 adv OR farlige-part)
         (0C vblexORpp)
+        ;
+
+SELECT:ble-han-uttatt adj + mf IF
+	(-2 %være/bli%)
+	(-1C m OR f)
+        (NOT 0 adv OR farlige-part)
+        (0C vblexORpp OR adj + sg)
         ;
 
 
