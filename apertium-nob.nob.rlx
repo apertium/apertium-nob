@@ -6152,6 +6152,9 @@ REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
         ;
 
 "<Viken>" SELECT:typically-np-if-caps np;
+"<Jeg>"   REMOVE:not-n-if-caps n IF
+        (-1 >>>)
+        ;
 
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
@@ -10687,7 +10690,7 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 
 
 #:3060
- SELECT:3060 (adj pl) IF
+ SELECT:adj-venstrenom (adj pl) IF
 	(NOT 0 adv)
 	(NOT 0 perf-part)
 	(NOT 0 farlige-adj)
@@ -10697,7 +10700,7 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 	(NOT -1 det/adj/komma/konj)
 	(*-1O setn-gr LINK *1 nom-fl LINK *1 kop-fv LINK NOT *1 ikke-adv-adj)
 	(*-1O setn-gr LINK *1 fv LINK 0 kop)
-	(*-1O setn-gr LINK *1 nom-fl LINK NOT 0 subst-gen)
+	(*-1O setn-gr LINK *1 nom-fl LINK NOT 0 subst-gen LINK NOT 0 prn + sg) # «Jeg er opptatt av nøysomhet»
 	(*-1O setn-gr LINK *1 subst/pron/%all% LINK 0 nom-fl)
 	(*-1O setn-gr LINK NOT 1 prep)
 ;
