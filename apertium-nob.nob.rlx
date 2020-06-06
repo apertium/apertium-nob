@@ -742,6 +742,7 @@ LIST mask-be = (m def) ;
 LIST mask-det = (det m) ;
 LIST mask-ent = (m sg) (mf sg) (adj def) (m ubøy) (np) ;
 LIST mask/fem/mf = m f mf ;
+LIST mask/fem/mf/cog = m f mf cog ;
 LIST mask/fem/adj = m f mf (adj def) (adj pprs) ;
 LIST mest-sanns-adj-istf-subst = "visse"  "ville"  "venstre"  "velkommen"  "stille"  "snille"  "myke"  "mjuke"  "klare"  "høyre"  "høgre"  "flott"  ;
 LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skygg"  def) ("folke"  adj pp) ("live"  adj pp) ("kute"  adj pp) ("leg"  adj pl) ("leg"  adj def) ;
@@ -19813,16 +19814,17 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 ;
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
 
-SELECT:fisken-ble-funnet pp + mf IF
+SELECT:fisken-ble-funnet adj + mf IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
-         LINK *-1 nom + mask/fem/mf
+         LINK *-1 nom + mask/fem/mf/cog
          BARRIER setn-gr OR fv
          LINK NOT 0 pl OR nt)
 ;
+# «Breivik er selvopptatt og dyssosial»
 
 
 SELECT:ungdom-etterlatt-i-utlandet pp IF
