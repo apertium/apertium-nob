@@ -9041,9 +9041,9 @@ SELECT:Å-ikke-støtte inf IF
         (NEGATE 0 adv LINK 2 ukjent)
         ;
 
-##############################################################
-# adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
-##############################################################
+##################################################################
+### adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: ###
+##################################################################
 
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
@@ -9368,7 +9368,6 @@ SELECT:antallet-drepte-av-skytevåpen pp IF
         (0C pp OR pret)
         (1C pr OR vblex)
         ;
-
 
 
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
@@ -19722,7 +19721,9 @@ SELECT:2335 (vblex) IF
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
 
-### Fleire reglar for partisipp og samsvar / adj pp-dis:
+############################################################
+### Fleire reglar for partisipp og samsvar / adj pp-dis: ###
+############################################################
 
 SELECT:den-drepte-var pp + sg + def IF
         (-1 dem + sg)
@@ -19744,7 +19745,7 @@ SELECT:Oppskriften-ble-presentert adj + pp + &&ADJ_N_AGR IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr
          LINK *-1C nom + &&ADJ_N_AGR + def
-         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
          LINK NOT 0 sanns-årstal OR gen
          LINK -1 setn-start-med-strek/anf)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
@@ -19759,7 +19760,7 @@ SELECT:Fylkesmannens-anbefalinger-ble-presentert adj + pp + &&ADJ_N_AGR IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr
          LINK *-1C nom + &&ADJ_N_AGR + ind
-         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
          LINK NOT 0 sanns-årstal OR gen
          LINK -1 gen
          LINK -1 setn-start-med-strek/anf)
@@ -19776,7 +19777,7 @@ SELECT:Vannprøver-er-blitt-tatt adj + pp + &&ADJ_N_AGR IF
          BARRIER fv OR perf-part OR setn-gr
          LINK -1 %være/bli%
          LINK *-1C nom + &&ADJ_N_AGR
-         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
          LINK NOT 0 sanns-årstal OR gen
          LINK -1 setn-start-med-strek/anf
         )
@@ -19793,7 +19794,7 @@ SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp +
          BARRIER fv OR perf-part OR setn-gr OR nom
          LINK -1 n LINK *-1 ("til") BARRIER ikke-adv-adj LINK -1 ("forbindelse") LINK -1 ("med")
          LINK *-1 nom + pl
-         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav - top
          LINK NOT 0 sanns-årstal
          LINK NOT -1 det + sg)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
@@ -19807,12 +19808,13 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom
          LINK *-1 nom + pl
-         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav - top
          LINK NOT 0 sanns-årstal
          LINK NOT -1 det + sg)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
+# «To moskeer i Christchurch<top> på New Zealand<top> ble angrepet av væpnede gjerningspersoner fredag ettermiddag lokal tid.»
 
 SELECT:fisken-ble-funnet adj + mf IF
 	(NOT 0 farlige-part)
