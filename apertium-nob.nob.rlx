@@ -6109,6 +6109,8 @@ REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
+REMOVE:unlikely-lives ("<lives>"i) + gen;
+REMOVE:unlikely-lives ("<lives>"i) + pasv;
 REMOVE:unlikely n        IF (0 ("<i>"i));
 REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
 REMOVE:unlikely n + ("tykke") IF (NOT -1 ("<sitt>")) ;
