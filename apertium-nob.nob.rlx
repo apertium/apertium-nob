@@ -9417,6 +9417,14 @@ SELECT:antallet-drepte-av-skytevåpen pp IF
         ;
 
 
+SELECT:han-søkte-om-å-bli-tatt-opp pp + mf
+        (*-3 n + mORf OR pers + mORf)
+        (-2 infmerke)
+        (-1 kop + inf)
+        (NOT 0 adv OR farlige-part)
+        ;
+
+
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
 SELECT:Naturligvis-har-jeg-vært-nødt adj + sg + $$GENDER IF
         (-1 vblex + %være/bli% LINK *-1C nominativ-sg-np + $$GENDER BARRIER fv OR clb LINK -1 hj-verb LINK -1 adv OR sbu)
