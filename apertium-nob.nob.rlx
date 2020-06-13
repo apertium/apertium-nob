@@ -9054,6 +9054,8 @@ SELECT:Å-ikke-støtte inf IF
 ##################################################################
 
 # TODO: This might be easier if we first do syntactic function labelling (at least @SUBJ)
+# E.g.:
+# «Elever<pl><@SUBJ> med enkeltvedtak om spesialundervisning eller særskilt språkopplæring blir fritatt<pl!> fra de nasjonale prøvene»
 
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
@@ -9389,6 +9391,15 @@ SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
         (NOT 0 adv OR farlige-part)
         ;
 # «mannen som ble skutt og drept av israelske soldater»
+
+SELECT:attributiv-np adj + mf
+        (-1C %en/ei%)
+        (NOT 0 adv OR farlige-part)
+        (0C adj + mf OR adj + nt)
+        (1C np)
+        (1C cog OR m OR f)
+        ;
+# «I oktober kom ikke en uttatt Ajer på samling med landslaget.»
 
 
 # non-pp:
