@@ -19883,6 +19883,7 @@ SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp +
 ;
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
 
+
 SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -19892,6 +19893,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
          LINK *-1 nom + pl
          BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav - top
          LINK NOT 0 sanns-årstal
+         LINK NOT 0 sg
          LINK NOT -1 det + sg)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
