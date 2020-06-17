@@ -8926,6 +8926,25 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:da-NORSKE-kampfly-ble-sendt adj + pl IF
+        (-1C cnjsub OR adv)
+        (0C adj)
+        (0C pl + ind OR sp)
+        (1C n + ind)
+        (1 pl OR sg)
+        (2 fv)
+        ;
+# «Ap-leder Jonas Gahr Støre var utenriksminister da norske kampfly ble sendt til Libya.»
+
+SELECT:da-norske-KAMPFLY-ble-sendt n + pl IF
+        (-2C cnjsub OR adv)
+        (-1 adj + pl + ind)
+        (0C n + ind)
+        (0 pl OR sg)
+        (1 fv)
+        ;
+# «Ap-leder Jonas Gahr Støre var utenriksminister da norske kampfly ble sendt til Libya.»
+
 SELECT:var-antallet-redusert vblex + pp IF
         (*-2 p-hj-verb BARRIER ikke-adv)
         (-1 ("antall"))
