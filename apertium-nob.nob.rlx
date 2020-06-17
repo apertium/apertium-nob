@@ -981,6 +981,9 @@ LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
+LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ;
+
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
@@ -9047,6 +9050,11 @@ SELECT:Å-ikke-støtte inf IF
         (-1C adv)
         (NOT 1 inf)
         (NEGATE 0 adv LINK 2 ukjent)
+        ;
+
+SELECT:at-barn pl + default-pl-after-poss IF
+        (-1C cnjsub)
+        (0C subst)
         ;
 
 ##################################################################
@@ -30494,12 +30502,11 @@ SELECT:selskapenes-system-BSP sg IF
         (1 storbokstav)
         ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
         ;
-LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ;
+
 SELECT:default-sg-after-poss sg + default-sg-after-poss IF
         (-1 poss-det + sg)
         (0C subst)
