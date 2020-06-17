@@ -107,7 +107,7 @@ LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
 LIST overskrift = overskrift "❡" ;
 
-LIST mwe-verb = "<.* .*>"r ;
+LIST mwe-verb = ".*# .*"r ;
 
 # TODO: try before/after changing this to cmp
 LIST samset = samset ;
@@ -5994,9 +5994,9 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
-LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r ;
+LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
-        (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 ("bli") BARRIER fv)
+        (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 %være/bli% BARRIER fv)
 ;
 # «førte_til brannar»
 
