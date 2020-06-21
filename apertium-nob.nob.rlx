@@ -28906,6 +28906,13 @@ SELECT:det-femte-strake-tapet n + $$GENDER IF
         ;
 # «0-1 i Lørenskog ishall var det femte strake tapet mot nordisk motstand.»
 
+SELECT:Da-oppgav-han-at nominativ IF
+        (-3 setn-gr)
+        (-2C adv OR cnjsub)
+        (-1 fv)
+        (1 adv OR cnjsub)
+        ;
+
 #CONSTRAINTS
 ## remove ndomain heur
 
