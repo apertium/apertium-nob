@@ -9072,9 +9072,21 @@ SELECT:Å-ikke-støtte inf IF
         (NEGATE 0 adv LINK 2 ukjent)
         ;
 
+SELECT:er-tog-mellom pl + default-pl-after-poss IF
+        (-1C fv)
+        (0C subst + ind)
+        (1C pr OR adv)
+        ;
+
 SELECT:at-barn pl + default-pl-after-poss IF
         (-1C cnjsub)
         (0C subst)
+        ;
+
+SELECT:Rundt-1000-politifolk n + pl + ind IF
+        (-2 setn-gr OR ("rundt"))
+        (-1C det + qnt + pl + siffer)
+        (0C n + ind)
         ;
 
 ##################################################################
