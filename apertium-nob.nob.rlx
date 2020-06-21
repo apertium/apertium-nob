@@ -16256,6 +16256,13 @@ SELECT:at-det-finnes det + expl IF
 # «Sofia Hellqvist sier til nyhetsbyrået TT at  det  finnes koblinger mellom den siktede og internasjonal terrorisme»
 # «Kostnadene har økt som følge av et betydelig høyere sikkerhetsnivå, samtidig som  det  tas hensyn til at plassen …»
 
+SELECT:at-det-ble-registrert det + expl IF
+	(-1 cnjsub OR adv)
+        (1 ("bli"))
+        (2 vblex + pp)
+;
+# «Selv 10 millimeter på ett døgn førte til at det ble registrert kraftige bevegelser»
+
 #Her stod 2606
 
 #:2607
