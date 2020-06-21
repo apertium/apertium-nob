@@ -19988,13 +19988,12 @@ SELECT:dette-var-det-vi-håpet-på pret IF
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
 
 
-
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 p-hj-verb BARRIER fv)
+	(*-1 p-hj-verb BARRIER fv LINK NOT 0 ("bli"))
 	(*-1 p-hj-verb BARRIER perf-part)
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
