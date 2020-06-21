@@ -30356,6 +30356,13 @@ SELECT:cm-fastholdt-han fv IF
         ;
 # Sånn var det, fastholdt han.
 
+REMOVE:men-utelukker-det-ikke nominativ + nt IF
+        (-2 %men%)
+        (-1 pres)
+        (*1 setn-gr BARRIER ikke-adv)
+        ;
+# «Nyhetsdirektør Kalbakk opplyser at ledelsen vil forsøke å unngå oppsigelser, men utelukker det ikke.»
+
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
         (-1 pres)
