@@ -107,7 +107,7 @@ LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
 LIST overskrift = overskrift "❡" ;
 
-LIST mwe-verb = "<.* .*>"r ;
+LIST mwe-verb = ".*# .*"r ;
 
 # TODO: try before/after changing this to cmp
 LIST samset = samset ;
@@ -603,7 +603,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
-LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"  "oppta"  "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i ;
+LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -742,6 +742,7 @@ LIST mask-be = (m def) ;
 LIST mask-det = (det m) ;
 LIST mask-ent = (m sg) (mf sg) (adj def) (m ubøy) (np) ;
 LIST mask/fem/mf = m f mf ;
+LIST mask/fem/mf/cog = m f mf cog ;
 LIST mask/fem/adj = m f mf (adj def) (adj pprs) ;
 LIST mest-sanns-adj-istf-subst = "visse"  "ville"  "venstre"  "velkommen"  "stille"  "snille"  "myke"  "mjuke"  "klare"  "høyre"  "høgre"  "flott"  ;
 LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skygg"  def) ("folke"  adj pp) ("live"  adj pp) ("kute"  adj pp) ("leg"  adj pl) ("leg"  adj def) ;
@@ -979,6 +980,9 @@ LIST yrkestittel-ord = "adjunkt" "admiral" "advokat" "agent"  "ambassadør" "ana
 LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
+
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" ;
+LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -5992,8 +5996,9 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
+LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
-        (NEGATE 0 ("be# om") LINK *-1 ("bli"))
+        (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 %være/bli% BARRIER fv)
 ;
 # «førte_til brannar»
 
@@ -6109,6 +6114,8 @@ REMOVE:unlikely-lét ("<ladde>"i "la");
 REMOVE:unlikely-verven ("<verv>"i) + m;
 REMOVE:unlikely-gjerda  ("<gjerdet>"i) + vblex;
 REMOVE:unlikely-laut ("<lytte>"i "lyte");
+REMOVE:unlikely-lives ("<lives>"i) + gen;
+REMOVE:unlikely-lives ("<lives>"i) + pasv;
 REMOVE:unlikely n        IF (0 ("<i>"i));
 REMOVE:unlikely n + ("banke") IF (0 ("bank")) (NOT -1 det + sg) ;
 REMOVE:unlikely n + ("tykke") IF (NOT -1 ("<sitt>")) ;
@@ -6137,6 +6144,7 @@ REMOVE:unlikely ("<eks>"i);     # terning|sekser, not ternings|ekser
 REMOVE:unlikely ("<alter>"i) + pl;
 REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
+REMOVE:unlikely ("<veier>"i "veier");
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -6153,6 +6161,9 @@ REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
         ;
 
 "<Viken>" SELECT:typically-np-if-caps np;
+"<Jeg>"   REMOVE:not-n-if-caps n IF
+        (-1 >>>)
+        ;
 
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
@@ -8161,7 +8172,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
 
 
 #:3361
-  "<opptatt>"   REMOVE:3361   pp IF
+"<opptatt>" REMOVE:NOT-opptatt-ved vblex + pp IF
 	(NOT 1 %ved%)
 ;
 
@@ -8692,6 +8703,12 @@ SELECT:skrev vblex IF
         (-1 dem OR gen OR pos)
         ;
 
+"<unntatt>" SELECT:alle-landene-unntatt-Irland pr IF
+        (*-1 %alle% BARRIER ikke-subst)
+        (1 nom)
+        ;
+# «I midten av mars ble alle EU-landene unntatt Irland enige.»
+
 SELECT ("vekke") IF
         (1 ("oppsikt"))
         ;
@@ -8912,6 +8929,25 @@ REMOVE:Vann  vblex OR adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:da-NORSKE-kampfly-ble-sendt adj + pl IF
+        (-1C cnjsub OR adv)
+        (0C adj)
+        (0C pl + ind OR sp)
+        (1C n + ind)
+        (1 pl OR sg)
+        (2 fv)
+        ;
+# «Ap-leder Jonas Gahr Støre var utenriksminister da norske kampfly ble sendt til Libya.»
+
+SELECT:da-norske-KAMPFLY-ble-sendt n + pl IF
+        (-2C cnjsub OR adv)
+        (-1 adj + pl + ind)
+        (0C n + ind)
+        (0 pl OR sg)
+        (1 fv)
+        ;
+# «Ap-leder Jonas Gahr Støre var utenriksminister da norske kampfly ble sendt til Libya.»
+
 SELECT:var-antallet-redusert vblex + pp IF
         (*-2 p-hj-verb BARRIER ikke-adv)
         (-1 ("antall"))
@@ -9038,9 +9074,30 @@ SELECT:Å-ikke-støtte inf IF
         (NEGATE 0 adv LINK 2 ukjent)
         ;
 
-##############################################################
-# adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: #
-##############################################################
+SELECT:er-tog-mellom pl + default-pl-after-poss IF
+        (-1C fv)
+        (0C subst + ind)
+        (1C pr OR adv)
+        ;
+
+SELECT:at-barn pl + default-pl-after-poss IF
+        (-1C cnjsub)
+        (0C subst)
+        ;
+
+SELECT:Rundt-1000-politifolk n + pl + ind IF
+        (-2 setn-gr OR ("rundt"))
+        (-1C det + qnt + pl + siffer)
+        (0C n + ind)
+        ;
+
+##################################################################
+### adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: ###
+##################################################################
+
+# TODO: This might be easier if we first do syntactic function labelling (at least @SUBJ)
+# E.g.:
+# «Elever<pl><@SUBJ> med enkeltvedtak om spesialundervisning eller særskilt språkopplæring blir fritatt<pl!> fra de nasjonale prøvene»
 
 # Det finst òg ein seinare bolk med reglar (søk etter pp-dis)
 
@@ -9050,7 +9107,7 @@ SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «git
         ;
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
-LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*ta"ri ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
+LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
 REMOVE:no-pred-samsvar-unless-attrc adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
@@ -9135,6 +9192,16 @@ SELECT:nå-har-likevel-1000-returnert pp + vblex
 # «Vi har alle   hørt   advarselen om at …»
 # «samt lagkamerat Alexander Stølås har alle   inngått   nye langtidskontrakter»
 
+REMOVE:om-tema-han-er-opptatt-av pp + pl
+	(-4 pr)
+	(-3 n)
+	(-2 prn + nominativ + mORf)
+        (-1 %være/bli%)
+        (NOT 0 adv OR farlige-part)
+        (0 pp + mf)
+        ;
+# «På spørsmål om han vil snakke om temaer han er opptatt av, svarte han nei.»
+
 SELECT:de-har-blitt-tatt pp + pl
 	(-3 fl-subst OR nom-fl)
 	(-2 %ha%-pres/pret)
@@ -9158,9 +9225,28 @@ SELECT:de-var-kjent pp + pl IF
 ;
 
 SELECT:personer-som-ble-meldt-savnet pp + pl IF
-	(*-1 %være/bli% BARRIER fv OR perf-part OR setn-gr OR nom LINK *-1 %som% BARRIER setn-gr LINK -1 fl-subst)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 %som%
+         BARRIER setn-gr
+         LINK -1 fl-subst
+         LINK NOT 0 ("[0-9]+-år"ri) # (i) 50-årene
+        )
         (1 pp)
 ;
+
+SELECT:mannen-i-50-årene-som-ble-meldt-savnet pp + mf IF
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom
+         LINK *-1 %som%
+         BARRIER setn-gr
+         LINK -1 ("[0-9]+-år"r) LINK -1 pr
+        )
+        (1 pp)
+;
+# «pr [0-9]-årene … som» er ganske trygg kontekst for mf+sg
+# «Politiet fortsetter tirsdag søket etter mannen i (slutten av) 50-årene som er antatt omkommet etter raset i Jølster.»
+# «Saken handlet om en dagmamma i slutten av 40-årene som i 2006 ble siktet for å ha ristet et barn»
 
 SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
@@ -9196,25 +9282,34 @@ SELECT:han-var-sykmeldt pp + mf IF
         (NOT 0 adv OR farlige-part)
         ;
 
+SET vblexORpp = vblex OR adj + pp OR ("<opptatt>") ; # override adj.pst reading of opptatt
+
 SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
 	(-2 %være/bli%)
 	(-1 %det%)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp)
+        (0C vblexORpp)
         ;
 
 SELECT:ble-de-bedt-om pp + pl IF
 	(-2 %være/bli%)
 	(-1C pl - gen)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp)
+        (0C vblexORpp)
         ;
 
 SELECT:ble-han-løslatt pp + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
         (NOT 0 adv OR farlige-part)
-        (0C vblex OR adj + pp)
+        (0C vblexORpp)
+        ;
+
+SELECT:ble-han-uttatt adj + mf IF
+	(-2 %være/bli%)
+	(-1C m OR f)
+        (NOT 0 adv OR farlige-part)
+        (0C vblexORpp OR adj + sg)
         ;
 
 
@@ -9339,6 +9434,15 @@ SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
         ;
 # «mannen som ble skutt og drept av israelske soldater»
 
+SELECT:attributiv-np adj + mf
+        (-1C %en/ei%)
+        (NOT 0 adv OR farlige-part)
+        (0C adj + mf OR adj + nt)
+        (1C np)
+        (1C cog OR m OR f)
+        ;
+# «I oktober kom ikke en uttatt Ajer på samling med landslaget.»
+
 
 # non-pp:
 SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
@@ -9354,6 +9458,13 @@ SELECT:antallet-drepte-av-skytevåpen pp IF
         (1C pr OR vblex)
         ;
 
+
+SELECT:han-søkte-om-å-bli-tatt-opp pp + mf
+        (*-3 n + mORf OR pers + mORf)
+        (-2 infmerke)
+        (-1 kop + inf)
+        (NOT 0 adv OR farlige-part)
+        ;
 
 
 LIST nominativ-sg-np = (prn sg nom) (np top) ;
@@ -10676,7 +10787,7 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 
 
 #:3060
- SELECT:3060 (adj pl) IF
+ SELECT:adj-venstrenom (adj pl) IF
 	(NOT 0 adv)
 	(NOT 0 perf-part)
 	(NOT 0 farlige-adj)
@@ -10686,7 +10797,7 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 	(NOT -1 det/adj/komma/konj)
 	(*-1O setn-gr LINK *1 nom-fl LINK *1 kop-fv LINK NOT *1 ikke-adv-adj)
 	(*-1O setn-gr LINK *1 fv LINK 0 kop)
-	(*-1O setn-gr LINK *1 nom-fl LINK NOT 0 subst-gen)
+	(*-1O setn-gr LINK *1 nom-fl LINK NOT 0 subst-gen LINK NOT 0 prn + sg) # «Jeg er opptatt av nøysomhet»
 	(*-1O setn-gr LINK *1 subst/pron/%all% LINK 0 nom-fl)
 	(*-1O setn-gr LINK NOT 1 prep)
 ;
@@ -15593,8 +15704,9 @@ SELECT:Jeg-så-mot-vinduet pr IF
 
 
 #:2643
- SELECT:2643 (pr) IF
+SELECT:2643 (pr) IF
 	(0 adj)
+        (NOT 0 pp)  # «Barn under seks år er   unntatt   fra regelen.»
 	(NOT 0 %eksklusiv/e%)
 	(NOT 0 adv)
 	(NOT 0 sbu)
@@ -16145,6 +16257,13 @@ SELECT:at-det-finnes det + expl IF
 ;
 # «Sofia Hellqvist sier til nyhetsbyrået TT at  det  finnes koblinger mellom den siktede og internasjonal terrorisme»
 # «Kostnadene har økt som følge av et betydelig høyere sikkerhetsnivå, samtidig som  det  tas hensyn til at plassen …»
+
+SELECT:at-det-ble-registrert det + expl IF
+	(-1 cnjsub OR adv)
+        (1 ("bli"))
+        (2 vblex + pp)
+;
+# «Selv 10 millimeter på ett døgn førte til at det ble registrert kraftige bevegelser»
 
 #Her stod 2606
 
@@ -19706,7 +19825,9 @@ SELECT:2335 (vblex) IF
 # NOT: SBU: før, PREP: for, PERF/PART: visst"
 
 
-### Fleire reglar for partisipp og samsvar / adj pp-dis:
+############################################################
+### Fleire reglar for partisipp og samsvar / adj pp-dis: ###
+############################################################
 
 SELECT:den-drepte-var pp + sg + def IF
         (-1 dem + sg)
@@ -19728,7 +19849,7 @@ SELECT:Oppskriften-ble-presentert adj + pp + &&ADJ_N_AGR IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr
          LINK *-1C nom + &&ADJ_N_AGR + def
-         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
          LINK NOT 0 sanns-årstal OR gen
          LINK -1 setn-start-med-strek/anf)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
@@ -19743,7 +19864,7 @@ SELECT:Fylkesmannens-anbefalinger-ble-presentert adj + pp + &&ADJ_N_AGR IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr
          LINK *-1C nom + &&ADJ_N_AGR + ind
-         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav OR nominativ
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
          LINK NOT 0 sanns-årstal OR gen
          LINK -1 gen
          LINK -1 setn-start-med-strek/anf)
@@ -19751,6 +19872,23 @@ SELECT:Fylkesmannens-anbefalinger-ble-presentert adj + pp + &&ADJ_N_AGR IF
 ;
 # Prefer subject under genitive:
 # «– Fylkesmennenes anbefalinger<pl> skal være basert<pl!> på lokale vedtak …»
+
+SELECT:Vannprøver-er-blitt-tatt adj + pp + &&ADJ_N_AGR IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr
+         LINK -1 %være/bli%
+         LINK *-1C nom + &&ADJ_N_AGR
+         BARRIER setn-gr OR parentes-slutt OR ukjent OR storbokstav - top OR nominativ
+         LINK NOT 0 sanns-årstal OR gen
+         LINK -1 setn-start-med-strek/anf
+        )
+        (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
+;
+# Prefer subject, allow indefinite because «er blitt»:
+# «Vannprøver er blitt tatt ved renseanleggene Henriksdals og Bromma.»
 
 SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp + pl IF
 	(NOT 0 farlige-part)
@@ -19760,12 +19898,13 @@ SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp +
          BARRIER fv OR perf-part OR setn-gr OR nom
          LINK -1 n LINK *-1 ("til") BARRIER ikke-adv-adj LINK -1 ("forbindelse") LINK -1 ("med")
          LINK *-1 nom + pl
-         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav - top
          LINK NOT 0 sanns-årstal
          LINK NOT -1 det + sg)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
+
 
 SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
@@ -19774,23 +19913,26 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom
          LINK *-1 nom + pl
-         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav
+         BARRIER setn-gr OR fv OR sg OR parentes-slutt OR ukjent OR storbokstav - top
          LINK NOT 0 sanns-årstal
+         LINK NOT 0 sg
          LINK NOT -1 det + sg)
         (NEGATE *1C n + sg + ind BARRIER ikke-adj-verb OR cm LINK NOT 0 adverbialsubst) # det vi finner når vi er ute på tilsyn<pl> er  gjennomført<sg!> organisert<sg!> kriminalitet<sg>
 ;
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
+# «To moskeer i Christchurch<top> på New Zealand<top> ble angrepet av væpnede gjerningspersoner fredag ettermiddag lokal tid.»
 
-SELECT:fisken-ble-funnet pp + mf IF
+SELECT:fisken-ble-funnet adj + mf IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
-         LINK *-1 nom + mask/fem/mf
+         LINK *-1 nom + mask/fem/mf/cog
          BARRIER setn-gr OR fv
          LINK NOT 0 pl OR nt)
 ;
+# «Breivik er selvopptatt og dyssosial»
 
 
 SELECT:ungdom-etterlatt-i-utlandet pp IF
@@ -19848,14 +19990,12 @@ SELECT:dette-var-det-vi-håpet-på pret IF
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
 
 
-
-
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 p-hj-verb BARRIER fv)
+	(*-1 p-hj-verb BARRIER fv LINK NOT 0 ("bli"))
 	(*-1 p-hj-verb BARRIER perf-part)
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
@@ -21736,7 +21876,7 @@ REMOVE:sportsfiskere-og-elveeiere-er (clb) IF
 #:2196
  REMOVE:2196 (clb) IF
 	(0 konj)
-	(1 adj)
+	(1 adj OR %nok%)
 	(-1 subst)
 	(NOT 1 pres/pret)
 	(NOT -1 pres/pret)
@@ -28787,6 +28927,13 @@ SELECT:det-femte-strake-tapet n + $$GENDER IF
         ;
 # «0-1 i Lørenskog ishall var det femte strake tapet mot nordisk motstand.»
 
+SELECT:Da-oppgav-han-at nominativ IF
+        (-3 setn-gr)
+        (-2C adv OR cnjsub)
+        (-1 fv)
+        (1 adv OR cnjsub)
+        ;
+
 #CONSTRAINTS
 ## remove ndomain heur
 
@@ -30230,6 +30377,13 @@ SELECT:cm-fastholdt-han fv IF
         ;
 # Sånn var det, fastholdt han.
 
+REMOVE:men-utelukker-det-ikke nominativ + nt IF
+        (-2 %men%)
+        (-1 pres)
+        (*1 setn-gr BARRIER ikke-adv)
+        ;
+# «Nyhetsdirektør Kalbakk opplyser at ledelsen vil forsøke å unngå oppsigelser, men utelukker det ikke.»
+
 SELECT:og-dermed-sulter-den-ihjel nominativ IF
         (*-2 cnjsub OR cnjcoo BARRIER ikke-adv)
         (-1 pres)
@@ -30404,12 +30558,11 @@ SELECT:selskapenes-system-BSP sg IF
         (1 storbokstav)
         ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" ;
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl)
         (0C subst)
         ;
-LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ;
+
 SELECT:default-sg-after-poss sg + default-sg-after-poss IF
         (-1 poss-det + sg)
         (0C subst)
@@ -30499,6 +30652,7 @@ REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default nt IF (0 ("<tingene>"i));
+REMOVE:default pl IF (0 ("<forslag>"i)) ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
