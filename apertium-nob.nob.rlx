@@ -1180,6 +1180,8 @@ REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
 REMOVE:unlikely ("sambo");
 REMOVE:unlikely ("skjøt");
+REMOVE:unlikely ("<skjente>"i "skjene"); 
+REMOVE:unlikely ("<skjent>"i "skjene");
 REMOVE:unlikely ("åt");
 REMOVE:unlikely m         IF (0 ("intervjuer") + sg + ind);
 REMOVE:unlikely nt + ("sel");
