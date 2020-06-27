@@ -1230,6 +1230,8 @@ REMOVE:unlikely ("<lenger>"i) + n;
 REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
 
+REMOVE:genus-prefer-nt ("genus") + m IF (0 ("genus") + nt);
+
 SELECT:det-blir-nok-ei-råd ("råd") + mORf IF
         (*-3 ("bli") BARRIER (*) - ("<det>"))
         (-2 %nok% OR %vel%)
