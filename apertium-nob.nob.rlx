@@ -31255,10 +31255,19 @@ MAP:dedikert-og-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
         (2C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
 ;
 
+SELECT:Øst-London SUB:1 n IF
+        (0/1 ("øst"))
+        ;
+# «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
+
+SELECT:IS-kriger SUB:1 np IF
+        (0 ("<.*-.*>"r))
+        ;
+# «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
+
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
 # doesn't matter so much what we pick at this point:
-SELECT:issue37 SUB:1 np ;
 SELECT:issue37 SUB:1 n ;
 SELECT:issue37 SUB:1 sg ;
 SELECT:issue37 SUB:1 m ;
@@ -31267,3 +31276,4 @@ SELECT:issue37 SUB:1 nt ;
 SELECT:issue37 SUB:1 org ;
 SELECT:issue37 SUB:1 al ;
 SELECT:issue37 SUB:1 top ;
+SELECT:issue37 SUB:1 np ;
