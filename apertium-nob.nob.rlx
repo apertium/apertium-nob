@@ -6082,6 +6082,7 @@ REMOVE:unlikely ("<kan>"i) + n ;
 REMOVE:unlikely ("<spiser>"i) + n ;
 REMOVE:unlikely ("lom") ;
 REMOVE:unlikely ("<saker>" "sake") ;
+REMOVE:unlikely ("<vinger>"i "ving");
 REMOVE:unlikely ("<fanger>" "fange") ;
 REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
