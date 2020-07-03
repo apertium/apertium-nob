@@ -3895,9 +3895,7 @@ SELECT ("lyve") IF
 	(1 adverb)
 	(NOT 2 adverb)
 	(NOT 2 inf)
-	(**-1C m-hj-verb BARRIER setn-gr)
-	(**-1C m-hj-verb BARRIER inf)
-	(**-1C m-hj-verb BARRIER perf-part)
+	(**-1C m-hj-verb BARRIER setn-gr OR inf OR perf-part LINK NOT 0 ("få"))
 ;
 #  "2.3.2001 Hun kan aldri nå lenger på statusstigen."
 
