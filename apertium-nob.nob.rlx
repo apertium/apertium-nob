@@ -10746,7 +10746,7 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 
 
 #:3057
- SELECT:3057 (adj pl) IF
+SELECT:de-vakre-sommerfuglene adj + sp IF
 	(NOT 0 farlige-adj)
 	(NOT 0 %andre%)
 	(NOT 0 subst-gen)
