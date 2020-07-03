@@ -3881,9 +3881,7 @@ SELECT ("lyve") IF
 	(NOT 1 inf)
 	(NOT 1 adverb)
 	(NOT -1 setn-gr)
-	(**-1C m-hj-verb BARRIER setn-gr)
-	(**-1C m-hj-verb BARRIER inf)
-	(**-1C m-hj-verb BARRIER perf-part)
+	(**-1C m-hj-verb BARRIER setn-gr OR inf OR perf-part LINK NOT 0 ("få"))
 ;
 #  "1.3.2001 Velger infinitiv når det ikke er nom til venstre fordi det må være infinitiv, pronomen eller direkte objekt etter m-hj-verb
 # not 1 adv: I praksis vil det nå ikke skje."
