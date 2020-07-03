@@ -10738,9 +10738,31 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 # navn som ... Det juridiske (ikke fl) fakultet"))
 
 
+SELECT:de-vidunderlig-vakre-sommerfuglene adj + sp IF
+	(NOT 0 farlige-adj)
+	(NOT 0 %andre%)
+	(NOT 0 subst-gen)
+	(NOT 0 ub-ent-nøyt-adj)
+	(1 adj)
+	(*-1O fl-det + dem LINK NOT 0 nøyt-det LINK NOT *1 ikke-adv-adj-komma)
+	(*1 fl-subst + def BARRIER ikke-adv-adj)
+;
+#  "de vidunderlige vakre sommerfuglene"
+
+SELECT:de-vakre-sommerfuglene adj + sp IF
+	(NOT 0 farlige-adj)
+	(NOT 0 %andre%)
+	(NOT 0 subst-gen)
+	(NOT 0 fv)
+	(NOT 1C adj)
+	(*-1O fl-det + dem LINK NOT 0 nøyt-det LINK NOT *1 ikke-adv-adj-komma)
+	(*1 fl-subst + def BARRIER ikke-adv-adj)
+;
+#  "de vakre sommerfuglene"
+
 
 #:3056
- SELECT:3056 (adj pl) IF
+SELECT:noen-vidunderlig-vakre-sommerfugler adj + pl IF
 	(NOT 0 farlige-adj)
 	(NOT 0 %andre%)
 	(NOT 0 subst-gen)
@@ -10749,12 +10771,9 @@ SELECT:fine-og-gode (adj pl) - farlige-part IF
 	(*-1O fl-det LINK NOT 0 nøyt-det LINK NOT *1 ikke-adv-adj-komma)
 	(*1 fl-subst BARRIER ikke-adv-adj)
 ;
-#  "de vidunderlige vakre sommerfuglene"
-
-
 
 #:3057
-SELECT:de-vakre-sommerfuglene adj + sp IF
+SELECT:noen-vakre-sommerfugler adj + pl IF
 	(NOT 0 farlige-adj)
 	(NOT 0 %andre%)
 	(NOT 0 subst-gen)
@@ -10763,7 +10782,6 @@ SELECT:de-vakre-sommerfuglene adj + sp IF
 	(*-1O fl-det LINK NOT 0 nøyt-det LINK NOT *1 ikke-adv-adj-komma)
 	(*1 fl-subst BARRIER ikke-adv-adj)
 ;
-#  "de vakre sommerfuglene"
 
 
 
