@@ -18664,6 +18664,13 @@ SELECT:5009 (vblex pres) IF
 #  "8.10.2003: Drikke gjorde hun aldri.
 # NOT 0 pron: Dette gjør hun aldri."
 
+SELECT:å-spille-og-score inf IF
+        (-3C infmerke)
+        (-2C inf)
+        (-1C cnjcoo)
+        (0C inf OR n + ind)
+        (1C setn-gr)
+        ;
 
 
 #:2394
