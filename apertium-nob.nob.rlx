@@ -28964,6 +28964,13 @@ SELECT:Da-oppgav-han-at nominativ IF
 #CONSTRAINTS
 ## remove ndomain heur
 
+REMOVE:de-amerikanske-sanksjonene prn + pers + pl IF
+        (0 det + dem + pl)
+        (1C adj + sp + def)
+        (2C n + pl + def)
+        ;
+# «Maduro oppgir de amerikanske sanksjonene»
+
 REMOVE:seks-av-ti-leser n + sg IF
         (-1C det + pl)
         (NOT -1 sanns-årstal)
