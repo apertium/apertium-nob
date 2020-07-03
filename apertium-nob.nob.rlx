@@ -22214,6 +22214,7 @@ REMOVE:aller-minst-har-de-kunnet det + pl IF
 	(0 %de%)
 	(NOT 1 adverb)
 	(NOT 1 fl)
+	(NOT 1 adj + sp)
 	(NOT 1 adj-komp)
 	(NOT 1 adj-sup)
 	(NOT 1 pres-part)
