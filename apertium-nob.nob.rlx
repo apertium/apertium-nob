@@ -7023,6 +7023,14 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 	(1 %til%)
 ;
 
+#:3613
+  "<får>"   REMOVE:3613   (n ind) IF
+	(0 pres)
+	(NOT -1 %sort/svart%)
+;
+#  "kh jan 2004: bare subst i \"familiens sorte får\"
+# Vågalt, men det er få andre \"får\" i korpus"
+
 #:4017
   "<galt>"   REMOVE:4017   (n) IF
 	(NOT *-1 %en% BARRIER ikke-adv-adj)
@@ -26736,14 +26744,6 @@ SELECT:noen-default <noen> + neg ;
         ;
 # «Elden varsler blant annet at han vil stevne Gjermund Cappelens forsvarer Benedict de Vibe som vitne.»
 
-
-#:3613
-  "<får>"   REMOVE:3613   (n ind) IF
-	(0 pres)
-	(NOT -1 %sort/svart%)
-;
-#  "kh jan 2004: bare subst i \"familiens sorte får\"
-# Vågalt, men det er få andre \"får\" i korpus"
 
 
 
