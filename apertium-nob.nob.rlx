@@ -6100,6 +6100,7 @@ REMOVE:unlikely ("<lærer>") + pl;
 REMOVE:unlikely ("<pepper>") + pl;
 REMOVE:unlikely ("<kostet>") + n;
 REMOVE:unlikely ("<snakker>") + pl;
+REMOVE:unlikely ("<oppsatte>"i) + vblex;
 REMOVE:unlikely ("<leverer>"i) + n;
 REMOVE:unlikely ("<levere>"i) + n;
 REMOVE:unlikely ("<skylder>") + n;
