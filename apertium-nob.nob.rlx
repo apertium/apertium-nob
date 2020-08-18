@@ -1186,6 +1186,7 @@ REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
 REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
+REMOVE:unlikely ("feste") IF (0/* cmp LINK 0 pl) (NOT 0/1 ("anker")); # *parkfeste
 
 REMOVE:genus-prefer-nt ("genus") + m IF (0 ("genus") + nt);
 
