@@ -1186,7 +1186,21 @@ REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
 REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
-REMOVE:unlikely ("feste") + n IF (0 pl) (0/* cmp) (NOT 0/1 ("anker")); # *parkfeste
+
+LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
+LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
+
+REMOVE:parkfester ("feste") + n IF
+        (0 pl)
+        (0/* cmp)
+        (NOT 0/1 ("anker"))
+        ;
+SELECT:søm-og-feste ("feste") + n IF
+        (0* feste-ord)
+        (NOT 0* fest-ord)
+        (NOT 0*C ("fest"))      # parkfester og fester på private adresser
+        (NOT 1 ("tomt"))        # de som fester tomter, på festet tomt
+        ;
 REMOVE:unlikely ("feste") + n IF (0 pl) (NOT 0/* cmp); # *feste
 
 REMOVE:genus-prefer-nt ("genus") + m IF (0 ("genus") + nt);
