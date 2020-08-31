@@ -14,6 +14,7 @@ LIST clb = clb ;
 
 LIST sg = sg ;
 LIST def = def ;
+LIST cmp = cmp ;
 LIST det-kvant = (det qnt) ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
@@ -30,6 +31,12 @@ SELECT:EOF sent IF
 SELECT:klokka-14. sent IF
         (-1 ("klokke") + sg + def)
         (0 ord)
+        ;
+
+SELECT:1.000-kroneseddel cmp IF # This cohort is "<1.>" and the next one is "<000-kroneseddel>"
+        (0 ord)
+        (0 ("[0-9]+[.]"r))
+        (T:nextWordCrossSent LINK 0 ("<[0-9]+-.*>"r))
         ;
 
 SELECT:hans-14.bursdag ord IF
