@@ -4091,6 +4091,9 @@ SELECT ("lyve") IF
         (1 np OR storbokstav)
         ;
 
+"<røyk>" SELECT:giftig-røyk n IF
+        (-1 ("giftig"))
+        ;
 
 LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
