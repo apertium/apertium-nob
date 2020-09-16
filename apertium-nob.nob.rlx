@@ -1769,6 +1769,9 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (NOT 2 %seg%)
         ;
 
+"<beskytter>" SELECT:høye-beskytter n IF
+        (-1 ("<høye>"i))
+        ;
 
 #:3732
   "<BEST>"   SELECT:3732   (adj sup ind) IF
