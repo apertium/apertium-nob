@@ -1186,6 +1186,7 @@ REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
 REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
+REMOVE:unlikely ("<heder>"i) + pl; # ikkje «hedar»
 
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
@@ -5729,6 +5730,10 @@ REMOVE:avoid-støytte ("støte") IF
 	(1 %alt%)
 ;
 #  "tross alt"
+
+"<trygge>" SELECT:frie-og-trygge adj IF
+        (-2 ("fri"))
+        ;
 
 "<trær>" SELECT:likely-tre n;
 
@@ -30618,7 +30623,6 @@ SELECT:default adv         IF (0 ("<fort>"i));
 SELECT:default konj        IF (0 ("<men>"i));
 SELECT:default ("hånd")    IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
-SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
