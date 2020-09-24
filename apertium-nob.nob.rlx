@@ -3656,6 +3656,14 @@ SELECT ("lyve") IF
 #  "mest sannsynlig at mens er sbu rett etter komma"
 
 
+SELECT:friske-pengar ("middel") + m IF
+        (-1 ("frisk") OR ("friske") OR ("med") OR ("nok"))
+        ;
+
+SELECT:sløvande-middel ("middel") + nt IF
+        (-1 ("<sløvende>"i))
+        ;
+
 
 
 #:3426
@@ -6129,6 +6137,7 @@ REMOVE:unlikely ("<alter>"i) + pl;
 REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
+REMOVE:unlikely ("midel");
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -7883,7 +7892,6 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "\"midt\" subst er mest brukt i \"midten\""
 
 
-
 #:3423
   "<mot>"   REMOVE:3423   (n nt pl ind) IF
 	(0 ent)
@@ -8645,6 +8653,7 @@ SELECT:skrev vblex IF
         (NOT -1 infmerke)
         ;
 
+"<ufortrødent>" REMOVE adj;
 
 "<utelukket>" SELECT pst IF
         (-1 ("<helt>"i))
