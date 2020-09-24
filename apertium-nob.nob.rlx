@@ -1186,6 +1186,7 @@ REMOVE:unlikely ("<lenger>"i) + verb;
 REMOVE:unlikely ("<lenger>"i) + n;
 REMOVE:unlikely ("<svar>"i "sva");
 REMOVE:unlikely ("<summene>"i) + nt; # ikkje «summa»
+REMOVE:unlikely ("<heder>"i) + pl; # ikkje «hedar»
 
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
@@ -1314,6 +1315,8 @@ REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("<vente>"i "venne") + pp ;
 REMOVE:unlikely ("<vente>"i "venne") + pret ;
 REMOVE:unlikely ("<tøy>"i) + m ;
+REMOVE:unlikely ("<potet>"i) + vblex ;
+REMOVE:unlikely ("<potet>"i) + adj ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -3656,6 +3659,14 @@ SELECT ("lyve") IF
 #  "mest sannsynlig at mens er sbu rett etter komma"
 
 
+SELECT:friske-pengar ("middel") + m IF
+        (-1 ("frisk") OR ("friske") OR ("med") OR ("nok"))
+        ;
+
+SELECT:sløvande-middel ("middel") + nt IF
+        (-1 ("<sløvende>"i))
+        ;
+
 
 
 #:3426
@@ -4045,7 +4056,6 @@ SELECT ("lyve") IF
 	(1 %ikke/ingen%)
 ;
 #  "overhodet ikke"
-
 
 #:5016
   "<pils>"   SELECT:5016   (n sg ind) IF
@@ -5564,6 +5574,9 @@ REMOVE:avoid-støytte ("støte") IF
 # KBU: «tallet tre/pi». Kanskje litt vågalt, men togrammet av verbet
 # «talle» og eit tal må då vere svært lågfrekvent.
 
+"<talte>" SELECT:talde-talet ("telle") IF
+        (1 ("antall") OR ("tall"))
+        ;
 
 "<taler>" SELECT:mye-taler-for vblex IF
         (1 %for%)
@@ -5721,6 +5734,20 @@ REMOVE:avoid-støytte ("støte") IF
 ;
 #  "tross alt"
 
+"<tro>" SELECT adj IF
+        (-1 ("tradisjon"))
+        ;
+
+"<tro>" REMOVE ("trå") IF
+        (NOT 1 ("inn") OR ("til"))
+        (NOT *1 ("kraft"))
+        (NOT *1 ("i kraft"))
+        ;
+
+"<trygge>" SELECT:frie-og-trygge adj IF
+        (-2 ("fri"))
+        ;
+
 "<trær>" SELECT:likely-tre n;
 
 
@@ -5797,6 +5824,10 @@ REMOVE:avoid-støytte ("støte") IF
 "<vannet>" SELECT:og-vannet-ut vblex IF
         (NOT -1 fv)
         (1 %ut%)
+        ;
+
+"<varsler>" SELECT:antallet-varsler n IF
+        (-1 ("antall") + def)
         ;
 
 #:3159
@@ -6129,6 +6160,7 @@ REMOVE:unlikely ("<alter>"i) + pl;
 REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
+REMOVE:unlikely ("midel");
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -7883,7 +7915,6 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "\"midt\" subst er mest brukt i \"midten\""
 
 
-
 #:3423
   "<mot>"   REMOVE:3423   (n nt pl ind) IF
 	(0 ent)
@@ -8645,6 +8676,12 @@ SELECT:skrev vblex IF
         (NOT -1 infmerke)
         ;
 
+"<ubevoktet>" SELECT adj IF
+        (1 ("øyeblikk"))
+        ;
+"<ubevoktet>" REMOVE adj;
+
+"<ufortrødent>" REMOVE adj;
 
 "<utelukket>" SELECT pst IF
         (-1 ("<helt>"i))
@@ -30608,7 +30645,6 @@ SELECT:default adv         IF (0 ("<fort>"i));
 SELECT:default konj        IF (0 ("<men>"i));
 SELECT:default ("hånd")    IF (0 ("<hendene>"i));
 SELECT:default ("gjøre")   IF (0 ("<gjør>"i));
-SELECT:default ("heder")   IF (0 ("<heder>"i));
 SELECT:default ("vise")    IF (0 ("<viser>"i));
 SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
