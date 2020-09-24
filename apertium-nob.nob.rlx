@@ -5734,6 +5734,16 @@ REMOVE:avoid-støytte ("støte") IF
 ;
 #  "tross alt"
 
+"<tro>" SELECT adj IF
+        (-1 ("tradisjon"))
+        ;
+
+"<tro>" REMOVE ("trå") IF
+        (NOT 1 ("inn") OR ("til"))
+        (NOT *1 ("kraft"))
+        (NOT *1 ("i kraft"))
+        ;
+
 "<trygge>" SELECT:frie-og-trygge adj IF
         (-2 ("fri"))
         ;
