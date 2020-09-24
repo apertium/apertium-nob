@@ -1314,6 +1314,8 @@ REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("<vente>"i "venne") + pp ;
 REMOVE:unlikely ("<vente>"i "venne") + pret ;
 REMOVE:unlikely ("<tøy>"i) + m ;
+REMOVE:unlikely ("<potet>"i) + vblex ;
+REMOVE:unlikely ("<potet>"i) + adj ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
@@ -4053,7 +4055,6 @@ SELECT:sløvande-middel ("middel") + nt IF
 	(1 %ikke/ingen%)
 ;
 #  "overhodet ikke"
-
 
 #:5016
   "<pils>"   SELECT:5016   (n sg ind) IF
