@@ -8676,6 +8676,11 @@ SELECT:skrev vblex IF
         (NOT -1 infmerke)
         ;
 
+"<ubevoktet>" SELECT adj IF
+        (1 ("øyeblikk"))
+        ;
+"<ubevoktet>" REMOVE adj;
+
 "<ufortrødent>" REMOVE adj;
 
 "<utelukket>" SELECT pst IF
