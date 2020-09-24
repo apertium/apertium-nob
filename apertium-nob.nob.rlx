@@ -5574,6 +5574,9 @@ REMOVE:avoid-støytte ("støte") IF
 # KBU: «tallet tre/pi». Kanskje litt vågalt, men togrammet av verbet
 # «talle» og eit tal må då vere svært lågfrekvent.
 
+"<talte>" SELECT:talde-talet ("telle") IF
+        (1 ("antall") OR ("tall"))
+        ;
 
 "<taler>" SELECT:mye-taler-for vblex IF
         (1 %for%)
@@ -5811,6 +5814,10 @@ REMOVE:avoid-støytte ("støte") IF
 "<vannet>" SELECT:og-vannet-ut vblex IF
         (NOT -1 fv)
         (1 %ut%)
+        ;
+
+"<varsler>" SELECT:antallet-varsler n IF
+        (-1 ("antall") + def)
         ;
 
 #:3159
