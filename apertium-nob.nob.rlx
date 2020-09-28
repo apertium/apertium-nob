@@ -3660,7 +3660,7 @@ SELECT ("lyve") IF
 
 
 SELECT:friske-pengar ("middel") + m IF
-        (-1 ("frisk") OR ("friske") OR ("med") OR ("nok"))
+        (-1 ("frisk") OR ("friske") OR ("med") OR ("nok") OR ("sårt tiltrengt") OR ("tiltrengt"))
         ;
 
 SELECT:sløvande-middel ("middel") + nt IF
