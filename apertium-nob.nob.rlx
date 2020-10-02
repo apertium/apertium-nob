@@ -1236,6 +1236,7 @@ REMOVE:unlikely ("stenge") + n ;
 REMOVE:unlikely-tenger-in-cmp ("tang") IF (0 ("stang")) ;
 REMOVE:unlikely-stallen-in-cmp ("stall") IF (0 ("tall")) ;
 REMOVE:unlikely-stallen-in-cmp ("talle") IF (0 ("tall")) ;
+REMOVE:husk ("<husk>"i) + n ;
 
 REMOVE:en-fot ("fot") + pl IF
         (-1 det + sg)
