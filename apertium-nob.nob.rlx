@@ -6154,6 +6154,7 @@ REMOVE:unlikely-næringslivstoppane ("stopp") IF
 REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("rette") + n;  # rette og vrange
 REMOVE:unlikely ("<dumpet>"i) + n;
+SELECT:DA ("<DA>") + np IF (-2 ("<domstoladministrasjonen>"i)) (-1 lpar);
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
 REMOVE:unlikely ("<om>"i) + n;
