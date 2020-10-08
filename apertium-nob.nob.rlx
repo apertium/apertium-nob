@@ -30645,7 +30645,7 @@ SELECT:sg-after-første sg IF
 
 SELECT:subject-per-clause nominativ IF
         (-1 fv)
-        (-1 ("fremgå") OR ("fortsette") OR ("vedvare") OR ("gjenstå") OR ("oppbevare") OR ("opprettholde") OR ("tilsvare") OR ("fremkomme") OR ("framkomme") OR ("framgå"))
+        (-1 ("fremgå") OR ("fortsette") OR ("vedvare") OR ("gjenstå") OR ("oppbevare") OR ("opprettholde") OR ("tilsvare") OR ("fremkomme") OR ("framkomme") OR ("framgå") OR ("foregå") OR ("pågå"))
         (0C pers)
         (0C nominativ OR acc)
         ;
