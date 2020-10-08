@@ -30643,6 +30643,14 @@ SELECT:sg-after-første sg IF
         (0C n)
         ;
 
+SELECT:subject-per-clause nominativ IF
+        (-1 fv)
+        (-1 ("fremgå") OR ("fortsette") OR ("vedvare") OR ("gjenstå") OR ("oppbevare") OR ("opprettholde") OR ("tilsvare") OR ("fremkomme") OR ("framkomme") OR ("framgå"))
+        (0C pers)
+        (0C nominativ OR acc)
+        ;
+# «De vurderer å ta alle fly ut av drift, fremgår  det  i en bekymringsmelding»
+
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
