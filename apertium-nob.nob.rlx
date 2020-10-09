@@ -6170,6 +6170,7 @@ REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
+REMOVE:unlikely ("frøse");
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -6948,7 +6949,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         ;
 # «Jeg er her for å hjelpe klubben og for å gjøre en jobb som en utøver for klubben, fortsatte Neymar.»
 
-"<frøs>" REMOVE ("frø") IF
+REMOVE ("frø") IF
+        (0 ("<frøs>"i))
         (NOT -1 hj-verb)
         ;
 
