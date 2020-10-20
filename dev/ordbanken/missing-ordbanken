@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# finds words that are in ordbanken but not (with that pos) in dix
+
+set -e -u
+source config.sh
+cd "$(dirname "$0")"
+d="${PWD}"
+
+( cd "${bankdir}" && "$d"/lm2par-bank -v lang2="${lang2}" )                    \
+    | cut -f1-2                                                            \
+    | tr -d '<>'                                                           \
+    | sed 's,\(.*\)	\(.*\),<apertium-notrans>\2</apertium-notrans>\1,' \
+    | apertium-deshtml -n                                                  \
+    | lt-proc -we "${dixdir}"/"${lang3}".automorf.bin                      \
+    | apertium-rehtml-noent                                                \
+    | grep -v '^<apertium-notrans>\([^<]*\)</apertium-notrans>\^\([^/]*\)\(/.*/\|/\)\2<\1>.*' \
+    | sed 's,<apertium-notrans>\([^<]*\)</apertium-notrans>\^\([^/]*\).*,\2	\1,' \
+    | LC_ALL=C sort -u

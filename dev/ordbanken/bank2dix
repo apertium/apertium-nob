@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# join the maps and pick the most frequent paradigm-pairing for any ordbanken paradigm:
+
+set -e -u
+source config.sh
+cd "$(dirname "$0")"
+d="${PWD}"
+
+LC_ALL=C join -j1 -t$'\t'                        \
+      <(cd "${bankdir}" && "$d"/lm2par-bank -v lang2="${lang2}" | sed 's/\t//' |LC_ALL=C sort ) \
+      <(./lm2par-dix|sed 's/\t//'|LC_ALL=C sort) \
+    | cut -f2-3                                  \
+    | sort                                       \
+    | uniq -c                                    \
+    | sort -n                                    \
+    | sed 's/^ *[0-9][0-9]* //'                  \
+    | sed 's,/\([^_]*\).*,&\t\1,'                \
+    | awk '{bank2dix[$1][$3]=$2}END{for(b in bank2dix)for(suff in bank2dix[b])print b"\t"bank2dix[b][suff]"\t"suff}'
+# the last sed puts the pardef suffix (part after slash) into third column
+# the last awk just picks the last (most frequent) pardef for any ordbanken paradigm+suff
+
