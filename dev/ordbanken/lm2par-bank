@@ -1,0 +1,61 @@
+#!/usr/bin/gawk -f
+
+# lm<pos>\tparadigm
+# for all entries of ordbanken
+#
+# meant to be run with ordbanken checkout as cwd
+
+BEGIN {
+    OFS=FS="\t";
+
+    while(getline<("paradigme_"lang2".txt")){
+        pos=$3
+        sub("subst prop"      ,"<np>"    ,pos);
+        sub("subst"           ,"<n>"     ,pos);
+        sub("appell"          ,""        ,pos);
+        # sub("mask"          ,"<m>"     ,pos);
+        # sub("fem"           ,"<f>"     ,pos);
+        # sub("nøyt"          ,"<nt>"    ,pos);
+        sub("mask"            ,""        ,pos);
+        sub("fem"             ,""        ,pos);
+        sub("nøyt"            ,""        ,pos);
+        sub("verb"            ,"<vblex>" ,pos);
+        sub("adj"             ,"<adj>"   ,pos);
+        sub("<ordenstall>"    ,"<ord>"   ,pos);
+        sub("<adv>"           ,""        ,pos);
+        sub("<inf-merke>"     ,"<infm>"  ,pos);
+        sub("<spørreartikkel>",""        ,pos);
+        sub("adv"             ,"<adv>"   ,pos);
+        sub("konj"            ,"<cnjcoo>",pos);
+        sub("sbu"             ,"<cnjsub>",pos);
+        sub("prep"            ,"<pr>"    ,pos);
+        sub("interj"          ,"<ij>"    ,pos);
+        sub("fork"            ,"<adv>"   ,pos); # ?
+        sub("det .*"          ,"<det>"   ,pos);
+        sub("pron .*"         ,"<prn>"   ,pos);
+        sub("pers"            ,""        ,pos);
+        sub("ent"             ,""        ,pos);
+        sub("gen"             ,""        ,pos);
+        sub("ubøy"            ,""        ,pos);
+        gsub(" "              ,""        ,pos);
+        par2pos[$1]=pos;
+    }
+
+    while(getline<("lemma_paradigme_"lang2".txt")) {
+        lid2pars[$1][$2]++;
+    }
+
+    while(getline<("lemma_"lang2".txt")) {
+        lid=$1;
+        lm=$2;
+        for(par in lid2pars[lid]) {
+            pos=par2pos[par]
+            lmpos2par[lm"\t"pos][par]++
+        }
+    }
+    for(lmpos in lmpos2par) {
+        for(par in lmpos2par[lmpos]) {
+            print lmpos,par
+        }
+    }
+}

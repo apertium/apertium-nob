@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# lm<pos>\tparadigm
+# for all entries of dix
+
+set -e -u
+source config.sh
+cd "$(dirname "$0")"
+
+< "${dixdir}"/apertium-"${lang3}"."${lang3}".dix \
+  grep 'lm="[^"]*.*<par n="[^"]*' -o             \
+    | sed 's/....//'                             \
+    | sed 's/".*"/\t/'                           \
+    | sed 's/	\(.*\)__\(.*\)/\t<\2>&/'

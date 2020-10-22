@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -e -u
+source config.sh
+cd "$(dirname "$0")"
+d="${PWD}"
+
+test -f /tmp/missing."${lang3}" || ./missing-ordbanken > /tmp/missing."${lang3}"
+
+test -f /tmp/paired."${lang3}" || LC_ALL=C join -j1 -t$'\t' \
+      <(cd "${bankdir}" && "$d"/lm2par-bank -v lang2="${lang2}" |sed 's/\t//'|LC_ALL=C sort ) \
+      <(awk '{print $1"<"$2">"}' /tmp/missing."${lang3}" | LC_ALL=C sort) \
+      > /tmp/paired."${lang3}"
+
+< /tmp/paired."${lang3}" \
+      awk '
+BEGIN{
+    OFS=FS="\t";
+    while("./bank2dix" | getline) { b2d[$1][$3]=$2 }
+    while("./lm2par-dix" | getline) { parfreq[$3]++ }
+}
+function comp_parfreq(i1, v1, i2, v2)
+{
+    return parfreq[i2] - parfreq[i1]
+}
+{
+    lmpos=$1
+    lm=$1; sub(/<.*/,"",lm)
+    b=$2
+}
+b in b2d {
+    for(suff in b2d[b]) {
+        if(lm ~ suff"$") {
+            dixpar = b2d[b][suff]
+            cand[lmpos][dixpar]++
+        }
+    }
+}
+END{
+    for(lmpos in cand) {
+        lm=lmpos; sub(/<.*/,"",lm)
+        PROCINFO["sorted_in"]="comp_parfreq"
+        for(par in cand[lmpos]) {
+            print "<e lm=\""lm"\">\t<i>"lm"</i><par n=\""par"\"/></e>"
+            break
+        }
+        PROCINFO["sorted_in"]="@unsorted"
+    }
+}' \
+    | sed 's,\(.*\)\(</i>.*/\1_\),\2,'
