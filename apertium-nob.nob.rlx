@@ -1193,6 +1193,7 @@ REMOVE:unlikely ("ti") + adv;
 REMOVE:unlikely ("alle") + n;
 REMOVE:unlikely ("let") + n;
 REMOVE:unlikely ("filer");
+REMOVE:unlikely ("nå") + n;
 REMOVE:unlikely ("spise") + m;
 REMOVE:unlikely ("<varene>"i "var") ;
 
