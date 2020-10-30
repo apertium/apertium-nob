@@ -6178,6 +6178,8 @@ REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
 REMOVE:unlikely ("frøse");
+REMOVE:unlikely ("va");
+REMOVE:unlikely ("døde") + vblex;
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
