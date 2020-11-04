@@ -23,14 +23,22 @@ function comp_parfreq(i1, v1, i2, v2)
 {
     return parfreq[i2] - parfreq[i1]
 }
+function comp_len_desc(i1, v1, i2, v2) {
+    return length(i2) - length(i1)
+}
 {
     lmpos=$1
     lm=$1; sub(/<.*/,"",lm)
     b=$2
 }
 b in b2d {
+    # Use only the longest matching suffixes:
+    # Start from the longest, break when we see a shorter one
+    PROCINFO["sorted_in"]="comp_len_desc"
+    suffused=""
     for(suff in b2d[b]) {
         if(lm ~ suff"$") {
+            if(length(suff) < length(suffused)) { break } else { suffused = suff }
             dixpar = b2d[b][suff]
             cand[lmpos][dixpar]++
         }
