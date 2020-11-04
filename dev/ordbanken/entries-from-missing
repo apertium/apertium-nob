@@ -5,9 +5,9 @@ source config.sh
 cd "$(dirname "$0")"
 d="${PWD}"
 
-test -f /tmp/missing."${lang3}" || ./missing-ordbanken > /tmp/missing."${lang3}"
+./missing-ordbanken > /tmp/missing."${lang3}"
 
-test -f /tmp/paired."${lang3}" || LC_ALL=C join -j1 -t$'\t' \
+LC_ALL=C join -j1 -t$'\t' \
       <(cd "${bankdir}" && "$d"/lm2par-bank -v lang2="${lang2}" |sed 's/\t//'|LC_ALL=C sort ) \
       <(awk '{print $1"<"$2">"}' /tmp/missing."${lang3}" | LC_ALL=C sort) \
       > /tmp/paired."${lang3}"

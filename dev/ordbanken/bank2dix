@@ -7,16 +7,29 @@ source config.sh
 cd "$(dirname "$0")"
 d="${PWD}"
 
+function group_bankpars_of_same_dixpar {
+    # goes after join
+    awk 'BEGIN{OFS=FS="\t"; } { b2d[$1][$3][$2]++ }END{PROCINFO["sorted_in"]="@ind_str_asc"; for(lm in b2d)for(d in b2d[lm]){b="";for(bb in b2d[lm][d])b=b"_"bb; sub(/^_/,"",b);print lm,b,d}}'
+}
+
 LC_ALL=C join -j1 -t$'\t'                        \
       <(cd "${bankdir}" && "$d"/lm2par-bank -v lang2="${lang2}" | sed 's/\t//' |LC_ALL=C sort ) \
-      <(./lm2par-dix|sed 's/\t//'|LC_ALL=C sort) \
+      <(./lm2par-dix | sed 's/\t//' | LC_ALL=C sort) \
     | cut -f2-3                                  \
     | sort                                       \
     | uniq -c                                    \
     | sort -n                                    \
+    | awk '$1 > 3'                               \
     | sed 's/^ *[0-9][0-9]* //'                  \
     | sed 's,/\([^_]*\).*,&\t\1,'                \
-    | awk '{bank2dix[$1][$3]=$2}END{for(b in bank2dix)for(suff in bank2dix[b])print b"\t"bank2dix[b][suff]"\t"suff}'
+    | awk '
+{ bank2dix[$1][$3]=$2 }
+
+END {
+  for(b in bank2dix)
+    for(suff in bank2dix[b])
+      print b"\t"bank2dix[b][suff]"\t"suff
+}
+'
 # the last sed puts the pardef suffix (part after slash) into third column
 # the last awk just picks the last (most frequent) pardef for any ordbanken paradigm+suff
-

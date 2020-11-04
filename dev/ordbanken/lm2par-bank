@@ -13,12 +13,16 @@ BEGIN {
         sub("subst prop"      ,"<np>"    ,pos);
         sub("subst"           ,"<n>"     ,pos);
         sub("appell"          ,""        ,pos);
-        # sub("mask"          ,"<m>"     ,pos);
-        # sub("fem"           ,"<f>"     ,pos);
-        # sub("nøyt"          ,"<nt>"    ,pos);
-        sub("mask"            ,""        ,pos);
-        sub("fem"             ,""        ,pos);
-        sub("nøyt"            ,""        ,pos);
+        if(keepgen && pos ~ "<n>") {
+            sub("mask"          ,"<m>"     ,pos);
+            sub("fem"           ,"<f>"     ,pos);
+            sub("nøyt"          ,"<nt>"    ,pos);
+        }
+        else {
+            sub("mask"            ,""        ,pos);
+            sub("fem"             ,""        ,pos);
+            sub("nøyt"            ,""        ,pos);
+        }
         sub("verb"            ,"<vblex>" ,pos);
         sub("adj"             ,"<adj>"   ,pos);
         sub("<ordenstall>"    ,"<ord>"   ,pos);
@@ -54,8 +58,12 @@ BEGIN {
         }
     }
     for(lmpos in lmpos2par) {
+        parjoined=""
+        PROCINFO["sorted_in"]="@ind_str_asc"
         for(par in lmpos2par[lmpos]) {
-            print lmpos,par
+            parjoined=parjoined"_"par
         }
+        sub(/^_/,"",parjoined)
+        print lmpos,parjoined
     }
 }
