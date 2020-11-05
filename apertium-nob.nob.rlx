@@ -1405,6 +1405,14 @@ REMOVE ("hvorav¹") ;
         (1 nominativ OR expl)
 ;
 
+"<laget>" SELECT:lede-laget n + ("lag") IF
+        (-1 ("lede")
+         OR ("styrke")
+         OR ("føre") + vblex
+         OR ("sende")
+         OR ("se"))
+        ;
+
 "<LES>" SELECT (vblex imp);
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
