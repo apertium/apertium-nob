@@ -8291,6 +8291,9 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #bare ved noe sånt noe som "en pils egenskaper" eller noe slikt
 
+"<pirket>"   REMOVE:pirket-ballen n IF
+        (1 n OR pr);
+
 #:3353
   "<pluss>"   REMOVE:3353   (n sg) IF
 	(NOT -1 det-nøyt-ent)
@@ -29561,8 +29564,10 @@ REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 	(*-1 setn-gr LINK 0 %og/men%)
 	(*-1 pres/pret BARRIER setn-gr)
 	(*-1O >>> LINK NOT 1 sbu LINK *1 fv LINK NOT 0 pres LINK NOT 0 m-hj-verb)
+        (NEGATE 0 pasv - n)     # «, men dette er første gang disse områdene bes<pres!>»
 ;
 #  "han bygde seg hus i Asker og ble en slags pendler (ikke verb pres)"))
+# «Også i forrige runde var det to røde områder, men dette er første gang disse områdene bes   om å ta ned produksjonen.»
 
 
 
