@@ -6192,6 +6192,7 @@ REMOVE:unlikely ("midel");
 REMOVE:unlikely ("frøse");
 REMOVE:unlikely ("va");
 REMOVE:unlikely ("døde") + vblex;
+REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -26173,6 +26174,7 @@ REMOVE:med-andre-banker-mot vblex IF
 	(NOT -2 adj)
 	(NOT -2 konj)
 	(NOT -2 prep)
+        (NEGATE -1 ("etter") LINK -1 ("år") + def) # På høsten året etter  forlenget  han kontrakten
 ;
 #  "med (prep + sbu) hamrar (kan ikke vere
 # verb) og hiv "
