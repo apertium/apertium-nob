@@ -1178,6 +1178,7 @@ REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
 REMOVE:unlikely ("kader");
+REMOVE:unlikely ("filer");
 REMOVE:unlikely ("<ruser>"i "rus");
 REMOVE:unlikely ("stall") IF (0 ("tall")) (0/1 cmp);
 REMOVE:unlikely ("ligger") + n IF (NOT 0/* cmp);
