@@ -26842,6 +26842,10 @@ SELECT:noen-default <noen> + neg ;
 	(NOT 0* fv)
 ;
 
+"<hende>" REMOVE:kan-det-hende adj OR n IF
+        (-2 ("<kan>"i))
+        (-1 ("<det>"i))
+        ;
 
 #:6092
   "<hi>"   REMOVE:6092   (det f) IF
