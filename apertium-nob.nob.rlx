@@ -30939,7 +30939,6 @@ REMOVE:default pl IF (0 ("<forslag>"i)) ;
 "<kantene>" REMOVE:default-kantane ("kant" n m pl def) ;	# keep kant<n><nt><pl><def>→kanta
 "<kaster>" REMOVE:default-kaster ("kaste" n m pl ind) ;	# keep kaste<vblex><pres>→kastar
 "<kastet>" REMOVE:default-kastet ("kast" n nt sg def) ;	# keep kaste<vblex><pret>→kasta
-"<Kilde>" REMOVE:default-Kjelde ("kilde" n m sg ind) ;	# keep Kilde<np><cog>→Kilde
 "<kjemper>" REMOVE:default-kjemper ("kjempe" n f pl ind) ;	# keep kjempe<vblex><pres>→kjempar
 "<kjemper>" REMOVE:default-kjemper ("kjempe" n m pl ind) ;	# keep kjempe<vblex><pres>→kjempar
 "<kjenner>" REMOVE:default-kjenne ("kjenne" n nt pl ind) ;	# keep kjenne<vblex><pres>→kjenner
