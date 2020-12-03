@@ -6192,6 +6192,7 @@ REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
 REMOVE:unlikely ("frøse");
 REMOVE:unlikely ("va");
+REMOVE:unlikely ("stam");
 REMOVE:unlikely ("døde") + vblex;
 REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 
@@ -6608,6 +6609,7 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 ("disse"))
         ;
 
+REMOVE:data-not-datum ("datum");
 
 #:3726
   "<dager>"   REMOVE:3726   (vblex pres) IF
