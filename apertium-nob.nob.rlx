@@ -6194,6 +6194,8 @@ REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
+REMOVE:unlikely ("put");
+REMOVE:unlikely ("legat") IF (0 ("gate")); # hand|legaten
 REMOVE:unlikely ("frøse");
 REMOVE:unlikely ("va");
 REMOVE:unlikely ("stam");
