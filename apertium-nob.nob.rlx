@@ -8552,6 +8552,8 @@ SELECT:skrev vblex IF
 ;
 
 
+"<stammer>" REMOVE:stammer-fra n IF (1 %fra%) ;
+
 #:3240
   "<steder>"   REMOVE:3240   (n pl) IF
 	(0 verb)
