@@ -6201,6 +6201,8 @@ REMOVE:unlikely ("legat") IF (0 ("gate")); # hand|legaten
 REMOVE:unlikely ("møll") IF (0 ("mølle")); # meir vanleg no til dags, dessverre
 REMOVE:unlikely ("frøse");
 REMOVE:unlikely ("va");
+REMOVE:unlikely ("psykofarmakon"); # prefer -um
+REMOVE:unlikely ("lise") + m;   # lisens
 REMOVE:unlikely ("stam");
 REMOVE:unlikely ("døde") + vblex;
 REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
