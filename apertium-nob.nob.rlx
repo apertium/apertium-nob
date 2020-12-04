@@ -6182,6 +6182,8 @@ REMOVE:unlikely ("<dumpet>"i) + n;
 SELECT:DA ("<DA>") + np IF (-2 ("<domstoladministrasjonen>"i)) (-1 lpar);
 REMOVE:unlikely ("<da>"i) + n;
 REMOVE:unlikely ("<sida>"i) + m;
+REMOVE:unlikely ("trakk") IF (0 ("trekke"));
+REMOVE:unlikely ("trakke") IF (0 ("trekke"));
 REMOVE:unlikely ("<om>"i) + n;
 REMOVE:unlikely ("følle") + vblex;
 REMOVE:unlikely ("følle") + adj;
@@ -6196,6 +6198,7 @@ REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
 REMOVE:unlikely ("put");
 REMOVE:unlikely ("legat") IF (0 ("gate")); # hand|legaten
+REMOVE:unlikely ("møll") IF (0 ("mølle")); # meir vanleg no til dags, dessverre
 REMOVE:unlikely ("frøse");
 REMOVE:unlikely ("va");
 REMOVE:unlikely ("stam");
