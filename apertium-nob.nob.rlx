@@ -6176,6 +6176,7 @@ REMOVE:unlikely-tremilsslag ("slag") IF
         (0 ("lag"))
         (0/* cmp)
         ;
+REMOVE:unlikely-snorklipper ("lippe");
 REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("rette") + n;  # rette og vrange
 REMOVE:unlikely ("<dumpet>"i) + n;
