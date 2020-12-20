@@ -1172,6 +1172,7 @@ REMOVE:unlikely ("sult") + n + pl;
 REMOVE:unlikely ("<lave>"i "lave") + pp;
 REMOVE:unlikely ("hans") + adv;
 REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
+REMOVE:unlikely ("entré") IF (0 ("senter")) (0/* cmp);     # unngå «fiskekrimsentré» for «fiskekrimsentre»
 REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 REMOVE:unlikely ("bygg" "<bygger>"i);       # very unlikely form
 REMOVE:unlikely ("bile") IF (0 ("bil"));
