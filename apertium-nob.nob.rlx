@@ -29903,6 +29903,17 @@ REMOVE:fordi-noen-av-dem neg OR sg IF
         (NEGATE *2 spørsmål-t)  # «Kommer noen av dem?»
         (NEGATE 2 av-adverbial) # «elske noen av hele sitt hjerte, ta noen av dage»
         ;
+# «For noen av dem leder bruken til problemer, enten i perioder eller over lengre tid.»
+# «Sykler har solgt ekstremt bra, så bra at noen av forhandlerne har hatt utfordringer»
+
+REMOVE:for-noen-er-det neg OR sg IF
+        (-1 ("for"))
+        (0 <noen>)
+        (1 ("være") OR ("bli") OR ("ha") OR ("føre"))
+        (1 fv)
+        (*2C n OR prn BARRIER clb OR fv)
+        ;
+# «For noen er gull nå det eneste alternativet som føles trygt over tid»
 
 REMOVE:noen-hundre neg OR sg IF
         (1 %hundre/tusen/osv%)
