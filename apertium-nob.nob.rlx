@@ -573,7 +573,7 @@ LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "s
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
-LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  ;
+LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i ;
@@ -10940,6 +10940,13 @@ SELECT:noen-vakre-sommerfugler adj + pl IF
 #  "infinitte kopulaer
 # De har aldri vært fine"
 
+
+SELECT:er-med-noen-unge-og-til-dels-urutinerte-spillere adj + pl IF
+        (-1 %noen%)
+        (1 %og/eller%)
+        (*2C adj + pl BARRIER ikke-adv-adj LINK 1 n + pl)
+        ;
+# «Hun sier at det er med noen unge og til dels urutinerte spillere.»
 
 SELECT:jeg-er-utrolig-takknemlig adj + mf + sg + ind IF
         (*-1 %være/bli% BARRIER setn-gr LINK -1 p1 + sg)
@@ -26507,65 +26514,6 @@ CONSTRAINTS
 
 
 
-# NOKON vs NOKRE:
-LIST <noen> = ("<noen>"i);
-REMOVE:wtf ("noen") + det;      # where is this one in the .dix?
-REMOVE:noen-års-tid <noen> + mask/fem/mf IF
-	(1C nøyt)
-;
-REMOVE:noen-betydning <noen> + pl IF
-	(1C sg)
-;
-
-SELECT:noen-d   <noen> + det + neg IF
-	(0C det-kvant + fl)
-	(*-1 %ikke% BARRIER setn-gr)
-;
-SELECT:noen-p   <noen> + prn + neg IF
-	(0C pron + fl)
-	(*-1 %ikke% BARRIER setn-gr)
-;
-# «Jeg hadde ikke noen gode poeng i min.»
-
-SELECT:noen-konklusjon   <noen> + det + neg IF
-	(*1 ("konklusjon") BARRIER ikke-adv-adj)
-;
-# «Jeg hadde ikke noen gode poeng i min.»
-
-REMOVE:noen-d   <noen> + det + neg IF
-	(0C det-kvant + fl)
-	(NEGATE *-1 %ikke% BARRIER setn-gr)
-	(NEGATE *1 spørsmål-t)
-	(NOT -1 %før%)
-;
-# «Læreren sa jeg hadde noen(nokre) gode poeng i oppgaven min»
-# Ikkje: «Sa læreren at jeg hadde noen(nokon) gode poeng i oppgaven min?»
-# Men: «Sa læreren at jeg kunne låne noen(nokre) pengar til oppgaven min?»
-# Ikkje: «før noen(nokon) kommer»
-REMOVE:noen-p   <noen> + prn + neg IF
-	(0C pron + fl)
-	(NEGATE *-1 %ikke% BARRIER setn-gr)
-;
-# «Læreren sa jeg hadde noen gode poeng i oppgaven min»
-SELECT:noen-p   <noen> + prn + neg IF
-	(NOT 0 det)
-;
-# «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
-SELECT:noen-d   <noen> + det + neg IF
-	(NOT 0 pron)
-;
-# «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
-
-REMOVE:noen-års-tid <noen> + neg IF
-        (0 fl-det)
-	(1 ub-fl-nøyt-subst)
-	(1C subst-nøyt + ub)
-;
-# Default:
-SELECT:noen-default <noen> + neg ;
-# Viss me har kome så langt, tek me «nokon»
-
-
 
 
 #:3366
@@ -29916,6 +29864,116 @@ REMOVE:at-Ukjend-bevares inf IF
  REMOVE:4099 subst IF
 	   (0 bare-adj)
 ;
+
+
+#################################################################
+# NOKON vs NOKRE                                                #
+# pl is nokre                                                   #
+# neg or sg is nokon                                            #
+#################################################################
+
+LIST <noen> = ("<noen>"i);
+REMOVE:wtf ("noen") + det;      # where is this one in the .dix?
+REMOVE:noen-års-tid <noen> + mask/fem/mf IF
+	(1C nøyt)
+;
+REMOVE:noen-betydning <noen> + pl IF
+	(1C sg)
+;
+
+"<Noen>" REMOVE:Noen-av neg OR sg IF
+        (0 <noen>)
+        (1 %av%)
+        ;
+
+REMOVE:men-noen-av neg OR sg IF
+        (-1 %men%)
+        (0 <noen>)
+        (1 %av%)
+        ;
+
+REMOVE:og-noen-av neg OR sg IF
+        (-1C clb)
+        (0 <noen>)
+        (1 %av%)
+        ;
+
+LIST småord-før-nokon-av = "hvis" "dersom" "om" "uten at" "ikke" "aldri" "uten";
+LIST nektingsadv = "ikke" "aldri" "uten" ;
+LIST av-adverbial = "dage" "syne" "lage" "vei" "gårde" "sted" "all" "hel" "hele";
+REMOVE:fordi-noen-av-dem neg OR sg IF
+        (NEGATE *-1 nektingsadv) # «Jeg håper det ikke blir noen av disse»
+        (NEGATE -1 småord-før-nokon-av) # «Hvis noen av dem er fornærmet»
+        (0 <noen>)
+        (1 %av%)
+        (*2C n OR prn BARRIER clb OR fv)
+        (NEGATE *2 spørsmål-t)  # «Kommer noen av dem?»
+        (NEGATE 2 av-adverbial) # «elske noen av hele sitt hjerte, ta noen av dage»
+        ;
+# «For noen av dem leder bruken til problemer, enten i perioder eller over lengre tid.»
+# «Sykler har solgt ekstremt bra, så bra at noen av forhandlerne har hatt utfordringer»
+
+REMOVE:for-noen-er-det neg OR sg IF
+        (-1 ("for"))
+        (0 <noen>)
+        (1 ("være") OR ("bli") OR ("ha") OR ("føre"))
+        (1 fv)
+        (*2C n OR prn BARRIER clb OR fv)
+        ;
+# «For noen er gull nå det eneste alternativet som føles trygt over tid»
+
+REMOVE:noen-hundre neg OR sg IF
+        (1 %hundre/tusen/osv%)
+        ;
+
+SELECT:noen-d   <noen> + det + neg IF
+	(0C det-kvant + fl)
+	(*-1 %ikke% BARRIER setn-gr)
+;
+SELECT:noen-p   <noen> + prn + neg IF
+	(0C pron + fl)
+	(*-1 %ikke% BARRIER setn-gr)
+;
+# «Jeg hadde ikke noen gode poeng i min.»
+
+SELECT:noen-konklusjon   <noen> + det + neg IF
+	(*1 ("konklusjon") BARRIER ikke-adv-adj)
+;
+# «Jeg hadde ikke noen gode poeng i min.»
+
+REMOVE:noen-d   <noen> + det + neg IF
+	(0C det-kvant + fl)
+	(NEGATE *-1 %ikke% BARRIER setn-gr)
+	(NEGATE *1 spørsmål-t)
+	(NOT -1 %før%)
+;
+# «Læreren sa jeg hadde noen(nokre) gode poeng i oppgaven min»
+# Ikkje: «Sa læreren at jeg hadde noen(nokon) gode poeng i oppgaven min?»
+# Men: «Sa læreren at jeg kunne låne noen(nokre) pengar til oppgaven min?»
+# Ikkje: «før noen(nokon) kommer»
+REMOVE:noen-p   <noen> + prn + neg IF
+	(0C pron + fl)
+	(NEGATE *-1 %ikke% BARRIER setn-gr)
+;
+# «Læreren sa jeg hadde noen gode poeng i oppgaven min»
+SELECT:noen-p   <noen> + prn + neg IF
+	(NOT 0 det)
+;
+# «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
+SELECT:noen-d   <noen> + det + neg IF
+	(NOT 0 pron)
+;
+# «å finne noen han kan leke med», standardomsetjing for pronomen: «nokon»
+
+REMOVE:noen-års-tid <noen> + neg IF
+        (0 fl-det)
+	(1 ub-fl-nøyt-subst)
+	(1C subst-nøyt + ub)
+;
+# Default:
+SELECT:noen-default <noen> + neg ;
+# Viss me har kome så langt, tek me «nokon»
+
 
 
 #################################################################
