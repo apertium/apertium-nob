@@ -10941,6 +10941,13 @@ SELECT:noen-vakre-sommerfugler adj + pl IF
 # De har aldri vært fine"
 
 
+SELECT:er-med-noen-unge-og-til-dels-urutinerte-spillere adj + pl IF
+        (-1 %noen%)
+        (1 %og/eller%)
+        (*2C adj + pl BARRIER ikke-adv-adj LINK 1 n + pl)
+        ;
+# «Hun sier at det er med noen unge og til dels urutinerte spillere.»
+
 SELECT:jeg-er-utrolig-takknemlig adj + mf + sg + ind IF
         (*-1 %være/bli% BARRIER setn-gr LINK -1 p1 + sg)
         ;
