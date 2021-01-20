@@ -2217,6 +2217,12 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 ;
 #  "den ene gutten - den ene etter den andre"
 
+"<ene>" SELECT:sitt-ene-barn qnt IF
+	(-1 ("sin") + $$NUMBER + $$GENDER)
+        (1 n + ind + $$NUMBER + $$GENDER)
+;
+# sitt ene barn
+
 
 
 #:3684
