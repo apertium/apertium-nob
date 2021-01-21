@@ -30492,6 +30492,7 @@ SELECT:den-mest-betydningsfulle sp + def IF
 
 SELECT:ansatte-fl fl IF
         (0 ("ansatt"i))
+        (NOT -1C det + sg)
         (NOT -1 det + def OR adj + def)
         ;
 
