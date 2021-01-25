@@ -30442,16 +30442,6 @@ SELECT:Institutt-for-kulturstudier ("studium") IF
         (0/* cmp)
         ;
 
-SELECT:på-studium ("studium") IF
-		(-1 %på%)
-		(0 fl)
-		;
-
-SELECT:studium-i/ved ("studium") IF
-		(0 fl)
-		(1 %i% OR %ved%)
-		;
-
 SELECT:kliniske-studiar ("studie") IF
 		(-1 ("<kliniske>"))
 		(0 fl)
@@ -30478,6 +30468,22 @@ SELECT:studiar-i-andre ("studie") IF
 		(-1 ("andre") OR ("flere") OR ("mange"))
 		(0 fl + ind)
 		(1 %i%)
+		;
+		
+SELECT:byggje-på-studiar ("studie") IF
+		(*-2 ("bygge") OR ("se"))
+		(-1 %på%)
+		(0 fl)
+		;
+		
+SELECT:på-studium ("studium") IF
+		(-1 %på%)
+		(0 fl)
+		;
+
+SELECT:studium-i/ved ("studium") IF
+		(0 fl)
+		(1 %i% OR %ved%)
 		;
 		
 SELECT:frå-studium ("studium") IF
@@ -30526,12 +30532,6 @@ SELECT:vise-til-studiar ("studie") IF
 		
 SELECT:til-studium ("studium") IF
 		(-1 %til%)
-		(0 fl)
-		;
-		
-SELECT:byggje-på-studiar ("studie") IF
-		(*-2 ("bygge") OR ("se" vblex)) # not se?
-		(-1 %på%)
 		(0 fl)
 		;
 		
