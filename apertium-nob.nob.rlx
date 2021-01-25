@@ -6214,6 +6214,7 @@ REMOVE:unlikely ("lise") + m;   # lisens
 REMOVE:unlikely ("stam");
 REMOVE:unlikely ("døde") + vblex;
 REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
+REMOVE:unlikely ("året") + adj IF (0 n);
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -10954,13 +10955,23 @@ SELECT:er-med-noen-unge-og-til-dels-urutinerte-spillere adj + pl IF
         ;
 # «Hun sier at det er med noen unge og til dels urutinerte spillere.»
 
+SELECT:det-året-vi-har-lagt-bak-oss adj + nt + sg + ind IF
+        (-1 %ha%-pres/pret LINK -1C pron-nom LINK -1 n + nt + def)
+        ;
+# «– Jeg er ikke overrasket over det året vi har lagt bak oss.»
+
 SELECT:jeg-er-utrolig-takknemlig adj + mf + sg + ind IF
-        (*-1 %være/bli% BARRIER setn-gr LINK -1 p1 + sg)
+        (*-1 %være/bli% BARRIER setn-gr OR pr OR pprs LINK -1 p1 + sg)
         ;
 
 SELECT:er-jeg-både-takknemlig-og-rørt adj + mf + sg + ind IF
         (*-1 p1 + sg BARRIER setn-gr LINK -1 %være/bli%)
         ;
+
+SELECT:jeg-er-veldig-stolt-over-det-og-takknemlig adj + mf + sg + ind IF
+        (-1 %og% LINK *-1 %være/bli% BARRIER setn-gr LINK -1 p1 + sg)
+        ;
+# «Jeg er veldig stolt av det vi har fått til de siste 18 årene i Oslo-skolen og takknemlig for innsatsen til lærere»
 
 
 #:3020
