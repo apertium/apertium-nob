@@ -30420,6 +30420,9 @@ SELECT:da-X-mandag-landet pret IF
         ;
 # «Jubelen sto i taket i NASAs kontrollrom da den amerikanske romsonden InSight mandag landet på Mars, seks måneder etter at den ble skutt opp fra California»
 
+# LEX: studiar vs. studium
+LIST studiar-adj = "<tidligere>" "detaljert" "grundig" "omfattende" ;
+LIST studium-adj = "<lukkede>" "<lukkete>" "<lukka>" "<åpne>" "<endte>" "<påbegynte>" "avslutte" "fullføre" "gjennomføre" ;
 
 SELECT:Institutt-for-kulturstudier ("studium") IF
         (-2 ("institutt") OR ("fakultet"))
@@ -30427,8 +30430,187 @@ SELECT:Institutt-for-kulturstudier ("studium") IF
         (0 pl + ind)
         (0/* cmp)
         ;
-SELECT:default ("studie");
 
+SELECT:på-studium ("studium") IF
+		(-1 %på%)
+		(0 fl)
+		;
+
+SELECT:studium-i/ved ("studium") IF
+		(0 fl)
+		(1 %i% OR %ved%)
+		;
+
+SELECT:kliniske-studiar ("studie") IF
+		(-1 ("<kliniske>"))
+		(0 fl)
+		;
+		
+SELECT:studiar-i ("studie") IF
+		(-1 studiar-adj)
+		(0 fl)
+		(1 %i%)
+		;
+		
+SELECT:studiar-av ("studie") IF
+		(0 fl)
+		(1 %av%)
+		;
+		
+SELECT:studiar-gjort-av ("studie") IF
+		(0 fl)
+		(1 ("gjøre") OR ("utføre"))
+		(2 %av%)
+		;
+
+SELECT:studiar-i-andre ("studie") IF
+		(-1 ("andre") OR ("flere") OR ("mange"))
+		(0 fl + ind)
+		(1 %i%)
+		;
+		
+SELECT:frå-studium ("studium") IF
+		(NOT -2 ("resultat") OR ("data") OR ("tall") OR ("funn") OR ("ut") OR ("hente"))
+		(-1 ("fra"))
+		(0 fl)
+		;
+		
+SELECT:skule-og-studium ("studium") IF
+		(-2 ("skole") OR ("jobb") OR ("arbeid") OR ("familie"))
+		(-1 ("og"))
+		(0 fl)
+		;
+		
+SELECT:søkje-studium ("studium") IF
+		(*-1 ("søke") OR ("opptak") OR ("søkertall"))
+		(0 fl)
+		;
+		
+SELECT:studium-søke ("studium") IF
+		(*1 ("søke") OR ("opptak") OR ("søkertall"))
+		(0 fl)
+		;
+
+SELECT:påbegynt-studium ("studium") IF
+		(-1 ("<påbegynte>"))
+		(0 fl)
+		;
+		
+SELECT:byrje-på-studium ("studium") IF
+		(*-2 ("begynne") OR ("starte"))
+		(-1 ("på"))
+		(0 fl)
+		;
+		
+SELECT:fullførte-studium ("studium") IF
+		(-1 studium-adj)
+		(0 fl)
+		;
+		
+SELECT:vise-til-studiar ("studie") IF
+		(*-2 ("vise") OR ("henvise"))
+		(-1 %til%)
+		(0 fl)
+		;
+		
+SELECT:til-studium ("studium") IF
+		(-1 %til%)
+		(0 fl)
+		;
+		
+SELECT:byggje-på-studiar ("studie") IF
+		(*-2 ("bygge") OR ("se" vblex)) # not se?
+		(-1 %på%)
+		(0 fl)
+		;
+		
+SELECT:default ("studie") + fl;
+
+# LEX: kurve vs. kurv
+LIST kurve-subst-av = "utflatning" "utflating" "avflatning" "avflating" "topp" ;
+LIST kurve-adj = "eksponentiell" "stigende" "økende" "fallende" "synkende" "oppovergående" "oppadgående" "nedovergående" "nedadgående" "krapp" "skarp" "slak" "bratt" "flat" "lang" "smekker" ;
+LIST kurve-verb = "vise" "peke" "gå" "stige" "øke" "synke" "falle" "flate" "følge" "stoppe" "vende" "snu" ;
+
+SELECT:utflatning ("kurve" vblex) IF
+		(1 %seg% OR n);
+		#vegen kurvar seg
+
+SELECT:utflatning ("kurve" n) IF
+		(-2 kurve-subst-av)
+		(-1 %av%)
+		; 					#utflatinga av kurva
+		
+SELECT:utslag-stigning-på ("kurve" n) IF
+		(-2 ("stigning") OR ("utslag"))
+		(-1 %på%)
+		; 					#utslaga på kurva
+
+SELECT:stigande-kurve ("kurve" n) IF 
+		(-1 kurve-adj)
+		; 					#den eksponentielle kurva, den fallande kurva
+		
+SELECT:kurva-er-stigande ("kurve" n) IF 
+		(*1 kurve-adj)
+		; 					# kurva er stigande
+		
+SELECT:adj-del-av ("kurve" n) IF
+		(-3 adj OR det)
+		(-2 ("del")) 
+		(-1 %av%)
+		; 					#øvre del av kurva, ein annan del av kurva
+
+SELECT:før-etter ("kurve" n) IF 
+		(-1 %før% OR %etter%)
+		; 					#før kurva stig igjen
+
+SELECT:sjå-på ("kurve" n) IF
+		(*-2 ("se" vblex) OR ("stirre" vblex))
+		(-1 %på%)
+		; 					#sjå på kurvene
+
+SELECT:jamne-ut-kurve ("kurve" n) IF
+		(*-2 ("flate" vblex) OR ("rette" vblex) OR ("jevne" vblex))
+		(-1 %ut%)
+		; 					#jamne ut kurvene
+		
+SELECT:verb-før-kurve ("kurve" n) IF
+		(*-1 kurve-verb)
+		(NOT 1 %ned%)
+		; 					#no flatar kurvene ut
+		
+SELECT:verb-etter-kurve ("kurve" n) IF
+		(*1 kurve-verb)
+		(NOT *2 %ned%)
+		; 					#kurvene peikar rett til vêrs; korga fall ned
+
+SELECT:halvveis-i-sving ("kurve" n) IF 
+		(-2 ("halvveis"))
+		(-1 %i%)
+		; 					#halvvegs i kurva
+		
+SELECT:inn-i-sving ("kurve" n) IF 
+		(-1 ("inn i") OR ("midt i"))
+		; 					#inn i kurva
+
+SELECT:gjennom-sving ("kurve" n) IF 
+		(-1 ("gjennom") )
+		; 					#gjennom kurva
+
+SELECT:adj-korg ("kurv") IF 
+		(-1 adj OR prep)
+		; 					#den tomme korga; oppi korga; hunden skjønte ikkje noko av korga
+
+SELECT:verb-korg ("kurv") IF 
+		(*-1 vblex)
+		; 					#kjøpe korga; no fyller vi korga; gi nokon korga
+
+SELECT:verb-korg ("kurv") IF 
+		(1 vblex)
+		; 					#korgene kostar 10 kroner; korga blir fylt
+
+SELECT:fallback ("kurve");
+
+SELECT:default ("hall") + fl + m; # hallar/hallane
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
