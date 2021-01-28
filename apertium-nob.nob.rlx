@@ -31452,6 +31452,7 @@ REMOVE:default pl IF (0 ("<forslag>"i)) ;
 "<såret>" REMOVE:default-såret ("sår" n nt sg def) ;	# keep såre<vblex><pret>→såra såre<vblex><pp>→såra såre<adj><pp><nt><sg><ind>→såra såre<adj><pp><mf><sg><ind>→såra
 "<søker>" REMOVE:default-søker ("søke" vblex pres) ;	# keep søker<n><m><sg><ind>→søkar
 "<søkt>" REMOVE:default-sokke ("søkke" vblex pp) ;	# keep søke<vblex><pp>→søkt
+"<taklet>" REMOVE:default-takkelet ("takkel") ;	# keep takle<vblex><pret>→takla
 "<takker>" REMOVE:default-takker ("takk" n f pl ind) ;	# keep takke<vblex><pres>→takkar
 "<takker>" REMOVE:default-takker ("takk" n m pl ind) ;	# keep takke<vblex><pres>→takkar
 "<taler>" REMOVE:default ("tale") + n ;	# keep taler
