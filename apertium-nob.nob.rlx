@@ -9014,6 +9014,17 @@ REMOVE:Vann  vblex OR adv IF
 ;
 #  "åtte er sjelden verb på bm"
 
+"<åpenbart>" SELECT:unntak-openberra pp
+        (*-2 np OR n + def)
+        (-1 %ha%-pres/pret)
+        (1 det + dem)
+        (*2 n BARRIER ikke-adj)
+        ;
+# «Konflikten om Open Arms har åpenbart den dype splittelsen mellom …»
+# men «Helsevesenet har åpenbart en kapasitet som kan bli helt sprengt»
+"<åpenbart>" REMOVE:avoid-openberra pp
+        (NOT 1 %seg%)
+        ;
 
 SELECT:at/ha-landet-subst n IF
         (-1 ("ha") OR ("at"))
@@ -31521,7 +31532,6 @@ REMOVE:default pl IF (0 ("<forslag>"i)) ;
 "<Været>" REMOVE:default-Var ("være" vblex pret) ;	# keep Vær<n><nt><sg><def>→Vêret
 "<yrker>" REMOVE:default-yrker ("yrke" n f pl ind) ;	# keep yrke<n><nt><pl><ind>→yrke
 "<yrker>" REMOVE:default-yrker ("yrke" n m pl ind) ;	# keep yrke<n><nt><pl><ind>→yrke
-"<åpenbart>" REMOVE:default-openberra ("åpenbare" vblex pp) ;	# keep åpenbar<adj><pst><nt><sg><ind>→openbert
 "<Økt>" REMOVE:default-Økt ("økt" n f sg ind) ;	# keep Øke<vblex><pp>→Auka Øke<adj><pp><mf><sg><ind>→Auka
 "<økt>" REMOVE:default-økt ("økt" n f sg ind) ;	# keep øke<vblex><pp>→auka øke<adj><pp><nt><sg><ind>→auka
 "<Økt>" REMOVE:default-Økt ("økt" n m sg ind) ;	# keep Øke<vblex><pp>→Auka Øke<adj><pp><mf><sg><ind>→Auka
