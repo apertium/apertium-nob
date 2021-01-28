@@ -30623,6 +30623,14 @@ SELECT:fallback ("kurve");
 
 SELECT:default ("hall") + fl + m; # hallar/hallane
 
+SELECT:default ("<trekker>") + vblex + pres IF
+		(NOT 0 ("trekker") + n + sg + ind)
+		; 					
+# 'mange trekkjer mot fjellet'; 'ein trekk' ikkje brukt i fleirtal; 'ein (skru)trekkjar'
+
+SELECT:default ("hammer") + n + sg + ind; # 'hammar og spikar'; 
+# 'ein ham' ikkje brukt i fl.; ev. i sms: 'bjørnehamar'
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
