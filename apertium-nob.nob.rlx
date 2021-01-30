@@ -30552,8 +30552,12 @@ SELECT:default ("studie") + fl;
 
 # LEX: kurve vs. kurv
 LIST kurve-subst-av = "utflatning" "utflating" "avflatning" "avflating" "topp" ;
-LIST kurve-adj = "eksponentiell" "stigende" "økende" "fallende" "synkende" "oppovergående" "oppadgående" "nedovergående" "nedadgående" "krapp" "skarp" "slak" "bratt" "flat" "lang" "smekker" ;
+LIST kurve-adj = "eksponentiell" "elliptisk" "stigende" "økende" "fallende" "synkende" "oppovergående" "oppadgående" "nedovergående" "nedadgående" "krapp" "skarp" "slak" "bratt" "flat" "lang" "smekker" ;
 LIST kurve-verb = "vise" "peke" "gå" "stige" "øke" "synke" "falle" "flate" "følge" "stoppe" "vende" "snu" ;
+
+SELECT:veg-sving-kurve ("kurve" n) IF 
+		(*-1 ("vei" n) OR ("sving" n))
+		; 					# vegen har svingar og kurver
 
 SELECT:utflatning ("kurve" vblex) IF
 		(1 %seg% OR n);
@@ -30596,15 +30600,15 @@ SELECT:jamne-ut-kurve ("kurve" n) IF
 		(*-2 ("flate" vblex) OR ("rette" vblex) OR ("jevne" vblex))
 		(-1 %ut%)
 		; 					#jamne ut kurvene
-		
+
 SELECT:verb-før-kurve ("kurve" n) IF
 		(*-1 kurve-verb)
-		(NOT 1 %ned%)
+		(NOT 1 %ned% OR %mot% OR ("ut av") OR ("inn i") OR ("ned i"))
 		; 					#no flatar kurvene ut
 		
 SELECT:verb-etter-kurve ("kurve" n) IF
 		(*1 kurve-verb)
-		(NOT *2 %ned%)
+		(NOT *2 %ned% OR %mot% OR ("ut av") OR ("inn i") OR ("ned i"))
 		; 					#kurvene peikar rett til vêrs; korga fall ned
 
 SELECT:halvveis-i-sving ("kurve" n) IF 
