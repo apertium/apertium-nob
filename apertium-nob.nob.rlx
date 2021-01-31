@@ -30648,6 +30648,14 @@ SELECT:default ("<trekker>") + vblex + pres IF
 SELECT:default ("hammer") + n + sg + ind; # 'hammar og spikar'; 
 # 'ein ham' ikkje brukt i fl.; ev. i sms: 'bjørnehamar'
 
+SELECT:fare-forbi ("fare") + vblex + pp IF
+		(NOT -1 adj)
+		(NOT -1* ("sette" vblex) OR ("skyte" vblex) OR ("få" vblex) OR ("ta" vblex) OR ("gi" vblex))
+		(1 ("forbi") OR ("fram") OR ("ut av") OR ("til"))
+		;
+
+REMOVE:unlikely ("fare") + vblex + pp ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
