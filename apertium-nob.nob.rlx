@@ -4277,6 +4277,17 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-2 ("ris"))
         (-1 %og%)
         ;
+		
+LIST modalverb = ("skulle"  vblex) ("kunne"  vblex) ("ville"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
+SELECT:ris-hest ("<ris>") + pasv IF
+        (-1* modalverb)
+        (NOT -1* vblex + pasv OR vblex + inf)
+        (NOT 1* vblex + pasv)
+		;			# det skal ridast to hestar, Svarten skal ridast av B
+
+REMOVE:unlikely ("<ris>") + pasv; 
+					# ris til eigen bak, ris bak spegelen, ein porsjon ris, kokt ris, ris og kveite
+					# todo: passiv presens, 'landet ris av en pandemi'
 
 #:4002
 
