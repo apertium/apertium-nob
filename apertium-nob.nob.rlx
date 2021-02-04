@@ -8678,6 +8678,11 @@ SELECT:skrev vblex IF
 # osv) NOT -2 SUBST: Bordet (subst) jeg så (pret)
 # kh jan 2004: not -2 at/om: Gutten mente jeg at Per så (verb)."))
 
+"<syns>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
+# «Dette er noe Norge syns er en god idé.»
+"<synes>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
+"<synes>" REMOVE inf IF (NEGATE *-1 infmerke OR hj-verb BARRIER ikke-adv) ;
+
 "<tankens>" REMOVE ("tank") IF
         (NOT 1 ("atmosfære") OR ("mål") OR ("høyde") OR ("diameter") OR ("kapasitet"))
         ;
