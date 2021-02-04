@@ -30166,6 +30166,11 @@ REMOVE:gen-subst-setn-gr gen-subst IF
 ;
 # «dine glass.» -- _veldig_ heuristisk! men me har alt for mange genitivfeil...
 
+REMOVE:ifølge-bankens-egne-tall ent-subst IF
+        (-1 emph + pl)
+        (0 ("tall") OR ("anslag"))
+        ;
+
 REMOVE:vi-deler. fl-subst IF
         (0C fl-subst OR pres)
         (-1C nominativ)
