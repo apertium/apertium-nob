@@ -30169,8 +30169,12 @@ REMOVE:gen-subst-setn-gr gen-subst IF
 
 REMOVE:ifølge-bankens-egne-tall ent-subst IF
         (-1 emph + pl)
-        (0 ("tall") OR ("anslag"))
+        (0 ("tall") OR ("anslag") OR ("svar") OR ("barn") OR ("tiltak"))
         ;
+# Guessing here, but seems likely from examples:
+# «, viser politiets egne tall.»
+# «På spørsmål om hvorfor Sverige fortsatt fraråder reiser til Norge og Danmark, viser hun til nabolandenes egne tiltak.»
+
 
 REMOVE:vi-deler. fl-subst IF
         (0C fl-subst OR pres)
