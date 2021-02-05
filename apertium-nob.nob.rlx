@@ -1100,7 +1100,7 @@ REMOVE:Brannmannskap-har cgguess IF
 
 
 
-LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine";
+LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 SELECT:Aker-ASA np IF (1 ("ASA"));
