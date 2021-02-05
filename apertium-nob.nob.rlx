@@ -20322,6 +20322,10 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove ndomain
 
+REMOVE:åtteseters ("seter") IF
+        (0 gen)
+        (0/1 cmp)
+        ;
 
 REMOVE:antall-registrerte fv IF
         (-1 ("antall"))
