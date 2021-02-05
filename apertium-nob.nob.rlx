@@ -1354,6 +1354,8 @@ REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 "<Åtte>" REMOVE:unlikely vblex;   # remove even if no verb in sent (probably headline)
 "<Monsen>" SELECT:Monsen-not-mons np;
 
+REMOVE:poengsum ("sum") + nt IF (0/* cmp) (0 m);
+
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
         ;
@@ -8473,6 +8475,13 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # går glipp av skogen siden (subst) av huset vendte mot"))
 
 
+"<side>" REMOVE:en-bedre-side adj + pl IF
+        (NOT -1 det + dem + pl)
+        ;
+
+"<side>" REMOVE:en-bedre-side adj + sp IF
+        (NOT -1 det + dem + sg)
+        ;
 
 #:3291
 "<sist>"   REMOVE:3291   adj IF
