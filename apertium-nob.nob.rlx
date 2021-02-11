@@ -30649,6 +30649,39 @@ SELECT:verb-korg ("kurv") IF
 
 SELECT:fallback ("kurve");
 
+# LEX: middel vs. midlar
+LIST middel-adj = "god" "dårlig" "farlig" "beroligende" "smertestillende" "angstdempende" %lignende/liknende% "stimulerende" "vanndrivende" "skadelig" "ødeleggende" "antibakteriell" "biologisk" "kjemisk" "reseptbelagt" "politisk" "blodfortynnende" "antiviral" ;
+
+REMOVE:unlikely ("<midler>") + vblex ;
+
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(1 %mot%)
+		;
+		
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(-1 %alle% OR ("annen" det))
+		;
+
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(-2 %alle%)
+		(-1 adj)
+		;
+		
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(*-1 ("sky" vblex))
+		;
+
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(-1 middel-adj)
+		;
+
+SELECT:middel ("middel") + n + nøyt + pl IF
+		(-1 ("<ulovlige>") OR ("<illegale>"))
+		(NOT -2* ("hvitvaske" vblex) OR ("hvitvasking" n) OR ("være" vblex))
+		;
+
+SELECT:default-midlar ("middel") + n + m + pl ;
+
 SELECT:default ("hall") + fl + m; # hallar/hallane
 
 SELECT:default ("<trekker>") + vblex + pres IF
