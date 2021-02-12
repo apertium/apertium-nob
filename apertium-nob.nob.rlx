@@ -1100,7 +1100,7 @@ REMOVE:Brannmannskap-har cgguess IF
 
 
 
-LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine";
+LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 SELECT:Aker-ASA np IF (1 ("ASA"));
@@ -1198,6 +1198,7 @@ REMOVE:unlikely ("filer");
 REMOVE:unlikely ("nå") + n;
 REMOVE:unlikely ("spise") + m;
 REMOVE:unlikely ("<varene>"i "var") ;
+REMOVE:unlikely ("<Sannes>"i) + vblex ;
 
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
@@ -1352,6 +1353,8 @@ REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 
 "<Åtte>" REMOVE:unlikely vblex;   # remove even if no verb in sent (probably headline)
 "<Monsen>" SELECT:Monsen-not-mons np;
+
+REMOVE:poengsum ("sum") + nt IF (0/* cmp) (0 m);
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
@@ -8472,6 +8475,13 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # går glipp av skogen siden (subst) av huset vendte mot"))
 
 
+"<side>" REMOVE:en-bedre-side adj + pl IF
+        (NOT -1 det + dem + pl)
+        ;
+
+"<side>" REMOVE:en-bedre-side adj + sp IF
+        (NOT -1 det + dem + sg)
+        ;
 
 #:3291
 "<sist>"   REMOVE:3291   adj IF
@@ -8677,6 +8687,11 @@ SELECT:skrev vblex IF
 # nominalt ledd etter eller prep (se etter/over/på
 # osv) NOT -2 SUBST: Bordet (subst) jeg så (pret)
 # kh jan 2004: not -2 at/om: Gutten mente jeg at Per så (verb)."))
+
+"<syns>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
+# «Dette er noe Norge syns er en god idé.»
+"<synes>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
+"<synes>" REMOVE inf IF (NEGATE *-1 infmerke OR hj-verb BARRIER ikke-adv) ;
 
 "<tankens>" REMOVE ("tank") IF
         (NOT 1 ("atmosfære") OR ("mål") OR ("høyde") OR ("diameter") OR ("kapasitet"))
@@ -20316,6 +20331,10 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove ndomain
 
+REMOVE:åtteseters ("seter") IF
+        (0 gen)
+        (0/1 cmp)
+        ;
 
 REMOVE:antall-registrerte fv IF
         (-1 ("antall"))
@@ -30161,6 +30180,15 @@ REMOVE:gen-subst-setn-gr gen-subst IF
 ;
 # «dine glass.» -- _veldig_ heuristisk! men me har alt for mange genitivfeil...
 
+REMOVE:ifølge-bankens-egne-tall ent-subst IF
+        (-1 emph + pl)
+        (0 ("tall") OR ("anslag") OR ("svar") OR ("barn") OR ("tiltak"))
+        ;
+# Guessing here, but seems likely from examples:
+# «, viser politiets egne tall.»
+# «På spørsmål om hvorfor Sverige fortsatt fraråder reiser til Norge og Danmark, viser hun til nabolandenes egne tiltak.»
+
+
 REMOVE:vi-deler. fl-subst IF
         (0C fl-subst OR pres)
         (-1C nominativ)
@@ -31126,6 +31154,7 @@ REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default nt IF (0 ("<tingene>"i));
 REMOVE:default pl IF (0 ("<forslag>"i)) ;
+REMOVE:default sg IF (0 ("<levekår>"i)) ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
