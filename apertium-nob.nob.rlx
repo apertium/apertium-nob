@@ -30989,6 +30989,19 @@ SELECT:store-vann--og-røykskader n + sg + cmp-split IF
         (2 n)
         ;
 
+SELECT:sitt-mest-slagkraftige-lag adj + def + &&ADJ_N_AGR IF
+        (-2C pos + &&ADJ_N_AGR)
+        (-1 %mest/minst%)
+        (-0 adj + def)
+        (1C n + &&ADJ_N_AGR)
+        ;
+
+SELECT:sitt-mest-slagkraftige-lag n + &&ADJ_N_AGR IF
+        (-3C pos + &&ADJ_N_AGR)
+        (-2 %mest/minst%)
+        (-1C adj + def)
+        ;
+
 SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
         (-2 dem + $$GENDER + $$NUMBER)
         (-1 adj + def)
