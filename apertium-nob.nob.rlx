@@ -6255,6 +6255,13 @@ SELECT ("<Rana>") + np IF
         (1 ("kommune"))
         ;
 
+
+# Avoid short compound parts if possible, ie. prefer bok|lov over bo|klov
+REMOVE SUB:3 ("..?"r) IF (0/* cmp) ;
+REMOVE SUB:2 ("..?"r) IF (0/* cmp) ;
+REMOVE SUB:1 ("..?"r) IF (0/* cmp) ;
+
+
 # "også"  → "òg"
 # "også¹" → "også"
 "<også>" SELECT:cm-også-om ("også") IF
