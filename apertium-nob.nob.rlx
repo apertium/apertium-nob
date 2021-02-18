@@ -8267,6 +8267,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
         (1 %med% LINK 1 talord-par-siffer OR målsubst)
         ;
 
+"<økt>" SELECT:økt-overnasjonal-styring adj IF
+        (1C adj)
+        ;
+# «EU går i retning av økt overnasjonal styring.»
+
 "<ønsket>" SELECT:ønsket-om-å n IF
         (1 %om%)
         (2 infmerke)
@@ -20859,7 +20864,7 @@ REMOVE:hans-rolle-i-den-spesielt adj + nt + ind + sg IF
 
 
 #:2291
- REMOVE:2291 (adj pp nt ind sg) IF
+REMOVE:meget-stor-betydning (adj pp nt ind sg) IF
 	(1 subst/adj)
 	(NOT 1 nøyt)
 	(NOT 1 adj-komp)
@@ -25444,7 +25449,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1895
- REMOVE:Nautnes-spilte-EM pp IF
+REMOVE:Nautnes-spilte-EM pp IF
 	(NOT 0 %ta%)
 	(NOT *1 overskrift)
 	(NOT -1 periode-beg/clb/strek)
