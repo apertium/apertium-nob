@@ -30742,6 +30742,7 @@ REMOVE:unlikely ("fare") + vblex + pp ;
 
 REMOVE:unlikely ("avreise") + vblex ;
 
+REMOVE:unlikely ("russ") + pl ;
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
