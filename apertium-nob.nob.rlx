@@ -841,6 +841,7 @@ LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "ke
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
+LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
 LIST titlecase = "<\\p{Lu}\\p{Ll}+>"r ;
@@ -946,21 +947,125 @@ TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>)
 
 BEFORE-SECTIONS
 
+# Words that may appear capitalised at start of sentence, but
+# mid-sentence appear more often lowercase than uppercase are
+# typically not proper:
+LIST not-np-guess-f_lc>f_uc =
+    "<Det>" "<I>" "<Han>" "<De>" "<Den>" "<Men>" "<Vi>" "<En>" "<Dette>" "<Ifølge>" "<Hun>" "<Jeg>" "<Nå>" "<På>" "<Da>" "<For>" "<Etter>" "<Også>" "<Politiet>" "<Samtidig>" "<Flere>" "<Til>" "<Et>"
+    "<Regjeringen>" "<Dermed>" "<Blant>" "<Så>" "<Med>" "<Og>" "<Mange>" "<To>" "<Der>" "<Når>" "<Tidligere>" "<Både>" "<Fra>" "<Selv>" "<Alle>" "<Her>" "<Ved>" "<Derfor>" "<Ingen>" "<Over>" "<Av>"
+    "<Totalt>" "<Siden>" "<Mannen>" "<Denne>" "<Mens>" "<Tre>" "<Tirsdag>" "<Torsdag>" "<Mandag>" "<Bare>" "<Hvis>" "<Om>" "<Onsdag>" "<Selskapet>" "<Som>" "<Norsk>" "<Dersom>" "<Ikke>" "<Fredag>"
+    "<Målet>" "<Norske>" "<Under>" "<Noen>" "<Årsaken>" "<Likevel>" "<Tallene>" "<Deretter>" "<Rundt>" "<Fire>" "<Minst>" "<Disse>" "<Ny>" "<Undersøkelsen>" "<At>" "<Statsminister>" "<Begge>"
+    "<Før>" "<Saken>" "<Antall>" "<Søndag>" "<Vil>" "<Hele>" "<Å>" "<Lørdag>" "<Rapporten>" "<Prisen>" "<Nesten>" "<Forslaget>" "<Fem>" "<Andelen>" "<Nye>" "<Mer>" "<President>" "<Folk>" "<Først>"
+    "<Bakgrunnen>" "<Kun>" "<Avtalen>" "<Seks>" "<Myndighetene>" "<Leder>" "<Partiet>" "<Færre>" "<Mann>" "<Årets>" "<Man>" "<Andre>" "<Slik>" "<Videre>" "<Sammen>" "<Kvinnen>" "<Tallet>" "<Antallet>"
+    "<Allerede>" "<Hans>" "<Sju>" "<Forskerne>" "<Forrige>" "<Neste>" "<Økningen>" "<Resultatet>" "<Hver>" "<Nedgangen>" "<Hittil>" "<Store>" "<Dessuten>" "<Nordmenn>" "<Like>" "<Én>" "<Utvalget>" "<Tall>"
+    "<Fortsatt>" "<Mye>" "<Nordmannen>" "<Kraftig>" "<Alt>" "<Ett>" "<Senere>" "<Du>" "<Åtte>" "<Samme>" "<Organisasjonen>" "<Dagens>" "<Ni>" "<Kampen>" "<Første>" "<Særlig>" "<Heller>" "<Ti>" "<Hva>" "<Kan>"
+    "<Stadig>" "<Sist>" "<Planen>" "<Gjennom>" "<Forskere>" "<Verken>" "<Avisen>" "<Staten>" "<Departementet>" "<Retten>" "<Noe>" "<Foreløpig>" "<Pengene>" "<Statsministeren>" "<Nytt>" "<Ulykken>" "<Laget>"
+    "<Halvparten>" "<Skal>" "<Økt>" "<Ytterligere>" "<Spesielt>" "<Ordningen>" "<Dagen>" "<Samlet>" "<Mot>" "<Hvor>" "<Kommunene>" "<Hendelsen>" "<Få>"
+    "<Fram>" "<Barn>" "<Professor>" "<Direktør>" "<Partene>" "<Stor>" "<Regjeringens>" "<Kort>" "<Hvert>" "<Arbeidet>" "<Direktoratet>" "<Veksten>" "<Spørsmålet>" "<Lederen>" "<Kvinner>" "<Enkelte>" "<Dommen>"
+    "<Brannen>" "<Situasjonen>" "<Resultatene>" "<Har>" "<Hovedindeksen>" "<Salget>" "<Statssekretær>" "<Politiets>" "<Beslutningen>" "<Amerikanske>" "<Sammenlignet>" "<Natt>" "<Sistnevnte>" "<Klubben>" "<Helse>"
+    "<Flest>" "<Studien>" "<Helseminister>" "<Administrerende>" "<Uten>" "<Unge>" "<Blir>" "<Målingen>" "<Styret>" "<Mellom>" "<Flertallet>" "<Påtalemyndigheten>" "<Prosjektet>" "<Samtlige>" "<Presidenten>" "<Må>"
+    "<Brannvesenet>" "<Klima>" "<Helt>" "<Overfor>" "<Landet>" "<Forsker>" "<Skipet>" "<Er>" "<Størst>" "<Rettssaken>" "<Nylig>" "<Trolig>" "<Angrepet>" "<Innen>" "<Resten>" "<Kanskje>" "<Grunnen>" "<Skulle>" "<Bildet>" "<Advokat>"
+    "<Utviklingen>" "<Nær>" "<Mindre>" "<Faren>" "<Omsetningen>" "<Får>" "<Prisene>" "<Opposisjonen>" "<Mest>" "<Hensikten>" "<Avgjørelsen>" "<Statsråden>" "<Tilstanden>" "<Kommunen>" "<Svenske>" "<Seieren>" "<Meldingen>"
+    "<Ellers>" "<Rapport>" "<Aktor>" "<Veien>" "<Uttalelsen>" "<Hadde>" "<Tilsynet>" "<Siste>" "<Lavere>" "<Generalsekretær>" "<Forhandlingene>" "<Nærmere>" "<Demonstrantene>" "<Litt>" "<Rett>" "<Foruten>"
+    "<Utenriksminister>" "<Slike>" "<Nedgang>" "<Møtet>" "<Driftsresultatet>" "<Uansett>" "<Tross>" "<Stortingsrepresentant>" "<Rekordmange>" "<Ettersom>" "<Bak>" "<Valget>" "<Tusenvis>" "<Kravet>"
+    "<Justisminister>" "<Svensk>" "<Landets>" "<Hvordan>" "<Funnet>" "<Tolv>" "<Styreleder>" "<Statistikken>" "<Ser>" "<Selve>" "<Klokken>" "<Vår>" "<Hos>" "<Fristen>" "<Eksperter>" "<Kvinne>" "<Krever>" "<Flyet>"
+    "<Aldri>" "<Året>" "<Personer>" "<Problemet>" "<Partileder>" "<Oljeprisen>" "<Menn>" "<Gjestene>" "<Frykter>" "<Bilen>" "<Vedtaket>" "<Utover>" "<Kontrakten>" "<Konklusjonen>" "<Filmen>" "<Russiske>"
+    "<Kunnskapsminister>" "<Endringen>" "<Ber>" "<Vårt>" "<Hjemmelaget>" "<Ordfører>" "<Finansminister>" "<Dansk>" "<Bedre>" "<Forbudet>" "<Arbeids>" "<Olje>" "<Formålet>" "<Kommisjonen>" "<Håpet>" "<Familien>" "<Derimot>"
+    "<Sterk>" "<Samferdselsminister>" "<Endringene>" "<Omtrent>" "<Inntil>" "<Hennes>" "<Forbundet>" "<Byen>" "<Barna>" "<Tar>" "<Loven>" "<Ledelsen>" "<Danske>" "<Amerikansk>" "<Rådet>" "<Lokale>" "<Gutten>" "<Svært>" "<Juryen>"
+    "<Fallet>" "<Demonstranter>" "<Daglig>" "<Kulturminister>" "<Britiske>" "<Verdien>" "<Regjeringspartiene>" "<Ledigheten>" "<Konsernsjef>" "<Jo>" "<Dårlig>" "<Arbeidsledigheten>" "<Ut>" "<Komiteen>" "<Deler>"
+    "<Ansatte>" "<Tysk>" "<Tilsvarende>" "<Landslagssjef>" "<Flyselskapet>" "<Brann>" "<Tror>" "<Området>" "<Kommunikasjonssjef>" "<Høy>" "<Hvem>" "<Elleve>" "<Bøndene>" "<Spillerne>" "<Nødetatene>" "<Hundrevis>"
+    "<Vinneren>" "<Tiltakene>" "<Senest>" "<Vedkommende>" "<Undersøkelse>" "<Sykehuset>" "<Forsvarsminister>" "<La>" "<Fordi>" "<Banken>" "<Tiltaket>" "<Kinesiske>" "<Hvorfor>" "<Gjennomsnittlig>" "<Elever>" "<Snart>"
+    "<Oppgangen>" "<Kong>" "<Franske>" "<Eksporten>" "<Næringsminister>" "<Mannens>" "<Lagene>" "<Kommunal>" "<Foreløpige>" "<Etterforskningen>" "<Nei>" "<Klokka>" "<Produksjonen>" "<Lovforslaget>"
+    "<Helseministeren>" "<Går>" "<God>" "<Beløpet>" "<Vel>" "<Selskapets>" "<Høyere>" "<Godt>" "<Gode>" "<Drøyt>" "<Svak>" "<Opprinnelig>" "<Kongen>" "<Kampene>" "<Eldre>" "<Debatten>" "<Vanligvis>" "<Turneringen>"
+    "<Forskjellen>" "<Foran>" "<Demonstrasjonene>" "<Begrunnelsen>" "<Tyske>" "<Kommuner>" "<Akkurat>" "<Været>" "<Stort>" "<Opp>" "<Nyheten>" "<Boligprisene>" "<Bane>" "<Historisk>" "<Aller>" "<Økte>" "<Summen>"
+    "<Oversikten>" "<Fredagens>" "<Foreningen>" "<Fakta>" "<Deres>" "<Barne>" "<Våre>" "<Tiden>" "<Oljefondet>" "<Langt>" "<Fjorårets>" "<Byrådet>" "<Britisk>" "<Reglene>" "<Politisk>" "<Mesterskapet>" "<All>" "<Venter>"
+    "<Partiene>" "<Koronaviruset>" "<Kilder>" "<Hovedårsaken>" "<Fungerende>" "<Dommer>" "<Bruken>" "<Advokaten>" "<Viruset>" "<Tilbudet>" "<Tidlig>" "<Striden>" "<Russisk>" "<Personen>" "<Full>" "<Forskning>"
+    "<Enda>" "<Driftsinntektene>" "<Verst>" "<Trygg>" "<Representanter>" "<Politiadvokat>" "<Lite>" "<Konsernet>" "<Bilder>" "<Økning>" "<Viktig>" "<Torsdagens>" "<Støtten>" "<Selskapene>" "<Kvinnene>" "<Elevene>"
+    "<Dronning>" "<Basert>" "<Ønsker>" "<Varsler>" "<Nestleder>" "<Forholdet>" "<Dødstallet>" "<Risikoen>" "<Mennene>" "<Landbruksminister>" "<Konflikten>" "<Heldigvis>" "<Foreldrene>" "<Brevet>" "<Bakteppet>"
+    "<Normalt>" "<Forklaringen>" "<Bruk>" "<Ballen>" "<Nok>" "<Funnene>" "<Fransk>" "<Analysen>" "<Varselet>" "<Uværet>" "<Sånn>" "<Sykdommen>" "<Sjåføren>" "<Protestene>" "<Lørdagens>" "<Klart>" "<Etterpå>"
+    "<Avdelingsdirektør>" "<Studie>" "<Studenter>" "<Oppgjøret>" "<Ofte>" "<Kronprins>" "<Eksplosjonen>" "<Advarer>" "<Mesteparten>" "<Endelig>" "<Domstolen>" "<Besøket>" "<Beste>" "<Tanken>" "<Små>" "<Redd>" "<Lav>"
+    "<Inntektene>" "<Forsvareren>" "<Feilen>" "<Dommeren>" "<Dessverre>" "<Analytikere>" "<Oppslutningen>" "<Landbruks>" "<Helsemyndighetene>" "<Flertall>" "<Utenlandske>" "<Tyrkiske>" "<Skolen>"
+    "<Opplysningene>" "<Liten>" "<Kronprinsen>" "<Innvandrere>" "<Imidlertid>" "<Helikopteret>" "<Gruppe>" "<Fikk>" "<Boka>" "<Avisa>" "<Vurderer>" "<Streiken>" "<Lagmannsretten>" "<Føreren>" "<Foreldre>" "<Avstanden>"
+    "<Unntaket>" "<Ungdom>" "<Rederiet>" "<Onsdagens>" "<Midlene>" "<Innbyggerne>" "<Drapet>" "<Båten>" "<Tingretten>" "<Svenskene>" "<Svensken>" "<Spissen>" "<Min>" "<Innbytter>" "<Skolene>" "<Kirken>" "<Kanalen>" "<Finalen>"
+    "<Eller>" "<Bønder>" "<Veldig>" "<Tvert>" "<Større>" "<Stiftelsen>" "<Start>" "<Sjefen>" "<Siktede>" "<Prins>" "<Paret>" "<Omkring>" "<Omfattende>" "<Mulig>" "<Meteorologene>" "<Listen>" "<Israelske>" "<Fortsetter>" "<Fondet>"
+    "<Feilmarginen>" "<Danskene>" "<Valgkomiteen>" "<Svaret>" "<Statsadvokat>" "<Scoringen>" "<Programmet>" "<Nettopp>" "<Kunngjøringen>" "<Koronakrisen>" "<Kilde>" "<Hvilke>" "<Børsene>" "<Best>" "<Temperaturen>"
+    "<Søndagens>" "<Riktignok>" "<Prosessen>" "<Ordføreren>" "<Millioner>" "<Mannskapet>" "<Løsningen>" "<Kunnskapsministeren>" "<Kommunikasjonsdirektør>" "<Italienske>" "<Forfatteren>" "<Forbruket>"
+    "<Boken>" "<Vanskelig>" "<Systemet>" "<Skjelvet>" "<Laveste>" "<Lang>" "<Kulturministeren>" "<Fiskeriminister>" "<Børsen>" "<Bankene>" "<Arrangørene>" "<Søket>" "<Straffen>" "<Seniorrådgiver>"
+    "<Nærmest>" "<Næringen>" "<Krav>" "<Klubbene>" "<Høsten>" "<Frykten>" "<Franskmannen>" "<Forslagene>" "<Fare>" "<Tiltalte>" "<Tiltalen>" "<Statsadvokaten>" "<Pris>" "<Pave>" "<Parallelt>" "<Operasjonsleder>" "<Medier>"
+    "<Markedet>" "<Manglende>" "<Inn>" "<Importen>" "<Fritt>" "<Felles>" "<Fartøyet>" "<Planene>" "<Nyhetsbyrået>" "<Nettstedet>" "<Kravene>" "<Kostnadene>" "<Håper>" "<Høringsfristen>" "<Fregatten>" "<Europeiske>"
+    "<Bransjen>" "<Bedrifter>" "<Skoler>" "<Prinsesse>" "<Partiets>" "<Overskuddet>" "<Mandagens>" "<Lavest>" "<Kritikere>" "<Kommer>" "<Kartleggingen>" "<Gjennomsnittet>" "<Arrangøren>" "<Angrepene>"
+    "<Alternativet>" "<Tapet>" "<Stillingen>" "<Senteret>" "<Sent>" "<Resultat>" "<Gjerningsmannen>" "<Bekymret>" "<Behovet>" "<Tredje>" "<Sterke>" "<Pågripelsen>" "<Publikum>" "<Prislappen>" "<Nordsjøolje>"
+    "<Landbruksministeren>" "<Kritisk>" "<Koronapandemien>" "<Interessen>" "<Høye>" "<Fylkesvei>" "<Forbundsleder>" "<Enighet>" "<E>" "<Bildene>" "<Bedriftene>" "<Åpner>" "<Vinden>" "<Valutakurser>" "<Valgforsker>"
+    "<Ulike>" "<Tolvmånedersveksten>" "<Tirsdagens>" "<Testen>" "<Sykefraværet>" "<Mener>" "<Mangler>" "<Landslagstrener>" "<Konsekvensen>" "<Kommunalminister>" "<Kommende>" "<Gjør>" "<Generelt>" "<Forsvarer>"
+    "<Fiskeriministeren>" "<Ferske>" "<Aksjonen>" "<Uttalelsene>" "<Ulven>" "<Trønderen>" "<Støtte>" "<Sjeføkonom>" "<Samtalene>" "<Målt>" "<Forskeren>" "<Enten>" "<Byrådsleder>" "<Økende>" "<Undersøkelser>" "<Tiltak>"
+    "<Ta>" "<Syriske>" "<Serien>" "<Politi>" "<Organisasjonene>" "<Motstanden>" "<Frisk>" "<Ekstra>" "<Øvrige>" "<Ønsket>" "<Vinner>" "<Trenger>" "<Trenden>" "<Tollerne>" "<Sykehusene>" "<Seier>" "<Samarbeidet>" "<Orkanen>"
+    "<Nest>" "<Kritikken>" "<Beboere>" "<Assisterende>" "<Arbeidsminister>" "<Analytiker>" "<Amerikaneren>" "<Alvorlig>" "<Øverst>" "<Utspillet>" "<Utslippene>" "<Utenfor>" "<Uroen>" "<Studentene>" "<Sommeren>"
+    "<Slutt>" "<Russerne>" "<Russeren>" "<Natur>" "<Kundene>" "<Keeper>" "<Justisministeren>" "<Husholdningenes>" "<Gruppa>" "<Fylkesleder>" "<Flesteparten>" "<Feil>" "<Dyrere>" "<Årlig>" "<Vitner>" "<Veteranen>"
+    "<Utstillingen>" "<Utbyggingen>" "<Undersøkelsene>" "<Tyskeren>" "<Temaet>" "<Takket>" "<Spanske>" "<Skadeomfanget>" "<Sakene>" "<Politikerne>" "<Navnet>" "<Mat>" "<Mangel>" "<Kunder>" "<Kronprinsparet>" "<Høyest>"
+    "<Gjennomgangen>" "<Fylkeslegen>" "<Frykt>" "<Forsøket>" "<Forfatter>" "<Flyplassen>" "<Etterspørselen>" "<Etaten>" "<Ektemannen>" "<Bortsett>" "<Arbeidsløsheten>" "<Temperaturene>" "<Strid>" "<Sesongen>"
+    "<Savnet>" "<Riksvei>" "<Pappa>" "<Overlege>" "<Ombudet>" "<Ned>" "<Måling>" "<Mangelen>" "<Lover>" "<Lenger>" "<Kongeparet>" "<Justert>" "<Jenta>" "<Innenfor>" "<Fornærmede>" "<Anlegget>" "<Vær>" "<Titusener>"
+    "<Største>" "<Skuespiller>" "<Skadene>" "<Nedbøren>" "<Mediene>" "<Krisen>" "<Kontrollkomiteen>" "<Konsumprisindeksen>" "<Kombinasjonen>" "<Japanske>" "<Italiensk>" "<Iranske>" "<Forskjellene>"
+    "<Forsikringsselskapet>" "<Finansministeren>" "<Ekspertene>" "<Derfra>" "<Bakterien>" "<Aktoratet>" "<Utgiftene>" "<Utgangspunktet>" "<Utenriksministeren>" "<Underveis>" "<Tjenesten>" "<Tilliten>"
+    "<Talsperson>" "<Strengere>" "<Spenningen>" "<Spanjolen>" "<Skredet>" "<Prognosen>" "<Problemene>" "<Lederne>" "<Inkludert>" "<Informasjonssjef>" "<Indeksen>" "<Husk>" "<Hang>" "<Forutsetningen>" "<Forslag>"
+    "<Forsikringsselskapene>" "<Flyene>" "<Enigheten>" "<Dere>" "<Bygget>" "<Budskapet>" "<Ble>" "<Avslutningen>" "<Ville>" "<Tusener>" "<Tunnelen>" "<Trafikken>" "<Stormen>" "<Soldater>" "<Satsingen>" "<Rektor>"
+    "<Presidentens>" "<Person>" "<Pasienter>" "<Næringsministeren>" "<Møte>" "<Kuttene>" "<Kunnskaps>" "<Kronen>" "<Kapteinen>" "<Jentene>" "<Investeringene>" "<Innbyggere>" "<Historien>" "<Helsepersonell>"
+    "<Grønt>" "<Endringer>" "<Brudd>" "<Brasilianeren>" "<Befolkningen>" "<Avviser>" "<Anslaget>" "<Åpningen>" "<Vannet>" "<Van>" "<Ute>" "<Tøff>" "<Sysselsettingen>" "<Statsråd>" "<Sett>" "<Regnet>" "<Pårørende>" "<Presset>"
+    "<Opptil>" "<Ofrene>" "<Nivået>" "<Midtbanespilleren>" "<Mengden>" "<Legg>" "<Kutt>" "<Kjennelsen>" "<Istedenfor>" "<Instituttet>" "<Inflasjonen>" "<Igjen>" "<Høyeste>" "<Helsedirektør>" "<Gamle>" "<Fall>" "<Ekspert>"
+    "<Deltakerne>" "<Brannmannskaper>" "<Beregninger>" "<Argentineren>" "<Østerrikeren>" "<Vaksinen>" "<Turen>" "<Trass>" "<Tilskuddet>" "<Strømprisene>" "<Spansk>" "<Seniorforsker>" "<Selvfølgelig>"
+    "<Rovviltnemndene>" "<Rekordhøy>" "<Omstridt>" "<Nåværende>" "<Nordmenns>" "<Målsettingen>" "<Mål>" "<Lærere>" "<Liv>" "<Kvinnenes>" "<Konsekvensene>" "<Klar>" "<Kinesisk>" "<Inne>" "<Idrettspresident>" "<Ideen>"
+    "<Gjennomsnittsalderen>" "<Forholdene>" "<Folketallet>" "<Fjoråret>" "<Fant>" "<Fagdirektør>" "<Episoden>" "<Død>" "<Altså>" "<Åpen>" "<Verden>" "<Valgdeltakelsen>" "<Utfordringen>" "<Unggutten>" "<Tilbake>"
+    "<Tendensen>" "<Sveitseren>" "<Stortingsflertallet>" "<Siktelsen>" "<Redningsmannskaper>" "<Private>" "<Personene>" "<Nasjonalt>" "<Motivet>" "<Midt>" "<Meklingen>" "<Ligaen>" "<Kritikk>" "<Innstillingen>"
+    "<Høyt>" "<Helsedepartementet>" "<Globalt>" "<Frivillige>" "<Fotballen>" "<Faktisk>" "<Dronningen>" "<Dit>" "<Butikker>" "<Beskjeden>" "<Avdøde>" "<Velgerne>" "<Vekst>" "<Trener>" "<Titusenvis>" "<Tap>" "<Sentrale>" "<Se>"
+    "<Salg>" "<Prosjektleder>" "<Professoren>" "<Paven>" "<Passasjerene>" "<Parlamentarisk>" "<Ordet>" "<Operasjonslederen>" "<Målingene>" "<Lærerne>" "<Landene>" "<Konkurransen>" "<Internasjonale>" "<Hæren>"
+    "<Huset>" "<Hovedpersonen>" "<Helsedirektøren>" "<Flyktninger>" "<Evalueringen>" "<Dødsfallet>" "<Dobbelt>" "<Diskusjonen>" "<Direktøren>" "<Byggingen>" "<Britene>" "<Avtroppende>" "<Avstemningen>" "<Avis>"
+    "<Avhengig>" "<Annenhver>" "<Ankesaken>" "<Var>" "<Uvær>" "<Utfallet>" "<Takk>" "<Strekningen>" "<Slår>" "<Skuddet>" "<Skiforbundet>" "<Skader>" "<Seksjonssjef>" "<Reformen>" "<Redusert>" "<Reaksjonene>"
+    "<Oljeselskapet>" "<Lignende>" "<Langs>" "<Kvinnelige>" "<Kvinneandelen>" "<Kjerneinflasjonen>" "<Informasjonen>" "<Holder>" "<Fotball>" "<Foreslår>" "<Feltet>" "<Dag>" "<Cruiseskipet>" "<Bomben>"
+    "<Bistandsadvokat>" "<Biler>" "<Avkastningen>" "<Arrangementet>" "<Søknadsfristen>" "<Svekket>" "<Strømmen>" "<Strategien>" "<Statlige>" "<Statistikk>" "<Snø>" "<Snittet>" "<Sentralbanken>" "<Rittet>"
+    "<Rekorden>" "<Regelverket>" "<Prøvene>" "<Politikere>" "<Politidirektør>" "<Pasientene>" "<Overgangen>" "<Oppgang>" "<Nederst>" "<Nedbemanningen>" "<Land>" "<Kommunikasjonsrådgiver>" "<Klimaendringer>"
+    "<Jakten>" "<Innsatsen>" "<Initiativet>" "<Håndball>" "<Hvorvidt>" "<Handelen>" "<Forsknings>" "<Forskningen>" "<Forlaget>" "<Dårlige>" "<Demonstrasjonen>" "<Bygningen>" "<Brexit>" "<Beregningene>" "<Årsakene>"
+    "<Økonomisk>" "<Øker>" "<Vertene>" "<Utviklingsminister>" "<Usikkert>" "<Ungdommene>" "<Ulv>" "<Ukjent>" "<Toppscorer>" "<Toget>" "<Svarene>" "<Stabilt>" "<Solid>" "<Snaut>" "<Sikkerheten>" "<Reduksjonen>"
+    "<Påtroppende>" "<Prognosene>" "<Mulla>" "<Muligheten>" "<Mor>" "<Legene>" "<Lave>" "<Langrenn>" "<Kystvakten>" "<Kvinnens>" "<Kritikerne>" "<Kringkastingssjef>" "<Konsernsjefen>" "<Kona>" "<Klimaendringene>"
+    "<Jordskjelvet>" "<Indiske>" "<Handel>" "<Grensen>" "<Gir>" "<Førsteamanuensis>" "<Forsvarssjefen>" "<Forskriften>" "<Fiskeri>" "<Film>" "<Energisektoren>" "<Bondeorganisasjonene>" "<Billigere>" "<Bilene>"
+    "<Betydelig>" "<Amerikanerne>" "<Vinteren>" "<Vinnerne>" "<Vant>" "<Vannstanden>" "<Utsatt>" "<Utredningen>" "<Utenom>" "<Usikkerhet>" "<Trusselen>" "<Tok>" "<Tapte>" "<Stortingsmeldingen>" "<Skytingen>"
+    "<Skuffet>" "<Sikkerhetsstyrker>" "<Satser>" "<Regissør>" "<Politiinspektør>" "<Plan>" "<Pilotene>" "<Pasienten>" "<Opprørerne>" "<Oppfordringen>" "<Områdene>" "<Omfanget>" "<Offentlige>" "<Nederlenderen>"
+    "<Mennesker>" "<Lovendringen>" "<Lokalt>" "<Kronprinsesse>" "<Konkret>" "<Kombinert>" "<Kampanjen>" "<Jobben>" "<Ja>" "<Halvveis>" "<Guvernør>" "<Gratis>" "<Gjennomsnittsprisen>" "<Førstnevnte>" "<Fornøyd>"
+    "<Forhåpentligvis>" "<Etterforskerne>" "<Eieren>" "<Effekten>" "<Behandlingen>" "<Barnevernet>" "<Avgiften>" "<Artikkelen>" "<Angrep>" "<Aksjen>" "<Vold>" "<Visepresident>" "<Viktige>" "<Valg>" "<Utslipp>"
+    "<Underskuddet>" "<Uken>" "<Tørken>" "<Tyrkisk>" "<Tildelingen>" "<Sterkt>" "<Stengte>" "<Sjekk>" "<Representantskapet>" "<Redaktør>" "<Penger>" "<Palestinske>" "<Pakken>" "<Opposisjonsleder>"
+    "<Oljeproduksjonen>" "<Nordmennene>" "<Nasjonale>" "<Måtte>" "<Mistet>" "<Ministeren>" "<Meningsmålingen>" "<Meningen>" "<Medlemmer>" "<Letingen>" "<Legen>" "<Landsmøtet>" "<Krigen>" "<Kapasiteten>" "<Isteden>"
+    "<Internasjonal>" "<Industri>" "<Idretten>" "<Hjemme>" "<Følger>" "<Fremdeles>" "<Forventer>" "<Fly>" "<Fagforeningen>" "<Etterlyser>" "<Enn>" "<Eksportverdien>" "<Eierne>" "<Duoen>" "<Dommerne>" "<Bygg>" "<Brødrene>"
+    "<Bruker>" "<Belgieren>" "<Anslagsvis>" "<Afghanske>" "<Usikkerheten>" "<Turister>" "<Treneren>" "<Tradisjonelt>" "<Tittelforsvarer>" "<Svakere>" "<Stoffet>" "<Skaden>" "<Sjømatsektoren>" "<Sjef>" "<Sentralt>"
+    "<Senator>" "<Sannsynligvis>" "<Sammenligner>" "<Rådmann>" "<Relativt>" "<Produsenten>" "<Portugiseren>" "<Politimester>" "<Politifolk>" "<Ordren>" "<Ordførerne>" "<Ordførere>" "<Næringslivet>" "<Nordmann>"
+    "<Naboer>" "<Møter>" "<Mine>" "<Metoden>" "<Markeringen>" "<Legger>" "<Lege>" "<Lange>" "<Landslagssjefen>" "<Kvarteret>" "<Kultur>" "<Klarer>" "<Kjøp>" "<Kjernen>" "<Juli>" "<Jenter>" "<Innholdet>" "<Hopp>"
+    "<Generalsekretæren>" "<Fyllingsgraden>" "<Forsvarssjef>" "<Flommen>" "<Farenivået>" "<Byråd>" "<Britenes>" "<Bil>" "<Beboerne>" "<Barnet>" "<Ba>" "<Australske>" "<Arkeologer>" "<Annen>" "<Analytikerne>"
+    "<Vurderingen>" "<Volumet>" "<Via>" "<Utbetalingene>" "<Uro>" "<Uavgjort>" "<Topp>" "<Sykehus>" "<Styrker>" "<Storebror>" "<Stedet>" "<Statskanalen>" "<Starten>" "<Stabil>" "<Spørreundersøkelsen>" "<Setter>"
+    "<Rådgiver>" "<Reisen>" "<Regn>" "<Raset>" "<Prosjektene>" "<Produktene>" "<Personlig>" "<Partilederen>" "<Nordiske>" "<Nettsiden>" "<Lokal>" "<Lenge>" "<Landslaget>" "<Kvoten>" "<Jussprofessor>" "<Israelsk>"
+    "<Innsatsleder>" "<Halve>" "<Granskingen>" "<Global>" "<Glad>" "<Fylkesmennene>" "<Fylkene>" "<Forsvarsministeren>" "<Firmaet>" "<Ei>" "<Egentlig>" "<Dyrene>" "<Drapssiktet>" "<Byrået>" "<Bruttoledigheten>"
+    "<Bevilgningen>" "<Bekymringen>" "<Bedriften>" "<Avtalene>" "<Appen>" "<Anbefalingen>" "<Alene>" "<Økonomien>" "<Væpnet>" "<Verre>" "<Utvalgsleder>" "<Utdelingen>" "<Trekningen>" "<Tett>" "<Taper>" "<Søknaden>"
+    "<Stortingsrepresentanten>" "<Statlig>" "<Sentralbanksjef>" "<Sannsynligheten>" "<Reisende>" "<Politimannen>" "<Plutselig>" "<Passasjerer>" "<Palestinerne>" "<Opplysningen>" "<Nøyaktig>" "<Nummer>"
+    "<Nekter>" "<Nasjonalforsamlingen>" "<Midtstopperen>" "<Mannskaper>" "<Manager>" "<Lavtrykket>" "<Korrigert>" "<Knapt>" "<Kjøpet>" "<Hvilken>" "<Fylkesordfører>" "<Framtiden>" "<Forbrukerøkonom>"
+    "<Forbrukerne>" "<Flyttingen>" "<Far>" "<Eventuelle>" "<Enorme>" "<Energi>" "<Ekstremværet>" "<Eksempler>" "<Dødstallene>" "<Dramatisk>" "<Dom>" "<Dernest>" "<Delstaten>" "<Daværende>" "<Butikkene>" "<Bussen>"
+    "<Budsjettet>" "<Brorparten>" "<Brannmannskapene>" "<Bra>" "<Bestanden>" "<Avdelingsleder>" "<Ambisjonen>" "<Aktivister>" "<Våpenhvilen>" "<Von>" "<Videoen>" "<Varmest>" "<Vann>" "<Valgresultatet>"
+    "<Utvalgets>" "<Uklart>" "<Uenighet>" "<Turistene>" "<Total>" "<Tilbakekallingen>" "<Søk>" "<Sveitsiske>" "<Står>" "<Størrelsen>" "<Strafferammen>" "<Spillere>" "<Sosiale>" "<Siktet>" "<Selskaper>" "<Sanksjonene>"
+    "<Sammenlagt>" "<Riksadvokat>" "<Retningslinjene>" "<Regjerende>" "<Politiadvokaten>"
+    ;
+
 LIST not-np-guess-words = "<Flere>" "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Sen>" "<Velg>" "<Egenvekt>" "buss" "<Blant>" "<Hvis>" "<Hvor>" "demonstrasjon" "demonstrant" "skade" "eksplosjon" "skolemat" "forbud" "<Seriemester>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "dykker" "mulig" "endring" "kritiker" "sterk" "østerriksk" "russer" "turist" "notis" "vinge" "børs" "antall" "mannskap" "<Reguleringer>" "<Beklagelig>" "<Frykter>" "<Tall>" "<Tallet>" "<Tallene>" "<Kommuner>" "<Myndighetene>" "<Ledelsen>" "<Komiteens>" "<Kvinnens>" "<Krigens>" "<Naturens>" "<Nordmannens>" "<Miljøbevisst>" "<Mannens>" "<Valgets>" "<Foruten>" "<.*(forfatter|ordfører|trener|rammede|kommunene|myndighetene|forsker|forskern?e|profilen|pendler|leder|løperen|kjeden|selskapene|butikkene|prisene|grupper|siktet)>"ri ;
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words OR yrkestittel-ord + sg + ind ;
 
 # «Kommunenes<not np> utfordring i forhold til Kommunenes<np> Hus på torsdag.»
-LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse" "tall" "myndighet" ;
+LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse" "tall" "myndighet" "gruppe" "mor" ;
 
 APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
         (0 storbokstav)
         (NOT 0 not-np-guess)
+        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
 
 APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (0 storbokstav)
         (NEGATE 0 not-np-guess - (np cgguess gen))
+        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
 
 # sec 1
@@ -4874,6 +4979,15 @@ REMOVE:unlikely ("<ris>") + pasv;
         (-1 ("<grønne>"))
         ;
 
+"<skipet>" SELECT:unlikely-verb n IF
+        (NOT 1 %til% OR %ut% OR %inn%)
+        ;
+# Unntak:
+# «Dels ble det skipet ut tømmer»
+# «sølv ble skipet ut mot vest»
+# «Lokst Utøve er Norges største blueslag og skiper til både helger og enkeltkonserter»
+# «ble den skipet inn til Bremerhaven»
+
 
 "<som>" SELECT:hvilken-som-helst pr IF
 	(-1 %hvilken%)
@@ -6255,6 +6369,11 @@ SELECT ("<Rana>") + np IF
         (1 ("kommune"))
         ;
 
+
+REMOVE:ACR-prefer-same-casing SUB:1 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/1 ("\\p{Upper}+"r)) ;
+# «kake-TV-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
+REMOVE:ACR-prefer-same-casing SUB:2 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/2 ("\\p{Upper}+"r)) ;
+# «TV-kake-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
 
 # Avoid short compound parts if possible, ie. prefer bok|lov over bo|klov
 REMOVE SUB:3 ("..?"r) IF (0/* cmp) ;
@@ -31803,3 +31922,13 @@ SELECT:issue37 SUB:1 org ;
 SELECT:issue37 SUB:1 al ;
 SELECT:issue37 SUB:1 top ;
 SELECT:issue37 SUB:1 np ;
+
+SELECT:issue37 n IF (0/1 cmp) ;
+SELECT:issue37 sg IF (0/1 cmp) ;
+SELECT:issue37 m IF (0/1 cmp) ;
+SELECT:issue37 f IF (0/1 cmp) ;
+SELECT:issue37 nt IF (0/1 cmp) ;
+SELECT:issue37 org IF (0/1 cmp) ;
+SELECT:issue37 al IF (0/1 cmp) ;
+SELECT:issue37 top IF (0/1 cmp) ;
+SELECT:issue37 np IF (0/1 cmp) ;
