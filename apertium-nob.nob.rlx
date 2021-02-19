@@ -6256,6 +6256,11 @@ SELECT ("<Rana>") + np IF
         ;
 
 
+REMOVE:ACR-prefer-same-casing SUB:1 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/1 ("\\p{Upper}+"r)) ;
+# «kake-TV-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
+REMOVE:ACR-prefer-same-casing SUB:2 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/2 ("\\p{Upper}+"r)) ;
+# «TV-kake-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
+
 # Avoid short compound parts if possible, ie. prefer bok|lov over bo|klov
 REMOVE SUB:3 ("..?"r) IF (0/* cmp) ;
 REMOVE SUB:2 ("..?"r) IF (0/* cmp) ;
