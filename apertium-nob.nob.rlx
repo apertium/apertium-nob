@@ -31806,3 +31806,13 @@ SELECT:issue37 SUB:1 org ;
 SELECT:issue37 SUB:1 al ;
 SELECT:issue37 SUB:1 top ;
 SELECT:issue37 SUB:1 np ;
+
+SELECT:issue37 n IF (0/1 cmp) ;
+SELECT:issue37 sg IF (0/1 cmp) ;
+SELECT:issue37 m IF (0/1 cmp) ;
+SELECT:issue37 f IF (0/1 cmp) ;
+SELECT:issue37 nt IF (0/1 cmp) ;
+SELECT:issue37 org IF (0/1 cmp) ;
+SELECT:issue37 al IF (0/1 cmp) ;
+SELECT:issue37 top IF (0/1 cmp) ;
+SELECT:issue37 np IF (0/1 cmp) ;
