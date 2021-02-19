@@ -30865,6 +30865,38 @@ REMOVE:unlikely ("russ") + pl ;
 
 REMOVE:unlikely ("bok") + sg + ind + gen ;
 
+# LEX: nettene vs. netta
+LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" ;
+
+SELECT:dei-lange-nettene ("natt") + pl + def IF
+		(-1 natt-adj)
+		;
+		
+SELECT:nettene-er-lange ("natt") + pl + def IF
+		(1 ("være" vblex) OR ("bli" vblex))
+		(2 natt-adj)
+		;
+
+SELECT:feil-på-nettene ("nett") + pl + def IF
+		(-2 ("feil"))
+		(-1 %på%)
+		;
+
+SELECT:om-nettene ("natt") + pl + def IF
+		(-1 %om% OR %på%)
+		;
+		
+SELECT:ta-nettene-til-hjelp ("natt") + pl + def IF
+		(1 %til%)
+		(2 ("hjelp" n))
+		;
+		
+SELECT:tilbringe-nettene ("natt") + pl + def IF
+		(-1* ("tilbringe" vblex))
+		;
+		
+SELECT:fallback ("nett") + pl + def ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
