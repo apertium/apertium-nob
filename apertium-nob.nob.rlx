@@ -4874,6 +4874,15 @@ REMOVE:unlikely ("<ris>") + pasv;
         (-1 ("<grønne>"))
         ;
 
+"<skipet>" SELECT:unlikely-verb n IF
+        (NOT 1 %til% OR %ut% OR %inn%)
+        ;
+# Unntak:
+# «Dels ble det skipet ut tømmer»
+# «sølv ble skipet ut mot vest»
+# «Lokst Utøve er Norges største blueslag og skiper til både helger og enkeltkonserter»
+# «ble den skipet inn til Bremerhaven»
+
 
 "<som>" SELECT:hvilken-som-helst pr IF
 	(-1 %hvilken%)
