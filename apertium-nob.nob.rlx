@@ -30897,6 +30897,15 @@ SELECT:tilbringe-nettene ("natt") + pl + def IF
 		
 SELECT:fallback ("nett") + pl + def ;
 
+SELECT:ei-verd ("verden") + sg + ind IF
+		(-1 ("en") OR ("én"))
+		;
+		
+SELECT:ei-stor-verd ("verden") + sg + ind IF
+		(-2 det + qnt + sg)
+		(-1 adj OR n + sg + ind + gen)
+		;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
