@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -e -u
+
+# Find exceptions for adding np cgguess readings
+
+# Words that may appear capitalised at start of sentence, but
+# mid-sentence appear more often lowercase than uppercase are
+# typically not proper.
+
+# Assumes corpus is one sentence per line:
+corpus="$1"
+
+xzcat "${corpus}" |grep -o  -e '^[A-ZÆØÅ][^ ]*' >/tmp/start-av-setning
+xzcat "${corpus}" |grep -o  -E ' [a-zæøå]+' >/tmp/lc
+xzcat "${corpus}" |grep -o  -E ' [A-ZÆØÅ][a-zæøå]+' >/tmp/uc
+
+awk '
+ BEGIN {
+    OFS=FS="\t"
+    while(getline<"/tmp/uc"){sub(/^ /,""); uc[$0]++}
+    while(getline<"/tmp/lc"){sub(/^ /,""); lc[$0]++}
+ }
+ {
+    sub(/[0-9[:punct:]]$/,"",$1)
+    print $1, uc[$1]+0, lc[tolower($1)]+0
+ }
+' /tmp/start-av-setning \
+    |sort|uniq -c |sort -nr \
+    |sed 's/^ *//;s/ /	/' \
+    | { printf "nstart\tword\tuc\tlc\n"; cat; } \
+         >/tmp/np-cgguess-freqs.tsv
+
+vd /tmp/np-cgguess-freqs.tsv
+
+# Remove because they cause errors:
+# - Verdens
+# - Moren
+# - Per
+# - Nasjonal
+# - Utvalg
+# - Leger
+# - Gruppen
+# - [A-Z][A-Z]+
