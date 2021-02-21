@@ -30905,6 +30905,11 @@ SELECT:ei-stor-verd ("verden") + sg + ind IF
 		(-2 det + qnt + sg)
 		(-1 adj OR n + sg + ind + gen)
 		;
+		
+REMOVE:unlikely ("byrd") + n + sg + def ;
+REMOVE:unlikely ("byrd") + n + pl ;
+
+REMOVE:unlikely ("pott") + n + pl ;
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
