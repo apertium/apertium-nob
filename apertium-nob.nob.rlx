@@ -30910,6 +30910,12 @@ REMOVE:unlikely ("byrd") + n + sg + def ;
 REMOVE:unlikely ("byrd") + n + pl ;
 
 REMOVE:unlikely ("pott") + n + pl ;
+		
+SELECT:disse-fyrene ("fyr") + m + pl + def IF
+		(-1 det + dem + un + pl)
+		;
+		
+REMOVE:unlikely ("fyr")+ m + pl + def ; # alle fyra langs kysten
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
