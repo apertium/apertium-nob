@@ -1307,6 +1307,8 @@ REMOVE:unlikely ("<Sannes>"i) + vblex ;
 REMOVE:unlikely ("smask") + pl ;
 REMOVE:unlikely ("lokal") + m IF (0 ("lokale")) (0/1 cmp) ;
 REMOVE:unlikely ("jens") + def ;
+REMOVE:unlikely ("ringer") IF (0 ("ring")) (0/1 cmp) ;
+REMOVE:unlikely ("ringe") IF (0 ("ring")) (0/1 cmp) ;
 REMOVE:unlikely ("gode") + mORf ;
 REMOVE:unlikely ("yrke") + mORf ;
 REMOVE:unlikely ("skjelv") + m ;
@@ -31366,6 +31368,7 @@ REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default nt IF (0 ("<tingene>"i));
 REMOVE:default pl IF (0 ("<forslag>"i)) ;
 REMOVE:default sg IF (0 ("<levekår>"i)) ;
+REMOVE:default ("sider") IF (0 ("side")) ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
