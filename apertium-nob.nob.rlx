@@ -1305,6 +1305,14 @@ REMOVE:unlikely ("spise") + m;
 REMOVE:unlikely ("<varene>"i "var") ;
 REMOVE:unlikely ("<Sannes>"i) + vblex ;
 REMOVE:unlikely ("smask") + pl ;
+REMOVE:unlikely ("lokal") + m IF (0 ("lokale")) (0/1 cmp) ;
+REMOVE:unlikely ("jens") + def ;
+REMOVE:unlikely ("gode") + mORf ;
+REMOVE:unlikely ("yrke") + mORf ;
+REMOVE:unlikely ("skjelv") + m ;
+REMOVE:unlikely ("aker") IF (0 ("sak")) ;
+REMOVE:unlikely ("renne") IF (0 ("renn")) (0/1 cmp) ;
+REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
 
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
