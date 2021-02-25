@@ -6359,6 +6359,7 @@ REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 REMOVE:unlikely ("året") + adj IF (0 n);
 REMOVE:unlikely ("pinn");       # berre i faste uttrykk / cmp, som me leksikaliserer; tørrpinn, peikepinn
 REMOVE:unlikely ("pinner");     # kva betyr «en pinner»?
+REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
