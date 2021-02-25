@@ -1307,6 +1307,8 @@ REMOVE:unlikely ("<Sannes>"i) + vblex ;
 REMOVE:unlikely ("smask") + pl ;
 REMOVE:unlikely ("lokal") + m IF (0 ("lokale")) (0/1 cmp) ;
 REMOVE:unlikely ("jens") + def ;
+REMOVE:unlikely ("ringer") IF (0 ("ring")) (0/1 cmp) ;
+REMOVE:unlikely ("ringe") IF (0 ("ring")) (0/1 cmp) ;
 REMOVE:unlikely ("gode") + mORf ;
 REMOVE:unlikely ("yrke") + mORf ;
 REMOVE:unlikely ("skjelv") + m ;
