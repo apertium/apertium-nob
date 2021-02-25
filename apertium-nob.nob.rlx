@@ -1304,6 +1304,7 @@ REMOVE:unlikely ("nå") + n;
 REMOVE:unlikely ("spise") + m;
 REMOVE:unlikely ("<varene>"i "var") ;
 REMOVE:unlikely ("<Sannes>"i) + vblex ;
+REMOVE:unlikely ("smask") + pl ;
 
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
