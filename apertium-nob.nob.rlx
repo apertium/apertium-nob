@@ -12165,6 +12165,7 @@ SELECT:2963 (adj nt ind sg) IF
  SELECT:3019 (adj nt ind sg) IF
 	(NOT 0 farlige-adj)
 	(NOT 0 adv)
+	(NOT 0 orden) # «Det var sesongens første norske seier i lagkonkurranse.»
 	(NOT 0 <perf-part>)
 	(-1 pron/subst)
 	(*1 ikke-adv LINK 0 perf-part/inf LINK NOT 0 subst-mask/fem)
