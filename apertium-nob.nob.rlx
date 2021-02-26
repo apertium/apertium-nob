@@ -6098,6 +6098,13 @@ REMOVE:avoid-støytte ("støte") IF
 # ikke: at Norge vel har ...."
 
 
+"<vent>" SELECT:sette-på-vent-mwe n IF
+        (-1 ("sette# på"))
+        ;
+"<vent>" SELECT:sette-på-vent n IF
+        (-2 ("sette"))
+        (-1 %på%)
+        ;
 
 #:3141
   "<verken>"   SELECT:3141   (cnjcoo <adv>) IF
@@ -9055,7 +9062,6 @@ REMOVE:Vann  vblex OR adv IF
 ;
 #  "bare subst ved \"ve og vel\", \"et vel\",
 #  \"flere vel\" eller PROP vel"
-
 
 "<vente>" REMOVE:ikkje-i-vente subst IF
         (NOT -1 %i%)
