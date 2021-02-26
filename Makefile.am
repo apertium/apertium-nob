@@ -83,6 +83,21 @@ install-data-local: install-modes
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).syn.rlx $(DESTDIR)$(apertium_nob_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
 
+
+###############################################################################
+## Cleanup
+###############################################################################
+
 CLEANFILES = $(TARGETS_COMMON)
 clean-local:
 	-rm -rf .deps modes
+
+###############################################################################
+## Test
+###############################################################################
+
+test:
+	@grep -nE 'lm=".*/([a-zæøå]+)__' $(BASENAME).$(LANG1).dix \
+	    | grep -vE '<i?g/?>'                                  \
+	    | grep -vE  'lm="(.*)(.*)".*/\2__'                    \
+	    | sed 's%^%WARNING: lemma vs par/tail inconsistency on line %'

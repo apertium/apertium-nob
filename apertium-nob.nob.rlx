@@ -1312,9 +1312,13 @@ REMOVE:unlikely ("ringe") IF (0 ("ring")) (0/1 cmp) ;
 REMOVE:unlikely ("gode") + mORf ;
 REMOVE:unlikely ("yrke") + mORf ;
 REMOVE:unlikely ("skjelv") + m ;
+REMOVE:unlikely ("struper") + m ;
+REMOVE:unlikely ("hammer") + pl IF (0 np) ; # Hamre
 REMOVE:unlikely ("aker") IF (0 ("sak")) ;
 REMOVE:unlikely ("renne") IF (0 ("renn")) (0/1 cmp) ;
 REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
+REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er vel kanskje sjeldan Knoll og Tott?
+REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
@@ -6359,6 +6363,8 @@ REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 REMOVE:unlikely ("året") + adj IF (0 n);
 REMOVE:unlikely ("pinn");       # berre i faste uttrykk / cmp, som me leksikaliserer; tørrpinn, peikepinn
 REMOVE:unlikely ("pinner");     # kva betyr «en pinner»?
+REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
+REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar»
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
