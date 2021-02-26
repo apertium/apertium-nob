@@ -1458,6 +1458,7 @@ REMOVE:unlikely ("<vente>"i "venne") + pret ;
 REMOVE:unlikely ("<tøy>"i) + m ;
 REMOVE:unlikely ("<potet>"i) + vblex ;
 REMOVE:unlikely ("<potet>"i) + adj ;
+REMOVE:unlikely ("pleie") + pl ; # verb or sg.n
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
