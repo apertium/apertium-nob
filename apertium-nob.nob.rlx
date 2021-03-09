@@ -30948,6 +30948,14 @@ SELECT:disse-fyrene ("fyr") + m + pl + def IF
 		
 REMOVE:unlikely ("fyr")+ m + pl + def ; # alle fyra langs kysten
 
+SELECT:kleberstein ("kleber") + m + sg + ind IF
+		(-1* vblex)
+		;
+		
+SELECT:kleberstein ("kleber") + m + sg + ind IF
+		(1* vblex)
+		;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
