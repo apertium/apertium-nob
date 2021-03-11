@@ -30948,13 +30948,9 @@ SELECT:disse-fyrene ("fyr") + m + pl + def IF
 		
 REMOVE:unlikely ("fyr")+ m + pl + def ; # alle fyra langs kysten
 
-SELECT:kleberstein ("kleber") + m + sg + ind IF
-		(-1* vblex)
-		;
-		
-SELECT:kleberstein ("kleber") + m + sg + ind IF
-		(1* vblex)
-		;
+SELECT:kleberstein ("kleber") + m + sg + ind IF 
+        (0* vblex)
+        ;
 
 REMOVE:unlikely ("tein")+ m OR ("tein")+ nt ; #teine, ikkje tein (grein, stav), tein (koffein)
 
