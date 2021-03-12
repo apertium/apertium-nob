@@ -30954,6 +30954,9 @@ SELECT:kleberstein ("kleber") + m + sg + ind IF
 
 REMOVE:unlikely ("tein")+ m OR ("tein")+ nt ; #teine, ikkje tein (grein, stav), tein (koffein)
 
+REMOVE:unlikely ("<bråket>") + adj + pp ;
+REMOVE:unlikely ("<bråket>") + vblex + pret ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
