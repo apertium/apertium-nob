@@ -30959,6 +30959,18 @@ REMOVE:unlikely ("<bråket>") + vblex + pret ;
 
 REMOVE:unlikely ("<nesa>") + n + nt + pl ;
 
+SELECT:hoppe-i-høyet ("<høyet>") + nt + sg + def ;
+
+SELECT:torde-ikkje-tura ("tørre") + vblex + pret IF 
+        (0 ("<turte>" vblex))
+        ;                                     # oftast 'turet', 'turet fram'
+
+REMOVE:unlikely ("tørre¹") + vblex + inf ;    # tørke
+
+SELECT:tørre-sko ("<tørre>") + adj IF 
+        (1 n)
+        ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
