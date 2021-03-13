@@ -30957,6 +30957,8 @@ REMOVE:unlikely ("tein")+ m OR ("tein")+ nt ; #teine, ikkje tein (grein, stav), 
 REMOVE:unlikely ("<bråket>") + adj + pp ;
 REMOVE:unlikely ("<bråket>") + vblex + pret ;
 
+REMOVE:unlikely ("<nesa>") + n + nt + pl ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
