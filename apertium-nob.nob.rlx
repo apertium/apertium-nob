@@ -30839,6 +30839,17 @@ SELECT:verb-korg ("kurv") IF
 
 SELECT:fallback ("kurve");
 
+# LEX: Choose vblex pp and not adj pst following a conjuction clause with "og" when word should have a present perfect tense
+SELECT:vblex-pp-not-adj-pst (vblex pp) IF
+		(-3 ("ha"))
+		(-2 vblex OR adj) 
+		(-1 ("og"))
+		(0C vblex OR adj)
+		(1 n OR np)
+		; 
+# Artisten som har gledet og beveget publikum med kjendisparodier og maskeringskunst, døde i sitt hjem
+
+
 # LEX: middel vs. midlar
 LIST middel-adj = "god" "dårlig" "farlig" "beroligende" "smertestillende" "angstdempende" %lignende/liknende% "stimulerende" "vanndrivende" "skadelig" "ødeleggende" "antibakteriell" "biologisk" "kjemisk" "reseptbelagt" "politisk" "blodfortynnende" "antiviral" ;
 
