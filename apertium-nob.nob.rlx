@@ -30996,6 +30996,8 @@ REMOVE:unlikely ("tørre¹") + vblex + inf ;    # tørke
 SELECT:tørre-sko ("<tørre>") + adj IF 
         (1 n)
         ;
+		
+REMOVE:unlikely ("<hender>") + n + nt + pl + ind ;    # hendene
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
