@@ -30999,6 +30999,16 @@ SELECT:tørre-sko ("<tørre>") + adj IF
 		
 REMOVE:unlikely ("<hender>") + n + nt + pl + ind ;    # hendene
 
+SELECT:notar ("note") + n + m + pl ;
+
+SELECT:sløgd-skrei ("sløyd") + adj IF 
+		(1 ("skrei") OR ("sei") OR ("torsk") OR ("hyse") OR ("kveite") OR ("hvitting") OR ("lange") OR ("uer") OR ("laks") OR ("ørret") OR ("røye") OR ("abbor"))
+		;
+		
+SELECT:frie-taumar ("tøyle") + n IF 
+		(1 adj OR vblex)
+		;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
