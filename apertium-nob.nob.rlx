@@ -31011,6 +31011,19 @@ SELECT:frie-taumar ("tøyle") + n IF
 		(1 adj OR vblex)
 		;
 
+SELECT:låt ("låt") + n + m + sg + ind IF
+		(-1 adj)
+		;
+
+SELECT:låt ("<låt>") + vblex + pret IF
+		(-1 ("det") OR ("dette") OR pron-pers)
+		;
+SELECT:låt ("<låt>") + vblex + pret IF
+		(1 adj OR adv)
+		;
+		
+REMOVE:unlikely ("<låt>") + vblex + pret ;
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
