@@ -30900,6 +30900,8 @@ SELECT:default-midlar ("middel") + n + m + pl ;
 
 SELECT:default ("hall") + fl + m; # hallar/hallane
 
+REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
+
 SELECT:default ("<trekker>") + vblex + pres IF
 		(NOT 0 ("trekker") + n + sg + ind)
 		; 					
