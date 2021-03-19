@@ -31003,10 +31003,12 @@ REMOVE:unlikely ("<hender>") + n + nt + pl + ind ;    # hendene
 
 SELECT:notar ("note") + n + m + pl ;
 
-SELECT:sløgd-skrei ("sløyd") + adj IF 
-		(1 ("skrei") OR ("sei") OR ("torsk") OR ("hyse") OR ("kveite") OR ("hvitting") OR ("lange") OR ("uer") OR ("laks") OR ("ørret") OR ("røye") OR ("abbor"))
+
+LIST fisk-ord = "skrei" "sei" "torsk" "hyse" "kveite" "hvitting" "lange" "uer" "laks" "ørret" "røye" "abbor" ;
+SELECT:sløgd-skrei ("sløyd") + adj IF
+		(1 fisk-ord)
 		;
-		
+
 SELECT:frie-taumar ("tøyle") + n IF 
 		(1 adj OR vblex)
 		;
