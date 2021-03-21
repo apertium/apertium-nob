@@ -1546,31 +1546,6 @@ REMOVE ("hvorav¹") ;
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
 
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF 
-        (0* ("slippe" vblex) OR ("spre" vblex))
-        ;
-		
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
-        (0/* cmp)
-        (0* ("slippe" vblex) OR ("spre" vblex))
-        ;
-		
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF 
-		(1 ("i"))
-		(2 ("luft"))
-        ;
-		
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
-		(-1* ("sette" vblex))
-		(1 ("i"))
-        ;
-
-SELECT:spora ("spor") + n + nt + pl + def IF
-        (0/* cmp)
-		;
-REMOVE:unlikely ("<sporene>"i) + n + m + pl + def ;
-
-
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
 	(NOT -1 fl-det)
@@ -31057,7 +31032,7 @@ SELECT:talentane ("talent") + n + m + pl IF
 
 REMOVE:unlikely ("talent") + n + m ;
 
-SELECT:merka ("merke") + n + nt + pl ; # TODO: 'fire merker smør', 'betale dei 30 markane'
+SELECT:merka ("merke") + n + nt + pl ; 
 
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
