@@ -1570,6 +1570,15 @@ SELECT:spora ("spor") + n + nt + pl + def IF
 		;
 REMOVE:unlikely ("<sporene>"i) + n + m + pl + def ;
 
+SELECT:leigd-ut ("utleid") + adj + pp IF
+        (-1* %være/bli% BARRIER setn-gr)
+		;
+		
+SELECT:utleigde ("<utleide>"i) + adj + pst ;
+
+SELECT:leigd-ut ("utleid") + adj + pst IF
+        (-1* det-dem BARRIER setn-gr)
+		;
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
