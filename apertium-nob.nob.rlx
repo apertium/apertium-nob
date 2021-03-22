@@ -31542,6 +31542,7 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<beinet>" REMOVE:default-beinet ("bein" n nt sg def) ;	# keep beine<adj><pp><nt><sg><ind>→beina beine<adj><pp><mf><sg><ind>→beina beine<vblex><pp>→beina beine<vblex><pret>→beina
 "<berget>" REMOVE:default-berget ("berg" n nt sg def) ;	# keep berge<vblex><pp>→berga berge<adj><pp><nt><sg><ind>→berga berge<vblex><pret>→berga
 "<besluttet>" REMOVE:default-vedtatt ("beslutte" vblex pp) ;	# keep beslutte<vblex><pret>→vedtok
+"<besluttet>" REMOVE:default-vedtatt ("beslutte" pl) ;	# keep beslutte<vblex><pret>→vedtok
 "<bestemt>" REMOVE:default-bestemd ("bestemt" adj sint pst mf sg ind) ;	# keep bestemme<vblex><pp>→avgjort
 "<bestemte>" REMOVE:default-bestemde ("bestemt" adj sint pst un pl ind) ;	# keep bestemme<vblex><pret>→avgjorde
 "<bestemte>" REMOVE:default-bestemde ("bestemt" adj sint pst un sp def) ;	# keep bestemme<vblex><pret>→avgjorde
