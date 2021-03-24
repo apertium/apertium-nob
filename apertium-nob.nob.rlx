@@ -1068,6 +1068,17 @@ APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}
         (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
 
+APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
+        (0 storbokstav)
+        (1 storbokstav)
+        (1/* cmp + np)
+        (1 ("<.*-.*>"r))
+        (NEGATE 0 not-np-guess - (np cgguess gen))
+        (-1 berre-litenbokstav)
+        ;
+# «sin beste Vårt Land-måling»
+
+
 # sec 1
 CONSTRAINTS
 
