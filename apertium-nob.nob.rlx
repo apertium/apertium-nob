@@ -1470,6 +1470,9 @@ REMOVE:unlikely ("<tøy>"i) + m ;
 REMOVE:unlikely ("<potet>"i) + vblex ;
 REMOVE:unlikely ("<potet>"i) + adj ;
 REMOVE:unlikely ("pleie") + pl ; # verb or sg.n
+REMOVE:unlikely ("kanoner") ;    # more likely kanon<pl>
+REMOVE:unlikely ("graver") ;     # more likely grav<pl>
+REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 
 REMOVE:unlikely ("<notene>"i "not") IF
