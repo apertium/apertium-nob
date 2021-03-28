@@ -1472,6 +1472,7 @@ REMOVE:unlikely ("<potet>"i) + adj ;
 REMOVE:unlikely ("pleie") + pl ; # verb or sg.n
 REMOVE:unlikely ("kanoner") ;    # more likely kanon<pl>
 REMOVE:unlikely ("graver") ;     # more likely grav<pl>
+REMOVE:unlikely ("smaker") IF (NOT 0/1 cmp) ; # more likely verb
 REMOVE:unlikely ("synk") ;       # more likely søkk
 REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
@@ -16059,7 +16060,7 @@ SELECT:Jeg-så-mot-vinduet pr IF
 
 
 #:2642
- SELECT:2642 (pr) IF
+ SELECT:ved-siden (pr) IF
 	(NOT 0 %for%)
 	(NOT 0 sbu)
 	(NOT 0 clb)
@@ -16070,6 +16071,7 @@ SELECT:Jeg-så-mot-vinduet pr IF
 	(NOT -1 prep)
 	(NOT -1 det)
 	(NOT -1 infmerke)
+	(NEGATE 0 inf LINK -1 m-hj-verb) # «flere har sågar varslet at de vil fremme benkeforslag på alternative kandidater»
 ;
 #  "Sannsynlig med prep her: ved siden"
 # 040908: NOT -1 infmerke: å fremme (ikke prep) studentutveksling
