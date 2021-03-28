@@ -7786,6 +7786,8 @@ REMOVE:høgd greiner;
 #  "intet mindre
 # Ikke: det store intet"
 
+"<inngiftet>" REMOVE n;         # when is this likely to be noun?
+
 
 #:4074
  "<is>"   REMOVE:4074   (n acr)
