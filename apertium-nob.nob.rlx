@@ -1471,7 +1471,7 @@ REMOVE:unlikely ("<potet>"i) + vblex ;
 REMOVE:unlikely ("<potet>"i) + adj ;
 REMOVE:unlikely ("pleie") + pl ; # verb or sg.n
 REMOVE:unlikely ("kanoner") ;    # more likely kanon<pl>
-REMOVE:unlikely ("graver") ;     # more likely grav<pl>
+REMOVE:unlikely ("graver") IF (0 ("grav")) ;  # more likely grav<pl>
 REMOVE:unlikely ("smaker") IF (NOT 0/1 cmp) ; # more likely verb
 REMOVE:unlikely ("synk") ;       # more likely søkk
 REMOVE:unlikely ("våk") + def;   # more likely adj
