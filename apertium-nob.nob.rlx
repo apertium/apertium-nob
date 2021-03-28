@@ -31033,6 +31033,8 @@ SELECT:kleberstein ("kleber") + m + sg + ind IF
         (0* vblex)
         ;
 
+REMOVE:fysisk-angrepet ("angrep") IF (0 pp) (-1 ("fysisk")) ;
+
 REMOVE:unlikely ("tein")+ m OR ("tein")+ nt ; #teine, ikkje tein (grein, stav), tein (koffein)
 
 REMOVE:unlikely ("<bråket>") + adj + pp ;
