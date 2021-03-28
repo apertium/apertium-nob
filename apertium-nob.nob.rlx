@@ -6417,6 +6417,7 @@ REMOVE:unlikely ("va");
 REMOVE:unlikely ("psykofarmakon"); # prefer -um
 REMOVE:unlikely ("lise") + m;   # lisens
 REMOVE:unlikely ("stam");
+REMOVE:unlikely SUB:* ("tøy") + m; # tøy|munnbind
 REMOVE:unlikely ("døde") + vblex;
 REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 REMOVE:unlikely ("året") + adj IF (0 n);
