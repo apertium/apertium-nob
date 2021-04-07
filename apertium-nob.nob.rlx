@@ -1462,7 +1462,7 @@ REMOVE:unlikely ("<varer>"i "var") ;
 REMOVE:unlikely ("<ris>"i gen) ;
 REMOVE:unlikely ("<kvart>"i pp) ;
 REMOVE:unlikely ("<fører>"i "føre") + n ;
-REMOVE:unlikely ("gjeld") + nt + pl ; # bruttogjelda
+REMOVE:unlikely ("gjeld") + m + pl ; # bruttogjelda
 REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("<vente>"i "venne") + pp ;
 REMOVE:unlikely ("<vente>"i "venne") + pret ;
