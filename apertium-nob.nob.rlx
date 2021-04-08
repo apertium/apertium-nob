@@ -1596,6 +1596,8 @@ SELECT:utleigde ("<utleide>"i) + adj + pst ;
 SELECT:leigd-ut ("utleid") + adj + pst IF
         (-1* det-dem BARRIER setn-gr)
 		;
+		
+REMOVE:unlikely ("røre") + n + pl ; #matlaging
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
