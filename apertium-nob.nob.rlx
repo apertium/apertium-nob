@@ -2271,8 +2271,33 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 # Ikkje: «I 2018 døde over 3.700 mennesker i slike hendelser.»
 # Tvetydig (overskrift eller ei?): «Over 150 døde etter å ha drukket giftig hjemmebrent i India»
 
+REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
+		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
+		;
+		# han strakk seg fram og grep rattet
+		
+SELECT:men-greip ("<grep>"i) + vblex IF
+		(-1 ("men"))
+		;
+		# dei hadde muligheten, men grep den heller ikke nå.
+		
+SELECT:greip-makta ("<grep>"i) + vblex IF
+		(1 ("makt") OR ("mulighet") OR ("sjanse"))
+		;
+		# ..., som grep makten i 1973
+		
+SELECT:ta/gjøre-noen-grep ("grep") + n + ind IF
+		(-1* ("ta" vblex) OR ("gjøre" vblex) BARRIER setn-gr)
+		;
 
+SELECT:nye-grep ("grep") + n + ind IF
+		(-1 adj)
+		;
 
+SELECT:grep-for/om ("grep") + n + ind IF
+		(1 ("for") OR ("om") OR ("som"))
+		;
+		# grep for å holde seg frisk, ha grep om midtbanen
 
 "<Eggen>" SELECT:Nils-Arne np;
 
