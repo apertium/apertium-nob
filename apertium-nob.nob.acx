@@ -7,4 +7,20 @@
     <equiv-char value="&#8217;"/>
     <equiv-char value="&#39;"/>
   </char>
+  <char value="á">
+    <equiv-char value="à"/>
+    <equiv-char value="a"/>
+  </char>
+  <char value="à">
+    <equiv-char value="á"/>
+    <equiv-char value="a"/>
+  </char>
+  <char value="è">
+    <equiv-char value="é"/>
+    <equiv-char value="e"/>
+  </char>
+  <char value="é">
+    <equiv-char value="è"/>
+    <equiv-char value="e"/>
+  </char>
 </analysis-chars>

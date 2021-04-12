@@ -1095,6 +1095,13 @@ REMOVE:Trenerne-A-og-B cgguess IF
         ;
 # «Trenerne Nicolej Krickau (GOG herrer) og Jesper Jensen (Esbjerg kvinner) ønsker videodømmingen velkommen.»
 
+REMOVE:prefer-noaccent SUB:* (".*[éáàè].*"ri) IF
+        (NOT 0/* ("én") OR ("trasé") OR ("moské"));
+REMOVE:prefer-sameaccent (".*[èà].*"ri) IF
+        (0 ("<(.*[éá].*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*[éá].*"ri) IF
+        (0 ("<(.*[èà].*)>"ri "$1"v));
+
 SELECT:titlecase-midsent cgguess IF
         (NOT -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
         ;
