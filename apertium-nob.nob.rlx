@@ -1278,6 +1278,11 @@ REMOVE:acronym-samecase-cmp ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0 ("<.*-([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
         ;
 
+REMOVE:acronym-samecase-cmp SUB:1 ("[A-ZÆØÅ]?[a-zæøå]+-?"r) IF
+        (0/1 ("<([A-ZÆØÅ][A-ZÆØÅ]+-).*>"r "$1"v))
+        ;
+# «en VAR-sjekk»
+
 REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0/1 cmp)
         (0 ("<.*-([A-ZÆØÅ][A-ZÆØÅ]+)s>"r "$1"v) + gen)
