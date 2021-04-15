@@ -2267,10 +2267,11 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1C n)
         ;
 
-"<døde>" SELECT:er-døde vblex + pret IF
+"<døde>" SELECT:tre-døde-i vblex + pret IF
         (-1 talord-par-siffer)
         (1 prep )
         ;
+# Oftare rett enn feil iallfall
 
 "<døde>" SELECT:er-døde adj IF
         (-1 vblex)
