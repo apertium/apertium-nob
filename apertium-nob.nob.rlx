@@ -2267,6 +2267,20 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1C n)
         ;
 
+"<døde>" SELECT:er-døde vblex + pret IF
+        (-1 talord-par-siffer)
+        (1 prep )
+        ;
+
+"<døde>" SELECT:er-døde adj IF
+        (-1 vblex)
+        (1 vblex)
+        ;
+
+"<døde>" SELECT:han-døde-da vblex + pret IF
+        (1 adv)
+        ;
+
 "<døde>" SELECT:27-døde adj IF
         (NOT -2 cnjsub)
         (-1 talord-par-siffer)
