@@ -2278,6 +2278,20 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 # Ikkje: «I 2018 døde over 3.700 mennesker i slike hendelser.»
 # Tvetydig (overskrift eller ei?): «Over 150 døde etter å ha drukket giftig hjemmebrent i India»
 
+"<drepte>" SELECT:27-drepte adj IF
+        (-1 talord-par-siffer)
+        ;
+		
+"<drepte>" SELECT:hun-spilte-drepte-B adj IF
+        (-1 vblex )
+        (1 vblex )
+        ;
+		
+"<drepte>" SELECT:de-drepte-B adj IF
+        (-1 prn + pers + pl + nom OR det + pos + un + pl )
+		(NEGATE 1 n OR np OR prn OR talord OR siffer )
+        ;
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
