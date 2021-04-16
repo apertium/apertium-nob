@@ -1095,12 +1095,16 @@ REMOVE:Trenerne-A-og-B cgguess IF
         ;
 # «Trenerne Nicolej Krickau (GOG herrer) og Jesper Jensen (Esbjerg kvinner) ønsker videodømmingen velkommen.»
 
-REMOVE:prefer-noaccent SUB:* (".*[éáàè].*"ri) IF
+REMOVE:prefer-noaccent SUB:* (".*[éáóíúýńèàòìùỳǹôö].*"ri) IF
         (NOT 0/* ("<ett>"i) OR ("trasé") OR ("moské") OR ("turné") OR ("kafé"));
-REMOVE:prefer-sameaccent (".*[èà].*"ri) IF
-        (0 ("<(.*[éá].*)>"ri "$1"v));
-REMOVE:prefer-sameaccent (".*[éá].*"ri) IF
-        (0 ("<(.*[èà].*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*ä.*"ri) IF
+        (0 ("<(.*æ.*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*š.*"ri) IF
+        (0 ("<(.*s.*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*[èàòìùỳǹ].*"ri) IF
+        (0 ("<(.*[éáóíúýń].*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
+        (0 ("<(.*[èàòìùỳǹ].*)>"ri "$1"v));
 
 SELECT:titlecase-midsent cgguess IF
         (NOT -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
@@ -2266,6 +2270,17 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 %den%)
         (1C n)
         ;
+
+"<døde>" SELECT:funnet-av-3-døde adj IF
+        (-3 ("<funnet>")) # «funnet av 3 døde i»
+        (-2 %av%)
+        ;
+
+"<døde>" SELECT:funnet-3-døde-etter adj IF
+        (-2C fv OR ("<funnet>") OR ("<bekreftet>"))
+        ;
+# «Vi har 32 døde på grunn av terrorister»
+# «Ifølge myndighetene er det nå bekreftet 107 døde etter eksplosjonen»
 
 "<døde>" SELECT:tre-døde-i vblex + pret IF
         (-1 talord-par-siffer)
