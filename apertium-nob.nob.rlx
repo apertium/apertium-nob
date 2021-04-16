@@ -2335,6 +2335,10 @@ SELECT:grep-for/om ("grep") + n + ind IF
 		;
 		# grep for å holde seg frisk, ha grep om midtbanen
 
+SELECT:trives ("<trives>"i) + vblex + pres IF 
+		(-1 det OR prn OR adj)
+		;
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
