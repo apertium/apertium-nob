@@ -2267,6 +2267,17 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1C n)
         ;
 
+"<døde>" SELECT:funnet-av-3-døde adj IF
+        (-3 ("<funnet>")) # «funnet av 3 døde i»
+        (-2 %av%)
+        ;
+
+"<døde>" SELECT:funnet-3-døde-etter adj IF
+        (-2C fv OR ("<funnet>") OR ("<bekreftet>"))
+        ;
+# «Vi har 32 døde på grunn av terrorister»
+# «Ifølge myndighetene er det nå bekreftet 107 døde etter eksplosjonen»
+
 "<døde>" SELECT:tre-døde-i vblex + pret IF
         (-1 talord-par-siffer)
         (1 prep )
