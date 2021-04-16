@@ -2339,6 +2339,10 @@ SELECT:trives ("<trives>"i) + vblex + pres IF
 		(-1 det OR prn OR adj)
 		;
 
+SELECT:eit-løp ("<løp>"i) + n + sg + ind IF 
+		(-1 det OR adj)
+		;
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
