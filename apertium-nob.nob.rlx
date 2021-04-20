@@ -1344,8 +1344,9 @@ REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("betinge") IF (0 ("betinge") OR ("betinget")) (1 n) ; # betinget suksess
 REMOVE:unlikely ("betinget") + adv IF (0 ("betinget")) (1 n) ; # betinget glede
 REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betinget")) ; # betinget suksess vs. gjort betinget
+REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
 
-SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # utelukkende jobber, utelukkende når
+SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
 
