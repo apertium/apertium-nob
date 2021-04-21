@@ -2362,6 +2362,14 @@ SELECT:trives ("<trives>"i) + vblex + pres IF
 SELECT:eit-løp ("<løp>"i) + n + sg + ind IF 
 		(-1 det OR adj)
 		;
+		
+SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
+		(-1 det-gen)
+		(1 n)
+		;
+		# et uttalt ønske
+		
+REMOVE:uttalt ("uttalt") + adj + pst ;
 
 "<Eggen>" SELECT:Nils-Arne np;
 
