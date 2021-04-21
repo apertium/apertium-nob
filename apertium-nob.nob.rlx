@@ -1342,8 +1342,11 @@ REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
 REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er vel kanskje sjeldan Knoll og Tott?
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("betinge") IF (0 ("betinge") OR ("betinget")) (1 n) ; # betinget suksess
+REMOVE:unlikely ("betinget") + adv IF (0 ("betinget")) (1 n) ; # betinget glede
+REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betinget")) ; # betinget suksess vs. gjort betinget
+REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
 
-
+SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
 
@@ -6280,6 +6283,12 @@ REMOVE:avoid-støytte ("støte") IF
 SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
 SELECT:kroner ("øre") + nt IF (-1 siffer OR talord);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
+SELECT:låne-sitt-øre ("øre¹") IF
+        (-2 ("låne"))
+        (0 sg + ind)
+        ;
+SELECT:vaske-ørene ("øre¹") IF (-1 ("vaske"));
+SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
 
 "<øst>" SELECT:øst-i-England pr IF
         (NOT 1 ("ut"))
@@ -31834,6 +31843,7 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<Jakter>" REMOVE:default-Jaktar ("jakte" vblex pres) ;	# keep Jakt<n><m><pl><ind>→Jakter Jakt<n><f><pl><ind>→Jakter
 "<Jakter>" REMOVE:default-Jaktar ("jakter" n m sg ind) ;	# keep Jakt<n><m><pl><ind>→Jakter Jakt<n><f><pl><ind>→Jakter
 "<julemarked>" REMOVE:default-julemarknader ("julemarked" n nt pl ind) ;	# keep julemarked<n><nt><sg><ind>→julemarknad
+"<kant>" REMOVE:default-kant ("kant" n nt) ;	# keep kant<n><nt>
 "<kantene>" REMOVE:default-kantane ("kant" n m pl def) ;	# keep kant<n><nt><pl><def>→kanta
 "<kaster>" REMOVE:default-kaster ("kaste" n m pl ind) ;	# keep kaste<vblex><pres>→kastar
 "<kastet>" REMOVE:default-kastet ("kast" n nt sg def) ;	# keep kaste<vblex><pret>→kasta
