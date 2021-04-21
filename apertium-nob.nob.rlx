@@ -6333,7 +6333,7 @@ SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 
 #CONSTRAINTS
 ## remove domain
-LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" ;
+LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
         (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 %være/bli% BARRIER fv)
 ;
@@ -9130,6 +9130,44 @@ SELECT:skrev vblex IF
         (1 nom)
         ;
 # «I midten av mars ble alle EU-landene unntatt Irland enige.»
+
+SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
+		(NEGATE 1 ("offentlighet"))
+		(1 n OR np)
+		;
+
+SELECT:unntatt ("<unntatt>"i) + vblex IF
+		(-1* ("være" vblex) OR ("bli" vblex) OR ("ha" vblex) BARRIER setn-gr)
+		;
+		
+SELECT:bortsett-frå (">unntatt>"i) + adv IF
+		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
+		(1 %det% OR talord OR siffer)
+		;
+		# unntatt det første
+		
+SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+		(-1* ("all") BARRIER setn-gr)
+		;
+		
+SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+		(-1 komma)
+		;
+		
+SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
+		(NEGATE 1 %fra%)
+		(1 pr)
+		;
+		# unntatt i Frankrike, på Island, under krigen
+		
+REMOVE:unntas-pasv ("unnta") + vblex + pasv ;
+REMOVE:unntas-pasv ("unnta fra") + vblex + pasv ;
+REMOVE:unntas-pasv ("unnta for") + vblex + pasv ;
+SELECT:få-fritak ("unntas") + adv ;
+SELECT:få-fritak ("unntas fra") + adv ;
+SELECT:få-fritak ("unntas for") + adv ;
 
 SELECT ("vekke") IF
         (1 ("oppsikt"))
