@@ -1347,6 +1347,7 @@ REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betin
 REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
+SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
 
