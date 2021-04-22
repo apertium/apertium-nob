@@ -2378,6 +2378,58 @@ SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		
 REMOVE:uttalt ("uttalt") + adj + pst ;
 
+SELECT:heimar ("<hjem>"i) + n + pl + ind IF
+		(-1 adj + pl OR adj + def)
+		(NEGATE -2 det + dem)
+		;
+		# private hjem
+
+SELECT:heimar ("<hjem>"i) + n + sg + ind IF
+		(-2 ("<hus>"i))
+        (-1 %og%)
+		(NEGATE -3 det + qnt)
+		;
+		# hus og hjem
+		
+SELECT:heimar ("<sykehjem>"i) + n + pl + ind IF
+		(-1 adj + pl OR adj + def)
+		(NEGATE -2 det + dem)
+		;
+		# private sykehjem
+		
+SELECT:heimar ("<sykehjem>"i) + n + pl + ind IF
+		(-2 n + pl + ind)
+        (-1 %og%)
+		(NEGATE -3 det + qnt)
+		;
+		# omsorgsboliger og sykehjem, sykehus og sykehjem
+		
+SELECT:heimar ("<fosterhjem>"i) + n + pl + ind IF
+		(-1 adj + pl OR adj + def)
+		(NEGATE -2 det + dem)
+		;
+		# individuelle fosterhjem
+		
+SELECT:heimar ("fosterhjem>"i) + n + pl + ind IF
+		(-2 n + pl + ind)
+        (-1 %og%)
+		(NEGATE -3 det + qnt)
+		;
+		# omsorgsboliger og fosterhjem
+		
+SELECT:heimar ("<familiehjem>"i) + n + pl + ind IF
+		(-1 adj + pl OR adj + def)
+		(NEGATE -2 det + dem)
+		;
+		# offentlige familiehjem
+		
+SELECT:heimar ("<familiehjem>"i) + n + pl + ind IF
+		(-2 n + pl + ind)
+        (-1 %og%)
+		(NEGATE -3 det + qnt)
+		;
+		# sportshaller og familiehjem
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
