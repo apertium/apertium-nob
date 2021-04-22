@@ -1345,6 +1345,7 @@ REMOVE:unlikely ("betinge") IF (0 ("betinge") OR ("betinget")) (1 n) ; # betinge
 REMOVE:unlikely ("betinget") + adv IF (0 ("betinget")) (1 n) ; # betinget glede
 REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betinget")) ; # betinget suksess vs. gjort betinget
 REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
+REMOVE:unlikely ("antatt") + adv IF (-1 ("ha")) (0 ("anta") OR ("antatt")); # "...har antatt nye former"
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
