@@ -2435,6 +2435,11 @@ SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
 		# han pådro seg smerter
+		
+SELECT:vart-det-kjent ("<kjent>"i) + adj + nt  IF
+		(-1 %det%)
+		(-2 %være/bli%)
+		;
 
 "<Eggen>" SELECT:Nils-Arne np;
 
