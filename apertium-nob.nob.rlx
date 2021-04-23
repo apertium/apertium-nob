@@ -2430,6 +2430,11 @@ SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
 		(NEGATE -3 det + qnt)
 		;
 		# sportshaller og familiehjem
+		
+SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
+		(0* vblex BARRIER setn-gr)
+		;
+		# han pådro seg smerter
 
 "<Eggen>" SELECT:Nils-Arne np;
 
