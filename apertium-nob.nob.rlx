@@ -6708,6 +6708,11 @@ REMOVE ("antatt") + adv IF
         (0 adj)
         ;
 
+"<ubetinget>" REMOVE:gjøres-ubetinget adv IF
+        (-1 ("gjøre") + pasv)
+        ;
+# blir gjort vilkårslaus
+
 
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
