@@ -1342,12 +1342,6 @@ REMOVE:unlikely ("renne") IF (0 ("renn")) (0/1 cmp) ;
 REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
 REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er vel kanskje sjeldan Knoll og Tott?
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
-REMOVE:unlikely ("betinge") IF (0 ("betinge") OR ("betinget")) (1 n) ; # betinget suksess
-REMOVE:unlikely ("ubetinget") + adv IF (-1 vblex) (0 ("ubetinget")) (1 n) ; # ubetinget suksess
-REMOVE:unlikely ("betinget") + adv IF (0 ("betinget")) (1 n) ; # betinget glede
-REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betinget")) ; # betinget suksess vs. gjort betinget
-REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
-REMOVE:unlikely ("antatt") + adv IF (-1 ("ha")) (0 ("anta") OR ("antatt")); # "...har antatt nye former"
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
@@ -6677,6 +6671,37 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<også>" SELECT:Den-har-også ("også");
 
 
+REMOVE:betinget-suksess ("betinge") IF
+        (0 ("betinge") OR ("betinget"))
+        (1 n)
+        ;
+# betinget suksess
+REMOVE:ubetinget-suksess ("ubetinget") + adv IF
+        (-1 vblex)
+        (0 ("ubetinget"))
+        (1 n)
+        ;
+# ubetinget suksess
+REMOVE:betinget-glede ("betinget") + adv IF
+        (0 ("betinget"))
+        (1 n)
+        ;
+# betinget glede
+REMOVE ("betinget") + adv IF
+        (-1 adj)
+        (NEGATE -1 ("gjøre"))
+        (0 ("betinget"))
+;
+# betinget suksess vs. gjort betinget
+REMOVE:kapret-istedenfor adj IF
+        (0 vblex OR adj)
+        (1 ("istedenfor")) ;
+# "...og kapret istedenfor ambulansen"
+REMOVE ("antatt") + adv IF
+        (-1 ("ha"))
+        (0 ("anta") OR ("antatt"))
+        ;
+# "...har antatt nye former"
 
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
