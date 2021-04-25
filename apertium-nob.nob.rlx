@@ -2380,19 +2380,13 @@ SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		
 REMOVE:uttalt ("uttalt") + adj + pst ;
 
-SELECT:heimar ("<hjem>"i) + n + pl + ind IF
-		(-1 adj + pl OR adj + def)
-		(NEGATE -2 det + dem)
-		;
-		# private hjem
-
 SELECT:hus-og-heim ("<hjem>"i) + n + sg + ind IF
-		(-2 ("<hus>"i))
+        (-2 ("<hus>"i))
         (-1 %og%)
-		(NEGATE -3 det + qnt)
-		;
-		# hus og hjem
-		
+        (NEGATE -3 det + qnt)
+        ;
+# hus og hjem
+
 SELECT:sjukeheimar ("<sykehjem>"i) + n + pl + ind IF
 		(-1 adj + pl OR adj + def)
 		(NEGATE -2 det + dem)
@@ -7800,6 +7794,14 @@ REMOVE ("frø") IF
 	(0 prep)
 ;
 #  "Sjelden: ei hit = skinnsekk"
+
+
+SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
+        (NOT -1 ("tomhendt") OR vblex)
+        (-1C adj + pl OR adj + def)
+        (NEGATE -2 det + dem)
+        ;
+# private hjem
 
 #:4048
  "<hjem>"   REMOVE:4048   (pr)
