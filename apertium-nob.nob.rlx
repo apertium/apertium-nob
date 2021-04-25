@@ -601,6 +601,7 @@ LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burd
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
 # TODO: fix in dix
 LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
+LIST ikke-det-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij <<< <ellipse> (clb cm) adv adj ;
 LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-adv = vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-subst = "siden"  adv vblex pr prn cnjsub cnjcoo "å" ij det <<< <ellipse> ;
@@ -6674,6 +6675,13 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 
 # «Han blir også i 2019 å se i rally-VM.»
 "<også>" SELECT:Den-har-også ("også");
+
+
+
+"<ubetinget>" REMOVE:to-år-ubetinget adv IF
+        (*-1 ("<hvorav>") BARRIER ikke-det-subst)
+        (0 adj)
+        ;
 
 
 #:3782
