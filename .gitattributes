@@ -1,27 +1,5 @@
-* text=auto !eol
-/AUTHORS -text
-/COPYING -text
-/ChangeLog -text
-/Makefile.am -text
-/NEWS -text
-/README -text
-/apertium-nob.nob.dix -text
-/apertium-nob.nob.rlx -text
-/apertium-nob.nob.syn.rlx -text
-/apertium-nob.nob.tsx -text
-/apertium-nob.pc.in -text
-/autogen.sh -text
-/configure.ac -text
-/modes.xml -text
-/nob.prob -text svneol=unset#unset
-/test-scandivoc -text
-texts/ngrams.1 -text
-texts/ngrams.2 -text
-texts/ngrams.3 -text
-texts/ngrams.4 -text
-texts/ngrams.5 -text
-texts/stanisław_lem.txt -text
-texts/udhr.txt -text
+* text eol=lf
+*.prob binary
 *.dix linguist-language=XML linguist-detectable=true
 *.lrx linguist-language=XML linguist-detectable=true
 *.lsx linguist-language=XML linguist-detectable=true
