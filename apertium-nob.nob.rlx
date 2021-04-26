@@ -601,6 +601,7 @@ LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burd
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
 # TODO: fix in dix
 LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
+LIST ikke-det-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij <<< <ellipse> (clb cm) adv adj ;
 LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-adv = vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-subst = "siden"  adv vblex pr prn cnjsub cnjcoo "å" ij det <<< <ellipse> ;
@@ -1341,12 +1342,6 @@ REMOVE:unlikely ("renne") IF (0 ("renn")) (0/1 cmp) ;
 REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
 REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er vel kanskje sjeldan Knoll og Tott?
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
-REMOVE:unlikely ("betinge") IF (0 ("betinge") OR ("betinget")) (1 n) ; # betinget suksess
-REMOVE:unlikely ("ubetinget") + adv IF (-1 vblex) (0 ("ubetinget")) (1 n) ; # ubetinget suksess
-REMOVE:unlikely ("betinget") + adv IF (0 ("betinget")) (1 n) ; # betinget glede
-REMOVE:unlikely ("betinget") + adv IF (-1 adj) (NEGATE -1 ("gjøre")) (0 ("betinget")) ; # betinget suksess vs. gjort betinget
-REMOVE:unlikely adj IF (0 vblex OR adj) (1 ("istedenfor")) ; # "...og kapret istedenfor ambulansen"
-REMOVE:unlikely ("antatt") + adv IF (-1 ("ha")) (0 ("anta") OR ("antatt")); # "...har antatt nye former"
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
@@ -2380,19 +2375,13 @@ SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		
 REMOVE:uttalt ("uttalt") + adj + pst ;
 
-SELECT:heimar ("<hjem>"i) + n + pl + ind IF
-		(-1 adj + pl OR adj + def)
-		(NEGATE -2 det + dem)
-		;
-		# private hjem
-
 SELECT:hus-og-heim ("<hjem>"i) + n + sg + ind IF
-		(-2 ("<hus>"i))
+        (-2 ("<hus>"i))
         (-1 %og%)
-		(NEGATE -3 det + qnt)
-		;
-		# hus og hjem
-		
+        (NEGATE -3 det + qnt)
+        ;
+# hus og hjem
+
 SELECT:sjukeheimar ("<sykehjem>"i) + n + pl + ind IF
 		(-1 adj + pl OR adj + def)
 		(NEGATE -2 det + dem)
@@ -6680,6 +6669,49 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<også>" SELECT:Den-har-også ("også");
 
 
+REMOVE:betinget-suksess ("betinge") IF
+        (0 ("betinge") OR ("betinget"))
+        (1 n)
+        ;
+# betinget suksess
+REMOVE:ubetinget-suksess ("ubetinget") + adv IF
+        (-1 vblex)
+        (0 ("ubetinget"))
+        (1 n)
+        ;
+# ubetinget suksess
+REMOVE:betinget-glede ("betinget") + adv IF
+        (0 ("betinget"))
+        (1 n)
+        ;
+# betinget glede
+REMOVE ("betinget") + adv IF
+        (-1 adj)
+        (NEGATE -1 ("gjøre"))
+        (0 ("betinget"))
+;
+# betinget suksess vs. gjort betinget
+REMOVE:kapret-istedenfor adj IF
+        (0 vblex OR adj)
+        (1 ("istedenfor")) ;
+# "...og kapret istedenfor ambulansen"
+REMOVE ("antatt") + adv IF
+        (-1 ("ha"))
+        (0 ("anta") OR ("antatt"))
+        ;
+# "...har antatt nye former"
+
+"<ubetinget>" REMOVE:to-år-ubetinget adv IF
+        (*-1 ("<hvorav>") BARRIER ikke-det-subst)
+        (0 adj)
+        ;
+
+"<ubetinget>" REMOVE:gjøres-ubetinget adv IF
+        (-1 ("gjøre") + pasv)
+        ;
+# blir gjort vilkårslaus
+
+
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
 	(0 adv)
@@ -7798,6 +7830,14 @@ REMOVE ("frø") IF
 	(0 prep)
 ;
 #  "Sjelden: ei hit = skinnsekk"
+
+
+SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
+        (NOT -1 ("tomhendt") OR vblex)
+        (-1C adj + pl OR adj + def)
+        (NEGATE -2 det + dem)
+        ;
+# private hjem
 
 #:4048
  "<hjem>"   REMOVE:4048   (pr)
