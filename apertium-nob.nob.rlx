@@ -1133,7 +1133,7 @@ REMOVE:Prestens-forsvarer cgguess IF
         (NOT 1 storbokstav)
         ;
 
-LIST storbokstav-ok-etter = >>> guio lquot rquot rpar "[0-9]{4,4}"r ;
+LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
 SELECT:storbokstav-np np IF
         (0 storbokstav)
         (NOT -1 storbokstav-ok-etter)
@@ -8027,6 +8027,10 @@ REMOVE:høgd greiner;
 "<jobber>" REMOVE:de-jobber-for-luselønn n IF
         (-1 nominativ)
         (1 %for%)
+        ;
+
+"<Kilde>" REMOVE np IF
+        (-1 lpar)
         ;
 
 "<kar>" SELECT:en-kar m IF
@@ -29476,6 +29480,7 @@ SELECT:men-Valset-sier np
 	(0 storbokstav)
 	(NOT 0 romertall)
 	(NOT -1 >>>)
+	(NOT -1 lpar)
 	(NOT -1 anf)
 	(NOT -1 strek)
 	(NOT -1 siffer)
