@@ -20801,10 +20801,12 @@ CONSTRAINTS
 #bad (adj) guy og andre engelske bad
 
 SELECT:vart-det-kjent adj + nt  IF
-		(-1 %det/dette%)
-		(-2 %være/bli%)
-		;
-		# "ble det kjent at" (òg ok: "det er det kjente dilemmaet")
+        (-2 %være/bli%)
+        (-1 %det/dette%)
+        (NOT 0 n + nt) # «India er det landet i verden med …»
+        (NOT 1 n)      # «fremdeles er det ett år»
+        ;
+# "ble det kjent at" (òg ok: "det er det kjente dilemmaet")
 
 
 #CONSTRAINTS
