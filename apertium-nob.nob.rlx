@@ -2436,11 +2436,6 @@ SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
 		# han pådro seg smerter
-		
-SELECT:vart-det-kjent ("<kjent>"i) + adj + nt  IF
-		(-1 %det%)
-		(-2 %være/bli%)
-		;
 
 "<Eggen>" SELECT:Nils-Arne np;
 
@@ -6417,7 +6412,10 @@ SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
 #  "For å unngå:.  Å (interj) plutselig komme"))
 
 
-
+SELECT:det-nest-største ("<nest>") + adv IF
+		(1 adj + sup)
+		;
+		# det nest største
 
 #CONSTRAINTS
 ## remove domain
@@ -20757,6 +20755,12 @@ CONSTRAINTS
    (0 adj)
 ;
 #bad (adj) guy og andre engelske bad
+
+SELECT:vart-det-kjent adj + nt  IF
+		(-1 %det/dette%)
+		(-2 %være/bli%)
+		;
+		# "ble det kjent at" (òg ok: "det er det kjente dilemmaet")
 
 
 #CONSTRAINTS
