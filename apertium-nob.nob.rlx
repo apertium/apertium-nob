@@ -713,6 +713,7 @@ LIST mask/fem/adj = m f mf (adj def) (adj pprs) ;
 LIST mest-sanns-adj-istf-subst = "visse"  "ville"  "venstre"  "velkommen"  "stille"  "snille"  "myke"  "mjuke"  "klare"  "høyre"  "høgre"  "flott"  ;
 LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skygg"  def) ("folke"  adj pp) ("live"  adj pp) ("kute"  adj pp) ("leg"  adj pl) ("leg"  adj def) ;
 LIST mest-sanns-verb-istf-subst = "temmer"  "tapper"  "suger"  "strever"  "strekker"  "stiller"  "stikker"  "slukker"  "koker"  "hogger"  "binder"  ;
+LIST modalverb = ("skulle"  vblex) ("kunne"  vblex) ("ville"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
 LIST målsubst = "tonnkilometer"  "snes"  "sjømil"  "sekundmeter"  "prosent"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo"  "hektoliter"  "hektogram"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  ("gang"  pl) ;
 LIST nom = (n) (np) (adj) (prn) (det) ;
 LIST nom-ent = (n sg) (np sg) ("all"  sg) (nom sg) ;
@@ -1553,6 +1554,18 @@ REMOVE:vippet ("<vippet>"i) + n IF
 REMOVE:løpet ("<løpet>"i) + vblex + pp
 		;
 		# (løpe - løpt) partisippforma løpet knapt i bruk
+		
+REMOVE:gås ("<gås>"i) + vblex + pasv  IF
+		(-1 det + qnt OR prep OR vblex)
+		(NEGATE -1 modalverb)
+		;
+		# ei gås, dei serverte gås, drive med gås, artar av gås, jakt på gås
+		
+REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
+		(-2 det + qnt)
+		(-1 adj)
+		;
+        # ei diger gås
 
 ## select domain
 #:3787
@@ -4619,7 +4632,6 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-1 %og%)
         ;
 		
-LIST modalverb = ("skulle"  vblex) ("kunne"  vblex) ("ville"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
 SELECT:ris-hest ("<ris>") + pasv IF
         (-1* modalverb)
         (NOT -1* vblex + pasv OR vblex + inf)
