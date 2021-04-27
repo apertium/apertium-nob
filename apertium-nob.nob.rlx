@@ -1545,6 +1545,15 @@ SELECT ("hvorav¹") IF
         ;
 REMOVE ("hvorav¹") ;
 
+REMOVE:vippet ("<vippet>"i) + n IF
+		(NEGATE -1 %på%)
+		;
+		# vippa over, men på vippet (vippen)
+
+REMOVE:løpet ("<løpet>"i) + vblex + pp
+		;
+		# (løpe - løpt) partisippforma løpet knapt i bruk
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
