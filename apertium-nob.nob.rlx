@@ -1597,7 +1597,14 @@ REMOVE:består-laget-av ("<laget>"i) + vblex IF
 		(1 %av%)
 		;
 		# elles består laget av
+
+REMOVE:bussene ("busse") + n + pl 
+		;
+		# bussane går i skytteltrafikk
 		
+REMOVE:ringene ("<ringene>"i) + n + nt + pl + def 
+		;
+		# han hang i ringane
 
 ## select domain
 #:3787
