@@ -1567,6 +1567,38 @@ REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
 		;
         # ei diger gås
 
+SELECT:laget-av ("<laget>"i) + n IF
+		(1 %av%)
+		(-1 adj)
+		;
+		# det øvste laget av permafrosten, då slappa det norske laget av
+
+REMOVE:bli/være-laget-av ("<laget>"i) + n IF
+		(-1* %være/bli% BARRIER setn-gr)
+		(1 %av%)
+		;
+		# tannbørsten er laga av plast
+		# TODO: insisterer på 'laget' etter 'var': var laget av?
+		
+REMOVE:produkt-laget-av ("<laget>"i) + n IF
+		(1 %av%)
+		(-1 n OR np)
+		;
+		# eit produkt laga av plast
+		
+REMOVE:laget-av-plast ("<laget>"i) + n IF
+		(2 n OR np)
+		(1 %av%)
+		;
+		# laga av Magne Furuholmen, laga av plast
+
+REMOVE:består-laget-av ("<laget>"i) + vblex IF
+		(-1 vblex)
+		(1 %av%)
+		;
+		# elles består laget av
+		
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
