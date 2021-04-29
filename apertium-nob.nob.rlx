@@ -1569,7 +1569,7 @@ REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
 
 SELECT:laget-av ("<laget>"i) + n IF
 		(1 %av%)
-		(-1 adj)
+		(-1C adj)
 		;
 		# det øvste laget av permafrosten, då slappa det norske laget av
 
@@ -1591,6 +1591,10 @@ REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(1 %av%)
 		;
 		# laga av Magne Furuholmen, laga av plast
+		
+REMOVE:laget-av-plast ("<laget>"i) + n IF
+		(1 ("av dette"))
+		;
 
 REMOVE:består-laget-av ("<laget>"i) + vblex IF
 		(-1 vblex)
