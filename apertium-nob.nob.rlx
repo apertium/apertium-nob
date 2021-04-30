@@ -1554,13 +1554,13 @@ REMOVE:vippet ("<vippet>"i) + n IF
 REMOVE:løpet ("<løpet>"i) + vblex + pp
 		;
 		# (løpe - løpt) partisippforma løpet knapt i bruk
-		
+
 REMOVE:gås ("<gås>"i) + vblex + pasv  IF
 		(-1 det + qnt OR prep OR vblex)
 		(NEGATE -1 modalverb)
 		;
 		# ei gås, dei serverte gås, drive med gås, artar av gås, jakt på gås
-		
+
 REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
 		(-2 det + qnt)
 		(-1 adj)
@@ -1579,19 +1579,19 @@ REMOVE:bli/være-laget-av ("<laget>"i) + n IF
 		;
 		# tannbørsten er laga av plast
 		# TODO: insisterer på 'laget' etter 'var': var laget av?
-		
+
 REMOVE:produkt-laget-av ("<laget>"i) + n IF
 		(1 %av%)
 		(-1 n OR np)
 		;
 		# eit produkt laga av plast
-		
+
 REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(2 n OR np)
 		(1 %av%)
 		;
 		# laga av Magne Furuholmen, laga av plast
-		
+
 REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(1 ("av dette"))
 		;
@@ -1602,13 +1602,16 @@ REMOVE:består-laget-av ("<laget>"i) + vblex IF
 		;
 		# elles består laget av
 
-REMOVE:bussene ("busse") + n + pl 
+REMOVE:bussene ("busse") + n + pl
 		;
 		# bussane går i skytteltrafikk
-		
-REMOVE:ringene ("<ringene>"i) + n + nt + pl + def 
+
+REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 		;
 		# han hang i ringane
+
+REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
+REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 ## select domain
 #:3787
@@ -4499,6 +4502,13 @@ SELECT:sløvande-middel ("middel") + nt IF
 "<presset>" SELECT:motstå-presset n IF
         (-1 ("motstå"))
         ;
+
+
+"<rede>" SELECT:er-rede-for adj IF
+        (-1 %være/bli%)
+        (1 %for%)
+        ;
+# «– Jeg vil se publikum tilbake på tribunene, og det blir når vi er rede for det, sa Trump»
 
 #:3349
   "<redd>"   SELECT:3349   (vblex pp) IF
