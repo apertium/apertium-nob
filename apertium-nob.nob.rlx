@@ -1232,6 +1232,13 @@ REMOVE:Brannmannskap-har cgguess IF
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
+
+SELECT:namn-cmp-namn np IF
+        (0 storbokstav)
+        (0/1 np)
+        ;
+# «Jan-Morten» er ikkje "mort".n.def
+
 SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
@@ -1260,6 +1267,12 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 # «curling-EMs B-divisjon»
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
+
+
+
+########################################################
+##### Early removal of some unlikely / rare forms: #####
+########################################################
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
 REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
