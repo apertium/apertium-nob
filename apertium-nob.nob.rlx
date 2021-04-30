@@ -9038,6 +9038,10 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "Håret vasket jenta sjøl."
 
+"<skjegget>" REMOVE vblex OR adj IF
+        (-1 %ta% OR %seg%)      # barbere av seg skjegget
+        ;
+
 "<skrevet>" REMOVE:skrev (n nt sg def) IF
 	(0 adj/perf-part)
 	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
@@ -27556,6 +27560,9 @@ CONSTRAINTS
         (NOT 1 %på%)
         ;
 
+"<skjegget>" REMOVE vblex
+        (NOT 1 %seg%)
+        ;
 
 #5006
   "<straks>"   REMOVE:5006   (adj gen) IF
