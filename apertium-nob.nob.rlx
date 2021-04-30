@@ -928,7 +928,7 @@ LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
-LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" ;
+LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" "måke" "måse" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
@@ -1232,6 +1232,13 @@ REMOVE:Brannmannskap-har cgguess IF
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
+
+SELECT:namn-cmp-namn np IF
+        (0 storbokstav)
+        (0/1 np)
+        ;
+# «Jan-Morten» er ikkje "mort".n.def
+
 SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
@@ -1260,6 +1267,12 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 # «curling-EMs B-divisjon»
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
+
+
+
+########################################################
+##### Early removal of some unlikely / rare forms: #####
+########################################################
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
 REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
@@ -1554,13 +1567,13 @@ REMOVE:vippet ("<vippet>"i) + n IF
 REMOVE:løpet ("<løpet>"i) + vblex + pp
 		;
 		# (løpe - løpt) partisippforma løpet knapt i bruk
-		
+
 REMOVE:gås ("<gås>"i) + vblex + pasv  IF
 		(-1 det + qnt OR prep OR vblex)
 		(NEGATE -1 modalverb)
 		;
 		# ei gås, dei serverte gås, drive med gås, artar av gås, jakt på gås
-		
+
 REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
 		(-2 det + qnt)
 		(-1 adj)
@@ -1579,19 +1592,19 @@ REMOVE:bli/være-laget-av ("<laget>"i) + n IF
 		;
 		# tannbørsten er laga av plast
 		# TODO: insisterer på 'laget' etter 'var': var laget av?
-		
+
 REMOVE:produkt-laget-av ("<laget>"i) + n IF
 		(1 %av%)
 		(-1 n OR np)
 		;
 		# eit produkt laga av plast
-		
+
 REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(2 n OR np)
 		(1 %av%)
 		;
 		# laga av Magne Furuholmen, laga av plast
-		
+
 REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(1 ("av dette"))
 		;
@@ -1602,13 +1615,16 @@ REMOVE:består-laget-av ("<laget>"i) + vblex IF
 		;
 		# elles består laget av
 
-REMOVE:bussene ("busse") + n + pl 
+REMOVE:bussene ("busse") + n + pl
 		;
 		# bussane går i skytteltrafikk
-		
-REMOVE:ringene ("<ringene>"i) + n + nt + pl + def 
+
+REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 		;
 		# han hang i ringane
+
+REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
+REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 ## select domain
 #:3787
@@ -2424,14 +2440,18 @@ SELECT:grep-for/om ("grep") + n + ind IF
 		;
 		# grep for å holde seg frisk, ha grep om midtbanen
 
-SELECT:trives ("<trives>"i) + vblex + pres IF 
+SELECT:trives ("<trives>"i) + vblex + pres IF
 		(-1 det OR prn OR adj)
 		;
 
-SELECT:eit-løp ("<løp>"i) + n + sg + ind IF 
+SELECT:løpet-kjørt ("<løpet>"i) + n IF
+        (1 ("<kjørt>"))
+        ;
+
+SELECT:eit-løp ("<løp>"i) + n + sg + ind IF
 		(-1 det OR adj)
 		;
-		
+
 SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		(-1 det-gen)
 		(1 n)
@@ -4499,6 +4519,14 @@ SELECT:sløvande-middel ("middel") + nt IF
 "<presset>" SELECT:motstå-presset n IF
         (-1 ("motstå"))
         ;
+
+
+"<rede>" SELECT:er-rede-for adj IF
+        (*-1 %være/bli% BARRIER ikke-adv)
+        (1 %for% OR %til%)
+        ;
+# «– Jeg vil se publikum tilbake på tribunene, og det blir når vi er rede for det, sa Trump»
+# «, men 27-åringen skal ikke være rede til å gjøre det.»
 
 #:3349
   "<redd>"   SELECT:3349   (vblex pp) IF
@@ -8882,6 +8910,8 @@ REMOVE:tilbakekaller-leker ("lek") IF
         ;
 
 
+
+
 #:3345
 "<rent>"   REMOVE:3345   pp IF
 	(*-1 setn-gr BARRIER %ha%)
@@ -9007,6 +9037,10 @@ REMOVE:tilbakekaller-leker ("lek") IF
 	(1 <<<)
 ;
 #  "Håret vasket jenta sjøl."
+
+"<skjegget>" REMOVE vblex OR adj IF
+        (-1 %ta% OR %seg%)      # barbere av seg skjegget
+        ;
 
 "<skrevet>" REMOVE:skrev (n nt sg def) IF
 	(0 adj/perf-part)
@@ -27148,6 +27182,10 @@ CONSTRAINTS
         (-1 ("sette"))
         ;
 
+"<rede>" SELECT:klar adj IF
+        (NOT *0/* fugl-ord)
+        ;
+
 #:4063
  "<rette>"   SELECT:4063   (n) IF
 	  (-1 %til%)
@@ -27537,6 +27575,9 @@ CONSTRAINTS
         (NOT 1 %på%)
         ;
 
+"<skjegget>" REMOVE vblex
+        (NOT 1 %seg%)
+        ;
 
 #5006
   "<straks>"   REMOVE:5006   (adj gen) IF
