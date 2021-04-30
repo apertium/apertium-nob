@@ -2440,14 +2440,18 @@ SELECT:grep-for/om ("grep") + n + ind IF
 		;
 		# grep for å holde seg frisk, ha grep om midtbanen
 
-SELECT:trives ("<trives>"i) + vblex + pres IF 
+SELECT:trives ("<trives>"i) + vblex + pres IF
 		(-1 det OR prn OR adj)
 		;
 
-SELECT:eit-løp ("<løp>"i) + n + sg + ind IF 
+SELECT:løpet-kjørt ("<løpet>"i) + n IF
+        (1 ("<kjørt>"))
+        ;
+
+SELECT:eit-løp ("<løp>"i) + n + sg + ind IF
 		(-1 det OR adj)
 		;
-		
+
 SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		(-1 det-gen)
 		(1 n)
