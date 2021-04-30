@@ -9599,7 +9599,22 @@ SELECT:at/ha-landet-subst n IF
 # «Saudi-Arabia har med Donald Trumps velsignelse fått amerikansk atombistand to ganger etter at landet drepte journalisten og regimekritikeren Jamal Khashoggi.»
 # TODO ikkje her: «Hadde romferden gått som planlagt, ville Beresheet blitt det første fartøyet med privat finansiering som hadde landet kontrollert på månen.»
 
+SELECT:drøye-fem ("<drøye>"i) + adv IF
+		(1 talord OR siffer)
+		(NEGATE 1 talord + def)
+		;
+		# godt og vel fem mil, litt over fem år, vel 3 kilometer
+SELECT:drøyt-fem ("<drøyt>"i) + adv IF
+		(1 talord OR siffer OR adj OR ("halvpart"))
+		;
+		# godt og vel fem mil, litt over fem år, vel 3 kilometer, den vel 80 år gamle mannen
 
+
+REMOVE:drøye ("<drøye>"i) + adv
+		;
+		
+REMOVE:drøyt ("<drøyt>"i) + adv
+		;
 
 # sec 2
 CONSTRAINTS
