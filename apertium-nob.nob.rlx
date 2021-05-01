@@ -9650,6 +9650,13 @@ REMOVE:drøye ("<drøye>"i) + adv
 REMOVE:drøyt ("<drøyt>"i) + adv
 		;
 
+SELECT:tidligere ("tidligere"i) + adv IF
+		(-2* ("kjenne") OR ("kjennskap") OR ("kjent") BARRIER setn-gr)
+		(-1 %fra%)
+		(1 clb OR cm)
+		;
+		# politiet kjenner personen frå før.
+
 # sec 2
 CONSTRAINTS
 ## select ndomain
