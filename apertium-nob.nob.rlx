@@ -6803,6 +6803,11 @@ REMOVE ("antatt") + adv IF
         ;
 # blir gjort vilkårslaus
 
+"<varen>" REMOVE:kjøpte-varen ("var") + n + m IF
+        (-1 ("kjøpe"))
+        ;
+# kjøpte varen
+
 
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
