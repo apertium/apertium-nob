@@ -3276,7 +3276,7 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 #:3579
   "<grunnet>"   SELECT:3579   (pr) IF
 	(1 nom)
-	(-1 subst)
+	(-1 subst OR setn-gr)
 ;
 
 
