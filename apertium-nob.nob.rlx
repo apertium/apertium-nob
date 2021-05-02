@@ -9650,12 +9650,18 @@ REMOVE:drøye ("<drøye>"i) + adv
 REMOVE:drøyt ("<drøyt>"i) + adv
 		;
 
-SELECT:tidligere ("tidligere"i) + adv IF
+SELECT:fra-tidligere ("tidligere"i) + adv IF
 		(-2* ("kjenne") OR ("kjennskap") OR ("kjent") BARRIER setn-gr)
 		(-1 %fra%)
 		(1 clb OR cm)
 		;
 		# politiet kjenner personen frå før.
+		
+SELECT:som-tidligere ("tidligere"i) + adv IF
+		(-1 %som%)
+		(1 clb OR cm)
+		;
+		# like sterkt som før.
 
 # sec 2
 CONSTRAINTS
