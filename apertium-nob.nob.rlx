@@ -1235,6 +1235,7 @@ SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 SELECT:namn-cmp-namn np IF
         (0 storbokstav)
+        (0/1 cmp)
         (0/1 np)
         ;
 # «Jan-Morten» er ikkje "mort".n.def
