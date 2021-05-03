@@ -6817,6 +6817,12 @@ REMOVE ("antatt") + adv IF
         ;
 # kjøpte varen
 
+"<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
+        (-2 ("ta"))
+        (-1 ("på"))
+        ;
+# kjøpte varen
+
 
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
