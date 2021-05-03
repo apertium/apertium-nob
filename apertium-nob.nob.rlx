@@ -1255,6 +1255,11 @@ REMOVE:acronym-samecase-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)s>"r "$1"v) + gen)
         ;
 
+REMOVE:acronym-samecase-nogen ("[A-ZÆØÅ]?[A-ZÆØÅ]+"r) + gen IF
+        (0 ("<([A-ZÆØÅ][A-ZÆØÅ]*S)>"r "$1"v))
+        ;
+# "<HRS>" is "HRS", not "HR" gen
+
 REMOVE:acronym-samecase-cmp ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0/1 cmp)
         (0 ("<.*-([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
