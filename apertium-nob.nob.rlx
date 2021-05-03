@@ -4510,6 +4510,8 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "overhodet ikke"
 
+"<Palmes>" SELECT:Olof cog OR top;
+
 #:5016
   "<pils>"   SELECT:5016   (n sg ind) IF
 	(-1 %halvliter%)
