@@ -7165,6 +7165,9 @@ REMOVE:data-not-datum ("datum");
 ;
 #  "Mest vanlig som dages"
 
+"<De>" REMOVE:setn-start cog IF
+        (-1 setn-gr)
+        ;
 
 "<domene>" REMOVE ("dom");
 
@@ -27013,11 +27016,11 @@ CONSTRAINTS
 
 "<De>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>>)
+	(NOT -1 >>> OR guio OR lpar)
 ;
 "<Dem>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>>)
+	(NOT -1 >>> OR guio OR lpar)
 ;
 "<Deres>" REMOVE:Deres ("deres²" pos) OR ("deres¹" pos) IF
  	(0 høflig)
