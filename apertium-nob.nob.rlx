@@ -6686,6 +6686,7 @@ REMOVE:unlikely ("døde") + vblex;
 REMOVE:unlikely ("forlenget") + adj IF (0 vblex);
 REMOVE:unlikely ("året") + adj IF (0 n);
 REMOVE:unlikely ("pinn");       # berre i faste uttrykk / cmp, som me leksikaliserer; tørrpinn, peikepinn
+REMOVE:unlikely ("brise");      # "<briste>" vanlegvis "briste" (når er "brise" rett?)
 REMOVE:unlikely ("pinner");     # kva betyr «en pinner»?
 REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
 REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar»
