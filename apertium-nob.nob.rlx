@@ -6782,6 +6782,13 @@ REMOVE:er-ubetinget-fornøyd ("ubetinget") + adj IF
         (1 adj)
         ;
 # jeg er ubetinget fornøyd med det.
+REMOVE:er-ikke-ubetinget-fornøyd ("ubetinget") + adj IF
+        (-2 ("være"))
+        (-1 adv)
+        (0 ("ubetinget"))
+        (1 adj)
+        ;
+# jeg er ikke ubetinget fornøyd med det.
 REMOVE:ubetinget-suksess ("ubetinget") + adv IF
         (-1 vblex)
         (0 ("ubetinget"))
