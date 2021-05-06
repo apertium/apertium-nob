@@ -784,8 +784,8 @@ LIST predik3/5-7 = pr3 pr5 pr6 pr7 ;
 LIST premod-subst = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  ("gang"  pl) ;
 LIST premod-subst/prop = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  np ("gang"  pl) ;
 LIST prep = pr ;
-LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der"  ;
-LIST prep-intrans/adv = "vekke"  "utenfra"  "underveis"  "inne"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der"  adv ;
+LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der" "utvendig" ;
+SET prep-intrans/adv = prep-intrans OR adv ;
 LIST prep-tall = "siden"  pr (det qnt) ;
 LIST prep/@adv = @adv pr ;
 LIST prep/adv = "siden"  pr adv (adj <adv>) (adj nt ind sg) ;
@@ -18963,7 +18963,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 
 #:2471
- SELECT:2471 (vblex pres) IF
+SELECT:Dit-går-de pres IF
 	(NOT 0 pret)
 	(NOT 0 farlige-forledd-verb)
 	(-1C prep-intrans)
@@ -18971,6 +18971,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 ;
 #  "Dit går de"
 #      :group 43
+# «Utvendig følger den stilen til sine større søsken»
 
 
 
