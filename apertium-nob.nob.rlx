@@ -7377,6 +7377,7 @@ REMOVE:data-not-datum ("datum");
   "<felt>"   REMOVE:3662   (n sg) IF
 	(NOT -1 %som%-prep)
 	(NOT *-1 ub-nøyt-det)
+        (NOT -1C det + sg)
 	(*-1O periode-beg/konj-clb LINK *1 hj-verb)
 ;
 #  "den er den største som er felt (ikke subst)"))
