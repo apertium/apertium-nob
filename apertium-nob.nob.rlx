@@ -6776,6 +6776,12 @@ REMOVE:betinget-suksess ("betinge") IF
         (1 n)
         ;
 # betinget suksess
+REMOVE:er-ubetinget-fornøyd ("ubetinget") + adj IF
+        (-1 ("være"))
+        (0 ("ubetinget"))
+        (1 adj)
+        ;
+# jeg er ubetinget fornøyd med det.
 REMOVE:ubetinget-suksess ("ubetinget") + adv IF
         (-1 vblex)
         (0 ("ubetinget"))
