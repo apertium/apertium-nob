@@ -7437,6 +7437,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "Bare ved: det folket seg"
 
+"<forbanna>" REMOVE vblex IF
+        (-1 poss)               # «din forbanna …»
+        ;
 
 "<forbundet>" REMOVE:kostnadene-forbundet-med n IF
         (-1 n)
@@ -9316,6 +9319,10 @@ SELECT:skrev vblex IF
 	(NOT 1 %at%)
 ;
 #  "bare trans"
+
+"<tulling>" REMOVE:din-tulling f IF
+        (*-1 poss BARRIER ikke-adj)
+        ;
 
 "<tykke>" REMOVE:tjukke vblex IF
         (NOT -1 infmerke)
@@ -27257,6 +27264,9 @@ CONSTRAINTS
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<tanker>" SELECT:Våre-tanker ("tanke") IF
+        (-1 poss OR ("varm")) # ca. aldri «våre (gass)tanker» i korpus
+        ;
 
 #:4058
  "<tre>"   SELECT:4058   (n nt sg) IF
