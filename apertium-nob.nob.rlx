@@ -784,8 +784,8 @@ LIST predik3/5-7 = pr3 pr5 pr6 pr7 ;
 LIST premod-subst = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  ("gang"  pl) ;
 LIST premod-subst/prop = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  np ("gang"  pl) ;
 LIST prep = pr ;
-LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der"  ;
-LIST prep-intrans/adv = "vekke"  "utenfra"  "underveis"  "inne"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der"  adv ;
+LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der" "utvendig" ;
+SET prep-intrans/adv = prep-intrans OR adv ;
 LIST prep-tall = "siden"  pr (det qnt) ;
 LIST prep/@adv = @adv pr ;
 LIST prep/adv = "siden"  pr adv (adj <adv>) (adj nt ind sg) ;
@@ -6776,6 +6776,19 @@ REMOVE:betinget-suksess ("betinge") IF
         (1 n)
         ;
 # betinget suksess
+REMOVE:er-ubetinget-fornøyd ("ubetinget") + adj IF
+        (-1 ("være"))
+        (0 ("ubetinget"))
+        (1 adj)
+        ;
+# jeg er ubetinget fornøyd med det.
+REMOVE:er-ikke-ubetinget-fornøyd ("ubetinget") + adj IF
+        (-2 ("være"))
+        (-1 adv)
+        (0 ("ubetinget"))
+        (1 adj)
+        ;
+# jeg er ikke ubetinget fornøyd med det.
 REMOVE:ubetinget-suksess ("ubetinget") + adv IF
         (-1 vblex)
         (0 ("ubetinget"))
@@ -7377,6 +7390,7 @@ REMOVE:data-not-datum ("datum");
   "<felt>"   REMOVE:3662   (n sg) IF
 	(NOT -1 %som%-prep)
 	(NOT *-1 ub-nøyt-det)
+        (NOT -1C det + sg)
 	(*-1O periode-beg/konj-clb LINK *1 hj-verb)
 ;
 #  "den er den største som er felt (ikke subst)"))
@@ -7437,6 +7451,9 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 ;
 #  "Bare ved: det folket seg"
 
+"<forbanna>" REMOVE vblex IF
+        (-1 poss)               # «din forbanna …»
+        ;
 
 "<forbundet>" REMOVE:kostnadene-forbundet-med n IF
         (-1 n)
@@ -9316,6 +9333,10 @@ SELECT:skrev vblex IF
 	(NOT 1 %at%)
 ;
 #  "bare trans"
+
+"<tulling>" REMOVE:din-tulling f IF
+        (*-1 poss BARRIER ikke-adj)
+        ;
 
 "<tykke>" REMOVE:tjukke vblex IF
         (NOT -1 infmerke)
@@ -18963,7 +18984,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 
 #:2471
- SELECT:2471 (vblex pres) IF
+SELECT:Dit-går-de pres IF
 	(NOT 0 pret)
 	(NOT 0 farlige-forledd-verb)
 	(-1C prep-intrans)
@@ -18971,6 +18992,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 ;
 #  "Dit går de"
 #      :group 43
+# «Utvendig følger den stilen til sine større søsken»
 
 
 
@@ -27256,6 +27278,9 @@ CONSTRAINTS
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<tanker>" SELECT:Våre-tanker ("tanke") IF
+        (-1 poss OR ("varm")) # ca. aldri «våre (gass)tanker» i korpus
+        ;
 
 #:4058
  "<tre>"   SELECT:4058   (n nt sg) IF
