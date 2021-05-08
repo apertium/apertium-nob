@@ -3587,6 +3587,11 @@ SELECT:lurer-på-hvor adv IF
         (1 ("<nærme>"))
         ;
 
+"<hvor>" SELECT:komma-hvor cnjsub IF
+        (-1 komma)
+        (NEGATE *0 spørreadv OR %når%)
+        ;
+
 "<hvor>" SELECT:men-hvor-det-bare-skal-avgjøres cnjsub IF
         (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
         (-2 cm)
