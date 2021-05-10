@@ -32197,15 +32197,12 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<Laget>" REMOVE:default-Laga ("lage" vblex pret) ;	# keep Lage<n><nt><sg><def>→Laget Lag<n><nt><sg><def>→Laget
 "<laks>" REMOVE:default-laksar ("laks" n m pl ind) ;	# keep laks<n><m><sg><ind>→laks
 "<landet>" REMOVE:default-landa ("lande" vblex pret) ;	# keep land<n><nt><sg><def>→landet
-"<led>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
 "<Leder>" REMOVE:default-Leder ("Leder" np cgguess) ;	# keep Leder<n><m><sg><ind>→Leiar
 "<leder>" REMOVE:default-leier ("lede" vblex pres) ;	# keep leder<n><m><sg><ind>→leiar
 "<leier>" REMOVE:default n ;	# keep leige
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un pl ind) ;	# keep lege<n><m><sg><ind>→lege
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un sp def) ;	# keep lege<n><m><sg><ind>→lege
 "<legger>" REMOVE:default-legger ("legg" n m pl ind) ;	# keep legge<vblex><pres>→legg
-"<lei>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
-"<leid>" REMOVE:default-leid ("lide" vblex pret) ;	# keep li<vblex><pret>→lei
 "<leid>" REMOVE:default-leigd ("leie" vblex pp) ;	# keep li<vblex><pret>→lei
 "<leie>" REMOVE:default-leige ("leie" n f sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
 "<leie>" REMOVE:default-leige ("leie" n m sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
