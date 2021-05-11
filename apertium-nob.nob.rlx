@@ -31409,6 +31409,23 @@ SELECT:middel ("middel") + n + nøyt + pl IF
 
 SELECT:default-midlar ("middel") + n + m + pl ;
 
+# LEX: profil vs. profil
+LIST profil-adj = "geologisk" "seismisk";
+LIST profil-noun = "geologi" "bergart" "hydrokarboner" "forkastning" "sjikt" "seismikk" "boring" "jordsmonn" "anlegg";
+
+SELECT:profil-nøyt-one ("profil") + nt IF
+		(-1 profil-adj OR ("list") OR ("jord"))
+		;
+SELECT:profil-nøyt-two ("profil") + nt IF
+		(-1* profil-noun)
+		;
+SELECT:profil-nøyt-three ("profil") + nt IF
+		(1* profil-noun)
+		;
+
+"<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
+
+
 SELECT:default ("hall") + fl + m; # hallar/hallane
 
 REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
@@ -32262,7 +32279,6 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<Premier>" REMOVE:default-Premiar ("premie" n m pl ind) ;	# keep Premier<np><cgguess>→Premier
 "<priser>" REMOVE:default-priser ("prise" vblex pres) ;	# keep pris<n><m><pl><ind>→prisar
 "<produsert>" REMOVE:default-produserte ("produsere" adj pp pl) ;	# keep produsere<adj><pp><nt><sg><ind>→produsert produsere<vblex><pp>→produsert
-"<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
 "<purker>" REMOVE:default-purkar ("purk" n m pl ind) ;	# keep purke<n><m><pl><ind>→purker purke<n><f><pl><ind>→purker
 "<rammer>" REMOVE:default-rammer ("ramme" n f pl ind) ;	# keep ramme<vblex><pres>→rammar
 "<rammer>" REMOVE:default-rammer ("ramme" n m pl ind) ;	# keep ramme<vblex><pres>→rammar
