@@ -6845,7 +6845,11 @@ REMOVE ("antatt") + adv IF
         (-1 ("på"))
         ;
 # ta på ballene
-
+REMOVE ("pote") IF
+        (-1 det)
+        (0 ("pote") OR ("pota"))
+        ;
+# 1 pota - oppskrift
 
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
