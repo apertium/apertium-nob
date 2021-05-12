@@ -19453,7 +19453,7 @@ SELECT:5009 (vblex pres) IF
 
 
 #:2429
- SELECT:2429 (vblex inf) IF
+SELECT:det-kan-vel-hende inf IF
 	(NOT 0 farlige-inf)
 	(NOT -1 ikke-adv-subst-pron-konj LINK NOT 0 det-kvant)
 	(*-1 m-hj-verb BARRIER setn-gr)
@@ -20497,7 +20497,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 
 #:2385
- SELECT:2385 (vblex pret) IF
+SELECT:Stater-kan-måtte-bruke pret IF
 	(0 m-hj-verb)
 	(NOT -1 infmerke)
 	(NOT -1 m-hj-verb)
