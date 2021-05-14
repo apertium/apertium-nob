@@ -3133,6 +3133,14 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-1 omtale-ord)
 ;
 
+"<funnet>" SELECT:funnet-sted vblex IF
+	(1 ("sted"))
+;
+
+"<funnet>" SELECT:funnet-sted vblex IF
+	(-1* %ha% OR %være/bli%)
+;
+
 "<før>"  REMOVE:før-not-fø ("fø") IF
         (NOT 1 poss)               # før mine sauer
         (NEGATE 1 def LINK 2 poss) # før sauene mine
