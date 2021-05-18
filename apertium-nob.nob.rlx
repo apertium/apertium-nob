@@ -5539,6 +5539,11 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 "<støtte>" REMOVE:skal-støtte-arbeidet n IF
         (1 ("<arbeidet>"))
         ;
+		
+"<arbeidet>"i REMOVE:i-arbeidet vblex IF
+        (-1 prep)
+        ;
+		# i arbeidet, på arbeidet, under arbeidet osv.
 
 REMOVE:støtte-sammen ("støte") IF
         (0 ("<støtte>"i))
