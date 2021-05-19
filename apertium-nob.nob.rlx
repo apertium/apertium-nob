@@ -6735,6 +6735,8 @@ REMOVE:unlikely ("brise");      # "<briste>" vanlegvis "briste" (når er "brise"
 REMOVE:unlikely ("pinner");     # kva betyr «en pinner»?
 REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
 REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar»
+REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
+REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
