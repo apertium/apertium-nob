@@ -4586,7 +4586,7 @@ SELECT:sløvande-middel ("middel") + nt IF
         ;
 
 "<røyk>" SELECT:giftig-røyk n IF
-        (-1 ("giftig"))
+        (-1 adj)
         ;
 
 LIST regne_ut = ("regne" vblex) ;
@@ -6536,6 +6536,21 @@ SELECT:det-nest-største ("<nest>") + adv IF
 		(1 adj + sup)
 		;
 		# det nest største
+		
+SELECT:glatte-veier ("<veier>"i) + n IF
+		(-1 adj)
+		;
+		# glatte vegar
+
+SELECT:ha-slitt ("<slitt>"i) + vblex IF
+		(-1* ("ha" vblex) BARRIER setn-gr)
+		;
+		
+SELECT:være-lei-av ("<lei>"i) + adj IF
+		(-1 %være/bli%)
+		(1 ("av"))
+		;
+		# vere lei av
 
 #CONSTRAINTS
 ## remove domain
@@ -31954,6 +31969,11 @@ SELECT:subject-per-clause nominativ IF
         ;
 # «De vurderer å ta alle fly ut av drift, fremgår  det  i en bekymringsmelding»
 
+SELECT:så-noe ("<så>"i) + adv IF
+		(0* vblex BARRIER setn-gr)
+		;
+		
+SELECT:default ("<så>"i) + vblex ;
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
