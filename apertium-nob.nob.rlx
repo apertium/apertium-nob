@@ -4586,7 +4586,7 @@ SELECT:sløvande-middel ("middel") + nt IF
         ;
 
 "<røyk>" SELECT:giftig-røyk n IF
-        (-1 adj)
+        (-1 adj + sg + ind)
         ;
 
 LIST regne_ut = ("regne" vblex) ;
