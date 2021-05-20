@@ -6552,6 +6552,11 @@ SELECT:være-lei-av ("<lei>"i) + adj IF
 		;
 		# vere lei av
 
+SELECT:strenge ("<strenge>"i) + adj IF
+		(NEGATE 1 ("opp"))
+		;
+		# strengje opp, elles strenge
+
 #CONSTRAINTS
 ## remove domain
 LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" ;
