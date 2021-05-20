@@ -821,11 +821,11 @@ LIST sanseverb = "se"  "merke"  "la"  "kjenne"  "høre"  "føle"  "be"  ;
 LIST sbu = "hvor"  "hva"  cnjsub ;
 LIST sbu-ren = cnjsub ;
 LIST sbu/konj = cnjsub cnjcoo ;
-LIST selv = "sjøl"  "sjæl"  "selv"  ;
 LIST setn-gr = "hvilken" "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "--" guio cnjsub @sbu >>> <<< (":" clb) (";" clb) (clb cnjcoo) (clb cm) (clb cm) ;
 SET setn-gr-u-komma      = setn-gr - (clb cm) ;
 SET setn-gr-u-sbu        = setn-gr - cnjsub ;
 SET setn-gr-u-strek      = setn-gr - (guio) - ("--") ;
+SET setn-gr/anf          = setn-gr OR lquot OR rquot ;
 SET setn-gr/infmerke     = setn-gr OR ("å") ;
 SET setn-gr/parentes-beg = setn-gr OR lpar ;
 SET setn-gr/prep         = setn-gr OR pr ;
@@ -3160,9 +3160,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 ("sted"))
 ;
 
-"<funnet>" SELECT:funnet-sted vblex IF
-	(-1* %ha% OR %være/bli%)
+"<funnet>" SELECT:funnet-sted vblex OR adj IF
+	(-1* %ha% OR %være/bli% BARRIER vblex)
 ;
+# BARRIER vblex pga. # «Politiet har rutinemessig opprettet sak på funnet»
+# adj: «Kvinnen, som er i 50-årene, ble funnet død inne vraket»
 
 "<før>"  REMOVE:før-not-fø ("fø") IF
         (NOT 1 poss)               # før mine sauer
@@ -6900,6 +6902,10 @@ REMOVE ("antatt") + adv IF
         (-1 ("gjøre") + pasv)
         ;
 # blir gjort vilkårslaus
+"<bøter>" REMOVE:bøter-ilegges vblex IF
+        (1 ("ilegge") + pasv)
+        ;
+# bøter ilegges
 
 "<varen>" REMOVE:kjøpte-varen ("var") + n + m IF
         (-1 ("kjøpe"))
@@ -28062,6 +28068,7 @@ REMOVE:øye ("øye"i) IF
 #CONSTRAINTS
 ## select ndomain heur
 
+
 SELECT:titlecase-np np + titlecase IF
         (NOT -1 >>>)
         (NOT -1 guio OR lpar LINK -1 >>>)
@@ -29024,7 +29031,7 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
 
 
 #:1753
- SELECT:1753 (cnjsub) IF
+SELECT:som-du-og-han-gjerne-anbefaler cnjsub IF
 	(1 pron/subst)
 	(2 konj)
 	(NOT *-2 sbu BARRIER setn-gr)
@@ -31014,6 +31021,51 @@ REMOVE:møtes pstv + pp IF
         (NOT -1 %ha%)
         ;
 
+"<så>" SELECT:Og-så-komma adv IF
+        (-2 >>>)
+        (-1 cnjcoo OR adv)
+        (1 cm)
+        ;
+# «Og så, på Stortinget, kan vi samarbeide med Rødt fra sak til sak»
+
+"<Så>" SELECT:Så-komma adv IF
+        (-1 >>>)
+        (1 cm)
+        ;
+# «Så, lang tid senere, begynte de å rapportere skikkelig store tall, som 3.000.»
+
+"<Så>" SELECT:Så-fv adv IF
+        (-1 >>>)
+        (1 fv)
+        (NOT 1 n)
+        ;
+# «Så tabbet keeper David Mitov Nilsson seg ut.»
+
+"<så>" SELECT:enn-som-så adv IF
+        (-2 ("enn"))
+        (-1 ("som"))
+        (1 setn-gr)
+        ;
+# «Bildet er mer sammensatt enn som så,»
+
+"<så>" SELECT:komma-så-komma adv IF
+        (-1 cm)
+        (1 setn-gr)
+        ;
+# «Han mente det ikke var frispark, så, sa Karlsen»
+
+"<så>" SELECT:og-så-motbydelig adv IF
+        (-1 cnjcoo)
+        (1 adj + ind)
+        (2 setn-gr/anf)
+        ;
+# «Det er viktig å ha alle fakta på bordet før man peker fingeren på noen «for noe så seriøst eller så motbydelig».»
+
+"<så>" SELECT:ganger-så-stort adv IF
+        (-1 ("<ganger>"i))
+        (1 adj + pst + ind OR adv)
+        ;
+
 "<så>" SELECT:hun-så-gardinene-blåse pret IF
         (-1C nominativ)
         (1C acc OR n + def)
@@ -32002,7 +32054,9 @@ SELECT:subject-per-clause nominativ IF
 SELECT:så-noe ("<så>"i) + adv IF
 		(0* vblex BARRIER setn-gr)
 		;
-		
+
+"<Så>" SELECT:Så-storbokstav adv ;
+
 SELECT:default ("<så>"i) + vblex ;
 
 # If still ambiguous, go by frequency.
