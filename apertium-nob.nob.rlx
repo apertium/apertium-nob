@@ -1705,6 +1705,29 @@ SELECT:leigd-ut ("utleid") + adj + pst IF
 		
 REMOVE:unlikely ("røre") + n + pl ; #matlaging
 
+SELECT:kursene ("<kursene>"i) + n + nt IF
+        (0/* cmp)
+		;
+		# trenarkursa
+
+SELECT:kursene ("<kursene>"i) + n + nt IF
+		(0* ("sertifisering") OR ("undervisning") OR ("skole") OR ("høyskole") OR ("universitet") OR ("studium") OR ("akademi") OR ("opplæring") OR ("voksenopplæring") OR ("deltaker") OR ("kunnkap"))
+		;
+		# mange fullfører kursa
+
+SELECT:kursene ("<kursene>"i) + n + m IF
+		(0* ("børs") OR ("valuta") OR ("aksje") OR ("spekulant") OR ("indeks") OR ("oppgang") OR ("nedgang") OR ("marked") OR ("svingning") OR ("fall"))
+		;
+		
+SELECT:kursene ("<kursene>"i) + n + m IF
+		(-1 ("få") OR ("hente"))
+		;
+
+SELECT:kursene ("<kursene>"i) + n + m IF
+		(1 ("opp") OR ("ned"))
+		;
+	
+
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
 	(NOT -1 fl-det)
@@ -32256,7 +32279,6 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<krangler>" REMOVE:default-kranglar ("krangel" n m pl ind) ;	# keep krangel<n><nt><pl><ind>→krangel
 "<Kravet>" REMOVE:default-Krava ("krave" vblex pp) ;	# keep Krav<n><nt><sg><def>→Kravet
 "<krysset>" REMOVE:default-krysset ("kryss" n nt sg def) ;	# keep krysse<vblex><pret>→kryssa
-"<kursene>" REMOVE:default-kursane ("kurs" n m pl def) ;	# keep kurs<n><nt><pl><def>→kursa
 "<kuttet>" REMOVE:default-kuttet ("kutt" n nt sg def) ;	# keep kutte<vblex><pret>→kutta
 "<kvitter>" REMOVE:default-kvitter ("kvitter" n nt pl ind) ;	# keep kvitte<vblex><pres>→kvittar
 "<kvitter>" REMOVE:default-kvitter ("kvitter" n nt sg ind) ;	# keep kvitte<vblex><pres>→kvittar
