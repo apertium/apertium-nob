@@ -1705,7 +1705,7 @@ SELECT:leigd-ut ("utleid") + adj + pst IF
 		
 REMOVE:unlikely ("røre") + n + pl ; #matlaging
 
-SELECT:kursene ("<kursene>"i) + n + nt IF
+SELECT:kurs ("kurs") + n + nt + pl + def IF
         (0/* cmp)
 		;
 		# trenarkursa
