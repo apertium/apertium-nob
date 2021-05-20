@@ -6877,6 +6877,10 @@ REMOVE ("antatt") + adv IF
         (-1 ("gjøre") + pasv)
         ;
 # blir gjort vilkårslaus
+"<bøter>" REMOVE:bøter-ilegges vblex IF
+        (1 ("ilegge") + pasv)
+        ;
+# bøter ilegges
 
 "<varen>" REMOVE:kjøpte-varen ("var") + n + m IF
         (-1 ("kjøpe"))
