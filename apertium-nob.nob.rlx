@@ -5548,6 +5548,11 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 "<stiger>" SELECT:default vblex IF
         (NEGATE 0* vblex BARRIER setn-gr)
         ;
+		
+"<besteget>" REMOVE:besteget vblex + pp IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+
 
 #:3238
   "<stikk>"   SELECT:3238   (adv) IF
