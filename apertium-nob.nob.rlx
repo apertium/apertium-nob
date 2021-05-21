@@ -5531,12 +5531,23 @@ REMOVE:unlikely ("<ris>") + pasv;
 #  "i stand
 # 26.3"
 
+		
+"<lykter>" REMOVE:unlikely vblex ;
+		# verbet finst, men er heilt marginalt 
 
 LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "mye" "mest" "gradvis" "framover";
 "<stiger>" SELECT:stiger-svakt vblex IF
         (1 stige-måte)
         ;
 # «Det er fortsatt en lav andel influensasyke i landet, men antallet stiger svakt.»
+
+"<stiger>" SELECT:stiger vblex IF
+        (0* ("antall") OR ("tall") OR ("pris") OR ("kurs" m) OR ("boligpris") OR ("børs"))
+        ;
+
+"<stiger>" SELECT:default vblex IF
+        (NEGATE 0* vblex BARRIER setn-gr)
+        ;
 
 #:3238
   "<stikk>"   SELECT:3238   (adv) IF
