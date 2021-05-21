@@ -6922,7 +6922,26 @@ REMOVE ("antatt") + adv IF
         (1 ("ilegge") + pasv)
         ;
 # bøter ilegges
-
+REMOVE:seg-hinsides adj IF
+        (-1 ("seg"))
+        (0 ("hinsides"))
+;
+# bevege seg hinsides
+REMOVE:hinsides-alt adj IF
+        (0 ("hinsides"))
+        (1 ("all"))
+;
+# hinsides alt/alle
+REMOVE:hinsides-subst pr IF
+        (0 ("hinsides"))
+        (1 n)
+;
+# hinsides pengebruk
+REMOVE:er-hinsides pr IF
+        (-1* ("være"))
+        (0 ("hinsides"))
+;
+# det er hinsides
 "<varen>" REMOVE:kjøpte-varen ("var") + n + m IF
         (-1 ("kjøpe"))
         ;
