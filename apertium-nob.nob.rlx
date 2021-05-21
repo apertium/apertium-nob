@@ -2552,6 +2552,41 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
+
+"<sagt>" SELECT:ha-sagt vblex + pp IF
+		(-1 %ha% BARRIER setn-gr)
+        ;
+
+"<sagt>" SELECT:ha-sagt vblex + pp IF
+		(-1* %ha%)
+		(NEGATE -1* %være/bli% BARRIER setn-gr)
+        ;
+		
+"<sagt>" SELECT:det-blir-sagt adj + nt IF
+		(-1 %være/bli%)
+		(-2 %det%)
+        ;
+		
+"<sagt>" SELECT:ha/ville-sagt-ja adj + nt IF
+		(1 ("ja") OR ("nei") OR ("kanskje"))
+        ;
+		
+"<sagt>" SELECT:ha/ville-sagt-klart-ja adj + nt IF
+		(1 adj)
+		(2 ("ja") OR ("nei") OR ("kanskje"))
+        ;
+		
+"<sagt>" SELECT:siste-ord-er-ikke-sagt-ja adj + nt IF
+		(-1 %ikke%)
+		(-2 %være%)
+		(-3 ("ord"))
+		(-4 %siste%)
+        ;
+		
+"<sagt>" SELECT:mildt-sagt adj + nt IF
+		(-1 adj + nt)
+        ;
+		
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
