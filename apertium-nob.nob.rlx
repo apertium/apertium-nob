@@ -118,6 +118,7 @@ LIST porsjon = "mengde" "porsjon" ;
 LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
+LIST talord-pl = "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
 LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
 LIST vekedag = "mandag" "tirsdag" "onsdag" "torsdag" "fredag" "lørdag" "søndag" ;
@@ -2435,14 +2436,120 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 talord-par-siffer)
         ;
 		
+"<drepte>" SELECT:drepte-27 vblex IF
+        (1 talord-par-siffer)
+        ;
+		
+"<drepte>" SELECT:drepte-den-tre-år-gamle-sønnen vblex IF
+        (1 det + dem)
+		(2 adj)
+        ;
+
+"<drepte>" SELECT:drepte-per adj IF
+        (1 ("per"))
+        ;
+		# drepte per tusen innbyggere
+
+"<drepte>" SELECT:skjøt-og-drepte vblex IF
+        (-2 ("skyte" vblex) OR ("angripe" vblex) OR ("lemleste" vblex))
+		(-1 %og%)
+        ;
+		
 "<drepte>" SELECT:hun-spilte-drepte-B adj IF
-        (-1 vblex )
-        (1 vblex )
+        (0* vblex BARRIER setn-gr)
         ;
 		
 "<drepte>" SELECT:de-drepte-B adj IF
         (-1 prn + pers + pl + nom OR det + pos + un + pl )
 		(NEGATE 1 n OR np OR prn OR talord OR siffer )
+        ;
+
+"<drept>" SELECT:ha-drept vblex + pp IF
+		(-1* %ha% BARRIER setn-gr)
+		(NEGATE -1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<drept>" SELECT:27-er-drept adj + pl IF
+        (-1* %være/bli% BARRIER setn-gr)
+		(-2* siffer OR talord-pl BARRIER setn-gr)
+		;
+
+"<drept>" SELECT:er-27-drept adj + pl IF
+		(-1* siffer OR talord-pl BARRIER setn-gr)
+        (-2* %være/bli% BARRIER setn-gr)
+		;
+
+"<drept>" SELECT:de-som-er-drept adj + mf IF
+		(-3 m OR f)
+        (-2 ("som"))
+		(-1 %være/bli%)
+        ;
+
+"<drept>" SELECT:de-som-er-drept adj + mf IF
+		(-3 nt)
+        (-2 ("som"))
+		(-1 %være/bli%)
+        ;
+
+"<drept>" SELECT:skutt-og-drept adj + pl IF
+        (-2 adj + pl)
+        ;
+
+"<drept>" SELECT:de-som-er-drept adj + pl IF
+		(-3 pl OR talord-pl OR siffer)
+        (-2 %som%)
+		(-1 %være/bli%)
+        ;
+		
+"<drept>" SELECT:skutt-og-drept adj + mf IF
+		(-3 m OR f)
+        (-2 ("skutt") OR ("påkjørt"))
+		(-1 %og%)
+        ;
+
+"<drept>" SELECT:skutt-og-drept adj + nt IF
+		(-3 nt)
+        (-2 ("skutt") OR ("påkjørt"))
+		(-1 %og%)
+        ;
+
+"<drept>" SELECT:skutt-og-drept adj + pl IF
+		(-3 pl)
+        (-2 ("skutt") OR ("påkjørt"))
+		(-1 %og%)
+        ;
+		
+"<drept>" SELECT:er-drept adj + mf + sg IF
+        (-1 %være/bli%)
+        (-2* n + m + sg OR n + f + sg BARRIER setn-gr)
+		;
+		
+"<drept>" SELECT:er-drept adj + nt + sg IF
+        (-1 %være/bli%)
+        (-2* n + nt + sg BARRIER setn-gr)
+		;
+		
+"<drept>" SELECT:kvinne-drept-av adj + mf + sg IF
+        (1 %av%)
+        (-1 n + m + sg OR n + f + sg)
+		;
+		
+"<drept>" SELECT:dyr-drept-av adj + mf + sg IF
+        (1 %av%)
+        (-1 n + nt + sg)
+		;
+		
+"<drept>" SELECT:sauer-drept adj + pl IF
+        (-1* n + pl BARRIER setn-gr)
+		;
+
+"<drept>" SELECT:NN-ble-drept adj + m IF
+        (-2 np)
+        (-1 %være/bli%)
+        ;
+		
+"<drept>" SELECT:default adj + m IF
+        (-1* %være/bli% BARRIER setn-gr)
         ;
 
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
