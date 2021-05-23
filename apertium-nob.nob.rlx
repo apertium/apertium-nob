@@ -2552,9 +2552,8 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
-
 "<sagt>" SELECT:ha-sagt vblex + pp IF
-		(-1 %ha% BARRIER setn-gr)
+		(-1 %ha%)
         ;
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
@@ -2585,6 +2584,39 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 		
 "<sagt>" SELECT:mildt-sagt adj + nt IF
 		(-1 adj + nt)
+        ;
+		
+"<skåret>" SELECT:skåret-i-gleden n IF
+		(1 %i%)
+		(2 ("glede") + n + sg + def)
+        ;
+		
+"<skåret>" SELECT:default ("skjære") + vblex IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<skåret>" SELECT:skåret-i-stykker ("skjære") + vblex IF
+		(1 %i%)
+		(2 ("stykke") + n + pl OR ("bit") + n + pl)
+        ;
+		
+"<skåret>" SELECT:skåret-i-stykker ("skjære") + vblex IF
+		(1 %av% OR ("vekk") OR ("bort") OR ("brød") OR ("kjøtt"))
+        ;
+
+"<skåret>" SELECT:skåret-med-kniv ("skjære") + vblex IF
+		(1 %med%)
+		(2 ("kniv"))
+        ;
+
+"<skåret>" SELECT:skåret-med-kniv ("skjære") + vblex IF
+		(1 prn + pers + nom OR n OR np)
+		(2 %med%)
+		(3 ("kniv"))
+        ;
+
+"<skåret>" SELECT:skjære-seg ("skjære") + vblex IF
+		(1 prn + ref OR prn + pers + acc)
         ;
 		
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
