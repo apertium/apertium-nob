@@ -1369,6 +1369,7 @@ SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("nå
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
+REMOVE:unlikely ("sin") + adv ;
 
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
@@ -30016,8 +30017,10 @@ SELECT:Da-oppgav-han-at nominativ IF
         (-3 setn-gr)
         (-2C adv OR cnjsub)
         (-1 fv)
-        (1 adv OR cnjsub)
+        (1 adv OR cnjsub OR poss)
         ;
+# poss pga.
+# «Da avga han sin forklaring.»
 
 #CONSTRAINTS
 ## remove ndomain heur
