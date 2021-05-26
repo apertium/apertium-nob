@@ -2619,6 +2619,10 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 		(1 prn + ref OR prn + pers + acc)
         ;
 		
+"<samlet>" SELECT:stå-samlet ("samle") + adj + pp IF
+		(-1* ("stå" vblex) BARRIER setn-gr)
+        ;
+		
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
