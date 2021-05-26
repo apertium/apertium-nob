@@ -1728,7 +1728,16 @@ SELECT:kursene ("<kursene>"i) + n + m IF
 SELECT:kursene ("<kursene>"i) + n + m IF
 		(1 ("opp") OR ("ned"))
 		;
-	
+
+SELECT:uansett-når ("når") + adv IF
+		(-1 ("uansett") OR ("samme"))
+		;
+		# uansett når
+		
+SELECT:uansett-hvordan ("hvordan") + adv IF
+		(-1 ("uansett") OR ("samme"))
+		;
+		# uansett hvordan
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
