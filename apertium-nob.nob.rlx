@@ -28179,7 +28179,23 @@ CONSTRAINTS
 "<sukker>" REMOVE pres IF
         (-2 ("salt") OR ("smør") OR ("mjøl") OR ("krydder") OR ("karbohydrat") OR ("bær") OR ("frukt"))
         ;
-
+		
+"<salt>" REMOVE pp IF
+        (-1 adj OR adv OR ("gram") OR ("milligram") OR ("desigram") OR ("hekto") OR ("kilo") OR ("kg") OR ("tonn") OR ("teskje") OR ("neve"))
+        ;
+		# 20 tonn salt
+		
+"<salt>" REMOVE pp IF
+		(-1 %og% OR %eller%)
+		(-2 n)
+        ;
+		# lakris og salt
+		
+"<salt>" REMOVE pp IF
+		(1 %og% OR %eller%)
+		(2 n)
+        ;
+		# salt og lakris
 
 #:3180
   "<tom>"   REMOVE:3180   (n sg) IF
