@@ -1739,6 +1739,11 @@ SELECT:uansett-hvordan ("hvordan") + adv IF
 		;
 		# uansett hvordan
 
+SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
+		(1 %til%)
+		;
+
+
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
 	(NOT -1 fl-det)
