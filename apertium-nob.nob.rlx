@@ -2736,6 +2736,16 @@ SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
 		# han pådro seg smerter
+		
+SELECT:ha-foretatt ("<foretatt>"i) + vblex + pp  IF
+		(-1* %ha% BARRIER setn-gr)
+		;
+		# ha gjort noko
+
+SELECT:sjelden ("sjelden"i) + adv IF
+		(-1* vblex + pres + pasv)
+		;
+		# det foretas sjelden kontroll: det blir sjeldan gjennomført kontroll
 
 "<Eggen>" SELECT:Nils-Arne np;
 
