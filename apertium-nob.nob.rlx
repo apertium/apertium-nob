@@ -9353,7 +9353,9 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "30.11"
 
-
+"<sette>" REMOVE:mest-sette inf IF
+        (-1 %mest/minst%)
+        ;
 
 #:3319
 "<selv>"   REMOVE:3319   n IF
