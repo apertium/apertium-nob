@@ -1290,7 +1290,7 @@ REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
 REMOVE:unlikely ("sambo");
 REMOVE:unlikely ("skjøt");
-REMOVE:unlikely ("<skjente>"i "skjene"); 
+REMOVE:unlikely ("<skjente>"i "skjene");
 REMOVE:unlikely ("<skjent>"i "skjene");
 REMOVE:unlikely ("åt");
 REMOVE:unlikely m         IF (0 ("intervjuer") + sg + ind);
@@ -1671,20 +1671,20 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
 
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF 
+SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
         (0* ("slippe" vblex) OR ("spre" vblex))
         ;
-		
+
 SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
         (0/* cmp)
         (0* ("slippe" vblex) OR ("spre" vblex))
         ;
-		
-SELECT:sporane ("<sporene>"i) + n + m + pl + def IF 
+
+SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
 		(1 ("i"))
 		(2 ("luft"))
         ;
-		
+
 SELECT:sporane ("<sporene>"i) + n + m + pl + def IF
 		(-1* ("sette" vblex))
 		(1 ("i"))
@@ -1698,13 +1698,13 @@ REMOVE:unlikely ("<sporene>"i) + n + m + pl + def ;
 SELECT:leigd-ut ("utleid") + adj + pp IF
         (-1* %være/bli% BARRIER setn-gr)
 		;
-		
+
 SELECT:utleigde ("<utleide>"i) + adj + pst ;
 
 SELECT:leigd-ut ("utleid") + adj + pst IF
         (-1* det-dem BARRIER setn-gr)
 		;
-		
+
 REMOVE:unlikely ("røre") + n + pl ; #matlaging
 
 SELECT:kurs ("kurs") + n + nt + pl + def IF
@@ -1720,7 +1720,7 @@ SELECT:kursene ("<kursene>"i) + n + nt IF
 SELECT:kursene ("<kursene>"i) + n + m IF
 		(0* ("børs") OR ("valuta") OR ("aksje") OR ("spekulant") OR ("indeks") OR ("oppgang") OR ("nedgang") OR ("marked") OR ("svingning") OR ("fall"))
 		;
-		
+
 SELECT:kursene ("<kursene>"i) + n + m IF
 		(-1 ("få") OR ("hente"))
 		;
@@ -1733,7 +1733,7 @@ SELECT:uansett-når ("når") + adv IF
 		(-1 ("uansett") OR ("samme"))
 		;
 		# uansett når
-		
+
 SELECT:uansett-hvordan ("hvordan") + adv IF
 		(-1 ("uansett") OR ("samme"))
 		;
@@ -2126,7 +2126,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (NOT 1 %seg%)
         (NOT 2 %seg%)
         ;
-		
+
 "<beskytter>" SELECT:høye-beskytter n IF
         (-1 ("<høye>"i))
         ;
@@ -2450,11 +2450,11 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 "<drepte>" SELECT:27-drepte adj IF
         (-1 talord-par-siffer)
         ;
-		
+
 "<drepte>" SELECT:drepte-27 vblex IF
         (1 talord-par-siffer)
         ;
-		
+
 "<drepte>" SELECT:drepte-den-tre-år-gamle-sønnen vblex IF
         (1 det + dem)
 		(2 adj)
@@ -2469,11 +2469,11 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-2 ("skyte" vblex) OR ("angripe" vblex) OR ("lemleste" vblex))
 		(-1 %og%)
         ;
-		
+
 "<drepte>" SELECT:hun-spilte-drepte-B adj IF
         (0* vblex BARRIER setn-gr)
         ;
-		
+
 "<drepte>" SELECT:de-drepte-B adj IF
         (-1 prn + pers + pl + nom OR det + pos + un + pl )
 		(NEGATE 1 n OR np OR prn OR talord OR siffer )
@@ -2515,7 +2515,7 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-2 %som%)
 		(-1 %være/bli%)
         ;
-		
+
 "<drept>" SELECT:skutt-og-drept adj + mf IF
 		(-3 m OR f)
         (-2 ("skutt") OR ("påkjørt"))
@@ -2533,27 +2533,27 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-2 ("skutt") OR ("påkjørt"))
 		(-1 %og%)
         ;
-		
+
 "<drept>" SELECT:er-drept adj + mf + sg IF
         (-1 %være/bli%)
         (-2* n + m + sg OR n + f + sg BARRIER setn-gr)
 		;
-		
+
 "<drept>" SELECT:er-drept adj + nt + sg IF
         (-1 %være/bli%)
         (-2* n + nt + sg BARRIER setn-gr)
 		;
-		
+
 "<drept>" SELECT:kvinne-drept-av adj + mf + sg IF
         (1 %av%)
         (-1 n + m + sg OR n + f + sg)
 		;
-		
+
 "<drept>" SELECT:dyr-drept-av adj + mf + sg IF
         (1 %av%)
         (-1 n + nt + sg)
 		;
-		
+
 "<drept>" SELECT:sauer-drept adj + pl IF
         (-1* n + pl BARRIER setn-gr)
 		;
@@ -2562,7 +2562,7 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (-2 np)
         (-1 %være/bli%)
         ;
-		
+
 "<drept>" SELECT:default adj + m IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
@@ -2575,37 +2575,37 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 		(-1* %ha%)
 		(NEGATE -1* %være/bli% BARRIER setn-gr)
         ;
-		
+
 "<sagt>" SELECT:det-blir-sagt adj + nt IF
 		(-1 %være/bli%)
 		(-2 %det%)
         ;
-		
+
 "<sagt>" SELECT:ha/ville-sagt-ja adj + nt IF
 		(1 ("ja") OR ("nei") OR ("kanskje"))
         ;
-		
+
 "<sagt>" SELECT:ha/ville-sagt-klart-ja adj + nt IF
 		(1 adj)
 		(2 ("ja") OR ("nei") OR ("kanskje"))
         ;
-		
+
 "<sagt>" SELECT:siste-ord-er-ikke-sagt-ja adj + nt IF
 		(-1 %ikke%)
 		(-2 %være%)
 		(-3 ("ord"))
 		(-4 %siste%)
         ;
-		
+
 "<sagt>" SELECT:mildt-sagt adj + nt IF
 		(-1 adj + nt)
         ;
-		
+
 "<skåret>" SELECT:skåret-i-gleden n IF
 		(1 %i%)
 		(2 ("glede") + n + sg + def)
         ;
-		
+
 "<skåret>" SELECT:default ("skjære") + vblex IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
@@ -2614,7 +2614,7 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 		(1 %i%)
 		(2 ("stykke") + n + pl OR ("bit") + n + pl)
         ;
-		
+
 "<skåret>" SELECT:skåret-i-stykker ("skjære") + vblex IF
 		(1 %av% OR ("vekk") OR ("bort") OR ("brød") OR ("kjøtt"))
         ;
@@ -2633,26 +2633,26 @@ SELECT:Og-den-mener-han-er ("den¹") IF
 "<skåret>" SELECT:skjære-seg ("skjære") + vblex IF
 		(1 prn + ref OR prn + pers + acc)
         ;
-		
+
 "<samlet>" SELECT:stå-samlet ("samle") + adj + pp IF
 		(-1* ("stå" vblex) BARRIER setn-gr)
         ;
-		
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
 		# han strakk seg fram og grep rattet
-		
+
 SELECT:men-greip ("<grep>"i) + vblex IF
 		(-1 ("men"))
 		;
 		# dei hadde muligheten, men grep den heller ikke nå.
-		
+
 SELECT:greip-makta ("<grep>"i) + vblex IF
 		(1 ("makt") OR ("mulighet") OR ("sjanse"))
 		;
 		# ..., som grep makten i 1973
-		
+
 SELECT:ta/gjøre-noen-grep ("grep") + n + ind IF
 		(-1* ("ta" vblex) OR ("gjøre" vblex) BARRIER setn-gr)
 		;
@@ -2683,7 +2683,7 @@ SELECT:et-uttalt-ønske ("<uttalt>"i) + adj + pst IF
 		(1 n)
 		;
 		# et uttalt ønske
-		
+
 REMOVE:uttalt ("uttalt") + adj + pst ;
 
 SELECT:hus-og-heim ("<hjem>"i) + n + sg + ind IF
@@ -2698,45 +2698,45 @@ SELECT:sjukeheimar ("<sykehjem>"i) + n + pl + ind IF
 		(NEGATE -2 det + dem)
 		;
 		# private sykehjem
-		
+
 SELECT:sjukeheimar ("<sykehjem>"i) + n + pl + ind IF
 		(-2 n + pl + ind)
         (-1 %og%)
 		(NEGATE -3 det + qnt)
 		;
 		# omsorgsboliger og sykehjem, sykehus og sykehjem
-		
+
 SELECT:fosterheimar ("<fosterhjem>"i) + n + pl + ind IF
 		(-1 adj + pl OR adj + def)
 		(NEGATE -2 det + dem)
 		;
 		# individuelle fosterhjem
-		
+
 SELECT:fosterheimar ("fosterhjem>"i) + n + pl + ind IF
 		(-2 n + pl + ind)
         (-1 %og%)
 		(NEGATE -3 det + qnt)
 		;
 		# omsorgsboliger og fosterhjem
-		
+
 SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
 		(-1 adj + pl OR adj + def)
 		(NEGATE -2 det + dem)
 		;
 		# offentlige familiehjem
-		
+
 SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
 		(-2 n + pl + ind)
         (-1 %og%)
 		(NEGATE -3 det + qnt)
 		;
 		# sportshaller og familiehjem
-		
+
 SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
 		# han pådro seg smerter
-		
+
 SELECT:ha-foretatt ("<foretatt>"i) + vblex + pp  IF
 		(-1* %ha% BARRIER setn-gr)
 		;
@@ -4960,14 +4960,14 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-2 ("ris"))
         (-1 %og%)
         ;
-		
+
 SELECT:ris-hest ("<ris>") + pasv IF
         (-1* modalverb)
         (NOT -1* vblex + pasv OR vblex + inf)
         (NOT 1* vblex + pasv)
 		;			# det skal ridast to hestar, Svarten skal ridast av B
 
-REMOVE:unlikely ("<ris>") + pasv; 
+REMOVE:unlikely ("<ris>") + pasv;
 					# ris til eigen bak, ris bak spegelen, ein porsjon ris, kokt ris, ris og kveite
 					# todo: passiv presens, 'landet ris av en pandemi'
 
@@ -5739,9 +5739,9 @@ REMOVE:unlikely ("<ris>") + pasv;
 #  "i stand
 # 26.3"
 
-		
+
 "<lykter>" REMOVE:unlikely vblex ;
-		# verbet finst, men er heilt marginalt 
+		# verbet finst, men er heilt marginalt
 
 LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "mye" "mest" "gradvis" "framover";
 "<stiger>" SELECT:stiger-svakt vblex IF
@@ -5756,7 +5756,7 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 "<stiger>" SELECT:default vblex IF
         (NEGATE 0* vblex BARRIER setn-gr)
         ;
-		
+
 "<besteget>" REMOVE:besteget vblex + pp IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
@@ -5771,7 +5771,7 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 "<stresset>" SELECT:stresset-av (vblex) IF
         (1 %av%)
         ;
-		
+
 "<stresset>" SELECT:bli-stresset (vblex) IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
@@ -5788,7 +5788,7 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 "<støtte>" REMOVE:skal-støtte-arbeidet n IF
         (1 ("<arbeidet>"))
         ;
-		
+
 "<arbeidet>"i REMOVE:i-arbeidet vblex IF
         (-1 prep)
         ;
@@ -6785,7 +6785,7 @@ SELECT:det-nest-største ("<nest>") + adv IF
 		(1 adj + sup)
 		;
 		# det nest største
-		
+
 SELECT:glatte-veier ("<veier>"i) + n IF
 		(-1 adj)
 		;
@@ -6794,7 +6794,7 @@ SELECT:glatte-veier ("<veier>"i) + n IF
 SELECT:ha-slitt ("<slitt>"i) + vblex IF
 		(-1* ("ha" vblex) BARRIER setn-gr)
 		;
-		
+
 SELECT:være-lei-av ("<lei>"i) + adj IF
 		(-1 %være/bli%)
 		(1 ("av"))
@@ -7116,7 +7116,14 @@ REMOVE ("antatt") + adv IF
         (0 ("anta") OR ("antatt"))
         ;
 # "...har antatt nye former"
-
+REMOVE ("hvor") + cnjsub IF
+        (-1 ("bestemme"))
+        ;
+# "...bestemme hvor den skulle gå"
+"<bestemt>" REMOVE:endelig-bestemt adj IF
+		(-1 ("endelig"))
+        ;
+# "det ble endelig bestemt"
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
@@ -9351,7 +9358,9 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "30.11"
 
-
+"<sette>" REMOVE:mest-sette inf IF
+        (-1 %mest/minst%)
+        ;
 
 #:3319
 "<selv>"   REMOVE:3319   n IF
@@ -9741,28 +9750,28 @@ SELECT:bortsett-frå ("<unntatt>"i) + adv IF
 SELECT:unntatt ("<unntatt>"i) + vblex IF
 		(-1* ("være" vblex) OR ("bli" vblex) OR ("ha" vblex) BARRIER setn-gr)
 		;
-		
+
 SELECT:bortsett-frå ("<unntatt>"i) + adv IF
 		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
 		(1 %det% OR talord OR siffer)
 		;
 		# unntatt det første
-		
+
 SELECT:bortsett-frå ("<unntatt>"i) + adv IF
 		(-1* ("all") BARRIER setn-gr)
 		;
-		
+
 SELECT:bortsett-frå ("<unntatt>"i) + adv IF
 		(-1 komma)
 		;
-		
+
 SELECT:bortsett-frå ("<unntatt>"i) + adv IF
 		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
 		(NEGATE 1 %fra%)
 		(1 pr)
 		;
 		# unntatt i Frankrike, på Island, under krigen
-		
+
 REMOVE:unntas-pasv ("unnta") + vblex + pasv ;
 REMOVE:unntas-pasv ("unnta fra") + vblex + pasv ;
 REMOVE:unntas-pasv ("unnta for") + vblex + pasv ;
@@ -10019,7 +10028,7 @@ SELECT:drøyt-fem ("<drøyt>"i) + adv IF
 
 REMOVE:drøye ("<drøye>"i) + adv
 		;
-		
+
 REMOVE:drøyt ("<drøyt>"i) + adv
 		;
 
@@ -10029,7 +10038,7 @@ SELECT:fra-tidligere ("tidligere"i) + adv IF
 		(1 clb OR cm)
 		;
 		# politiet kjenner personen frå før.
-		
+
 SELECT:som-tidligere ("tidligere"i) + adv IF
 		(-1 %som%)
 		(1 clb OR cm)
@@ -27494,6 +27503,12 @@ CONSTRAINTS
         ;
 
 
+"<følger>" SELECT:direkte-følger m + pl IF
+        (-1 ("direkte"))
+        ;
+# «Hun slår fast at utviklingen i Kina kan få direkte følger for din og min lommebok.»
+
+
 #:3559
   "<hele>"   SELECT:3559   (adj sg) IF
 	(1 be-ent-subst/be-ent-adj)
@@ -27928,6 +27943,11 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: Bare ved Kristi komme osv"
 
+"<kjæreste>" REMOVE:aller-kjæreste n IF
+        (-1 %aller%)
+        ;
+# «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
+
 "<landet>" REMOVE:hvis-landet-ikke-har vblex IF
         (-1 dersom-ord)
         (*1 fv)
@@ -28208,18 +28228,18 @@ CONSTRAINTS
 "<sukker>" REMOVE pres IF
         (-2 ("salt") OR ("smør") OR ("mjøl") OR ("krydder") OR ("karbohydrat") OR ("bær") OR ("frukt"))
         ;
-		
+
 "<salt>" REMOVE pp IF
         (-1 adj OR adv OR ("gram") OR ("milligram") OR ("desigram") OR ("hekto") OR ("kilo") OR ("kg") OR ("tonn") OR ("teskje") OR ("neve"))
         ;
 		# 20 tonn salt
-		
+
 "<salt>" REMOVE pp IF
 		(-1 %og% OR %eller%)
 		(-2 n)
         ;
 		# lakris og salt
-		
+
 "<salt>" REMOVE pp IF
 		(1 %og% OR %eller%)
 		(2 n)
@@ -28311,6 +28331,12 @@ REMOVE:øye ("øye"i) IF
 ;
 # Veldig heuristisk! Men mest sannsynleg snakkar folk om været. --KBU
 # «Sjekk været der du bor»
+
+"<vår>" REMOVE:vår-og-min-leder n IF
+        (1 %og/eller%)
+        (2 pos)
+        ;
+# «Du er vår og min leder.»
 
 #:31231
   "<MÅL>"   REMOVE:31231   (vblex)
@@ -31554,18 +31580,18 @@ SELECT:kliniske-studiar ("studie") IF
 		(-1 ("<kliniske>"))
 		(0 fl)
 		;
-		
+
 SELECT:studiar-i ("studie") IF
 		(-1 studiar-adj)
 		(0 fl)
 		(1 %i%)
 		;
-		
+
 SELECT:studiar-av ("studie") IF
 		(0 fl)
 		(1 %av%)
 		;
-		
+
 SELECT:studiar-gjort-av ("studie") IF
 		(0 fl)
 		(1 ("gjøre") OR ("utføre"))
@@ -31577,13 +31603,13 @@ SELECT:studiar-i-andre ("studie") IF
 		(0 fl + ind)
 		(1 %i%)
 		;
-		
+
 SELECT:byggje-på-studiar ("studie") IF
 		(*-2 ("bygge") OR ("se"))
 		(-1 %på%)
 		(0 fl)
 		;
-		
+
 SELECT:på-studium ("studium") IF
 		(-1 %på%)
 		(0 fl)
@@ -31593,24 +31619,24 @@ SELECT:studium-i/ved ("studium") IF
 		(0 fl)
 		(1 %i% OR %ved%)
 		;
-		
+
 SELECT:frå-studium ("studium") IF
 		(NOT -2 ("resultat") OR ("data") OR ("tall") OR ("funn") OR ("ut") OR ("hente"))
 		(-1 ("fra"))
 		(0 fl)
 		;
-		
+
 SELECT:skule-og-studium ("studium") IF
 		(-2 ("skole") OR ("jobb") OR ("arbeid") OR ("familie"))
 		(-1 ("og"))
 		(0 fl)
 		;
-		
+
 SELECT:søkje-studium ("studium") IF
 		(*-1 ("søke") OR ("opptak") OR ("søkertall"))
 		(0 fl)
 		;
-		
+
 SELECT:studium-søke ("studium") IF
 		(*1 ("søke") OR ("opptak") OR ("søkertall"))
 		(0 fl)
@@ -31620,29 +31646,29 @@ SELECT:påbegynt-studium ("studium") IF
 		(-1 ("<påbegynte>"))
 		(0 fl)
 		;
-		
+
 SELECT:byrje-på-studium ("studium") IF
 		(*-2 ("begynne") OR ("starte"))
 		(-1 ("på"))
 		(0 fl)
 		;
-		
+
 SELECT:fullførte-studium ("studium") IF
 		(-1 studium-adj)
 		(0 fl)
 		;
-		
+
 SELECT:vise-til-studiar ("studie") IF
 		(*-2 ("vise") OR ("henvise"))
 		(-1 %til%)
 		(0 fl)
 		;
-		
+
 SELECT:til-studium ("studium") IF
 		(-1 %til%)
 		(0 fl)
 		;
-		
+
 SELECT:default ("studie") + fl;
 
 # LEX: kurve vs. kurv
@@ -31650,7 +31676,7 @@ LIST kurve-subst-av = "utflatning" "utflating" "avflatning" "avflating" "topp" ;
 LIST kurve-adj = "eksponentiell" "elliptisk" "stigende" "økende" "fallende" "synkende" "oppovergående" "oppadgående" "nedovergående" "nedadgående" "krapp" "skarp" "slak" "bratt" "flat" "lang" "smekker" ;
 LIST kurve-verb = "vise" "peke" "gå" "stige" "øke" "synke" "falle" "flate" "følge" "stoppe" "vende" "snu" ;
 
-SELECT:veg-sving-kurve ("kurve" n) IF 
+SELECT:veg-sving-kurve ("kurve" n) IF
 		(*-1 ("vei" n) OR ("sving" n))
 		; 					# vegen har svingar og kurver
 
@@ -31662,27 +31688,27 @@ SELECT:utflatning ("kurve" n) IF
 		(-2 kurve-subst-av)
 		(-1 %av%)
 		; 					#utflatinga av kurva
-		
+
 SELECT:utslag-stigning-på ("kurve" n) IF
 		(-2 ("stigning") OR ("utslag"))
 		(-1 %på%)
 		; 					#utslaga på kurva
 
-SELECT:stigande-kurve ("kurve" n) IF 
+SELECT:stigande-kurve ("kurve" n) IF
 		(-1 kurve-adj)
 		; 					#den eksponentielle kurva, den fallande kurva
-		
-SELECT:kurva-er-stigande ("kurve" n) IF 
+
+SELECT:kurva-er-stigande ("kurve" n) IF
 		(*1 kurve-adj)
 		; 					# kurva er stigande
-		
+
 SELECT:adj-del-av ("kurve" n) IF
 		(-3 adj OR det)
-		(-2 ("del")) 
+		(-2 ("del"))
 		(-1 %av%)
 		; 					#øvre del av kurva, ein annan del av kurva
 
-SELECT:før-etter ("kurve" n) IF 
+SELECT:før-etter ("kurve" n) IF
 		(-1 %før% OR %etter%)
 		; 					#før kurva stig igjen
 
@@ -31700,34 +31726,34 @@ SELECT:verb-før-kurve ("kurve" n) IF
 		(*-1 kurve-verb)
 		(NOT 1 %ned% OR %mot% OR ("ut av") OR ("inn i") OR ("ned i"))
 		; 					#no flatar kurvene ut
-		
+
 SELECT:verb-etter-kurve ("kurve" n) IF
 		(*1 kurve-verb)
 		(NOT *2 %ned% OR %mot% OR ("ut av") OR ("inn i") OR ("ned i"))
 		; 					#kurvene peikar rett til vêrs; korga fall ned
 
-SELECT:halvveis-i-sving ("kurve" n) IF 
+SELECT:halvveis-i-sving ("kurve" n) IF
 		(-2 ("halvveis"))
 		(-1 %i%)
 		; 					#halvvegs i kurva
-		
-SELECT:inn-i-sving ("kurve" n) IF 
+
+SELECT:inn-i-sving ("kurve" n) IF
 		(-1 ("inn i") OR ("midt i"))
 		; 					#inn i kurva
 
-SELECT:gjennom-sving ("kurve" n) IF 
+SELECT:gjennom-sving ("kurve" n) IF
 		(-1 ("gjennom") )
 		; 					#gjennom kurva
 
-SELECT:adj-korg ("kurv") IF 
+SELECT:adj-korg ("kurv") IF
 		(-1 adj OR prep)
 		; 					#den tomme korga; oppi korga; hunden skjønte ikkje noko av korga
 
-SELECT:verb-korg ("kurv") IF 
+SELECT:verb-korg ("kurv") IF
 		(*-1 vblex)
 		; 					#kjøpe korga; no fyller vi korga; gi nokon korga
 
-SELECT:verb-korg ("kurv") IF 
+SELECT:verb-korg ("kurv") IF
 		(1 vblex)
 		; 					#korgene kostar 10 kroner; korga blir fylt
 
@@ -31736,11 +31762,11 @@ SELECT:fallback ("kurve");
 # LEX: Choose the verb "bevege" and not the adjective "beveget"
 SELECT:bevege-not-beveget ("bevege") IF
 		(-3 ("ha"))
-		(-2 vblex OR adj) 
+		(-2 vblex OR adj)
 		(-1 ("og"))
 		(0C ("bevege") OR ("beveget"))
 		(1 n OR np)
-		; 
+		;
 # Artisten som har gledet og beveget publikum med kjendisparodier og maskeringskunst, døde i sitt hjem
 # LEX: Choose the verb "bevege" and not the adjective "beveget"
 SELECT:bevege-not-beveget ("bevege") IF
@@ -31749,14 +31775,14 @@ SELECT:bevege-not-beveget ("bevege") IF
 		(1 ("og"))
 		(2 vblex OR adj)
 		(3 n OR np)
-		; 
+		;
 # Artisten som har beveget og gledet publikum med kjendisparodier, sluttet som artist
 
 # LEX: Choose the adj "beveget" and not vblex-adj "bevege" when followed by a noun otherwise
 SELECT:beveget-not-bevege ("beveget") IF
 		(0 ("bevege") OR ("beveget"))
 		(1 n OR np)
-		;  
+		;
 # bevegede taler fra AUF-lederen og statsministeren
 
 # LEX: middel vs. midlar
@@ -31767,7 +31793,7 @@ REMOVE:unlikely ("<midler>") + vblex ;
 SELECT:middel ("middel") + n + nøyt + pl IF
 		(1 %mot%)
 		;
-		
+
 SELECT:middel ("middel") + n + nøyt + pl IF
 		(-1 %alle% OR ("annen" det))
 		;
@@ -31776,7 +31802,7 @@ SELECT:middel ("middel") + n + nøyt + pl IF
 		(-2 %alle%)
 		(-1 adj)
 		;
-		
+
 SELECT:middel ("middel") + n + nøyt + pl IF
 		(*-1 ("sky" vblex))
 		;
@@ -31815,10 +31841,10 @@ REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
 
 SELECT:default ("<trekker>") + vblex + pres IF
 		(NOT 0 ("trekker") + n + sg + ind)
-		; 					
+		;
 # 'mange trekkjer mot fjellet'; 'ein trekk' ikkje brukt i fleirtal; 'ein (skru)trekkjar'
 
-SELECT:default ("hammer") + n + sg + ind; # 'hammar og spikar'; 
+SELECT:default ("hammer") + n + sg + ind; # 'hammar og spikar';
 # 'ein ham' ikkje brukt i fl.; ev. i sms: 'bjørnehamar'
 
 SELECT:fare-forbi ("fare") + vblex + pp IF
@@ -31841,7 +31867,7 @@ LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "r
 SELECT:dei-lange-nettene ("natt") + pl + def IF
 		(-1 natt-adj)
 		;
-		
+
 SELECT:nettene-er-lange ("natt") + pl + def IF
 		(1 ("være" vblex) OR ("bli" vblex))
 		(2 natt-adj)
@@ -31855,39 +31881,39 @@ SELECT:feil-på-nettene ("nett") + pl + def IF
 SELECT:om-nettene ("natt") + pl + def IF
 		(-1 %om% OR %på%)
 		;
-		
+
 SELECT:ta-nettene-til-hjelp ("natt") + pl + def IF
 		(1 %til%)
 		(2 ("hjelp" n))
 		;
-		
+
 SELECT:tilbringe-nettene ("natt") + pl + def IF
 		(-1* ("tilbringe" vblex))
 		;
-		
+
 SELECT:fallback ("nett") + pl + def ;
 
 SELECT:ei-verd ("verden") + sg + ind IF
 		(-1 ("en") OR ("én"))
 		;
-		
+
 SELECT:ei-stor-verd ("verden") + sg + ind IF
 		(-2 det + qnt + sg)
 		(-1 adj OR n + sg + ind + gen)
 		;
-		
+
 REMOVE:unlikely ("byrd") + n + sg + def ;
 REMOVE:unlikely ("byrd") + n + pl ;
 
 REMOVE:unlikely ("pott") + n + pl ;
-		
+
 SELECT:disse-fyrene ("fyr") + m + pl + def IF
 		(-1 det + dem + un + pl)
 		;
-		
+
 REMOVE:unlikely ("fyr")+ m + pl + def ; # alle fyra langs kysten
 
-SELECT:kleberstein ("kleber") + m + sg + ind IF 
+SELECT:kleberstein ("kleber") + m + sg + ind IF
         (0* vblex)
         ;
 
@@ -31902,16 +31928,16 @@ REMOVE:unlikely ("<nesa>") + n + nt + pl ;
 
 SELECT:hoppe-i-høyet ("<høyet>") + nt + sg + def ;
 
-SELECT:torde-ikkje-tura ("tørre") + vblex + pret IF 
+SELECT:torde-ikkje-tura ("tørre") + vblex + pret IF
         (0 ("<turte>" vblex))
         ;                                     # oftast 'turet', 'turet fram'
 
 REMOVE:unlikely ("tørre¹") + vblex + inf ;    # tørke
 
-SELECT:tørre-sko ("<tørre>") + adj IF 
+SELECT:tørre-sko ("<tørre>") + adj IF
         (1 n)
         ;
-		
+
 REMOVE:unlikely ("<hender>") + n + nt + pl + ind ;    # hendene
 
 SELECT:notar ("note") + n + m + pl ;
@@ -31922,7 +31948,7 @@ SELECT:sløgd-skrei ("sløyd") + adj IF
 		(1 fisk-ord)
 		;
 
-SELECT:frie-taumar ("tøyle") + n IF 
+SELECT:frie-taumar ("tøyle") + n IF
 		(1 adj OR vblex)
 		;
 
@@ -31936,7 +31962,7 @@ SELECT:låt ("<låt>") + vblex + pret IF
 SELECT:låt ("<låt>") + vblex + pret IF
 		(1 adj OR adv)
 		;
-		
+
 REMOVE:unlikely ("<låt>") + vblex + pret ;
 
 SELECT:talentane ("talent") + n + m + pl IF
@@ -32367,6 +32393,7 @@ SELECT:default ("<stoler>"i) + pres IF (1 %på%);
 SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 SELECT:default ("<skadde>"i) + pp ;
+SELECT:default ("<følger>" "følge") + m;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -32986,6 +33013,15 @@ MAP:dedikert-og-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
         (1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
         (2C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
 ;
+
+MAP:dedikert-og-helt-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
+        (-1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (NOT 0 clb)
+        (1 ("<helt>") OR ("<svært>"))
+        (2C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (3C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+;
+# «Han får fortelle sin utrolige og usensurerte historie»
 
 SELECT:Øst-London SUB:1 n IF
         (0/1 ("øst"))
