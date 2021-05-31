@@ -7114,7 +7114,7 @@ REMOVE ("antatt") + adv IF
 REMOVE ("hvor") + cnjsub IF
         (-1 ("bestemme"))
         ;
-# "...har antatt nye former"
+# "...bestemme hvor den skulle gå"
 
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
