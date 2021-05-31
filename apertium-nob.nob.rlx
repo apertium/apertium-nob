@@ -27932,6 +27932,11 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: Bare ved Kristi komme osv"
 
+"<kjæreste>" REMOVE:aller-kjæreste n IF
+        (-1 %aller%)
+        ;
+# «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
+
 "<landet>" REMOVE:hvis-landet-ikke-har vblex IF
         (-1 dersom-ord)
         (*1 fv)
