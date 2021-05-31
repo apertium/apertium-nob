@@ -28327,6 +28327,12 @@ REMOVE:øye ("øye"i) IF
 # Veldig heuristisk! Men mest sannsynleg snakkar folk om været. --KBU
 # «Sjekk været der du bor»
 
+"<vår>" REMOVE:vår-og-min-leder n IF
+        (1 %og/eller%)
+        (2 pos)
+        ;
+# «Du er vår og min leder.»
+
 #:31231
   "<MÅL>"   REMOVE:31231   (vblex)
 ;
