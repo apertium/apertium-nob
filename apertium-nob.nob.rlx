@@ -2746,6 +2746,11 @@ SELECT:sjelden ("sjelden"i) + adv IF
 		(-1* vblex + pres + pasv)
 		;
 		# det foretas sjelden kontroll: det blir sjeldan gjennomført kontroll
+		
+SELECT:blir-bestridt ("bestride") + adj + pp IF
+		(-1* %være/bli% BARRIER setn-gr)
+		;
+		# Resultatet vart trekt i tvil
 
 "<Eggen>" SELECT:Nils-Arne np;
 
