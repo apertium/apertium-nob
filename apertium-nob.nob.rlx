@@ -28452,6 +28452,17 @@ SELECT:pytt-i-panne-retter ("rett") IF
 #  "25.11.2002: Jeg kikket til siden."
 #040908: endret til velg subst (må ha vært feil fra bergensversjonen
 
+SELECT:hans-onkel-og-trener n IF
+        (NEGATE -4 n + def)
+        (-3C pos)
+        (-2C n + ind)
+        (-1 cnjcoo)
+        (0C n OR vblex)
+        (NEGATE 1 %så%)
+        ;
+# «Trenerinteressen har økt hos 43-åringen etter at hans onkel og trener, Roger Mayweather (59), døde i mars.»
+# ikkje: «Alle disse landene, de tar våre penger og stemmer så mot oss.»
+
 SELECT:planlegge-smarte-grep-for-å n + ind + pl IF
         (-2C vblex)
         (-1 adj + pl)
