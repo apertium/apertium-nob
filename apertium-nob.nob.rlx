@@ -19973,8 +19973,17 @@ SELECT:det-klart-beste-laget n + nt + sg + def IF
         (*-1 det + dem + nt + sg BARRIER ikke-adv-adj LINK NOT *-1 m-hj-verb BARRIER setn-gr)
         (0C pp OR n + sg + def)
         (NOT 0 farlige-nøyt-subst)
+        (NEGATE 1 adj + $$NUMBER + $$DEFNES LINK 1 n + $$NUMBER + $$DEFNES)
         ;
 # «De kunne ha fått sin tredje seier på rappen i mai, men slik skulle det ikke gå selv om de var det klart beste laget veldig lenge.»
+
+SELECT:som-det-laget-vi n + nt + sg + def IF
+        (-2 %som%)
+        (-1 %det%)
+        (0C pp OR pret OR n + sg + def)
+        (1 nominativ)
+        ;
+# «Vi framsto ikke som det laget vi ønsker å være, sa han.»
 
 SELECT:å-glemme-tapet-mot be-subst IF
         (-2C infmerke)
@@ -27352,6 +27361,15 @@ REMOVE:mange-timer-kan vblex IF
 #
 #150908 (*1C iv BARRIER iv) dekker ikke det samme som den opprinnelige
 
+REMOVE:fått-laget-på-plass pret OR pp IF
+        (-1 %få%)
+        (0C n + def OR pp OR pret)
+        (1 %på%)
+        (2 ("plass"))
+        ;
+# «og fått laget på plass»
+# (men ikkje «få komme på plass»)
+
 
 # sec 3
 CONSTRAINTS
@@ -27952,19 +27970,29 @@ CONSTRAINTS
         ;
 # «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
 
-"<laget>" REMOVE:fikk-laget-sin pp IF
-        (NEGATE *-2 n + def OR np OR nominativ)
-        (-1C fv)
-        (NOT 1 n)
-        ;
-# «Etter 15 minutter fikk laget sin første store sjanse, og den tok Velde vare på.»
 
-"<laget>" REMOVE:har-laget-for n IF
-        (-1C %ha/få% OR %være/bli%)
+"<laget>" REMOVE:Dermed-har-laget pp IF
+        (-3C setn-gr LINK NOT 0 cnjsub)
+        (-2C adv OR adverbialsubst)
         (-1C fv)
-        (1 %for%)
+        ;
+# «Tirsdag fikk laget hull på byllen etter 18 minutter»
+# «I stedet er laget to poeng bak tetsekstetten, der Ajax er på topp takket være best målforskjell»
+
+"<laget>" REMOVE:blitt-laget-etter n IF
+        (*-1C %ha/få% OR %være/bli% BARRIER ikke-adv LINK 0C pp)
+        ;
+"<laget>" REMOVE:har-laget-for n IF
+        (*-1C %ha/få% OR %være/bli% BARRIER ikke-adv LINK 0C fv)
+        (1 %for% OR %etter% OR %slik%-adv OR qnt + sg OR setn-gr)
         ;
 # «De sikrer seg med det 88 av Stortingets 169 mandater, viser målingen Norstat har laget for NRK.»
+
+"<laget>" REMOVE:laget-på-oppdrag n IF
+        (1 %på%)
+        (2 ("oppdrag") OR ("grunnlag") OR ("vegne") OR ("oppskrift") OR ("bakgrunn"))
+        ;
+# «… som Høgskolen i Hedmark og Viltskadecenter i Sverige har laget på oppdrag for norske Rovdata»
 
 "<laget>" REMOVE:som-de-har-laget n IF
         (-1C %ha/få% OR %være/bli%)
@@ -27973,6 +28001,45 @@ CONSTRAINTS
         ;
 # «Undersøkelsen, som Vitenskapskomiteen for mat og miljø (VKM) har laget, ble lagt fram onsdag.»
 
+"<laget>" REMOVE:og-laget-har pp IF
+        (-1 cnjcoo)
+        (1C fv)
+        ;
+
+"<laget>" REMOVE:fikk-laget-sin pp IF
+        (NEGATE *-2 n + def OR np OR nominativ)
+        (-1C fv)
+        (NOT 1 n OR qnt OR pr)
+        ;
+# «Etter 15 minutter fikk laget sin første store sjanse, og den tok Velde vare på.»
+
+"<laget>" REMOVE:Etter-det-har-laget pp IF
+        (-4C setn-gr LINK NOT 0 cnjsub)
+        (-3 pr OR adv OR adverbialsubst)
+        (-2 det OR prn + nt)
+        (-1C fv)
+        ;
+
+"<laget>" REMOVE:hevder-å-ha-laget n IF
+        (-2 infmerke)
+        (-1 p-hj-verb)
+        (NEGATE 1 adv OR adj + sg + nt) # å få laget klart
+        ;
+# «Israelske forskere hevder å ha laget hjerte med 3D-printer.»
+
+"<laget>" REMOVE:boken-er-laget-i n IF
+        (-2 n + sg + def)
+        (-1 p-hj-verb + fv)
+        (1 pr)
+        ;
+# «En miniserie basert på boken ble laget i 1990, men nå er en kinofilm på trappene neste år.»
+
+"<laget>" REMOVE:den-ble-laget-i n IF
+        (-2C nominativ OR n + sg)
+        (-1C fv)
+        (1 pr)
+        ;
+# «Den ble laget i 65 mm film»
 
 "<landet>" REMOVE:hvis-landet-ikke-har vblex IF
         (-1 dersom-ord)
@@ -32032,6 +32099,7 @@ REMOVE:unlikely ("talent") + n + m ;
 
 SELECT:merka ("merke") + n + nt + pl ; # TODO: 'fire merker smør', 'betale dei 30 markane'
 
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
@@ -32470,7 +32538,8 @@ REMOVE:default-skyer ("<skyer>") + vblex ;
 REMOVE:default-betalar ("betaler");
 REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabiliteringssenter
 REMOVE:default-rekte ("rake") + pret;
-
+"<Laget>" REMOVE:default pret ;
+"<laget>" REMOVE:default pp ;
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
@@ -32686,7 +32755,6 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 "<kåret>" REMOVE:default-kåret ("kår" n nt sg def) ;	# keep kåre<vblex><pret>→kåra
 "<lager>" REMOVE:default-lager ("lager" n nt pl ind) ;	# keep lage<n><nt><pl><ind>→lage
 "<Lager>" REMOVE:default-Lager ("lager" n nt pl ind) ;	# keep Lage<vblex><pres>→Lagar Lage<n><m><pl><ind>→Lagar
-"<Laget>" REMOVE:default-Laga ("lage" vblex pret) ;	# keep Lage<n><nt><sg><def>→Laget Lag<n><nt><sg><def>→Laget
 "<laks>" REMOVE:default-laksar ("laks" n m pl ind) ;	# keep laks<n><m><sg><ind>→laks
 "<landet>" REMOVE:default-landa ("lande" vblex pret) ;	# keep land<n><nt><sg><def>→landet
 "<Leder>" REMOVE:default-Leder ("Leder" np cgguess) ;	# keep Leder<n><m><sg><ind>→Leiar
