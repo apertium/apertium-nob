@@ -577,7 +577,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
-LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i ;
+LIST farlige-part = "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -1658,6 +1658,10 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
         (-1 %etter%)
         (1 nominativ OR expl)
 ;
+
+"<laget>" REMOVE:fikk-laget pret IF
+        (-1C fv)
+        ;
 
 "<laget>" SELECT:lede-laget n + ("lag") IF
         (-1 ("lede")
@@ -27948,6 +27952,21 @@ CONSTRAINTS
         ;
 # «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
 
+"<laget>" REMOVE:fikk-laget-sin pp IF
+        (NEGATE *-2 n + def OR np OR nominativ)
+        (-1C fv)
+        (NOT 1 n)
+        ;
+# «Etter 15 minutter fikk laget sin første store sjanse, og den tok Velde vare på.»
+
+"<laget>" REMOVE:har-laget-for n IF
+        (-1C %ha/få%)
+        (-1C fv)
+        (1 %for%)
+        ;
+# «De sikrer seg med det 88 av Stortingets 169 mandater, viser målingen Norstat har laget for NRK.»
+
+
 "<landet>" REMOVE:hvis-landet-ikke-har vblex IF
         (-1 dersom-ord)
         (*1 fv)
@@ -30108,6 +30127,15 @@ SELECT:Da-oppgav-han-at nominativ IF
 # poss pga.
 # «Da avga han sin forklaring.»
 
+SELECT:så-har-vi-laget-noen pp IF
+        (-3C adv)
+        (-2C fv)
+        (-1C nom)
+        (0C pp OR fv OR n + def)
+        (1 %noen/noe%)
+        ;
+# «Så har vi laget noen byvettregler som vi anmoder alle å følge, sier byrådsleder Raymond Johansen (Ap) til Dagbladet.»
+
 #CONSTRAINTS
 ## remove ndomain heur
 
@@ -30767,11 +30795,24 @@ REMOVE subst-nøyt + ("plan") IF
 # (typically masc in compounds)
 
 
+REMOVE:det-er-laget-retningslinjer subst-nøyt IF
+ 	(-1C fv + p-hj-verb)
+	(0C subst-nøyt OR pp)
+        (1C n + pl)
+        ;
+# «Det er laget retningslinjer, og oppfyller de ikke den så passer de ikke inn i laget.»
+
+REMOVE:inf-subst/PP-qnt subst-nøyt IF
+ 	(-1C inf)
+	(0C subst-nøyt OR pp)
+        (1 qnt)
+        ;
+# «Han ble pågrepet april 2017 etter å ha laget en eksplosiv innretning hjemme, som han så satte ut på Grønland.»
 
 #:4024
- REMOVE:4024 pp IF
- 	 (-1C inf)
-	 (0 subst)
+REMOVE:inf-SUBST/pp pp IF
+ 	(-1C inf)
+	(0 subst)
 ;
 
 #:4050
