@@ -30870,11 +30870,15 @@ REMOVE subst-nøyt + ("plan") IF
 
 
 REMOVE:det-er-laget-retningslinjer subst-nøyt IF
+        (*-2 nominativ OR np OR n + def)
  	(-1C fv + p-hj-verb)
 	(0C subst-nøyt OR pp)
         (1C n + pl)
         ;
 # «Det er laget retningslinjer, og oppfyller de ikke den så passer de ikke inn i laget.»
+# Ikkje: «Fra før har paret sønnene Markus (7) og Max (4).»
+# Ikkje: «I 1999 ble paret skilt, og året etter tok han ifølge ekskona livet sitt.»
+# TODO: «Har sporet problemene.» (kanskje ein regel før denne som fjernar pp der me har adverbial før, V2)
 
 REMOVE:inf-subst/PP-qnt subst-nøyt IF
  	(-1C inf)
