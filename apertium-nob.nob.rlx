@@ -27971,6 +27971,18 @@ CONSTRAINTS
 # «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
 
 
+"<laget>" REMOVE:vi-har-laget n IF
+        (-2C nominativ)
+        (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
+        (-1C %ha/få% OR %være/bli%)
+        ;
+# «Begge bærer på plakater som de har laget selv – på fritida.»
+
+"<laget>" REMOVE:har-vi-laget n IF
+        (-1C nominativ)
+        ;
+# «Selv har vi laget en femte verdi – lagånd, sier Hergeirsson.»
+
 "<laget>" REMOVE:Dermed-har-laget pp IF
         (-3C setn-gr LINK NOT 0 cnjsub)
         (-2C adv OR adverbialsubst)
