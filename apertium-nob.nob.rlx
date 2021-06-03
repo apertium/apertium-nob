@@ -17258,6 +17258,13 @@ SELECT:folket-skal-anse-han acc IF
 ;
 #  "3.9.2003: Omarbeidet fra LO av KH: Den mørke sjokoladen liker han."
 
+SELECT:Selv-har-han nominativ IF
+        (-3 setn-gr)
+        (-2 %selv%)
+        (-1 fv)
+        (0C nominativ OR acc)
+        ;
+# «Selv har han laget den fra bunnen av flere ganger.»
 
 #:2619
 # SELECT:2619 (prn p3 acc) IF
@@ -30879,6 +30886,14 @@ REMOVE subst-nøyt + ("plan") IF
 ;
 # «Kunnskapsdepartementets strategiplan …»
 # (typically masc in compounds)
+
+REMOVE:ble-først-laget subst-nøyt IF
+        (NEGATE *-1 adv)
+        (-2C fv)
+        (-1 ("<først>") OR ("<sist>"))
+        (0C n + nt OR pp)
+        ;
+# «Den ble først laget i en pølsebod»
 
 
 REMOVE:det-er-laget-retningslinjer subst-nøyt IF
