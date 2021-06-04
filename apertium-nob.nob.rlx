@@ -30881,6 +30881,14 @@ REMOVE subst-nøyt + ("plan") IF
 # (typically masc in compounds)
 
 
+REMOVE:har-X-laget-et subst-nøyt IF
+        (-2C fv + p-hj-verb)
+        (-1C np OR nominativ OR n + def)
+        (0C pp OR n + def)
+        (1 qnt + sg)
+        ;
+# «Siden den gang har Mercedes-Benz laget et formidabelt antall SUV-modeller.»
+
 REMOVE:det-er-laget-retningslinjer subst-nøyt IF
         (*-2 nominativ OR np OR n + def)
  	(-1C fv + p-hj-verb)
