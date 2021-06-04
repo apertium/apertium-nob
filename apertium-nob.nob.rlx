@@ -4975,6 +4975,10 @@ REMOVE:unlikely ("<ris>") + pasv;
 					# ris til eigen bak, ris bak spegelen, ein porsjon ris, kokt ris, ris og kveite
 					# todo: passiv presens, 'landet ris av en pandemi'
 
+REMOVE:skade ("skade") + adj + pp IF
+		;
+		# Anten infinitiv eller substantiv
+
 #:4002
 
  "<rotta>"   SELECT:4002   (n f sg def) IF
