@@ -7169,7 +7169,10 @@ REMOVE:er-hinsides pr IF
         (-1 ("kjøpe"))
         ;
 # kjøpte varen
-
+"<ordet>" REMOVE:få-ordet vblex IF
+        (-1 ("få"))
+        ;
+# han fikk ordet
 "<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
         (-2 ("ta"))
         (-1 ("på"))
