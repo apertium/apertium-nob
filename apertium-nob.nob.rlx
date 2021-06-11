@@ -7177,6 +7177,10 @@ REMOVE:er-hinsides pr IF
         (-1 ("bli"))
         ;
 # hele tiden blir utspilt
+"<avhendes>" REMOVE:skal-avhendes adv IF
+        (-1 vblex)
+        ;
+# skal avhendes
 "<has>" REMOVE:få-has-på vblex IF
         (-1 ("få"))
 		(1 ("på"))
