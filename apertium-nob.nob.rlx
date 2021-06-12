@@ -7415,9 +7415,19 @@ REMOVE ("pote") IF
 ;
 
 "<angrep>" REMOVE:blodig-angrep pret IF
-        (-1C adj + sup OR adj + nt + ind)
+        (-1C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
 ;
 
+
+REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF 
+		(-1 prep) 
+;
+
+REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF 
+		(1 %på%)
+		(2 n OR np)
+		(NEGATE -1 prn OR np)
+;
 
 #:3740
   "<bak>"   REMOVE:3740   (n) IF
