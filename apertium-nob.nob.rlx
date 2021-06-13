@@ -2786,6 +2786,16 @@ SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
 		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
 		;
 		
+SELECT:eier-av ("<eier>"i) + n IF
+		(1 %av%)
+		;
+		
+SELECT:i-kok ("<kok>"i) + nt IF
+		(-1 %i%)
+		;
+		# sette sinnene i kok (lsx)
+
+		
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
@@ -5829,8 +5839,25 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 
 "<arbeidet>"i REMOVE:i-arbeidet vblex IF
         (-1 prep)
+		(NEGATE -1 %som%)
         ;
-		# i arbeidet, på arbeidet, under arbeidet osv.
+		# i arbeidet, på arbeidet, under arbeidet osv. ikkje: som (pr) arbeidet
+		
+REMOVE:få-arbeidet ("<arbeidet>"i) + vblex IF
+		(1 vblex + pp OR adj)
+		
+REMOVE:lede-arbeidet ("<arbeidet>"i) + vblex IF
+		(-1 ("lede" vblex) OR ("fortsette") OR ("starte") OR ("avslutte") OR ("fulleføre") OR ("gjennomføre") OR ("evaluere") OR ("organisere") OR ("planlegge")  OR ("styrke") OR ("svekke") OR ("gjøre"))
+		;
+
+SELECT:som-arbeidet ("<arbeidet>"i) + vblex + pret  IF
+		(-1 %som%)
+		;
+		# lærligane som arbeidde deltid
+
+SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
+		(-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr)
+		;
 
 REMOVE:støtte-sammen ("støte") IF
         (0 ("<støtte>"i))
