@@ -2295,8 +2295,6 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1 ("<gang>"))
         ;
 
-
-
 #:3722
 "<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
@@ -2756,6 +2754,38 @@ SELECT:blir-bestridt ("bestride") + adj + pp IF
 		;
 		# Resultatet vart trekt i tvil
 
+REMOVE:sitte-fengslet ("<fengslet>"i) + n IF
+		(-1* ("sitte" vblex) OR %være/bli% BARRIER setn-gr)
+		;
+		# han har sete fengsla; ho vart fengsla
+
+# sitte (pret)/sette (perf.part.): ho sat i garderoben; oppgåva vart sett bort
+# TODO: satt (sitte) vs. satt (sette); preteritum av sette blir også ofte feil i bokmål, satt i staden for satte: 
+# "Sjømateksporten satt også ny rekord". Noko er ordna ("satt av til" o.fl.), men det er ein del bomskot.
+
+SELECT:bli-satt-tilbake ("sette") + vblex + pp IF
+		(-1* %ha% OR %være/bli% OR ("få" vblex) OR modalverb BARRIER setn-gr)
+		;
+		
+SELECT:arrestert-og-satt-i-fengsel ("sette") + vblex + pp IF
+		(-1 %og%)
+		(-2 vblex + pp)
+		;
+		
+SELECT:satt-på-vent ("sette") + vblex + pp IF
+		(1* ("på vent") BARRIER setn-gr)
+		;
+		# setje heile greia på vent
+		
+SELECT:satt-av ("sette") + vblex + pp IF
+		(1 %av%)
+		;
+		# setje av
+		
+SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
+		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
+		;
+		
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
@@ -6690,15 +6720,6 @@ REMOVE:avoid-støytte ("støte") IF
 ;
 #  "nå har Mjølfjell vel (subst) sendt et brev
 # ikke: at Norge vel har ...."
-
-
-"<vent>" SELECT:sette-på-vent-mwe n IF
-        (-1 ("sette# på"))
-        ;
-"<vent>" SELECT:sette-på-vent n IF
-        (-2 ("sette"))
-        (-1 %på%)
-        ;
 
 #:3141
   "<verken>"   SELECT:3141   (cnjcoo <adv>) IF
