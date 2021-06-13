@@ -7423,6 +7423,10 @@ REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF
 		(-1 prep) 
 ;
 
+REMOVE:er-angivelig ("angivelig") + adj IF 
+		(-1 %være/bli%) 
+;
+
 REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF 
 		(1 %på%)
 		(2 n OR np)
