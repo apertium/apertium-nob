@@ -5858,6 +5858,17 @@ SELECT:som-arbeidet ("<arbeidet>"i) + vblex + pret  IF
 SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
 		(-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr)
 		;
+		
+SELECT:få-se ("<få>"i) + vblex + inf IF
+		(1 vblex + inf)
+		;
+		# få sjå; TODO: 'da skal noen få noe: gaver, priser ...'; jf. noen-få
+		
+SELECT:noen-få ("noe") + det + qnt + un + pl IF'
+		(1 ("få" adj))
+		;
+		# berre nokre få
+		# TODO: unntak for negasjon før "noen": ikkje berre nokre få
 
 REMOVE:støtte-sammen ("støte") IF
         (0 ("<støtte>"i))
