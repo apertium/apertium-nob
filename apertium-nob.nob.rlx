@@ -5862,9 +5862,9 @@ SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
 SELECT:få-se ("<få>"i) + vblex + inf IF
 		(1 vblex + inf)
 		;
-		# få sjå; TODO: 'da skal noen få noe: gaver, priser ...'; jf. noen-få
+		# få sjå, TODO: da skal noen få noe: gaver, priser ...
 		
-SELECT:noen-få ("noe") + det + qnt + un + pl IF'
+SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
 		(1 ("få" adj))
 		;
 		# berre nokre få
