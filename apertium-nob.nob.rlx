@@ -2778,10 +2778,6 @@ REMOVE:sitte-fengslet ("<fengslet>"i) + n IF
 # TODO: satt (sitte) vs. satt (sette); preteritum av sette blir også ofte feil i bokmål, satt i staden for satte: 
 # "Sjømateksporten satt også ny rekord". Noko er ordna ("satt av til" o.fl.), men det er ein del bomskot.
 
-SELECT:bli-satt-tilbake ("sette") + vblex + pp IF
-		(-1* %ha% OR %være/bli% OR ("få" vblex) OR modalverb BARRIER setn-gr)
-		;
-		
 SELECT:arrestert-og-satt-i-fengsel ("sette") + vblex + pp IF
 		(-1 %og%)
 		(-2 vblex + pp)
