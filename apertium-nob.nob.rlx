@@ -2295,6 +2295,21 @@ SELECT:Og-den-mener-han-er ("den¹") IF
         (1 ("<gang>"))
         ;
 
+LIST at/om/av/som = "at" "om" "av" "som" ;
+"<den>" SELECT:saken-er-den-at det IF # ikkje: saken er han at
+        (-1 ("være"))
+        (1 at/om/av/som)
+        ;
+"<den>" SELECT:er-saken-den-at det IF # ikkje: er saken han at
+        (-2 ("være"))
+        (-1 n + sg + def)
+        (1 at/om/av/som)
+        ;
+"<den>" SELECT:den-med-flest det IF # ikkje: han/ho med flest
+        (1 ("med"))
+        (2 sup)
+        ;
+
 #:3722
 "<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
@@ -5842,10 +5857,10 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 		(NEGATE -1 %som%)
         ;
 		# i arbeidet, på arbeidet, under arbeidet osv. ikkje: som (pr) arbeidet
-		
+
 REMOVE:få-arbeidet ("<arbeidet>"i) + vblex IF
 		(1 vblex + pp OR adj)
-		
+		;
 REMOVE:lede-arbeidet ("<arbeidet>"i) + vblex IF
 		(-1 ("lede" vblex) OR ("fortsette") OR ("starte") OR ("avslutte") OR ("fulleføre") OR ("gjennomføre") OR ("evaluere") OR ("organisere") OR ("planlegge")  OR ("styrke") OR ("svekke") OR ("gjøre"))
 		;
@@ -5858,7 +5873,7 @@ SELECT:som-arbeidet ("<arbeidet>"i) + vblex + pret  IF
 SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
 		(-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr)
 		;
-		
+
 SELECT:få-se ("<få>"i) + vblex + inf IF
 		(1 vblex + inf)
 		;
@@ -5868,7 +5883,7 @@ SELECT:fylket ("fylke") + n IF
 		(NEGATE 1 ("seg"))
 		;
 		# svært sjeldan verbet: fylke seg
-		
+
 SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
 		(1 ("få" adj))
 		;
@@ -17493,7 +17508,6 @@ SELECT:folket-skal-anse-han acc IF
 	(1 %av%)
 ;
 #  "noe av det som ..."
-
 
 #:2605
  SELECT:2605 pron-pers IF
