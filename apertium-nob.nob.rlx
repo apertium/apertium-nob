@@ -5863,6 +5863,11 @@ SELECT:få-se ("<få>"i) + vblex + inf IF
 		(1 vblex + inf)
 		;
 		# få sjå, TODO: da skal noen få noe: gaver, priser ...
+
+SELECT:fylket ("fylke") + n IF
+		(NEGATE 1 ("seg"))
+		;
+		# svært sjeldan verbet: fylke seg
 		
 SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
 		(1 ("få" adj))
