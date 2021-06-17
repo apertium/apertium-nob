@@ -2763,7 +2763,7 @@ SELECT:sjelden ("sjelden"i) + adv IF
 		(-1* vblex + pres + pasv)
 		;
 		# det foretas sjelden kontroll: det blir sjeldan gjennomført kontroll
-		
+
 SELECT:blir-bestridt ("bestride") + adj + pp IF
 		(-1* %være/bli% BARRIER setn-gr)
 		;
@@ -2775,38 +2775,38 @@ REMOVE:sitte-fengslet ("<fengslet>"i) + n IF
 		# han har sete fengsla; ho vart fengsla
 
 # sitte (pret)/sette (perf.part.): ho sat i garderoben; oppgåva vart sett bort
-# TODO: satt (sitte) vs. satt (sette); preteritum av sette blir også ofte feil i bokmål, satt i staden for satte: 
+# TODO: satt (sitte) vs. satt (sette); preteritum av sette blir også ofte feil i bokmål, satt i staden for satte:
 # "Sjømateksporten satt også ny rekord". Noko er ordna ("satt av til" o.fl.), men det er ein del bomskot.
 
 SELECT:arrestert-og-satt-i-fengsel ("sette") + vblex + pp IF
 		(-1 %og%)
 		(-2 vblex + pp)
 		;
-		
+
 SELECT:satt-på-vent ("sette") + vblex + pp IF
 		(1* ("på vent") BARRIER setn-gr)
 		;
 		# setje heile greia på vent
-		
+
 SELECT:satt-av ("sette") + vblex + pp IF
 		(1 %av%)
 		;
 		# setje av
-		
+
 SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
 		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
 		;
-		
+
 SELECT:eier-av ("<eier>"i) + n IF
 		(1 %av%)
 		;
-		
+
 SELECT:i-kok ("<kok>"i) + nt IF
 		(-1 %i%)
 		;
 		# sette sinnene i kok (lsx)
 
-		
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
@@ -7493,15 +7493,15 @@ REMOVE ("pote") IF
 ;
 
 
-REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF 
-		(-1 prep) 
+REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF
+		(-1 prep)
 ;
 
-REMOVE:er-angivelig ("angivelig") + adj IF 
-		(-1 %være/bli%) 
+REMOVE:er-angivelig ("angivelig") + adj IF
+		(-1 %være/bli%)
 ;
 
-REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF 
+REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
 		(1 %på%)
 		(2 n OR np)
 		(NEGATE -1 prn OR np)
@@ -31328,6 +31328,12 @@ REMOVE:noen-års-tid <noen> + neg IF
 	(1 ub-fl-nøyt-subst)
 	(1C subst-nøyt + ub)
 ;
+
+SELECT:noen-kilo-ekstra <noen> + pl - neg IF
+	(1 målsubst)
+;
+# «Kvernmo tar gjerne med noen kilo ekstra i tursekken for komfortens skyld»
+
 # Default:
 SELECT:noen-default <noen> + neg ;
 # Viss me har kome så langt, tek me «nokon»
