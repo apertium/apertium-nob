@@ -5895,6 +5895,12 @@ REMOVE:avoid-støytte ("støte") IF
         (0 ("<støtte>"i))
         ;
 
+SELECT:utspilte-nesebor ("utspilt") + adj IF
+		(1 n)
+		;
+
+REMOVE:unlikely ("<utspilt>"i) + adj ;
+
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
 	(NOT -1 det-prep-infmerke-adjbe)
