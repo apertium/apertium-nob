@@ -8189,7 +8189,10 @@ REMOVE ("frø") IF
 # KBU: Burde skje etter syntaks; viss me har objekt, "gjøre", viss
 # subjektet er %hund%, "gøy"
 
-
+"<gleder>" REMOVE n IF
+        (*1 %seg%)
+        ;
+# «Når koronapandemien er over gleder hun seg til tre ting.»
 
 #:3586
   "<gode>"   REMOVE:3586   (n) IF
