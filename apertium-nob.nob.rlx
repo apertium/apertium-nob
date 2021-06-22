@@ -30355,6 +30355,12 @@ SELECT:så-har-vi-laget-noen pp IF
 #CONSTRAINTS
 ## remove ndomain heur
 
+REMOVE:X-vil-være-forsiktig adj + nt IF
+        (*-1 pred-verb BARRIER ikke-adj-adv LINK *-1 cog BARRIER nt)
+        (0C adj OR adv)
+        ;
+# «Falla ønsker å være forsiktig med belastningen.»
+
 REMOVE:de-amerikanske-sanksjonene prn + pers + pl IF
         (0 det + dem + pl)
         (1C adj + sp + def)
