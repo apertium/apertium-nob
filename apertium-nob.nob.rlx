@@ -780,8 +780,19 @@ LIST poss-det = (det pos) ;
 LIST poss-det-nøyt = (det pos nt) ;
 LIST poss/gen = pos gen ;
 LIST poss = pos ;
-LIST pred-verb = pr1 pr2 pr3 pr5 pr6 pr7 ;
-LIST predik3/5-7 = pr3 pr5 pr6 pr7 ;
+
+LIST pr1 = "agere" "bli" "forbli" "henstå" "hete" "utgjøre" "være" ;
+LIST pr2 = "agere" "bli" "forbli" "låte" "synes" "tykkes" "virke" "være" ;
+LIST pr3 = "benevne" "finne" "gjøre" "kalle" "lyse" "tilrede" "titulere" ;
+LIST pr5 = "benevne" "titulere" ;
+LIST pr6 = "drikke" "erkjenne" "erklære" "ete" "fortone" "føle" "gå" "holde" "kalle" "legge" "nekte" "skjenke" "slå" "spise" "vokse" ;
+LIST pr7 = "erklære" "farge" "få" "hamre" "holde" "male" "polere" "ruske" "skjenke" "slå" "tone" "vaske" "vispe" ;
+# TODO: Used in ordbanken, not in OBT:
+# LIST pr8 = "anerkjenne" "anføre" "anse" "anslå" "avskrive" "avsløre" "beskikke" "beskrive" "betegne" "betrakte" "bokføre" "definere" "figurere" "foreslå" "gjenskape" "godkjenne" "godta" "identifisere" "innkalle" "innsette" "innstille" "innvelge" "innvie" "introdusere" "karakterisere" "kategorisere" "kjenne" "klassifisere" "kode" "markedsføre" "nominere" "omtale" "oppfatte" "opptre" "plassere" "presentere" "proklamere" "registrere" "skildre" "spesifisere" "stemple" "stevne" "tolke" "utlegge" "utpeke" "verve" "vurdere" ;
+# LIST pr9 = "anse" "avsløre" "bete" "betone" "definere" "ernære" "etablere" "fortone" "føle" "geberde" "introdusere" "konstituere" "livnære" "manifestere" "markedsføre" "markere" "melde" "omtale" "oppfatte" "oppføre" "plassere" "presentere" "registrere" "ste" "stede" "stille" "utmerke" "utpeke" "verve" "åpenbare" ;
+
+SET pred-verb = pr1 OR pr2 OR pr3 OR pr5 OR pr6 OR pr7 ;
+SET predik3/5-7 = pr3 OR pr5 OR pr6 OR pr7 ;
 LIST premod-subst = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  ("gang"  pl) ;
 LIST premod-subst/prop = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  np ("gang"  pl) ;
 LIST prep = pr ;
