@@ -3004,6 +3004,10 @@ SELECT:i-kok ("<kok>"i) + nt IF
 ;
 #  "et stort et"
 
+"<ett>" SELECT det IF
+        (1 adj + nt OR n + nt)
+        ;
+# «– Jeg har jo tatt inn seks sekunder på ham (Nielsen) i løpet av sesongen, og jeg var knapt ett halvt sekund bak ham i Rotterdam.»
 
 "<etterfulgt>" SELECT:følgd-av mf IF
         (1 %av%)
