@@ -3004,6 +3004,10 @@ SELECT:i-kok ("<kok>"i) + nt IF
 ;
 #  "et stort et"
 
+"<ett>" SELECT det IF
+        (1 adj + nt OR n + nt)
+        ;
+# «– Jeg har jo tatt inn seks sekunder på ham (Nielsen) i løpet av sesongen, og jeg var knapt ett halvt sekund bak ham i Rotterdam.»
 
 "<etterfulgt>" SELECT:følgd-av mf IF
         (1 %av%)
@@ -6982,6 +6986,7 @@ REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
 REMOVE:unlikely ("<spilles>") + n;
 REMOVE:unlikely ("<to>") + imp;
+REMOVE:unlikely ("<To>") + cog IF (NOT -1 storbokstav); # «To er funnet omkommet»
 REMOVE:unlikely ("<vis>") + m;
 REMOVE:unlikely ("<vis>") + f;
 REMOVE:unlikely ("<hører>"i) + n;
@@ -30354,6 +30359,12 @@ SELECT:så-har-vi-laget-noen pp IF
 
 #CONSTRAINTS
 ## remove ndomain heur
+
+REMOVE:X-vil-være-forsiktig adj + nt IF
+        (*-1 pred-verb BARRIER ikke-adj-adv LINK *-1 cog BARRIER nt)
+        (0C adj OR adv)
+        ;
+# «Falla ønsker å være forsiktig med belastningen.»
 
 REMOVE:de-amerikanske-sanksjonene prn + pers + pl IF
         (0 det + dem + pl)
