@@ -4158,6 +4158,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (2 clb)
         ;
 
+"<landet>" SELECT:ble-landet n IF
+        (-1 ("bli"))
+        ;
+
 
 "<lav>"   SELECT   (adj) IF
         (NOT *-2 lav-ord)
