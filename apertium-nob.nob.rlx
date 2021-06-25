@@ -5845,11 +5845,11 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 ;
 #  "det stikk motsatte"
 
-"<stresset>" SELECT:stresset-av (vblex) IF
+"<stresset>" SELECT:stresset-av vblex OR adj IF
         (1 %av%)
         ;
 
-"<stresset>" SELECT:bli-stresset (vblex) IF
+"<stresset>" SELECT:bli-stresset vblex OR adj IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
