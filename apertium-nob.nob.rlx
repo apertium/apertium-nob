@@ -9889,7 +9889,7 @@ SELECT:skrev vblex IF
         ;
 # «I midten av mars ble alle EU-landene unntatt Irland enige.»
 
-SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+SELECT:bortsett-frå ("<unntatt>"i) + prep/adv IF
 		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
 		(NEGATE 1 ("offentlighet"))
 		(1 n OR np)
@@ -9899,21 +9899,21 @@ SELECT:unntatt ("<unntatt>"i) + vblex IF
 		(-1* ("være" vblex) OR ("bli" vblex) OR ("ha" vblex) BARRIER setn-gr)
 		;
 
-SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+SELECT:bortsett-frå ("<unntatt>"i) + prep/adv IF
 		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
 		(1 %det% OR talord OR siffer)
 		;
 		# unntatt det første
 
-SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+SELECT:bortsett-frå ("<unntatt>"i) + prep/adv IF
 		(-1* ("all") BARRIER setn-gr)
 		;
 
-SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+SELECT:bortsett-frå ("<unntatt>"i) + prep/adv IF
 		(-1 komma)
 		;
 
-SELECT:bortsett-frå ("<unntatt>"i) + adv IF
+SELECT:bortsett-frå ("<unntatt>"i) + prep/adv IF
 		(NEGATE -1 ("være" vblex) OR ("bli" vblex))
 		(NEGATE 1 %fra%)
 		(1 pr)
