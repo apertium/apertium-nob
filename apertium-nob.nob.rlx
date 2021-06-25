@@ -21254,6 +21254,18 @@ SELECT:fisken-ble-funnet adj + mf IF
 ;
 # «Breivik er selvopptatt og dyssosial»
 
+SELECT:mye-er-fremdeles-stengt adj + nt IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
+	(NOT -2 be-nøyt-det)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
+         LINK *-1 ("mye" adv)
+         BARRIER setn-gr OR fv
+         LINK NOT 0 pl OR nt)
+;
+# «Skolen er fremdeles på Zoom, og mye er fremdeles stengt»
+
 
 SELECT:ungdom-etterlatt-i-utlandet pp IF
         (NOT -2 %hvilken%)      # hvilke konsekvenser funnet får
