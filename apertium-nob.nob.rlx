@@ -7101,6 +7101,7 @@ REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
 REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar»
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
+REMOVE:unlikely ("van") IF (0 ("vane")) ;
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -21260,9 +21261,8 @@ SELECT:mye-er-fremdeles-stengt adj + nt IF
 	(NOT -2 be-nøyt-det)
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
-         LINK *-1 ("mye" adv)
-         BARRIER setn-gr OR fv
-         LINK NOT 0 pl OR nt)
+         LINK *-1 %mye/lite/litt% OR %alt/litt%
+         BARRIER setn-gr OR fv)
 ;
 # «Skolen er fremdeles på Zoom, og mye er fremdeles stengt»
 
