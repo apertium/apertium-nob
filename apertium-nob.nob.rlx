@@ -25287,6 +25287,7 @@ SELECT:særlig-purker fl-subst IF
 #:2013
  REMOVE:2013 ent-mask-subst IF
 	(0 adj)
+        (NOT -1C det + m + sg)  # på en bar
 	(**-1C det LINK NOT 0 mask LINK NOT 0 fl LINK NOT 0 %selv% LINK NOT 0 %samme/neste/ene/eneste/selve/forrige%)
 	(**-1C det BARRIER ikke-adv-adj)
 ;
@@ -32649,6 +32650,23 @@ SELECT:sitt-sosiale-og-økonomiske-liv n + sg IF
         ;
 # «Sarah mottok femti amerikanske dollar i støtte, et beløp som transitthuset vårt Dorcas gir til kvinner som ønsker å bygge opp igjen sitt sosiale og økonomiske liv.»
 
+
+SELECT:skjer-det-ting expl IF
+        (-1 ("skje") + fv)
+        (1 ("<ting>") OR ("<noe>"))
+        ;
+
+SELECT:sa-det-stopp expl IF
+        (-1 ("si") + fv)
+        (1 ("<stopp>") OR ("<pang>"))
+        ;
+
+SELECT:ble-det-favorittfall expl IF
+        (-1 ("bli") + fv)
+        (1 n + sg + ind)
+        ;
+
+
 REMOVE:høye-doser n + sg IF
         (NOT -2 gen)            # «Politiets generelle inntrykk»
         (-1C adj + pl OR adj + def)
@@ -32687,11 +32705,13 @@ REMOVE:orientert-om-funnet vblex + pp IF
 # «- Pårørende var på stedet og er orientert om funnet, opplyser Sandberg.»
 
 
-SELECT:et-snev $$GENDER IF
-        (-1C det OR prn LINK 0C $$GENDER)
+SELECT:et-snev $$GENDER + $$NUMBER IF
+        (-1C det OR prn LINK 0C $$GENDER + $$NUMBER)
         (NOT -1C prn)           # det er dette<prn> folk reagerer på
         (0C n + ind)
 ;
+# «– Likevel er det ikke et snev av tvil, som Frp selv sa da de begrunnet hvorfor de gikk ut av regjering»
+# Men ikkje: «Den franske avisen skriver at brannmennene, som tilhører det franske militæret, møtte tre kvinnelige norske studenter på en   bar   fredag kveld.»
 
 
 
