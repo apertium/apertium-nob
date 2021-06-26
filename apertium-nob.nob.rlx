@@ -1922,12 +1922,12 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 
 
 #:3763
-  "<andre>"   SELECT:3763   (det pl) IF
+"<andre>" SELECT:i-andre-land det + pl IF
 	(1 fl-subst)
 	(NOT 1 ord-%andre%-ent/fl-subst)
 	(NOT -1 det)
 ;
-#  "i andre land
+# "i andre land
 # IKKE: i andre (ordenstall, ikke det dem) halvår"))
 
 
@@ -31619,6 +31619,16 @@ REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
         (-1C det + qnt OR talord)
         (-1C pl)
         ;
+
+REMOVE:vi-har-ikke-lenger-fond ent-subst IF
+        (0C subst)
+        (0 fl-subst)
+        (NOT -1 pos + pl OR gen)
+        (*-1 %ikke% BARRIER setn-gr LINK *-1 hj-verb)
+        ;
+# «Som følge av utestengelsen får Russland ikke arrangere store internasjonale   mesterskap   i løpet av fireårsperioden»
+# «vi har ikke lenger   fag   som gym og kunst og håndverk.»
+
 
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
