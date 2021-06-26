@@ -8743,6 +8743,12 @@ REMOVE:høgd greiner;
 #  "Tar sjansen på at det er svært lite sannsynlig
 # at det er snakk om en torskefisk"
 
+"<landet>" REMOVE vblex IF
+        (-1 %i%)
+        (*1 fv BARRIER ikke-adv)
+        ;
+# «Mange i landet er smittet av viruset.»
+
 
 #:5028
  "<le>"   REMOVE:5028   (adj) IF
@@ -12126,8 +12132,14 @@ SELECT:det-året-vi-har-lagt-bak-oss adj + nt + sg + ind IF
         ;
 # «– Jeg er ikke overrasket over det året vi har lagt bak oss.»
 
-SELECT:jeg-er-utrolig-takknemlig adj + mf + sg + ind IF
+SELECT:jeg-er-utrolig-TAKKNEMLIG adj + mf + sg + ind IF
         (*-1 %være/bli% BARRIER setn-gr OR pr OR pprs LINK -1 p1 + sg)
+        (NOT 1 adj + mf + sg + ind)
+        ;
+
+SELECT:jeg-er-UTROLIG-takknemlig adj + nt + sg + ind IF
+        (*-1 %være/bli% BARRIER setn-gr OR pr OR pprs LINK -1 p1 + sg)
+        (1C adj + mf + sg + ind)
         ;
 
 SELECT:er-jeg-både-takknemlig-og-rørt adj + mf + sg + ind IF
@@ -21258,13 +21270,24 @@ SELECT:fisken-ble-funnet adj + mf IF
 SELECT:mye-er-fremdeles-stengt adj + nt IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
-	(NOT -2 be-nøyt-det)
+	(NOT -2 be-mask-det)
 	(*-1 %være/bli%
          BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
          LINK *-1 %mye/lite/litt% OR %alt/litt%
          BARRIER setn-gr OR fv)
 ;
 # «Skolen er fremdeles på Zoom, og mye er fremdeles stengt»
+
+SELECT:mange-er-fremdeles-smittet adj + pl IF
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
+	(NOT -2 be-det-ent)
+	(*-1 %være/bli%
+         BARRIER fv OR perf-part OR setn-gr OR nom - sanns-årstal
+         LINK *-1 %mange%
+         BARRIER setn-gr OR fv)
+;
+# «Mange i landet er smittet»
 
 
 SELECT:ungdom-etterlatt-i-utlandet pp IF
@@ -28557,6 +28580,10 @@ CONSTRAINTS
 "<typer>" REMOVE:de-typer-organisk-avfall vblex IF
         (-1 det)
         (*1 n + ind BARRIER ikke-adv-adj-det)
+        ;
+
+"<ting>" REMOVE:gjøre-ting sg OR nt IF
+        (-1 ("gjøre"))
         ;
 
 #:4057
