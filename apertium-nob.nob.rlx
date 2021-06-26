@@ -945,7 +945,7 @@ LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
 LIST forsterkende-ord = "virkelig" "veldig" "utrolig" "utrulig" "fantastisk" "kjempe" "himla" "helt" ;
-LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" ;
+LIST kamp-ord = "cup" "spill" "spiller" "lag" "topplag" "europacup" "hær" "runde" "remis" "kamp" "poeng" "revolusjon" "løp" "plassering" "slag" "finale" "semifinale" "krig" "gull" "bronse" "<klassen>" "stang" ;
 LIST betegne-ord = "betegne" "benevne" "karakterisere" "kjennetegne" "beskrive" "skildre" "framstille" "fremstille" ;
 LIST trolig-ord = "trolig" "tilsynelatende" "sannsynligvis" "kanskje" "visstnok" "ventelig" "muligens" "rimeligvis" "antagelig" "antageligvis" "antakelig" "antakeligvis" "formodentlig" "gjerne" "godt mulig" "sikkert" "naturligvis" "angivelig" "tilnærmet" ;
 LIST yrkestittel-ord = "adjunkt" "admiral" "advokat" "agent"  "ambassadør" "analytiker" "arkeolog" "assistent" "astrofysiker" "avdelingssjef" "barnelege" "bartender" "billedkunstner" "biolog" "biskop" "bonde" "botaniker" "brannsjef" "byggmester" "byråd" "dekan" "departementsråd" "direktør" "dommer" "domprost" "dosent" "driftsleder" "dykker" "ekspedisjonssjef" "entreprenør" "fagdirektør" "fagsjef" "fastlege" "fengselsdirektør" "fengselsprest" "filmprodusent" "fisker" "fiskeridirektør" "flyger" "forfatter" "forlagssjef" "forlegger" "formann" "forsker" "forskningssjef" "forstander" "forsvarssjef" "fotograf" "frisør" "frøken" "fylkeslege" "fylkesmann" "fylkesordfører" "førsteamanuensis" "førstekonsulent" "førstelektor" "general" "generaldirektør" "generalløytnant" "generalmajor" "generalsekretær" "geolog" "glasiolog" "grenader" "havforsker" "havnesjef" "helsedirektør" "historiker" "hoffsjef" "hydrolog" "høyesterettsjustitiarius" "imam" "informasjonskonsulent" "informasjonssjef" "ingeniør" "innkjøpssjef" "innsatsleder" "jernbanedirektør" "jordmor" "journalist" "jurist" "kaptein" "kasserer" "kjemiker" "kjøkkensjef" "kjøpmann" "kokk" "komiker" "komiteleder" "komitéleder" "kommandør" "kommandørkaptein" "komponist" "kontorsjef" "kontreadmiral" "koordinator" "kriminolog" "kringkastingssjef" "lagdommer" "leder" "lege" "lensmann" "los" "lærer" "løytnant" "major" "medlem" "mester" "metallurg" "meteorolog" "minister" "ministerpresident" "museumsdirektør" "musiker" "nestleder" "oberst" "oberstløytnant" "operatør" "ordfører" "overlege" "oversykepleier" "paleontolog" "partileder" "pastor" "pater" "pilot" "politibetjent" "politiinspektør" "politimester" "president" "pressekontakt" "presser" "prest" "produsent" "professor" "programleder" "programredaktør" "prorektor" "psykiater" "psykolog" "redaktør" "regissør" "regjeringsadvokat" "rektor" "riksadvokat" "riksantikvar" "rittmester" "rådgiver" "rådmann" "sekretær" "selger" "sjef" "sjefredaktør" "sjømannsprest" "skipper" "skipsreder" "skuespiller" "snekker" "sogneprest" "sorenskriver" "sosiolog" "spesialrådgiver" "stabssjef" "stasjonssjef" "statsadvokat" "statsmeteorolog" "statsminister" "statsråd" "statssekretær" "statsviter" "stipendiat" "stortingspresident" "stortingsrepresentant" "styreformann" "styreleder" "styremedlem" "sykepleier" "tannlege" "tillitsvalgt" "trener" "universitetsdirektør" "universitetslektor" "varaordfører" "varapresident" "veterinær" "vinner" "viseadmiral" "visepresident" "økonom" ;
@@ -954,7 +954,7 @@ LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" 
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" ;
-LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ;
+LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
@@ -5119,6 +5119,10 @@ REMOVE:unlikely ("<ris>") + pasv;
         (-1 %forrige/neste/samme/siste/første% OR %andre% OR %annen% OR ord OR ("endelig") OR ("strak") OR ("fortjene"))
         ;
 
+"<seier>" SELECT:det-ble-seier sg IF
+        (-1 ("bli"))
+        ;
+
 "<seier>" SELECT:seier-gir-ett-poeng sg IF
         (*0 kamp-ord)
         ;
@@ -6462,6 +6466,9 @@ REMOVE:unlikely ("leire") + pl ;
         (1 %for%)
         ;
 
+"<tang>" SELECT:tang-og-tare nt IF
+        (2 ("tare"))
+        ;
 
 #:3196
   "<tapt>"   SELECT:3196   (vblex pp) IF
@@ -8132,6 +8139,8 @@ REMOVE ("frø") IF
 ;
 #  "bare ved \"å være føre var\"!"
 
+"<førers>" REMOVE:unlikely ("føre");
+
 "<førte>" REMOVE:førte-til adj IF
 	(1 %til%)
 ;
@@ -8726,6 +8735,9 @@ REMOVE:høgd greiner;
 ;
 #  "kh jan 2004: vannet har kravet seg"
 
+"<kyss>" REMOVE:et-kyss pl IF
+        (-1 det + sg)
+        ;
 
 #:3488
   "<la>"   REMOVE:3488   (n m) IF
@@ -9352,6 +9364,10 @@ REMOVE:tilbakekaller-leker ("lek") IF
 
 "<par>" REMOVE:siste-par-årene pl IF
         (1 %år%)
+        ;
+
+"<passer>" REMOVE n IF
+        (NOT -1 %en%)
         ;
 
 #:3354
@@ -21529,6 +21545,11 @@ REMOVE:åtteseters ("seter") IF
         (0/1 cmp)
         ;
 
+REMOVE:valbarar pl + ("bar") IF
+        (0/1 cmp)
+        ;
+# avoid valgbar → valbarar etc.
+
 REMOVE:antall-registrerte fv IF
         (-1 ("antall"))
         ;
@@ -28090,6 +28111,7 @@ CONSTRAINTS
 	(*-1O ub-ent-mask/fem-det LINK *1 ikke-adv-adj)
 ;
 
+
 "<funnet>" REMOVE:fragment-funnet subst IF
 	(NOT 0* fv)
 ;
@@ -28437,7 +28459,6 @@ CONSTRAINTS
 	(0 verb)
 ;
 #  "kh jan 2004: mest sannsynlig verb om ingen av de vanligste adj-reglene har virket"
-
 
 
 #:3306
@@ -31621,13 +31642,16 @@ REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
         ;
 
 REMOVE:vi-har-ikke-lenger-fond ent-subst IF
+        (NOT 0 default-sg-after-poss) # avoid «kjennskapar»
         (0C subst)
         (0 fl-subst)
-        (NOT -1 pos + pl OR gen)
-        (*-1 %ikke% BARRIER setn-gr LINK *-1 hj-verb)
+        (*-1 %ikke% BARRIER det-ent OR setn-gr OR gen OR pos OR pp OR n OR %som% LINK *-1 hj-verb)
         ;
 # «Som følge av utestengelsen får Russland ikke arrangere store internasjonale   mesterskap   i løpet av fireårsperioden»
 # «vi har ikke lenger   fag   som gym og kunst og håndverk.»
+# Denne tar ein sjanse på svært tvitydige substantiv.
+# Ikkje: «de har ikke pustet inn  røyk  .» (BARRIER pp)
+# Ikkje: «Økningen må ikke forveksles med regjeringens omstridte forslag» (BARRIER gen)
 
 
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
@@ -32661,6 +32685,15 @@ REMOVE:orientert-om-funnet vblex + pp IF
         (1 setn-gr)
         ;
 # «- Pårørende var på stedet og er orientert om funnet, opplyser Sandberg.»
+
+
+SELECT:et-snev $$GENDER IF
+        (-1C det OR prn LINK 0C $$GENDER)
+        (NOT -1C prn)           # det er dette<prn> folk reagerer på
+        (0C n + ind)
+;
+
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
