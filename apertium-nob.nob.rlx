@@ -8625,6 +8625,8 @@ REMOVE:høgd greiner;
 #  "intet mindre
 # Ikke: det store intet"
 
+REMOVE:unlikely ("internasjonale") + n IF (0 adj);
+
 "<inngiftet>" REMOVE n;         # when is this likely to be noun?
 
 
@@ -31653,13 +31655,16 @@ REMOVE:vi-har-ikke-lenger-fond ent-subst IF
         (NOT 0 default-sg-after-poss) # avoid «kjennskapar»
         (0C subst)
         (0 fl-subst)
-        (*-1 %ikke% BARRIER det-ent OR setn-gr OR gen OR pos OR pp OR n OR %som% LINK *-1 hj-verb)
+        (*-1 %ikke%
+         BARRIER hj-verb OR det-ent OR setn-gr OR gen OR pos OR pp OR n OR %som%
+         LINK *-1 hj-verb)
         ;
 # «Som følge av utestengelsen får Russland ikke arrangere store internasjonale   mesterskap   i løpet av fireårsperioden»
 # «vi har ikke lenger   fag   som gym og kunst og håndverk.»
 # Denne tar ein sjanse på svært tvitydige substantiv.
 # Ikkje: «de har ikke pustet inn  røyk  .» (BARRIER pp)
 # Ikkje: «Økningen må ikke forveksles med regjeringens omstridte forslag» (BARRIER gen)
+# Ikkje: «Det er uklart hvordan dette kan skje, ettersom USA ikke er medlem …»
 
 
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
