@@ -6690,9 +6690,6 @@ REMOVE:unlikely ("leire") + pl ;
 ;
 #  "tvert imot"
 
-"<vanhellig>" SELECT adj;
-"<vanhellige>" SELECT adj;
-
 "<vant>" SELECT pret IF
         (NOT *-1 kop-fv)
         (NOT 1 %med% OR %til%)
