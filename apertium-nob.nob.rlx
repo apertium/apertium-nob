@@ -7267,7 +7267,7 @@ REMOVE:unlikely ("rukke") IF
         ;
 # "fire runder ble rukket spilt"
 REMOVE:unlikely ("reke") IF
-		(-1 %være/bli%)
+		(-1* %være/bli%)
 		(0 ("reke") OR ("rekke¹"))
         ;
 # "teppet ble rekt opp igjen"
