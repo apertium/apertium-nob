@@ -7256,11 +7256,16 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("ha"))
         ;
 # har trengt
-REMOVE ("rake") IF
+REMOVE:rekke-ut-handa ("rake") IF
 		(0 ("rake") OR ("rekke¹"))
         (1 ("ut"))
         ;
 # "Rekke ut hånda"
+REMOVE:ble-rukket-spilt ("rukke") IF
+		(-1 %være/bli%)
+		(0 ("rukke") OR ("rekke"))
+        ;
+# "fire runder ble rukket spilt"
 REMOVE:seg-hinsides adj IF
         (-1 ("seg"))
         (0 ("hinsides"))
