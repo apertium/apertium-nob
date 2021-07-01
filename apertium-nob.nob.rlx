@@ -1293,6 +1293,8 @@ REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 ########################################################
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("trall") + sg + def;
+REMOVE:unlikely ("trall") + pl;
 REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
 REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
@@ -4943,10 +4945,17 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (NOT 1 pr_etter_regnvann)
         ;
 
-"<regnet>" SELECT:regnet-det-i-Seefeld regne_vann IF
+SELECT:regnet-det-i-Seefeld regne_vann IF
         (1 expl)
         (2 pr_etter_regnvann)
         ;
+SELECT:det-regner regne_vann IF
+        (-1 expl)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n)
+        ;
+SELECT:i-regnet regn_vann IF
+		(-1 pr)
+		;
 
 "<regnet>" SELECT:regnet-det-ikke vblex IF
         (1 expl)
@@ -4956,7 +4965,13 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (NOT 1 pr)      # regne med
         (NOT 2 pr)      # regner ikke med
         ;
-
+SELECT:blåse-og-regne ("regne¹") + vblex IF
+        (-2 ("blåse" vblex) OR ("storme" vblex) OR ("dryppe" vblex))
+        ;
+SELECT:regne-og-blåse ("regne¹") + vblex IF
+        (2 ("blåse" vblex) OR ("storme" vblex) OR ("dryppe" vblex))
+       (1 %og/eller%)
+        ;
 
 #:3346
   "<rent>"   SELECT:3346   (vblex pp) IF
@@ -7106,6 +7121,11 @@ REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar�
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
+
+SELECT:balle-på-seg ("balle") + vblex IF
+		(1* ("på"))
+		(2* %seg%)
+		;
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
