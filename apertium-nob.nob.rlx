@@ -27626,6 +27626,11 @@ CONSTRAINTS
 ;
 #  bare ben
 
+"<Bruker>" SELECT:Bruker-dere-uniform fv IF
+        (NOT *0 fv)
+        (*1 spørsmål-t)
+        ;
+
 #:3721
 "<der>"   SELECT:korrespondansen-der   pr IF
 	(*1O subst/pron/fl-adj/%all%/%mang%/%mange% LINK *-1 ikke-adv-adj-det)
