@@ -1063,7 +1063,7 @@ LIST not-np-guess-f_lc>f_uc =
     "<Sammenlagt>" "<Riksadvokat>" "<Retningslinjene>" "<Regjerende>" "<Politiadvokaten>"
     ;
 
-LIST not-np-guess-words = "<Flere>" "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Sen>" "<Velg>" "<Egenvekt>" "buss" "<Blant>" "<Hvis>" "<Hvor>" "demonstrasjon" "demonstrant" "skade" "eksplosjon" "skolemat" "forbud" "<Seriemester>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "dykker" "mulig" "endring" "kritiker" "sterk" "østerriksk" "russer" "turist" "notis" "vinge" "børs" "antall" "mannskap" "<Reguleringer>" "<Beklagelig>" "<Frykter>" "<Tall>" "<Tallet>" "<Tallene>" "<Kommuner>" "<Myndighetene>" "<Ledelsen>" "<Komiteens>" "<Kvinnens>" "<Krigens>" "<Naturens>" "<Nordmannens>" "<Miljøbevisst>" "<Mannens>" "<Valgets>" "<Foruten>" "<.*(forfatter|ordfører|trener|rammede|kommunene|myndighetene|forsker|forskern?e|profilen|pendler|leder|løperen|kjeden|selskapene|butikkene|prisene|grupper|siktet|støter|skytter|styrer|minister|advokat|keeper)>"ri ;
+LIST not-np-guess-words = "<Alder>" "<Flere>" "deretter" "videre" "tidligere" "bare" "<Vinner>" "<Taper>" "forlegger" "<Tror>" "<Sent>" "<Sen>" "<Velg>" "<Egenvekt>" "buss" "<Blant>" "<Hvis>" "<Hvor>" "demonstrasjon" "demonstrant" "skade" "eksplosjon" "skolemat" "forbud" "<Seriemester>" "sykehus" "kirke" "<Sent>" "<Leder>" "<Påsken>" "<Prøven>" "<Stemmen>" "<Budrunden>" "<Ifølge>" "<Besøkende>" "dykker" "mulig" "endring" "kritiker" "sterk" "østerriksk" "russer" "turist" "notis" "vinge" "børs" "antall" "mannskap" "<Reguleringer>" "<Beklagelig>" "<Frykter>" "<Tall>" "<Tallet>" "<Tallene>" "<Kommuner>" "<Myndighetene>" "<Ledelsen>" "<Komiteens>" "<Kvinnens>" "<Krigens>" "<Naturens>" "<Nordmannens>" "<Miljøbevisst>" "<Mannens>" "<Valgets>" "<Foruten>" "<.*(forfatter|ordfører|trener|rammede|kommunene|myndighetene|forsker|forskern?e|profilen|pendler|leder|løperen|kjeden|selskapene|butikkene|prisene|grupper|siktet|støter|skytter|styrer|minister|advokat|keeper)>"ri ;
 # sykehus/kirke because: https://www.sprakradet.no/svardatabase/sporsmal-og-svar/kyrkjer-skular-og-sjukehus-nynorsk-eller-bokmal-i-namnet/
 SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess-words OR yrkestittel-ord + sg + ind ;
 
@@ -1293,6 +1293,8 @@ REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 ########################################################
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
+REMOVE:unlikely ("trall") + sg + def;
+REMOVE:unlikely ("trall") + pl;
 REMOVE:unlikely ("grunne") + n IF (0 ("<grunnene>"i));
 REMOVE:unlikely ("søppel") + nt IF (0 f);
 REMOVE:unlikely ("kris") IF (0 ("krise"));
@@ -4943,10 +4945,17 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (NOT 1 pr_etter_regnvann)
         ;
 
-"<regnet>" SELECT:regnet-det-i-Seefeld regne_vann IF
+SELECT:regnet-det-i-Seefeld regne_vann IF
         (1 expl)
         (2 pr_etter_regnvann)
         ;
+SELECT:det-regner regne_vann IF
+        (-1 expl)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n)
+        ;
+SELECT:i-regnet regn_vann IF
+		(-1 pr)
+		;
 
 "<regnet>" SELECT:regnet-det-ikke vblex IF
         (1 expl)
@@ -4956,7 +4965,13 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (NOT 1 pr)      # regne med
         (NOT 2 pr)      # regner ikke med
         ;
-
+SELECT:blåse-og-regne ("regne¹") + vblex IF
+        (-2 ("blåse" vblex) OR ("storme" vblex) OR ("dryppe" vblex))
+        ;
+SELECT:regne-og-blåse ("regne¹") + vblex IF
+        (2 ("blåse" vblex) OR ("storme" vblex) OR ("dryppe" vblex))
+       (1 %og/eller%)
+        ;
 
 #:3346
   "<rent>"   SELECT:3346   (vblex pp) IF
@@ -7106,6 +7121,11 @@ REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar�
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
+
+SELECT:balle-på-seg ("balle") + vblex IF
+		(1* ("på"))
+		(2* %seg%)
+		;
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
@@ -27625,6 +27645,11 @@ CONSTRAINTS
 	(1 %arm/ben/kropp/legg/tre%-fl)
 ;
 #  bare ben
+
+"<Bruker>" SELECT:Bruker-dere-uniform fv IF
+        (NOT *0 fv)
+        (*1 spørsmål-t)
+        ;
 
 #:3721
 "<der>"   SELECT:korrespondansen-der   pr IF
