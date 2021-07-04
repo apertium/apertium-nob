@@ -7259,6 +7259,10 @@ REMOVE ("hvor") + cnjsub IF
 		(-1 ("endelig"))
         ;
 # "det ble endelig bestemt"
+"<slipper>" REMOVE:slipper-til n IF
+		(1 ("til"))
+        ;
+# "det ble endelig bestemt"
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
