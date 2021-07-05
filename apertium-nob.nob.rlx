@@ -7339,7 +7339,11 @@ REMOVE:er-hinsides pr IF
 "<beinet>" REMOVE:knekke-beinet vblex IF
         (-1 vblex)
         ;
-# fått has på
+# å knekke beinet
+"<knekker>" REMOVE:knekke-sammen n IF
+		(1 ("sammen"))
+        ;
+# å knekke sammen
 "<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
         (-2 ("ta"))
         (-1 ("på"))
