@@ -7344,6 +7344,12 @@ REMOVE:er-hinsides pr IF
 		(1 ("sammen"))
         ;
 # å knekke sammen
+"<for>" REMOVE:for-med-hensikt-å vblex IF
+		(1 ("med"))
+		(2 ("hensikt"))
+		(3 ("å"))
+        ;
+# å knekke sammen
 "<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
         (-2 ("ta"))
         (-1 ("på"))
