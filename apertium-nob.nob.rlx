@@ -4250,6 +4250,13 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (NOT *-2 lav-ord)
 ;
 
+"<drevet>" SELECT:drevet-halsende-hund pp IF
+        (1 ("<halsende>"))
+		(2 ("hund") + ind)
+        ;
+
+"<drevet>" REMOVE:unlikely n ;
+
 
 #:3486
   "<legg>"   SELECT:3486   (vblex imp) IF
