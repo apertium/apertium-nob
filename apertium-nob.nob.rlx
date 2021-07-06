@@ -7340,6 +7340,10 @@ REMOVE ("hvor") + cnjsub IF
 		(-1 ("endelig"))
         ;
 # "det ble endelig bestemt"
+"<slipper>" REMOVE:slipper-til n IF
+		(1 ("til"))
+        ;
+# "det ble endelig bestemt"
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
@@ -7413,6 +7417,20 @@ REMOVE:er-hinsides pr IF
 		(1 ("på"))
         ;
 # fått has på
+"<beinet>" REMOVE:knekke-beinet vblex IF
+        (-1 vblex)
+        ;
+# å knekke beinet
+"<knekker>" REMOVE:knekke-sammen n IF
+		(1 ("sammen"))
+        ;
+# å knekke sammen
+"<for>" REMOVE:for-med-hensikt-å vblex IF
+		(1 ("med"))
+		(2 ("hensikt"))
+		(3 ("å"))
+        ;
+# å knekke sammen
 "<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
         (-2 ("ta"))
         (-1 ("på"))
