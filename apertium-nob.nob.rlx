@@ -4145,23 +4145,104 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 	(-1 %ha%)
 ;
 
+"<tvang>" SELECT:tvang-landet pret IF
+		(-1 n OR np OR prn + pers)
+		;
+		
+"<landet>" SELECT:er-landet-stengt n IF
+        (-1 ("være"))
+		(1 adj OR pp)
+        ;
+
+"<landet>" SELECT:i-landet n IF
+        (-1 pr OR adj)
+        ;
+
+"<landet>" SELECT:det-fattigste-landet n IF
+        (-2 det-dem)
+		(-1 adj OR adv)
+        ;
+
+"<landet>" SELECT:det-fattigste-landet n IF
+        (-1 det-dem)
+		(1 %i%)
+        ;
+
+"<landet>" SELECT:selv-om-landet n IF
+        (-1 ("at") OR ("og at") OR ("selv om") OR ("til tross for at") OR cnjsub)
+        ;
+
+"<landet>" SELECT:landet-over n IF
+        (1 %over% OR ("rundt") OR %med% OR det + pos + nt + sg)
+        ;
+
+"<landet>" SELECT:flykte-landet n IF
+        (-1 vblex)
+		(NEGATE -1 %ha% OR %være/bli%)
+        ;
+
+"<landet>" SELECT:som-landet-på pret IF
+        (-1 %som% OR %men%)
+		(1 %på% OR %i%)
+        ;
+
+"<landet>" SELECT:hun-landet pret IF
+        (-1 prn + pers OR np + cog)
+        ;
+
+"<landet>" SELECT:gjennomført-og-landet pret IF
+        (-2 vblex + pret)
+		(-1 %og%)
+        ;
+
+"<landet>" SELECT:gjennomført-og-landet pp IF
+        (-2 vblex + pp)
+		(-1 %og%)
+        ;
+		
+"<landet>" SELECT:landet-ikke pret IF
+        (1 adv)
+        ;
+
+"<landet>" SELECT:landet-i-verden n IF
+        (1 %i%)
+		(2 ("verden"))
+        ;
+		
+"<landet>" SELECT:landet-på pret IF
+        (1 %på% OR %i% OR %ved% OR ("oppå"))
+        ;
+
+"<landet>" SELECT:og-landet-ellers n IF
+        (-1 %og%)
+		(1 ("ellers") OR ("for øvrig"))
+        ;
+		
+"<landet>" SELECT:landet-er n IF
+        (1* vblex BARRIER setn-gr)
+        ;
+
+"<landet>" SELECT:er-Spania-landet n IF
+        (-2 vblex)
+		(-1 np + top)
+        ;
+
+"<landet>" SELECT:landet-som-tok n IF
+        (1 %som%)
+		(2 vblex)
+        ;
+		
+"<landet>" SELECT:det-landet n IF
+        (-1 det + dem + nt)
+		(NEGATE -2 cnjsub OR %før% OR %etter%) 
+        ;
 
 "<landet>" SELECT:at-et-fly-tirsdag-landet-på pret IF
-        (0* ("fly"))
-        (1 %på%)
+        (0* ("fly" n) or ("fly" vblex) OR ("oppskyting") OR ("rakett") OR ("fallskjermhopper") OR ("paraglider") OR ("hangglider") OR ("helikopter") OR ("fartøy") OR ("hopp") OR ("hoppkant") OR ("bakke"))
         ;
-
-"<landet>" SELECT:over-hele-landet n IF
-        (-1 ("hele"))
-        ;
-
-"<landet>" SELECT:landet-over. n IF
-        (1 ("over"))
-        (2 clb)
-        ;
-
-"<landet>" SELECT:ble-landet n IF
-        (-1 ("bli"))
+		
+"<landet>" SELECT:og-landet-helt-perfekt pret IF
+        (NEGATE 0* vblex BARRIER setn-gr)
         ;
 
 
