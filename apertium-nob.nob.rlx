@@ -2543,7 +2543,6 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
 
 "<døde>" SELECT:er-døde adj IF
         (-1 vblex)
-        (1 vblex)
         ;
 
 "<døde>" SELECT:han-døde-da vblex + pret IF
