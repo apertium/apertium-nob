@@ -7339,6 +7339,12 @@ REMOVE ("antatt") + adv IF
         (0 ("anta") OR ("antatt"))
         ;
 # "...har antatt nye former"
+
+"<antatt>" SELECT:enn-tidligere-antatt vblex + pp IF
+		(-2 %om/enn/som/hvis%)
+		(-1 ("tidligere"))
+		;
+
 REMOVE ("hvor") + cnjsub IF
         (-1 ("bestemme"))
         ;
