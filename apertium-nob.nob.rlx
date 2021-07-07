@@ -1760,6 +1760,90 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
 
+"<presset>"i SELECT:føle-seg-presset adj + pp IF
+		(-2 ("føle") OR ("kjenne"))
+		(-1 ("seg"))
+		;
+
+"<presset>"i SELECT:at-presset pp IF
+        (-1 det + qnt + sg)
+        ;
+
+"<presset>"i SELECT:en-presset-økonomisk-situasjon adj + pp IF
+		(1 adj)
+        ;
+
+"<presset>"i SELECT:presset-til-å pp IF
+		(1 %til%)
+		(2 ("å"))
+        ;
+
+"<presset>"i SELECT:at-presset n IF
+        (-1 cnjsub)
+        ;
+
+"<presset>"i SELECT:det-økende-presset n IF
+        (-2 det + dem + nt)
+		(-1 adj OR adv)
+        ;
+
+"<presset>"i SELECT:tror-presset n IF
+		(-1 vblex)
+		(NEGATE -1 %ha% OR %være/bli% OR modalverb)
+        ;
+
+"<presset>"i SELECT:presset-øker n IF
+		(1 vblex)
+        ;
+
+"<presset>"i SELECT:tror-ikke-presset n IF
+        (-1 %ikke%)
+		(-2 vblex)
+        ;
+
+"<presset>"i SELECT:hardt-presset pp IF
+		(-1 adv OR n)
+        ;
+
+"<presset>"i SELECT:ble-presset pp IF
+		(-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<presset>"i SELECT:presset-ut-av pp IF
+		(1 %ut%)
+        ;
+
+"<presset>"i SELECT:interne-presset n IF
+		(-1 adj)
+        ;
+		
+"<presset>"i SELECT:stå-imot-presset n IF
+        (-2 ("stå") OR ("øke") OR ("forsterke"))
+        (-1 %mot% OR %imot%)
+        ;
+		
+"<presset>"i SELECT:motstå-presset n IF
+        (-1 ("motstå"))
+        ;
+
+"<presset>"i SELECT:presset-som-omgir n IF
+        (1 %som%)
+		(2 vblex)
+        ;
+
+"<presset>"i SELECT:presset-på-bøndene n IF
+        (1 %på%)
+		(2 n)
+        ;
+		# kan òg vere verbet, men oftast ikkje
+
+"<presset>"i SELECT:dempe-presset n IF
+        (-1* vblex BARRIER setn-gr)
+		(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
+        ;
+
+"<presset>"i SELECT:default pret ;
+
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
@@ -4932,16 +5016,6 @@ SELECT:sløvande-middel ("middel") + nt IF
 	(-1 %halvliter%)
 ;
 #en halvliter pils
-
-"<presset>" SELECT:stå-imot-presset n IF
-        (-2 ("stå"))
-        (-1 %mot% OR %imot%)
-        ;
-
-"<presset>" SELECT:motstå-presset n IF
-        (-1 ("motstå"))
-        ;
-
 
 "<rede>" SELECT:er-rede-for adj IF
         (*-1 %være/bli% BARRIER ikke-adv)
@@ -32958,7 +33032,7 @@ SELECT:default ("vant")   + pret;
 SELECT:default ("<varslet>"i "varsle"); # senere enn varslet
 SELECT:default ("<paret>"i "par");
 SELECT:default ("plan") + m;
-SELECT:default ("presse");      # vs press
+#SELECT:default ("presse");      # vs press
 SELECT:default ("bo") IF (0 ("bor"));
 SELECT:default ("felles");      # not pasv felle
 SELECT:default ("<tvang>") + pret;
