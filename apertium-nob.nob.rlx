@@ -7376,7 +7376,7 @@ REMOVE:betinget-suksess ("betinge") IF
 REMOVE:er-ubetinget-fornøyd ("ubetinget") + adj IF
         (-1 ("være"))
         (0 ("ubetinget"))
-        (1 adj)
+        (1 adj OR cnjcoo)
         ;
 # jeg er ubetinget fornøyd med det.
 REMOVE:er-ikke-ubetinget-fornøyd ("ubetinget") + adj IF
