@@ -7367,6 +7367,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 # «Han blir også i 2019 å se i rally-VM.»
 "<også>" SELECT:Den-har-også ("også");
 
+#«Den frie pressen
+"<pressen>" REMOVE:den-frie-pressen ("press") IF
+        (-1* ("den"))
+        ;
 
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
