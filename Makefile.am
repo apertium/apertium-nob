@@ -24,7 +24,6 @@ $(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
 
 $(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx
 	apertium-validate-dictionary $<
-	test ! -f ./test-scandivoc || ./test-scandivoc
 	apertium-validate-acx $(BASENAME).$(LANG1).acx
 	lt-comp lr $< $@ $(BASENAME).$(LANG1).acx
 
@@ -96,8 +95,11 @@ clean-local:
 ## Test
 ###############################################################################
 
-test:
+test-dix:
 	@grep -nE 'lm=".*/([a-zæøå]+)__' $(BASENAME).$(LANG1).dix \
 	    | grep -vE '<i?g/?>'                                  \
 	    | grep -vE  'lm="(.*)(.*)".*/\2__'                    \
 	    | sed 's%^%WARNING: lemma vs par/tail inconsistency on line %'
+
+test: all
+	apertium-regtest test

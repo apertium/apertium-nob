@@ -19,3 +19,12 @@
 /nob.seg.rlx.bin
 /nob.syn.rlx.bin
 .DS_Store
+/*.hfst
+/*.zhfst
+/.DS_Store
+/*.mode
+/*-*.prob
+/.deps
+/config.in
+/config
+/test/*-output.txt
