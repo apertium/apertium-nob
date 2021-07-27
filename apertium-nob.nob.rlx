@@ -7183,7 +7183,7 @@ REMOVE:unlikely ("<spiser>"i) + n ;
 REMOVE:unlikely ("lom") ;
 REMOVE:unlikely ("<saker>" "sake") ;
 REMOVE:unlikely ("<vinger>"i "ving");
-REMOVE:unlikely ("<fanger>" "fange") ;
+REMOVE:unlikely ("<fanger>" "fange") + nt ;
 REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
 REMOVE:unlikely ("<begynner>"i) + n ;
