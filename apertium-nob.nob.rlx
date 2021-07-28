@@ -7416,7 +7416,6 @@ REMOVE ("antatt") + adv IF
         (0 ("anta") OR ("antatt"))
         ;
 # "...har antatt nye former"
-
 "<antatt>" SELECT:enn-tidligere-antatt vblex + pp IF
 		(-2 %om/enn/som/hvis%)
 		(-1 ("tidligere"))
@@ -7426,6 +7425,12 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("bestemme"))
         ;
 # "...bestemme hvor den skulle gå"
+"<nesten>" REMOVE:nesten-en-måned n IF
+		(-1 vblex)
+		(1 det)
+		(2 n)
+        ;
+# "...tilbringe nesten en måned"
 "<bestemt>" REMOVE:endelig-bestemt adj IF
 		(-1 ("endelig"))
         ;
