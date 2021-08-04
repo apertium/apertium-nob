@@ -7411,6 +7411,9 @@ REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
+REMOVE:fatte-mot pr IF
+        (-1 ("fatte")) ;
+# "Vi fattet mot"
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
