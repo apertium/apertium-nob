@@ -7412,8 +7412,14 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
 REMOVE:fatte-mot pr IF
-        (-1 ("fatte")) ;
+        (-1 ("fatte")) 
+        (1 pr OR adv) ;        
+        ;
 # "Vi fattet mot"
+"<fatt>"i REMOVE:fatt-mot adv IF
+        (1 ("mot"))
+        ;
+# "Fatt mot!"
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
