@@ -1377,6 +1377,7 @@ REMOVE:unlikely ("pakk") IF (0 ("pakke")) ;
 REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er vel kanskje sjeldan Knoll og Tott?
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
+REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
