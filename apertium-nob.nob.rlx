@@ -7421,6 +7421,10 @@ REMOVE:fatte-mot pr IF
         (1 ("mot"))
         ;
 # "Fatt mot!"
+"<ytterligere>"i REMOVE:ytterligere-n adv IF
+        (1 n)
+        ;
+# "Få ytterligere forklaringer"
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
