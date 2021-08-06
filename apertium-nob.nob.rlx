@@ -7425,6 +7425,11 @@ REMOVE:fatte-mot pr IF
         (1 n)
         ;
 # "Få ytterligere forklaringer"
+"<ytterligere>"i REMOVE:ytterligere-en-ting adj IF
+        (1 ("en"))
+        (2 n)
+        ;
+# "ytterligere en forklaring"
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
