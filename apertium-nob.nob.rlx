@@ -7450,6 +7450,11 @@ REMOVE ("hvor") + cnjsub IF
 		(2 n)
         ;
 # "...tilbringe nesten en måned"
+"<ytterst>" REMOVE:ytterst-knepen-margin adj IF
+		(1 ("knepen"))
+		(2 ("margin"))
+        ;
+# "...ytterst knepen margin"
 "<bestemt>" REMOVE:endelig-bestemt adj IF
 		(-1 ("endelig"))
         ;
