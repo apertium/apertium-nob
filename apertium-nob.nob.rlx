@@ -32981,6 +32981,19 @@ SELECT:et-snev $$GENDER + $$NUMBER IF
 # Men ikkje: «Den franske avisen skriver at brannmennene, som tilhører det franske militæret, møtte tre kvinnelige norske studenter på en   bar   fredag kveld.»
 
 
+SELECT:hvilke-typer-som-er-innbringende &&ADJ_N_AGR IF
+        (*-1 kop-fv BARRIER clb OR fv
+        LINK *-1 %som% BARRIER clb OR fv
+        LINK -1C n + ind + &&ADJ_N_AGR
+        )
+        (0C adj + ind)
+        ;
+# «Tabellen viser hvilke driftstyper som i snitt er mest og minst  innbringende  for norske bønder.»
+# «Tabellen viser hvilken driftstype som i snitt er mest og minst  innbringende  for norske bønder.»
+# «Tabellen viser hvilket driftseple som i snitt er mest og minst  innbringende  for norske bønder.»
+# Litt farleg pga. stor kontekst, så berre viss tidlegare reglar ikkje tok det.
+
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:73-av-verdens-fattigste-land pl IF
