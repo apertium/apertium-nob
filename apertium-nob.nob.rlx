@@ -30623,6 +30623,7 @@ SELECT:hvilken-energiklasse-hvitevarene-de-kjøper-tilhører pres
 # If none of the above rules matched, assume pres-pres impossible:
 SELECT:no-pres-pres subst
 	(-1C pres)
+        (NOT -1 ("mene"))       # som han mener virker mot sin hensikt
 	(0C subst OR pres)
 ;
 
