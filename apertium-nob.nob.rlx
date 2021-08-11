@@ -32972,6 +32972,22 @@ REMOVE:orientert-om-funnet vblex + pp IF
         ;
 # «- Pårørende var på stedet og er orientert om funnet, opplyser Sandberg.»
 
+SELECT:personer-er-blitt-registrert adj + &&ADJ_N_AGR IF
+        (-3C n + &&ADJ_N_AGR)
+        (-2 %ha% OR %være% + fv)
+        (-1 %være/bli% + pp)
+        (0C pp OR pst)
+        ;
+# «Han sier at tiltaket er nødvendig fordi et økende antall personer er blitt registrert ved grensepasseringene.»
+# Take our chances on local context.
+
+SELECT:Perspektivet-han-har-er-kjent adj + &&ADJ_N_AGR IF
+        (*-3C n + &&ADJ_N_AGR BARRIER clb LINK -1 >>>)
+        (-2 clb)
+        (-1 %være/bli% + fv)
+        (0C pp OR pst)
+        ;
+
 
 SELECT:et-snev $$GENDER + $$NUMBER IF
         (-1C det OR prn LINK 0C $$GENDER + $$NUMBER)
@@ -33121,6 +33137,8 @@ REMOVE:default nt IF (0 ("<tingene>"i));
 REMOVE:default pl IF (0 ("<forslag>"i)) ;
 REMOVE:default sg IF (0 ("<levekår>"i)) ;
 REMOVE:default ("sider") IF (0 ("side")) ;
+REMOVE:default ("<blander>"i) + n ;
+REMOVE:default ("<Pårørende>") + sg ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
