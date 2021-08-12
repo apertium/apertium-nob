@@ -1152,6 +1152,8 @@ SELECT:storbokstav-np np IF
         (NOT -1 storbokstav-ok-etter)
         (NEGATE -1 ("[0-9.]+"r) LINK -1 storbokstav-ok-etter)
         ;
+# TODO: ikkje ved
+# «– Da jeg forlot øya, ETTER at uværet hadde inntruffet, oppga de alt fra 6 til 18 dødsfall.»
 
 
 SELECT:Halvor-Egner-Granerud np IF
@@ -4237,7 +4239,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 "<tvang>" SELECT:tvang-landet pret IF
 		(-1 n OR np OR prn + pers)
 		;
-		
+
+"<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
+
 "<landet>" SELECT:er-landet-stengt n IF
         (-1 ("være"))
 		(1 adj OR pp)
