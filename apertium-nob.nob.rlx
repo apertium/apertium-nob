@@ -6647,6 +6647,11 @@ REMOVE:unlikely ("leire") + pl ;
         (2 ("tare"))
         ;
 
+
+  "<tang>" SELECT:tang-og-tare nt IF
+     (-2 ("tare"))
+     ;
+
 #:3196
   "<tapt>"   SELECT:3196   (vblex pp) IF
 	(*-1 verb LINK 0 %gå%)
