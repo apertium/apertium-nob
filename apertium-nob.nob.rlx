@@ -5063,7 +5063,7 @@ SELECT:sløvande-middel ("middel") + nt IF
 LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
 LIST regn_vann = ("regn" n) ;
-LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" ; # regnet som uteble, regnet utover mandag, regnet fra vest
+LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" "på"; # regnet som uteble, regnet utover mandag, regnet fra vest
 LIST regn-verb = "komme" "falle" "hølje" "se";
 
 "<regnet>" SELECT:kommer-regnet regn_vann IF
@@ -5080,7 +5080,48 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
 
+"<regnet>" SELECT:5.4-prosent-regnet regne_ut IF
+        (-1C ("prosent"))
+        ;
+"<regnet>" SELECT:regnet-som-kommer regn_vann IF
+		(NOT *-1 n)
+		(1 %som%)
+		(*2 regn-verb)
+		;
+"<regnes>" SELECT:regnes-som regne_ut
+		;
 
+SELECT:regnet-det-i-Seefeld regne_vann IF
+        (1 expl)
+        (2 pr_etter_regnvann OR tidsadv OR  %nå/da/her/der% OR adv OR adj)
+        ;
+SELECT:det-regner regne_vann IF
+        (-1 expl)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det OR vblex OR adv OR adj)
+        ;
+SELECT:skal-regne regne_vann IF
+		(-1 modalverb)
+		(1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det)
+		;
+
+SELECT:i-regnet regn_vann IF
+		(-1 pr)
+		;
+
+"<regnet>" SELECT:regnet-høljet regn_vann OR regne_vann IF
+        (NOT 1 pr)      # regne med
+        (NOT 2 pr)      # regner ikke med
+        ;
+
+
+"<regnet>" SELECT:regnet-det-ikke regne_ut IF
+        (1 lo#animat-pron/det OR lo#animat)
+        (NOT 1 %mye/lite/litt%)
+        (NOT 1 pr_etter_regnvann)
+        ;
+"<regnet>" SELECT:regnet-forskerne regne_ut IF
+        (1C n + def OR ("<riktig>") OR ("<feil>"))
+        ;
 "<regnet>" SELECT:regnet-ikke-med regne_ut IF
         (NEGATE 0 n LINK -1C pr) # «Finnmark holder seg unna regnet med oppholdsvær.»
         (*1 pr BARRIER ikke-adv LINK NOT 0 pr_etter_regnvann)
@@ -5093,40 +5134,6 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (3 pr LINK NOT 0 pr_etter_regnvann)
         ;
 
-"<regnet>" SELECT:regnet-forskerne regne_ut IF
-        (1C n + def OR ("<riktig>") OR ("<feil>"))
-        ;
-
-"<regnet>" SELECT:5.4-prosent-regnet regne_ut IF
-        (-1C ("prosent"))
-        ;
-
-"<regnet>" SELECT:regnet-det-ikke regne_ut IF
-        (1 lo#animat-pron/det OR lo#animat)
-        (NOT 1 %mye/lite/litt%)
-        (NOT 1 pr_etter_regnvann)
-        ;
-
-SELECT:regnet-det-i-Seefeld regne_vann IF
-        (1 expl)
-        (2 pr_etter_regnvann)
-        ;
-SELECT:det-regner regne_vann IF
-        (-1 expl)
-        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n)
-        ;
-SELECT:i-regnet regn_vann IF
-		(-1 pr)
-		;
-
-"<regnet>" SELECT:regnet-det-ikke vblex IF
-        (1 expl)
-        ;
-
-"<regnet>" SELECT:regnet-høljet regn_vann OR regne_vann IF
-        (NOT 1 pr)      # regne med
-        (NOT 2 pr)      # regner ikke med
-        ;
 SELECT:blåse-og-regne ("regne¹") + vblex IF
         (-2 ("blåse" vblex) OR ("storme" vblex) OR ("dryppe" vblex))
         ;
@@ -10815,6 +10822,11 @@ SELECT:Skolene-har-vært-stengt pp + pl IF
 	(-1 kop)
         (NOT 0 adv OR farlige-part)
         ;
+
+SELECT:ble-antent adj + pst IF
+		(-1 %være/bli%)
+		(0 ("<antent>"))
+		;
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
@@ -21519,6 +21531,7 @@ SELECT:elementer-med-forbindelser-til-etterretning-blitt-identifisert adj + pp +
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
 
 
+
 SELECT:fiskene-ble-funnet adj + pp + pl IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -21535,7 +21548,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
 # «To moskeer i Christchurch<top> på New Zealand<top> ble angrepet av væpnede gjerningspersoner fredag ettermiddag lokal tid.»
 
-SELECT:fisken-ble-funnet adj + mf IF
+	SELECT:fisken-ble-funnet adj + mf IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
@@ -21886,7 +21899,6 @@ REMOVE:4090 (vblex)
 # group: 51
 
 
-
 #:2330
  REMOVE:2330 (adj pp nt ind sg) IF
 	(0 pos-ub-ent-nøyt)
@@ -21900,7 +21912,6 @@ REMOVE:4090 (vblex)
 	(0 pos-ub-ent-mask/fem)
 ;
 # group: 51
-
 
 
 #:2327
@@ -31604,6 +31615,11 @@ REMOVE:at-Ukjend-bevares inf IF
 	   (0 bare-adj)
 ;
 
+REMOVE:ble-lest-opp n IF
+		(*-1 %være/bli%)
+		(0 ("<lest>"))
+		(1 ("<opp>"))
+		;
 
 #################################################################
 # NOKON vs NOKRE                                                #
