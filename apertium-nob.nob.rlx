@@ -7442,6 +7442,10 @@ REMOVE:fatte-mot pr IF
         (2 n)
         ;
 # "ytterligere en forklaring"
+"<låret>"i REMOVE:forbinde-låret vblex IF
+        (-1 ("forbinde"))
+        ;
+# "å forbinde låret"
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
