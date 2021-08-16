@@ -1376,6 +1376,7 @@ REMOVE:unlikely ("ringe") IF (0 ("ring")) (0/1 cmp) ;
 REMOVE:unlikely ("gode") + mORf ;
 REMOVE:unlikely ("yrke") + mORf ;
 REMOVE:unlikely ("skjelv") + m ;
+REMOVE:unlikely ("íð") ;
 REMOVE:unlikely ("struper") + m ;
 REMOVE:unlikely ("hammer") + pl IF (0 np) ; # Hamre
 REMOVE:unlikely ("aker") IF (0 ("sak")) ;
