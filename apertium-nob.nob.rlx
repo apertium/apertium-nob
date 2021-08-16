@@ -7446,6 +7446,11 @@ REMOVE:fatte-mot pr IF
         (-1 ("forbinde"))
         ;
 # "å forbinde låret"
+"<forbundet>"i REMOVE:bli-forbundet-med n IF
+        (-1 ("bli"))
+        (1 ("med"))
+        ;
+# "..blir forbundet med..."
 REMOVE ("antatt") + adv IF
         (-1 ("ha"))
         (0 ("anta") OR ("antatt"))
