@@ -28117,9 +28117,21 @@ CONSTRAINTS
         (-1 ("sette"))
         ;
 
-"<rede>" SELECT:klar adj IF
-        (NOT *0/* fugl-ord)
+"<rede>" SELECT:holder-ikke-rede-på adv IF
+        (*-1 ("holde") BARRIER vblex OR setn-gr OR ("seg"))
+        (1 ("på"))
         ;
+
+"<rede>" SELECT:et-reir n + nt IF
+        (-1 ("bygge") OR ("lage") OR det + nt + sg) # most frequent words before "reir" thus also before rede<nt>
+        ;
+
+"<rede>" SELECT:egg-i-reir n + nt IF
+        (*0/* fugl-ord)
+        ;
+
+"<rede>" SELECT:klar adj ;      # None of the above
+
 
 #:4063
  "<rette>"   SELECT:4063   (n) IF
