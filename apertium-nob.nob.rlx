@@ -7456,6 +7456,16 @@ REMOVE:fatte-mot pr IF
         (-1 ("forbinde"))
         ;
 # "å forbinde låret"
+REMOVE:mill-renner-inn n IF
+        (-1 n)
+        (1 ("inn"))
+        ;
+# "milliardene renner inn"
+"<rent>" REMOVE:er-rent-inn adv IF
+        (-1 ("være"))
+        (1 ("inn"))
+        ;
+# "Vannet er rent inn"
 "<forbundet>"i REMOVE:bli-forbundet-med n IF
         (-1 ("bli"))
         (1 ("med"))
