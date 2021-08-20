@@ -33136,6 +33136,11 @@ SELECT:så-noe ("<så>"i) + adv IF
 
 SELECT:default ("<så>"i) + vblex ;
 
+SELECT:en-helgen n + m + sg + ind IF
+		(-1 det + qnt + m + sg)
+		(0 ("<helgen>"))
+		;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj         IF (0 ("<hele>"i));
@@ -33212,6 +33217,7 @@ REMOVE:default sg IF (0 ("<levekår>"i)) ;
 REMOVE:default ("sider") IF (0 ("side")) ;
 REMOVE:default ("<blander>"i) + n ;
 REMOVE:default ("<Pårørende>") + sg ;
+
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
