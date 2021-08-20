@@ -10674,6 +10674,7 @@ SELECT:Rundt-1000-politifolk n + pl + ind IF
         (0C n + ind)
         ;
 
+
 ##################################################################
 ### adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: ###
 ##################################################################
@@ -10901,6 +10902,7 @@ SELECT:ble-han-uttatt adj + mf IF
         ;
 
 
+
 SELECT:gir-ønsket-utfall pp + nt IF
 	(-1C fv)
         (0C n OR vblex OR adj + pp)
@@ -10999,6 +11001,8 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         (NEGATE -1 def LINK -2 %av%) # «yngste av mennene»
         ;
 # «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
+
+
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
@@ -26215,6 +26219,7 @@ REMOVE:for-økt-sysselsetting subst IF
 ;
 # group: 67
 
+REMOVE:unlikely ("<anger>") + n + pl ;
 
 
 #:1943
@@ -31662,6 +31667,11 @@ REMOVE:ble-lest-opp n IF
 		(1 ("<opp>"))
 		;
 
+REMOVE:ble-hensyntatt pl IF
+		(0 ("<hensyntatt>"))
+		;
+
+
 #################################################################
 # NOKON vs NOKRE                                                #
 # pl is nokre                                                   #
@@ -32508,6 +32518,7 @@ SELECT:beveget-not-bevege ("beveget") IF
 
 # LEX: middel vs. midlar
 LIST middel-adj = "god" "dårlig" "farlig" "beroligende" "smertestillende" "angstdempende" %lignende/liknende% "stimulerende" "vanndrivende" "skadelig" "ødeleggende" "antibakteriell" "biologisk" "kjemisk" "reseptbelagt" "politisk" "blodfortynnende" "antiviral" ;
+
 
 REMOVE:unlikely ("<midler>") + vblex ;
 
