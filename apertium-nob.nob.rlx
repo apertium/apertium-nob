@@ -21058,6 +21058,7 @@ SELECT:Den-kjente-journalisten adj IF
 ;
 # «Den kjente journalisten og kommentatoren Jamal Kashoggi (59) forsvant etter å ha ha gått inn på Saudi-Arabias konsulat i Istanbul.»
 
+"<virket>" REMOVE:default-virke ("virke" n nt sg def) ;	# keep virke<vblex><pret>→verka
 
 SELECT:Det-paret-som n + def IF
 	(-2C setn-gr)
