@@ -7456,6 +7456,10 @@ REMOVE:fatte-mot pr IF
         (-1 ("forbinde"))
         ;
 # "å forbinde låret"
+"<øyeblikk>" REMOVE:et-øyeblikk pl IF
+        (-1 ("en"))
+        ;
+# "et øyeblikk"
 REMOVE:mill-renner-inn n IF
         (-1 n)
         (1 ("inn"))
