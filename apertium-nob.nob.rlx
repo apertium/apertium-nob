@@ -7460,11 +7460,16 @@ REMOVE:fatte-mot pr IF
         (-1 ("en"))
         ;
 # "et øyeblikk"
-REMOVE:mill-renner-inn n IF
+"<renner>" REMOVE:mill-renner-inn n IF
         (-1 n)
         (1 ("inn"))
         ;
 # "milliardene renner inn"
+"<stund>" REMOVE:en-kort-stund vblex IF
+        (-2 det)
+        (-1 adj)
+        ;
+# "en kort stund"
 "<rent>" REMOVE:er-rent-inn adv IF
         (-1 ("være"))
         (1 ("inn"))
