@@ -573,7 +573,7 @@ LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
-LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" ;
+LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" ;
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" ;
 LIST farlige-mask-subst = "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
@@ -28115,6 +28115,11 @@ CONSTRAINTS
         (NOT -1 ("om"))         # be om lov
         ;
 
+
+"<Man>" SELECT prn IF
+        (1 fv)
+        (NOT 1 %til%)
+        ;
 
 #:4046
   "<mine>"   SELECT:4046   (n m sg ind) IF
