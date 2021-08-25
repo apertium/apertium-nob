@@ -21065,10 +21065,11 @@ SELECT:Den-kjente-journalisten adj IF
 
 "<virket>" REMOVE:default-virke ("virke" n nt sg def) ;	# keep virke<vblex><pret>→verka
 
-REMOVE:de-innkalte-personene vblex + pret IF
-			(1 n)
-			(*2 vblex + pres OR vblex + pret)
-			;
+# REMOVE:de-innkalte-personene vblex + pret IF
+#         (1 n)
+#         (*2C vblex + pres OR vblex + pret)
+#         ;
+# TODO: for generell, feil ved t.d. «Om Trump i det hele tatt så<pret!> demonstrantene<n>, er<pres> uklart.»
 
 SELECT:Det-paret-som n + def IF
 	(-2C setn-gr)
