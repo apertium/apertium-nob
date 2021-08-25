@@ -10521,6 +10521,15 @@ SELECT:som-tidligere ("tidligere"i) + adv IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:så-flere-kvister n + pl IF
+	(*-2 fv BARRIER cnjsub)
+	(-1 %flere%)
+        (0C pres OR n)
+        ;
+# «De så flere kvister der.»
+# «Solberg har vært i den beryktede dødsleiren flere ganger, både sammen med skoleklasser og ved 70-årsmarkeringen for fem år siden.»
+
+
 SELECT:da-NORSKE-kampfly-ble-sendt adj + pl IF
         (-1C cnjsub OR adv)
         (0C adj)
