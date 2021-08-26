@@ -31782,6 +31782,13 @@ REMOVE:og-noen-av neg OR sg IF
         (1 %av%)
         ;
 
+SELECT:som-noen-av-en-eller-annen-grunn <noen> + sg IF
+        (-1 %som%)
+        (1 %av%)
+        (2 ("en eller annen"))
+        ;
+# «Eksplosjonen ble forårsaket av en granat som noen av en eller annen grunn hadde tatt med seg inn på skolen.»
+
 LIST småord-før-nokon-av = "hvis" "dersom" "om" "uten at" "ikke" "aldri" "uten";
 LIST nektingsadv = "ikke" "aldri" "uten" ;
 LIST av-adverbial = "dage" "syne" "lage" "vei" "gårde" "sted" "all" "hel" "hele";
