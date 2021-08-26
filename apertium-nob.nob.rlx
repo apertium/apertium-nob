@@ -10996,10 +10996,11 @@ SELECT:mennene-som-ble-skadd pp + pl
         ;
 
 SELECT:flere-skadd pp + pl
-        (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv LINK NOT 0 %mye/lite/litt%)
+        (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv LINK NOT 0 %mye/lite/litt% LINK NOT *1 ("type"))
         (NOT 0 adv OR farlige-part)
         ;
 # Men ikkje etter «mye»: «å gjøre endringer i den mye   omtalte   paragraf 2c i abortloven»
+# Ikkje: «De kaller tilbake flere typer  sprøstekt  løk fra markedet.»
 
 SELECT:to-sivile-skadd pp + pl
         (NOT -2C date)
