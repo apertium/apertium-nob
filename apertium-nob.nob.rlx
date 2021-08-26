@@ -24688,9 +24688,10 @@ REMOVE:Løft-så-ut n IF
 	(0 pres/pret)
 	(-1 konj)
 	(NOT -1 adv)
-	(*-1O p-hj-verb LINK 0 pres/pret LINK NOT *1 perf-part)
+	(*-1O p-hj-verb LINK 0 pres/pret LINK NOT *1 pp)
 ;
 #  "2.12.2002: Jeg var ute og lufta (ikke perf-part)  hunden"))
+# Ikkje: «Gaddafis legeme ble brakt ut i ørkenen og  begravet  ved morgengry.»
 
 
 
@@ -31858,6 +31859,7 @@ SELECT:noen-kilo-ekstra <noen> + pl - neg IF
 	(1 målsubst)
 ;
 # «Kvernmo tar gjerne med noen kilo ekstra i tursekken for komfortens skyld»
+
 
 # Default:
 SELECT:noen-default <noen> + neg ;
