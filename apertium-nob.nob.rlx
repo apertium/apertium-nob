@@ -2119,6 +2119,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 "<annet>" REMOVE:annet-kvartal ind IF
         (1C n + ind + nt)
+        (NOT 1 ("vis"))
         ;
 # «annet kvartal»
 
