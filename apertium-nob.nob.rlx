@@ -10905,6 +10905,15 @@ SELECT:ble-det-vedtatt pp + nt OR vblex + pp IF
         (0C vblexORpp)
         ;
 
+
+SELECT:det-søndag-ble-skutt pp + nt IF
+        (-4 %at%)
+        (-3 %det%)
+        (-2 vekedag)
+        (-1 %være/bli%)
+        (0C vblexORpp)
+        ;
+
 SELECT:ble-de-bedt-om pp + pl IF
 	(-2 %være/bli%)
 	(-1C pl - gen)
@@ -21613,7 +21622,7 @@ SELECT:fiskene-ble-funnet adj + pp + pl IF
 # TODO: Ikkje «Årets første kurv<m/f> med svenske jordbær<pl> er solgt<mf!> i Skåne.»
 # «To moskeer i Christchurch<top> på New Zealand<top> ble angrepet av væpnede gjerningspersoner fredag ettermiddag lokal tid.»
 
-	SELECT:fisken-ble-funnet adj + mf IF
+SELECT:fisken-ble-funnet adj + mf IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe - sanns-årstal)
 	(NOT -2 be-nøyt-det)
