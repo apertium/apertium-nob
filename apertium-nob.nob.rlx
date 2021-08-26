@@ -8237,7 +8237,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3653
-  "<folket>"   REMOVE:3653   (vblex) IF
+"<folket>" REMOVE:folket-seg   vblex OR adj IF
 	(NOT 1 %seg%)
 ;
 #  "Bare ved: det folket seg"
