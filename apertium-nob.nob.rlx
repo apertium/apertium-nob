@@ -33439,6 +33439,8 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<havner>" REMOVE:default-hamner ("havn" n f pl ind) ;	# keep havne<vblex><pres>→hamnar
 "<havner>" REMOVE:default-hamner ("havn" n m pl ind) ;	# keep havne<vblex><pres>→hamnar
 "<heftet>" REMOVE:default-hefta ("hefte" vblex pret) ;	# keep hefte<n><nt><sg><def>→heftet
+"<Hel>" REMOVE:default-heil n OR np ;
+"<hel>" REMOVE:default-heil n OR np ;
 "<helgen>" REMOVE:default-helgen ("helgen" n m sg ind) ;	# keep helg<n><m><sg><def>→helga
 "<henger>" REMOVE:default-henger ("henge¹" vblex pres) ;	# keep henge<vblex><pres>→heng
 "<hindre>" REMOVE:default-hinder ("hinder" n nt pl ind) ;	# keep hindre<vblex><inf>→hindre
