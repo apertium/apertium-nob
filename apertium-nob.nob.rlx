@@ -27918,12 +27918,14 @@ REMOVE:mange-timer-kan vblex IF
 
 
 #:1834
- REMOVE:1834 (vblex) IF
+ REMOVE:få-dager-før-krigen-brøt-ut (vblex) IF
+        (*-1 pres/pret)
 	(0 sbu)
 	(*1O pres/pret LINK *-1 ikke-poss-det LINK NOT *-1 ikke-adv-adj-det)
 ;
 #  "noen få dager før (ikke verb) krigen brøt ut
 # 30.11"
+# Ikkje: «Vi så ingen andre midler enn å bruke lockout-verktøyet.»
 
 
 
@@ -32165,6 +32167,11 @@ REMOVE:møtes pstv + pp IF
         (2 inf)
         ;
 
+"<så>" SELECT:vi-så-ingen pret IF
+        (-2 >>>)
+        (-1 nominativ)
+        ;
+
 "<så>" SELECT:så-i-været pret IF
         (1 pr)
         (NEGATE 1 %der% OR cnjsub LINK *1 fv)
@@ -33204,8 +33211,8 @@ SELECT:subject-per-clause nominativ IF
 # «De vurderer å ta alle fly ut av drift, fremgår  det  i en bekymringsmelding»
 
 SELECT:så-noe ("<så>"i) + adv IF
-		(0* vblex BARRIER setn-gr)
-		;
+        (0* vblex BARRIER setn-gr)
+        ;
 
 "<Så>" SELECT:Så-storbokstav adv ;
 
