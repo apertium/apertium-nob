@@ -1415,7 +1415,7 @@ REMOVE:unlikely ("feste") + n IF (0 pl) (NOT 0/* cmp); # *feste
 
 REMOVE:genus-prefer-nt ("genus") + m IF (0 ("genus") + nt);
 
-SELECT:det-blir-nok-ei-råd ("råd") + mORf IF
+SELECT:det-blir-nok-ei-råd ("råd") + sp IF
         (*-3 ("bli") BARRIER (*) - ("<det>"))
         (-2 %nok% OR %vel%)
         (-1 %en/ei%)
