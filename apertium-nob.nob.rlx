@@ -8659,6 +8659,13 @@ REMOVE ("frø") IF
 #  "Forlang infmerke for å tillate inf ved \"heime\"!"
 
 
+"<hel>" REMOVE:en-hæl-alpinverden n IF
+        (-1 det)
+        (0 adj)
+        (1C ukjent OR n)
+        ;
+
+
 
 #:3560
   "<hele>"   REMOVE:3560   (n) IF
