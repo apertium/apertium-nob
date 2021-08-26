@@ -20167,8 +20167,15 @@ SELECT:5009 (vblex pres) IF
 # Per så det fjernes"
 
 
+SELECT:være-beæret adj + pp IF
+		(*-1 ("være"))
+		(0 ("beære"))
+		;
 
-
+SELECT:føle-seg-beæret adj + pp IF
+		(*-1 ("føle"))
+		(0 ("beære"))
+		;
 
 
 #:2439
@@ -27316,6 +27323,7 @@ REMOVE:lar-føringene-for-samarbeidet-være-uvisse pret IF
         (1C inf)
         ;
 # «De som er for EU mener avtalen etablerer sperrer mellom Storbritannia og deres største handelspartner, og at den lar mange føringer for det fremtidige samarbeidet være uvisse.»
+
 
 SELECT:men-de-grønnkledde-holdt-stand pret IF
         (-3 setn-gr)
