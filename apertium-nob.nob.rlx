@@ -24250,8 +24250,10 @@ REMOVE:skjermes-de-mest-sentrale prn IF
 	(0 poss-det)
 	(NOT 1 komma)
 	(NOT -1 be-ent-nøyt-subst)
-	(*1O ub-subst LINK NOT 0 ub-ent-nøyt-subst LINK NOT *-1 ikke-adv-adj-det)
+	(*1O ub-subst LINK NOT 0 ub-ent-nøyt-subst LINK NOT 0 adj + nt LINK NOT 0 sup OR comp LINK NOT *-1 ikke-adv-adj-det)
 ;
+# «Jeg har en feel-good-boks, og jeg har en boks med bilder fra hytta mi, en liten seterbu, som er mitt kjæreste sted på jord.»
+# («kjæreste» kan vera <n><m>)
 
 
 #:2137
@@ -31866,7 +31868,6 @@ SELECT:noen-kilo-ekstra <noen> + pl - neg IF
 	(1 målsubst)
 ;
 # «Kvernmo tar gjerne med noen kilo ekstra i tursekken for komfortens skyld»
-
 
 # Default:
 SELECT:noen-default <noen> + neg ;
