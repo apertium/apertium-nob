@@ -19145,6 +19145,13 @@ SELECT:gode-verdige-liv adj + &&ADJ_N_AGR IF
 # Ikkje: «Etter at reglene ble skjerpet,  falt  antallet til 829 i 2010, sier hun.»
 # Ikkje: «Haitiere marsjerte i gatene hvor de ropte,  brente  bildekk og gikk med plakater.»
 
+SELECT:noen-endelig-avgjørelse adj + &&ADJ_N_AGR IF
+        (-1 %noen/noe%)
+        (0C adj OR adv)
+        (1 n + &&ADJ_N_AGR)
+        ;
+# «jeg har ikke tatt noen endelig avgjørelse»
+
 SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
         (-3 ("en") + &&ADJ_N_AGR)
         (-2 adj + &&ADJ_N_AGR)
