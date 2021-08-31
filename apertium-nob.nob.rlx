@@ -19482,7 +19482,9 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 ;
 #  "22.6.2001: Hvordan mange søker å skape sine egne riter."
 
-
+"<treffes>" SELECT:treffes-vedtak vblex + pres + pasv IF
+		(*1 ("<vedtak>") OR ("<valg>"))
+		;
 
 #:2442
  SELECT:2442 (vblex pres) IF
@@ -31697,6 +31699,7 @@ REMOVE:ikke-sanns-subst-ent-ub subst-appell-ub-ent IF
 # «Falt i elva» (t.d. i overskrift)
 # ...vanlegare med pret først i ledd, men burde jo ha
 # overskriftstagg :-/ -KBU
+
 
 #:4999
  REMOVE:4999 (vblex pasv) IF
