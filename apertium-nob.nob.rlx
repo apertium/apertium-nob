@@ -27032,6 +27032,13 @@ REMOVE:før-det-legges-fram inf IF
 # Ikke: ..har vært vellykket, og ført
 # eller. har vært bakbundet og skamslått - og fraranet"
 
+SELECT:den-opphørte-organisasjonen adj + pp IF
+	(*-1 prn + pers + p3 OR det)
+	(0 ("<opphørte>"))
+	(*1 n)
+	;
+
+
 
 
 #:1895
