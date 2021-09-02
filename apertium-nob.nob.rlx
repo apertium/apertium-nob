@@ -21198,6 +21198,11 @@ SELECT:Det-paret-som n + def IF
 #  "Dit gikk de"
 #      :group 48
 
+SELECT:vel-anvendte-midler adj IF
+	(-1 ("<vel>"))
+	(0 ("<anvendte>"))
+	(1 ("<midler>") OR ("<penger>"))
+	;
 
 
 #:2375
