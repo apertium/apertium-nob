@@ -24556,10 +24556,11 @@ REMOVE:Løft-så-ut n IF
         ;
 
 #:2114
- REMOVE:2114 (imp) IF
-	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp)
+REMOVE:imp+fv (imp) IF
+	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp LINK NOT -1 %som%)
 ;
 #  "Stryker imp om det er et annet finitt verb i setn"
+# Ikkje: «Bygg en kasse som er 20 cm høy»
 
 
 
