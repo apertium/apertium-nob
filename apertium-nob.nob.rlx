@@ -97,6 +97,7 @@ LIST rpar = rpar ;
 LIST cnjsub = cnjsub ;
 LIST cnjcoo = cnjcoo ;
 LIST date = date ;
+LIST ij = ij ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -273,7 +274,7 @@ LIST %for/før/når% = "når"  "før"  "for"  ;
 LIST %forrige/neste/samme/siste/første% = "neste"  "forrige" "samme" ("sist" pl) ("sist" def) "første"  ;
 LIST %fra% = "fra"  ;
 LIST %fra/for/ut% = "ut"  "fra"  "for"  ;
-LIST %fram% = ("fram"  pr) ("frem"  pr) ;
+LIST %fram% = "fram"  "frem" ;
 LIST %fram/inn/opp% = ("fram"  pr) ("frem"  pr) ("inn"  pr) ("opp"  pr) ;
 LIST %fram/opp/på% = ("på" ) ("fram"  pr) ("frem"  pr) ("opp"  pr) ;
 LIST %full%  = ("full"  adj m ind sg) ;
@@ -10464,7 +10465,9 @@ REMOVE:Vann  vblex OR adv IF
 ;
 #  "Bare: tale i villa"
 
-
+"<viser>"i REMOVE:viser-fram n IF
+        (1 %fram%)
+        ;
 
 #:3123
   "<være>"   REMOVE:3123   (n nt) IF
@@ -10496,6 +10499,12 @@ REMOVE:Vann  vblex OR adv IF
 "<åpenbart>" REMOVE:avoid-openberra pp
         (NOT 1 %seg%)
         ;
+
+
+"<Å>" REMOVE:Å-kunne-gå n OR np OR ij IF
+	(0 infmerke)
+        (1* inf BARRIER ikke-adv)
+;
 
 SELECT:at/ha-landet-subst n IF
         (-1 ("ha") OR ("at"))
