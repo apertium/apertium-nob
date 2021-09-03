@@ -11093,13 +11093,22 @@ SELECT:attributiv-np adj + mf
 # «I oktober kom ikke en uttatt Ajer på samling med landslaget.»
 
 
+# n+sg: abstrakt:
+SELECT:Gym-på-internett-er-kjedelig adj + nt IF
+        (**-2 n + sg + ind BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK -1 >>>)
+        (-1C kop)
+        (0C adj)
+        ;
+# «Gym<m> er kjedelig/flott<nt!>»
+
 # non-pp:
 SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
-        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK -1 >>>)
+        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK NOT 0C n + sg + ind LINK -1 >>>)
         (-1C kop)
         (0C adj)
         ;
 # «Skoler i byen har også vært nødt til å holde stengt.»
+# Ikkje ved sg.ind: «Gym<m> er kjedelig/flott<nt!>»
 
 SELECT:antallet-drepte-av-skytevåpen pp IF
         (-1 ("antall"))
