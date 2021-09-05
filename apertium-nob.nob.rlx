@@ -11100,8 +11100,9 @@ SELECT:attributiv-np adj + mf
 
 
 # n+sg: abstrakt:
+SET tillat-sg-ind-samsvar = yrkestittel-ord OR prn OR cnjcoo OR n + pl OR ("skadegrad") OR np ;
 SELECT:Gym-på-internett-er-kjedelig adj + nt IF
-        (**-2 n + sg + ind BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK -1 >>>)
+        (**-2 n + sg + ind BARRIER setn-gr OR fv - hj-verb LINK NOT 0 tillat-sg-ind-samsvar LINK -1 >>>)
         (-1C kop)
         (0C adj)
         ;
