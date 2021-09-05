@@ -9332,10 +9332,15 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "kh jan 2004: Det ble for meget."
 
 
+"<Men>" REMOVE:Men n
+	(NOT -1 det)
+;
+# Usannsynleg først i setning
+
 
 #:3437
-  "<men>"   REMOVE:3437   (n sg) IF
-	(NOT -1 nøyt)
+"<men>" REMOVE:3437 n + sg IF
+	(NOT -1 nt)
 ;
 #  "bare subst ent ved feks et men"
 
