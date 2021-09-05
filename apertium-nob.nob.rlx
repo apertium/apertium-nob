@@ -7310,6 +7310,7 @@ REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar�
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
+REMOVE:unlikely ("flott") + nt ;
 
 SELECT:balle-på-seg ("balle") + vblex IF
 		(1* ("på"))
