@@ -11103,7 +11103,7 @@ SELECT:attributiv-np adj + mf
 # n+sg: abstrakt:
 SET tillat-sg-ind-samsvar = yrkestittel-ord OR prn OR cnjcoo OR n + pl OR ("skadegrad") OR np ;
 SELECT:Gym-på-internett-er-kjedelig adj + nt IF
-        (**-2 n + sg + ind BARRIER setn-gr OR fv - hj-verb LINK NOT 0 tillat-sg-ind-samsvar LINK -1 >>>)
+        (**-2 n + sg + ind BARRIER setn-gr OR fv - hj-verb LINK NOT 0 tillat-sg-ind-samsvar LINK -1 >>> OR emdash-endash)
         (-1C kop)
         (0C adj)
         ;
@@ -11111,7 +11111,7 @@ SELECT:Gym-på-internett-er-kjedelig adj + nt IF
 
 # non-pp:
 SELECT:Skoler-har-også-vært-nødt adj + &&ADJ_N_AGR IF
-        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK NOT 0C n + sg + ind LINK -1 >>>)
+        (**-2 n + &&ADJ_N_AGR BARRIER setn-gr OR fv - hj-verb LINK NOT 0 prn LINK NOT 0C n + sg + ind LINK -1 >>> OR emdash-endash)
         (-1C kop)
         (0C adj)
         ;
