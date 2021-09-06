@@ -7311,7 +7311,7 @@ REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
 REMOVE:unlikely ("flott") + nt ;
-REMOVE:unlikely ("men") IF (0 ("mene")) ; # «Mener Solberg er inhabil»
+REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 
 SELECT:balle-på-seg ("balle") + vblex IF
 		(1* ("på"))
