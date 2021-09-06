@@ -32700,7 +32700,7 @@ SELECT:profil-nøyt-three ("profil") + nt IF
 
 "<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
 
-
+SELECT:default ("<svelger>") + vblex ; #
 SELECT:default ("hall") + fl + m; # hallar/hallane
 
 REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
