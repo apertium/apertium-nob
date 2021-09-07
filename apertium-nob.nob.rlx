@@ -17957,7 +17957,18 @@ SELECT:folket-skal-anse-han acc IF
 # ikke: en (det) eller annen bil
 # Ikke: en (det) eller to biler"))
 
+SELECT:to-tre det + talord IF
+        (-2 det + talord)
+        (-1 guio)
+        ;
 
+SELECT:to-tre-venner n + pl IF
+        (*-4 fv)
+        (-3 det + talord)
+        (-2 guio)
+        (-1 det + talord)
+        (0C n + pl OR pres)
+        ;
 
 SELECT:at-det-finnes det + expl IF
 	(-1 cnjsub OR adv)
