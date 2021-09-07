@@ -5258,19 +5258,24 @@ REMOVE:unlikely ("<ris>") + pasv;
 
 
 #:3339
-  "<rundt>"   SELECT:3339   (pr) IF
+"<rundt>" REMOVE adj IF
 	(*-1O ub-nøyt-det LINK *1 ikke-adv-adj)
-;
+        ;
 
 
 #:3340
-  "<rundt>"   SELECT:3340   (pr) IF
+"<rundt>" REMOVE adj IF
 	(NOT *-1 ub-nøyt-det)
-;
+        ;
 #  "Bare adj ved et rundt bord
 #101008: Treningskorpuset er ikke tagget slik. Må sjekke ref.gram: og når det brukes som \"anslagsadverb\": det var rundt 500 flyktninger."
 # 	(NOT 1 det-kvant)
 
+"<rundt>" SELECT adv IF
+	(-1 ("gå"))
+        (NOT *1 n OR prn BARRIER clb)
+        ;
+# «Nå har hun krykker, slik at hun kan gå rundt selv.»
 
 
 
@@ -23165,6 +23170,7 @@ REMOVE:det-høyre-kneet pp IF
 	(-1 iv)
 	(*-2 ikke-adv LINK 0 pres/pret)
 	(*1 ikke-adv)
+        (NOT 1 emph)            # hun kan gå rundt selv
 ;
 #  "Han skal få ei (ikke adv) bok"))
 
