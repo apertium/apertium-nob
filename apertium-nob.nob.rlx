@@ -8381,14 +8381,36 @@ REMOVE ("frø") IF
 
 
 
+"<før>" SELECT:onsdagen-før adv IF
+        (-1 vekedag OR månad OR adverbialsubst LINK 0 def)
+        ;
+# «Men onsdagen før ble …»
+"<før>" SELECT:annerledes-enn-før adv IF
+        (-1 %enn%)
+        (1 komma OR clb OR vblex)
+        ;
+# «Ting vil likevel bli veldig annerledes enn før.»
+# «Men de siste månedene har flere enn før bestilt time til ku-kosing.»
+"<før>" SELECT:før-komma-for adv IF
+        (1 komma OR clb OR vblex)
+        (2 %for%)
+        ;
+# «Noldus hadde antageligvis hatt en eier før, for han var tam og kosete når han flyttet inn til familien Mirzapolis.»
+"<før>" SELECT:enn-jeg-gjorde-før adv IF
+        (-2 nominativ)
+        (-1 fv)
+        (1 komma OR clb)        # mer enn jeg gjorde før,
+        ;
+# «- At skolehverdagen blir sånn som det var før, at jeg slipper å være hjemme.»
+# «– Jeg spiller mer Fifa enn jeg gjorde før, og jeg har begynt å spille Minecraft.»
+
 #:3608
-"<før>"   REMOVE   adv IF
-        (NEGATE -1 vekedag OR månad OR adverbialsubst LINK 0 def) # onsdagen før
-;
+"<før>"   REMOVE:refgram adv;
 #  "referansegrammatikken ser ikke ut til å regne \"før\" som adverb,
 # bare som preposisjon og subjunksjon" – men det fører til følgefeil i
 # ordet etterpå viss me har t.d. «et angrep onsdagen før tvang det til
-# å stenge»
+# å stenge», eller «vi spiller mer enn vi gjorde før» (tidligere)
+# (sjå reglane over)
 
 
 
