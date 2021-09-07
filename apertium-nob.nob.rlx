@@ -17506,10 +17506,11 @@ SELECT:2643 (pr) IF
 
 
 #:2651
- SELECT:2651 (pr) IF
+SELECT:til-andre-lands-forsvar-komma (pr) IF
 	(0 sbu)
 	(NOT 0 %som%)
-	(*1 komma BARRIER ikke-adv-adj-subst-det-prep)
+        (NOT 1 ikke-adv-adj-subst-det-prep)
+	(*2 komma BARRIER ikke-adv-adj-subst-det-prep)
 ;
 #  "kan selge til (prep) andre lands sjøforsvar,
 # noen feil pga innskudd som: yrket til (sbu)
