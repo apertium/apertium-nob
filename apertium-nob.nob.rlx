@@ -7452,6 +7452,13 @@ REMOVE:fatte-mot pr IF
         (1 pr OR adv) ;        
         ;
 # "Vi fattet mot"
+SELECT:i-adj-hevd ("hevd") IF
+        (-2 ("i")) 
+        (-1 adj)
+        ;
+# "...i god hevd"
+REMOVE:unlikely ("hevd");
+# "å hevde" vs. "en hevd"
 REMOVE:to-ansatte vblex IF
         (0 ("to") OR ("toer"))
         (1 n OR np OR vblex) ;         
