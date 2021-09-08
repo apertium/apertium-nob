@@ -32886,6 +32886,16 @@ REMOVE:unlikely ("talent") + n + m ;
 SELECT:merka ("merke") + n + nt + pl ; # TODO: 'fire merker smør', 'betale dei 30 markane'
 
 
+
+SELECT:en-egen-lovgivende-forsamling &&ADJ_N_AGR IF
+        (-2 det + &&ADJ_N_AGR)
+        (-1 emph)
+        (0C adj + ind)
+        (1C n + &&ADJ_N_AGR)
+        ;
+# «Avtalen var at territoriet skulle beholde visse friheter fram til 2047 – deriblant et uavhengig rettssystem, en egen lovgivende forsamling og ytringsfrihet.»
+
+
 SELECT:fv-etter-innskot fv IF
         (*-3 %som% BARRIER cm LINK -1 cm LINK NOT *-1 fv)
         (-1 cm)
