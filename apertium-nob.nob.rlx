@@ -10082,6 +10082,8 @@ SELECT:skrev vblex IF
 	(1 %på%)
         ;
 
+"<sto>" REMOVE:unlikely n;
+
 #:3235
   "<svart>"   REMOVE:3235   pp IF
 	(*-1 setn-gr BARRIER %ha/få%)
