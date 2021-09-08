@@ -7451,6 +7451,11 @@ REMOVE:fatte-mot pr IF
         (1 pr OR adv) ;        
         ;
 # "Vi fattet mot"
+REMOVE:to-ansatte vblex IF
+        (0 ("to") OR ("toer"))
+        (1 n OR np OR vblex) ;         
+        ;
+# "To ansatte i Flyktninghjelpen savnet"
 "<fatt>"i REMOVE:fatt-mot adv IF
         (1 ("mot"))
         ;
