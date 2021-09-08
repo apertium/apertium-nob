@@ -10410,6 +10410,10 @@ REMOVE:Vann  vblex OR adv IF
         (NOT -1 infmerke)
         ;
 
+"<verden>" REMOVE:Tolkiens-verden def IF
+        (-1C gen)
+        ;
+
 #:3137
 "<via>" REMOVE:via ("vie") IF
 	 (NOT *0  %brudeparet/paret% CBARRIER setn-gr)
