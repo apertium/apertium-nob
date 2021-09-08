@@ -4356,6 +4356,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<drevet>" REMOVE:unlikely n ;
 
+"<dundret>" REMOVE:unlikely n ;
 
 #:3486
   "<legg>"   SELECT:3486   (vblex imp) IF
