@@ -10522,6 +10522,10 @@ REMOVE:Vann  vblex OR adv IF
 #  "Bare ved \"et være eller ikke være\""
 
 
+"<yrket>" REMOVE:det-yrket pret IF
+        (-1 det)
+        ;
+
 #:3117
   "<åtte>"   REMOVE:3117   (adj pp) IF
 	(0 det)
@@ -29167,7 +29171,6 @@ REMOVE:øye ("øye"i) IF
 ;
 # ...og fotball. --KBU
 # «Mål-thriller»
-
 
 # sec 4
 #CONSTRAINTS
