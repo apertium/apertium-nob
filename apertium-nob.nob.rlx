@@ -7452,6 +7452,10 @@ REMOVE:fatte-mot pr IF
         (1 pr OR adv) ;        
         ;
 # "Vi fattet mot"
+SELECT:på-nære-nippet ("nipp") IF
+        (-1 ("nær") or ("på"))
+        ;
+# "på nære nippet"
 SELECT:i-adj-hevd ("hevd") IF
         (-2 ("i")) 
         (-1 adj)
