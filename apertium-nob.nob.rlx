@@ -6053,6 +6053,11 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
         (NEGATE 0* vblex BARRIER setn-gr)
         ;
 
+SELECT:Uefa-styret ("styre") IF
+        (0 ("styr"))
+        (0/1 org)
+        ;
+
 "<besteget>" REMOVE:besteget vblex + pp IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
