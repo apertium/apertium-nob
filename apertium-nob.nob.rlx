@@ -1661,6 +1661,16 @@ REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
 REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
+
+
+# Prefer nouns in compounds:
+REMOVE:prefer-ncmp adj IF
+        (0 n)
+        (0/1 cmp)
+        ;
+# TODO: Probably too conservative
+
+
 ## select domain
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
