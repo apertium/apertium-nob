@@ -7452,6 +7452,11 @@ REMOVE:fatte-mot pr IF
         (1 pr OR adv) ;        
         ;
 # "Vi fattet mot"
+REMOVE:vante-gang n IF
+        (0 ("vant")) 
+        (1 ("gang"))     
+        ;
+# "Gå sin vante gang"
 SELECT:på-nære-nippet ("nipp") IF
         (-1 ("nær") or ("på"))
         ;
