@@ -32551,9 +32551,21 @@ SELECT:på-studium ("studium") IF
 		(0 fl)
 		;
 
+SELECT:tidligere-studier-i ("studie") IF
+		(-1 ("<Tidligere>") OR ("<tidligere>") )
+		(0 fl)
+		(1 %i%)
+		;
+
+SELECT:andre-studier-i ("studie") IF
+		(-1 ("annen") OR ("mange") OR ("noe"))
+		(0 fl)
+		(1 %i%)
+		;
+
 SELECT:studium-i/ved ("studium") IF
 		(0 fl)
-		(1 %i% OR %ved%)
+		(1 %i% OR %ved% OR ("ved siden av"))
 		;
 
 SELECT:frå-studium ("studium") IF
@@ -32580,6 +32592,12 @@ SELECT:studium-søke ("studium") IF
 
 SELECT:påbegynt-studium ("studium") IF
 		(-1 ("<påbegynte>"))
+		(0 fl)
+		;
+
+SELECT:ha-påbegynt-studium ("studium") IF
+		(*-2 ("ha"))
+		(-1 ("påbegynne"))
 		(0 fl)
 		;
 
