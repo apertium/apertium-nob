@@ -7408,6 +7408,11 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1* ("den"))
         ;
 
+#«Etterkommer kravet
+"<Etterkommer>" REMOVE:etterkommer-kravet n IF
+        (1 n)
+        ;
+
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
