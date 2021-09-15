@@ -7503,6 +7503,10 @@ REMOVE:to-ansatte vblex IF
         (1 ("mot"))
         ;
 # "Fatt mot!"
+"<preget>" SELECT:preget-sitt n IF
+        (1 ("<sitt>"))
+        ;
+# "ha sett preget sitt på"
 "<ytterligere>"i REMOVE:ytterligere-n adv IF
         (1 n)
         ;
