@@ -195,7 +195,7 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" ;
+LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" ;
 SET n-adjn = n OR adjn ;
 
 LIST pres-part = (adj pprs) ;
@@ -22000,6 +22000,15 @@ SELECT:regnet-som-fattige pp IF
         (3C setn-gr)
         ;
 
+SELECT:offentlig-ansatte adj + mf IF
+        (0C adj OR adv)
+        (1C n + m)
+        (1 pl)
+        (1 adjn)
+        ;
+# «Lovendringene vil blant annet fjerne innsynsretten i offentlig ansattes kalendere.»
+
+
 CONSTRAINTS
 
 
@@ -33411,8 +33420,7 @@ SELECT:en-helgen n + m + sg + ind IF
 # before these if transfer changes them from ind to def. So
 # it's important that they're actually tagged correctly as def when
 # they *do* have a det.def before them.
-LIST n_needs_det = "ansatt" "nyansatt" "bekjent" "kjent" "etterlatt" "tiltalt" "innsatt" "medtiltalt" "hovedtiltalt";
-SELECT:n_needs_det def + n_needs_det IF
+SELECT:n_needs_det n + def + adjn IF
         (-1 dem)
         ;
 # «Flere av de innsatte må trolig belage seg på …»
