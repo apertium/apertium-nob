@@ -1670,6 +1670,12 @@ REMOVE:prefer-ncmp adj IF
         ;
 # TODO: Probably too conservative
 
+REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + pl;
+REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + nt;
+REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
+# Avoid «pope- og filmstjerner», «heilagt- og høgtidsdagar»
+# TODO: do we ever want pl/nt/def in cmp-split when we can have ind.sg.mf?
+
 
 ## select domain
 #:3787
