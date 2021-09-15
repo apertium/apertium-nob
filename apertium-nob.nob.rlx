@@ -8246,6 +8246,12 @@ REMOVE:data-not-datum ("datum");
 # Only really nøyt if "et fiske" or "fisket"
 REMOVE:fiske ("fiske"i) + nøyt + fl;
 
+
+"<flott>" REMOVE:Det-er-flott pl IF
+        (NOT *0 pl BARRIER setn-gr)
+        ;
+
+
 #:3660
   "<fly>"   REMOVE:3660   (n m) IF
 	(0 subst)
