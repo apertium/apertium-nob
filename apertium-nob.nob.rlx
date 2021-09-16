@@ -7507,6 +7507,11 @@ REMOVE:to-ansatte vblex IF
         (1 ("<sitt>"))
         ;
 # "ha sett preget sitt på"
+"<si>" SELECT:tør-ikke-si vblex IF
+        (-2 ("<tør>"))
+        (-1 ("ikke"))
+        ;
+# "Jeg tør ikke si noe"
 "<ytterligere>"i REMOVE:ytterligere-n adv IF
         (1 n)
         ;
