@@ -1541,6 +1541,12 @@ REMOVE:unlikely ("synk") ;       # more likely søkk
 REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 
+SELECT:er-oppløftet adj IF
+		(-1* %være/bli%)
+		(0 ("<oppløftet>"))
+		;
+
+
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
         ;
