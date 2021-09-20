@@ -7080,6 +7080,13 @@ SELECT:låne-sitt-øre ("øre¹") IF
         (-2 ("låne"))
         (0 sg + ind)
         ;
+SELECT:vende-det-døve-øret-til ("øre¹") IF
+        (-3 ("vende"))
+        (-2 ("den"))
+        (-1 ("døv"))
+        (0 sg + def)
+        (1 ("til"))
+        ;
 SELECT:vaske-ørene ("øre¹") IF (-1 ("vaske"));
 SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
 
