@@ -8853,6 +8853,7 @@ REMOVE ("frø") IF
 ;
 #  "Han har ikke helt (ikke subst) lyktes"))
 
+"<hendte>" REMOVE:unlikely ("<hendte>") + adj ;
 
 #:3541
   "<heter>"   REMOVE:3541   (n pl) IF
@@ -33526,7 +33527,6 @@ REMOVE:default sg IF (0 ("<levekår>"i)) ;
 REMOVE:default ("sider") IF (0 ("side")) ;
 REMOVE:default ("<blander>"i) + n ;
 REMOVE:default ("<Pårørende>") + sg ;
-REMOVE:default ("<hendte>") + adj ;
 
 
 # Corpus-based default rules:
