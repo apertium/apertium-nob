@@ -11251,6 +11251,15 @@ SELECT:antallet-drepte-av-skytevåpen pp IF
         (1C pr OR vblex)
         ;
 
+SELECT:beskutt adj + pp IF
+    (*-1 %være/bli%)
+    (0 ("<beskutt>"))
+    ;
+
+ REMOVE:beskutt-nt mf IF
+    (*-1 n + nt)
+    (0 ("<beskutt>"))
+    ;
 
 SELECT:han-søkte-om-å-bli-tatt-opp pp + mf
         (*-3 n + mORf OR pers + mORf)
