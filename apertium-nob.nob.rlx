@@ -4143,7 +4143,7 @@ SELECT:lurer-på-hvor adv IF
         (2 ("komme"))
         (3 ("fra"))
         ;
-# "Politiet undersøkte ikke hvor der han kom fra."
+# "Politiet undersøkte ikke hvor han kom fra."
 
 "<i>" SELECT:i-LeBron-debut prep IF
         (1 subst OR ukjent)
