@@ -33526,6 +33526,7 @@ REMOVE:default sg IF (0 ("<levekår>"i)) ;
 REMOVE:default ("sider") IF (0 ("side")) ;
 REMOVE:default ("<blander>"i) + n ;
 REMOVE:default ("<Pårørende>") + sg ;
+REMOVE:default ("<hendte>") + adj ;
 
 
 # Corpus-based default rules:
