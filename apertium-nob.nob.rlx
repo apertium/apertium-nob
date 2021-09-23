@@ -4133,7 +4133,17 @@ SELECT:lurer-på-hvor adv IF
         (-1 ("finne# ut") OR ("vise"))
         ;
 # «Regjeringen setter ned et utvalg som skal finne ut hvor(kor) behovet for økt kompetanse gjennom etter- og videreutdanning er størst.»
-
+"<hvor>" SELECT:cm-hvor-det-kom-fra cnjsub IF
+        (-1 cm)
+        (2 ("komme"))
+        (3 ("fra"))
+        ;
+# "Napoleon, hvor han kom fra."
+"<hvor>" SELECT:hvor-det-kom-fra adv IF
+        (2 ("komme"))
+        (3 ("fra"))
+        ;
+# "Politiet undersøkte ikke hvor der han kom fra."
 
 "<i>" SELECT:i-LeBron-debut prep IF
         (1 subst OR ukjent)
