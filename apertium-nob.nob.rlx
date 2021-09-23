@@ -3661,6 +3661,9 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #  "\"galt\" subst er hanngris som bare godtas hvis
 # det står en galt!"
 
+"<ganske>" SELECT:ganske-så adv IF
+        (1 %så%)
+        ;
 
 #:3593
 "<ganger>" SELECT:en-ganger-en pl + ("gang") IF
