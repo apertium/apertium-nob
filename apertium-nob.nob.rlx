@@ -11251,6 +11251,11 @@ SELECT:antallet-drepte-av-skytevåpen pp IF
         (1C pr OR vblex)
         ;
 
+SELECT:tilbakelagt adj + pp IF
+    (*-1 %være/bli%)
+    (0 ("<tilbakelagt>"))
+    ;
+
 SELECT:beskutt adj + pp IF
     (*-1 %være/bli%)
     (0 ("<beskutt>"))
