@@ -11256,6 +11256,11 @@ SELECT:tilbakelagt adj + pp IF
     (0 ("<tilbakelagt>"))
     ;
 
+SELECT:utestengt adj + pp IF
+    (*-1 %være/bli%)
+    (0 ("<utestengt>"))
+    ;
+
 SELECT:beskutt adj + pp IF
     (*-1 %være/bli%)
     (0 ("<beskutt>"))
