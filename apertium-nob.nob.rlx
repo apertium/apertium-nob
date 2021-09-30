@@ -21945,6 +21945,15 @@ SELECT:Det-har-vært-trist adj + nt IF
 # «Det har vært trist.»
 
 
+SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
+        (-3 &&ADJ_N_AGR)
+        (-2 %som%)
+        (-1 kop-fv)
+        (0C adj OR pp)
+        ;
+# «Mye av det som blir  utstilt,  er sjeldenheter som det finnes få av igjen i verden.»
+
+
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
