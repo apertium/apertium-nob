@@ -11266,10 +11266,11 @@ SELECT:beskutt adj + pp IF
     (0 ("<beskutt>"))
     ;
 
- REMOVE:beskutt-nt mf IF
-    (*-1 n + nt)
+REMOVE:beskutt-nt mf IF
+    (*-1 n + nt BARRIER n + mORf)
     (0 ("<beskutt>"))
     ;
+# «fartøyet bar preg av å være beskutt»
 
 SELECT:han-søkte-om-å-bli-tatt-opp pp + mf
         (*-3 n + mORf OR pers + mORf)
