@@ -10096,6 +10096,9 @@ SELECT:skrev vblex IF
 ;
 #  "kh feb 2004: Han er syk skjønner dere"
 
+"<skåret>" REMOVE:sundskore n IF
+        (1 ("i stykker") OR ("sund"))
+        ;
 
 
 #:3272
