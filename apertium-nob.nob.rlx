@@ -18851,10 +18851,10 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 
 
 #:2550
- SELECT:2550 ent-mask-subst IF
+ SELECT:m-ikke-adj ent-mask-subst IF
 	(0 adj)
 	(NOT 0 farlige-mask-subst)
-	(NOT 1 subst-mask)
+	(NEGATE *1 subst-mask BARRIER ikke-adj)
 	(NOT -1 komma/konj)
 	(**-1CO mask-det LINK NOT 0 nr2-det LINK NOT *1 ikke-adv-adj)
 ;
