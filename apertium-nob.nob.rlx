@@ -6147,12 +6147,6 @@ SELECT:fylket ("fylke") + n IF
 		;
 		# svært sjeldan verbet: fylke seg
 
-SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
-		(1 ("få" adj))
-		;
-		# berre nokre få
-		# TODO: unntak for negasjon før "noen": ikkje berre nokre få
-
 REMOVE:støtte-sammen ("støte") IF
         (0 ("<støtte>"i))
 	(NOT 1 ("sammen"))
@@ -31985,6 +31979,13 @@ REMOVE:noen-års-tid <noen> + mask/fem/mf IF
 REMOVE:noen-betydning <noen> + pl IF
 	(1C sg)
 ;
+
+SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
+		(1 ("få" adj))
+		;
+		# berre nokre få
+		# TODO: unntak for negasjon før "noen": ikkje berre nokre få
+
 
 "<Noen>" REMOVE:Noen-av neg OR sg IF
         (0 <noen>)
