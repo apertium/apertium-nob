@@ -2443,6 +2443,38 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
         (2 sup)
         ;
 
+
+SELECT:Ta-den ("den¹") IF
+        (-2 setn-gr)
+        (-1 imp)
+        (NOT -1 adv)            # – Så den kommer som pakkepost?
+        (NOT 0 det)
+        ;
+# «Ta den!»
+# «Dette er en spade, og bruk den!»
+# «Slå den, den som kan!»
+
+SELECT:sist-i-ledd-etter-prn ("den¹") IF
+        (-1 prn + pers)
+        (1 setn-gr)
+        ;
+# «Så blir det den.»
+# «Da bruker vi den.»
+# «Derfor kjører vi den.»
+# «Når vi trenger en pause, bruker vi den.»
+# «Til slutt fant han den.»
+# «Så leste han den.»
+# «Mursteinen, kaller vi den, til minne om murene vi bygde for Farao.»
+
+SELECT:den+prn ("den¹") IF
+        (1C prn + pers)
+        ;
+# «Det skal jo være lov å kunne være med den man vil uten å høre at det er noe feil med deg.»
+# «I neste situasjon kan det være deg eller den du er glad i som ikke får den hjelpen de trenger.»
+# «Du er den du er.»
+
+
+
 #:3722
 "<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
@@ -31983,10 +32015,9 @@ REMOVE:noen-betydning <noen> + pl IF
 ;
 
 SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
-		(1 ("få" adj))
-		;
-		# berre nokre få
-		# TODO: unntak for negasjon før "noen": ikkje berre nokre få
+        (1 ("få" adj))
+        ;
+# berre nokre få
 
 
 "<Noen>" REMOVE:Noen-av neg OR sg IF
