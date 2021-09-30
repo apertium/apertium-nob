@@ -2344,9 +2344,10 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (NEGATE -2 ("ut") LINK 1 ("av"))
         ;
 
-####################################################
-# "den¹" blir «den» på nno òg; "den" blir «han/ho» #
-####################################################
+##############################################
+# "den¹" er påpeikande, blir «den» på nno òg #
+# "den" blir «han/ho»                        #
+##############################################
 
 "<Den>" REMOVE:Han-farleg-først-i-setning ("den") + prn;
 # Utan anaforresolusjon er det tryggare å halda på «Den».
@@ -2447,6 +2448,7 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
 SELECT:Ta-den ("den¹") IF
         (-2 setn-gr)
         (-1 imp)
+        (NOT -1 inf)            # «gå gjennom rapporten og forankre den»
         (NOT -1 adv)            # – Så den kommer som pakkepost?
         (NOT 0 det)
         ;
@@ -2465,6 +2467,7 @@ SELECT:sist-i-ledd-etter-prn ("den¹") IF
 # «Til slutt fant han den.»
 # «Så leste han den.»
 # «Mursteinen, kaller vi den, til minne om murene vi bygde for Farao.»
+# «Da satt jeg den, sa målscoreren etter kampen.»
 
 SELECT:den+prn ("den¹") IF
         (1C prn + pers)
