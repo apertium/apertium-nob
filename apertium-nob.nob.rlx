@@ -31968,7 +31968,7 @@ REMOVE:ble-hensyntatt pl IF
 #################################################################
 # NOKON vs NOKRE                                                #
 # pl is nokre                                                   #
-# neg or sg is nokon                                            #
+# neg or sg is nokon/noka                                       #
 #################################################################
 
 LIST <noen> = ("<noen>"i);
