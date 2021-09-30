@@ -21940,12 +21940,14 @@ SELECT:Det-har-vært-trist adj + nt IF
 
 
 SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
-        (-3 &&ADJ_N_AGR)
+        (-3C &&ADJ_N_AGR - adj)
         (-2 %som%)
         (-1 kop-fv)
         (0C adj OR pp)
         ;
 # «Mye av det som blir  utstilt,  er sjeldenheter som det finnes få av igjen i verden.»
+# Ikkje adj-adj-samsvar: «Neretse er den første<pl> som blir dømt<sg> for folkemord.»
+# Ikkje før subjektet er eintydig: «Det var en begrenset del av kameratens vitneprov som ble ført for lukkede dører.»
 
 
 #:2410
