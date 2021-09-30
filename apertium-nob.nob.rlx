@@ -31980,7 +31980,7 @@ REMOVE:noen-betydning <noen> + pl IF
 	(1C sg)
 ;
 
-SELECT:noen-få ("noe"i) + det + qnt + un + pl IF
+SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
 		(1 ("få" adj))
 		;
 		# berre nokre få
