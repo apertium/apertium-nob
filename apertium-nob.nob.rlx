@@ -33462,6 +33462,14 @@ SELECT:hvilke-typer-som-er-innbringende &&ADJ_N_AGR IF
 # «Tabellen viser hvilket driftseple som i snitt er mest og minst  innbringende  for norske bønder.»
 # Litt farleg pga. stor kontekst, så berre viss tidlegare reglar ikkje tok det.
 
+SELECT:Eldre-drikker-oftere fv IF
+        (-2 setn-gr)
+        (-1C pl OR def)
+        (-1C adj)
+        (0C fv OR n + pl)
+        (1C adv)
+        ;
+# «Eldre drikker oftere enn yngre.»
 
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
