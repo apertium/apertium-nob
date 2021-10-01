@@ -7589,6 +7589,12 @@ REMOVE:to-ansatte vblex IF
         (1 ("inn"))
         ;
 # "milliardene renner inn"
+REMOVE:tiden-renner-ut n IF
+        (-1 ("<tiden>"i))
+        (0 ("renne"))
+        (1 ("ut"))
+        ;
+# "tiden renner/rant ut"
 "<stund>" REMOVE:en-kort-stund vblex IF
         (-2 det)
         (-1 adj)
