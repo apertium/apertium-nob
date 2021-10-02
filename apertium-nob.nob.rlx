@@ -33473,9 +33473,19 @@ SELECT:Eldre-drikker-oftere fv IF
         (-1C pl OR def)
         (-1C adj)
         (0C fv OR n + pl)
-        (1C adv)
+        (1C adv OR cnjsub)
         ;
 # «Eldre drikker oftere enn yngre.»
+
+SELECT:De-eldre-drikker-oftere fv IF
+        (-3 setn-gr)
+        (-2 dem + pl)
+        (-1C pl OR def)
+        (-1C adj)
+        (0C fv OR n + pl)
+        (1C adv OR cnjsub)
+        ;
+# «De fagorganiserte streiker for at»
 
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
