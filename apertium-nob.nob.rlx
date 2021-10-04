@@ -7488,6 +7488,11 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<Etterkommer>" REMOVE:etterkommer-kravet n IF
         (1 n)
         ;
+#«Kraftig brann på kjøpesenteret
+"<brann>"i REMOVE:kraftig-brann vblex IF
+	      (-2 setn-gr)
+        (-1 adj)
+        ;
 
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
