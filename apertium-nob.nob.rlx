@@ -24801,11 +24801,12 @@ REMOVE:2135 (det) IF
 #  "gir jeg til Gud"
 
 
-REMOVE:Løft-så-ut n IF
-        (0C n OR imp)
+REMOVE:Løft-så-ut n OR adj IF
+        (0C adj OR n OR imp)
         (-1 >>>)
         (1 %så% OR ("deretter"))
         ;
+# «Kløyv så videre andre veien, mot haletuppen, men pass på at du ikke deler den helt igjennom.»
 
 #:2114
 REMOVE:imp+fv (imp) IF
