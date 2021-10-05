@@ -4313,8 +4313,8 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 ;
 
 "<tvang>" SELECT:tvang-landet pret IF
-		(-1 n OR np OR prn + pers)
-		;
+        (1C n OR np OR prn + pers)
+        ;
 
 "<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
 
