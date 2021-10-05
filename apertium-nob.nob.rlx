@@ -22013,6 +22013,14 @@ SELECT:var-5.5-prosent-deprimert &&ADJ_N_AGR IF
         ;
 # «I gruppen som ikke rapporterte om mobbing, var 5,5 prosent deprimert som 18-åringer.»
 
+SELECT:ble-det-kontant-avvist pp + &&ADJ_N_AGR IF
+        (-3 kop-fv)
+        (-2C &&ADJ_N_AGR + prn OR &&ADJ_N_AGR + n)
+        (-1 adj + nt + sg + ind)
+        (0C adj OR pp)
+        ;
+# «bare noen timer etter, ble det kontant avvist av brexitminister Stephen Barclay.»
+
 
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
