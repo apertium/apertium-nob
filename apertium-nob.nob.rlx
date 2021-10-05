@@ -21991,6 +21991,7 @@ SELECT:Det-har-vært-trist adj + nt IF
 
 
 SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
+        (NEGATE -3 (".*-år"r) + pl) # «mann i 20-årene som var ved bevissthet»
         (-3C &&ADJ_N_AGR - adj)
         (-2 %som%)
         (-1 kop-fv)
