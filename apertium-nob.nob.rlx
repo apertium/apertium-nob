@@ -6755,6 +6755,9 @@ REMOVE:unlikely ("leire") + pl ;
 ;
 #  "gå tapt"
 
+"<taper>" SELECT:dagens-taper ("taper") IF
+        (-1 (".*dagens"r))
+        ;
 
 
 #:3195
