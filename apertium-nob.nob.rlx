@@ -22435,7 +22435,7 @@ REMOVE:2324 pprs IF
 #:2310
  REMOVE:2310 adj-def-sg-sp IF
 	(0 adj-ub-ent)
-	(NOT 0 %siste%/ordenstall)
+	(NOT 0 %siste%/ordenstall OR %forrige/neste/samme/siste/første%)
 	(*-1CO ikke-adv-adj-det LINK NOT 0 subst-gen LINK NOT *1 dem/poss/gen)
 ;
 
@@ -28485,6 +28485,9 @@ CONSTRAINTS
 #det var ei mine.
 
 
+"<neste>" SELECT:neste-runde def IF
+        (1 n + sg + ind)
+        ;
 
 
 
