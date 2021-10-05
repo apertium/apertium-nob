@@ -570,7 +570,7 @@ LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
-LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  ;
+LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
@@ -941,7 +941,7 @@ LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
-LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" "måke" "måse" ;
+LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" "måke" "måse" "blåmeis" "meis" "kjøttmeis" "skjære" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
@@ -29000,6 +29000,11 @@ CONSTRAINTS
         (NOT 1 %seg%)
         ;
 
+"<skjære>" SELECT:skjor n IF
+        (*0 fugl-ord - ("skjære"))
+        ;
+REMOVE:ikkje-skjor ("skjære") + n;
+
 #5006
   "<straks>"   REMOVE:5006   (adj gen) IF
 	(0 adv)
@@ -29403,7 +29408,6 @@ SELECT:dagens-vinner n IF
         (-1 (".*dagens"r))
         ;
 # «– Han vil i hvert fall få tilgang til dagens aviser, og etter hvert internett.»
-# «Dagens eier i Agderposten Medier vil eie resten.»
 # «Dagens vinner blant de mest omsatte var Aker BP der kursen gikk opp 5,6 prosent.»
 
 SELECT:dagens-taper n + sg IF
