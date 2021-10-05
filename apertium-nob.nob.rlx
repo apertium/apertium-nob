@@ -6169,8 +6169,10 @@ SELECT:som-arbeidet ("<arbeidet>"i) + vblex + pret  IF
 		# lærligane som arbeidde deltid
 
 SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
-		(-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr)
-		;
+        (-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr OR pr)
+        ;
+# Ikkje: «Vi skal fortsette å ha ledertrøya i<pr> dette arbeidet.»
+# (adverbialt, høyrer ikkje til «ha»)
 
 SELECT:få-se ("<få>"i) + vblex + inf IF
 		(1 vblex + inf)
