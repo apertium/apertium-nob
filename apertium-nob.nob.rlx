@@ -6755,10 +6755,6 @@ REMOVE:unlikely ("leire") + pl ;
 ;
 #  "gå tapt"
 
-"<taper>" SELECT:dagens-taper ("taper") IF
-        (-1 (".*dagens"r))
-        ;
-
 
 #:3195
   "<tatt>"   SELECT:3195   (vblex pp) IF
@@ -29403,8 +29399,18 @@ SELECT:pytt-i-panne-retter ("rett") IF
 #  "Hvis konklusjonen blir verifisert, (clb)
 # (forts) betyr det at ..."))
 
+SELECT:dagens-vinner n IF
+        (-1 (".*dagens"r))
+        ;
+# «– Han vil i hvert fall få tilgang til dagens aviser, og etter hvert internett.»
+# «Dagens eier i Agderposten Medier vil eie resten.»
+# «Dagens vinner blant de mest omsatte var Aker BP der kursen gikk opp 5,6 prosent.»
 
-
+SELECT:dagens-taper n + sg IF
+        (-1 (".*dagens"r))
+        ;
+# sg more likely
+# «Dagens taper blant de mest omsatte ble Tomra som falt 3,9 prosent, fulgt av TGS-Nopec som falt 2,2 prosent.»
 
 
 
