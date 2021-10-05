@@ -7440,7 +7440,7 @@ REMOVE SUB:1 ("..?"r) IF (0/* cmp) ;
 # "også"  → "òg"
 # "også¹" → "også"
 "<også>" SELECT:også-setn-gr ("også") IF
-        (1 setn-gr)
+        (1 clb-komma OR punktum/ellipse)
         ;
 "<også>" SELECT:cm-også-om ("også") IF
         (-1 cm OR cnjsub OR cnjcoo + clb)
