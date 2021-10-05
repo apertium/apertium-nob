@@ -5167,7 +5167,7 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         ;
 
 "<regnet>" SELECT:5.4-prosent-regnet regne_ut IF
-        (-1C ("prosent"))
+        (-1C målsubst)
         ;
 "<regnet>" SELECT:regnet-som-kommer regn_vann IF
 		(NOT *-1 n)
@@ -11246,7 +11246,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
-        (NEGATE -1 ("antall"))
+        (NEGATE -1 målsubst)
         ;
 
 SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
@@ -22000,6 +22000,15 @@ SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
 # «Mye av det som blir  utstilt,  er sjeldenheter som det finnes få av igjen i verden.»
 # Ikkje adj-adj-samsvar: «Neretse er den første<pl> som blir dømt<sg> for folkemord.»
 # Ikkje før subjektet er eintydig: «Det var en begrenset del av kameratens vitneprov som ble ført for lukkede dører.»
+
+
+SELECT:var-5.5-prosent-deprimert &&ADJ_N_AGR IF
+        (-3 kop-fv)
+        (-2 det + qnt + pl)
+        (-1 &&ADJ_N_AGR + målsubst)
+        (0C adj OR pp)
+        ;
+# «I gruppen som ikke rapporterte om mobbing, var 5,5 prosent deprimert som 18-åringer.»
 
 
 #:2410
