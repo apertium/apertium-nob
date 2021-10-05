@@ -3872,7 +3872,7 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 
 
 #:3547
-  "<helt>"   SELECT:3547   (adj nt) IF
+"<helt>" SELECT:helt-annen adv IF
 	(1 nr2-det)
 ;
 #  "en helt (adv) annen helt (subst)"))
@@ -10214,6 +10214,10 @@ SELECT:skrev vblex IF
         ;
 
 "<sto>" REMOVE:unlikely n;
+
+"<stilt>" REMOVE:unlikely ("still") IF
+        (NOT -1 ("helt"))
+        ;
 
 #:3235
   "<svart>"   REMOVE:3235   pp IF
@@ -18048,7 +18052,7 @@ SELECT:folket-skal-anse-han acc IF
 
 
 #:2597
- SELECT:2597 pron-pers IF
+ SELECT:er-det-anlagt det + expl IF
 	(0 %det/dette%)
 	(1 perf-part)
 	(-1C fv)
@@ -22279,7 +22283,7 @@ REMOVE:4090 (vblex)
 
 
 #:2330
- REMOVE:2330 (adj pp nt ind sg) IF
+ REMOVE:pos>pp (adj pp nt ind sg) IF
 	(0 pos-ub-ent-nøyt)
 ;
 # group: 51
