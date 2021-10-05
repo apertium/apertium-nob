@@ -31127,6 +31127,12 @@ REMOVE:de-amerikanske-sanksjonene prn + pers + pl IF
         ;
 # «Maduro oppgir de amerikanske sanksjonene»
 
+REMOVE:de-forlovede adj IF
+		(-1 det + dem)
+		(0 ("<forlovede>"))
+		(NOT 1 n)
+		;
+
 REMOVE:seks-av-ti-leser n + sg IF
         (-1C det + pl)
         (NOT -1 sanns-årstal)
