@@ -7404,6 +7404,7 @@ SELECT:balle-på-seg ("balle") + vblex IF
 
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
+SELECT:sel-unlikely ("<ballene>"i "ball" m);
 SELECT:sel-unlikely ("<disses>"i) + prn;
 SELECT:sel-unlikely ("<[A-Z]S>"r "[A-Z]S"r);
 
