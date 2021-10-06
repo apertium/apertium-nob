@@ -11319,6 +11319,16 @@ SELECT:beskutt adj + pp IF
     (0 ("<beskutt>"))
     ;
 
+SELECT:framskutt adj + pp IF
+    (*-1 %være/bli%)
+    (0 ("<framskutt>"))
+    ;
+
+SELECT:fremskutt adj + pp IF
+    (*-1 %være/bli%)
+    (0 ("<fremskutt>"))
+    ;      
+
 REMOVE:beskutt-nt mf IF
     (*-1 n + nt BARRIER n + mORf)
     (0 ("<beskutt>"))
