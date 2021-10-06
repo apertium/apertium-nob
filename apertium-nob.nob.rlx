@@ -27237,6 +27237,12 @@ REMOVE:før-det-legges-fram inf IF
 # (forts) (prep @ADV) komme (inf)"))
 
 
+REMOVE:som-tenkes-kan pres + pasv IF
+		(-1 %som%)
+		(1 ("kunne"))
+		(NOT 2 vblex + inf)
+		;
+
 
 #:1922
  REMOVE:1922 (vblex inf) IF
@@ -34182,6 +34188,7 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
+
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
