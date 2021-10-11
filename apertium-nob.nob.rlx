@@ -198,6 +198,8 @@ LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare"
 LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" ;
 SET n-adjn = n OR adjn ;
 
+LIST xgrau = xpst xpsto xpsts xcomp xsup ;
+
 LIST pres-part = (adj pprs) ;
 LIST pres/pret = (vblex pres) (vblex pret) ;
 LIST pres/pret/adverb = adv <adv> (vblex pres) (vblex pret) (adj nt ind) ("noen"  det nt) ;
@@ -7418,6 +7420,10 @@ REMOVE:unlikely ("van") IF (0 ("vane")) ;
 REMOVE:unlikely ("flott") + nt ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("vente") + gen;
+
+LIST farlig-adj-nominalisering = "skyld" "tru" "forvent" "mislykt" "arm" ;
+REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
+# «forventes», «trues», «skyldes»
 
 SELECT:balle-på-seg ("balle") + vblex IF
 		(1* ("på"))
@@ -24480,6 +24486,7 @@ REMOVE:skjermes-de-mest-sentrale prn IF
 	(0 %det%)
 	(NOT 1 fl-det)
 	(NOT 1 be-ent-nøyt-adj)
+        (NOT 1 xgrau)
 	(**1CO subst LINK NOT 0 nøyt-ent LINK NOT *-1 ikke-adv-adj)
 ;
 #  "som om det (pron) gjesten fortalte ..."))
@@ -24653,6 +24660,7 @@ REMOVE:skjermes-de-mest-sentrale prn IF
 	(NOT 1 %annen/samme%/kvant-nøyt)
 	(NOT 1 adj-sup-ub)
 	(NOT 1 be-ent-nøyt-adj)
+        (NOT 1 xgrau)
 	(*1O subst LINK NOT 0 nøyt-ent LINK NOT *-1 ikke-adv-adj)
 ;
 #  "at det (pron) mannen sa ...
