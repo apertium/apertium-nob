@@ -32473,6 +32473,13 @@ REMOVE:barn-og-unge sg IF
         (2 ("ung") OR ("unge"))
         ;
 
+REMOVE:rettigheter-og-behov sg IF
+        (-2C n + pl)
+        (-1 cnjcoo)
+        (NOT -1 clb)
+        (0C n)
+        ;
+
 REMOVE:vi-deler. fl-subst IF
         (0C fl-subst OR pres)
         (-1C nominativ)
