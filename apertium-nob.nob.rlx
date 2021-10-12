@@ -7421,7 +7421,7 @@ REMOVE:unlikely ("flott") + nt ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("vente") + gen;
 
-LIST farlig-adj-nominalisering = "skyld" "tru" "forvent" "mislykt" "arm" ;
+LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
 # «forventes», «trues», «skyldes»
 
