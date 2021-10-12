@@ -32467,6 +32467,11 @@ REMOVE:ifølge-bankens-egne-tall ent-subst IF
 # «, viser politiets egne tall.»
 # «På spørsmål om hvorfor Sverige fortsatt fraråder reiser til Norge og Danmark, viser hun til nabolandenes egne tiltak.»
 
+REMOVE:barn-og-unge sg IF
+        (0 ("<barn>"i))
+        (1 cnjcoo)
+        (2 ("ung") OR ("unge"))
+        ;
 
 REMOVE:vi-deler. fl-subst IF
         (0C fl-subst OR pres)
