@@ -7418,6 +7418,7 @@ REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
 REMOVE:unlikely ("flott") + nt ;
+REMOVE:unlikely ("balle") IF (0 ("ball")) ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("vente") + gen;
 
@@ -7775,6 +7776,11 @@ REMOVE:er-hinsides pr IF
 		(3 ("å"))
         ;
 # å knekke sammen
+
+"<ballene>" REMOVE:lange-ballene ("ball") + nt IF
+        (-1 ("lang"))
+        ;
+
 "<ballene>" REMOVE:ta-på-ballene ("ball") + n + nt IF
         (-2 ("ta"))
         (-1 ("på"))
@@ -10003,6 +10009,12 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh feb 2004: Sjelden i betydningen \"snakk, samtale\" eller \"rødlig skinn\""
 
+"<røyk>" REMOVE:flammer-og-røyk pl IF
+        (NOT *-1 det + pl BARRIER setn-gr OR n OR cnjcoo) # tillat «tok seg tre røyk på rappen»
+        (0 sg)
+        ;
+# «Det brenner med åpne flammer og røyk som går rett opp»
+# (unngå «flammar og røykar»)
 
 #:5018
   "<seksten>"   REMOVE:5018   (n m sg def) IF
