@@ -15132,6 +15132,23 @@ REMOVE:ventes-det-at adv IF
 		(0 ("<at>"))
 		;
 
+REMOVE:forventes-at adv IF
+		(-1 ("<forventes>"))
+		(0 ("<at>"))
+		;
+
+REMOVE:forventes-det-at adv IF
+		(-2 ("<forventes>"))
+		(-1 ("<det>"))
+		(0 ("<at>"))
+		;
+
+REMOVE:forventes-også-at adv IF
+		(-2 ("<forventes>"))
+		(-1 ("<også>"))
+		(0 ("<at>"))
+		;
+
 
 #:2854
  SELECT:2854 (adv) IF
