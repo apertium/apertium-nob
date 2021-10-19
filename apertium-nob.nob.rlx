@@ -3701,6 +3701,20 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 %så%)
         ;
 
+"<særlig>" SELECT:ventes-det-særlig adv IF
+        (-2 ("<ventes>"))
+        (-1 ("<det>"))
+        ;
+
+"<særlig>" SELECT:ventes-særlig adv IF
+        (-1 ("<ventes>"))
+        ;
+
+"<ganske>" SELECT:ventes-det-ganske adv IF
+        (-2 ("<ventes>"))
+        (-1 ("<det>"))
+        ;
+
 #:3593
 "<ganger>" SELECT:en-ganger-en pl + ("gang") IF
 	(1 talord OR siffer)
@@ -15107,6 +15121,16 @@ SELECT:handler-utelukkende-med adv IF
 # deltidsjobb når (sbu) den eldste
 # begynner på skolen"
 
+REMOVE:ventes-at adv IF
+		(-1 ("<ventes>"))
+		(0 ("<at>"))
+		;
+
+REMOVE:ventes-det-at adv IF
+		(-2 ("<ventes>"))
+		(-1 ("<det>"))
+		(0 ("<at>"))
+		;
 
 
 #:2854
@@ -19344,6 +19368,11 @@ SELECT:fra-naturens-side subst + $$GENDER IF
 	(NOT *-3 ikke-adv-adj-det)
 ;
 
+SELECT:ventes-både vblex IF
+		(-1 adv)
+		(0 ("<ventes>"))
+		(1 konj)
+		;
 
 #:2501
  SELECT:2501 subst IF
@@ -21304,9 +21333,10 @@ SELECT:Vanskene-mine-hørte-ikke-til-dem pret IF
 
 
 
-
-
-
+SELECT:kula-hadde n IF
+		(0 ("<kula>"))
+		(1 vblex)
+		;
 
 #:2367
  SELECT:2367 (vblex pret) IF
@@ -25849,6 +25879,10 @@ SELECT:tildeles-den-utøver-som n + ind + &&ADJ_N_AGR IF
 # den gir også et levende bilde av noe der
 # (ikke disamb. - regelen stopper her) det er"))
 
+SELECT:i-helga n IF
+		(-1 pr)
+		(0 ("<helga>"))
+		;
 
 #:2022
  REMOVE:2022 be-subst IF
@@ -33329,6 +33363,11 @@ SELECT:at-dette-tas-på-alvor prn + nominativ IF
         (-1C cnjsub OR clb)
         (1C pres + pasv)
         ;
+
+SELECT:ventes-det-oppholdsvær prn IF
+		(-1 ("<ventes>"))
+		(1 n)
+		;
 
 SELECT:søndag-gås-det-renn expl IF
         (-1C pres + pasv)
