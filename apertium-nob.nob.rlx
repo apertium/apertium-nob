@@ -22372,6 +22372,11 @@ REMOVE:4090 (vblex)
 #  "fort (<adv> og <perf-part> av fore)"
 #      :group 51
 
+SELECT:være-utseende-som adj iF
+		(-1 %være%)
+		(0 ("<utseende>"))
+		(1 %som%)
+		;
 
 
 #:2323
