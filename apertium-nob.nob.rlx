@@ -7665,15 +7665,16 @@ REMOVE ("hvor") + cnjsub IF
 		(-1 ("endelig"))
         ;
 # "det ble endelig bestemt"
+
 "<slipper>" REMOVE:slipper-til n IF
 		(1 ("til"))
         ;
-# "det ble endelig bestemt"
+
 "<slipper>" SELECT:slipper-ut vblex IF
 		(1 ("ut"))
 		(2 setn-gr)
     ;
-# "det ble endelig bestemt"
+
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
@@ -20338,13 +20339,13 @@ SELECT:Dit-går-de pres IF
 
 
 #:2483
- SELECT:2483 (vblex pres) IF
+ SELECT:dansen-han-aldri-danser (vblex pres) IF
 	(NOT 0 pret)
 	(NOT 0 setn-gr)
 	(-1C setningsadv)
 	(NOT -1 %nok%)
 	(NOT -1 %så%)
-	(*-2 ikke-adv LINK 0 nom LINK NOT 0 fv LINK *-1 ikke-adv-adj-det LINK NOT 0 fv)
+	(*-2 ikke-adv LINK 0 nom LINK NOT 0 fv LINK *-1 ikke-adv-adj-det LINK NOT 0 fv OR gen)
 ;
 #  "dansen han aldri danser (verb pres)"
 #      :group 44
