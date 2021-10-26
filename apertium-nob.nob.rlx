@@ -1093,7 +1093,6 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         ;
 # «sin beste Vårt Land-måling»
 
-
 # sec 1
 CONSTRAINTS
 
@@ -30916,7 +30915,17 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 # bedre som heuristisk etter at vi har forsøkt
 # å finne adj?"
 
+SELECT:vitner n IF
+		(-2 adj + pst + un + pl OR n)
+		(-1 cm OR %og%)
+		(0 ("<vitne>"))
+		;
 
+SELECT:frikjente adj IF
+		(-2 adj + pst + un + pl OR n)
+		(-1 cm OR %og%)
+		(0 ("frikjenne"))
+		;
 
 #:1731
  SELECT:1731 (vblex pres) IF
