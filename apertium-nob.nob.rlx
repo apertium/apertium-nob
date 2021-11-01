@@ -1096,6 +1096,10 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
 # sec 1
 CONSTRAINTS
 
+SELECT:herrenes-kamp ("herre") IF
+		(0 ("<herrenes>"))
+		;
+
 REMOVE guess;
 
 REMOVE:titlecase-sentstart cgguess IF
@@ -1145,6 +1149,10 @@ REMOVE:Prestens-forsvarer cgguess IF
         (1C n + ind)
         (NOT 1 storbokstav)
         ;
+SELECT:mennenes-VM n IF
+		(-1 gen)
+		(0 ("VM") OR ("NM") OR ("EM"))
+		;
 
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
 SELECT:storbokstav-np np IF
@@ -12764,6 +12772,12 @@ SELECT:jeg-er-UTROLIG-takknemlig adj + nt + sg + ind IF
         (1C adj + mf + sg + ind)
         ;
 
+SELECT:forbundet-må-vurdere n IF
+		(0 ("<forbundet>"))
+		(1 vblex OR adj + pp OR clb OR %som% OR pr OR ("også"))
+		(NOT 1 ("med") OR ("til"))
+		;
+
 SELECT:er-jeg-både-takknemlig-og-rørt adj + mf + sg + ind IF
         (*-1 p1 + sg BARRIER setn-gr LINK -1 %være/bli%)
         ;
@@ -21991,7 +22005,6 @@ SELECT:mange-er-fremdeles-smittet adj + pl IF
          BARRIER setn-gr OR fv)
 ;
 # «Mange i landet er smittet»
-
 
 SELECT:ungdom-etterlatt-i-utlandet pp IF
         (NOT -2 %hvilken%)      # hvilke konsekvenser funnet får
