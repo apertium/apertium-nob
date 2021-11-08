@@ -195,7 +195,7 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" ;
 SET n-adjn = n OR adjn ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
@@ -1683,6 +1683,7 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
+        (NOT 0 adjn)            # «Den spiontiltalte nordmannen ber …»
         ;
 # TODO: Probably too conservative
 
@@ -10778,6 +10779,26 @@ SELECT:som-tidligere ("tidligere"i) + adv IF
 		(1 clb OR cm)
 		;
 		# like sterkt som før.
+
+
+#################################################################
+# Nominalised adjectives, tiltalte/ansatte/siktede              #
+#                                                               #
+# Before nouns of these lemmas, we may insert "den/dei" in nno. #
+# We don't insert before adjectives.                            #
+#################################################################
+SELECT:Siktede-ikke-avhørt n + def IF
+        (-1 >>> OR clb OR cnjcoo)
+        (0 adjn)
+        ;
+# «Siktede ikke avhørt.»
+
+SELECT:Den-siktede xgrau OR adj IF
+        (-1 ("den"))
+        (0 adjn)
+        ;
+# «Den spiontiltalte nordmannen ber innstendig norske myndigheter om å ta ansvar.»
+
 
 # sec 2
 CONSTRAINTS
@@ -33748,6 +33769,10 @@ SELECT:en-helgen n + m + sg + ind IF
 		(0 ("<helgen>"))
 		;
 
+
+REMOVE:prefer-lexicalised-n xgrau IF
+        (0 n + gen - xgrau)
+        ;
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
