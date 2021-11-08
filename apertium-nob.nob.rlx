@@ -33769,6 +33769,15 @@ SELECT:en-helgen n + m + sg + ind IF
 		(0 ("<helgen>"))
 		;
 
+SELECT:clb-fv-n fv IF
+        (NOT -2 adj)            # ikkje ved «ADJ og ADJ»
+        (-1 clb)
+        (0C fv OR adj)
+        (1 n)
+        (NOT *1 fv)
+        ;
+# «Siden tirsdag er 93 mennesker blitt drept i uroen i Bagdad og andre byer sør i landet,   opplyste   nasjonalforsamlingens menneskerettighetskommisjon lørdag formiddag.»
+
 
 REMOVE:prefer-lexicalised-n xgrau IF
         (0 n + gen - xgrau)
