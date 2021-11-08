@@ -12790,11 +12790,11 @@ SELECT:jeg-er-UTROLIG-takknemlig adj + nt + sg + ind IF
         (1C adj + mf + sg + ind)
         ;
 
-SELECT:forbundet-må-vurdere n IF
-		(0 ("<forbundet>"))
-		(1 vblex OR adj + pp OR clb OR %som% OR pr OR ("også"))
-		(NOT 1 ("med") OR ("til"))
-		;
+"<forbundet>" SELECT:forbundet-må-vurdere n IF
+        (NOT -1 ("<nært>"i) OR ("<tett>"i))
+        (1 vblex OR adj + pp OR clb OR %som% OR pr OR ("også"))
+        (NOT 1 ("med") OR ("til"))
+        ;
 
 SELECT:er-jeg-både-takknemlig-og-rørt adj + mf + sg + ind IF
         (*-1 p1 + sg BARRIER setn-gr LINK -1 %være/bli%)
