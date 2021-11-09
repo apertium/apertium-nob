@@ -10348,6 +10348,9 @@ SELECT:skrev vblex IF
 ;
 
 
+"<spiller>" REMOVE:spiller-om n IF (1 %om%) ;
+
+
 "<stammer>" REMOVE:stammer-fra n IF (1 %fra%) ;
 
 #:3240
