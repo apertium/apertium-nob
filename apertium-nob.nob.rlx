@@ -2796,6 +2796,8 @@ SELECT:den+prn ("den¹") IF
 		(-1 adj + nt)
         ;
 
+"<skjære>" SELECT:skjære-gjennom vblex IF (1 ("gjennom")) ;
+
 "<skåret>" SELECT:skåret-i-gleden n IF
 		(1 %i%)
 		(2 ("glede") + n + sg + def)
