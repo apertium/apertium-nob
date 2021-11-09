@@ -6031,7 +6031,7 @@ REMOVE:unlikely ("<ris>") + pasv;
 
 
 #:3248
-  "<som>"   SELECT:3248   (cnjsub) IF
+"<som>" SELECT:han-som-traff-blink cnjsub IF
 	(NOT -1 >>>)
 	(*2O subst LINK *-1 ikke-adv-adj-det LINK 0 pres/pret LINK NOT 0 %for/før/når% LINK NOT 0 <perf-part> LINK NOT *-1 ikke-adv)
 	(*1 pres/pret LINK NOT 1 tegnsetting LINK NOT 0 konj)
