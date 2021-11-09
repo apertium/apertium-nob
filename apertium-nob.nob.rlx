@@ -8958,6 +8958,10 @@ REMOVE ("frø") IF
 ;
 #  "Han har ikke helt (ikke subst) lyktes"))
 
+"<hen>" REMOVE:hvor-hen prn IF
+        (-1 ("upåaktet") OR ("ubemerket") OR ("hvor"))
+        ;
+
 "<hendte>" REMOVE:unlikely ("<hendte>") + adj ;
 
 #:3541
