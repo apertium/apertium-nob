@@ -5181,12 +5181,21 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
         (-1 regn-verb)
         (-1C vblex)
         ;
+"<regnet>" SELECT:kommer-dette-regnet regn_vann IF
+        (-2 regn-verb)
+        (-2C vblex)
+        (-1 ("<dette>"))
+        ;
 
 "<regnet>" SELECT:grovt-regnet regne_ut IF
-        (-1 ("<grovt>") OR ("<rundt>"))
+        (-1 ("<grovt>") OR ("<rundt>") OR ("<enkelt>"))
         ;
 
 "<regnet>" SELECT:arten-var-regnet-som-utryddet regne_ut IF
+        (1 %som%)
+        (NOT 2 regn-verb OR hj-verb OR ("<verst>") OR prn)
+        ;
+"<regne>" SELECT:arten-var-å-regne-som-utryddet regne_ut IF
         (1 %som%)
         (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
@@ -5199,29 +5208,135 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 		(1 %som%)
 		(*2 regn-verb)
 		;
+"<Regnet>" SELECT:Regnet-som-kommer regn_vann IF
+		(NOT *-1 n)
+		(1 %som%)
+		(*2 regn-verb)
+		;
+"<regnet>" SELECT:regnet-fra-datoen regne_ut IF
+		(1 ("fra"))
+		(2* ("dag") OR ("dato") OR ("år") OR ("måned") OR ("øyeblikk"))
+		;
 "<regnes>" SELECT:regnes-som regne_ut
 		;
 
+"<regnet>" SELECT:vinden-og-regnet regn_vann IF
+		(-2 ("vind") OR ("storm") OR ("kulde"))
+		(-1 %og/eller%)
+		;
+"<regnet>" SELECT:regnet-og-vinden regn_vann IF
+		(1 %og/eller%)
+		(2 ("vind") OR ("storm") OR ("kulde"))
+		;
+"regne" SELECT:regnet-til regne_ut IF
+		(1 %til% OR %på%)
+		(NOT 2 np)
+		;
+SELECT:regne-seg-selv-som regne_ut IF
+		(1 prn)
+		(2 %som% OR %fram%)
+		;
+SELECT:regne-ikke-seg-selv-som regne_ut IF
+		(1 adv)
+		(2 prn)
+		(3 %som% OR %fram%)
+		;
 SELECT:regnet-det-i-Seefeld regne_vann IF
         (1 expl)
-        (2 pr_etter_regnvann OR tidsadv OR  %nå/da/her/der% OR adv OR adj)
+        (2 pr_etter_regnvann OR tidsadv OR  %nå/da/her/der% OR adv OR adj OR det OR cm)
+        (NOT 3* ("<sannsynlig>"))
         ;
 SELECT:det-regner regne_vann IF
         (-1 expl)
         (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det OR vblex OR adv OR adj)
         ;
-SELECT:skal-regne regne_vann IF
-		(-1 modalverb)
-		(1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det)
-		;
+SELECT:har-det-nemlig-regnet regne_vann IF
+        (-2 expl)
+        (-1 adv)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det OR vblex OR adv OR adj)
+        ;
+SELECT:begynte-det-nemlig-å-regne regne_vann IF
+        (-3 expl)
+        (-2 adv)
+        (-1 ("å"))
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det OR vblex OR adv OR adj)
+        ;
+SELECT:det-har-regnet regne_vann IF
+        (-2 expl)
+        (-1 vblex)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR n OR %mye/lite/litt% OR %nå/da/her/der% OR det OR vblex OR adv OR adj)
+        ;
+SELECT:det-har-ikke-regnet regne_vann IF
+		(-3 expl)
+        (-2 vblex)
+        (-1 adv)
+        (1 tidsadv OR setn-gr OR pr_etter_regnvann OR %mye/lite/litt% OR %nå/da/her/der% OR adv OR adj OR det)
+        ;
 
-SELECT:i-regnet regn_vann IF
-		(-1 pr)
+SELECT:regne-kraftig regne_vann IF
+		(1 %mye/lite/litt% OR ("kraftig") OR ("bort"))
+		(NOT 2* ("kostnad") OR ("pris"))
 		;
+SELECT:i-regnet regn_vann IF
+		(-1 %i%)
+		;
+SELECT:hvor-regnet-treffer regn_vann IF
+		(-1 ("hvor") OR ("når"))
+		(1 vblex)
+		;
+SELECT:har-regnet-hjulpet regn_vann IF
+		(1* ("hjelpe") OR ("falle"))
+		;
+SELECT:falt-regnet regn_vann IF
+		(-1* ("hjelpe") OR ("falle"))
+		;
+SELECT:begynne-å-regne regne_vann IF
+		(-2 ("begynne"))
+		(-1 ("å"))
+		(NOT 1 %på%)
+		;
+SELECT:slutte-å-regne regne_vann IF
+		(-2 ("slutte"))
+		(-1 ("å"))
+		(NOT 1 %på%)
+		;
+SELECT:komme-til-å-regne regne_vann IF
+		(-3 ("komme"))
+		(-2 %til%)
+		(-1 ("å"))
+		;
+SELECT:velge-å-regne regne_ut IF
+		(-2 ("velge"))
+		(-1 ("å"))
+		;
+SELECT:velge-å-ikke-regne regne_ut IF
+		(-3 ("velge"))
+		(-2 ("å"))
+		(-1 %ikke%)
+		;
+SELECT:vil-regne-ned regne_vann IF
+		(-1 modalverb)
+		(1 %ned% OR %uten%)
+		;
+SELECT:regne-ned regne_vann IF
+		(NOT -1 vblex)
+		(1 %ned% OR %uten%)
+		;
+SELECT:regne-70-millimeter regne_vann IF
+		(1* ("millimeter") OR ("mm"))
+		;
+SELECT:regnet-i-dagens-pengeverdi regne_ut IF
+        (1* ("pengeverdi") OR ("verdi") OR ("barnetrygd"))
+        ;
+
+"<regnet>" SELECT:regnet-forskerne regne_ut IF
+        (1C n + def OR ("<riktig>") OR ("<feil>") OR ("<rett>"))
+        ;
 
 "<regnet>" SELECT:regnet-høljet regn_vann OR regne_vann IF
         (NOT 1 pr)      # regne med
         (NOT 2 pr)      # regner ikke med
+        (NOT 3* %med%)
         ;
 
 
@@ -5230,9 +5345,7 @@ SELECT:i-regnet regn_vann IF
         (NOT 1 %mye/lite/litt%)
         (NOT 1 pr_etter_regnvann)
         ;
-"<regnet>" SELECT:regnet-forskerne regne_ut IF
-        (1C n + def OR ("<riktig>") OR ("<feil>"))
-        ;
+
 "<regnet>" SELECT:regnet-ikke-med regne_ut IF
         (NEGATE 0 n LINK -1C pr) # «Finnmark holder seg unna regnet med oppholdsvær.»
         (*1 pr BARRIER ikke-adv LINK NOT 0 pr_etter_regnvann)
@@ -5243,6 +5356,11 @@ SELECT:i-regnet regn_vann IF
         (1 vekedag)
         (2 adverbialsubst)
         (3 pr LINK NOT 0 pr_etter_regnvann)
+        ;
+"<regne>" SELECT:må-man-regne-med regne_ut IF
+		(-2 modalverb)
+       	(-1 prn)
+        (1 pr LINK NOT 0 pr_etter_regnvann)
         ;
 
 SELECT:blåse-og-regne ("regne¹") + vblex IF
