@@ -19976,7 +19976,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 
 #:2451
- SELECT:2451 (vblex pres) IF
+SELECT:Den-som-gråter (vblex pres) IF
 	(NOT 0 pret)
 	(NOT 0 farlige-verb)
 	(1 pres/pret)
@@ -19984,7 +19984,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 	(NOT -1 prep)
 	(**-2C setn-gr BARRIER fv)
 ;
-#  "Den som gråter, ler ikke!"
+# «Den som gråter ler ikke!»
 
 
 
@@ -27371,11 +27371,11 @@ REMOVE:før-det-legges-fram inf IF
 # (forts) (prep @ADV) komme (inf)"))
 
 
-REMOVE:som-tenkes-kan pres + pasv IF
-		(-1 %som%)
-		(1 ("kunne"))
-		(NOT 2 vblex + inf)
-		;
+"<tenkes>" REMOVE:som-tenkes-kan pres + pasv IF
+        (-1 %som%)
+        (1 ("kunne"))
+        (NOT 2 vblex + inf)
+        ;
 
 
 #:1922
