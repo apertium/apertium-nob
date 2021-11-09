@@ -29790,6 +29790,14 @@ SELECT:hans-onkel-og-trener n IF
 # «Trenerinteressen har økt hos 43-åringen etter at hans onkel og trener, Roger Mayweather (59), døde i mars.»
 # ikkje: «Alle disse landene, de tar våre penger og stemmer så mot oss.»
 
+SELECT:flere-av-Xs-Y pl IF
+        (-3C ("mange"))
+        (-2C %av%)
+        (-1C n + gen)
+        (0C n)
+        ;
+# «Samsung beklager til ansatte som har fått kreft ved flere av selskapets mikrobrikke-anlegg.»
+
 SELECT:planlegge-smarte-grep-for-å n + ind + pl IF
         (-2C vblex)
         (-1 adj + pl)
