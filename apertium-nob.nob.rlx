@@ -11317,6 +11317,14 @@ SELECT:Minst-10-er-siden-drept adj + pp + pl
         (-1 adv)
         ;
 
+SELECT:er-enkelte-andre-på-stedet-kritisert adj + pp + pl
+        (*-4C kop-fv BARRIER ikke-adv - ("enkelt"))
+        (-3C ("annen") + pl)
+        (-2C pr)
+        (-1C n + def OR top OR org)
+        ;
+# «Derimot ble enkelte andre i støtteapparatet kritisert for slankepress.»
+
 SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         (*-1 kop-fv CBARRIER setn-gr)
         (*-1 kop-fv BARRIER n + sg OR %ha% OR %at%)
