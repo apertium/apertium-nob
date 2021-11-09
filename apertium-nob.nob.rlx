@@ -7540,6 +7540,7 @@ REMOVE:unlikely ("flott") + nt ;
 REMOVE:unlikely ("balle") IF (0 ("ball")) ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("vente") + gen;
+REMOVE:unlikely ("<yrket>") + pret;
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
