@@ -7699,16 +7699,24 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("gjøre") + pasv)
         ;
 # blir gjort vilkårslaus
+
 "<bøter>" REMOVE:bøter-ilegges vblex IF
         (1 ("ilegge") + pasv)
         ;
 # bøter ilegges
+
 "<trengt>" REMOVE:ha-trengt adj IF
         (-1 ("ha"))
         ;
 # har trengt
+
+"<trengs>" REMOVE:det-trengs pp IF
+        (NEGATE *-1 ("ha"))
+        ;
+# «Norsk Psykologforening mener det trengs rundt 2.000 psykologer»
+
 REMOVE:rekke-ut-handa ("rake") IF
-		(0 ("rake") OR ("rekke¹"))
+        (0 ("rake") OR ("rekke¹"))
         (1 ("ut"))
         ;
 # "Rekke ut hånda"
