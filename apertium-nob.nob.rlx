@@ -10793,6 +10793,19 @@ SELECT:som-tidligere ("tidligere"i) + adv IF
 		# like sterkt som før.
 
 
+REMOVE:ta-det-som-tas-kan pres + pasv + ("([^<].*)"r) IF
+        (-3 ("$1"v))
+        (-2 %det% OR %alt%)
+        (-1 %som%)
+        (1 ("kunne"))
+        (NOT 2 vblex + inf)
+        ;
+# «Målet er å stoppe det som stoppes kan, sier Line Harbak til Adresseavisen.»
+# «og prøver det som prøves kan av diverse remedier»
+# «det er viktig å gjøre det som gjøres kan for ikke å skremme vekk disse»
+# «nå er det bare å spenne sikkerhetsselen og redde det som reddes kan»
+
+
 #################################################################
 # Nominalised adjectives, tiltalte/ansatte/siktede              #
 #                                                               #
@@ -27391,7 +27404,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1922
- REMOVE:1922 (vblex inf) IF
+ REMOVE:tida-har-eit-anna-innhald (vblex inf) IF
 	(1 pres/pret)
 	(-1 setn-gr)
 	(*1 periode-slutt/konj-clb BARRIER %gjøre%)
