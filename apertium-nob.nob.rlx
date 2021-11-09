@@ -22464,6 +22464,11 @@ SELECT:vart-det-kjent adj + nt  IF
         ;
 # "ble det kjent at" (òg ok: "det er det kjente dilemmaet")
 
+SELECT:offentlig-ansatte def IF
+        (0 ("ansatt"i))
+        (*-1 ("offentlig"))
+        ;
+
 
 #CONSTRAINTS
 ## remove ndomain
