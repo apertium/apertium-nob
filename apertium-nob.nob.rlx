@@ -3601,6 +3601,9 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
+"<dekket>" SELECT:dekket-på-skipet n IF
+		(*1 ("skip") OR ("båt"))
+		;
 
 "<funnet>" SELECT:omtaler-funnet n IF
 	(-1 omtale-ord)
