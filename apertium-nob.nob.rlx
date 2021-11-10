@@ -5805,8 +5805,16 @@ REMOVE:unlikely ("<ris>") + pasv;
 	(*-1O be-mask-det LINK *1 be-ent-adj)
 	(*-1 be-mask-det BARRIER ikke-adv-adj)
         (NEGATE 1/* qnt OR ord)      # «siden 2017.»
+        (NOT 1 prn OR n)
 ;
 #  "den lyse siden"
+
+"<siden>" SELECT:den-russiske-siden n IF
+	(-3 prn)
+	(-2 be-mask-det)
+	(-1 be-ent-adj)
+	(1 vblex)
+	;
 
 
 
@@ -10223,6 +10231,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
 	(NOT -1 be-mask-det)
 	(NOT -1 be-ent-adj)
 	(NOT -1 prep)
+	(NOT 1 cnjsub)
         (NOT 1 %av%)
 ;
 #  "tar sjansen på adverb hvis det ikke ser ut som
@@ -17804,7 +17813,10 @@ SELECT:er-hans-feil det + pos + sg + $$GENDER IF
 #  "som dokumentert (perf-part) i dag
 # som (prep) dokumentert (ikke perf) nytt materiale viser"))
 
-
+SELECT:magen-eller-siden n IF
+		(-2 ("<magen>"))
+		(-1 %og/eller%)
+		;
 
 #:2639
 SELECT:Jeg-så-mot-vinduet pr IF
