@@ -17800,7 +17800,9 @@ SELECT:er-hans-feil det + pos + sg + $$GENDER IF
 #  " Uff, her var ...    men hei...   slik, ja!
 # KH 1.11.2002: NOT 1 så: Nå så Kari Per."
 
+"<kyst>" SELECT:default-kyst n ;
 
+"<helst>" REMOVE:default-helst vblex ;
 
 #:2659
  SELECT:2659 (vblex pp) IF
