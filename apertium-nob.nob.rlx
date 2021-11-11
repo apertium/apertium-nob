@@ -25033,6 +25033,11 @@ REMOVE:2135 (det) IF
 #  "sin (ikke fork) (gule) bil"))
 
 
+"<kurs>" SELECT:nåværende-kurs n + m IF
+	(-2 gen)
+	(-1 adj)
+	;
+
 #:2122
  REMOVE:2122 (gen) IF
 	(0 verb)
@@ -33975,6 +33980,11 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (0 n + gen - xgrau)
         ;
 
+"<den>" SELECT:har-den-hatt prn + pers IF
+		(-1 ("<har>"))
+		(1 ("<hatt>"))
+		;
+
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
 # it's important that they're actually tagged correctly as def when
@@ -34680,6 +34690,11 @@ SELECT:IS-kriger SUB:1 np IF
         (0 ("<.*-.*>"r))
         ;
 # «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
+
+"<hatt>" SELECT:har-den-hatt vblex IF
+		(-2 ("ha"))
+		(-1 ("den"))
+		;
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
