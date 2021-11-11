@@ -2702,7 +2702,7 @@ SELECT:den+prn ("den¹") IF
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + pl IF
-        (-2 adj + pl)
+        (-2C adj + pl)
         ;
 
 "<drept>" SELECT:de-som-er-drept adj + pl IF
