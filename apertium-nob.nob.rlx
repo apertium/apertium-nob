@@ -11297,6 +11297,8 @@ SELECT:mannen-i-50-årene-som-ble-meldt-savnet pp + mf IF
 # «Politiet fortsetter tirsdag søket etter mannen i (slutten av) 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Saken handlet om en dagmamma i slutten av 40-årene som i 2006 ble siktet for å ha ristet et barn»
 
+SELECT:default ("<styret>"i) + n ;
+
 SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
 	(-2 %ha%-pres/pret)
@@ -34030,6 +34032,7 @@ SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 SELECT:default ("<skadde>"i) + pp ;
 SELECT:default ("<følger>" "følge") + m;
+
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
