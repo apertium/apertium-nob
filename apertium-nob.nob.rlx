@@ -34033,7 +34033,8 @@ SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 SELECT:default ("<skadde>"i) + pp ;
 SELECT:default ("<følger>" "følge") + m;
 SELECT:default ("<tømmer>" "tømmer") ;
-
+SELECT:default ("<pressen>" "presse") ;
+SELECT:default ("<Pressen>" "presse") ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
