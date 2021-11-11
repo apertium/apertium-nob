@@ -34032,6 +34032,7 @@ SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 SELECT:default ("<skadde>"i) + pp ;
 SELECT:default ("<følger>" "følge") + m;
+SELECT:default ("<tømmer>" "tømmer") ;
 
 
 # REMOVE:default rules:
