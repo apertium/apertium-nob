@@ -34035,6 +34035,7 @@ SELECT:default ("<følger>" "følge") + m;
 SELECT:default ("<tømmer>" "tømmer") ;
 SELECT:default ("<pressen>" "presse") ;
 SELECT:default ("<Pressen>" "presse") ;
+SELECT:default ("<anger>" "anger") ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
