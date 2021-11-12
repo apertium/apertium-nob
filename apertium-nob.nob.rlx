@@ -21667,6 +21667,14 @@ SELECT:Det-paret-som n + def IF
 ;
 # «Det paret som meldte det høyeste budet skal da spille kontrakten.»
 
+SELECT:Den-mistenkte adj + sg + def IF
+        (-2C setn-gr)
+        (-1 det-mask-ent)
+        (0C pp OR pret)
+        (*1C fv BARRIER (*) - cm - np)
+        ;
+# «Den mistenkte, Chérif Chekatt, ble skutt og drept av fransk politi torsdag.»
+
 #:2370
  SELECT:2370 (vblex pret) IF
 	(NOT 0 farlige-forledd-verb)
