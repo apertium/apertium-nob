@@ -1821,6 +1821,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(2 ("å"))
         ;
 
+"<presset>"i SELECT:presset-vitner-til-å pp IF
+		(2 %til%)
+		(3 ("å"))
+		;
+
 "<presset>"i SELECT:at-presset n IF
         (-1 cnjsub)
         ;
@@ -20018,6 +20023,78 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 		(*1 ("<vedtak>") OR ("<valg>"))
 		;
 
+"<vitner>" SELECT:vitner-om vblex IF
+		(NOT -1 %fra% OR ("mange"))
+		(1 %om%)
+		;
+
+"<vitner>" SELECT:vitner-det-om vblex IF
+		(1 ("<det>"))
+		(2 %om%)
+		;
+
+"<vitner>" SELECT:som-vitner-til n IF
+		(-1 %som%)
+		(1 %til%)
+		;
+
+"<vitner>" SELECT:bruke-som-vitner-i n IF
+		(-2 ("bruke"))
+		(-1 %som%)
+		;
+
+"<vitner>" SELECT:idet-vitner-så n IF
+		(-1 ("idet"))
+		(1 ("så"))
+		;
+
+"<vitner>" SELECT:vitner-som-har-sett n IF
+		(1 %som%)
+		(2 vblex)
+		;
+
+"<vitner>" SELECT:advokater-og-vitner n IF
+		(-2 adj + pst + un + pl OR n)
+		(-1 cm OR %og%)
+		;
+
+"<vitner>" SELECT:vitner-bilder-og-videoer n IF
+		(1 cm)
+		(2 n)
+		(3 %og%)
+		(4 n)
+		;
+
+"<vitner>" SELECT:70-vitner-avhørt n IF
+		(-1 det)
+		(1 adj + pp)
+		;
+
+"<vitner>" SELECT:avhøre-vitner n IF
+		(-1* ("avhøre") OR ("stevne") OR ("påvirke") OR ("innbringe") OR ("etterlyse") OR ("kalle# inn") OR ("stille"))
+		;
+
+"<vitner>" SELECT:en-rekke-vitner n IF
+		(-1 ("<rekke>") OR ("mange") OR ("ingen") OR ("noe"))
+		;
+
+"<vitner>" SELECT:en-rekke-andre-vitner n IF
+		(-2 ("<rekke>") OR ("mange") OR ("ingen") OR ("noe"))
+		(-1 ("<andre>"))
+		;
+"<vitner>" SELECT:bli-ført-vitner n IF
+		(-2 vblex)
+		(-1 pp)
+		;
+
+"<vitner>" SELECT:når-vitner-forklarer n IF
+		(-1 %når%)
+		;
+"<vitner>" SELECT:status-som-vitner n IF
+		(-2 ("status") OR ("signere"))
+		(-1 %som%)
+		;
+
 #:2442
  SELECT:2442 (vblex pres) IF
 	(NOT 0 pret)
@@ -20502,7 +20579,6 @@ SELECT:Dit-går-de pres IF
 #  "og snakker om de mange ting mannen steller med"
 
 
-
 #:2478
  SELECT:2478 (vblex pres) IF
 	(NOT 0 pret)
@@ -20663,7 +20739,6 @@ SELECT:Dit-går-de pres IF
 ;
 #  "9.3.2001: Både lærer og trener ivrig.
 # "
-
 
 
 #:2490
@@ -31194,11 +31269,6 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 # bedre som heuristisk etter at vi har forsøkt
 # å finne adj?"
 
-SELECT:vitner n IF
-		(-2 adj + pst + un + pl OR n)
-		(-1 cm OR %og%)
-		(0 ("<vitne>"))
-		;
 
 SELECT:frikjente adj IF
 		(-2 adj + pst + un + pl OR n)
@@ -31275,7 +31345,6 @@ SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
 	(-2 %helst%)
 	(-1 det + $$GENDER)
         ;
-
 
 #:1732
 SELECT:generell-pres (vblex pres) IF
@@ -34571,7 +34640,6 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<Vinner>" REMOVE:default-Vinnar ("vinner" n m sg ind) ;	# keep Vinne<vblex><pres>→Vinn
 "<virke>" REMOVE:default-virke ("virke" n nt sg ind) ;	# keep virke<vblex><inf>→verke
 "<virker>" REMOVE:default-virke ("virke" n nt pl ind) ;	# keep virke<vblex><pres>→verker
-"<vitner>" REMOVE:default-vitnar ("vitne" vblex pres) ;	# keep vitne<n><nt><pl><ind>→vitne
 "<voksen>" REMOVE:default-voksen ("voks" n m sg def) ;	# keep voksen<adj><sint><pst><mf><sg><ind>→vaksen
 "<vokste>" REMOVE:default-voks ("vokse" vblex pret) ;	# keep vokse<adj><pp><pl>→vaksne
 "<Været>" REMOVE:default-Var ("være" vblex pret) ;	# keep Vær<n><nt><sg><def>→Vêret
