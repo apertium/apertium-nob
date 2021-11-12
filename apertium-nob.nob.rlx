@@ -22329,6 +22329,26 @@ SELECT:ble-det-kontant-avvist pp + &&ADJ_N_AGR IF
 # «bare noen timer etter, ble det kontant avvist av brexitminister Stephen Barclay.»
 
 
+SELECT:Elefanten-som-trampet-kan-bli-savnet pp + mf IF
+        # subjekt først i setning, eventuelt "en" føre:
+        (*-4 %som%-sbu BARRIER adj + sg LINK -1C mORf LINK *-1 >>> BARRIER (*) - det-mask-ent)
+	(-3 cm)
+	(-2 hj-verb + fv)
+	(-1 ("bli"))
+        (0C adj OR pp)
+;
+# «En elefant som i løpet av de siste månedene har trampet i hjel 15 personer i det østlige India, kan bli skutt og drept hvis den ikke bringes under kontroll.»
+
+SELECT:Huset-som-raste-kan-bli-savnet pp + nt IF
+        # subjekt først i setning, eventuelt "et" føre:
+        (*-4 %som%-sbu BARRIER adj + sg LINK -1C nt LINK *-1 >>> BARRIER (*) - det-nøyt-ent)
+	(-3 cm)
+	(-2 hj-verb + fv)
+	(-1 ("bli"))
+        (0C adj OR pp)
+;
+
+
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
