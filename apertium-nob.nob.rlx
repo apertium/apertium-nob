@@ -3602,6 +3602,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 "<fortsatt>" SELECT (vblex) IF
 	(-1 ("ha") LINK 2 clb)
 ;
+"<fortsatt>" SELECT (vblex) IF
+	(*-1 ("ha"))
+	(1 ("å"))
+; 
+# Siden da har pilene fortsatt å peke oppover
 "<fortsatt>" SELECT (adv) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
