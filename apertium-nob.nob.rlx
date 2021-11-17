@@ -20930,8 +20930,8 @@ SELECT:det-kan-vel-hende inf IF
 
 
 #:2431
- SELECT:2431 (vblex inf) IF
-	(**-1C infmerke BARRIER inf)
+SELECT:å-ikke-vise (vblex inf) IF
+	(**-1C infmerke BARRIER inf OR ukjent + (".*e"r))
 ;
 #  "Kari prøvde å ikke vise
 # 18.6.2001: *-1c"
