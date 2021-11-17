@@ -29704,6 +29704,7 @@ REMOVE:ikkje-skjor ("skjære") + n;
         ;
 		# salt og lakris
 
+
 #:3180
   "<tom>"   REMOVE:3180   (n sg) IF
 	(0 subst)
@@ -32855,6 +32856,7 @@ REMOVE:splittelsen-er-stor-i-gruppas-ti-år-lange-historie n + sg IF
 REMOVE:vi-har-ikke-lenger-fond ent-subst IF
         (NOT 0 default-sg-after-poss) # avoid «kjennskapar»
         (0C subst)
+        (0C ind)
         (0 fl-subst)
         (*-1 %ikke%
          BARRIER hj-verb OR det-ent OR setn-gr OR gen OR pos OR pp OR n OR %som%
@@ -33297,6 +33299,7 @@ SELECT:til-studium ("studium") IF
 		;
 
 SELECT:default ("studie") + fl;
+SELECT:default ("sel") + sg + def;
 
 # LEX: kurve vs. kurv
 LIST kurve-subst-av = "utflatning" "utflating" "avflatning" "avflating" "topp" ;
