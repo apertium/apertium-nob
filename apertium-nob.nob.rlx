@@ -7467,6 +7467,7 @@ REMOVE:unlikely ("lom") ;
 REMOVE:unlikely ("<saker>" "sake") ;
 REMOVE:unlikely ("<vinger>"i "ving");
 REMOVE:unlikely ("<fanger>" "fange") + nt ;
+REMOVE:unlikely ("<fanget>" "fange") + nt ;
 REMOVE:unlikely ("hyll") ;
 REMOVE:unlikely ("lage") + n ;
 REMOVE:unlikely ("<begynner>"i) + n ;
@@ -8491,8 +8492,11 @@ REMOVE:data-not-datum ("datum");
 # «Undersøkelsen viser dessuten at flere menn enn kvinner med samme utdanning begynner i privat sektor og blir oftere ledere.»
 
 
+"<fanget>" REMOVE:fanget n IF
+        (NOT -1 %i%)
+        ;
 
- "<far>"   REMOVE:far   (n nt) IF
+"<far>" REMOVE:far (n nt) IF
 	(NEGATE -1C nøyt-det)
 	(NEGATE -1C fl-adj/fl-det - sp)
 ;
@@ -22416,6 +22420,13 @@ SELECT:ble-det-kontant-avvist pp + &&ADJ_N_AGR IF
         ;
 # «bare noen timer etter, ble det kontant avvist av brexitminister Stephen Barclay.»
 
+SELECT:Elefant-som-var-savnet pp + mf IF
+        # subjekt først i setning, eventuelt "en" føre:
+        (*-2 %som%-sbu BARRIER adj + sg LINK -1 mORf LINK *-1 >>> BARRIER (*) - det-mask-ent)
+	(-1 kop-fv)
+        (0C adj OR pp OR pret OR def)
+;
+# «Sel som var fanget i plast, fikk hjelp»
 
 SELECT:Elefanten-som-trampet-kan-bli-savnet pp + mf IF
         # subjekt først i setning, eventuelt "en" føre:
@@ -33305,7 +33316,7 @@ SELECT:til-studium ("studium") IF
 		;
 
 SELECT:default ("studie") + fl;
-SELECT:default ("sel") + sg + def;
+SELECT:default ("sel");
 
 # LEX: kurve vs. kurv
 LIST kurve-subst-av = "utflatning" "utflating" "avflatning" "avflating" "topp" ;
