@@ -22393,6 +22393,12 @@ SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
 # Ikkje adj-adj-samsvar: «Neretse er den første<pl> som blir dømt<sg> for folkemord.»
 # Ikkje før subjektet er eintydig: «Det var en begrenset del av kameratens vitneprov som ble ført for lukkede dører.»
 
+SELECT:ble-ikke-selen-skadet &&ADJ_N_AGR IF
+        (*-2 kop-fv BARRIER ikke-adv)
+        (-1 n + def + &&ADJ_N_AGR)
+        (0C adj OR pp OR pret)
+        ;
+# «Heldigvis ble ikke selen skadet.»
 
 SELECT:var-5.5-prosent-deprimert &&ADJ_N_AGR IF
         (-3 kop-fv)
