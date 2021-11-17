@@ -3964,6 +3964,9 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 # fra den (hvor er du henne/henne ved vinduet)"))
 
 
+"<Hilsen>" SELECT:titled ij;
+"<hilsen>" SELECT:hilsen-meg ij IF (1 storbokstav) ;
+
 
 #:3530
   "<hos>"   SELECT:3530   (pr) IF
@@ -9114,7 +9117,6 @@ REMOVE ("frø") IF
 	(0 verb)
 ;
 #  "kh feb 2004: bare en \"hete\" (varme)"))
-
 
 
 #:3540
