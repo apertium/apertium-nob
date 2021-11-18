@@ -6939,6 +6939,10 @@ REMOVE:unlikely ("leire") + pl ;
 
 "<Tina>" SELECT:Tina ant;
 
+"<tier>" SELECT:hylles-med-en-tier n + sg IF
+		(-1 det + qnt)
+		;
+
 "<tier>" SELECT:andre-tier vblex IF
         (NOT 0* fv BARRIER setn-start-med-strek/anf OR setn-gr)
         ;
@@ -11472,6 +11476,11 @@ REMOVE:har-nær-alle-kunngjort adj + pp
 # «Allerede i natt begynte han samtaler med alliansepartier, og ifølge Netanyahu selv har nær samtlige kunngjort at de vil anbefale ham som statsminister.»
 # MEN IKKJE: «at de har registrert over 90.000 drepte i krigen i Jemen siden 2015»
 #            «Hun har 17 aldersbestemte landskamper »
+
+"<dokumentert>" SELECT pp + sg IF
+		(-1 ("ingen"))
+		(1 n + sg)
+		;
 
 SELECT:70-skadd pp + pl
         (NOT -1C date)
@@ -27772,7 +27781,14 @@ SELECT:den-opphørte-organisasjonen adj + pp IF
 	;
 
 
-
+"<reviderte>" SELECT: adj + pp IF
+		(-1 vblex)
+		(1 n)
+		;
+"<samlet>" SELECT:et-samlet-verk pp IF
+		(-1 det)
+		(*1 n)
+		;
 
 #:1895
 REMOVE:Nautnes-spilte-EM pp IF
@@ -34108,6 +34124,10 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		(-1 ("<har>"))
 		(1 ("<hatt>"))
 		;
+"<det>" SELECT:foreligger-det-bevis prn IF
+		(-1 ("foreligge"))
+		(1 n + ind)
+		;
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
@@ -34170,6 +34190,8 @@ SELECT:default ("<tømmer>" "tømmer") ;
 SELECT:default ("<pressen>" "presse") ;
 SELECT:default ("<Pressen>" "presse") ;
 SELECT:default ("<anger>" "anger") ;
+
+	
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
