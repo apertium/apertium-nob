@@ -6322,7 +6322,7 @@ SELECT:Uefa-styret ("styre") IF
         (1 ("<arbeidet>"))
         ;
 
-"<arbeidet>"i REMOVE:i-arbeidet vblex IF
+"<arbeidet>"i SELECT:i-arbeidet n IF
         (-1 prep)
 		(NEGATE -1 %som%)
         ;
@@ -6330,18 +6330,111 @@ SELECT:Uefa-styret ("styre") IF
 
 REMOVE:få-arbeidet ("<arbeidet>"i) + vblex IF
 		(1 vblex + pp OR adj)
+		(NOT 1 adv)
+		(NOT 2 adj OR pr OR n)
 		;
-REMOVE:lede-arbeidet ("<arbeidet>"i) + vblex IF
-		(-1 ("lede" vblex) OR ("fortsette") OR ("starte") OR ("avslutte") OR ("fulleføre") OR ("gjennomføre") OR ("evaluere") OR ("organisere") OR ("planlegge")  OR ("styrke") OR ("svekke") OR ("gjøre"))
+SELECT:lede-arbeidet ("<arbeidet>"i) + n IF
+		(-1 ("lede" vblex) OR ("fortsette") OR ("starte") OR ("avslutte") OR ("fulleføre") OR ("gjennomføre") OR ("evaluere") OR ("organisere") OR ("planlegge")  OR ("styrke") OR ("svekke") OR ("gjøre") OR ("stanse") OR ("koordinere") OR ("forsere") OR ("vurdere") OR ("støtte"))
 		;
-
+SELECT:startet-fredag-arbeidet ("<arbeidet>"i) + n IF
+		(-1* ("starte"))
+		(1 ("med"))
+		(2 ("å"))
+		;
+SELECT:i-Brussel-har-arbeidet ("<arbeidet>"i) + n IF
+		(NOT -4 n)
+		(-3 pr)
+		(-2 n OR np)
+		(-1 ("ha"))
+		;
+SELECT:har-vært-arbeidet ("<arbeidet>"i) + vblex IF
+		(-2 ("ha"))
+		(-1 %være/bli%)
+		;
+SELECT:var-arbeidet-startet ("<arbeidet>"i) + n IF
+		(-1* %være/bli% OR ("ha"))
+		(NOT -1 n)
+		(1 ("med"))
+		(2 ("å"))
+		(3 vblex + inf)
+		(*4C vblex)
+		;
+SELECT:var-tilknyttet-arbeidet ("<arbeidet>"i) + n IF
+		(-2 %være/bli% OR ("ha"))
+		(-1 pp)
+		;
+SELECT:har-nå-fullført-arbeidet ("<arbeidet>"i) + n IF
+		(-3 %være/bli% OR ("ha"))
+		(-2 adv)
+		(-1 pp)
+		;
+SELECT:har-fulgt-situasjonen-og-arbeidet ("<arbeidet>"i) + n IF
+		(-4 %være/bli% OR ("ha"))
+		(-3 pp)
+		(-2 n)
+		(-1 %og%)
+		;
+SELECT:dette-arbeidet ("<arbeidet>"i) + n IF
+		(-1 ("<dette>") OR ("<det>"))
+		;
+SELECT:det-videre-arbeidet ("<arbeidet>"i) + n IF
+		(-2 ("<det>"))
+		(-1 adv OR adj)
+		;
+SELECT:er-arbeidet-vanskelig ("<arbeidet>"i) + n IF
+		(-1 %være/bli%)
+		(1* adj)
+		;
+SELECT:at-arbeidet-må-stanses ("<arbeidet>"i) + n IF
+		(-1 %at% OR ("nå"))
+		(*1 vblex)
+		;
+SELECT:arbeidet-mitt ("<arbeidet>"i) + n IF
+		(1 pos)
+		;
+SELECT:arbeidet-som-fulgte ("<arbeidet>"i) + n IF
+		(1 %som%)
+		(2C vblex)
+		;
+REMOVE:arbeidet-nødetatene ("<arbeidet>"i) + pp IF
+		(-1 cm)
+		(1 n)
+		(NOT 2 vblex)
+		;
 SELECT:som-arbeidet ("<arbeidet>"i) + vblex + pret  IF
 		(-1 %som%)
 		;
+SELECT:som-til-vanlig-arbeidet ("<arbeidet>"i) + vblex + pret  IF
+		(-3 %som%)
+		(-2 ("til"))
+		(-1 ("vanlig"))
+		;
 		# lærligane som arbeidde deltid
-
+SELECT:altså-arbeidet-med-å ("<arbeidet>"i) + n IF
+		(-3 n)
+		(-2 cm)
+		(-1 adv)
+		(1 ("med"))
+		(2 ("å"))
+		;
+SELECT:men-arbeidet-med-å ("<arbeidet>"i) + n IF
+		(-1 cnjcoo)
+		(1 ("med"))
+		(2 ("å"))
+		(*4 vblex)
+		;
+SELECT:i-hvilken-form ("<arbeidet>"i) + n IF
+		(-2 ("hvilken"))
+		(-1 n)
+		;
+SELECT:har-regjeringen-arbeidet ("<arbeidet>"i) + vblex + pp IF
+		(-2 ("ha"))
+		(-1 n)
+		;
 SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
-        (-1* %ha% OR %være/bli% OR ("få" vblex) BARRIER setn-gr OR pr)
+        (-1* ("ha") OR %være/bli% OR ("få" vblex) BARRIER setn-gr OR pr)
+        (NOT 1 vblex)
+        (NOT -1 pp)
         ;
 # Ikkje: «Vi skal fortsette å ha ledertrøya i<pr> dette arbeidet.»
 # (adverbialt, høyrer ikkje til «ha»)
@@ -11447,6 +11540,7 @@ SELECT:mennene-som-ble-skadd pp + pl
 
 SELECT:flere-skadd pp + pl
         (*-1 %mange% BARRIER ikke-adv-adj-det-subst - kop-fv LINK NOT 0 %mye/lite/litt% LINK NOT *1 ("type"))
+        (NOT -1 n)
         (NOT 0 adv OR farlige-part)
         ;
 # Men ikkje etter «mye»: «å gjøre endringer i den mye   omtalte   paragraf 2c i abortloven»
