@@ -6424,6 +6424,7 @@ SELECT:var-arbeidet-startet ("<arbeidet>"i) + n IF
 		(1 ("med"))
 		(2 ("å"))
 		(3 vblex + inf)
+		(NOT *4 cm)
 		(*4C vblex)
 		;
 SELECT:var-tilknyttet-arbeidet ("<arbeidet>"i) + n IF
