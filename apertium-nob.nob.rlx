@@ -11505,6 +11505,44 @@ SELECT:ble-antent adj + pst IF
 		(0 ("<antent>"))
 		;
 
+"<trykket>" SELECT:at-trykket-på-etatene n IF
+		(-1 ("at"))
+		;
+
+"<trykket>" SELECT:redusere-trykket-på-flyplassene n IF
+		(*-1 ("redusere"))
+		(1 ("på"))
+		(2 n)
+		;
+"<trykket>" SELECT:trykket-i-nitrogenflaska n IF
+		(-1 %være%)
+		(1 ("i"))
+		(2 ("flaske") OR ("tank"))
+		;
+"<trykket>" SELECT:er-trykket-stort n IF
+		(-1 %være%)
+		(1 adj)
+		;
+"<trykket>" SELECT:har-trykket-vært-stort n IF
+		(-1 %ha%)
+		(1 %være%)
+		;	
+"<trykket>" SELECT:det-indre-trykket n IF
+		(-1 ("indre"))
+		;
+"<trykket>" SELECT:frykter-trykket-fra n IF
+		(-1 ("frykte"))
+		(1 ("fra"))
+		;
+"<trykket>" SELECT:trykket-i-1000-eksemplar vblex + pp IF
+		(1 ("i"))
+		(2* ("eksemplar"))
+		;
+"<trykket>" SELECT:da-han-trykket vblex + pret IF
+		(*-2 ("da"))
+		(NOT *-1 ("ha"))
+		;
+
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
@@ -28472,6 +28510,7 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 # KBU: Ikkje fjern pret frå «Falt i elva»; det første dømet er fjerna
 # av regelen over.
 # KBU: Ikkje fjern pret frå «Satte fyr på huset sitt»
+
 
 #:1865
  REMOVE:1865 (vblex pret) IF
