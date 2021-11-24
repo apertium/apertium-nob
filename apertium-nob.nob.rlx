@@ -3599,13 +3599,80 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 #	(*-1 setn-gr BARRIER fv)
 #	(*1 setn-gr BARRIER fv)
 
+"<fortsatt>" SELECT (adv) IF
+	(1 ("til"))
+	(2 ("gode"))
+;
 "<fortsatt>" SELECT (vblex) IF
 	(-1 ("ha") LINK 2 clb)
 ;
+"<fortsatt>" SELECT (adv) IF
+	(*-1 ("ha"))
+	(1 adv)
+	(2 adj)
+	(3 n)
+;
+"<fortsatt>" SELECT (adv) IF
+	(*-1 ("ha"))
+	(1 adv)
+	(2C n)
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-1 ("ha"))
+	(1 ("å") OR pr OR adv OR n + def)
+	(NOT 1 ("ikke") OR ("rundt") OR ("omtrent") OR ("ca") OR ("rekord") OR ("verdensrekord") OR ("sjanse") OR ("bil") OR ("sak") OR det + qnt OR adj OR n + gen OR ("om"))
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-3 ("ha"))
+	(-2 pr)
+	(-1 adv)
+	(1 ("å"))
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-3 ("ha"))
+	(-2 adv)
+	(-1 adv)
+	(1 ("å"))
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-2 ("ha"))
+	(-1 adv)
+	(1 ("å"))
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-2 ("ha"))
+	(-1 n OR np)
+	(1 ("mot") OR ("å"))
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-2 ("ha"))
+	(-1 n OR np)
+	(NOT 1 vblex OR ("ikke") OR n OR np OR adj)
+;
 "<fortsatt>" SELECT (vblex) IF
 	(*-1 ("ha"))
-	(1 ("å"))
+	(1 ("<den>"))
+	(2 ("sist"))
+	(3 n + def)
 ; 
+"<fortsatt>" SELECT (vblex) IF
+	(-4 ("ha"))
+	(-3 ("den"))
+	(-2 ("sist"))
+	(-1 n + def)
+	(NOT 1 vblex)
+; 
+"<fortsatt>" SELECT (vblex) IF
+	(*-3 ("ha"))
+	(*-2 vblex + pp)
+	(-1 ("og"))
+	(1 n)
+	(NOT 1 det + qnt OR vblex)
+;
+"<fortsatt>" SELECT (vblex) IF
+	(1 %som%)
+	(2 ("før"))
+;
 # Siden da har pilene fortsatt å peke oppover
 "<fortsatt>" SELECT (adv) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
