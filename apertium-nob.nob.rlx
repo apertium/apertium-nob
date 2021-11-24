@@ -11712,7 +11712,27 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         ;
 # «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
 
-
+"<toget>" SELECT:gikk-av-toget n IF
+		(-2 ("gå"))
+		(-1 ("av"))
+		;
+"<toget>" SELECT:toget-stopper n IF
+		(1 ("stoppe"))
+		;
+"<toget>" SELECT:velger-toget n IF
+		(-1 ("velge"))
+		;
+"<toget>" SELECT:da-toget-mot n IF
+		(-1 ("da"))
+		(1 ("mot") OR ("til") OR ("fra"))
+		;
+"<toget>" SELECT:toget-i-rute n IF
+		(1 ("i"))
+		(2 ("rute"))
+		;
+"<toget>" SELECT:toget-ut vblex IF
+		(1 ("ut"))
+		;
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
