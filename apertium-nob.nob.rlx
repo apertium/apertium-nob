@@ -21556,6 +21556,28 @@ SELECT:å-glemme-tapet-mot be-subst IF
 ;
 #  "(SETN-GR) Har (FV) vi ikke snakket (0) (verb perf-part))  "))
 
+"<hatet>" SELECT:protestere-mot-hatet n IF
+	(-2 vblex)
+	(-1 pr)
+	;
+
+"<hatet>" SELECT:skape-hatet-som-gjorde n IF
+	(-1 vblex)
+	(1 %som%)
+	(2 vblex)
+	;
+
+"<hatet>" SELECT:vil-hatet-mot-Ap n IF
+	(-1 vblex)
+	(1 pr)
+	(2 n OR np)
+	;
+
+"<hatet>" SELECT:kjær-og-hatet-av-medlemmene adj IF
+	(-2 adj)
+	(-1 ("og"))
+	(1 ("av"))
+	;
 
 
 #:2344
@@ -26852,7 +26874,6 @@ REMOVE:det-grenser-til subst IF
 	(NOT -2 fv)
 ;
 #  "det grenser (ikke subst men verb) til "))
-
 
 
 #:1984
@@ -34288,6 +34309,11 @@ REMOVE:prefer-lexicalised-n xgrau IF
 "<det>" SELECT:foreligger-det-bevis prn IF
 		(-1 ("foreligge"))
 		(1 n + ind)
+		;
+
+"<møter>" SELECT:hatet-samfunnet-møter vblex IF
+		(-2 n)
+		(-1 n)
 		;
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
