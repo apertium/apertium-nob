@@ -6504,6 +6504,14 @@ SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
         (NOT 1 vblex)
         (NOT -1 pp)
         ;
+SELECT:har-jobbet-og-arbeidet ("<arbeidet>"i) + vblex + pp IF
+		(*-5 ("ha"))
+		(*-4 vblex + pp)
+		(*-3 cm)
+		(*-2 vblex)
+		(-1 ("og"))
+		;
+
 # Ikkje: «Vi skal fortsette å ha ledertrøya i<pr> dette arbeidet.»
 # (adverbialt, høyrer ikkje til «ha»)
 
@@ -27999,8 +28007,6 @@ REMOVE:før-det-legges-fram inf IF
 	(**-2C setn-gr BARRIER m-hj-verb-pret)
 ;
 #  "tar tilfellene med CLB-komma"
-
-
 
 #:1894
  REMOVE:1894 pp IF
