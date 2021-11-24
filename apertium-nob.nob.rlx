@@ -6511,6 +6511,14 @@ SELECT:har-jobbet-og-arbeidet ("<arbeidet>"i) + vblex + pp IF
 		(*-2 vblex)
 		(-1 ("og"))
 		;
+SELECT:har-jobbet-og-arbeidet ("<arbeidet>"i) + n IF
+		(1 ("med"))
+		(2 det)
+		(3 adj)
+		(4 n)
+		(5 vblex)
+		;
+
 
 # Ikkje: «Vi skal fortsette å ha ledertrøya i<pr> dette arbeidet.»
 # (adverbialt, høyrer ikkje til «ha»)
