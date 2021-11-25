@@ -7564,6 +7564,13 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		(-1 %være/bli%)
 		;
 
+"<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
+		(-4 prn)
+		(-3 ("ha"))
+		(-2 ("bli"))
+		(-1 adj)
+		;
+
 
 #CONSTRAINTS
 ## remove domain
