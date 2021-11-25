@@ -7559,6 +7559,12 @@ SELECT:strenge ("<strenge>"i) + adj IF
 		;
 		# strengje opp, elles strenge
 
+SELECT:alle-var-skrivne-ut adj + pl IF
+		(-2 det + pl)
+		(-1 %være/bli%)
+		;
+
+
 #CONSTRAINTS
 ## remove domain
 LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" ;
