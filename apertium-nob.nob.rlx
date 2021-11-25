@@ -11299,6 +11299,51 @@ SELECT:generelt-er-landet-preget n IF
         (1C pp OR pret OR n + sg + def)
         ;
 
+"<varslet>" SELECT:Meng-varslet-at vblex IF
+		(1 ("at"))
+		;
+"<varslet>" SELECT:varslet-om-hendelsen vblex IF
+		(NOT -1 adj)
+		(1 ("om") OR ("i") OR ("av"))
+		(2 n OR np OR ("at") OR det)
+		;
+"<varslet>" SELECT:varslet-i-revidert-budsjett vblex IF
+		(1 ("om") OR ("i") OR ("av"))
+		(2 adj)
+		(3 n)
+		;
+"<varslet>" SELECT:varslet-nødetatene vblex IF
+		(1 n OR np)
+		;
+"<varslet>" SELECT:varslet-to-ledere vblex IF
+		(1 det)
+		(2 n OR np)
+		;
+"<varslet>" SELECT:varslet-selv-politiet vblex IF
+		(1 adv)
+		(2 n OR np)
+		;
+"<varslet>" SELECT:varslet-samtidig-et-mulig-saksmål vblex IF
+		(1 adv)
+		(2 det)
+		(3 adj)
+		(4 n)
+		;
+"<varslet>" SELECT:varslet-et-mulig-saksmål vblex IF
+		(1 det)
+		(2 adj)
+		(3* n)
+		;
+"<varslet>" SELECT:bli-varslet-direkte vblex IF
+		(-1 %være/bli%)
+		(1 adj)
+		(NOT 2 vblex)
+		;
+"<varslet>" SELECT:det-første-varslet n IF
+		(-2C det)
+		(-1C adj)
+		;
+
 SELECT:forlot-nesten-alle-landet n IF
         (*-1C fv - hj-verb BARRIER ikke-adv-adj-det-subst OR sbu LINK NOT *-1 sbu)
         (0C pp OR pret OR n + sg + def)
