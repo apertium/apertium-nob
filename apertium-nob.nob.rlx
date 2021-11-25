@@ -956,7 +956,7 @@ LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 
-LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" ;
+LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" "kår" ;
 LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
@@ -34318,12 +34318,12 @@ SELECT:selskapenes-system-BSP sg IF
         ;
 
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
-        (-1 poss-det + pl)
+        (-1 poss-det + pl OR gen + pl)
         (0C subst)
         ;
 
 SELECT:default-sg-after-poss sg + default-sg-after-poss IF
-        (-1 poss-det + sg)
+        (-1 poss-det + sg OR gen + sg)
         (0C subst)
         ;
 # As a fallback, several owners often own own several things, one owns one:
