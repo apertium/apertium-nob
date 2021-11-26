@@ -22470,7 +22470,9 @@ SELECT:5008 (vblex pret) IF
 # NOT 0 imp pga. «Les også:» -KBU
 
 
-
+"<forelagt>" SELECT:ble-forelagt adj IF
+	(-1 %være/bli%)
+	;
 
 #:2335
 SELECT:2335 (vblex) IF
