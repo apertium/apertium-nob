@@ -11808,6 +11808,19 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
 		(1 ("ut"))
 		;
 
+SELECT:fire-menn-pågrepet adj + pp + pl IF
+		(-4 %være/bli%)
+		(-3 det)
+		(-2 adj)
+		(-1 n + pl)
+		;
+
+SELECT:pågrepet-,-mistenkt-for adj + pp + pl IF
+		(-2 adj + pp + pl)
+		(-1 cm)
+		(1 ("for"))
+		;
+
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
