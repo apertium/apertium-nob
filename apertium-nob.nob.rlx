@@ -20681,6 +20681,38 @@ SELECT:Den-som-gråter (vblex pres) IF
 #  "Når konteksten er endret, får det konsekvenser"
 #      :group 42
 
+"<gjester>" SELECT:var-gjester-om-bord n IF
+		(1 ("om"))
+		(2 ("bord"))
+		;
+"<gjester>" SELECT:gjester-som-har-booket n IF
+		(1 %som%)
+		(2 vblex)
+		;
+"<gjester>" SELECT:gjester-ved-baren n IF
+		(1 ("ved"))
+		;
+"<gjester>" SELECT:gjester-på-stedet n IF
+		(1 ("på"))
+		(2 ("sted"))
+		;
+"<gjester>" SELECT:Staysman-og-gjester n IF
+		(-2 n OR np)
+		(NOT -2 ("mandag") OR ("tirsdag") OR ("onsdag") OR ("torsdag") OR ("fredag") OR ("lørdag") OR ("søndag"))
+		(-1 %og%)
+		;
+"<gjester>" SELECT:gjester-i-bryllup n IF
+		(1 pr)
+		(2 ("bryllup") OR ("begravelse") OR ("gravferd") OR ("fest") OR ("selskap") OR ("park"))
+		;
+"<gjester>" SELECT:50-gjester n IF
+		(-1 det + qnt)
+		;
+"<gjester>" SELECT:vil-ha-dem-som-gjester n IF
+		(*-3 ("ville"))
+		(*-2 ("ha"))
+		(-1 %som%)
+		;
 
 
 #:2462
@@ -20930,6 +20962,8 @@ SELECT:Dit-går-de pres IF
 	(*1 setn-gr BARRIER pres/pret)
 ;
 #  "Jeg hater fortsatt serberne og ønsker hevn"
+
+
 
 #:6208
  SELECT:6208 (vblex pres) IF
@@ -31645,6 +31679,7 @@ SELECT:frikjente adj IF
 		(-1 cm OR %og%)
 		(0 ("frikjenne"))
 		;
+
 
 #:1731
  SELECT:1731 (vblex pres) IF
