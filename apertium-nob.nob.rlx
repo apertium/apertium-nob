@@ -1677,6 +1677,10 @@ REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
 REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
+"<oljerike>" SELECT:den-oljerike-provinsen adj IF
+		(-1 ("den"))
+		(1 n)
+		;
 
 
 # Prefer nouns in compounds:
