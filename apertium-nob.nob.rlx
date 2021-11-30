@@ -18869,6 +18869,19 @@ SELECT:Likevel-gleder-han-seg pers + nominativ IF
 	(2C fv)
 ;
 
+"<dømte>" SELECT:den-nå-dømte-mannen adj + pp IF
+		(-2 ("den"))
+		(-1 adv)
+		(1 n)
+		;
+
+"<den>" SELECT:foran-den-nå-dømte-mannen det IF
+		(-1 pr)
+		(1 adv)
+		(2 pp)
+		(3 n)
+		;
+
 #:2613
  SELECT:2613 pron-pers IF
 	(NOT 0 gen)
@@ -19968,6 +19981,10 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 "<land>" SELECT:verdens-rike-land n + pl IF
 		(-2 ("verden") + gen)
 		(-1 adj + pst)
+		;
+
+"<leser>" SELECT:leser-opp vblex IF
+		(1 ("opp"))
 		;
 
 
