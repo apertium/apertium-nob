@@ -1679,7 +1679,7 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 "<oljerike>" SELECT:den-oljerike-provinsen adj IF
 		(-1 ("den"))
-		(1 n)
+		(1* n)
 		;
 
 
@@ -19884,6 +19884,91 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 ;
 #  "fra naturens side (subst) og gjennom "))
 
+"<rike>" SELECT:verdens-rike-land adj IF
+		(-1 ("<verdens>"))
+		(1 ("land"))
+		;
+
+"<land>" SELECT:verdens-land n + pl IF
+		(-1 ("verden") + gen)
+		;
+"<land>" SELECT:et-av-verdens-beste-land n + pl IF
+		(-4 ("en"))
+		(-3 ("av"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:noen-av-verdens-beste-land n + pl IF
+		(-4 ("<noen>"))
+		(-3 ("av"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:blant-verdens-beste-land n + pl IF
+		(-3 ("blant"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:Norge-er-verdens-beste-land n + sg IF
+		(-4 np)
+		(-3 ("<er>"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:verdens-minst-korrpute-land n + sg IF
+		(-5 np)
+		(-4 ("<er>"))
+		(-3 ("verden") + gen)
+		(-2 adj)
+		(-1 adj)
+		;
+"<land>" SELECT:kåra-til-verdens-beste-land n + sg IF
+		(*-4 ("kåre"))
+		(-3 ("til"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:kåra-til-verdens-minst-korrupte-land n + sg IF
+		(*-5 ("kåre"))
+		(-4 ("til"))
+		(-3 ("verden") + gen)
+		(-2 adj)
+		(-1 adj)
+		;
+"<land>" SELECT:Verdens-rikeste-land n + sg IF
+		(-2 ("<Verdens>") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:Verdens-mest-konkurransedyktige-land n + sg IF
+		(-3 ("<Verdens>") + gen)
+		(-2 adj)
+		(-1 adj)
+		;
+"<land>" SELECT:bre-seg-i-verdens-fattigste-land n + pl IF
+		(-4 ("bre# seg"))
+		(-3 ("i"))
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:til-verdens-fattigste-land-for-å-hjelpe-dem n + pl IF
+		(-2 ("verden") + gen)
+		(-1 adj)
+		(1 ("for"))
+		(2 ("å"))
+		(3 vblex)
+		(4 ("de"))
+		;
+"<land>" SELECT:ifølge-en-rapport-har-verdens-fattigste-land n + pl IF
+		(*-5 ("ifølge"))
+		(*-4 n)
+		(-3 vblex)
+		(-2 ("verden") + gen)
+		(-1 adj)
+		;
+"<land>" SELECT:verdens-rike-land n + pl IF
+		(-2 ("verden") + gen)
+		(-1 adj + pst)
+		;
 
 
 #:2496
