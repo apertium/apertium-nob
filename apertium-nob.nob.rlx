@@ -7564,9 +7564,11 @@ SELECT:strenge ("<strenge>"i) + adj IF
 		# strengje opp, elles strenge
 
 SELECT:alle-var-skrivne-ut adj + pl IF
-		(-2 det + pl)
-		(-1 %være/bli%)
-		;
+        (NOT -2 gen)            # «saken deres ble henlagt»
+        (-2C det + pl)
+        (-1 %være/bli%)
+        ;
+# «En av de tre er  fløyet  til Oslo for behandling »
 
 "<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
 		(-4 prn)
@@ -28249,14 +28251,14 @@ SELECT:den-opphørte-organisasjonen adj + pp IF
 	;
 
 
-"<reviderte>" SELECT: adj + pp IF
-		(-1 vblex)
-		(1 n)
-		;
+"<reviderte>" SELECT:reviderte adj + pp IF
+	(-1 vblex)
+	(1 n)
+	;
 "<samlet>" SELECT:et-samlet-verk pp IF
-		(-1 det)
-		(*1 n)
-		;
+	(-1 det)
+	(*1 n)
+	;
 
 #:1895
 REMOVE:Nautnes-spilte-EM pp IF
