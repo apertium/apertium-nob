@@ -1397,6 +1397,7 @@ REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
 REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
 REMOVE:unlikely ("<mynter>"i f);
+REMOVE:unlikely ("<sine>" vblex);
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -3609,6 +3610,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 "<fortsatt>" SELECT (vblex) IF
 	(-1 ("ha") LINK 2 clb)
+;
+"<fortsatt>" SELECT (vblex) IF
+	(-2 ("ha"))
+	(-1 adv)
+	(1 clb)
 ;
 "<fortsatt>" SELECT (adv) IF
 	(*-1 ("ha"))
@@ -8038,6 +8044,7 @@ REMOVE ("hvor") + cnjsub IF
 		(1 ("ut"))
 		(2 setn-gr)
     ;
+
 
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
@@ -22649,7 +22656,30 @@ SELECT:2335 (vblex) IF
 #
 # personnummeret klart"
 
+"<nå>" SELECT:skal-nå-sine-mål vblex IF
+	(-1 modalverb)
+	(1 det)
+	(2 n)
+	;
 
+"<nå>" SELECT:skal-nå-målene vblex IF
+	(-1 modalverb)
+	(1C n)
+	;
+
+"<nå>" SELECT:skal-også-nå-målene vblex IF
+	(-2 modalverb)
+	(-1 adv)
+	(1 n)
+	;
+
+"<nå>" SELECT:vil-det-årlige-underskuddet-nå vblex IF
+	(-4 modalverb)
+	(-3 det)
+	(-2 adj)
+	(-1 n)
+	(NOT 1 vblex)
+	;
 
 #:2849
  SELECT:2849 (adv) IF
@@ -31859,6 +31889,10 @@ SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
 	(-1 det + $$GENDER)
         ;
 
+"<former>" SELECT:andre-former-for n IF
+		(1 ("for"))
+		;
+
 #:1732
 SELECT:generell-pres (vblex pres) IF
 	(NOT 0 pret)
@@ -34331,6 +34365,11 @@ SELECT:private-bruker-mindre-strøm fv IF
         (NOT *0 fv BARRIER setn-gr)
         ;
 
+"<transporteres>" SELECT:må-nå-transporteres vblex + inf + pasv IF
+		(-2 modalverb)
+		(-1 adv)
+		;
+
 SELECT:Ukjendord-utelukkes-ikke. fv IF
         (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
         (0C vblex)
@@ -34696,6 +34735,7 @@ REMOVE:default pl IF (0 ("<forslag>"i)) ;
 REMOVE:default sg IF (0 ("<levekår>"i)) ;
 REMOVE:default ("sider") IF (0 ("side")) ;
 REMOVE:default ("<blander>"i) + n ;
+REMOVE:default ("<beta>"i) + n + f + def ;
 REMOVE:default ("<Pårørende>") + sg ;
 
 
