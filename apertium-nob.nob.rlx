@@ -8662,6 +8662,12 @@ REMOVE:data-not-datum ("datum");
 ;
 #  "tar sjansen på at man ikke eller så mye ..."
 
+"<en>" SELECT:skulle-en-kanskje-tro ("man") IF
+        (-1 ("skulle"))
+        (*2 ("tro") BARRIER ikke-adv)
+        ;
+# «Med økt optimisme skulle en kanskje tro at spareviljen falt.»
+
 
 #:3689
 "<en>"   REMOVE:default   adv OR ("man") ;
