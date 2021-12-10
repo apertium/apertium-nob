@@ -3591,13 +3591,12 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 
 #:3633
-  "<for>"   SELECT:3633   (vblex) IF
+"<for>" SELECT:Jenny-for-med-sladder vblex IF
 	(-1 pron/subst)
 	(1C prep)
-	(NOT 1 ("<rundt>") OR ("innenlands") OR ("utenlands"))
-	(NOT *-1 fv BARRIER setn-gr)
-	(NOT *1 fv BARRIER setn-gr)
-
+	(NEGATE 1 ("<rundt>") OR ("innenlands") OR ("utenlands"))
+	(NEGATE *-1 fv BARRIER setn-gr)
+	(NEGATE *1 fv BARRIER setn-gr)
 ;
 #  "Jenny for med sladder
 # I bm er de fleste for-verb-eksemplene verb + prep"
