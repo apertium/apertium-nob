@@ -35379,3 +35379,23 @@ SELECT:issue37 org IF (0/1 cmp) ;
 SELECT:issue37 al IF (0/1 cmp) ;
 SELECT:issue37 top IF (0/1 cmp) ;
 SELECT:issue37 np IF (0/1 cmp) ;
+
+SELECT:issue37 SUB:1 n ;
+SELECT:issue37 SUB:1 sg ;
+SELECT:issue37 SUB:1 m ;
+SELECT:issue37 SUB:1 f ;
+SELECT:issue37 SUB:1 nt ;
+SELECT:issue37 SUB:1 org ;
+SELECT:issue37 SUB:1 al ;
+SELECT:issue37 SUB:1 top ;
+SELECT:issue37 SUB:1 np ;
+
+SELECT:issue37 SUB:2 n ;
+SELECT:issue37 SUB:2 sg ;
+SELECT:issue37 SUB:2 m ;
+SELECT:issue37 SUB:2 f ;
+SELECT:issue37 SUB:2 nt ;
+SELECT:issue37 SUB:2 org ;
+SELECT:issue37 SUB:2 al ;
+SELECT:issue37 SUB:2 top ;
+SELECT:issue37 SUB:2 np ;
