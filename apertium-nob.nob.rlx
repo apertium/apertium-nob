@@ -4033,9 +4033,10 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 
 
 "<helst>" SELECT:hvilken-som-helst adv IF
-        (-2 %hvilken%)
+        (-2 %hvilken% OR %noen/noe%)
         (-1 %som%)
         ;
+# «Og i Alaska klatret vi i fjellet uten at jeg har noen som helst klatreerfaring.»
 
 #:3543
   "<henne>"   SELECT:3543   (prn) IF
