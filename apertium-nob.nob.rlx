@@ -35339,6 +35339,7 @@ MAP:enhver-debatt-og-diskusjon (@nkon) %og/eller% IF
 ;
 
 MAP:dedikert-og-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
+        (NEGATE -3 n + &&ADJ_N_AGR LINK 1 kop-fv) # banker er påtent og offentlige bygninger angrepet
         (-1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
         (NOT 0 clb)
         (1C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
