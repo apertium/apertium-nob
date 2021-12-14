@@ -8050,7 +8050,6 @@ REMOVE ("hvor") + cnjsub IF
 		(2 setn-gr)
     ;
 
-
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
@@ -15254,7 +15253,10 @@ SELECT:2963 (adj nt ind sg) IF
 ;
 #  "ei stor ei"
 
-
+"<slapp>" SELECT:slapp-torsdag-høstlisten vblex IF
+	(-1 np)
+	(1 n)
+	;
 
 #:2921
  SELECT:2921 (adj mf ind sg) IF
@@ -28480,7 +28482,11 @@ REMOVE:til-huset pp IF
 ;
 #  "Ikke: Nei, (ikke clb) hvisket (verb)"))
 
-
+"<slapp>" SELECT:knapt-slapp-til vblex IF
+	(-2 cm)
+	(-1 adv)
+	(1 ("til"))
+	;
 
 #:1843
  REMOVE:1843 (vblex pret) IF
