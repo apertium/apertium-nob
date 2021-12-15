@@ -34662,6 +34662,11 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		(-1 n)
 		;
 
+"<årene>" SELECT:legge-inn-årene ("åre") IF
+		(-2 ("legge"))
+		(-1 ("inn"))
+		;
+
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
 # it's important that they're actually tagged correctly as def when
