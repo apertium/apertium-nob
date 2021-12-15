@@ -22676,6 +22676,7 @@ SELECT:2335 (vblex) IF
 	;
 
 "<nå>" SELECT:skal-nå-målene vblex IF
+        (NOT -2 setn-start-med-strek/anf) # «Skal nå ungdommen dette?»
 	(-1 modalverb)
 	(1C n)
 	;
