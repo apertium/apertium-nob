@@ -6566,6 +6566,8 @@ REMOVE:unlikely ("<utspilt>"i) + adj ;
 
 REMOVE:unlikely ("leire") + pl ;
 
+REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna døme der «fellen» utvetydig må vera "fell"
+
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
 	(NOT -1 det-prep-infmerke-adjbe)
