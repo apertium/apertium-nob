@@ -854,7 +854,7 @@ LIST skipsmengde = "trosse"  "tofte"  "skip"  "seil"  "ror"  "rekke"  "ombord"  
 LIST slik-adv = ("slik"  adv) ;
 LIST som-sbu = ("som"  cnjsub) ;
 LIST som/komma/og = "$," "," ("og"  cnjcoo) ("som"  cnjsub) ;
-LIST språk = "tysk"  "svensk"  "spansk"  "portugisisk"  "nynorsk"  "norsk"  "keltisk"  "italiensk"  "fransk"  "finsk"  "engelsk"  "dansk"  "bosnisk"  "amerikansk"  "samisk" "nordsamisk" ;
+LIST språk = "akkalasamisk" "albansk" "alemannisk" "aleutisk" "amerikansk" "amerikansk-engelsk" "angelsaksisk" "apotekerlatin" "arabisk" "arameisk" "armensk" "austlandsk" "austnorsk" "baskisk" "bengali" "berbisk" "bosnisk" "bretonsk" "britisk-engelsk" "bulgarsk" "dansk" "dansk-norsk" "dari" "enaresamisk" "engelsk" "eskimoisk" "eskimoisk-aleutisk" "esperanto" "farsi" "finlandssvensk" "finsk" "flamsk" "fransk" "frisisk" "færøysk" "gammaldansk" "gammalengelsk" "gammalfransk" "gammalgresk" "gammalislandsk" "gammallavtysk" "gammalnorsk" "gammalsvensk" "gammeldansk" "gammelengelsk" "gammelfransk" "gammelgresk" "gammelislandsk" "gammellavtysk" "gammelnorsk" "gammelsvensk" "germansk" "gotisk" "gresk" "grønlandsk" "gælisk" "hebraisk" "hindi" "hindustani" "hviterussisk" "ido" "indisk" "indoeuropeisk" "irsk" "islandsk" "italiensk" "japansk" "jiddisch" "jiddisk" "jysk" "kasjmiri" "kastiljansk" "katalansk" "kaudervelsk" "keltisk" "kildinsamisk" "kinesisk" "klosterlatin" "kurdisk" "kvast" "kvensk" "kymrisk" "labbelensk" "latin" "lavtysk" "litauisk" "lulesamisk" "lågtysk" "malayisk" "maori" "mellomnorsk" "nederlandsk" "nedertysk" "nepali" "nordnorsk" "nordost" "nordsamisk" "nordvestsamisk" "norsk" "norsk-dansk" "norsk-svensk" "nylatin" "nynorsk" "ossetisk" "pali" "panjabi" "persisk" "pidginengelsk" "pitesamisk" "platt-tysk" "plattysk" "polsk" "portugisisk" "provençalsk" "punjabi" "romani" "rotvelsk" "russenorsk" "russisk" "samisk" "samnorsk" "sanskrit" "santali" "semittisk" "serbokroatisk" "skotsk" "slovakisk" "spansk" "svensk" "swahili" "sørnorsk" "sørsamisk" "tadsjikisk" "tamil" "thai" "tibetansk" "tokarisk" "trøndersk" "trøndsk" "tsjekkisk" "tungusisk" "tupi" "tyrkisk" "tysk" "umesamisk" "ungarsk" "urdu" "vallonsk" "velsk" "vestgermansk" "vestgotisk" "vestlandsk" "vestnorsk" "vietnamesisk" "vulgærlatin" "walisisk" "østlandsk" "østnorsk" "østsamisk" ;
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
@@ -7588,6 +7588,10 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		(-1 adj)
 		;
 
+SELECT:språk-kolon språk + subst IF
+        (-2W (":") LINK -1 ("språk"))
+        ;
+# «Språk: dansk»
 
 #CONSTRAINTS
 ## remove domain
