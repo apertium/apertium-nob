@@ -30317,6 +30317,9 @@ REMOVE:ikkje-skjor ("skjære") + n;
 ;
 #brukes til ved
 
+"<venner>" REMOVE:venner vblex IF
+        (NEGATE *1 acc BARRIER (*) - nom) # venner hun<nom> dem<acc> til/av
+        ;
 
 
 #:4056
