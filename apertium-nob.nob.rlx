@@ -30305,7 +30305,10 @@ REMOVE:ikkje-skjor ("skjære") + n;
         ;
 
 "<ting>" REMOVE:gjøre-ting sg OR nt IF
-        (-1 ("gjøre"))
+        (*-1 ("gjøre") OR ("finne# på") BARRIER ikke-adj)
+        ;
+"<ting>" REMOVE:finne-på-ting sg OR nt IF
+        (*-1 ("på") BARRIER ikke-adj LINK -1 ("finne"))
         ;
 
 #:4057
