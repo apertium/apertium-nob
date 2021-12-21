@@ -5493,7 +5493,7 @@ SELECT:regne-og-blåse ("regne¹") + vblex IF
 
 
 #:3343
-  "<rett>"   SELECT:3343   (adj nt ind sg) IF
+  "<rett>"   SELECT:3343 adv IF
 	(1 %til%)
 	(-1C verb)
 	(NOT -1 %ha%)
@@ -5503,7 +5503,7 @@ SELECT:regne-og-blåse ("regne¹") + vblex IF
 
 
 #:3344
-  "<rett>"   SELECT:3344   (adj nt ind sg) IF
+  "<rett>"   SELECT:3344 adv IF
 	(1C prep)
 	(-1C verb)
 	(NOT 1 %i/til%)
@@ -5512,7 +5512,7 @@ SELECT:regne-og-blåse ("regne¹") + vblex IF
 
 
 #:5043
-  "<rett>"   SELECT:5043   (adj nt ind sg) IF
+  "<rett>"   SELECT:5043 adv IF
 	(1C prep)
 	(NOT 1 %i/til%)
 	(NOT -1 %ha%)
@@ -5520,7 +5520,7 @@ SELECT:regne-og-blåse ("regne¹") + vblex IF
 #
 
 #:5044
-  "<rett>"   SELECT:5044   (adj nt ind sg) IF
+  "<rett>"   SELECT:5044 adv IF
 	(1 tidsadv)
 	(NOT 1 %i/til%)
 	(NOT -1 %ha%)
