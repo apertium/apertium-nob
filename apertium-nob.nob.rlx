@@ -1156,6 +1156,10 @@ SELECT:mennenes-VM n IF
 		(0 ("VM") OR ("NM") OR ("EM"))
 		;
 
+"<De>" SELECT:De-grønne det IF
+		(1 ("<grønne>"))
+		;
+
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
 SELECT:storbokstav-np np IF
         (0 storbokstav)
