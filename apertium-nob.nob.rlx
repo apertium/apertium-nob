@@ -7601,7 +7601,7 @@ SELECT:språk-kolon språk + subst IF
 
 #CONSTRAINTS
 ## remove domain
-LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" ;
+LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" "sende# ut" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
         (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 %være/bli% BARRIER fv)
 ;
