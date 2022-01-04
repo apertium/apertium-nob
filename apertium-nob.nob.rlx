@@ -8035,30 +8035,38 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("bestemme"))
         ;
 # "...bestemme hvor den skulle gå"
+
+
+"<neste>" REMOVE:den-neste n IF
+        (-1 %den%)
+        ;
+# «denne runden og den neste»
+
 "<nesten>" REMOVE:nesten-en-måned n IF
-		(-1 vblex)
-		(1 det)
-		(2 n)
+        (-1 vblex)
+        (1 det)
+        (2 n)
         ;
 # "...tilbringe nesten en måned"
 "<ytterst>" REMOVE:ytterst-knepen-margin adj IF
-		(1 ("knepen"))
-		(2 ("margin"))
+        (1 ("knepen"))
+        (2 ("margin"))
         ;
 # "...ytterst knepen margin"
+
 "<bestemt>" REMOVE:endelig-bestemt adj IF
-		(-1 ("endelig"))
+        (-1 ("endelig"))
         ;
 # "det ble endelig bestemt"
 
 "<slipper>" REMOVE:slipper-til n IF
-		(1 ("til"))
+        (1 ("til"))
         ;
 
 "<slipper>" SELECT:slipper-ut vblex IF
-		(1 ("ut"))
-		(2 setn-gr)
-    ;
+        (1 ("ut"))
+        (2 setn-gr)
+        ;
 
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
