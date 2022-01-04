@@ -24193,6 +24193,9 @@ REMOVE:at-paret (adj pp) IF
 ;
 
 
+REMOVE:default ("<innerst>") + n ;
+REMOVE:default ("<Innerst>") + n ;
+
 #:2239
  REMOVE:2239 (adj) IF
 	(0 subst)
