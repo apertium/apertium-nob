@@ -1402,6 +1402,7 @@ REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bri
 REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
 REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
+REMOVE:unlikely ("<virker>") + pl;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -35270,7 +35271,6 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<ville>" REMOVE:default-vilje ("ville" vblex inf) ;	# keep ville<vblex><pret>→ville vill<adj><sint><pst><un><sp><def>→ville
 "<Vinner>" REMOVE:default-Vinnar ("vinner" n m sg ind) ;	# keep Vinne<vblex><pres>→Vinn
 "<virke>" REMOVE:default-virke ("virke" n nt sg ind) ;	# keep virke<vblex><inf>→verke
-"<virker>" REMOVE:default-virke ("virke" n nt pl ind) ;	# keep virke<vblex><pres>→verker
 "<voksen>" REMOVE:default-voksen ("voks" n m sg def) ;	# keep voksen<adj><sint><pst><mf><sg><ind>→vaksen
 "<vokste>" REMOVE:default-voks ("vokse" vblex pret) ;	# keep vokse<adj><pp><pl>→vaksne
 "<Været>" REMOVE:default-Var ("være" vblex pret) ;	# keep Vær<n><nt><sg><def>→Vêret
