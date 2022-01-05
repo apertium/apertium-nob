@@ -34171,6 +34171,7 @@ REMOVE:unlikely ("<hender>") + n + nt + pl + ind ;    # hendene
 
 SELECT:notar ("note") + n + m + pl ;
 
+"<båret>" REMOVE:unlikely ("båre" adj) ;
 
 LIST fisk-ord = "skrei" "sei" "torsk" "hyse" "kveite" "hvitting" "lange" "uer" "laks" "ørret" "røye" "abbor" ;
 SELECT:sløgd-skrei ("sløyd") + adj IF
