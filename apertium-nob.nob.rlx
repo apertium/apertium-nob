@@ -33891,8 +33891,12 @@ LIST kurve-adj = "eksponentiell" "elliptisk" "stigende" "økende" "fallende" "sy
 LIST kurve-verb = "vise" "peke" "gå" "stige" "øke" "synke" "falle" "flate" "følge" "stoppe" "vende" "snu" ;
 
 SELECT:veg-sving-kurve ("kurve" n) IF
-		(*-1 ("vei" n) OR ("sving" n))
+		(*-1 ("vei" n) OR ("sving" n) OR ("linje" n))
 		; 					# vegen har svingar og kurver
+
+SELECT:kurve-vei ("kurve" n) IF
+		(*1 ("vei" n) OR ("sving" n) OR ("krysse"))
+		; 	
 
 SELECT:utflatning ("kurve" vblex) IF
 		(1 %seg% OR n);
@@ -33959,17 +33963,27 @@ SELECT:gjennom-sving ("kurve" n) IF
 		(-1 ("gjennom") )
 		; 					#gjennom kurva
 
+SELECT:med-kurvene-laget-han ("kurve" n) IF
+		(-1 ("med"))
+		(1 ("lage"))
+		(2 prn)
+		;
+
 SELECT:adj-korg ("kurv") IF
 		(-1 adj OR prep)
 		; 					#den tomme korga; oppi korga; hunden skjønte ikkje noko av korga
 
 SELECT:verb-korg ("kurv") IF
 		(*-1 vblex)
+		(NOT *-1 ("knekke" vblex))
 		; 					#kjøpe korga; no fyller vi korga; gi nokon korga
 
 SELECT:verb-korg ("kurv") IF
 		(1 vblex)
 		; 					#korgene kostar 10 kroner; korga blir fylt
+SELECT:10-kurver ("kurv") IF
+		(-1 det + qnt)
+		;
 
 SELECT:fallback ("kurve");
 
