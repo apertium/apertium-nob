@@ -5236,6 +5236,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #en halvliter pils
 
+"<rakk>" SELECT:rakk-å pret IF
+        (1 infmerke)
+        ;
+
 "<rede>" SELECT:er-rede-for adj IF
         (*-1 %være/bli% BARRIER ikke-adv)
         (1 %for% OR %til%)
