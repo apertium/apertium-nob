@@ -1402,7 +1402,7 @@ REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bri
 REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
 REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
-REMOVE:unlikely ("<virker>") + pl;
+REMOVE:unlikely ("<virker>"i) + pl;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -7404,6 +7404,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<varsler>" SELECT:det-var-varsler-om ("varsel") IF
         (-1C fv)
         (1C %om%)
+        ;
+
+"<veier>" SELECT:begge-veier n IF
+        (-1 ("begge"))
         ;
 
 #:3152
