@@ -28351,6 +28351,18 @@ REMOVE:før-det-legges-fram inf IF
 	(1 n)
 	(2 vblex)
 	;
+"<fryste>" SELECT:de-lenge-fryste-samtalene adj IF
+	(-2 prn)
+	(-1 adv)
+	(1 n)
+	;
+"<fryste>" SELECT:fryste-bær adj IF
+	(*1 ("bær" n) OR ("produkt") OR ("jordbær") OR ("bringebær") OR ("blåbær") OR ("skogsbær"))
+	;
+
+"<bandene>" SELECT:drap-bandene ("bande" n) IF
+	(*-1 ("drap"))
+	;
 
 #:1892
  REMOVE:1892 pp IF
