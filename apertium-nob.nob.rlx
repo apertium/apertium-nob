@@ -28346,7 +28346,11 @@ REMOVE:før-det-legges-fram inf IF
 #  "økte kostnader og redusert (ikke perf-part) evne til å
 # NOT 1 PREP: , skapt (perf-part) for"))
 
-
+"<fryste>" SELECT:de-fryste-midlene adj IF
+	(-1 prn)
+	(1 n)
+	(2 vblex)
+	;
 
 #:1892
  REMOVE:1892 pp IF
