@@ -1672,6 +1672,58 @@ REMOVE:består-laget-av ("<laget>"i) + vblex IF
 		;
 		# elles består laget av
 
+SELECT:er-laget-med ("<laget>"i) + vblex IF
+		(NOT -2 np)
+		(-1 %være/bli% OR %ha% OR n)
+		(1 %med% OR ("for"))
+		;
+SELECT:er-laget-spesielt-for ("<laget>"i) + vblex IF
+		(NOT -2 np)
+		(-1 %være/bli% OR %ha% OR n)
+		(1 adv)
+		(2 %med% OR ("for"))
+		;
+SELECT:bli-laget-lyder-mot ("<laget>"i) + vblex IF
+		(-1 %være/bli%)
+		(1 n)
+		(2 ("til") OR ("mot"))
+		;
+
+"<laget>" SELECT:kvalifisering-laget n IF
+		(*-1 ("kvalifisering") OR ("nivå") OR ("kamp"))
+		;
+"<laget>" SELECT:laget-ånd n IF
+		(*1 ("ånd") OR ("tape" vblex) OR ("kvalifisering") OR ("kamp") OR ("tap"))
+		;
+SELECT:har-laget-statistikken ("<laget>"i) + vblex IF
+		(-2 n OR np)
+		(-1 %ha%)
+		(1C n)
+		;
+SELECT:bare-laget-med ("<laget>"i) + n IF
+		(-1 ("bare"))
+		(1 ("med"))
+		(2 adj)
+		(3 n)
+		(4 vblex)
+		;
+SELECT:laget-vårt ("<laget>"i) + n IF
+		(1 pos)
+		;
+SELECT:for-laget ("<laget>"i) + n IF
+		(-1C pr)
+		;
+"<laget>" SELECT:som-har-laget vblex IF
+		(-2 ("som"))
+		(-1 %ha% OR %være/bli%)
+		;
+"<laget>" SELECT:sikre-laget-en-seier n IF	
+		(-1C vblex)
+		(NOT -1 %ha% OR %være/bli%)
+		(1 det)
+		(*2 n)
+		;
+
 REMOVE:bussene ("busse") + n + pl
 		;
 		# bussane går i skytteltrafikk
@@ -21505,6 +21557,7 @@ SELECT:å-spille-og-score inf IF
 # overskrifter"
 #011008 NOT 1 pres/pret
 
+"<sult>" REMOVE:unlikely ("sule" vblex) ;
 
 #:2396
  SELECT:2396 (vblex pp) IF
@@ -29908,6 +29961,8 @@ CONSTRAINTS
 # «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
 
 
+
+
 "<laget>" REMOVE:vi-har-laget n IF
         (-2C nominativ)
         (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
@@ -34788,6 +34843,7 @@ SELECT:default ("<Pressen>" "presse") ;
 SELECT:default ("<anger>" "anger") ;
 
 	
+
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
