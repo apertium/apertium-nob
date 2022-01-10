@@ -33502,6 +33502,10 @@ REMOVE:sitt-nye-verk fl-subst IF
         (0C subst)
 ;
 
+"<land>" SELECT:deres-land n + sg IF
+		(-1 pos)
+		;
+
 REMOVE:mine-data ent-subst IF
         (-1 poss-det + fl)
         (NOT -1 poss-det + ent)
