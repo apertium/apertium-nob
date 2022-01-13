@@ -22335,6 +22335,11 @@ SELECT:Den-kjente-journalisten adj IF
 #         ;
 # TODO: for generell, feil ved t.d. «Om Trump i det hele tatt så<pret!> demonstrantene<n>, er<pres> uklart.»
 
+"<verden>" SELECT:en-verden-som n + ind IF
+		(-1 det + qnt)
+		(1 %som%)
+		;
+
 SELECT:Det-paret-som n + def IF
 	(-2C setn-gr)
 	(-1 det)
@@ -34162,6 +34167,11 @@ SELECT:default ("hall") + fl + m; # hallar/hallane
 
 REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
 
+"<trekk>" SELECT:sitt-24-trekk n + nt IF
+		(-2 pos)
+		(-1 ord)
+		;
+
 SELECT:default ("<trekker>") + vblex + pres IF
 		(NOT 0 ("trekker") + n + sg + ind)
 		;
@@ -34802,6 +34812,16 @@ REMOVE:prefer-lexicalised-n xgrau IF
 "<årene>" SELECT:legge-inn-årene ("åre") IF
 		(-2 ("legge"))
 		(-1 ("inn"))
+		;
+
+"<verden>" SELECT:en-mer-rettferdig-verden n + ind IF
+		(-3 det)
+		(-2 adj)
+		(-1 adj)
+		;
+"<verden>" SELECT:en-annen-verden n + ind IF
+		(-2 det)
+		(-2 det)
 		;
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
@@ -35517,6 +35537,8 @@ SELECT:IS-kriger SUB:1 np IF
 		(-2 ("ha"))
 		(-1 ("den"))
 		;
+
+
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
