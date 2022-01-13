@@ -9543,6 +9543,12 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 	(1 setn-gr)
 ;
 
+"<huset>" SELECT:huset-hundrevis-av-foreldreløse vblex IF
+		(1 adv)
+		(2 pr)
+		(3 n OR adj)
+		;
+
 "<hvilket>" REMOVE:hvilket-annet-gull cnjsub IF
         (1 ("<annet>"))
         (*2 n BARRIER ikke-adv-adj-det-subst)
@@ -22550,6 +22556,11 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 ;
 #  "Soldatene kom og hentet ham
 # 22.6.2001: not 0 %la%. Men la meg reise dit!"
+
+"<huset>" SELECT:i-huset-i n IF
+	(-1 ("i"))
+	(1 pr)
+	;
 
 #:2383
  SELECT:2383 (vblex pret) IF
