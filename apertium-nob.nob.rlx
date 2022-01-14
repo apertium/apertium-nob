@@ -22237,7 +22237,9 @@ SELECT:har-antall-drepte-økt adj + pp IF
 ;
 # group: 48
 
-
+"<skred>" SELECT:fare-for-skred n IF
+		(*-1 ("fare" n))
+		;
 
 #:2363
  SELECT:2363 (vblex pret) IF
