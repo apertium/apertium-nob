@@ -21983,6 +21983,16 @@ SELECT:å-glemme-tapet-mot be-subst IF
 	(1 ("av"))
 	;
 
+"<skred>" SELECT:fare-for-skred n IF
+		(*-1 ("fare" n) OR ("skade" n) OR ("flom"))
+		;
+"<skred>" SELECT:tatt-av-skred n IF
+		(-2 ("ta"))
+		(-1 ("av"))
+		;
+"<skred>" SELECT:stort-skred n IF
+		(-1 adj)
+		;
 
 #:2344
  SELECT:2344 (vblex pret) IF
@@ -22237,9 +22247,6 @@ SELECT:har-antall-drepte-økt adj + pp IF
 ;
 # group: 48
 
-"<skred>" SELECT:fare-for-skred n IF
-		(*-1 ("fare" n))
-		;
 
 #:2363
  SELECT:2363 (vblex pret) IF
@@ -35412,6 +35419,7 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<øst>" REMOVE:default-øst ("øse" vblex pp) ;	# keep øst<pr>→aust
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
+REMOVE:default-fondene ("fond" m) ;
 
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
