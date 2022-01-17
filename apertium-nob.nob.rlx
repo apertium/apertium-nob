@@ -7467,6 +7467,29 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (-1C fv)
         (1C %om%)
         ;
+"<varsler>" SELECT:motta-varsler-om ("varsel") IF
+		(*-1 ("motta"))
+		(1 %om%)
+		;
+"<varsler>" SELECT:varsler-mot ("varsel") IF
+		(NOT -1 %som%)
+		(1 ("mot"))
+		;
+"<varsler>" SELECT:en-rekke-varsler ("varsel") IF
+		(-2 ("<en>"))
+		(-1 ("<rekke>"))
+		;
+"<varsler>" SELECT:flest-varsler ("varsel") IF
+		(-1 ("mange" adj))
+		;
+"<varsler>" SELECT:med-varsler-fra ("varsel") IF
+		(-1 ("med"))
+		(1 ("fra"))
+		;
+"<varsler>" SELECT:tallet-på-varsler ("varsel") IF
+		(-2 ("<tallet>"))
+		(-1 ("på"))
+		;
 
 "<veier>" SELECT:begge-veier n IF
         (-1 ("begge"))
