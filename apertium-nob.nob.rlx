@@ -20960,6 +20960,10 @@ SELECT:Den-som-gråter (vblex pres) IF
 		(-1 %som%)
 		;
 
+"<gjerder>" SELECT:gjerder-inne pres IF
+        (*1 ("inne") BARRIER fv OR setn-gr)
+        ;
+
 
 #:2462
  SELECT:2462 (vblex pres) IF
