@@ -30134,6 +30134,13 @@ CONSTRAINTS
         (1 %i%)
         ;
 
+"<ledet>" REMOVE:Hjemmelaget-ledet pp IF
+        (-2 >>>)
+        (-1 n)
+        (NEGATE *1 fv BARRIER setn-gr)
+        ;
+# «Hjemmelaget ledet fram til 6-5 før Elverum tok over.»
+
 #:3483
   "<lei>"   REMOVE:3483   (n) IF
 	(0 adj)
