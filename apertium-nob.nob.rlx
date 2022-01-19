@@ -33606,6 +33606,10 @@ REMOVE:vi-har-ikke-lenger-fond ent-subst IF
 # Ikkje: «Økningen må ikke forveksles med regjeringens omstridte forslag» (BARRIER gen)
 # Ikkje: «Det er uklart hvordan dette kan skje, ettersom USA ikke er medlem …»
 
+"<følger>" SELECT:få-følger-for ("følge" n) IF
+		(-1 ("få" vblex))
+		(1 ("for" pr))
+		;
 
 REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
