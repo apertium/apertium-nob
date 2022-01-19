@@ -34869,14 +34869,15 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		;
 
 "<verden>" SELECT:en-mer-rettferdig-verden n + ind IF
-		(-3 det)
+		(-3 det + sg)
 		(-2 adj)
 		(-1 adj)
 		;
 "<verden>" SELECT:en-annen-verden n + ind IF
-		(-2 det)
-		(-2 det)
+		(-2 det + sg)
+		(-1 det + sg)
 		;
+# «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
