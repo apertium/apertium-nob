@@ -19497,7 +19497,9 @@ SELECT:I-1931-skilte-paret-seg fv + refl IF
 # NOT 1 ADJ/ADV: enda sterkere var han; enda så lenge han hadde vært der
 # NOT 1 %EN/EI/ET%: enda en gang kom han hjem"
 
-
+"<hvilket>" SELECT:hvilket-motiv det IF
+		(*-1 ("hvem" prn itg))
+		;
 
 #:2579
 SELECT:da-gruvedriften-tok-til cnjsub IF
