@@ -35456,6 +35456,7 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<øst>" REMOVE:default-øst ("øse" adj pp mf sg ind) ;	# keep øst<pr>→aust
 "<øst>" REMOVE:default-øst ("øse" adj pp nt sg ind) ;	# keep øst<pr>→aust
 "<øst>" REMOVE:default-øst ("øse" vblex pp) ;	# keep øst<pr>→aust
+"<trikkene>" REMOVE:default-trikkene ("trikk" nt) ;	# keep trikkene<n><m>→trikkane
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 REMOVE:default-fondene ("fond" m) ;
