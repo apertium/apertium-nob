@@ -35601,6 +35601,8 @@ SELECT:IS-kriger SUB:1 np IF
 		(-1 ("den"))
 		;
 
+"<Natos>" SELECT:Natos-utvidelse org;
+
 
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
