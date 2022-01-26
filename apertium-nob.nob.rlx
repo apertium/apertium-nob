@@ -34895,6 +34895,11 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		;
 # «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
 
+"<anklager>" SELECT:en-rekke-anklager n IF
+		(-2 ("en"))
+		(-1 ("rekke"))
+		;
+
 
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
