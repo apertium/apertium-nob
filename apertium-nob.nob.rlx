@@ -32186,6 +32186,10 @@ SELECT:generell-pres (vblex pres) IF
 	(**1C setn-gr BARRIER fv)
 ;
 
+"<tvang>" SELECT:utsatt-for-tvang n IF
+		(-2 ("utsette") OR ("utsatt"))
+		(-1 ("for"))
+		;
 
 #:1728
  SELECT:1verb-per-setn (vblex pret) IF
@@ -34890,6 +34894,8 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		(-1 det + sg)
 		;
 # «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
+
+
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
