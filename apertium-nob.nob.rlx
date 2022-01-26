@@ -33445,6 +33445,11 @@ REMOVE:musikkverk m IF          # compunds like "hodeverk" less likely
         (0/1 cmp)
         ;
 
+"<kandidatur>" SELECT:hans-mulige-kandidatur sg + nt IF
+		(-2 pos)
+		(-1 adj)
+		;
+
 REMOVE:hennes-røde-ting ent-subst IF
         (-2 poss-det + fl OR poss-det + sp)
         (-1C fl-adj OR sp)
