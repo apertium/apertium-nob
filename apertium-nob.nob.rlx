@@ -35463,6 +35463,7 @@ REMOVE:default ("<Pårørende>") + sg ;
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 REMOVE:default-fondene ("fond" m) ;
+REMOVE:default-profil ("profil" nt) ;
 
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
