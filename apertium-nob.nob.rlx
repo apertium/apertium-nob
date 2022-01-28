@@ -2495,8 +2495,25 @@ SELECT:den-som ("den¹") IF
 
 SELECT:den-av-statsrådene ("den¹") IF
         (1 %av%)
-        (2 n + pl)
+        (2 n + pl OR prn + pers + pl)
         ;
+
+SELECT:også-den ("den¹") IF
+		(-1 ("også"))
+		;
+
+SELECT:cm-den ("den¹") IF
+		(-1 cm)
+		(1 sent)
+		;
+
+SELECT:den-var-herlig-den ("den¹") IF
+		(1 %være%)
+		(2 adj)
+		(3 cm)
+		(4 ("den¹"))
+		;
+
 
 SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 setn-gr)
@@ -7946,6 +7963,12 @@ REMOVE SUB:1 ("..?"r) IF (0/* cmp) ;
         (1 ("om") OR cnjsub)
         ;
 "<Også>" SELECT:Også-den-har ("også¹");
+
+"<også>" SELECT:også-den-sent ("også¹") IF
+		(1 ("den¹"))
+		(2 sent)
+		;
+
 "<også>" SELECT:også-i-2019 ("også¹") IF
         (1 %i% OR %på%)
         (2 sanns-årstal OR adverbialsubst)
