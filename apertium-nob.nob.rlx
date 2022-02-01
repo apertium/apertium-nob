@@ -8017,7 +8017,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 	      (-2 setn-gr)
         (-1 adj)
         ;
-
+#«Den blonde og blåøyde mannen
+"<blonde>"i REMOVE:den-blonde n IF
+        (-1 ("den"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
