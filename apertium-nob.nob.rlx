@@ -2467,6 +2467,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         ;
 # «Det er den<det> som best ivaretar»
 
+
 "<den>" SELECT:pakten…den-truer ("den¹") IF
         (*-2C n + def + sg LINK *-1C fv) # krev eit anafor-mål
         (-1 setn-gr)
@@ -2514,6 +2515,7 @@ SELECT:den-var-herlig-den ("den¹") IF
 		(3 cm)
 		(4 ("den¹"))
 		;
+
 
 
 SELECT:Og-den-mener-han-er ("den¹") IF
@@ -34925,6 +34927,16 @@ REMOVE:prefer-lexicalised-n xgrau IF
 "<anklager>" SELECT:en-rekke-anklager n IF
 		(-2 ("en"))
 		(-1 ("rekke"))
+		;
+
+"<sporet>" SELECT:sporet-av vblex IF
+		(1 ("av"))
+		;
+"<sporet>" SELECT:i-sporet n IF
+		(-1 ("i") OR ("på"))
+		;
+"<sporet>" SELECT:har-blitt-sporet adj IF
+		(-1 ("bli" pp))
 		;
 
 
