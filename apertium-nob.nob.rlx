@@ -7907,6 +7907,9 @@ REMOVE:unlikely ("balle") IF (0 ("ball")) ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("vente") + gen;
 REMOVE:unlikely ("<yrket>") + pret;
+REMOVE:unlikely ("<løs>"i) + np;
+REMOVE:unlikely ("<løs>"i) + pasv;
+REMOVE:unlikely ("løs") + n;
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -34501,12 +34504,13 @@ SELECT:universitetets-1.200-ansatte-def def IF
         ;
 # Men ikkje: «universitetets ansatte»
 
-REMOVE:Oversett-dette imp IF
+SELECT:Oversett-dette imp IF
         (-1 >>>)
         (0 storbokstav)
         (1C def OR dem)
         ;
 # «Oversett teksten»
+# «Løs likningen»
 
 REMOVE:selskapets-ansatte def IF
         (-1C gen)
