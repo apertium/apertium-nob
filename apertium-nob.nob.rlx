@@ -2468,11 +2468,13 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 # «Det er den<det> som best ivaretar»
 
 
-"<den>" SELECT:pakten…den-truer ("den¹") IF
-        (*-2C n + def + sg LINK *-1C fv) # krev eit anafor-mål
-        (-1 setn-gr)
-        (1C fv)
-        ;
+"<den>" SELECT:slik-den-er prn + pers IF
+		(*-4 ("slik" adv) OR ("sånn" adv))
+		(*-3 ("den" prn))
+		(*-2 ("være"))
+		(*-1 ("slik" adv) OR ("sånn" adv))
+		;
+
 # «Mange av landene som har nektet å signere pakten, har reagert på det sistnevnte punktet og hevdet at  den  truer landenes selvbestemmelse og suverenitet.»
 # TODO ikkje her: «Parly sier franske romfartsmyndigheter foretok «nødvendige tiltak» og fortsatte å overvåke satellitten etter at den hadde forlatt den franske.»
 # TODO ikkje her: «Puerto Ricos guvernør oppjusterte nylig det offisielle dødstallet fra orkanen Maria, som forårsaket store ødeleggelser da den slo over det amerikanske øyterritoriet i september i fjor.»
