@@ -576,7 +576,7 @@ LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
-LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" ;
+LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg";
 LIST farlige-inf = ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" ;
 LIST farlige-mask-subst = "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
@@ -4536,9 +4536,31 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
 
+
+"<det>" SELECT:det-landet det IF
+		(-1 cm)
+		(1 ("<landet>" n))
+		(2 pr)
+		(3 np)
+		;
+
+"<landet>" SELECT:landet-utenfor-Norge n IF
+		(*1 ("Norge"))
+		;
+
 "<landet>" SELECT:er-landet-stengt n IF
         (-1 ("være"))
         (1 adj OR pp)
+        ;
+
+"<landet>" SELECT:å-få-landet vblex IF
+		(-2 ("å"))
+		(-1 ("få" vblex))
+		;
+
+"<landet>" SELECT:som-landet-på pret IF
+        (-1 %som% OR %men%)
+        (1 %på% OR %i%)
         ;
 
 "<landet>" SELECT:i-landet n IF
@@ -4564,13 +4586,8 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:flykte-landet n IF
-        (-1 vblex)
+        (-1C vblex)
         (NEGATE -1 %ha% OR %være/bli%)
-        ;
-
-"<landet>" SELECT:som-landet-på pret IF
-        (-1 %som% OR %men%)
-        (1 %på% OR %i%)
         ;
 
 "<landet>" SELECT:hun-landet pret IF
@@ -4586,9 +4603,25 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-2 vblex + pp)
         (-1 %og%)
         ;
+        
+"<landet>" SELECT:har-landet-så-langt n IF
+		(-1 ("ha"))
+        (1 adv)
+        (2 adv)
+        (3 adv)
+        (4 vblex + pp)
+        ;
+
+"<landet>" SELECT:at-et-fly-tirsdag-landet-på pret IF
+        (0* ("fly" n) or ("fly" vblex) OR ("oppskyting") OR ("rakett") OR ("fallskjermhopper") OR ("paraglider") OR ("hangglider") OR ("helikopter") OR ("fartøy") OR ("hopp") OR ("hoppkant") OR ("bakke") OR ("passasjerfly"))
+        ;
+
+"<landet>" SELECT:koster-landet n IF
+		(-1 ("koste" vblex))
+		;
 
 "<landet>" SELECT:landet-ikke pret IF
-        (1 adv)
+        (1C adv)
         ;
 
 "<landet>" SELECT:landet-i-verden n IF
@@ -4604,6 +4637,25 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-1 %og%)
         (1 ("ellers") OR ("for øvrig"))
         ;
+
+"<landet>" SELECT:har-faktisk-ikke-landet vblex IF
+		(-4 prn + pers)
+		(-3 ("ha"))
+		(-2 adv)
+		(-1 ("ikke"))
+		;
+
+"<landet>" SELECT:landet-100-meter-fra vblex IF
+		(1 det + qnt)
+		(2 ("meter"))
+		(3 ("fra") OR ("unna"))
+		;
+
+"<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
+		(1 vekedag)
+		(2 ("i") OR ("på"))
+		(3 np)
+		;
 
 "<landet>" SELECT:landet-er n IF
         (1* vblex BARRIER setn-gr)
@@ -4622,10 +4674,6 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 "<landet>" SELECT:det-landet n IF
         (-1 det + dem + nt)
         (NEGATE -2 cnjsub OR %før% OR %etter%)
-        ;
-
-"<landet>" SELECT:at-et-fly-tirsdag-landet-på pret IF
-        (0* ("fly" n) or ("fly" vblex) OR ("oppskyting") OR ("rakett") OR ("fallskjermhopper") OR ("paraglider") OR ("hangglider") OR ("helikopter") OR ("fartøy") OR ("hopp") OR ("hoppkant") OR ("bakke"))
         ;
 
 "<landet>" SELECT:og-landet-helt-perfekt pret IF
