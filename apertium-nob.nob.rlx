@@ -1659,10 +1659,12 @@ REMOVE:produkt-laget-av ("<laget>"i) + n IF
 		# eit produkt laga av plast
 
 REMOVE:laget-av-plast ("<laget>"i) + n IF
-		(2 n OR np)
-		(1 %av%)
-		;
-		# laga av Magne Furuholmen, laga av plast
+        (1 %av%)
+        (2 n OR np OR lpar)
+        ;
+# «Laget av Magne Furuholmen»
+# «Laget av plast»
+# «Laga av {USER.FIRSTNAME}»
 
 REMOVE:laget-av-plast ("<laget>"i) + n IF
 		(1 ("av dette"))
@@ -35077,7 +35079,8 @@ REMOVE:default-skyer ("<skyer>") + vblex ;
 REMOVE:default-betalar ("betaler");
 REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabiliteringssenter
 REMOVE:default-rekte ("rake") + pret;
-"<Laget>" REMOVE:default pret ;
+"<Laget>" REMOVE:default n IF (1 pr) ; # Laget av
+"<Laget>" REMOVE:default pret ;        # Laget har
 "<laget>" REMOVE:default pp ;
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
