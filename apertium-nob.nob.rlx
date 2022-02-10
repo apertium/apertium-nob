@@ -4402,9 +4402,19 @@ SELECT:lurer-på-hvor adv IF
 # "Politiet undersøkte ikke hvor han kom fra."
 
 "<hvor>" SELECT:hvor-vi-kan-finne adv IF
+        (NEGATE -1 cm LINK -1 n OR np)
+        (NEGATE -1 n OR np) # «dette gjelder bare i områder hvor vi ikke har funnet smitte»
         (1 nominativ OR n + def)
-        (*2 ("finne") BARRIER ikke-adv-verb)
+        # (*2 ("finne") BARRIER ikke-adv-verb)
         ;
+# «Husker du hvor vi kan finne steinen?»
+# «– Vi har ikkje avklart kvar bebuaren er per no.»
+
+"<hvor>" SELECT:etter-verb adv IF
+        (-1C vblex)
+        ;
+# «hvor» er omtrent aldri cnjsub (nn «der») etter adv – finst det unntak?
+# «De har blitt kritisert for å nekte å bekrefte hvor Edwards var»
 
 "<i>" SELECT:i-LeBron-debut prep IF
         (1 subst OR ukjent)
@@ -31938,7 +31948,7 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 
 
 #:1770
- SELECT:1770 (cnjsub) IF
+SELECT:som-de-lenge-har-brukt cnjsub IF
 	(NOT 0 %bare%)
 	(NOT 1 pres/pret)
 	(NOT 1 prep)
@@ -31950,8 +31960,8 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 	(*2O pres/pret LINK -1 adverb LINK -1 pron LINK NOT *-1 pron/subst)
 	(**-1C fv CBARRIER setn-gr)
 ;
-#  "med adverb som L-1, pronomen testes på L-2
-# som (sbu) de lenge har brukt"
+# «som<sbu!> de lenge har brukt»
+# Med adverb som L-1, pronomen testes på L-2.
 #      :group 73
 
 
