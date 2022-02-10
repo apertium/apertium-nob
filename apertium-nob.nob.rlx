@@ -1404,6 +1404,7 @@ REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
 REMOVE:unlikely ("<virker>"i) + pl;
 REMOVE:unlikely ("kak");
+REMOVE:unlikely ("børse");
 REMOVE:unlikely ("ap") IF (0 ("ape"));
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
