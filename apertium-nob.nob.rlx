@@ -4401,6 +4401,11 @@ SELECT:lurer-på-hvor adv IF
         ;
 # "Politiet undersøkte ikke hvor han kom fra."
 
+"<hvor>" SELECT:hvor-vi-kan-finne adv IF
+        (1 nominativ OR n + def)
+        (*2 ("finne") BARRIER ikke-adv-verb)
+        ;
+
 "<i>" SELECT:i-LeBron-debut prep IF
         (1 subst OR ukjent)
         ;
@@ -31973,38 +31978,27 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 
 
 #:1773
- SELECT:1773 (cnjsub) IF
-	(NEGATE 0 %hvor/så%-adv LINK 1 adj-fl)
+SELECT:at-han-kom cnjsub IF
+	(NEGATE 0 %hvor/så%-adv)
 	(NOT 0 %bare%)
 	(NOT 1 pres/pret)
-	(NOT 1 prep)
+	(NOT 1 prep) # ikke prep før verbet fordi det viser seg at "verbet" oftest er subst i prep-frase
 	(NOT -1 clb-konj)
-	(NOT *-2 sbu BARRIER setn-gr)
+	(NOT *-2 sbu BARRIER setn-gr) # SBU-kriteriet for å ikke merke "før" i: «etter som (sbu) flertallet like før (ikke sbu) jul avviste ...»
 	(*1 pres/pret BARRIER setn-gr)
 	(*2O pres/pret LINK NOT 0 subst/adj-gen LINK NOT 0 farlige-verb LINK NOT -1 prep-tall)
-	(*2 pres/pret BARRIER komma/konj)
-	(*2O pres/pret LINK -1 pron LINK NOT *-1 pron/subst)
+	(*2 pres/pret BARRIER komma/konj) # Lite sannsynlig med tunge subjekter som inneholder komma/konj
+	(*2O pres/pret LINK -1 pron LINK NOT *-1 pron/subst) # Sikrer mot skjult relativsetning: «som stjernestoffet vi så»
 	(**-1C fv CBARRIER setn-gr)
 ;
-#  "at han kom
-# ikke prep før verbet fordi det viser seg at
-# \"verbet\" oftest er subst i prep-frase
-# heller og for er for \"farlige\"
-# SBU-kriteriet for å ikke merke \"før\" i:
-# \"etter som (sbu) flertallet like før (ikke sbu) jul avviste ...
+# «at han kom»
+# heller og for er for "farlige"
 # godtar sbu+sbu: sa at (sbu) hvis (sbu)
 # Se også neste regel
-# etter en SBU kan ikke FV stå rett til venstre
-# om livet (ikke verb pret)
+# etter en SBU kan ikke FV stå rett til venstre «om livet (ikke verb pret)»
 # egne regler for SOM nedenfor
-# må komme en setning før subjunksjonen:
-# For 100 år siden (ikke sbu) kom
-# NOT *L KOMMA/KONJ: Lite sannsynlig med
-# tunge subjekter som inneholder komma/konj
-# *L PRON NOT *L SUBST: Sikrer mot skjult
-# relativsetning: som stjernestoffet vi så"
-#      :group 73
-# ikkje «De fleste vet ikke hvor<adv!!> pene de er»
+# må komme en setning før subjunksjonen: «For 100 år siden (ikke sbu) kom»
+# Ikkje: «De fleste vet ikke hvor<adv!> pene de er», «Husker du hvor<adv!> vi kan finne steinen?»
 
 
 #:1774
