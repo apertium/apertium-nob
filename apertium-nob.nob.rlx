@@ -4402,13 +4402,19 @@ SELECT:lurer-på-hvor adv IF
 # "Politiet undersøkte ikke hvor han kom fra."
 
 "<hvor>" SELECT:hvor-vi-kan-finne adv IF
-        (NEGATE -1 cm LINK -1 n OR np)
-        (NEGATE -1 n OR np) # «dette gjelder bare i områder hvor vi ikke har funnet smitte»
+        (NEGATE 1 %det% LINK 1 %være%) # «eller hvor det er fare for dette» (usikker)
+        (NEGATE -1 cm LINK -1 n OR np OR storbokstav)
+        (NEGATE -1 n OR np OR storbokstav) # «dette gjelder bare i områder hvor vi ikke har funnet smitte»
         (1 nominativ OR n + def)
         # (*2 ("finne") BARRIER ikke-adv-verb)
         ;
 # «Husker du hvor vi kan finne steinen?»
 # «– Vi har ikkje avklart kvar bebuaren er per no.»
+#
+# TODO, cnjsub her:
+# «Hvor noen har opplevd vold, overgrep eller andre krenkelser, eller hvor det er fare for dette.»
+# men vanskeleg, for me vil ha adv her:
+# «Det er ikke opplyst hvor nærme de to russiske flyene var til å entre britisk luftrom eller hvor det skal ha skjedd.»
 
 "<hvor>" SELECT:etter-verb adv IF
         (-1C vblex)
