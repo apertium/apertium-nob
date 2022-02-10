@@ -35103,6 +35103,8 @@ REMOVE:default ("sider") IF (0 ("side")) ;
 REMOVE:default ("<blander>"i) + n ;
 REMOVE:default ("<beta>"i) + n + f + def ;
 REMOVE:default ("<Pårørende>") + sg ;
+REMOVE:default ("bredd") + sg ;
+REMOVE:default ("bredde") + pl ;
 
 
 # Corpus-based default rules:
