@@ -26023,6 +26023,12 @@ REMOVE:Løft-så-ut n OR adj IF
         ;
 # «Kløyv så videre andre veien, mot haletuppen, men pass på at du ikke deler den helt igjennom.»
 
+REMOVE:Løs-oppgaven-og-si n OR adj + ind IF
+        (0 imp)
+        (-1 >>>)
+        (1C n + def)
+        ;
+
 #:2114
 REMOVE:imp+fv (imp) IF
 	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp LINK NOT -1 %som%)
