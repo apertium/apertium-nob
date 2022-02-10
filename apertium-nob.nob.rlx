@@ -35080,8 +35080,8 @@ REMOVE:default-skyer ("<skyer>") + vblex ;
 REMOVE:default-betalar ("betaler");
 REMOVE:default-senter ("senter") + n + m IF (0/* cmp); # keep nt, e.g. rehabiliteringssenter
 REMOVE:default-rekte ("rake") + pret;
-"<Laget>" REMOVE:default n IF (1 pr) ; # Laget av
-"<Laget>" REMOVE:default pret ;        # Laget har
+"<Laget>" REMOVE:default n IF (1 %av%) ; # Laget av, men ikkje «Laget fra Skien»
+"<Laget>" REMOVE:default pret ;          # Laget har
 "<laget>" REMOVE:default pp ;
 REMOVE:default ("<annet>"i) + def;
 REMOVE:default nt IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
