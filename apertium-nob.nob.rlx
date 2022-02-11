@@ -572,7 +572,7 @@ LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
-LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" ;
+LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
@@ -1406,6 +1406,7 @@ REMOVE:unlikely ("<virker>"i) + pl;
 REMOVE:unlikely ("kak");
 REMOVE:unlikely ("børse");
 REMOVE:unlikely ("ap") IF (0 ("ape"));
+REMOVE:unlikely ("katte") IF (0 ("katt"));
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -10105,6 +10106,10 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "Lite sansynlig med løs av å lø
 # (stable)"))
 
+"<Lær>" REMOVE:Lær-imp n IF
+        (NOT 1C fv)       # «Lær er et materiale med unike egenskaper»
+        ;
+
 
 #:5014
   "<matt>"   REMOVE:5014   (n) IF
@@ -11315,6 +11320,10 @@ REMOVE:Vann  vblex OR adv IF
 ;
 #  "Bare ved \"et være eller ikke være\""
 
+"<Vær>" REMOVE:Vær-imp n IF
+        (NOT 1C fv)
+        (NEGATE 1 %og% LINK 1 ("vind"))
+        ;
 
 "<yrket>" REMOVE:det-yrket pret IF
         (-1 det)
@@ -35111,6 +35120,8 @@ REMOVE:default ("<beta>"i) + n + f + def ;
 REMOVE:default ("<Pårørende>") + sg ;
 REMOVE:default ("bredd") + sg ;
 REMOVE:default ("bredde") + pl ;
+REMOVE:default ("<Lær>") + n ;
+REMOVE:default ("<Vær>") + n ;
 
 
 # Corpus-based default rules:
