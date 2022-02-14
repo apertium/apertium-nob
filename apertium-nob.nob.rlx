@@ -8103,6 +8103,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<blonde>"i REMOVE:den-blonde n IF
         (-1 ("den"))
         ;
+#«Han ble meldt savnet
+"<savnet>"i REMOVE:meldt-savnet n IF
+        (-1 vblex)
+        ;
+#«Savnet mann funnet
+"<Savnet>" REMOVE:Sakna-mann n IF
+        (1 n)
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
