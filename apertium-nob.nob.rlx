@@ -35756,6 +35756,10 @@ SELECT:IS-kriger SUB:1 np IF
 
 "<Natos>" SELECT:Natos-utvidelse org;
 
+"<konsekvensutredet>" SELECT:prosjektet-blir-konsekvensutredet adj + sg IF
+		(-2 n + sg)
+		(-1 %være/bli%)
+		;
 
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
