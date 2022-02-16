@@ -32213,6 +32213,9 @@ SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
 		(1 ("for"))
 		;
 
+SELECT:overhodet-for ("overhode" n) IF
+		(1 ("for"))
+		;
 
 #:1732
 SELECT:generell-pres (vblex pres) IF
