@@ -15936,7 +15936,11 @@ SELECT:handler-utelukkende-med adv IF
 ;
 #  "Hvordan kan jeg da (adv) bli i Norge?"))
 
-
+"<rede>" SELECT:rede-til-å-dø adj IF
+	(1 ("til"))
+	(2 ("å"))
+	(3 vblex + inf)
+	;
 
 #:2853
  SELECT:2853 (adv) IF
@@ -32208,6 +32212,7 @@ SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
 "<former>" SELECT:andre-former-for n IF
 		(1 ("for"))
 		;
+
 
 #:1732
 SELECT:generell-pres (vblex pres) IF
