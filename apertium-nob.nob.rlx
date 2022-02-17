@@ -4139,6 +4139,10 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 #  "preposisjonen er så sjelden at vi ser bort
 # fra den (hvor er du henne/henne ved vinduet)"))
 
+LIST hes-ord = "synge" "lyd" "stemme" "låte" "forkjølelse" "forkjøle" "hviske" "skrike"  "røst" "ru" "vokal" ;
+"<hest>" SELECT n IF
+        (NOT 0* hes-ord)
+        ;
 
 "<Hilsen>" SELECT:titled ij;
 "<hilsen>" SELECT:hilsen-meg ij IF (1 storbokstav) ;
