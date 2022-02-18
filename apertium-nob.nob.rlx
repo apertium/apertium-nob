@@ -102,6 +102,7 @@ LIST ij = ij ;
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
 LIST %éi% = ("én" f) ;
+LIST siffer-millioner = "[0-9]+([., ][0-9]+)* (tusen|[mb]illi(on|ard)er)"r ;
 LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
 LIST emdash-endash = "–" "—" ;
 # TODO: use apertium-deshtml -o
@@ -120,7 +121,7 @@ LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "r
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 LIST talord-pl = "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
-SET talord-par-siffer = talord OR ("par") OR siffer OR ("<noen>") OR ("antall");
+SET talord-par-siffer = talord OR ("par") OR siffer-millioner OR siffer OR ("<noen>") OR ("antall");
 LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
 LIST vekedag = "mandag" "tirsdag" "onsdag" "torsdag" "fredag" "lørdag" "søndag" ;
 LIST månad = "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember" ;
@@ -3920,8 +3921,8 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 #:3593
 "<ganger>" SELECT:en-ganger-en pl + ("gang") IF
-	(1 talord OR siffer)
-	(-1 talord OR siffer)
+	(1 talord OR siffer OR siffer-millioner)
+	(-1 talord OR siffer OR siffer-millioner)
 ;
 #  "en ganger en er to!" (???)
 
@@ -7686,7 +7687,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 # 30.11"
 
 SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
-SELECT:kroner ("øre") + nt IF (-1 siffer OR talord);
+SELECT:kroner ("øre") + nt IF (-1 siffer OR talord OR siffer-millioner);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 SELECT:låne-sitt-øre ("øre¹") IF
         (-2 ("låne"))
@@ -11383,12 +11384,12 @@ SELECT:at/ha-landet-subst n IF
 # TODO ikkje her: «Hadde romferden gått som planlagt, ville Beresheet blitt det første fartøyet med privat finansiering som hadde landet kontrollert på månen.»
 
 SELECT:drøye-fem ("<drøye>"i) + adv IF
-		(1 talord OR siffer)
+		(1 talord OR siffer OR siffer-millioner)
 		(NEGATE 1 talord + def)
 		;
 		# godt og vel fem mil, litt over fem år, vel 3 kilometer
 SELECT:drøyt-fem ("<drøyt>"i) + adv IF
-		(1 talord OR siffer OR adj OR ("halvpart"))
+		(1 talord OR siffer OR siffer-millioner OR adj OR ("halvpart"))
 		;
 		# godt og vel fem mil, litt over fem år, vel 3 kilometer, den vel 80 år gamle mannen
 
@@ -11999,6 +12000,7 @@ SELECT:flere-skadd pp + pl
 
 SELECT:to-sivile-skadd pp + pl
         (NOT -2C date)
+        (NOT -2C siffer-millioner) # «å kreve 13 milliarder euro etterbetalt»
         (-2 qnt + pl)
         (-1 n-adjn + pl)
         (0C pp)
