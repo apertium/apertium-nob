@@ -19725,7 +19725,9 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 # Sikker subst om det er FV senere
 # i setningen"
 
-
+"<øya>" SELECT:til-øya ("øy") IF
+	(*-1 ("ankomme"))
+	;
 
 #:2558
  SELECT:2558 fl-subst IF
