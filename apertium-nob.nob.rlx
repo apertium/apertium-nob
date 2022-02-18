@@ -34734,6 +34734,14 @@ SELECT:private-bruker-mindre-strøm fv IF
         (NOT *0 fv BARRIER setn-gr)
         ;
 
+SELECT:derfor-vil-samene-regnes vblex + inf + pasv IF
+        (-3 adv)
+        (-2 modalverb)
+        (-1 n)
+        (0C pasv)
+        ;
+# «Derfor vil samene regnes som urfolk i hver stat.»
+
 "<transporteres>" SELECT:må-nå-transporteres vblex + inf + pasv IF
 		(-2 modalverb)
 		(-1 adv)
