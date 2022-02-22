@@ -8135,6 +8135,15 @@ REMOVE:er-ikke-ubetinget-fornøyd ("ubetinget") + adj IF
         (1 adj)
         ;
 # jeg er ikke ubetinget fornøyd med det.
+SELECT:tar-ubetinget-avstand ("ubetinget") + adv IF
+		(-1 ("ta" vblex))
+		(1 ("avstand"))
+		(2 ("fra"))
+		;
+SELECT:har-ubetinget-prioritet ("ubetinget") + adv IF
+		(-1 ("ha"))
+		(1 ("prioritet") OR ("førsteprioritet"))
+		;
 REMOVE:ubetinget-suksess ("ubetinget") + adv IF
         (-1 vblex)
         (0 ("ubetinget"))
