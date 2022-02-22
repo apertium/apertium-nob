@@ -26234,7 +26234,7 @@ REMOVE:imp+fv (imp) IF
 ;
 #  "for (ikke konj) en åpen konflikt."))
 
-
+"<gjennomtenkte>" SELECT:default-adj adj ;
 
 #:2099
  REMOVE:2099 pp IF
