@@ -22409,6 +22409,7 @@ SELECT:har-antall-drepte-økt adj + pp IF
 #      :group 47
 
 
+
 #:2362
  SELECT:2362 (vblex pret) IF
 	(NOT 0 farlige-verb)
@@ -35605,6 +35606,8 @@ REMOVE:default ("<Vær>") + n ;
 "<utstedt>" REMOVE:default-utskriven ("utstede" adj pp mf sg ind) ;	# keep utstede<vblex><pp>→utskrive utstede<adj><pp><nt><sg><ind>→utskrive
 "<utvist>" REMOVE:default-utviste ("utvise" adj pp pl) ;	# keep utvise<adj><pp><nt><sg><ind>→utvist utvise<vblex><pp>→utvist
 "<utøver>" REMOVE:default-utøver ("utøve" vblex pres) ;	# keep utøver<n><m><sg><ind>→utøvar
+"<vakte>"  REMOVE:default-vakte  ("vake" vblex pret)  ; # keep vekke<vblex><pret>->vekte
+"<Vakte>"  REMOVE:default-vakte  ("vake" vblex pret)  ; # keep vekke<vblex><pret>->vekte
 "<vakter>" REMOVE:default-vakter ("vakt" n f pl ind) ;	# keep vakte<vblex><pres>→vaktar
 "<vakter>" REMOVE:default-vakter ("vakt" n m pl ind) ;	# keep vakte<vblex><pres>→vaktar
 "<vannet>" REMOVE:default-vatna ("vanne" vblex pret) ;	# keep vann<n><nt><sg><def>→vatnet
