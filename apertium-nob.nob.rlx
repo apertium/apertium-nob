@@ -8109,6 +8109,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<blonde>"i REMOVE:den-blonde n IF
         (-1 ("den"))
         ;
+#i smug
+"<smug>"i REMOVE:i-smug nt IF
+        (-1 ("i"))
+        ;
 #«Han ble meldt savnet
 "<savnet>"i REMOVE:meldt-savnet n IF
         (-1 vblex)
