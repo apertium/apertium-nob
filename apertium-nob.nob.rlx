@@ -21172,7 +21172,37 @@ SELECT:Den-som-gråter (vblex pres) IF
 #  "Mannen gir adgang"
 #      :group 43
 
+"<styrker>" SELECT:styrker-fra n IF
+		(1 ("fra"))
+		;
+"<styrker>" SELECT:styrker-dermed-favorittstempelet vblex IF
+		(1 adv)
+		(2 n OR np)
+		;
+"<styrker>" SELECT:store-styrker n IF
+		(-1 adj)
+		;
+"<styrker>" SELECT:styrker-saken vblex IF
+		(1 n OR np)
+		;
+"<styrker>" REMOVE:styrker-som vblex IF
+		(1 ("som"))
+		(2 vblex)
+		;
+"<styrker>" SELECT:ha-styrker-i n IF
+		(-1 ("ha"))
+		(1 pr)
+		;
+"<styrker>" SELECT:ha-alt-styrker-i n IF
+		(-2 ("ha"))
+		(-1 ("allerede") OR ("<alt>") OR ("fortsatt"))
+		(1 pr)
+		;
 
+"<rykket>" SELECT:styrker-rykket-ut pret IF
+		(-1 n)
+		(1 ("ut"))
+		;
 
 #:2467
  SELECT:2467 (vblex pres) IF
