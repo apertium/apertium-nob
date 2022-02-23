@@ -21199,9 +21199,26 @@ SELECT:Den-som-gråter (vblex pres) IF
 		(1 pr)
 		;
 
-"<rykket>" SELECT:styrker-rykket-ut pret IF
+"<rykket>" SELECT:har-de-siste-dagene-rykket pp IF
+		(-4 ("ha"))
+		(-3 det)
+		(-2 adj)
 		(-1 n)
-		(1 ("ut"))
+		(1 pr)
+		;
+"<rykket>" SELECT:styrker-rykket-ut pret IF
+		(NOT -2 ("ha"))
+		(NOT -1 ("ha"))
+		(-1 n OR ("og"))
+		(1 pr)
+		;
+"<rykket>" SELECT:styrker-få-dager-etter-rykket-ut pret IF
+		(NOT -4 ("ha"))
+		(-4 n OR ("og"))
+		(-3 adj)
+		(-2 n)
+		(-1 pr)
+		(1 pr)
 		;
 
 #:2467
