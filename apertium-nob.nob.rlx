@@ -19765,6 +19765,15 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 ;
 #  "om andakt og moro (subst)"))
 
+SELECT:ny-singel ("singel" m) IF
+	(-1 ("ny"))
+	;
+SELECT:album-singel ("singel" m) IF
+	(*-1 ("album") OR ("låt") OR ("musikk") OR ("anmelder") OR ("plate") OR ("slipp") OR ("slippe") OR ("konsert"))
+	;
+SELECT:singel-album ("singel" m) IF
+	(*1 ("album") OR ("låt") OR ("musikk") OR ("anmelder") OR ("plate") OR ("slipp") OR ("slippe") OR ("konsert"))
+	;
 
 
 #:2560
