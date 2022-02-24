@@ -26154,6 +26154,10 @@ REMOVE:Løs-oppgaven-og-si n OR adj + ind IF
         (1C n + def)
         ;
 
+"<Sett>" SELECT:Sett-på vblex + imp IF
+		(1 ("på"))
+		;
+
 #:2114
 REMOVE:imp+fv (imp) IF
 	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp LINK NOT -1 %som%)
@@ -33309,6 +33313,23 @@ REMOVE:farlige-mask-subst n + m OR n + f IF
 	 (0 farlige-forledd-verb)
 	 (NOT 0 %fare%-pret)
 ;
+
+"<Sett>" SELECT:Sett-mål vblex + imp IF
+		(1 n)
+		;
+"<Sett>" SELECT:Sett-tydelige-mål vblex + imp IF
+		(1 adj)
+		(2 n)
+		;
+"<Sett>" SELECT:Sett-et-mål vblex + imp IF
+		(1 det)
+		(2 n)
+		;
+"<Sett>" SELECT:Sett-et-tydelig-mål vblex + imp IF
+		(1 det)
+		(2 adj)
+		(3 n)
+		;
 
 #:4036
  REMOVE:4036 (vblex imp) IF
