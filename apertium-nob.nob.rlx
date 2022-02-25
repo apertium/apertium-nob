@@ -11226,7 +11226,10 @@ REMOVE:Vann  vblex OR adv IF
         (NOT -1 %i%)
         ;
 
-
+"<verken>" REMOVE:verken-var-X-eller n IF
+		(1 vblex)
+		(*2 ("eller"))
+		;
 #:3139
   "<verken>"   REMOVE:3139   (n sg ind) IF
 	(*-1O ub-nøyt-det LINK *1 ikke-adv-adj)
