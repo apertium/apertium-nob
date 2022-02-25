@@ -2565,6 +2565,13 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
         (2 sup)
         ;
 
+"<den>" SELECT:den-skadde-Nora-har det IF
+        (1C pret OR pp)
+        (2 np)
+        (*3C fv BARRIER (*) - np)
+        ;
+# «Savnet etter den skadde Nora Mørk er stort hos Norge»
+
 
 SELECT:Ta-den ("den¹") IF
         (-2 setn-gr)
