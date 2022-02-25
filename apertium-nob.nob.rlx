@@ -1401,6 +1401,7 @@ REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
 REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
+REMOVE:unlikely ("sting") IF (0 ("ting")) (0/* cmp); # *forbundssting
 REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
 REMOVE:unlikely ("<virker>"i) + pl;
