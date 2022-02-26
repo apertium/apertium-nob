@@ -4656,12 +4656,15 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:koster-landet n IF
-		(-1 ("koste" vblex))
-		;
+        (-1 ("koste" vblex))
+        ;
 
 "<landet>" SELECT:landet-ikke pret IF
+        (1 ("også") OR ("ikke"))
         (1C adv)
         ;
+# «Høyesterett landet også på 45 dager»
+# Men ikkje: «Koronapandemien skyver dette landet enda dypere ned i avgrunnen.»
 
 "<landet>" SELECT:landet-i-verden n IF
         (1 %i%)
