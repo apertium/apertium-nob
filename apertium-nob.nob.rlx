@@ -4586,9 +4586,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 		(3 np)
 		;
 
+
 "<landet>" SELECT:landet-utenfor-Norge n IF
-		(*1 ("Norge"))
-		;
+        (*1 ("Norge"))
+        ;
 
 "<landet>" SELECT:er-landet-stengt n IF
         (-1 ("være"))
@@ -4596,9 +4597,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:å-få-landet vblex IF
-		(-2 ("å"))
-		(-1 ("få" vblex))
-		;
+        (-2 ("å"))
+        (-1 ("få" vblex))
+        ;
 
 "<landet>" SELECT:som-landet-på pret IF
         (-1 %som% OR %men%)
@@ -4628,7 +4629,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:flykte-landet n IF
-        (-1C vblex)
+        (-1C fv)
         (NEGATE -1 %ha% OR %være/bli%)
         ;
 
@@ -4645,9 +4646,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-2 vblex + pp)
         (-1 %og%)
         ;
-        
+
 "<landet>" SELECT:har-landet-så-langt n IF
-		(-1 ("ha"))
+        (-1 ("ha"))
         (1 adv)
         (2 adv)
         (3 adv)
@@ -4659,7 +4660,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:koster-landet n IF
-        (-1 ("koste" vblex))
+        (-1 ("koste") + vblex)
         ;
 
 "<landet>" SELECT:landet-ikke pret IF
@@ -4668,6 +4669,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 # «Høyesterett landet også på 45 dager»
 # Men ikkje: «Koronapandemien skyver dette landet enda dypere ned i avgrunnen.»
+
+"<landet>" SELECT:forlate-landet n IF
+        (-1 ("forlate"))
+        ;
 
 "<landet>" SELECT:landet-i-verden n IF
         (1 %i%)
@@ -4701,31 +4706,6 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (2 ("i") OR ("på"))
         (3 np)
         ;
-
-"<landet>" SELECT:landet-er n IF
-        (*1C fv BARRIER setn-gr)
-        ;
-# Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
-
-"<landet>" SELECT:er-Spania-landet n IF
-        (-2 fv)
-        (-1 np + top)
-        ;
-
-"<landet>" SELECT:landet-som-tok n IF
-        (1 %som%)
-        (2 fv)
-        ;
-
-"<landet>" SELECT:det-landet n IF
-        (-1 det + dem + nt)
-        (NEGATE -2 cnjsub OR %før% OR %etter%)
-        ;
-
-"<landet>" SELECT:og-landet-helt-perfekt pret IF
-        (NEGATE 0* fv BARRIER setn-gr)
-        ;
-
 
 "<lav>"   SELECT   (adj) IF
         (NOT *-2 lav-ord)
@@ -23304,6 +23284,22 @@ SELECT:ble-ikke-selen-skadet &&ADJ_N_AGR IF
         ;
 # «Heldigvis ble ikke selen skadet.»
 
+SELECT:ble-landet-rammet n + &&ADJ_N_AGR IF
+        (*-1 kop-fv BARRIER ikke-adv)
+        (0C n OR pp)
+        (1C adj OR pp OR pret)
+        (1 &&ADJ_N_AGR)
+        ;
+# «I 2003 ble landet rammet av et skjelv med styrke 6,6»
+
+SELECT:ble-landet-en n IF
+        (*-1 kop-fv BARRIER ikke-adv LINK NEGATE *-1 ("den") + nt) # «det ble landet et fly»
+        (0C n OR pp)
+        (1C det)
+        ;
+# «I praksis blir landet en buffersone for USA.»
+# Ikkje: «Det ble holdt et tilsvarende møte i Stockholm i mars 2018»
+
 SELECT:var-5.5-prosent-deprimert &&ADJ_N_AGR IF
         (-3 kop-fv)
         (-2 det + qnt + pl)
@@ -29847,6 +29843,32 @@ CONSTRAINTS
 	   (*-1 %puste% BARRIER setn-gr)
 	   (1 %ut%)
 ;
+
+
+"<landet>" SELECT:landet-er n IF
+        (*1C fv BARRIER setn-gr)
+        ;
+# Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
+
+"<landet>" SELECT:er-Spania-landet n IF
+        (-2 fv)
+        (-1 np + top)
+        ;
+
+"<landet>" SELECT:landet-som-tok n IF
+        (1 %som%)
+        (2 fv)
+        ;
+
+"<landet>" SELECT:det-landet n IF
+        (-1 det + dem + nt)
+        (NEGATE -2 cnjsub OR %før% OR %etter%)
+        ;
+
+"<landet>" SELECT:og-landet-helt-perfekt pret IF
+        (NEGATE 0* fv BARRIER setn-gr)
+        ;
+
 
 #4087
   "<lo>"   SELECT:4087   (np)
