@@ -25190,12 +25190,12 @@ REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
 
 
 #:2190
- REMOVE:2190 (clb) IF
-	(0 konj)
+REMOVE:2190 clb IF
+	(0 cnjcoo)
 	(1 ub-fl-subst)
 	(-1 ub-fl-subst)
 	(NOT 1 farlige-fl-subst)
-	(*2 pres/pret LINK NOT 0 farlige-verb)
+	(*2 pres/pret BARRIER cnjsub LINK NOT 0 farlige-verb)
 ;
 #  "..hvilke vurderinger og (ikke clb) tanker
 # hun har gjort seg
@@ -28861,14 +28861,14 @@ REMOVE:til-huset pp IF
 
 
 #:1839
- REMOVE:1839 (vblex pret) IF
+REMOVE:1839 pret IF
 	(1 %siden%)
 	(*-1O setn-gr LINK *1 %for% LINK NOT *1 ikke-adv-adj-subst-pron-konj-det)
 ;
 
 
 #:1840
- REMOVE:1840 (vblex pret) IF
+REMOVE:1840 pret IF
 	(NOT 0 sier-verb)
 	(-1 komma)
 	(NOT *-2 komma)
@@ -28881,7 +28881,7 @@ REMOVE:til-huset pp IF
 
 
 #:1841
- REMOVE:1841 (vblex pret) IF
+ REMOVE:1841 pret IF
 	(1 komma)
 	(-1 komma/konj)
 	(NOT -1 clb)
@@ -28893,7 +28893,7 @@ REMOVE:til-huset pp IF
 
 
 #:1842
- REMOVE:1842 (vblex pret) IF
+REMOVE:1842 pret IF
 	(-1 komma/konj)
 	(NOT -1 clb)
 	(*-1 fv BARRIER setn-gr)
@@ -29250,12 +29250,14 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 
 
 #:1867
- REMOVE:hvite-skjorter-og-svarte-slips (vblex pret) IF
-	(-1 konj)
+REMOVE:hvite-skjorter-og-svarte-slips pret IF
+        (NEGATE *-2 pret BARRIER pp OR adj)
+        (0 pp OR adj)
+	(-1 cnjcoo)
 	(NOT -1 clb)
 	(NOT -1 adv)
 ;
-#  "Hvite skjorter og svarte (ikke pret) slips"))
+# «Hvite skjorter og svarte<not pret!> slips»
 
 
 
@@ -30075,7 +30077,6 @@ CONSTRAINTS
 ## remove domain heur
 
 
-
 #:4013
   "<bare>"   REMOVE:4013   (adj pl) IF
 	(NOT *-1C fl-det BARRIER ikke-adv-adj)
@@ -30434,6 +30435,10 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: mest sannsynlig adjektiv når subst-reglene har virket."
 
+"<lover>" REMOVE:lover-og-regler pres IF
+        (1 cnjcoo)
+        (2 ("regel") + pl)
+        ;
 
 #5005
   "<lys>"   REMOVE:5005   (n nt sg ind gen) IF
@@ -30600,6 +30605,10 @@ REMOVE:ikkje-skjor ("skjære") + n;
 ;
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
+
+"<rådet>" REMOVE:rådet-regjeringen pp IF
+        (NEGATE *-1 p-hj-verb BARRIER fv)
+        ;
 
 "<sammenstøt>" REMOVE:samanstøytar sg IF
         (NOT -1 det + sg)
