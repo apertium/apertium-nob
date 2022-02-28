@@ -29679,6 +29679,14 @@ REMOVE:fått-laget-på-plass pret OR pp IF
 # «og fått laget på plass»
 # (men ikkje «få komme på plass»)
 
+REMOVE:å-stjele-showet pret OR pp IF
+        (-2 infmerke)
+        (-1 inf)
+        (NEGATE -1 %ha%)
+        (0C pret OR pp OR n + nt + def)
+        ;
+# «Politiet kunne ha gjort mer for å følge opp  tipset  , mener visepolitimester Bjørn Vandvik.»
+# «Det å selge  landet  som reisemål, er motsatt av hva jeg tenker.»
 
 # sec 3
 CONSTRAINTS
@@ -30341,7 +30349,7 @@ CONSTRAINTS
 
 
 "<laget>" REMOVE:vi-har-laget n IF
-        (-2C nominativ)
+        (-2C nominativ OR infmerke)
         (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
         (-1C %ha/få% OR %være/bli%)
         ;
