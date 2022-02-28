@@ -4681,36 +4681,37 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:har-faktisk-ikke-landet vblex IF
-		(-4 prn + pers)
-		(-3 ("ha"))
-		(-2 adv)
-		(-1 ("ikke"))
-		;
-
-"<landet>" SELECT:landet-100-meter-fra vblex IF
-		(1 det + qnt)
-		(2 ("meter"))
-		(3 ("fra") OR ("unna"))
-		;
-
-"<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
-		(1 vekedag)
-		(2 ("i") OR ("på"))
-		(3 np)
-		;
-
-"<landet>" SELECT:landet-er n IF
-        (1* vblex BARRIER setn-gr)
+        (-4 prn + pers)
+        (-3 ("ha"))
+        (-2 adv)
+        (-1 ("ikke"))
         ;
 
+"<landet>" SELECT:landet-100-meter-fra vblex IF
+        (1 det + qnt)
+        (2 ("meter"))
+        (3 ("fra") OR ("unna"))
+        ;
+
+"<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
+        (1 vekedag)
+        (2 ("i") OR ("på"))
+        (3 np)
+        ;
+
+"<landet>" SELECT:landet-er n IF
+        (*1C fv BARRIER setn-gr)
+        ;
+# Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
+
 "<landet>" SELECT:er-Spania-landet n IF
-        (-2 vblex)
-		(-1 np + top)
+        (-2 fv)
+        (-1 np + top)
         ;
 
 "<landet>" SELECT:landet-som-tok n IF
         (1 %som%)
-        (2 vblex)
+        (2 fv)
         ;
 
 "<landet>" SELECT:det-landet n IF
@@ -4719,7 +4720,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:og-landet-helt-perfekt pret IF
-        (NEGATE 0* vblex BARRIER setn-gr)
+        (NEGATE 0* fv BARRIER setn-gr)
         ;
 
 
