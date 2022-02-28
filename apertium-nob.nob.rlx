@@ -2960,6 +2960,10 @@ SELECT:den+prn ("den¹") IF
 		(-1* ("stå" vblex) BARRIER setn-gr)
         ;
 
+"<samtidig>" SELECT:samtidig-som adv IF
+        (1 %som%)
+        ;
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
@@ -10286,7 +10290,9 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh jan 2004: Bare verb ved: hun navner tøyet"
 
-
+"<nettet>" REMOVE:nettet pret OR pp IF
+        (NOT 1 ("ball") + def)
+        ;
 
 #:3402
   "<noe>"   REMOVE:3402   (det pl) IF
