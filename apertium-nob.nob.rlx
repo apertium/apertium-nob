@@ -6339,6 +6339,8 @@ REMOVE:unlikely ("<ris>") + pasv;
         (-1 ("<grønne>"))
         ;
 
+"<skipper>" SELECT:skipper ("skipper"); # ikkje skipp<pl>
+
 "<skipet>" SELECT:unlikely-verb n IF
         (NOT 1 %til% OR %ut% OR %inn%)
         ;
