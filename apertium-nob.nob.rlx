@@ -1804,6 +1804,13 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
         (-1C fv)
         ;
 
+"<laget>" REMOVE:å-ha-laget n IF
+        (-2C nominativ OR infmerke)
+        (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
+        (-1C %ha/få% OR %være/bli%)
+        ;
+# «Ble tatt i april 2017 etter å ha laget en eksplosiv innretning hjemme.»
+
 "<laget>" SELECT:lede-laget n + ("lag") IF
         (-1 ("lede")
          OR ("styrke")
