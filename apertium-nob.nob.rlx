@@ -4437,13 +4437,16 @@ SELECT:lurer-på-hvor adv IF
 # «hvor» er omtrent aldri cnjsub (nn «der») etter adv – finst det unntak?
 # «De har blitt kritisert for å nekte å bekrefte hvor Edwards var»
 
-"<i>" SELECT:i-LeBron-debut prep IF
+
+"<i>" SELECT:i-LeBron-debut pr IF
         (1 subst OR ukjent)
         ;
 
 #:4008
- "<i>"   SELECT:4008   (pr) IF
-      (0 subst-prop)
+"<I>"   SELECT:I-2003 pr IF
+      (-1C setn-start-med-strek/anf)
+;
+"<i>"   SELECT:at-i-2003 pr IF
       (-1C setn-gr)
 ;
 # I først i setningen er sjelden subst prop!
