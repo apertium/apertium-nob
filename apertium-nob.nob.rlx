@@ -6053,6 +6053,14 @@ REMOVE:unlikely ("<ris>") + pasv;
 ;
 #  "denne siden"
 
+"<siden>" SELECT:i-siden-og n IF
+	(-1 %i%)
+        (NEGATE 1 np OR n OR det)  # me er ikkje rett før eit subjekt
+;
+# «I svært høy fart slo sveitseren seg hardt i siden og landet deretter på ryggen.»
+# Ikkje: «dette er laget han har vært med i siden 2019»
+# Ikkje: «… som ingen nordmann har hatt kloen i siden Anders Jacobsen vant»
+
 
 
 #:3302
