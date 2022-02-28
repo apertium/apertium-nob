@@ -7783,7 +7783,7 @@ SELECT:strenge ("<strenge>"i) + adj IF
 
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
-        (-2C det + pl)
+        (-2C det + pl - date)
         (-1 %være/bli%)
         ;
 # «En av de tre er  fløyet  til Oslo for behandling »
