@@ -8969,7 +8969,7 @@ REMOVE:data-not-datum ("datum");
 
 
 "<fanget>" REMOVE:fanget n IF
-        (NOT -1 %i%)
+        (NOT -1 %i% OR %på%)
         ;
 
 "<far>" REMOVE:far (n nt) IF
@@ -28636,6 +28636,7 @@ REMOVE:før-det-legges-fram inf IF
 #  "økte kostnader og redusert (ikke perf-part) evne til å
 # NOT 1 PREP: , skapt (perf-part) for"))
 
+
 "<fryste>" SELECT:de-fryste-midlene adj IF
 	(-1 prn)
 	(1 n)
@@ -29775,6 +29776,11 @@ CONSTRAINTS
 	 (-1 prep)
 ;
 
+
+"<fanget>" SELECT:på-fanget n IF
+        (*-2C fv)
+        (-1 %på%)
+        ;
 
 #:4015
   "<felles>"   SELECT:4015   (vblex inf) IF
