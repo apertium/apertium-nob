@@ -8293,6 +8293,7 @@ REMOVE ("hvor") + cnjsub IF
         (1 det)
         (2 n)
         ;
+
 # "...tilbringe nesten en måned"
 "<ytterst>" REMOVE:ytterst-knepen-margin adj IF
         (1 ("knepen"))
@@ -34762,6 +34763,14 @@ SELECT:de-som-skilles-velger-delt pres IF
         (-1C pres OR n + ind)
         (*1C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
+
+SELECT:skipet-ble-angrepet pp IF
+        (*-3C cnjsub BARRIER ikke-adj-det)
+        (-2C n + def)
+        (-1C %være/bli%)
+        (NEGATE *1 fv BARRIER cnjsub)
+        ;
+# «det japanske tankskipet ble angrepet samtidig   som Japans statsminister var på besøk»
 
 SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
         (NOT -1 %som%)
