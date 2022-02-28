@@ -8631,6 +8631,13 @@ REMOVE ("pote") IF
         (-1C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
 ;
 
+"<angrep>" REMOVE:hyppige-avbrytelser-og-angrep pret IF
+        (-3C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
+        (-2C n + pl)
+        (-1 cnjcoo - clb)
+;
+# «Spesielt Albert Rivera fra det liberale partiet Ciudadanos gikk aggressivt til verks med hyppige avbrytelser og angrep,»
+
 
 REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF
 		(-1 prep)
