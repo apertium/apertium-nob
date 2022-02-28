@@ -9719,10 +9719,10 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 ;
 
 "<huset>" SELECT:huset-hundrevis-av-foreldreløse vblex IF
-		(1 adv)
-		(2 pr)
-		(3 n OR adj)
-		;
+        (1 adv)
+        (2 pr)
+        (3 n OR adj)
+        ;
 
 "<hvilket>" REMOVE:hvilket-annet-gull cnjsub IF
         (1 ("<annet>"))
@@ -24670,9 +24670,9 @@ REMOVE:default ("<Innerst>") + n ;
 
 
 #:2245
- REMOVE:2245 (adj) IF
-	(0 %huset%)
-	(NOT 1 subst)
+REMOVE:huset ("huse") IF
+	(0 pp)
+	(NOT 1 n OR prn)
 ;
 
 
