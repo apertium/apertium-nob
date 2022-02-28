@@ -1808,6 +1808,8 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
         (-2C nominativ OR infmerke)
         (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
         (-1C %ha/få% OR %være/bli%)
+        (NEGATE 1 cnjcoo OR cnjsub) # «jeg har laget og fansen i mitt hjerte»
+        (NEGATE 1 %til% LINK 1 infmerke)
         ;
 # «Ble tatt i april 2017 etter å ha laget en eksplosiv innretning hjemme.»
 
