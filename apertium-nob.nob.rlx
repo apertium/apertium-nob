@@ -27761,6 +27761,16 @@ REMOVE:for-økt-sysselsetting subst IF
 #  "28.11.2002: Verken spiser Kari eller drikker"
 
 
+REMOVE:slo-seg-og-landet n + nt + def IF
+        (*-2C fv BARRIER clb OR infmerke)
+	(-1C cnjcoo - clb)
+        (NOT -1 %eller%)        # «eller» more likely with nouns
+	(0 fv OR pp)
+        (NEGATE 1 fv)           # «Vi tar gjerne turen nedover så snart bussen og toget kan bære oss»
+;
+# «I svært høy fart slo sveitseren seg hardt i siden og landet deretter på ryggen.»
+# Ikkje: «Filip er litt uheldig med at han fikk den jævla magekrampen eller stinget på 5000-meteren.»
+
 
 #:1978
  REMOVE:1978 (vblex pres samset) IF
