@@ -1401,6 +1401,7 @@ REMOVE:unlikely ("ramp") IF (0 ("rampe")) ; # kunne krevd cmp, men «ramper» er
 REMOVE:unlikely ("makk") IF (0 ("makker")) (0/1 cmp) ; # spissmakker
 REMOVE:unlikely ("lab") IF (0 ("laber") OR ("lab")) (1 ("<bris>")) ; # laber bris
 REMOVE:unlikely ("strening") IF (0 ("trening")) (0/* cmp);     # *barmarksstrening
+REMOVE:unlikely ("sting") IF (0 ("ting")) (0/* cmp); # *forbundssting
 REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
 REMOVE:unlikely ("<virker>"i) + pl;
@@ -1408,6 +1409,7 @@ REMOVE:unlikely ("kak");
 REMOVE:unlikely ("børse");
 REMOVE:unlikely ("ap") IF (0 ("ape"));
 REMOVE:unlikely ("katte") IF (0 ("katt"));
+REMOVE:unlikely ("klubbe") IF (0 ("klubb"));
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -1802,6 +1804,15 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
 "<laget>" REMOVE:fikk-laget pret IF
         (-1C fv)
         ;
+
+"<laget>" REMOVE:å-ha-laget n IF
+        (-2C nominativ OR infmerke)
+        (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
+        (-1C %ha/få% OR %være/bli%)
+        (NEGATE 1 cnjcoo OR cnjsub) # «jeg har laget og fansen i mitt hjerte»
+        (NEGATE 1 %til% LINK 1 infmerke)
+        ;
+# «Ble tatt i april 2017 etter å ha laget en eksplosiv innretning hjemme.»
 
 "<laget>" SELECT:lede-laget n + ("lag") IF
         (-1 ("lede")
@@ -2565,6 +2576,13 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
         (2 sup)
         ;
 
+"<den>" SELECT:den-skadde-Nora-har det IF
+        (1C pret OR pp)
+        (2 np)
+        (*3C fv BARRIER (*) - np)
+        ;
+# «Savnet etter den skadde Nora Mørk er stort hos Norge»
+
 
 SELECT:Ta-den ("den¹") IF
         (-2 setn-gr)
@@ -2943,6 +2961,10 @@ SELECT:den+prn ("den¹") IF
 
 "<samlet>" SELECT:stå-samlet ("samle") + adj + pp IF
 		(-1* ("stå" vblex) BARRIER setn-gr)
+        ;
+
+"<samtidig>" SELECT:samtidig-som adv IF
+        (1 %som%)
         ;
 
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
@@ -4429,13 +4451,16 @@ SELECT:lurer-på-hvor adv IF
 # «hvor» er omtrent aldri cnjsub (nn «der») etter adv – finst det unntak?
 # «De har blitt kritisert for å nekte å bekrefte hvor Edwards var»
 
-"<i>" SELECT:i-LeBron-debut prep IF
+
+"<i>" SELECT:i-LeBron-debut pr IF
         (1 subst OR ukjent)
         ;
 
 #:4008
- "<i>"   SELECT:4008   (pr) IF
-      (0 subst-prop)
+"<I>"   SELECT:I-2003 pr IF
+      (-1C setn-start-med-strek/anf)
+;
+"<i>"   SELECT:at-i-2003 pr IF
       (-1C setn-gr)
 ;
 # I først i setningen er sjelden subst prop!
@@ -4575,9 +4600,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 		(3 np)
 		;
 
+
 "<landet>" SELECT:landet-utenfor-Norge n IF
-		(*1 ("Norge"))
-		;
+        (*1 ("Norge"))
+        ;
 
 "<landet>" SELECT:er-landet-stengt n IF
         (-1 ("være"))
@@ -4585,9 +4611,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:å-få-landet vblex IF
-		(-2 ("å"))
-		(-1 ("få" vblex))
-		;
+        (-2 ("å"))
+        (-1 ("få" vblex))
+        ;
 
 "<landet>" SELECT:som-landet-på pret IF
         (-1 %som% OR %men%)
@@ -4617,7 +4643,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:flykte-landet n IF
-        (-1C vblex)
+        (-1C fv)
         (NEGATE -1 %ha% OR %være/bli%)
         ;
 
@@ -4634,9 +4660,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-2 vblex + pp)
         (-1 %og%)
         ;
-        
+
 "<landet>" SELECT:har-landet-så-langt n IF
-		(-1 ("ha"))
+        (-1 ("ha"))
         (1 adv)
         (2 adv)
         (3 adv)
@@ -4648,11 +4674,18 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:koster-landet n IF
-		(-1 ("koste" vblex))
-		;
+        (-1 ("koste") + vblex)
+        ;
 
 "<landet>" SELECT:landet-ikke pret IF
+        (1 ("også") OR ("ikke"))
         (1C adv)
+        ;
+# «Høyesterett landet også på 45 dager»
+# Men ikkje: «Koronapandemien skyver dette landet enda dypere ned i avgrunnen.»
+
+"<landet>" SELECT:forlate-landet n IF
+        (-1 ("forlate"))
         ;
 
 "<landet>" SELECT:landet-i-verden n IF
@@ -4670,47 +4703,23 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:har-faktisk-ikke-landet vblex IF
-		(-4 prn + pers)
-		(-3 ("ha"))
-		(-2 adv)
-		(-1 ("ikke"))
-		;
+        (-4 prn + pers)
+        (-3 ("ha"))
+        (-2 adv)
+        (-1 ("ikke"))
+        ;
 
 "<landet>" SELECT:landet-100-meter-fra vblex IF
-		(1 det + qnt)
-		(2 ("meter"))
-		(3 ("fra") OR ("unna"))
-		;
+        (1 det + qnt)
+        (2 ("meter"))
+        (3 ("fra") OR ("unna"))
+        ;
 
 "<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
-		(1 vekedag)
-		(2 ("i") OR ("på"))
-		(3 np)
-		;
-
-"<landet>" SELECT:landet-er n IF
-        (1* vblex BARRIER setn-gr)
+        (1 vekedag)
+        (2 ("i") OR ("på"))
+        (3 np)
         ;
-
-"<landet>" SELECT:er-Spania-landet n IF
-        (-2 vblex)
-		(-1 np + top)
-        ;
-
-"<landet>" SELECT:landet-som-tok n IF
-        (1 %som%)
-        (2 vblex)
-        ;
-
-"<landet>" SELECT:det-landet n IF
-        (-1 det + dem + nt)
-        (NEGATE -2 cnjsub OR %før% OR %etter%)
-        ;
-
-"<landet>" SELECT:og-landet-helt-perfekt pret IF
-        (NEGATE 0* vblex BARRIER setn-gr)
-        ;
-
 
 "<lav>"   SELECT   (adj) IF
         (NOT *-2 lav-ord)
@@ -6058,6 +6067,14 @@ REMOVE:unlikely ("<ris>") + pasv;
 ;
 #  "denne siden"
 
+"<siden>" SELECT:i-siden-og n IF
+	(-1 %i%)
+        (NEGATE 1 np OR n OR det)  # me er ikkje rett før eit subjekt
+;
+# «I svært høy fart slo sveitseren seg hardt i siden og landet deretter på ryggen.»
+# Ikkje: «dette er laget han har vært med i siden 2019»
+# Ikkje: «… som ingen nordmann har hatt kloen i siden Anders Jacobsen vant»
+
 
 
 #:3302
@@ -6335,6 +6352,8 @@ REMOVE:unlikely ("<ris>") + pasv;
 "<skiftet>" SELECT:grønne-skiftet ("skifte") + n IF
         (-1 ("<grønne>"))
         ;
+
+"<skipper>" SELECT:skipper ("skipper"); # ikkje skipp<pl>
 
 "<skipet>" SELECT:unlikely-verb n IF
         (NOT 1 %til% OR %ut% OR %inn%)
@@ -7778,7 +7797,7 @@ SELECT:strenge ("<strenge>"i) + adj IF
 
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
-        (-2C det + pl)
+        (-2C det + pl - date)
         (-1 %være/bli%)
         ;
 # «En av de tre er  fløyet  til Oslo for behandling »
@@ -8277,6 +8296,7 @@ REMOVE ("hvor") + cnjsub IF
         (1 det)
         (2 n)
         ;
+
 # "...tilbringe nesten en måned"
 "<ytterst>" REMOVE:ytterst-knepen-margin adj IF
         (1 ("knepen"))
@@ -8626,6 +8646,13 @@ REMOVE ("pote") IF
         (-1C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
 ;
 
+"<angrep>" REMOVE:hyppige-avbrytelser-og-angrep pret IF
+        (-3C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
+        (-2C n + pl)
+        (-1 cnjcoo - clb)
+;
+# «Spesielt Albert Rivera fra det liberale partiet Ciudadanos gikk aggressivt til verks med hyppige avbrytelser og angrep,»
+
 
 REMOVE:i-angrep ("<angrep>"i) + vblex + pret IF
 		(-1 prep)
@@ -8958,7 +8985,7 @@ REMOVE:data-not-datum ("datum");
 
 
 "<fanget>" REMOVE:fanget n IF
-        (NOT -1 %i%)
+        (NOT -1 %i% OR %på%)
         ;
 
 "<far>" REMOVE:far (n nt) IF
@@ -9707,10 +9734,10 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 ;
 
 "<huset>" SELECT:huset-hundrevis-av-foreldreløse vblex IF
-		(1 adv)
-		(2 pr)
-		(3 n OR adj)
-		;
+        (1 adv)
+        (2 pr)
+        (3 n OR adj)
+        ;
 
 "<hvilket>" REMOVE:hvilket-annet-gull cnjsub IF
         (1 ("<annet>"))
@@ -10267,7 +10294,9 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh jan 2004: Bare verb ved: hun navner tøyet"
 
-
+"<nettet>" REMOVE:nettet pret OR pp IF
+        (NOT 1 ("ball") + def)
+        ;
 
 #:3402
   "<noe>"   REMOVE:3402   (det pl) IF
@@ -23289,6 +23318,22 @@ SELECT:ble-ikke-selen-skadet &&ADJ_N_AGR IF
         ;
 # «Heldigvis ble ikke selen skadet.»
 
+SELECT:ble-landet-rammet n + &&ADJ_N_AGR IF
+        (*-1 kop-fv BARRIER ikke-adv)
+        (0C n OR pp)
+        (1C adj OR pp OR pret)
+        (1 &&ADJ_N_AGR)
+        ;
+# «I 2003 ble landet rammet av et skjelv med styrke 6,6»
+
+SELECT:ble-landet-en n IF
+        (*-1 kop-fv BARRIER ikke-adv LINK NEGATE *-1 ("den") + nt) # «det ble landet et fly»
+        (0C n OR pp)
+        (1C det)
+        ;
+# «I praksis blir landet en buffersone for USA.»
+# Ikkje: «Det ble holdt et tilsvarende møte i Stockholm i mars 2018»
+
 SELECT:var-5.5-prosent-deprimert &&ADJ_N_AGR IF
         (-3 kop-fv)
         (-2 det + qnt + pl)
@@ -24642,9 +24687,9 @@ REMOVE:default ("<Innerst>") + n ;
 
 
 #:2245
- REMOVE:2245 (adj) IF
-	(0 %huset%)
-	(NOT 1 subst)
+REMOVE:huset ("huse") IF
+	(0 pp)
+	(NOT 1 n OR prn)
 ;
 
 
@@ -25162,12 +25207,12 @@ REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
 
 
 #:2190
- REMOVE:2190 (clb) IF
-	(0 konj)
+REMOVE:2190 clb IF
+	(0 cnjcoo)
 	(1 ub-fl-subst)
 	(-1 ub-fl-subst)
 	(NOT 1 farlige-fl-subst)
-	(*2 pres/pret LINK NOT 0 farlige-verb)
+	(*2 pres/pret BARRIER cnjsub LINK NOT 0 farlige-verb)
 ;
 #  "..hvilke vurderinger og (ikke clb) tanker
 # hun har gjort seg
@@ -27733,6 +27778,16 @@ REMOVE:for-økt-sysselsetting subst IF
 #  "28.11.2002: Verken spiser Kari eller drikker"
 
 
+REMOVE:slo-seg-og-landet n + nt + def IF
+        (*-2C fv BARRIER clb OR infmerke)
+	(-1C cnjcoo - clb)
+        (NOT -1 %eller%)        # «eller» more likely with nouns
+	(0 fv OR pp)
+        (NEGATE 1 fv)           # «Vi tar gjerne turen nedover så snart bussen og toget kan bære oss»
+;
+# «I svært høy fart slo sveitseren seg hardt i siden og landet deretter på ryggen.»
+# Ikkje: «Filip er litt uheldig med at han fikk den jævla magekrampen eller stinget på 5000-meteren.»
+
 
 #:1978
  REMOVE:1978 (vblex pres samset) IF
@@ -28625,6 +28680,7 @@ REMOVE:før-det-legges-fram inf IF
 #  "økte kostnader og redusert (ikke perf-part) evne til å
 # NOT 1 PREP: , skapt (perf-part) for"))
 
+
 "<fryste>" SELECT:de-fryste-midlene adj IF
 	(-1 prn)
 	(1 n)
@@ -28832,14 +28888,14 @@ REMOVE:til-huset pp IF
 
 
 #:1839
- REMOVE:1839 (vblex pret) IF
+REMOVE:1839 pret IF
 	(1 %siden%)
 	(*-1O setn-gr LINK *1 %for% LINK NOT *1 ikke-adv-adj-subst-pron-konj-det)
 ;
 
 
 #:1840
- REMOVE:1840 (vblex pret) IF
+REMOVE:1840 pret IF
 	(NOT 0 sier-verb)
 	(-1 komma)
 	(NOT *-2 komma)
@@ -28852,7 +28908,7 @@ REMOVE:til-huset pp IF
 
 
 #:1841
- REMOVE:1841 (vblex pret) IF
+ REMOVE:1841 pret IF
 	(1 komma)
 	(-1 komma/konj)
 	(NOT -1 clb)
@@ -28864,7 +28920,7 @@ REMOVE:til-huset pp IF
 
 
 #:1842
- REMOVE:1842 (vblex pret) IF
+REMOVE:1842 pret IF
 	(-1 komma/konj)
 	(NOT -1 clb)
 	(*-1 fv BARRIER setn-gr)
@@ -29221,12 +29277,14 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 
 
 #:1867
- REMOVE:hvite-skjorter-og-svarte-slips (vblex pret) IF
-	(-1 konj)
+REMOVE:hvite-skjorter-og-svarte-slips pret IF
+        (NEGATE *-2 pret BARRIER pp OR adj)
+        (0 pp OR adj)
+	(-1 cnjcoo)
 	(NOT -1 clb)
 	(NOT -1 adv)
 ;
-#  "Hvite skjorter og svarte (ikke pret) slips"))
+# «Hvite skjorter og svarte<not pret!> slips»
 
 
 
@@ -29631,6 +29689,14 @@ REMOVE:fått-laget-på-plass pret OR pp IF
 # «og fått laget på plass»
 # (men ikkje «få komme på plass»)
 
+REMOVE:å-stjele-showet pret OR pp IF
+        (-2 infmerke)
+        (-1 inf)
+        (NEGATE -1 %ha%)
+        (0C pret OR pp OR n + nt + def)
+        ;
+# «Politiet kunne ha gjort mer for å følge opp  tipset  , mener visepolitimester Bjørn Vandvik.»
+# «Det å selge  landet  som reisemål, er motsatt av hva jeg tenker.»
 
 # sec 3
 CONSTRAINTS
@@ -29765,6 +29831,11 @@ CONSTRAINTS
 ;
 
 
+"<fanget>" SELECT:på-fanget n IF
+        (*-2C fv)
+        (-1 %på%)
+        ;
+
 #:4015
   "<felles>"   SELECT:4015   (vblex inf) IF
 	(NOT 0 farlige-inf)
@@ -29826,6 +29897,32 @@ CONSTRAINTS
 	   (*-1 %puste% BARRIER setn-gr)
 	   (1 %ut%)
 ;
+
+
+"<landet>" SELECT:landet-er n IF
+        (*1C fv BARRIER setn-gr)
+        ;
+# Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
+
+"<landet>" SELECT:er-Spania-landet n IF
+        (-2 fv)
+        (-1 np + top)
+        ;
+
+"<landet>" SELECT:landet-som-tok n IF
+        (1 %som%)
+        (2 fv)
+        ;
+
+"<landet>" SELECT:det-landet n IF
+        (-1 det + dem + nt)
+        (NEGATE -2 cnjsub OR %før% OR %etter%)
+        ;
+
+"<landet>" SELECT:og-landet-helt-perfekt pret IF
+        (NEGATE 0* fv BARRIER setn-gr)
+        ;
+
 
 #4087
   "<lo>"   SELECT:4087   (np)
@@ -30013,7 +30110,6 @@ CONSTRAINTS
 
 #CONSTRAINTS
 ## remove domain heur
-
 
 
 #:4013
@@ -30263,7 +30359,7 @@ CONSTRAINTS
 
 
 "<laget>" REMOVE:vi-har-laget n IF
-        (-2C nominativ)
+        (-2C nominativ OR infmerke)
         (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
         (-1C %ha/få% OR %være/bli%)
         ;
@@ -30374,6 +30470,10 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: mest sannsynlig adjektiv når subst-reglene har virket."
 
+"<lover>" REMOVE:lover-og-regler pres IF
+        (1 cnjcoo)
+        (2 ("regel") + pl)
+        ;
 
 #5005
   "<lys>"   REMOVE:5005   (n nt sg ind gen) IF
@@ -30540,6 +30640,10 @@ REMOVE:ikkje-skjor ("skjære") + n;
 ;
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
+
+"<rådet>" REMOVE:rådet-regjeringen pp IF
+        (NEGATE *-1 p-hj-verb BARRIER fv)
+        ;
 
 "<sammenstøt>" REMOVE:samanstøytar sg IF
         (NOT -1 det + sg)
@@ -34663,6 +34767,14 @@ SELECT:de-som-skilles-velger-delt pres IF
         (*1C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
 
+SELECT:skipet-ble-angrepet pp IF
+        (*-3C cnjsub BARRIER ikke-adj-det)
+        (-2C n + def)
+        (-1C %være/bli%)
+        (NEGATE *1 fv BARRIER cnjsub)
+        ;
+# «det japanske tankskipet ble angrepet samtidig   som Japans statsminister var på besøk»
+
 SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
         (NOT -1 %som%)
         (0C pp OR pret)
@@ -35217,8 +35329,8 @@ SELECT:default ("<tømmer>" "tømmer") ;
 SELECT:default ("<pressen>" "presse") ;
 SELECT:default ("<Pressen>" "presse") ;
 SELECT:default ("<anger>" "anger") ;
+SELECT:default ("fleipe") + pret ; # avoid Fleipen
 
-	
 
 
 # REMOVE:default rules:
