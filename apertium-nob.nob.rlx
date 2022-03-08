@@ -7710,6 +7710,8 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 #  "Olsen hadde visst høstet det meste
 # 30.11"
 
+"<Været>" REMOVE:Været vblex;
+
 SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
 SELECT:kroner ("øre") + nt IF (-1 siffer OR talord OR siffer-millioner);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
