@@ -34130,7 +34130,8 @@ SELECT:ingen-snakker prn IF
 SELECT:møtte-de-også-Kinas-president prn IF
         (-1 fv)
         (0 det + pl)
-        (*1 gen BARRIER ikke-adv LINK 1 n + sg)
+        (1C adv OR pr)
+        (*2 gen BARRIER ikke-adv LINK 1 n + sg)
         ;
 # «I Beijing møtte de blant annet Kinas president Xi Jinping og folkekongressformannen.»
 
@@ -35160,6 +35161,11 @@ SELECT:De-eldre-drikker-oftere fv IF
 
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
+SELECT:alle-kommunens-idrettslag pl IF
+        (-2 %alle%)
+        (-1C gen)
+        (0C n)
+        ;
 SELECT:73-av-verdens-fattigste-land pl IF
         (*-1 poss-det OR gen BARRIER ikke-adv-adj LINK -1 %av% LINK -1 qnt)
         (0C subst)
