@@ -5743,6 +5743,11 @@ REMOVE:unlikely ("<ris>") + pasv;
 					# ris til eigen bak, ris bak spegelen, ein porsjon ris, kokt ris, ris og kveite
 					# todo: passiv presens, 'landet ris av en pandemi'
 
+"<omforent>" SELECT:ein-samlande-avtale adj IF
+        (-1 det + qnt + sg)
+        (1 adj)
+        ;
+
 "<skade>" REMOVE:unlikely adj + pp ;
 # Anten infinitiv eller substantiv
 
