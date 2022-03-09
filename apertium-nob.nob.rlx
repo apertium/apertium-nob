@@ -11520,6 +11520,12 @@ SELECT:Den-siktede xgrau OR adj IF
 CONSTRAINTS
 ## select ndomain
 
+SELECT:SUBST-sett-under-ett n IF
+        (1 ("<sett>"))
+        (2 ("<under>"))
+        (3 ("<ett>"))
+        ;
+
 SELECT:så-flere-kvister n + pl IF
 	(*-2 fv BARRIER cnjsub)
 	(-1 %flere%)
