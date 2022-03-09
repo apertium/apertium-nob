@@ -11395,7 +11395,7 @@ REMOVE:Vann  vblex OR adv IF
 
 "<Vær>" REMOVE:Vær-imp n IF
         (NOT 1C fv)
-        (NEGATE 1 %og% LINK 1 ("vind"))
+        (NEGATE 1 %og% LINK 1 ("vind"i))
         ;
 
 "<yrket>" REMOVE:det-yrket pret IF
