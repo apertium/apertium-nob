@@ -27201,11 +27201,12 @@ REMOVE:før-min-tid (cnjsub) IF
 
 
 #:2026
- REMOVE:2026 subst-ub IF
-	(0 pres/pret)
+REMOVE:om-det-finnes subst-ub IF
 	(-1 be-nøyt-det)
 	(NOT -1 poss-det)
+	(0 pres/pret)
 	(*1 setn-gr BARRIER pres/pret)
+        (NEGATE -1C expl LINK -1C fv) # Dermed er det reder<n!> … som tar
 ;
 
 SELECT:tildeles-den-utøver-som n + ind + &&ADJ_N_AGR IF
