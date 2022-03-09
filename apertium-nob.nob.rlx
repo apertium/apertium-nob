@@ -567,7 +567,9 @@ LIST det/adv = det adv ;
 LIST ellipse = ("$--" guio) ("--" guio) <ellipse> ;
 LIST ent = sg ;
 LIST ent-fem-subst = (n f sg) (np f sg) ;
-LIST ent-fem-subst/tall-subst/målsubst/tidssubst = "år"  "uke"  "tusen"  "trillion"  "tonnkilometer"  "time"  "tiendelssekund"  "tidelssekund"  "snes"  "sjømil"  "sekundmeter"  "sekund"  "prosent"  "nanosekund"  "nanometer"  "måned"  "mrd." "minutt"  "millisekund"  "million"  "millimeter"  "milliliter"  "milligram"  "milliard"  "mill." "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadrillion"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo"  "hundredelssekund"  "hundre"  "hektoliter"  "hektogram"  "halvår"  "halvmillion"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "døgn"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "dag"  "centimeter"  "centiliter"  "centigram"  "billion"  "billiard"  (n f sg) (np f sg) ("gang"  pl) ;
+LIST tidssubst = "år" "uke" "minutt"  "time" "tiendelssekund" "tidelssekund" "sekund" "nanosekund" "millisekund" "hundredelssekund" "halvår" "døgn" "dag" ;
+LIST ent-fem-subst/tall-subst/målsubst = "tusen" "trillion" "tonnkilometer" "snes" "sjømil" "sekundmeter" "prosent" "nanometer" "måned" "mrd." "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundre" "hektoliter" "hektogram" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "centimeter" "centiliter" "centigram" "billion" "billiard" (n f sg) (np f sg) ("gang" pl) ;
+SET ent-fem-subst/tall-subst/målsubst/tidssubst = ent-fem-subst/tall-subst/målsubst OR tidssubst ;
 LIST ent-mask-subst = (n m sg) (np m sg) ;
 LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
@@ -28708,6 +28710,10 @@ REMOVE:før-det-legges-fram inf IF
 	(*-1 ("drap"))
 	;
 
+"<Frist>" SELECT:Frist-neste-uke n IF
+        (0* tidssubst)
+        ;
+
 #:1892
  REMOVE:1892 pp IF
 	(NOT 0 %ta%)
@@ -30281,6 +30287,9 @@ CONSTRAINTS
         ;
 # «Elden varsler blant annet at han vil stevne Gjermund Cappelens forsvarer Benedict de Vibe som vitne.»
 
+"<forsiktig>" REMOVE:Vær-forsiktig nt IF
+        (-1 ("være") + imp)
+        ;
 
 
 
