@@ -35224,8 +35224,10 @@ SELECT:subject-per-clause nominativ IF
 # «De vurderer å ta alle fly ut av drift, fremgår  det  i en bekymringsmelding»
 
 SELECT:så-noe ("<så>"i) + adv IF
-        (0* vblex BARRIER setn-gr)
+        (0* fv BARRIER setn-gr)
         ;
+# Ikkje: «25 millioner så laget vinne VM-finalen i 2015, og det er fortsatt største TV-publikum for en fotballkamp i USA, uansett kjønn.»
+
 
 "<Så>" SELECT:Så-storbokstav adv ;
 
