@@ -10305,8 +10305,18 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh jan 2004: Bare verb ved: hun navner tøyet"
 
+"<nettet>" REMOVE:på-nettet pret OR pp IF
+        (-1 %på%)
+        ;
+
 "<nettet>" REMOVE:nettet pret OR pp IF
-        (NOT 1 ("ball") + def)
+        # Unngå typiske sportskontekstar:
+        (NEGATE 1 ("ball") + def)
+        (NEGATE *0 ("toppscorer") OR ("score"))
+        (NEGATE 2 ("assistanse") OR ("bortelag") OR ("hjemmelag"))  # med assistanse
+        (NEGATE *1 %gang% BARRIER ikke-adv-adj-det-subst) # for andre gang, to ganger hver, 14 ganger for Ulf
+        (NEGATE -1 cog)
+        (NEGATE -1 ukjent + storbokstav)
         ;
 
 #:3402
