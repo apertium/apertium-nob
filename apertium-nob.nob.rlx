@@ -30368,6 +30368,10 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: Bare ved Kristi komme osv"
 
+"<korset>" REMOVE:korset pp OR pret IF
+        (NEGATE 1* ref OR acc BARRIER ikke-adv) # «korset seg»
+        ;
+
 "<kjæreste>" REMOVE:aller-kjæreste n IF
         (-1 %aller%)
         ;
