@@ -4696,10 +4696,6 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (2 ("verden"))
         ;
 
-"<landet>" SELECT:landet-på pret IF
-        (1 %på% OR %i% OR %ved% OR ("oppå"))
-        ;
-
 "<landet>" SELECT:og-landet-ellers n IF
         (-1 %og%)
         (1 ("ellers") OR ("for øvrig"))
@@ -8819,6 +8815,10 @@ REMOVE:data-not-datum ("datum");
 
 "<De>" REMOVE:setn-start cog IF
         (-1 setn-gr)
+        ;
+
+"<deler>" REMOVE:deler-det-i-to n IF
+        (*1 %i% CBARRIER ikke-subst-pron LINK 1 talord)
         ;
 
 "<domene>" REMOVE ("dom");
@@ -29914,6 +29914,11 @@ CONSTRAINTS
 	   (1 %ut%)
 ;
 
+
+"<landet>" SELECT:landet-på pret IF
+        (1 %på% OR %i% OR %ved% OR ("oppå"))
+        ;
+# Farleg – «deler landet på midten» osb.
 
 "<landet>" SELECT:landet-er n IF
         (*1C fv BARRIER setn-gr)
