@@ -6537,6 +6537,9 @@ REMOVE:unlikely ("<ris>") + pasv;
 #  "Hun har spent for/fra vogna
 # Hun har spent ut kledet"
 
+"<spille>" SELECT:spille inf IF
+        (NOT -1 %til%)
+        ;
 
 
 #:3242
