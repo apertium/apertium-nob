@@ -10068,8 +10068,6 @@ REMOVE:tilbakekaller-leker ("lek") IF
 	(*-1 verb LINK NOT 0 %se/høres/kjennes% LINK NOT 0 kop)
 ;
 
-
-
 #:3468
   "<like>"   REMOVE:3468   (adj) IF
 	(-1 %for%)
@@ -18787,6 +18785,15 @@ SELECT:ingen-fv-før-setn-gr pr IF
 
 
 
+SELECT:natur-landet-har n + def IF
+        (-1C n + ind)
+        (1C pres/pret)
+        (0 pres/pret)
+        (0C pres/pret OR n + def OR pp)
+        (NOT 0 sier-verb OR ("tro"))
+        (NOT 0 hj-verb)
+        ;
+# «Underveis vil du oppleve den unike variasjonen av natur landet har å by på, fra høyfjell til ørkener, vulkaner og tropisk regnskog – ofte på en og samme dag.»
 
 
 
@@ -23630,6 +23637,11 @@ REMOVE:4090 (vblex)
 #bare verb ved "flekke tenner"
 
 
+REMOVE:forblir-fanget pret IF
+        (-1 ("forbli"))
+        (0C pret OR pp)
+        ;
+
 #:1888
  REMOVE:1888 (vblex pret) IF
 	(0 samset)
@@ -27671,7 +27683,6 @@ REMOVE:for-økt-sysselsetting subst IF
 	(NOT 1 subst-prop OR adverbialsubst)
 ;
 #  "et enormt potensial for økt (adj) sysselsetting"))
-
 
 
 #:1986
