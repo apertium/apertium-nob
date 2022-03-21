@@ -10906,6 +10906,10 @@ SELECT:skrev vblex IF
 # som predikativ: det er slutt!"
 
 
+"<sortere>"i SELECT:sortere-informasjon inf IF
+        (NEGATE 1* %enn%)
+        ;
+
 
 #:3244
   "<spent>"   REMOVE:3244   pp IF
