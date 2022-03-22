@@ -8032,6 +8032,7 @@ SELECT:balle-på-seg ("balle") + vblex IF
 		(2* %seg%)
 		;
 
+SELECT:sel-unlikely ("<stoffet>"i) + n;
 SELECT:sel-unlikely ("<kravet>"i) + n;
 SELECT:sel-unlikely ("<baller>"i "ball" m);
 SELECT:sel-unlikely ("<ballene>"i "ball" m);
