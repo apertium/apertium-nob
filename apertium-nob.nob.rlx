@@ -8152,6 +8152,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<Savnet>" REMOVE:Sakna-mann n IF
         (1 n)
         ;
+"<tapene>"i REMOVE:tapene ("tape") IF
+        (0 ("tape") OR ("tap"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
