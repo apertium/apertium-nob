@@ -10452,6 +10452,17 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "2.3.2001 Han kan akkurat nå legge fram resultater."
 
 
+"<nå>" REMOVE:skal-vi-nå adv IF
+        (*-2 m-hj-verb - ("få") BARRIER ikke-subst-pron)
+        (-1 n OR nominativ)
+        (NEGATE -1 expl OR vblex)
+        (NEGATE *1 vblex)
+        (NEGATE 0 n)
+        ;
+# Ingen verb til høgre, sannsynleg objekt for modalverb.
+# «Det målet skal vi nå så fort som mulig.»
+
+
 
 #:3383
 "<når>"   REMOVE:3383   adv IF
@@ -33508,7 +33519,7 @@ REMOVE:farlige-mask-subst n + m OR n + f IF
 
 
 #:4037
- REMOVE:4037 (vblex inf) IF
+REMOVE:farlige-inf inf IF
 	 (0 farlige-inf)
 ;
 
