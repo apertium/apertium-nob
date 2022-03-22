@@ -8023,7 +8023,8 @@ REMOVE:unlikely ("<løs>"i) + pasv;
 REMOVE:unlikely ("løs") + n;
 REMOVE:unlikely ("lyte") OR ("ly") IF (0 ("lytte")); # «Lytt først til sangen.»
 REMOVE:unlikely ("sandel") IF (0 ("andel")); # kontrakt|sandel vs kontrakts|andel
-REMOVE:unlikely ("sel") IF (0 ("selv")); # selv|eier|bolig vs |sel|veier|bolig
+REMOVE:unlikely SUB:* ("sel") IF (0/* ("selv")); # selv|eier|bolig vs |sel|veier|bolig
+REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
