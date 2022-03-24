@@ -8075,12 +8075,18 @@ REMOVE SUB:3 ("..?"r) IF (0/* cmp) ;
 REMOVE SUB:2 ("..?"r) IF (0/* cmp) ;
 REMOVE SUB:1 ("..?"r) IF (0/* cmp) ;
 
+#####################
+# OGSÅ vs ÒG: START #
+#####################
 
-# "også"  → "òg"
-# "også¹" → "også"
-"<også>" SELECT:også-setn-gr ("også") IF
+# "også"  → "òg" dersom VAR:også_òg, elles "også"
+# "også¹" → "også" uavhengig av VAR
+# "også²" → "òg"   uavhengig av VAR
+"<også>" SELECT:også-setn-gr ("også²") IF
         (1 clb-komma OR punktum/ellipse)
         ;
+# Dette er einaste konteksten der me vil ha òg på nynorsk viss ikkje VAR:også_òg
+
 "<også>" SELECT:cm-også-om ("også") IF
         (-1 cm OR cnjsub OR cnjcoo + clb)
         (1 ("om") OR cnjsub)
@@ -8125,6 +8131,11 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 
 # «Han blir også i 2019 å se i rally-VM.»
 "<også>" SELECT:Den-har-også ("også");
+
+###################
+# OGSÅ vs ÒG: END #
+###################
+
 
 #«Den frie pressen
 "<pressen>" REMOVE:den-frie-pressen ("press") IF
