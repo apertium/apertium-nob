@@ -8162,6 +8162,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<frykter>"i REMOVE:frykter n IF
         (0 ("frykt") OR ("frykte"))
         ;
+"<fløy>"i REMOVE:venstre-fløy vblex IF
+        (-1 ("venstre") OR ("høyre"))
+        (0 ("fly") OR ("fløy"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
