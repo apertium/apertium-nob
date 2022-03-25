@@ -8177,6 +8177,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 ("venstre") OR ("høyre"))
         (0 ("fly") OR ("fløy"))
         ;
+"<sulte>"i REMOVE:sulte ("sule") IF
+        (0 ("sulte") OR ("sule"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
