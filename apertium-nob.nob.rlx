@@ -122,7 +122,7 @@ LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" "hundretall" "titall" "tusentall" ;
 LIST talord-pl = "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
 SET talord-par-siffer = talord OR ("par") OR siffer-millioner OR siffer OR ("<noen>") OR ("antall");
-LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date;
+LIST sanns-årstal = "1[6-9][0-9][0-9]|2[01][0-9][0-9]"r "[0-9]+-år"r date; # inkluderer "20-årene", t.d. «mann i 20-årene»
 LIST vekedag = "mandag" "tirsdag" "onsdag" "torsdag" "fredag" "lørdag" "søndag" ;
 LIST månad = "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember" ;
 
@@ -608,6 +608,7 @@ LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burd
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
 # TODO: fix in dix
 LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
+SET ikke-komma = (*) - cm;
 LIST ikke-det-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij <<< <ellipse> (clb cm) adv adj ;
 LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-adv = vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
@@ -11928,7 +11929,7 @@ SELECT:personer-som-ble-meldt-savnet pp + pl IF
          LINK *-1 %som%
          BARRIER setn-gr
          LINK -1 fl-subst
-         LINK NOT 0 ("[0-9]+-år"ri) # (i) 50-årene
+         LINK NEGATE 0 sanns-årstal # (i) 50-årene
         )
         (1 pp)
 ;
@@ -11938,10 +11939,13 @@ SELECT:mannen-i-50-årene-som-ble-meldt-savnet pp + mf IF
          BARRIER fv OR perf-part OR setn-gr OR nom
          LINK *-1 %som%
          BARRIER setn-gr
-         LINK -1 ("[0-9]+-år"r) LINK -1 pr
+         LINK *-1 sanns-årstal
+         BARRIER ikke-komma
+         LINK -1 pr
         )
-        (1 pp)
+        (1 pr OR pp)
 ;
+# «en mann i 20-årene, som ble drept i Qalandiya utenfor Jerusalem»
 # «pr [0-9]-årene … som» er ganske trygg kontekst for mf+sg
 # «Politiet fortsetter tirsdag søket etter mannen i (slutten av) 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Saken handlet om en dagmamma i slutten av 40-årene som i 2006 ble siktet for å ha ristet et barn»
@@ -12108,7 +12112,7 @@ SELECT:mennene-som-ble-skadd pp + pl
          LINK *-1 %som%                 # som
          LINK *-1C n + pl               # mennene
          BARRIER (*) - cm               # ,
-         LINK NOT 0 sg)
+         LINK NEGATE 0 sg OR sanns-årstal) # (i) 20-årene
         (NOT 0 adv OR farlige-part)
         ;
 
@@ -23383,7 +23387,7 @@ SELECT:Det-har-vært-trist adj + nt IF
 
 
 SELECT:det-som-blir-utstilt &&ADJ_N_AGR IF
-        (NEGATE -3 (".*-år"r) + pl) # «mann i 20-årene som var ved bevissthet»
+        (NEGATE -3 sanns-årstal + pl) # «mann i 20-årene som var ved bevissthet»
         (-3C &&ADJ_N_AGR - adj)
         (-2 %som%)
         (-1 kop-fv)
