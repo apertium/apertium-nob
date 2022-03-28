@@ -35439,7 +35439,7 @@ SELECT:default ("<stoler>"i) + pres IF (1 %på%);
 SELECT:default ("<ruter>"i) + n + pl;
 SELECT:default ("lek") IF (0 ("leke")) ; # OL-lekene
 SELECT:default ("<skadde>"i) + pp ;
-SELECT:default ("<følger>" "følge") + m;
+SELECT:default ("<følger>" "følge") + m IF (0* fv);
 SELECT:default ("<tømmer>" "tømmer") ;
 SELECT:default ("<pressen>" "presse") ;
 SELECT:default ("<Pressen>" "presse") ;
