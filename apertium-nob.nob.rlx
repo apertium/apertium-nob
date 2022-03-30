@@ -8171,6 +8171,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<tapene>"i REMOVE:tapene ("tape") IF
         (0 ("tape") OR ("tap"))
         ;
+"<tykt>"i REMOVE:tykt ("tykke") IF
+        (0 ("tykke") OR ("tykk"))
+        ;
 "<frykter>"i REMOVE:frykter n IF
         (0 ("frykt") OR ("frykte"))
         ;
