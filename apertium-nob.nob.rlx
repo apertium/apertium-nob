@@ -2262,8 +2262,18 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         ;
 # «annet kvartal»
 
+"<andre>" SELECT:fjorårets-andre-kvartal (adj) IF
+        (-1 ("fjorår") + gen)
+        (1 ("kvartal") OR ("tertial"))
+        ;
 
+"<kvartal>" SELECT:fjorårets-tredje-kvartal sg IF
+        (-2 ("fjorår") + gen)
+        ;
 
+"<tertial>" SELECT:fjorårets-tredje-tertial sg IF
+        (-2 ("fjorår") + gen)
+        ;
 
 #:3764
   "<andre>"   SELECT:3764   (adj) IF
