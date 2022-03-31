@@ -1094,7 +1094,7 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         (1 storbokstav)
         (1/* cmp + np)
         (1 ("<.*-.*>"r))
-        (NEGATE 0 not-np-guess - (np cgguess gen))
+        (NEGATE 0 not-np-guess - (np cgguess gen) - ukjent)
         (-1 berre-litenbokstav)
         ;
 # «sin beste Vårt Land-måling»
