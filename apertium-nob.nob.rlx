@@ -1125,6 +1125,10 @@ REMOVE:prefer-sameaccent (".*ä.*"ri) IF
         (0 ("<(.*æ.*)>"ri "$1"v));
 REMOVE:prefer-sameaccent (".*š.*"ri) IF
         (0 ("<(.*s.*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*ł.*"ri) IF
+        (0 ("<(.*l.*)>"ri "$1"v));
+REMOVE:prefer-sameaccent (".*ð.*"ri) IF
+        (0 ("<(.*d.*)>"ri "$1"v));
 REMOVE:prefer-sameaccent (".*[èàòìùỳǹ].*"ri) IF
         (0 ("<(.*[éáóíúýń].*)>"ri "$1"v));
 REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
