@@ -8141,6 +8141,12 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 cm OR cnjsub OR cnjcoo + clb)
         ;
 
+"<også>" SELECT:også-neste-år ("også¹") IF
+        (1 ("neste år") OR ("neste") OR ("forrige") OR ("denne"))
+        ;
+# «Nå går også denne næringen på sparebluss.»
+# «Dermed byr også neste år på problemer for Bokassa.»
+
 # «Han blir også i 2019 å se i rally-VM.»
 "<også>" SELECT:fallback ("også");
 # «Den har også …»
