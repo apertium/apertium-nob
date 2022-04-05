@@ -333,7 +333,6 @@ LIST %i/på% = "på"  ("i"  pr) ;
 LIST %i/å% = ("i"  np) ("å"  np) ;
 LIST %ikke% = "ikke"  ;
 LIST %ikke/ingen% = "ingen"  "ikke"  ;
-LIST %ikke/også% = "også"  "ikke"  ;
 LIST %imot% = "imot"  ;
 LIST %ingen% = "ingen"  ;
 LIST %inn% = "inn"  ;
@@ -383,6 +382,8 @@ LIST %når% = "når"  ;
 LIST %nærpå% = "nærpå"  ;
 LIST %oftest% = ("ofte"  adj sup) ;
 LIST %og% = "og"  ;
+LIST %også% = "også" "også¹" "også²" ;
+SET %ikke/også% = %også% OR ("ikke") ;
 LIST %og/eller% = "og"  "eller"  ;
 LIST %og/men% = "og"  "men"  ;
 LIST %om% = "om"  ;
@@ -851,7 +852,7 @@ SET setn-gr/prep         = setn-gr OR pr ;
 SET setn-gr/verb         = setn-gr OR vblex ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
 LIST setn-start-med-strek/anf = lquot rquot lquot guio >>> ;
-LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
+LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også" "også¹" "også²"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
 LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
 LIST sikre-navn = "svein"  "rune"  "helle"  "dag"  "bjørn"  "arne"  (np m) (np f) ;
 LIST skipsmengde = "trosse"  "tofte"  "skip"  "seil"  "ror"  "rekke"  "ombord"  "matros"  "lugar"  "livbåt"  "lekter"  "forut"  "forut"  "bøye"  "båt"  "baug"  "babord"  ;
@@ -2534,7 +2535,7 @@ SELECT:den-av-statsrådene ("den¹") IF
         ;
 
 SELECT:også-den ("den¹") IF
-		(-1 ("også"))
+		(-1 %også%)
 		;
 
 SELECT:cm-den ("den¹") IF
@@ -3704,7 +3705,7 @@ SELECT:i-kok ("<kok>"i) + nt IF
 
 SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (-1 >>> OR guio)
-        (1 ("også"))
+        (1 %også%)
         (*1 fv BARRIER inf)
         ;
 
@@ -4693,7 +4694,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:landet-ikke pret IF
-        (1 ("også") OR ("ikke"))
+        (1 %ikke/også%)
         (1C adv)
         ;
 # «Høyesterett landet også på 45 dager»
@@ -8141,7 +8142,8 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         ;
 
 # «Han blir også i 2019 å se i rally-VM.»
-"<også>" SELECT:Den-har-også ("også");
+"<også>" SELECT:fallback ("også");
+# «Den har også …»
 
 ###################
 # OGSÅ vs ÒG: END #
@@ -13734,7 +13736,7 @@ SELECT:jeg-er-UTROLIG-takknemlig adj + nt + sg + ind IF
 
 "<forbundet>" SELECT:forbundet-må-vurdere n IF
         (NOT -1 ("<nært>"i) OR ("<tett>"i))
-        (1 vblex OR adj + pp OR clb OR %som% OR pr OR ("også"))
+        (1 vblex OR adj + pp OR clb OR %som% OR pr OR %også%)
         (NOT 1 ("med") OR ("til"))
         ;
 
