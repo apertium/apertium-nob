@@ -39,6 +39,12 @@ SELECT:1.000-kroneseddel cmp IF # This cohort is "<1.>" and the next one is "<00
         (T:nextWordCrossSent LINK 0 ("<[0-9]+-.*>"r))
         ;
 
+REMOVE:1945.-. cmp IF
+        (0 sent OR ord)
+        (0 ("[0-9]+[.]"r))
+        (NEGATE T:nextWordCrossSent LINK 0 ("<[0-9]+-.*>"r))
+        ;
+
 SELECT:hans-14.bursdag ord IF
         (0 sent)
         (NEGATE T:nextWordCrossSent LINK 0 storbokstav)
