@@ -2550,7 +2550,12 @@ SELECT:den-var-herlig-den ("den¹") IF
 		(4 ("den¹"))
 		;
 
-
+SELECT:begge-årets-renn (n pl) IF
+        (-2 ("begge") OR ("alle"))
+        (-1 n + gen)
+        (0 n + sg)
+        ;
+        "alle bondens dyr"
 
 SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 setn-gr)
