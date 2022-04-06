@@ -1158,7 +1158,7 @@ REMOVE:Prestens-forsvarer cgguess IF
         ;
 SELECT:mennenes-VM n IF
 		(-1 gen)
-		(0 ("VM") OR ("NM") OR ("EM"))
+		(0 ("VM") OR ("NM") OR ("EM") OR ("OL"))
 		;
 
 "<De>" SELECT:De-grønne det IF
