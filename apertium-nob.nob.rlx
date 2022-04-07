@@ -1310,6 +1310,11 @@ REMOVE:acronym-samecase-cmp-gen ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         ;
 # «curling-EMs B-divisjon»
 
+REMOVE:acronym-dash ("[A-ZÆØÅ]?[a-zæøå]+-.*"r) IF
+        (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)-.*>"r))
+        ;
+# «TV-kanalen» (remove "tv-kanalen")
+
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 
