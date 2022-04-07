@@ -2555,7 +2555,7 @@ SELECT:begge-årets-renn (n pl) IF
         (-1 n + gen)
         (0 n + sg)
         ;
-        "alle bondens dyr"
+# "alle bondens dyr"
 
 SELECT:Og-den-mener-han-er ("den¹") IF
         (-1 setn-gr)
