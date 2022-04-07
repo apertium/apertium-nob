@@ -2001,6 +2001,8 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 
 "<presset>"i SELECT:default pret ;
 
+"<fanger>i" SELECT:default-fangar ("fange" n m pl ind) 
+        ;
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
@@ -9033,7 +9035,6 @@ REMOVE:data-not-datum ("datum");
 #  " i RFG ser det ut til at en adv ikke eksisterer"
 "<En>"   REMOVE:default   adv OR ("man") ;
 # "En kvinne i 90-årene ble …"
-
 
 
 #:3682
@@ -35617,7 +35618,6 @@ REMOVE:default ("<Vær>") + n ;
 "<falt i>" REMOVE:default-falle-i ("falle# i" vblex pp) ;	# keep falle# i<vblex><pret>→fall i
 "<falt>" REMOVE:default-falle ("falle" vblex pp) ;	# keep falle<vblex><pret>→fall
 "<fangene>" REMOVE:default-fanga (n nt pl def) ;	# keep fange<n><m><pl><def>→fangane
-"<fanger>" REMOVE:default-fangar ("fange" n m pl ind) ;	# keep fange<n><nt><pl><ind>→fange
 "<fanget>" REMOVE:default-fanget ("fang" n nt sg def) ;	# keep fange<vblex><pp>→fanga
 "<fanget>" REMOVE:default-fanget ("fange" n nt sg def) ;	# keep fange<vblex><pp>→fanga
 "<farene>" REMOVE:default-fara ("far" n nt pl def) ;	# keep farene<n><m><pl><def>→farene
