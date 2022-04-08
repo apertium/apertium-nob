@@ -56,7 +56,6 @@ apertium_nob_srcdir=$(prefix)/share/apertium/$(BASENAME)/
 
 apertium_nob_DATA=$(TARGETS_COMMON) $(LANG1).prob \
 				  $(BASENAME).$(LANG1).dix \
-				  $(BASENAME).post-$(LANG1).dix \
 				  $(BASENAME).$(LANG1).rlx \
 				  $(BASENAME).$(LANG1).seg.rlx \
 				  $(BASENAME).$(LANG1).syn.rlx \
