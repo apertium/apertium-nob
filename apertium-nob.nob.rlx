@@ -7505,6 +7505,11 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (-1 ("tradisjon"))
         ;
 
+"<tro>" REMOVE:han-tro-over ("tro") IF
+        (-1 prn OR np)
+        (1 ("over") OR ("feil"))
+        ;
+
 "<tro>" REMOVE ("trå") IF
         (NOT 1 ("inn") OR ("til"))
         (NOT *1 ("kraft"))
