@@ -1260,6 +1260,11 @@ REMOVE:Brannmannskap-har cgguess IF
         (1C fv)
         ;
 
+REMOVE:VM-renn SUB:1 cgguess IF (0/1 (*) - cgguess) ;
+REMOVE:VM-renn SUB:2 cgguess IF (0/1 (*) - cgguess) ;
+REMOVE:VM-renn SUB:3 cgguess IF (0/1 (*) - cgguess) ;
+REMOVE:VM-renn SUB:4 cgguess IF (0/1 (*) - cgguess) ;
+
 
 
 LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
