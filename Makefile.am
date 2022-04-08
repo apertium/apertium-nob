@@ -34,19 +34,6 @@ $(LANG1).automorf.att.gz: $(LANG1).automorf.bin
 	lt-print $< | gzip -9 -c -n > $@
 
 ###############################################################################
-## Disambiguation rules
-###############################################################################
-
-$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
-	cg-comp $< $@
-
-$(LANG1).seg.rlx.bin: $(BASENAME).$(LANG1).seg.rlx
-	cg-comp $< $@
-
-$(LANG1).syn.rlx.bin: $(BASENAME).$(LANG1).syn.rlx
-	cg-comp $< $@
-
-###############################################################################
 ## Distribution
 ###############################################################################
 EXTRA_DIST=$(BASENAME).$(LANG1).dix \
@@ -67,7 +54,13 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix \
 apertium_nobdir=$(prefix)/share/apertium/$(BASENAME)/
 apertium_nob_srcdir=$(prefix)/share/apertium/$(BASENAME)/
 
-apertium_nob_DATA=$(TARGETS_COMMON) $(LANG1).prob
+apertium_nob_DATA=$(TARGETS_COMMON) $(LANG1).prob \
+				  $(BASENAME).$(LANG1).dix \
+				  $(BASENAME).post-$(LANG1).dix \
+				  $(BASENAME).$(LANG1).rlx \
+				  $(BASENAME).$(LANG1).seg.rlx \
+				  $(BASENAME).$(LANG1).syn.rlx \
+				  $(BASENAME).$(LANG1).tsx
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
@@ -75,13 +68,7 @@ pkgconfig_DATA = $(BASENAME).pc
 noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
-	test -d $(DESTDIR)$(apertium_nob_srcdir) || mkdir -p $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).seg.rlx $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).syn.rlx $(DESTDIR)$(apertium_nob_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).tsx $(DESTDIR)$(apertium_nob_srcdir)
-
+uninstall-local: uninstall-modes
 
 ###############################################################################
 ## Cleanup
