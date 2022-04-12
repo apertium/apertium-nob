@@ -1577,6 +1577,7 @@ REMOVE:unlikely ("kanoner") ;    # more likely kanon<pl>
 REMOVE:unlikely ("graver") IF (0 ("grav")) ;  # more likely grav<pl>
 REMOVE:unlikely ("smaker") IF (NOT 0/1 cmp) ; # more likely verb
 REMOVE:unlikely ("synk") ;       # more likely søkk
+REMOVE:unlikely ("økte") ;       # more likely auka
 REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 
@@ -1605,6 +1606,7 @@ REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 "<Monsen>" SELECT:Monsen-not-mons np;
 
 REMOVE:poengsum ("sum") + nt IF (0/* cmp) (0 m);
+REMOVE:dopingfri ("fri") + nt IF (0/* cmp) (0 adj);
 
 SELECT:year date IF
         (0 ("[0-9]{4}"r))
