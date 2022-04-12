@@ -1578,6 +1578,7 @@ REMOVE:unlikely ("graver") IF (0 ("grav")) ;  # more likely grav<pl>
 REMOVE:unlikely ("smaker") IF (NOT 0/1 cmp) ; # more likely verb
 REMOVE:unlikely ("synk") ;       # more likely søkk
 REMOVE:unlikely ("økte") ;       # more likely auka
+REMOVE:unlikely ("avgifte") ;    # more likely avgifte
 REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 
