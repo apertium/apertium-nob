@@ -4548,6 +4548,10 @@ SELECT ("ikon") + subst-nøyt IF
 ;
 #  "bare subst i \"mitt egentlige jeg\" \"et jeg\".."
 
+"<kammer>" SELECT:dømmende-kammer ("kammer") IF
+        (NEGATE *-1 det + pl)
+        ;
+
 "<kortet>" SELECT ("kort") IF
         (NOT 1 %ned% OR %av%)
         ;
