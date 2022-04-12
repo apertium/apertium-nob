@@ -1,0 +1,6 @@
+
+#+begin_src sh
+  git clone --depth 1 https://git.savannah.nongnu.org/git/ordbanken.git
+  vim config.sh
+  ./entries-from-missing > toadd.dix
+#+end_src
