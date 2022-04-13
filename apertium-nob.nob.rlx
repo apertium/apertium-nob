@@ -10799,6 +10799,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh feb 2004: Sjelden i betydningen \"snakk, samtale\" eller \"rødlig skinn\""
 
+
 "<røyk>" REMOVE:flammer-og-røyk pl IF
         (NOT *-1 det + pl BARRIER setn-gr OR n OR cnjcoo) # tillat «tok seg tre røyk på rappen»
         (0 sg)
