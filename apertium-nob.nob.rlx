@@ -10300,6 +10300,8 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "kh jan 2004: Det ble for meget."
 
+"<meget>" REMOVE:default n ;    # viss ingen reglar over tok han, så er det nok adv
+
 
 "<Men>" REMOVE:Men n
 	(NOT -1 det)
