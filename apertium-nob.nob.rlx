@@ -1564,6 +1564,7 @@ REMOVE:unlikely SUB:1 ("telle") + n;
 REMOVE:unlikely SUB:2 ("telle") + n;
 REMOVE:unlikely SUB:3 ("telle") + n;
 REMOVE:unlikely SUB:4 ("telle") + n;
+REMOVE:unlikely SUB:* ("kred") IF (0/* ("skred")); # flomskred
 REMOVE:unlikely ("spile") OR ("spilt") IF (0 ("spille"));
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
