@@ -1556,6 +1556,7 @@ REMOVE:unlikely ("re") + n;
 REMOVE:unlikely ("vant") + n;
 REMOVE:unlikely ("<tier>"i "ti");
 REMOVE:unlikely ("<ledet>"i) + n;
+REMOVE:unlikely SUB:* ("telle") + n;
 REMOVE:unlikely ("<reker>"i) + vblex IF
         (NOT 1 ("<rundt>"i))
         ;
