@@ -5702,6 +5702,10 @@ SELECT:regne-og-blåse ("regne¹") + vblex IF
        (1 %og/eller%)
         ;
 
+SELECT:glimre-med ("glimre" vblex) IF
+        (1 %med%)
+        ;
+        # "glimre med sitt fråvær"
 #:3346
   "<rent>"   SELECT:3346   (vblex pp) IF
 	(NOT 1 %for%)
@@ -32665,6 +32669,11 @@ SELECT:generell-pres (vblex pres) IF
 ;
 
 
+SELECT:dette-løfta-glimra (n) IF
+	(1 vblex)
+	(-1 prn + dem OR prn + pers + p3)
+;
+#  "Men dette løftet glimra med sitt fråvær..."
 
 
 #:1727
