@@ -1851,6 +1851,8 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
          OR ("se"))
         ;
 
+
+
 "<LES>" SELECT (vblex imp);
 "<Les>" SELECT (vblex imp);
 "<les>" SELECT (vblex imp);
@@ -10263,8 +10265,6 @@ REMOVE:tilbakekaller-leker ("lek") IF
 	(NOT 1 %opp%)
 ;
 #  "Bare ved: har livet opp stemningen"
-
-
 
 
 #:3452
@@ -32669,11 +32669,15 @@ SELECT:generell-pres (vblex pres) IF
 ;
 
 
-SELECT:dette-løfta-glimra (n) IF
-	(1 vblex)
-	(-1 prn + dem OR prn + pers + p3)
+SELECT:dette-løfta-glimra n + def IF
+	(-1 det + dem)
+        (NEGATE 0 qnt OR adv)          # «De  tre  ble pågrepet … sier de  nesten  minner om»
+        (1 vblex)
 ;
-#  "Men dette løftet glimra med sitt fråvær..."
+#  "Men dette løftet glimret med sitt fravær..."
+# «Men dette tipset velger vi å ta seriøst og sjekke ut, sier Andreas Nilsen, lensmann i Midt-Troms.»
+# TODO: «Det løftet laget   til 7.-plass på tabellen, poenget bak Napoli på den siste plassen som gir europaligabillett.»
+
 
 
 #:1727
