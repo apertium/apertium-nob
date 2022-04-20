@@ -35371,6 +35371,10 @@ SELECT:selskapenes-system-BSP sg IF
         (1 storbokstav)
         ;
 
+SELECT:Orklas-resultat sg + (".*resultat"r) IF
+        (-1 org + gen)
+        ;
+
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl OR gen + pl)
         (0C subst)
