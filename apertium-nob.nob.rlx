@@ -4063,6 +4063,19 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 #  "Bare pref-part ved hjelpeverbet \"ha\""
 
 
+"<hatt>" SELECT:har-den-hatt vblex IF
+		(-2 ("ha"))
+		(-1 ("den"))
+		;
+
+"<Natos>" SELECT:Natos-utvidelse org;
+
+"<konsekvensutredet>" SELECT:prosjektet-blir-konsekvensutredet adj + sg IF
+		(-2 n + sg)
+		(-1 %være/bli%)
+		;
+
+
 
 #:4021
  "<halvveis>"   SELECT:4021   (adv) IF
@@ -36188,19 +36201,6 @@ SELECT:IS-kriger SUB:1 np IF
         (0 ("<.*-.*>"r))
         ;
 # «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
-
-"<hatt>" SELECT:har-den-hatt vblex IF
-		(-2 ("ha"))
-		(-1 ("den"))
-		;
-
-"<Natos>" SELECT:Natos-utvidelse org;
-
-"<konsekvensutredet>" SELECT:prosjektet-blir-konsekvensutredet adj + sg IF
-		(-2 n + sg)
-		(-1 %være/bli%)
-		;
-
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
