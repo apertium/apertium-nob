@@ -11156,6 +11156,9 @@ SELECT:skrev vblex IF
 # \"spenne ut, strekke\"  eller \"løpe, renne, galoppere\"?
 # "
 
+"<teller>"i REMOVE n IF
+        (NEGATE -1 %en%)
+        ;
 
 
 #:3194
