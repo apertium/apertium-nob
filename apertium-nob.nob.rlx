@@ -9134,6 +9134,7 @@ REMOVE:data-not-datum ("datum");
 # Only really nøyt if "et fiske" or "fisket"
 REMOVE:fiske ("fiske"i) + nøyt + fl;
 
+"<flesteparten>"i REMOVE:dei-fleste n ;
 
 "<flott>" REMOVE:Det-er-flott pl IF
         (NOT *0 pl BARRIER setn-gr)
