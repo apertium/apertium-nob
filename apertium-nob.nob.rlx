@@ -2942,6 +2942,10 @@ SELECT:den+prn ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
+"<satt>" SELECT:satt-i-gang pp IF
+        (1 ("i gang"))
+        ;
+
 "<sagt>" SELECT:ha-sagt vblex + pp IF
 		(-1 %ha%)
         ;
