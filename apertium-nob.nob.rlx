@@ -8338,6 +8338,9 @@ REMOVE:to-ansatte vblex IF
         (1 n OR np OR vblex) ;         
         ;
 # "To ansatte i Flyktninghjelpen savnet"
+"<Reiten>" REMOVE:Reiten n IF
+        (-1 setn-gr)
+        ;
 "<fatt>"i REMOVE:fatt-mot adv IF
         (1 ("mot"))
         ;
