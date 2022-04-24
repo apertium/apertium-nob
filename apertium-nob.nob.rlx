@@ -8264,6 +8264,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<sulte>"i REMOVE:sulte ("sule") IF
         (0 ("sulte") OR ("sule"))
         ;
+"<bærer>"i REMOVE:bærer-med-seg ("bærer") IF
+        (0 ("bære") OR ("bærer"))
+        (1 ("med"))
+        (2 ("seg"))
+        ;
+"<trengte>"i REMOVE:trengte-hjelp pp IF
+        (1 ("hjelp") + ind)
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
@@ -20579,6 +20587,12 @@ SELECT:ventes-både vblex IF
 		(-1 adv)
 		(0 ("<ventes>"))
 		(1 konj)
+		;
+
+SELECT:varslet-både vblex IF
+		(-1 n)
+		(0 ("<varslet>"))
+		(1 ("både"))
 		;
 
 #:2501
