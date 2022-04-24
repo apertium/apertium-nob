@@ -8284,6 +8284,15 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<tredeler>"i REMOVE:to-tredeler vblex IF
         (-1 det + qnt)
         ;
+"<begrepet>"i REMOVE:benytte-begrepet ("begripe") IF
+        (-1 ("benytte"))
+        ;
+"<fattet>"i SELECT:beslutningen-om-dette-fattet-av pp + mf IF
+        (-3 n + m OR n + f)
+        (-2 ("om"))
+        (-1 ("denne"))
+        (1 ("av"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
