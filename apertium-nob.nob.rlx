@@ -8293,6 +8293,20 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 ("denne"))
         (1 ("av"))
         ;
+"<røyk>"i REMOVE:røyk-stiger-fra vblex IF
+        (1 vblex)
+        (2 pr)
+        ;
+"<hete>"i REMOVE:vil-heretter-hete n IF
+        (-2 ("ville"))
+        (-1 pr OR adv)
+        (*1 np OR n)
+        ;
+"<landet>"i REMOVE:skal-ha-landet-i n IF
+        (-2 modalverb)
+        (-1 ("ha"))
+        (1 pr)
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
