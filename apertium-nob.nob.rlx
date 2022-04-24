@@ -8272,6 +8272,18 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<trengte>"i REMOVE:trengte-hjelp pp IF
         (1 ("hjelp") + ind)
         ;
+"<reiselysten>"i REMOVE:er-du-reiselysten n IF
+        (-2 vblex)
+        (-1 pron-pers)
+        ;
+"<nytt>"i SELECT:det-ble-nytt-store-mengder ("nyte") IF
+        (-2 det)
+        (-1 ("bli"))
+        (1 adj)
+        ;
+"<tredeler>"i REMOVE:to-tredeler vblex IF
+        (-1 det + qnt)
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
