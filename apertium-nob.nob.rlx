@@ -2840,7 +2840,11 @@ SELECT:den+prn ("den¹") IF
         (-2 ("skyte" vblex) OR ("angripe" vblex) OR ("lemleste" vblex))
 		(-1 %og%)
         ;
-
+"<drepte>" SELECT:angriperne-som-drepte-noen vblex IF
+        (-1 ("som"))
+        (1* n BARRIER setn-gr)
+        ;
+# De to angriperne som drepte de to politifolkene, ble selv skutt og drept
 "<drepte>" SELECT:hun-spilte-drepte-B adj IF
         (0* vblex BARRIER setn-gr)
         ;
