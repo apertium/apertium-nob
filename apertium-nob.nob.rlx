@@ -8307,6 +8307,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 ("ha"))
         (1 pr)
         ;
+"<eier>"i REMOVE:innehaver-og-eier vblex IF
+        (-2 ("innehaver"))
+        (-1 cnjcoo)
+        ;
+"<hjem>"i SELECT:tusenvis-av-hjem n + pl IF
+        (-2 ("tusenvis") OR ("hundrevis"))
+        (-1 ("av"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
@@ -34292,6 +34300,12 @@ REMOVE:møtes pstv + pp IF
         (1 setn-gr)
         ;
 # «Han mente det ikke var frispark, så, sa Karlsen»
+"<så>" REMOVE:komma-og-så-verb vblex IF
+        (-2 cm)
+        (-1 cnjcoo)
+        (1 vblex)
+        ;
+# «å kjøpe gamle folkedrakter, og så selge dem videre»
 
 "<så>" SELECT:og-så-motbydelig adv IF
         (-1 cnjcoo)
