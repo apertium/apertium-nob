@@ -3370,6 +3370,10 @@ SELECT:i-kok ("<kok>"i) + nt IF
         (-1 ("skyte"))
         ;
 
+SELECT:årets-spelar ("<spiller>"i) + n + sg + ind IF
+        (-1 ("år") + n + gen)
+        ;
+
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
 	(NOT 0 farlige-adj)
@@ -20556,11 +20560,16 @@ SELECT:singel-album ("singel" m) IF
 		(1 ("opp"))
 		;
 
+"<kåret>"i SELECT:bli-kåra-til vblex IF
+		(-1 %være/bli%)
+		(1 ("til"))
+		;
 
 #:2496
 SELECT:fra-naturens-side subst + $$GENDER IF
         (NEGATE -1 pos LINK -1 n + def)    # «måtte bussen hennes passere<vblex!>», «hvor framtiden hans ligger»
 	(-1C subst-gen OR pos + $$GENDER)
+        (NEGATE -1 ("<årets>"i))
 	(NOT 1 adj-subst-konj)
         (NOT 1 ukjent)
         (NOT 0 ikke-sanns-subst-ent-ub)
@@ -23735,11 +23744,11 @@ SELECT:offentlig-ansatte adj + mf IF
 # «Lovendringene vil blant annet fjerne innsynsretten i offentlig ansattes kalendere.»
 
 SELECT:default (adj) IF
-                (0 vblex + pret)
-                (-1 n + gen)
-                (1 n + ind)
-                ;
-                "årets signerte kontrakter"
+        (0 vblex + pret)
+        (-1 n + gen)
+        (1 n + ind)
+        ;
+        "årets signerte kontrakter"
 
 
 CONSTRAINTS
