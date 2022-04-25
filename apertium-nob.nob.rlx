@@ -3156,6 +3156,12 @@ SELECT:satt-av ("sette") + vblex + pp IF
 		(1 %av%)
 		;
 		# setje av
+                
+SELECT:satt-pris-på ("sette")  IF
+		(1 ("pris"))
+		(2 ("på"))
+		;
+		# setje pris på
 
 SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
 		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
@@ -8318,6 +8324,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<eier>"i REMOVE:innehaver-og-eier vblex IF
         (-2 ("innehaver"))
         (-1 cnjcoo)
+        ;
+"<vinner>"i REMOVE:vinner-av vblex IF
+        (1 ("av"))
         ;
 "<hjem>"i SELECT:tusenvis-av-hjem n + pl IF
         (-2 ("tusenvis") OR ("hundrevis"))
@@ -21465,6 +21474,9 @@ SELECT:Den-som-gråter (vblex pres) IF
 
 "<styrker>" SELECT:styrker-fra n IF
 		(1 ("fra"))
+		;
+"<styrker>" REMOVE:sendte-styrker vblex IF
+		(-1 ("sende"))
 		;
 "<styrker>" SELECT:styrker-dermed-favorittstempelet vblex IF
 		(1 adv)
