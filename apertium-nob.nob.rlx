@@ -23734,6 +23734,13 @@ SELECT:offentlig-ansatte adj + mf IF
         ;
 # «Lovendringene vil blant annet fjerne innsynsretten i offentlig ansattes kalendere.»
 
+SELECT:default (adj) IF
+                (0 vblex + pret)
+                (-1 n + gen)
+                (1 n + ind)
+                ;
+                "årets signerte kontrakter"
+
 
 CONSTRAINTS
 
