@@ -8349,6 +8349,16 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-2* dom-ord + sg BARRIER setn-gr)
         (-1 ("være"))
         ;
+"<kokker>" REMOVE:kokke-unlikely ("kokke") IF
+        (0 ("kokk"))
+        ;
+"<reist>"i REMOVE:n-pr-n-ble-reist pl IF
+        (-4 n)
+        (-3 pr)
+        (-2 n)
+        (-1 ("bli"))
+        ;
+# spørsmålet om løsepenger ble reist
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
