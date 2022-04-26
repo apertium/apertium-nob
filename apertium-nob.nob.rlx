@@ -2853,7 +2853,10 @@ SELECT:den+prn ("den¹") IF
         (-1 prn + pers + pl + nom OR det + pos + un + pl )
 		(NEGATE 1 n OR np OR prn OR talord OR siffer )
         ;
-
+"<drepte>" SELECT:meldt-om-drepte adj IF
+        (-2 ("melde"))
+        (-1 ("om"))
+        ;
 "<drept>" SELECT:ha-drept vblex + pp IF
 		(-1* %ha% BARRIER setn-gr)
 		(NEGATE -1* %være/bli% BARRIER setn-gr)
@@ -8335,6 +8338,12 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<hjem>"i SELECT:tusenvis-av-hjem n + pl IF
         (-2 ("tusenvis") OR ("hundrevis"))
         (-1 ("av"))
+        ;
+"<fremme>"i REMOVE:fremme-anken pr IF
+        (1 n + def)
+        ;
+"<håpet>"i REMOVE:håpet-vokste vblex IF
+        (1 vblex)
         ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
