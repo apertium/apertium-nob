@@ -8345,6 +8345,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<håpet>"i REMOVE:håpet-vokste vblex IF
         (1 vblex)
         ;
+"<tatt>"i REMOVE:beslutningen-er-tatt pl IF
+        (-2* dom-ord + sg BARRIER setn-gr)
+        (-1 ("være"))
+        ;
 REMOVE:betinget-suksess ("betinge") IF
         (0 ("betinge") OR ("betinget"))
         (1 n)
