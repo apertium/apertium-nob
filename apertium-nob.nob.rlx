@@ -23764,7 +23764,7 @@ SELECT:default (adj) IF
         (-1 n + gen)
         (1 n + ind)
         ;
-        "årets signerte kontrakter"
+# "årets signerte kontrakter"
 
 
 CONSTRAINTS
