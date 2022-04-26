@@ -23680,6 +23680,17 @@ SELECT:Vi-har-hoppet vblex + pp IF
 # ikke en ganger en (pron!)"))
 
 
+"<til>" SELECT:til-større cnjsub IF
+        (1 adj + comp)
+        (2 prn OR n OR vblex)
+        (3 prn OR n OR vblex)
+        (4* %være/bli%)
+        ;
+        # "til større de er, til større blir de" 
+        # Uvanleg, munnleg
+
+"<til>" SELECT:default pr
+        ;
 
 #:1772
  SELECT:1772 (cnjsub) IF
