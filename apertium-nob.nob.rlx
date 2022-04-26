@@ -30764,6 +30764,13 @@ CONSTRAINTS
         ;
 # «Den ble laget i 65 mm film»
 
+"<laget>" REMOVE:er-det-laget-rundt n IF
+        (-2 ("være"))
+        (-1 ("<det>"))
+        (1 ("<rundt>"))
+        ;
+# Totalt er det laget rundt fire millioner eksemplarer av Mini
+
 "<landet>" REMOVE:hvis-landet-ikke-har vblex IF
         (-1 dersom-ord)
         (*1 fv)
