@@ -35648,6 +35648,7 @@ SELECT:default ("<Pressen>" "presse") ;
 SELECT:default ("<anger>" "anger") ;
 SELECT:default ("fleipe") + pret ; # avoid Fleipen
 SELECT:default ("råd") + pl ;
+SELECT:default ("gjeng") + m + ind ;
 
 
 
