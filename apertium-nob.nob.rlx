@@ -19408,6 +19408,11 @@ SELECT:at-det-ble-registrert det + expl IF
 
 #Her stod 2606
 
+SELECT:Der-findes expl IF
+        (-1 setn-gr)
+        (1 ("finnes") OR ("være"))
+        ;
+
 #:2607
 SELECT:jeg-så-den-cm-men pron-pers IF
 	(NOT 0 poss-det)
