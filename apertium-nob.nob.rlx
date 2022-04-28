@@ -23717,8 +23717,7 @@ SELECT:Vi-har-hoppet vblex + pp IF
         # "til større de er, til større blir de" 
         # Uvanleg, munnleg
 
-"<til>" SELECT:default pr
-        ;
+"<til>" REMOVE:default cnjsub ;
 
 #:1772
  SELECT:1772 (cnjsub) IF
