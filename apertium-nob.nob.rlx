@@ -35704,6 +35704,8 @@ SELECT:default ("<anger>" "anger") ;
 SELECT:default ("fleipe") + pret ; # avoid Fleipen
 SELECT:default ("råd") + pl ;
 SELECT:default ("gjeng") + m + ind ;
+SELECT:default ("kart") + nt ;
+SELECT:default ("kart") + sg ;
 
 
 
