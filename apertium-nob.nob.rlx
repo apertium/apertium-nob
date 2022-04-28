@@ -2677,13 +2677,11 @@ SELECT:den+prn ("den¹") IF
 # (forts) gled (pret)"))
 
 
-
 #:3723
   "<der>"   SELECT:3723   (pr) IF
 	(NOT *1 subst/pron/fl-adj/%all%/%mang%/%mange%)
 ;
 #  "det aller meste av korrespondansen der"
-
 
 "<det>" REMOVE adv;             # when is this adverb?
 
@@ -11305,6 +11303,11 @@ SELECT:skrev vblex IF
 # (dvs at det ikke er noe PRES/PRET til venstre)
 # må leddsetningen etterfølges av , PRES/PRET
 # Til hun kommer, skriver han"
+
+"<til>" REMOVE:vitner-til adv IF
+        (*-1 ("vitne") OR ("gi") BARRIER ikke-adv-adj-det-pron)
+        ;
+# «Ifølge Fædrelandsvennen har politiet få vitner til selve ranet.»
 
 "<teller>" REMOVE:tel ub-subst IF
         (NOT -1 %en%)
@@ -23532,11 +23535,12 @@ SELECT:ungdom-etterlatt-i-utlandet pp IF
 
 SELECT:observert-løpende pprs OR adv IF
         # (*-2 %være/bli%)
-        (NOT -1 %være/bli%)     # hadde vært spennende
         (-1C pp)
-        (NOT 0 n)               # endret utseende<n>,
-        (NOT 0 sbu/konj)        # hevdet at<cnjsub> ønsket
-        (NOT 1 n + ind)
+        (NEGATE -1 %være/bli%)     # hadde vært spennende
+        (NEGATE 0 n)               # endret utseende<n>,
+        (NEGATE 0 sbu/konj)        # hevdet at<cnjsub> ønsket
+        (NEGATE 1 n + ind)
+        (NEGATE 0 pr)              # nominert til
         (NEGATE 1 adj + ind LINK 1 n + ind)
         ;
 
@@ -23717,7 +23721,7 @@ SELECT:Vi-har-hoppet vblex + pp IF
         # "til større de er, til større blir de" 
         # Uvanleg, munnleg
 
-"<til>" REMOVE:default cnjsub ;
+"<til>" REMOVE:default cnjsub OR np ;
 
 #:1772
  SELECT:1772 (cnjsub) IF
@@ -30449,6 +30453,12 @@ CONSTRAINTS
         (-1 pr)
         (-1C pr OR adv)
         (1 <<<)
+        ;
+
+"<dere>" SELECT:frå-dykk-er-det acc IF
+        (-1 pr)
+        (-1C pr OR adv)
+        (*1 nominativ BARRIER ikke-verb)
         ;
 
 #:3725
