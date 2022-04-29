@@ -10991,6 +10991,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
         (-1 %mest/minst%)
         ;
 
+"<sette>" REMOVE:å-definere-og-sette pp IF
+        (*-1 infmerke LINK 1 inf LINK *1 cnjcoo)
+        ;
+ # «de ble enige om å definere Tyskland som hovedfienden og i første   omgang sette kreftene inn i Europa»
+
 #:3319
 "<selv>"   REMOVE:3319   n IF
 	(NOT -1 nøyt-det)
@@ -35750,6 +35755,8 @@ REMOVE:default ("bredd") + sg ;
 REMOVE:default ("bredde") + pl ;
 REMOVE:default ("<Lær>") + n ;
 REMOVE:default ("<Vær>") + n ;
+REMOVE:default ("slått") + n ;
+REMOVE:default ("slått") + pst ;
 
 
 # Corpus-based default rules:
