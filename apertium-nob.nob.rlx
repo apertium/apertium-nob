@@ -948,7 +948,7 @@ LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
-LIST fugl-ord = "egg" "svane" "fugl" "gås" "høns" "høne" "and" "måke" "måse" "blåmeis" "meis" "kjøttmeis" "skjære" ;
+LIST fugl-ord = "egg" "svane" ".*fugl"r "gås" "høns" "høne" "and" "måke" "måse" "blåmeis" "meis" "kjøttmeis" "skjære" "trost" "due" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
 LIST by-ord = "stat" "by" "land" "plass" "elv" "region" "vei" "koloni" "enklave" "republikk" "landsdel" "delstat" "strekning" "vulkan" "innsjø" "sjø" "øy" "bydel" "provins" "hovedstad" "landsby" "gård" "folkerepublikk" "festning" "havneby" ;
@@ -30149,6 +30149,10 @@ CONSTRAINTS
  "<ende>"   SELECT:4097   (n) IF
 	 (-1 prep)
 ;
+
+"<ender>" SELECT ("and") IF
+        (0* fugl-ord)
+        ;
 
 
 "<fanget>" SELECT:på-fanget n IF
