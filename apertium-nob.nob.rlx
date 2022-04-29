@@ -5536,6 +5536,10 @@ SELECT:sløvande-middel ("middel") + nt IF
         (-1 adj + sg + ind)
         ;
 
+"<klipp>"i SELECT:default nt IF
+        (0 n)
+        ;
+
 LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
 LIST regn_vann = ("regn" n) ;
