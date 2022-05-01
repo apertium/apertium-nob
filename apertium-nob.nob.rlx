@@ -7878,6 +7878,12 @@ SELECT:det-nest-største ("<nest>") + adv IF
 		;
 		# det nest største
 
+SELECT:nest-høyeste-nivå n + sg IF
+		(-2 adv)
+		(-1 adj + sup)
+		;
+		# på aller høyeste nivå
+
 SELECT:glatte-veier ("<veier>"i) + n IF
 		(-1 adj)
 		;
