@@ -7878,12 +7878,6 @@ SELECT:det-nest-største ("<nest>") + adv IF
 		;
 		# det nest største
 
-SELECT:nest-høyeste-nivå n + sg IF
-		(-2 adv)
-		(-1 adj + sup)
-		;
-		# på aller høyeste nivå
-
 SELECT:glatte-veier ("<veier>"i) + n IF
 		(-1 adj)
 		;
@@ -31244,6 +31238,13 @@ REMOVE:øye ("øye"i) IF
 #CONSTRAINTS
 ## select ndomain heur
 
+
+SELECT:nest-høyeste-nivå n + sg IF
+		(-2C adv)
+		(-1C adj + sup)
+		;
+# «på aller høyeste  nivå »
+# Ikkje: «men alltid rundet av nedover til nærmeste  hele  tall.»
 
 SELECT:titlecase-np np + titlecase IF
         (NOT -1 >>>)
