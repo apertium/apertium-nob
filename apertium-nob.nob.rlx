@@ -7658,6 +7658,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (-1 ("antall") + def)
         ;
 
+"<fornærmede>" SELECT:fornærmede-øyeblikk adj IF
+	(1 n)
+;
+
 #:3159
   "<var>"   SELECT:3159   (adj pst mf) IF
 	(-1 %føre%)
@@ -19448,6 +19452,12 @@ SELECT:Likevel-gleder-han-seg pers + nominativ IF
         ;
 # «Likevel gleder han seg til det forsvinner.»
 
+SELECT:en-av-kveldens-takketaler n + pl IF
+	(-4 %en/ei/et%)
+	(-3 %av%)
+	(-2 n + gen)
+;
+# ein av dei beste takketalane for kvelden
 
 #:2608
  SELECT:2608 pron-pers IF
