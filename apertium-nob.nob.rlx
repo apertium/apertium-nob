@@ -6931,7 +6931,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "På disse møtene så en igjen mange ansikter"
 
-
+"<så>" SELECT:se-dagens-lys vblex IF
+        (1 ("<dagens>"))
+        (2 ("<lys>"))
+        ;
 
 #:3216
   "<så>"   SELECT:3216   (cnjsub) IF
