@@ -6931,10 +6931,37 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "På disse møtene så en igjen mange ansikter"
 
-"<så>" SELECT:se-dagens-lys vblex IF
+"<så>" SELECT:se-dagens-lys pret IF
         (1 ("<dagens>"))
         (2 ("<lys>"))
         ;
+
+"<så>" SELECT:for-så adv IF
+        (-1 pr)
+        ;
+
+"<så>" SELECT:komma-så-det-ut-til-å pret IF
+        (-1 komma)
+        (2 ("<ut>"))
+        (3 ("<til>"))
+        ;
+
+"<så>" SELECT:komma-så-opplysninger-om adv IF
+        (-1 komma)
+        (1 n)
+        (2 pr)
+        ;
+
+"<så>" SELECT:komma-så-jeg adv IF
+        (-1 komma)
+        (1 pron OR np OR vblex OR pr OR det + qnt OR ("<å>"))
+        ;
+
+"<så>" SELECT:så-for-meg adv IF
+        (-1 komma)
+        (1 pr)
+        ;
+        # "Eg trenar veldig lite på vinteren, så for meg er det mest morosamt å gå skirenn"
 
 #:3216
   "<så>"   SELECT:3216   (cnjsub) IF
