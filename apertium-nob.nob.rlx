@@ -6921,6 +6921,24 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (NEGATE *1 fv BARRIER setn-gr-u-komma)
         ;
 
+"<så>" SELECT:han-såg-for-seg pret IF
+        (-1 prn + pers + nom)
+        (1 ("<for>" pr))
+        (2 prn + ref + acc OR prn + pers + acc OR ("<dere>"))
+        ;
+
+"<så>" SELECT:såg-for-seg pret IF
+        (1 prn + pers + nom)
+        (2 ("<for>" pr))
+        (3 prn + ref + acc OR prn + pers + acc OR ("<dere>"))
+        ;
+
+"<så>" SELECT:bedriftene-vi-såg-på pret IF
+        (-1 prn + pers + nom)
+        (1 ("<på>" pr))
+        (NEGATE -2 vblex)
+        ;
+
 #:3210
 "<så>" SELECT:på-disse-møtene-så-en-igjen pret IF
 	(-1C pron/subst)
@@ -6939,6 +6957,12 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<så>" SELECT:for-så adv IF
         (-1 pr)
         ;
+        # i så fall, om så, for så å, for så vidt, over så lang tid, på så kort varsel
+
+"<så>" SELECT:imponere-så adv IF
+        (-1 vblex)
+        ;
+        # ha imponert så til de grader
 
 "<så>" SELECT:komma-så-det-ut-til-å pret IF
         (-1 komma)
@@ -6946,13 +6970,13 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (3 ("<til>"))
         ;
 
-"<så>" SELECT:komma-så-opplysninger-om adv IF
+"<så>" SELECT:komma-så-opplysninger-om cnjsub IF
         (-1 komma)
         (1 n)
         (2 pr)
         ;
 
-"<så>" SELECT:komma-så-jeg adv IF
+"<så>" SELECT:komma-så-jeg cnjsub IF
         (-1 komma)
         (1 pron OR np OR vblex OR pr OR det + qnt OR ("<å>"))
         ;
@@ -7215,11 +7239,6 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<så>" SELECT:Kommunene-deles-så adv IF
         (-2 n OR np LINK 0 storbokstav OR >>>)
         (-1 pasv)
-        ;
-
-"<så>" SELECT adv IF
-        (1 ("<dagens>"))
-        (2 ("<lys>"))
         ;
 
 
