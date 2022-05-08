@@ -6884,10 +6884,34 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #bare adv ved "sørpe full"
 
-
 "<så>" SELECT:så-langt adv IF
         (1 %langt%)
         ;
+
+"<så>" SELECT:så-raskt-som adv IF
+        (1 ("<raskt>"))
+        (2 %som%)
+        ;
+        # så raskt som mogleg
+
+"<så>"   SELECT:men-vi-såg pret IF
+        (-2 %og% OR %men% OR %da% OR %når% OR ("fordi"))
+        (-1 prn + nom)
+        ;
+#  "fordi vi såg det komme"
+
+"<så>"   SELECT:at-en-så-stor adv IF
+        (-2 %at%)
+        (-1 prn + nom)
+        (1 adj)
+        ;
+
+"<så>"   SELECT:som-vi-såg pret IF
+        (-2 %som% OR %at%)
+        (-1 prn + nom)
+        (NEGATE 1* pres OR pret BARRIER clb-komma OR cnjsub)
+        ;
+#  "2015 var det første året på lenge at vi såg ein liten auke i pengebruken, og anslaget for 2016 viser ein ytterlegare auke."
 
 "<så>" SELECT:en-så-vakker-klok-og-gripende-fortelling adv IF
         (-1 ("en"))
@@ -7119,8 +7143,6 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 	(1C adj)
 ;
 #  "er så stor"
-
-
 
 #:3230
 "<så>"   SELECT:svært-så-offisiell adv IF
