@@ -6976,9 +6976,26 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (2 pr)
         ;
 
+"<så>" SELECT:komma-så-reis cnjsub IF
+        (-1 komma)
+        (1 vblex + imp)
+        ;
+
 "<så>" SELECT:komma-så-jeg cnjsub IF
         (-1 komma)
+        (1 pron OR np OR n OR vblex OR pr OR det + qnt OR ("<å>"))
+        (2* vblex)
+        ;
+
+"<så>" SELECT:komma-så cnjsub IF
+        (-1 komma)
+        (NEGATE 1* vblex)
+        ;
+
+"<så>" SELECT:komma-så-jeg pret IF
+        (-1 komma)
         (1 pron OR np OR vblex OR pr OR det + qnt OR ("<å>"))
+        (2 %at%)
         ;
 
 "<så>" SELECT:så-for-meg adv IF
@@ -7392,6 +7409,11 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "..., særlig med sikte på ungdommene
 # 4.3"
+
+"<hjelper>" SELECT:hjelper-det pres IF
+        (1 %det% OR prn OR n)
+        ;
+        # "Viss redningsvesten berre er om bord, og det skjer noko på dekk, så hjelper det lite"
 
 "<steget>"   SELECT:har-bare-steget-med ("stige") IF
         (*-1C hj-verb)
@@ -7886,13 +7908,16 @@ SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
         (NEGATE -1C pron)
 ;
 
+"<øyet>"   SELECT:default n
+        ;
+        # "så langt auget kan sjå"
+
 
 #:6210
   "<øye>"   SELECT:6210   (n) IF
 	(-1 %få% LINK 0 verb)
 	(1 %på% LINK 0 prep)
 ;
-
 
 #:3120
   "<å>"   SELECT:3120   ("å" part) IF
