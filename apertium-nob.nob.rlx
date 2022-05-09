@@ -8381,7 +8381,7 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (0 ("frykt") OR ("frykte"))
         ;
 "<fløy>"i REMOVE:venstre-fløy vblex IF
-        (-1 ("venstre") OR ("høyre"))
+        (-1 ("venstre") OR ("høyre") OR ("politisk"))
         (0 ("fly") OR ("fløy"))
         ;
 "<sulte>"i REMOVE:sulte ("sule") IF
