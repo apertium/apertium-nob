@@ -6979,14 +6979,14 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         ;
 
 "<så>" SELECT:for-så adv IF
-        (-1 pr)
+        (-1C pr)
         ;
-        # i så fall, om så, for så å, for så vidt, over så lang tid, på så kort varsel
+# i så fall, om så, for så å, for så vidt, over så lang tid, på så kort varsel
 
 "<så>" SELECT:imponere-så adv IF
-        (-1 vblex)
+        (-1C vblex)
         ;
-        # ha imponert så til de grader
+# ha imponert så til de grader
 
 "<så>" SELECT:komma-så-det-ut-til-å pret IF
         (-1 komma)
