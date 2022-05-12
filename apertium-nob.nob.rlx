@@ -8546,6 +8546,19 @@ REMOVE:to-ansatte vblex IF
         (-1 ("fast"))
         ;
 # "fast besluttet"
+"<fly>"i REMOVE:flere-fly vblex IF
+        (-1 ("mange"))
+        ;
+# "flere fly"
+"<skinne>"i REMOVE:lar-det-skinne n IF
+        (-2 ("la"))
+        (-1 ("den"))
+        ;
+# "lar det skinne"
+"<anklage>"i SELECT:en-anklage n IF
+        (-1 ("en"))
+        ;
+# "en anklage"
 "<preget>" SELECT:preget-sitt n IF
         (1 ("<sitt>"))
         ;
