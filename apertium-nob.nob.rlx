@@ -8542,6 +8542,10 @@ REMOVE:to-ansatte vblex IF
         (1 ("mot"))
         ;
 # "Fatt mot!"
+"<besluttet>"i SELECT:fast-besluttet nt IF
+        (-1 ("fast"))
+        ;
+# "fast besluttet"
 "<preget>" SELECT:preget-sitt n IF
         (1 ("<sitt>"))
         ;
