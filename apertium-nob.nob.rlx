@@ -8559,6 +8559,18 @@ REMOVE:to-ansatte vblex IF
         (-1 ("en"))
         ;
 # "en anklage"
+"<nå>"i SELECT:nå-mål vblex IF
+        (1 ("mål"))
+        ;
+# "å nå mål"
+"<undertrykket>"i SELECT:bli-undertrykket vblex IF
+        (-1 ("bli"))
+        ;
+# "bli undertrykket"
+"<hullet>"i REMOVE:hullet-i-ozonlaget vblex IF
+        (1 ("i"))
+        (2 ("ozonlag"))
+        ;
 "<preget>" SELECT:preget-sitt n IF
         (1 ("<sitt>"))
         ;
