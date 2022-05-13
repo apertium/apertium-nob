@@ -8571,6 +8571,20 @@ REMOVE:to-ansatte vblex IF
         (1 ("i"))
         (2 ("ozonlag"))
         ;
+"<tråkket>"i REMOVE:tråkket-inn-til n IF
+        (1 pr)
+        ;
+"<sender>"i REMOVE:allierte-sender-til n IF
+        (-1 ("alliert"))
+        (1 pr)
+        ;
+# å erstatte våpen og kjøretøy som landets allierte sender til Ukraina.
+"<grunnlegger>"i REMOVE:grunnlegger-av vblex IF
+        (-2 np)
+        (-1 cm)
+        (1 ("av"))
+        ;
+# James Hickman, grunnlegger av nettstaden Sovereign Man
 "<preget>" SELECT:preget-sitt n IF
         (1 ("<sitt>"))
         ;
