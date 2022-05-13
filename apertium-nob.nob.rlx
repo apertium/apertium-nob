@@ -8577,7 +8577,7 @@ REMOVE:to-ansatte vblex IF
 "<sender>"i REMOVE:allierte-sender-til n IF
         (-1 ("alliert"))
         (1 pr)
-        ;
+        ; 
 # å erstatte våpen og kjøretøy som landets allierte sender til Ukraina.
 "<grunnlegger>"i REMOVE:grunnlegger-av vblex IF
         (-2 np)
@@ -8585,6 +8585,20 @@ REMOVE:to-ansatte vblex IF
         (1 ("av"))
         ;
 # James Hickman, grunnlegger av nettstaden Sovereign Man
+"<øret>"i SELECT:menneskelige-øret ("øre¹") IF
+        (-1 ("menneskelig"))
+        ;
+# det menneskelige øret
+"<landet>"i SELECT:å-ha-landet vblex IF
+        (-2 ("å"))
+        (-1 ("ha"))
+        ;
+# å ha landet
+"<holder>"i REMOVE:holder-den n IF
+        (1 ("den"))
+        (2 adj OR n)
+        ;
+# Nærmest daglig holder den ukrainske presidenten flammende videotale
 "<preget>" SELECT:preget-sitt n IF
         (1 ("<sitt>"))
         ;
