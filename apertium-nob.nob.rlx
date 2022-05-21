@@ -9122,6 +9122,18 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
         (NOT 1 %seg%)
         ;
 
+"<blinkene>" REMOVE:blinkane nt IF
+        (NEGATE -1 adj + def)
+        ;
+# «Russeren banket ned alle blinkene på første liggende, mens franskmannen fikk to bom.»
+
+"<blinket>" REMOVE:blinket nt IF
+        (NEGATE -1 adj + def)
+        ;
+# «Etter 1-2-tap mot Inter og 2-4 mot Barcelona i de to første gruppespillkampene, blinket alle alarmklokkene for Tottenham og trener Mauricio Pochettino foran onsdagens kamp mot PSV Eindhoven.»
+# Ikkje: «For å vite hvor vi befinner oss i forhold til fyrlykten kan vi nå måle tiden det tar fra vi ser det grønne blinket (referansesignalet) til vi ser det hvite blinket (variable signalet).»
+
+
 "<blottende>" REMOVE:blotte (adv) IF
         (NOT 1 adj)
 ;
