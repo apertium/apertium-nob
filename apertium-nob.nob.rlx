@@ -1954,7 +1954,7 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		;
 
 "<presset>"i SELECT:at-presset n IF
-        (-1 cnjsub)
+        (-1C cnjsub)
         ;
 
 "<presset>"i SELECT:det-økende-presset n IF
@@ -1963,55 +1963,55 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         ;
 
 "<presset>"i SELECT:tror-presset n IF
-		(-1 vblex)
-		(NEGATE -1 %ha% OR %være/bli% OR modalverb)
+        (-1C vblex)
+        (NEGATE -1 %ha% OR %være/bli% OR modalverb)
         ;
 
 "<presset>"i SELECT:presset-øker n IF
-		(1 vblex)
+        (1C vblex)
         ;
 
 "<presset>"i SELECT:tror-ikke-presset n IF
-        (-1 %ikke%)
-		(-2 vblex)
+        (-1C %ikke%)
+        (-2C vblex)
         ;
 
 "<presset>"i SELECT:hardt-presset adj + pp IF
-		(-1 adv OR n)
+        (-1 adv OR n)
         ;
 "<hardt>"i SELECT:hardt-presset adv IF
-		(1 ("<presset>"))
+        (1 ("<presset>"))
         ;
 
 "<presset>"i SELECT:ble-presset pp IF
-		(-1* %være/bli% BARRIER setn-gr)
+        (-1* %være/bli% BARRIER setn-gr)
         ;
 
 "<presset>"i SELECT:presset-ut-av pp IF
-		(1 %ut%)
+        (1 %ut%)
         ;
 
 "<presset>"i SELECT:interne-presset n IF
-		(-1 adj)
+        (-1 adj)
         ;
-		
+
 "<presset>"i SELECT:stå-imot-presset n IF
         (-2 ("stå") OR ("øke") OR ("forsterke"))
         (-1 %mot% OR %imot%)
         ;
-		
+
 "<presset>"i SELECT:motstå-presset n IF
         (-1 ("motstå"))
         ;
 
 "<presset>"i SELECT:presset-som-omgir n IF
         (1 %som%)
-		(2 vblex)
+        (2 vblex)
         ;
 
 "<presset>"i SELECT:presset-på-bøndene n IF
         (1 %på%)
-		(2 n)
+        (2 n)
         ;
 		# kan òg vere verbet, men oftast ikkje
 
@@ -30984,6 +30984,11 @@ CONSTRAINTS
         (*1 fv)
         ;
 
+"<landet>" REMOVE:har-landet-på n IF
+        (-1 ("<har>"))
+        (1 ("<på>"))
+        ;
+
 #:5002
  "<langs>"   REMOVE:5002   (adj gen) IF
 	  (0 prep)
@@ -31031,6 +31036,11 @@ CONSTRAINTS
 
 "<lysten>" REMOVE adj IF
         (NOT 1 %på%)
+        ;
+
+"<maken>" SELECT:sett-maken-til ("make")
+        (*-1 fv)
+        (1 %til%)
         ;
 
 "<skjegget>" REMOVE vblex
@@ -34634,6 +34644,16 @@ REMOVE:møtes pstv + pp IF
         (*2 acc OR n + def)
         ;
 # Ikkje: «Det er en lang behandling, men han er ung, så om ting går som vi håper, ser jeg ikke noen grunn til at han ikke skal komme tilbake. »
+
+"<så>" SELECT:for-så-å adv IF
+        (-1 ("for"))
+        (1 infmerke)
+        ;
+
+"<så>" SELECT:så-lett. adv IF
+        (1 ("lett"))
+        (2 periode-slutt)
+        ;
 
 "<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
