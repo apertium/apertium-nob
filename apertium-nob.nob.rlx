@@ -2020,10 +2020,15 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
         ;
 
-"<presset>"i SELECT:default pret ;
+"<presset>"i SELECT:default pret 
+        ;
 
 "<fanger>i" SELECT:default-fangar ("fange" n m pl ind) 
         ;
+
+"<tanten>"i SELECT:default ("tante" n)
+        ;
+        # "tant" tenkjeleg, men mest hypotetisk i bunden form ("tanten og fjaset")
 
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
