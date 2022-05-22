@@ -11866,6 +11866,7 @@ SELECT:at/ha-landet-subst n IF
         (-1 ("ha") OR ("at"))
         (0C pp OR n)
         (0 ("<landet>"))
+        (NEGATE 1 %på%)
         (*1 vblex BARRIER clb)
         ;
 # «– Så langt har landet vårt sunket, dette er forferdelig.»
@@ -34654,6 +34655,19 @@ REMOVE:møtes pstv + pp IF
         (1 ("lett"))
         (2 periode-slutt)
         ;
+
+"<så>" SELECT:og-så-holde adv IF
+        (-1C cnjcoo)
+        (1C inf)
+        ;
+# «Planen er nå å fortsette diskusjonene over sommeren og så holde et nytt møte om saken til høsten.»
+
+"<så>" SELECT:noe-så-lite adv IF
+        (-1C %noe%)
+        (1C adv)
+        ;
+# «Gately hadde sine tvil om mulighetene for å finne noe så lite på et så stort område, men han og turkamerat Brendan Cheever tok med metalldetektor på en organisert tur.»
+
 
 "<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
