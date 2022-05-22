@@ -35986,7 +35986,7 @@ REMOVE:default ("<Lær>") + n ;
 REMOVE:default ("<Vær>") + n ;
 REMOVE:default ("slått") + n ;
 REMOVE:default ("slått") + pst ;
-
+REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
