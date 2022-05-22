@@ -28231,14 +28231,15 @@ REMOVE:for-økt-sysselsetting subst IF
 
 
 #:1992
- REMOVE:1992 subst IF
-	(0 språk)
+REMOVE:språk-adj subst IF
+	(0 språk + adj)
 	(1 subst)
         (NOT 1C np)
 	(NOT 1 %alt%)
 ;
 #  "norsk (adj) språk"
 #      :group 66
+# Ikkje: «Dansker landet i Roskilde»
 
 
 
