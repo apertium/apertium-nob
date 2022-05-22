@@ -8595,11 +8595,13 @@ REMOVE:to-ansatte vblex IF
         (-1 ("menneskelig"))
         ;
 # det menneskelige øret
+
 "<landet>"i SELECT:å-ha-landet vblex IF
         (-2 ("å"))
         (-1 ("ha"))
         ;
 # å ha landet
+
 "<holder>"i REMOVE:holder-den n IF
         (1 ("den"))
         (2 adj OR n)
@@ -33931,6 +33933,14 @@ REMOVE:inf-subst/PP-qnt subst-nøyt IF
         (1 qnt)
         ;
 # «Han ble pågrepet april 2017 etter å ha laget en eksplosiv innretning hjemme, som han så satte ut på Grønland.»
+
+REMOVE:skal-ADV-ha-subst/PP subst IF
+        (*-2 ("skulle") OR ("kunne") BARRIER ikke-adv)
+ 	(-1C %ha% OR %være%)
+ 	(-1C inf)
+	(0 pp)
+;
+# «Prosjektilet skal imidlertid ha landet på en åpen slette, ifølge lokale myndigheter.»
 
 #:4024
 REMOVE:inf-SUBST/pp pp IF
