@@ -30898,7 +30898,10 @@ CONSTRAINTS
         ;
 # «Men for å få fatt i dem måtte jeg gi avkall på en av mine aller kjæreste Elvis-eiendeler»
 
-
+"<klappet>" REMOVE:ble-lederen-klappet-inn n IF
+        (-1 n OR prn OR hj-verb)
+        (1 ("inn") OR ("inn til"))
+        ;
 
 
 "<laget>" REMOVE:vi-har-laget n IF
@@ -31063,6 +31066,16 @@ CONSTRAINTS
         (*-1 fv)
         (1 %til%)
         ;
+
+"<nappet>"i SELECT:nappet-ut vblex IF
+        (1 %ut%)
+        ;
+
+"<nitid>" SELECT:nitid-og-presist adj IF
+        (1 cnjcoo)
+        (2 adj)
+        ;
+
 
 "<skjegget>" REMOVE vblex
         (NOT 1 %seg%)
