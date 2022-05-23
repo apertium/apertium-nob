@@ -35921,6 +35921,12 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (0 n + gen - xgrau)
         ;
 
+"<den>" SELECT:gjorde-den-rød prn + pers IF
+        (-1 pr3)
+        (1C adj + mf + ind)
+        (NEGATE 1 gen)
+        ;
+
 "<den>" SELECT:har-den-hatt prn + pers IF
 		(-1 ("<har>"))
 		(1 ("<hatt>"))
