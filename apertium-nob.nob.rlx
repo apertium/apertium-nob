@@ -1780,11 +1780,13 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 		;
 
 
-# Prefer nouns in compounds:
+# Prefer nouns in compounds, unless in exception-list:
+LIST allow-adjcmp = "klippe" ;
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
-        (NOT 0 adjn)            # «Den spiontiltalte nordmannen ber …»
+        (NEGATE 0 adjn)            # «Den spiontiltalte nordmannen ber …»
+        (NEGATE 0 allow-adjcmp)   # «tvangsklippet»
         ;
 # TODO: Probably too conservative
 
@@ -7014,8 +7016,9 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<så>" SELECT:komma-så-jeg cnjsub IF
         (-1 komma)
         (1 pron OR np OR n OR vblex OR pr OR det + qnt OR ("<å>"))
-        (2* vblex)
+        (*2C vblex)
         ;
+# «– Jeg vet at noen gamle gubber fremdeles har sånne forstokkede holdninger, men at det skulle komme fra en ung mann på 36 år, så jeg ikke komme, sier Helleland til   Dagsavisen.»
 
 "<så>" SELECT:komma-så cnjsub IF
         (-1 komma)
