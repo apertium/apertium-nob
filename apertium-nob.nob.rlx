@@ -2506,6 +2506,22 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (NEGATE -2 ("ut") LINK 1 ("av"))
         ;
 
+"<nytt>"i SELECT:mye-nytt ("ny") IF
+        (-1 ("<mye>"i) OR ("<intet>"i) OR ("så mange"i det qnt un pl unc))
+        ;
+
+"<nytt>"i SELECT:nytt-kontor ("ny") IF
+        (1 (n nt sg ind))
+        ;
+
+"<nytt>"i SELECT:bygge-nytt ("ny") IF
+        (-1 ("bygge" vblex))
+        ;
+
+"<nytt>"i SELECT:på-nytt ("ny") IF
+        (-1 %på%)
+        ;
+
 ##############################################
 # "den¹" er påpeikande, blir «den» på nno òg #
 # "den" blir «han/ho»                        #
@@ -35380,8 +35396,6 @@ SELECT:talentane ("talent") + n + m + pl IF
 REMOVE:unlikely ("talent") + n + m ;
 
 SELECT:merka ("merke") + n + nt + pl ; # TODO: 'fire merker smør', 'betale dei 30 markane'
-
-
 
 SELECT:en-egen-lovgivende-forsamling &&ADJ_N_AGR IF
         (-2 det + &&ADJ_N_AGR)
