@@ -34188,6 +34188,14 @@ REMOVE:ble-hensyntatt pl IF
 
 LIST <noen> = ("<noen>"i);
 REMOVE:wtf ("noen") + det;      # where is this one in the .dix?
+
+SELECT:Mens-noen-presist-følgte <noen> + pl IF
+        (-1C cnjsub)
+        (1 adj + nt)            # adverbialt!
+	(*2C fv BARRIER ikke-adj - cnjcoo)
+        ;
+# «Mens noen nitid og presist fulgte opp nazistenes ønsker, valgte andre å advare jødene før aksjonen, slik at noen kom seg unna.»
+
 REMOVE:noen-års-tid <noen> + mask/fem/mf IF
 	(1C nøyt)
 ;
