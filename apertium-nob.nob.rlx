@@ -31063,6 +31063,8 @@ CONSTRAINTS
 ;
 #  "kh jan 2004: mest sannsynlig adjektiv når subst-reglene har virket."
 
+"<leies>" REMOVE pstv;          # sannsynlegvis leige ut, heller enn leie kvarandre
+
 "<liten>" REMOVE:i-siste-liten adj IF
         (-2 %i%)
         (-1 %siste%)
@@ -34181,7 +34183,6 @@ REMOVE:ikke-sanns-subst-ent-ub subst-appell-ub-ent IF
 # «Falt i elva» (t.d. i overskrift)
 # ...vanlegare med pret først i ledd, men burde jo ha
 # overskriftstagg :-/ -KBU
-
 
 #:4999
  REMOVE:4999 (vblex pasv) IF
