@@ -30417,6 +30417,13 @@ CONSTRAINTS
 ;
 
 
+"<landet>" SELECT:har-landet-på pp IF
+        (*-2 %ha% BARRIER vblex OR setn-gr)
+        (-1C n OR prn)
+        (1 %på% OR %i% OR %ved% OR ("oppå"))
+        ;
+# «Etter en helhetlig vurdering har regjeringen landet på å tilrå at Stortinget avslår søknadene, sier statsråd Liv Signe Navarsete.»
+
 "<landet>" SELECT:landet-på pret IF
         (1 %på% OR %i% OR %ved% OR ("oppå"))
         ;
@@ -30990,6 +30997,12 @@ CONSTRAINTS
 
 "<landet>" REMOVE:har-landet-på n IF
         (-1 ("<har>"))
+        (1 ("<på>"))
+        ;
+
+"<landet>" REMOVE:har-X-landet-på n IF
+        (-2 ("<har>"))
+        (-1 np)
         (1 ("<på>"))
         ;
 
@@ -33939,12 +33952,14 @@ REMOVE:inf-subst/PP-qnt subst-nøyt IF
 # «Han ble pågrepet april 2017 etter å ha laget en eksplosiv innretning hjemme, som han så satte ut på Grønland.»
 
 REMOVE:skal-ADV-ha-subst/PP subst IF
-        (*-2 ("skulle") OR ("kunne") BARRIER ikke-adv)
+        (*-2 ("skulle") OR ("kunne") BARRIER ikke-adj - nominativ)
  	(-1C %ha% OR %være%)
  	(-1C inf)
 	(0 pp)
 ;
 # «Prosjektilet skal imidlertid ha landet på en åpen slette, ifølge lokale myndigheter.»
+# «Denne beslutningen skal han ha landet på etter å ha lest et notat fra Wiersholm selv.»
+
 
 #:4024
 REMOVE:inf-SUBST/pp pp IF
