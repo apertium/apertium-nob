@@ -17451,6 +17451,7 @@ SELECT:finne-deres-X-og-Y-og-gi clb IF
 	(NOT 0 det-ent)
 	(NOT 0 poss-det)
 	(-1 fv)
+        (NEGATE -1 kop-fv LINK 2C ind) # «er de listefyll»
 	(NOT -2 setn-gr)
 	(**-1CO setn-gr LINK NOT 1 adv)
 	(**-1CO setn-gr LINK NOT 1 prep)
