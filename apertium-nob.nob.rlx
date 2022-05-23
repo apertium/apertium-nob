@@ -24020,6 +24020,11 @@ CONSTRAINTS
         (-2 farger)
         ;
 
+"<smått>" SELECT adv IF
+        (1C adj)
+        ;
+# «VM-byen i Østerrike kan få smått kaotiske utfordringer om snøværet følger prognosene.»
+
 "<sport>"  SELECT:sport n IF
     (0 subst)
 ;
