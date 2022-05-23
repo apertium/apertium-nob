@@ -8231,8 +8231,9 @@ REMOVE:unlikely ("året") + adj IF (0 n);
 REMOVE:unlikely ("pinn");       # berre i faste uttrykk / cmp, som me leksikaliserer; tørrpinn, peikepinn
 REMOVE:unlikely ("brise");      # "<briste>" vanlegvis "briste" (når er "brise" rett?)
 REMOVE:unlikely ("pinner");     # kva betyr «en pinner»?
-REMOVE:unlikely ("tyrker") IF (0 ("styrke")); # avoid «militærtyrkar»
+REMOVE:unlikely ("tyrker")  IF (0 ("styrke")); # avoid «militærtyrkar»
 REMOVE:unlikely ("klokker") IF (0 ("klokke")) (0/1 cmp); # avoid «alarmklokkar»
+REMOVE:unlikely ("eland")   IF (0 ("land")) (0/1 cmp);   # avoid «kriselandane»
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
@@ -30391,6 +30392,7 @@ CONSTRAINTS
         (-1 %på%)
         ;
 
+
 #:4015
   "<felles>"   SELECT:4015   (vblex inf) IF
 	(NOT 0 farlige-inf)
@@ -36083,6 +36085,7 @@ REMOVE:default ("<Lær>") + n ;
 REMOVE:default ("<Vær>") + n ;
 REMOVE:default ("slått") + n ;
 REMOVE:default ("slått") + pst ;
+REMOVE:default ("avvise") + pl ;
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 
 # Corpus-based default rules:
