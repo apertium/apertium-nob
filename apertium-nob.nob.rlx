@@ -34770,6 +34770,11 @@ REMOVE:møtes pstv + pp IF
         (NOT 1 def OR sup + ind)
         ;
 
+"<det>" SELECT:ha-det-litt-gøy expl IF
+        (-1 %ha%)
+        (*1 ("gøy") BARRIER (*) - ("litt") - ("veldig"))
+        ;
+
 SELECT:sine-spor $$NUMBER IF
         (-1C det OR prn LINK 0C $$NUMBER)
         (NOT -1C prn)           # det er dette<prn> folk reagerer på
