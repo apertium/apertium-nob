@@ -7233,12 +7233,12 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 
 #:3217
-  "<så>"   SELECT:3217   (clb cnjcoo) IF
+  "<så>"   SELECT:cm-så-hun-gledet cnjcoo IF
         (*-2 pres/pret)
 	(-1 komma)
 	(NOT 1 adj)
 	(NOT 1 fv)
-	(*1O setn-gr LINK *-1 pres/pret LINK NOT -1 adverb)
+	(*1O setn-gr LINK *-1C pres/pret LINK NOT -1 adverb)
 ;
 #  "Hun falt pladask for babyen, så (CLB konj)
 # (forts) hun gledet seg over at ...
@@ -8264,6 +8264,8 @@ SELECT:sel-unlikely ("<[A-Z]S>"r "[A-Z]S"r);
 
 "<maker>" SELECT:make ("make");
 SELECT:kaffemaker ("maker") IF (0/* cmp);
+
+SELECT:heisknapper SUB:1 ("heis");
 
 # At least unlikely in (sg) ind:
 LIST unlikely-agent-noun = "banker" "banke" "slaver" "skader" "skifter" "jakter" "transporter" "stopper" "former" "bomber" "viser" "sover" "sliter" "frykter" "avviser" "reker" "skryter" "skyter" "stuper" "varmer" "tviler" "ødelegger" "støter" "stjeler" "skyver" "sparer" "tynner" "setter" "brygger" "drikker" "stuer" "utløser" "skyver" "knuser" "typer" "klipper" "stryker" ;
