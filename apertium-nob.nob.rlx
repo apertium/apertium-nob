@@ -7278,7 +7278,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 #:3205
   "<så>"   SELECT:3205   (vblex pret) IF
-	(1 pron-akk)
+	(1C pron-akk)
 	(*-1 setn-gr BARRIER fv)
 	(*1 setn-gr BARRIER pres/pret)
 ;
@@ -20800,6 +20800,10 @@ SELECT:singel-album ("singel" m) IF
 "<leser>" SELECT:leser-opp vblex IF
 		(1 ("opp"))
 		;
+
+"<lite>" SELECT:et-lite-øyeblikk ("liten") IF
+        (1C n + nt + sg)
+        ;
 
 "<kåret>"i SELECT:bli-kåra-til vblex IF
 		(-1 %være/bli%)
