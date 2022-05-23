@@ -3401,6 +3401,11 @@ SELECT:i-kok ("<kok>"i) + nt IF
         (1 %av%)
         ;
 
+"<fant>" SELECT:fant pret IF
+        (NEGATE -1 det)
+        (NEGATE -1 %til%)
+        ;
+
 "<fart>" SELECT:skyte-fart n IF
         (-1 ("skyte"))
         ;
