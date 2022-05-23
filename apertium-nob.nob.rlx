@@ -28153,15 +28153,16 @@ REMOVE:gen-subst gen-subst IF
 #:1983
 REMOVE:det-grenser-til subst IF
 	(0 mask/fem/adj)
-	(0 ub)
+	(0 n + ind)
 	(0 fv)
 	(-1 nøyt)
 	(-1 %det%)
-        (NOT 0 farlige-part)
-	(NOT 1 verb)
-	(NOT 1 sbu)
-	(NOT 1 konj)
-	(NOT -2 fv)
+        (NEGATE 0 farlige-part)
+	(NEGATE 1 verb)
+	(NEGATE 1 sbu)
+	(NEGATE 1 konj)
+	(NEGATE -2 fv)
+	(NEGATE 0 def LINK -2 ("akkurat")) # akkurat det stuntet
 ;
 #  "det grenser (ikke subst men verb) til "))
 
