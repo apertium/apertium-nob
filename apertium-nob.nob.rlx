@@ -30598,6 +30598,10 @@ CONSTRAINTS
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<tapet>" SELECT ("tapet") IF
+        (-1 (".*mønstret"r))    # ein av få trygge tapet-kontekstar
+        ;
+
 "<tanker>" SELECT:Våre-tanker ("tanke") IF
         (-1 poss OR ("varm")) # ca. aldri «våre (gass)tanker» i korpus
         ;
