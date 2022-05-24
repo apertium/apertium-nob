@@ -29819,6 +29819,7 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
  REMOVE:1866 (vblex pret) IF
 	(NOT 0 %var%)
 	(-1 sbu-ren)
+        (NOT 1 nominativ)       # så steg de
 	(NOT -1 %der%)
 	(NOT -1 adv)
 	(NOT -1 %at%)
