@@ -36495,9 +36495,9 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 "<tang>" REMOVE:default-tang ("tang" n nt pl ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
 "<tang>" REMOVE:default-tang ("tang" n nt sg ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
 "<Taper>" REMOVE:default-Taper ("tape" vblex pres) ;	# keep Taper<n><m><sg><ind>→Tapar Tape<n><m><pl><ind>→Tapar
-"<tapet>" REMOVE:default-tapet ("tap" n nt sg def) ;	# keep tape<vblex><pret>→tapte
 "<tapet>" REMOVE:default-tapet ("tapet" n nt pl ind) ;	# keep tape<vblex><pret>→tapte
 "<tapet>" REMOVE:default-tapet ("tapet" n nt sg ind) ;	# keep tape<vblex><pret>→tapte
+"<tapet>" REMOVE:default-tapet ("tap" n nt sg def) ;	# keep tape<vblex><pret>→tapte
 "<tegnet>" REMOVE:default-teiknet ("tegn" n nt sg def) ;	# keep tegne<vblex><pp>→teikna tegne<vblex><pret>→teikna
 "<tenker>" REMOVE:default-tenkjar ("tenker" n m sg ind) ;	# keep tenke<vblex><pres>→tenker
 "<Tiden>" REMOVE:default-Tiden ("Tiden" np org) ;	# keep Tid<n><m><sg><def>→Tida
