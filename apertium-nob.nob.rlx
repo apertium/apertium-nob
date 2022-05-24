@@ -11350,6 +11350,10 @@ SELECT:skrev vblex IF
 	(NOT 1 %fra/for/ut%)
 ;
 
+"<sport>" REMOVE:spora ("spore") IF
+        (NEGATE 1 %opp%)
+        (NEGATE *0 ("ulv") OR ("bjørn"))
+        ;
 
 "<spiller>" REMOVE:spiller-om n IF (1 %om%) ;
 
