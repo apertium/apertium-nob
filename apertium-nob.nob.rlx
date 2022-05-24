@@ -9451,6 +9451,11 @@ REMOVE:data-not-datum ("datum");
 # Only really nøyt if "et fiske" or "fisket"
 REMOVE:fiske ("fiske"i) + nøyt + fl;
 
+"<finnes>" REMOVE:så-finnes-det inf IF
+        (-1 %så%)
+        (1 %det%)
+        ;
+
 "<flesteparten>"i REMOVE:dei-fleste n ;
 
 "<flott>" REMOVE:Det-er-flott pl IF
