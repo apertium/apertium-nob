@@ -9782,6 +9782,11 @@ REMOVE ("frø") IF
 ;
 #  "bare verb ved feks to ganger to"
 
+
+"<ganger>" REMOVE:ganger sg IF
+        (NEGATE *-1 %en% BARRIER ikke-adj)
+        ;
+
 "<Gjør>"   REMOVE:gjø ("gjø") IF (NOT 1 %hund%);
 "<gjør>"   REMOVE:gjø ("gjø") IF (NOT *0 %hund%);
 
