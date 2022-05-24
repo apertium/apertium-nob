@@ -31526,11 +31526,13 @@ REMOVE:øye ("øye"i) IF
 
 
 SELECT:nest-høyeste-nivå n + sg IF
-		(-2C adv)
-		(-1C adj + sup)
-		;
+        (-2C adv)
+        (-1C adj + sup)
+        (0* fv)
+        ;
 # «på aller høyeste  nivå »
 # Ikkje: «men alltid rundet av nedover til nærmeste  hele  tall.»
+# Ikkje: «Norges aller rikeste eier stadig mer.»
 
 SELECT:titlecase-np np + titlecase IF
         (NOT -1 >>>)
