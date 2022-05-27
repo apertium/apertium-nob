@@ -4713,6 +4713,9 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 		(3 np)
 		;
 
+"<jordas>" SELECT:default n + f IF
+        ;
+        # ikkje fleirtal av jordet
 
 "<landet>" SELECT:landet-utenfor-Norge n IF
         (*1 ("Norge"))
