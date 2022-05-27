@@ -8592,6 +8592,22 @@ REMOVE:to-ansatte vblex IF
         (-1 ("fast"))
         ;
 # "fast besluttet"
+"<grep>"i SELECT:andre-grep n IF
+        (-3 n)
+        (-2 ("og"))
+        (-1 det OR adj)
+        ;
+# "n og andre grep"
+"<eier>"i SELECT:alt-de-eier verb IF
+        (-2 ("<alt>"))
+        (-1 ("de"))
+        ;
+# "alt de eier er..."
+"<telt>"i SELECT:telt-og-mat n IF
+        (1 cnjcoo)
+        (2 n)
+        ;
+# "telt og mat"
 "<fly>"i REMOVE:flere-fly vblex IF
         (-1 ("mange"))
         ;
