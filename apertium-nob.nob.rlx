@@ -3142,6 +3142,16 @@ SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
 		;
 		# sportshaller og familiehjem
 
+SELECT:skipet-dekk ("<dekk>"i) + n + sg IF
+        (-1 ("skip" gen) OR  ("båt" gen))
+        ;
+        # skipsdekket; kan også vere fleirtal
+
+SELECT:bilens-dekk ("<dekk>"i) + n + pl IF
+        (-1 gen)
+        ;
+        # bildekka
+
 SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
