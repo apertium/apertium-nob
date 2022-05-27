@@ -8603,6 +8603,16 @@ REMOVE:to-ansatte vblex IF
         (-1 ("de"))
         ;
 # "alt de eier er..."
+SELECT:sittet-varetektsfengslet pp IF
+        (-1 ("sitte"))
+        (0 (".*fengsle"ri))
+        ;
+# "har sittet varetektsfengslet..."
+"<minner>"i SELECT:SV-minner-regjeringen vblex IF
+        (-1 n OR np)
+        (1 n OR np)
+        ;
+# "SV minner regjeringen om..."
 "<telt>"i SELECT:telt-og-mat n IF
         (1 cnjcoo)
         (2 n)
