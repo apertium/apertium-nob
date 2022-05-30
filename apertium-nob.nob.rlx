@@ -1241,6 +1241,11 @@ SELECT:Zuccas-Rangers np IF
         (0C n OR np)
         ;
 
+SELECT:den-røde-leir ("leir") + n + m IF
+        (-1 adj)
+        ;
+        # den raude leiren
+
 REMOVE:Golflegenden-Tiger-Woods cgguess IF
         (-1 >>>)
         (0 n + sg + def)
