@@ -3436,6 +3436,11 @@ SELECT:årets-spelar ("<spiller>"i) + n + sg + ind IF
         (-1 ("år") + n + gen)
         ;
 
+SELECT:fasen ("fase"i) IF
+        (0 ("<fasen>") OR ("<faser>") OR ("<fasene>"))
+        ;
+        # jf. ein fas
+
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
 	(NOT 0 farlige-adj)
