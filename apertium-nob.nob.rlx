@@ -3157,6 +3157,13 @@ SELECT:bilens-dekk ("<dekk>"i) + n + pl IF
         ;
         # bildekka
 
+SELECT:partiets-fylkeslag n + nt + pl IF
+        (-2 %av% OR ("<alle>"))
+        (-1 gen)
+        (NEGATE -3 n)
+        ;
+        # eitt av fylkeslaga i partiet; alle fylkeslaga i partiet: IKKJE: medlem av
+
 SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
