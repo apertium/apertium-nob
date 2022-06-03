@@ -3441,6 +3441,16 @@ SELECT:fasen ("fase"i) IF
         ;
         # jf. ein fas
 
+SELECT:pressen-i-buksa ("press"i n) + sg + def IF
+        (1 %i%)
+        (2 ("bukse" n))
+        ;
+        # pressen i buksene
+
+SELECT:default ("presse"i n) + sg + def
+        ;
+        # pressa
+
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
 	(NOT 0 farlige-adj)
