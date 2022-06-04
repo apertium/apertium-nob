@@ -8695,6 +8695,11 @@ SELECT:sittet-varetektsfengslet pp IF
         ;
 # å ha landet
 
+SELECT:default ("rom") + n + nt IF
+        (0/1 cmp)
+        ;
+        # datarommet, bønneromma
+
 "<holder>"i REMOVE:holder-den n IF
         (1 ("den"))
         (2 adj OR n)
@@ -31356,6 +31361,7 @@ REMOVE:ikkje-skjor ("skjære") + n;
 ;
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
+
 
 "<rådet>" REMOVE:rådet-regjeringen pp IF
         (NEGATE *-1 p-hj-verb BARRIER fv)
