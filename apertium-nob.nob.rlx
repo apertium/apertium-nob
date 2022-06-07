@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nob-seg | cg-conv a" -*-
+# -*- cg-pre-pipe: "apertium -d . nob-segment | cg-conv a" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
@@ -1099,6 +1099,8 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         (-1 berre-litenbokstav)
         ;
 # «sin beste Vårt Land-måling»
+
+"<tatt>" PROTECT pp ;
 
 # sec 1
 CONSTRAINTS
