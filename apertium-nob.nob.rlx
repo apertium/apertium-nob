@@ -8739,6 +8739,11 @@ REMOVE:to-ansatte vblex IF
         (2 n OR np)
         ;
 # "Ruud hadde walkover i den første runden i Roma og møter nederlandske Botic van de Zandschulp"
+"<kastet>"i REMOVE:skjøt-og-kastet n IF
+        (-2 vblex)
+        (-1 ("og"))
+        ;
+# "...skjøt og kastet bomber mot dem"
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
