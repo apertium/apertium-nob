@@ -8685,6 +8685,20 @@ REMOVE:to-ansatte vblex IF
         (-1 ("bli"))
         ;
 # "Et oljelager i Makijivka ved Donetsk ble angrepet onsdag."
+"<sult>"i REMOVE:sult-og-tapt-levebrød ("sule") IF
+        (1 cnjcoo)
+        (*2 n)
+        ;
+# "omfattende ødeleggelser i form av sult og tapt levebrød"
+"<barene>"i REMOVE:butikkene-og-barene nt IF
+        (-2 ("butikk"))
+        (-1 cnjcoo)
+        ;
+# "butikkene og barene"
+"<kuler>"i REMOVE:sikkerhet-enn-kuler ("kul") IF
+        (*-1 ("sikkerhet"))
+        ;
+# "en klem gir bedre sikkerhet enn kuler"
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
