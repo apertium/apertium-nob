@@ -1990,6 +1990,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (1 ("<presset>"))
         ;
 
+"<presset>"i SELECT:størst-er-presset ("press") IF
+        (-2 adj)
+        (-1 %være/bli% )
+        ;
+
 "<presset>"i SELECT:ble-presset pp IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
@@ -8773,6 +8778,25 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 ("siden"))
         ;
 # "Pakistan har helt siden slutten av april..."
+"<håpet>"i SELECT:håpet-lever n IF
+        (1 ("<lever>"))
+        ;
+# "seieren over Southampton tirsdag gjør at håpet lever for de rødkledde"
+"<intervjuet>"i REMOVE:som-er-intervjuet n IF
+        (-2 ("som"))
+        (-1 %være/bli%)
+        ;
+# "flere sivile som er intervjuet forteller om store lidelser"
+"<bøtter>"i REMOVE:mat-og-bøtter vblex IF
+        (-2 n)
+        (-1 ("og"))
+        ;
+# "mat og bøtter"
+"<tre>"i SELECT:tre-til-åtte det IF
+        (1 ("til"))
+        (2 det + qnt)
+        ;
+# "tre til åtte"
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
