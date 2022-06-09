@@ -7102,6 +7102,18 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         ;
 # ha imponert så til de grader
 
+"<så>" SELECT:så-gammel-ut vblex IF
+        (-1 ("og"))
+        (1 ("gammel"))
+        (2 ("ut"))
+        ;
+# Han hadde tydelige reparasjoner og så gammel ut
+
+"<så>" SELECT:sett-så adv IF
+        (-1 ("<sett>"i))
+        ;
+# sett så kjelen på benken
+
 "<så>" SELECT:komma-så-det-ut-til-å pret IF
         (-1 komma)
         (2 ("<ut>"))
@@ -8699,6 +8711,34 @@ REMOVE:to-ansatte vblex IF
         (*-1 ("sikkerhet"))
         ;
 # "en klem gir bedre sikkerhet enn kuler"
+"<si>"i SELECT:de-si-at vblex IF
+        (-1 n)
+        (1 ("at"))
+        ;
+# "Jeg så en av de fremste utenrikspolitiske ekspertene si at..."
+"<ønsket>"i REMOVE:komma-ønsket n IF
+        (-1 setn-gr)
+        (*1 n)
+        ;
+# "Etter måneder med stor uro i klubben, ønsket det nye klubbstyret å bryte"
+"<kursene>"i REMOVE:kurs-kursnedgang nt IF
+        (*1 ("kursnedgang") OR ("børs"))
+        ;
+# "Da hadde kursene hentet seg noe inn igjen etter en kraftigere kursnedgang"
+"<møter>"i REMOVE:to-møter vblex IF
+        (-1 det + qnt)
+        (NOT 1C np OR n)
+        ;
+# "Til tross for to møter de andre ønsket..."
+"<møter>"i REMOVE:møter-Boti n IF
+        (1 n OR np)
+        ;
+# "Ruud hadde walkover i den første runden i Roma og møter Botic van de Zandschulp"
+"<møter>"i REMOVE:møter-nederlandske-Boti n IF
+        (1 adj)
+        (2 n OR np)
+        ;
+# "Ruud hadde walkover i den første runden i Roma og møter nederlandske Botic van de Zandschulp"
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
