@@ -1450,6 +1450,11 @@ REMOVE:parkfester ("feste") + n IF
         (0/* cmp)
         (NOT 0/1 ("anker"))
         ;
+"<festet>"i REMOVE:er-festet-til n IF
+        (-1 %være/bli%)
+        (1 ("til"))
+        ;
+# "turbinene er festet til havbunnen med anker"
 SELECT:søm-og-feste ("feste") + n IF
         (0* feste-ord)
         (NOT 0* fest-ord)
@@ -5667,6 +5672,9 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 		(-2 ("vind") OR ("storm") OR ("kulde"))
 		(-1 %og/eller%)
 		;
+"<regnet>" SELECT:regnet-bombene regne_vann IF
+		(1 ("bombe") OR ("missil"))
+		;
 "<regnet>" SELECT:regnet-og-vinden regn_vann IF
 		(1 %og/eller%)
 		(2 ("vind") OR ("storm") OR ("kulde"))
@@ -8773,6 +8781,28 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 np)
         ;
 # "Tidligere bryter Stig Berge"
+"<sentre>"i SELECT:dreie-seg-om-sentre ("senter") IF
+        (-3 vblex)
+        (-2 ("seg"))
+        (-1 ("om"))
+        ;
+# "Kinesiske myndigheter hevder det dreier seg om sentre der folk får arbeidstrening"
+"<holdt>"i REMOVE:holdt-unna n IF
+        (1 ("unna"))
+        ;
+# "Boston Celtics holdt unna mot Miami Heats"
+"<buer>"i SELECT:hytter-og-buer ("bu") IF
+        (-2 ("hytte"))
+        (-1 ("og"))
+        ;
+# "hytter og buer"
+"<laget>"i SELECT:er-det-laget vblex IF
+        (-2 %være/bli%)
+        (-1 ("<det>"))
+        (1 ("en"))
+        (1 n)
+        ;
+# "nå er det laget en plan for behandling"
 "<helt>"i SELECT:helt-siden adv IF
         (-1 ("ha"))
         (1 ("siden"))
