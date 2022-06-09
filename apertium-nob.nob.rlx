@@ -8660,6 +8660,31 @@ REMOVE:to-ansatte vblex IF
         (1 ("mot"))
         ;
 # "Fatt mot!"
+"<strøket>"i REMOVE:bli-strøket-1 n IF
+        (-4 ("bli"))
+        (-3 n)
+        (-2 pr)
+        (-1 np OR n)
+        ;
+# "Blir tidene til Lawson strøket,"
+"<strøket>"i REMOVE:bli-strøket-2 n IF
+        (-6 ("bli"))
+        (-5 n)
+        (-4 pr)
+        (-3 np OR n)
+        (-2 cnjcoo)
+        (-1 np OR n)
+        ;
+# "Blir tidene til Lawson og Iwasa strøket,"
+"<angrepet>"i REMOVE:ble-angrepet n IF
+        (-6 n)
+        (-5 pr)
+        (-4 np OR n)
+        (-3 pr)
+        (-2 np OR n)
+        (-1 ("bli"))
+        ;
+# "Et oljelager i Makijivka ved Donetsk ble angrepet onsdag."
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
