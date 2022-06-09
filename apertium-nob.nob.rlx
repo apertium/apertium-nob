@@ -1786,7 +1786,7 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-adjcmp = "klippe" ;
+LIST allow-adjcmp = "klippe" "stemple";
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
@@ -8744,6 +8744,35 @@ REMOVE:to-ansatte vblex IF
         (-1 ("og"))
         ;
 # "...skjøt og kastet bomber mot dem"
+"<stoppet>" REMOVE:bli-stoppet n IF
+        (-1 ("bli"))
+        ;
+# "Er det tenkelig at dette kan bli stoppet?"
+"<blues>"i SELECT:blues-best n IF
+        (1 ("<best>"))
+        ;
+# " - Blues best"
+REMOVE:Tyrkia-kjenner ("kjenne") IF
+        (0/1 cmp)
+        (0 ("kjenner"))
+        ;
+# "... sier Tyrkia-kjenner Kåre Willoch"
+REMOVE:terrorstemplet ("stempel") IF
+        (*-1 ("være"))
+        (0 ("stemple"))
+        ;
+# "PKK er også terrorstemplet av EU og USA"
+"<bryter>"i REMOVE:tidligere-bryter vblex IF
+        (-2 setn-gr)
+        (-1 adj)
+        (1 np)
+        ;
+# "Tidligere bryter Stig Berge"
+"<helt>"i SELECT:helt-siden adv IF
+        (-1 ("ha"))
+        (1 ("siden"))
+        ;
+# "Pakistan har helt siden slutten av april..."
 "<besluttet>"i SELECT:fast-besluttet nt IF
         (-1 ("fast"))
         ;
