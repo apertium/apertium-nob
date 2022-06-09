@@ -6263,6 +6263,51 @@ REMOVE:unlikely ("<ris>") + pasv;
 	(1 vblex)
 	;
 
+"<siden>" SELECT:på-siden-kampen cnjsub IF
+	(-1 %på%)
+	(1 n OR np)
+	;
+
+"<siden>" SELECT:på-siden-kampen cnjsub IF
+	(-1 %på%)
+	(1 adj)
+	(2 n OR np)
+	;
+
+"<siden>" SELECT:ligge-på-siden n IF
+	(*-2 ("ligge" vblex))
+	(-1 %på%)
+	;
+
+"<siden>" SELECT:litt-på-siden n IF
+	(-2 ("<litt>"))
+	(-1 %på%)
+	;
+
+"<siden>" SELECT:på-folkets-side n IF
+	(-2 %på%)
+        (-1 n + gen OR np + gen)
+	;
+
+"<siden>" SELECT:på-siden-som n IF
+	(-1 %på%)
+        (1 %som%)
+	;
+
+"<siden>" SELECT:innholdet-på-siden n IF
+        (-2 n)
+	(-1 %på%)
+	;
+
+"<siden>" SELECT:på-siden-til n IF
+	(-1 %på%)
+        (1 %til%)
+	;
+
+"<siden>" SELECT:over-på-siden n IF
+        (-2 %over%)
+	(-1 %på%)
+	;
 
 
 #:3297
