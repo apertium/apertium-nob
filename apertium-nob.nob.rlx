@@ -12919,6 +12919,11 @@ SELECT:pågrepet-,-mistenkt-for adj + pp + pl IF
 		(1 ("for"))
 		;
 
+SELECT:Jemens-hovedstad top IF
+		(0 gen)
+		(1 ("hovedstad"))
+		;
+
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
