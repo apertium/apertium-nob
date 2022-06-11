@@ -12921,7 +12921,7 @@ SELECT:pågrepet-,-mistenkt-for adj + pp + pl IF
 
 SELECT:Jemens-hovedstad top IF
 		(0 gen)
-		(1 ("hovedstad"))
+		(1 ("hovedstad") OR ("myndighet"))
 		;
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
