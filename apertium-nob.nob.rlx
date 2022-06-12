@@ -4760,6 +4760,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 		(3 np)
 		;
 
+"<husket>" SELECT:default vblex IF
+        ;
+        # ikkje "et husk" -> "hugsen"
+
 "<jordas>" SELECT:default n + f IF
         ;
         # ikkje fleirtal av jordet
