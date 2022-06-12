@@ -12929,6 +12929,10 @@ SELECT:spanske-Sevilla adj IF
 		(1 n OR np)
 		;
 
+SELECT:default top IF
+		(0 ("Japan") OR ("Spania") OR ("Jemen"))
+		;
+
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»
