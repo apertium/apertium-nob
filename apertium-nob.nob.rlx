@@ -12930,7 +12930,7 @@ SELECT:spanske-Sevilla adj IF
 		;
 
 SELECT:default top IF
-		(0 ("Japan") OR ("Spania") OR ("Jemen"))
+		(0 ("Japan") OR ("Spania") OR ("Jemen") OR ("Island"))
 		;
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
