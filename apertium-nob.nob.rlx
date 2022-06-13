@@ -4761,6 +4761,20 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1C n OR np OR prn + pers)
         ;
 
+"<betydelig>"i SELECT:betydelig-flere adj IF
+        (1 ("mange"i) + comp)
+        ;
+        # mange fleire
+
+"<betydelig>"i SELECT:betydelig-større adv IF
+        (1 adj + comp)
+        ;
+
+"<betydelig>"i SELECT:uten-betydelig-regn adv IF
+        (1 n + ind)
+        (-1 %uten%)
+        ;
+
 "<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
 
 
