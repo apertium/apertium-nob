@@ -1378,6 +1378,7 @@ REMOVE:unlikely ("talle") IF (0/* cmp);     # *aborttallane
 REMOVE:unlikely ("entré") IF (0 ("senter")) (0/* cmp);     # unngå «fiskekrimsentré» for «fiskekrimsentre»
 REMOVE:unlikely ("bygg") + m  IF (0/* cmp); # *kontorbyggane
 REMOVE:unlikely ("bygg" "<bygger>"i);       # very unlikely form
+REMOVE:unlikely ("<byggenes>"i) + m + gen;       # very unlikely form
 REMOVE:unlikely ("bile") IF (0 ("bil"));
 REMOVE:unlikely ("molde") + vblex;
 REMOVE:unlikely ("bord") + m IF (NOT -1C det + m);
@@ -4760,7 +4761,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 		(3 np)
 		;
 
-"<husket>" SELECT:default vblex IF
+"<husket>" SELECT:default vblex
         ;
         # ikkje "et husk" -> "hugsen"
 
