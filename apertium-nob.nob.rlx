@@ -8758,10 +8758,13 @@ REMOVE:to-ansatte vblex IF
         (NOT 1C np OR n)
         ;
 # "Til tross for to møter de andre ønsket..."
+
 "<møter>"i REMOVE:møter-Boti n IF
-        (1 n OR np)
+        (1C n OR np)
+        (NEGATE 1 adverbialsubst)
         ;
 # "Ruud hadde walkover i den første runden i Roma og møter Botic van de Zandschulp"
+
 "<møter>"i REMOVE:møter-nederlandske-Boti n IF
         (1 adj)
         (2 n OR np)
