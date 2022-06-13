@@ -3462,6 +3462,16 @@ SELECT:default ("presse"i n) + sg + def
         ;
         # pressa
 
+SELECT:default pl IF
+        (NEGATE -1* %et%)
+        (NEGATE 0 vblex)                # å være / eit være
+        (0 n + nt)
+        (1 %av%)
+        (2 ("<stor>"i))
+        (3 ("<betydning>"i))
+        ;
+        # tiltak av stor betydning (ikkje: et (nytt) tiltak av stor betydning)
+
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
 	(NOT 0 farlige-adj)
