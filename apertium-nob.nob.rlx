@@ -8817,6 +8817,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 adj OR det)
         ;
 # "med plass til 1.000 låter"
+"<Modi>" REMOVE:Modi n IF
+        (-1 setn-gr)
+        ;
+# "Modi taler til Europa"
 "<sentre>"i SELECT:dreie-seg-om-sentre ("senter") IF
         (-3 vblex)
         (-2 ("seg"))
