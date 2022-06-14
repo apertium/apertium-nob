@@ -8813,6 +8813,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 np)
         ;
 # "Tidligere bryter Stig Berge"
+"<låter>"i REMOVE:tusen-låter vblex IF
+        (-1 adj OR det)
+        ;
+# "med plass til 1.000 låter"
 "<sentre>"i SELECT:dreie-seg-om-sentre ("senter") IF
         (-3 vblex)
         (-2 ("seg"))
