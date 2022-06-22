@@ -71,6 +71,8 @@
 
   <char value="ł"> <equiv-char value="l"/> </char>
 
+  <char value="µ"> <equiv-char value="𝜇"/> </char>
+
   <char value="ı"> <equiv-char value="i"/> </char>
 
   <char value="ń"> <equiv-char value="ǹ"/> <equiv-char value="n"/> </char>
