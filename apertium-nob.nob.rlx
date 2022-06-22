@@ -8874,6 +8874,23 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("og"))
         ;
 # "mat og bøtter"
+"<rykket>"i REMOVE:rykket-fra n IF
+        (1 pr BARRIER setn-gr)
+        ;
+# "Nicolaidis/Carracher tok kommandoen og rykket ifra"
+"<slaget>"i SELECT:er-slaget n IF
+        (-1 ("<er>"))
+        (1 pr)
+        ;
+# "Nicolaidis/Carracher tok kommandoen og rykket ifra"
+"<følger>"i SELECT:fatale-følger ("følge") IF
+        (-1 ("<fatale>"))
+        ;
+# "det kan få fatale følger"
+"<øyeblikk>"i SELECT:riktig-øyeblikk sg IF
+        (-1 ("<riktig>"))
+        ;
+# "Det er ikke riktig øyeblikk ennå"
 "<mykt>"i REMOVE:er-veldig-mykt ("myke") IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
