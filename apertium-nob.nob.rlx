@@ -6958,6 +6958,13 @@ SELECT:har-regjeringen-arbeidet ("<arbeidet>"i) + vblex + pp IF
 		(-2 ("ha"))
 		(-1 n)
 		;
+"<arbeidet>"i SELECT:har-arbeidet-med n IF
+	(-1 %ha%)
+	(1 ("med"))
+        (*2 vblex + pp)
+        (*3 setn-gr)
+        ;
+# , har arbeidet med å skaffe til veie vaksiner og medisiner skutt fart.
 SELECT:har-arbeidet ("<arbeidet>"i) + vblex + pp IF
         (-1* ("ha") OR %være/bli% OR ("få" vblex) BARRIER setn-gr OR pr)
         (NOT 1 vblex)
@@ -8867,6 +8874,15 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("og"))
         ;
 # "mat og bøtter"
+"<mykt>"i REMOVE:er-veldig-mykt ("myke") IF
+        (*-1 %være/bli% BARRIER setn-gr)
+        ;
+# "Landskapet er veldig mykt"
+"<skutt>"i SELECT:skutt-fart vblex + pp IF
+	(*-1 %ha% BARRIER setn-gr)
+        (1 ("fart"))
+        ;
+# ", har arbeidet med å skaffe til veie vaksiner og medisiner skutt fart."
 "<rådet>"i REMOVE:lede-rådet vblex IF
         (-2 modalverb)
         (-1 ("lede"))
