@@ -8862,6 +8862,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("og"))
         ;
 # "mat og bøtter"
+"<transporteres>"i SELECT:skal-alle-transporteres vblex + inf + pasv IF
+        (-2 modalverb)
+        (-1 det OR n OR pron)
+        ;
 "<tre>"i SELECT:tre-til-åtte det IF
         (1 ("til"))
         (2 det + qnt)
