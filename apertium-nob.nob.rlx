@@ -8895,6 +8895,11 @@ REMOVE:terrorstemplet ("stempel") IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
 # "Landskapet er veldig mykt"
+"<dopet>"i REMOVE:med-dopet-følger vblex IF
+        (-1 pr)
+        (1 ("følge"))
+        ;
+# "Med dopet følger også vold og helseproblemer."
 "<skutt>"i SELECT:skutt-fart vblex + pp IF
 	(*-1 %ha% BARRIER setn-gr)
         (1 ("fart"))
