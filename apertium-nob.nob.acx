@@ -8,6 +8,9 @@
     <equiv-char value="&#39;"/>
   </char>
 
+  <!-- <char value="&#x20;"> <equiv-char value="&#xa0;"/> </char> -->
+  <char value=" "> <equiv-char value="&#xa0;"/> </char>
+
   <!-- Correct some characters into their accented/diacritiqued/umläuted vérsïonş: -->
   <!-- Find candidate chars using: -->
   <!-- $ tr -d '[ -~]' < apertium-nno-nob.nno-nob.dix |sed 's/./&\n/g'|grep .|sort|uniq -c|sort -nr|less -->
