@@ -8862,6 +8862,14 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("og"))
         ;
 # "mat og bøtter"
+"<hakket>"i REMOVE:hakket-under vblex IF
+        (1 ("under"))
+        ;
+# "Klassifiseringen er bare hakket under ekstrem tørke."
+"<finner>"i REMOVE:finner-sted n IF
+        (1 ("sted"))
+        ;
+# "en høring i saken hans finner sted"
 "<transporteres>"i SELECT:skal-alle-transporteres vblex + inf + pasv IF
         (-2 modalverb)
         (-1 det OR n OR pron)
