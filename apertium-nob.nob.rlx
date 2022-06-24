@@ -8875,7 +8875,7 @@ REMOVE:terrorstemplet ("stempel") IF
         ;
 # "mat og bøtter"
 "<rykket>"i REMOVE:rykket-fra n IF
-        (1 pr BARRIER setn-gr)
+        (1 pr)
         ;
 # "Nicolaidis/Carracher tok kommandoen og rykket ifra"
 "<slaget>"i SELECT:er-slaget n IF
@@ -9428,6 +9428,12 @@ REMOVE ("pote") IF
   "<anstrengt>"   REMOVE:3743   pp IF
 	(*-1 setn-gr BARRIER %ha%)
 ;
+
+"<antall>" REMOVE:antall-våpen pl IF
+        (*1C n + pl BARRIER ikke-adj)
+        ;
+# «Den erstattet Moskva-traktaten som utløp i 2012 og går ut på at antall kjernefysiske stridshoder reduseres til langt under antallet som var lov under den kalde krigen.»
+
 
 "<angrepet>" REMOVE:det-verste-angrepet pp IF
         (-1 sup)
