@@ -16833,7 +16833,9 @@ SELECT:Selv-om-de-døde-ikke-kan adj OR n + ind IF
 # NOT 2 PRES/PRET: Da (sbu) skipet (\"pret\")
 # (forts) gled (pret)"))
 
-
+SELECT:at-rundt-80-prosent-blir cnjsub IF
+	(1 ("rundt") LINK 1 qnt LINK 1* fv)
+        ;
 
 
 #:2850
@@ -24216,6 +24218,14 @@ SELECT:dette-var-det-vi-håpet-på pret IF
         ;
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
 
+SELECT:skal-X-fremstilles inf + pasv IF
+        (0C pasv)
+        (*-1C fv + modalverb BARRIER clb OR vblex)
+        ;
+# «Torsdag skal de fem framstilles for varetektsfengsling.»
+# Men ikkje: «Det kan være bare timer fra en sikkerhetsoppdatering slippes»
+# (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
+
 
 SELECT:Det-har-vært-trist adj + nt IF
 	(NOT 0 farlige-part)
@@ -26403,6 +26413,11 @@ REMOVE:sjefenes-lønn-og-bonus-de-siste-årene clb + %og/eller% IF
         (2C dem)
         ;
 
+SELECT:x-kommer-og-y-holdes clb + %og/eller% IF
+        (*-1C fv BARRIER clb)
+        (*1 fv BARRIER clb LINK 0C pasv OR fv)
+        ;
+# «Nye steinsprang i fjellpartiet Veslemannen i Rauma kom fredag morgen og det røde farevarslet opprettholdes, men bevegelsene i fjellet har avtatt noe.»
 
 #:2205
 REMOVE:2205 clb IF
