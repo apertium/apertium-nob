@@ -272,8 +272,6 @@ LIST ikke-@obj-@adv = @fv @iv @subj @i-obj @s-pred @o-pred @adv→ @←adv @app 
 LIST ikke-@obj-@i-obj = @fv @iv @subj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-@obj-@o-pred = @fv @iv @subj @i-obj @s-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-@obj2 = @fv @iv @subj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr @i-obj @←subst ;
-LIST ikke-@←p-utfyll = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon ;
-LIST ikke-@←p-utfyll2 = @fv @iv @subj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @obj @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-@s-pred = @fv @iv @subj @obj @i-obj @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-@s-pred-@adv = @fv @iv @subj @obj @i-obj @o-pred @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-@s-pred-@o-pred = @fv @iv @subj @obj @i-obj @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
@@ -18418,7 +18416,7 @@ SELECT:301 (@←p-utfyll) IF
 	(1 @kon)
 	(NOT 1 clb)
 	(*2 ikke-mod-u-@kon LINK 0 @←p-utfyll)
-	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll2)
+	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll)
 ;
 #  "5.12.2002: Han spør hvilke grupper innen lensmannsetaten, domstolen og politiet som bør ha streikerett. "))
 
@@ -18427,7 +18425,7 @@ SELECT:301 (@←p-utfyll) IF
 #:300
 SELECT:300 (@←p-utfyll) IF
 	(1C setn-gr)
-	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll2 LINK NOT 0 fl-det)
+	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll LINK NOT 0 fl-det)
 ;
 #  "3.12.2002: Han spør hvilke grupper innen lensmannsetaten og politiet som bør ha streikerett. 
 # Ikke: Innfrysningsprogrammet som ledet til FOS-konkursen i 1991, fôringsstoppene i 1995 og fôrkvotene (ikke @←p-utfyll) som næringen nå sliter med, er i ferd med å redusere Norge til en annenrangs oppdrettsnasjon.
