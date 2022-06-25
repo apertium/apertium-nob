@@ -3938,7 +3938,7 @@ MAP:1365 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1364
-MAP:1364 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
+MAP:n (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
 ;
 
 
@@ -4968,7 +4968,6 @@ CONSTRAINTS
 	(*2 ikke-premod LINK 0 subst LINK *1 ikke-postmod LINK 0 pron-pers LINK *1 ikke-@adv LINK 0 s#%være%)
 ;
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
-
 
 
 #CONSTRAINTS
@@ -10857,6 +10856,12 @@ SELECT:859 (@subj) IF
 
 
 
+SELECT:en-strekning..er-bevart @subj IF
+        (NEGATE *-1C @subj BARRIER cm OR setn-gr)
+        (1 @adv LINK *1 kop-fin BARRIER ikke-@det→-@←p-utfyll LINK 1 @s-pred)
+        ;
+# «Den 78 kilometer lange strekningen åpnet i 1896 og ble nedlagt i 1962, men en strekning på 8 kilometer er bevart og drives i dag som museumsjernbane.»
+
 
 
 #:858
@@ -11977,6 +11982,12 @@ SELECT:6002 (@iv) IF
 ;
 #nå har den økt (@iv) 
 
+
+SELECT:på-8-km @←p-utfyll IF
+        (-2 ("på"))
+        (-1 @det→)
+        (0 adverbialsubst)
+        ;
 
 
 #CONSTRAINTS
@@ -13882,7 +13893,6 @@ REMOVE:6093 (@s-pred) IF
 	(NOT 0 adj)
 ;
 #han håper på et resultat tidlig (ikke s-pred) neste år
-	
 
 #:598
 REMOVE:598 (@subj) IF
@@ -18883,7 +18893,7 @@ REMOVE:265 (@subj) IF
 #  "25.11.2002: ikke subjekt når det ikke er verb i setningen"))
 
 
-REMOVE:som-gjelder-områdene (@subj) IF
+REMOVE:som-gjelder-områdene @subj IF
         (*-1 fv BARRIER ikke-@det→ LINK -1 @←sbu-rel)
         ;
 # «Vedtaket som gjelder de andre områdene, begrunnes med at tilgangen på helsehjelp på Svalbard er begrenset …»
