@@ -28,6 +28,7 @@ SET ADJ_N_AGR = AGR_MF_SG OR AGR_NT_SG OR AGR_PL ;
 
 LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
+LIST cm = cm;
 
 LIST -ende = ".*ende"r  ;
 LIST %all% = "all" ;
@@ -272,36 +273,39 @@ LIST fork = acr ;
 LIST fv = (vblex pres) (vblex pret) (vblex imp) ;
 LIST gammel/lang = "lang" "gammel" "gammal" ;
 LIST gen = gen ;
-LIST gen-subst = (n gen) ;
 LIST gen/%slags% = "slags" gen ;
+LIST gen-subst = (n gen) ;
+LIST subst-gen = (n gen) ;
 LIST hj-verb = "være" "ville" "skulle" "måtte" "kunne" "ha" "få" "burde" "bli" ;
-LIST ikke-@←adv = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@←p-utfyll = @fv @iv @subj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @obj @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@adj→-@adv→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@adv = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv→ @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@adv-@adv→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@adv-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv→ @tittel @det→ @←det @subst→ @←subst @←p-utfyll @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@det→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@fv = @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@i-obj = @fv @iv @subj @obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@iv = @fv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv ;
-LIST ikke-@mod-verb-@adv-@←p-utfyll = inf @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@o-pred = @fv @iv @subj @obj @i-obj @s-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@obj = @i-obj @fv @iv @subj @s-pred @o-pred @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr @adv ;
-LIST ikke-@obj-@adv = @fv @iv @subj @i-obj @s-pred @o-pred @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@obj-@i-obj = @fv @iv @subj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@obj-@o-pred = @fv @iv @subj @i-obj @s-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@obj2 = @fv @iv @subj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr @i-obj @←subst ;
-LIST ikke-@s-pred = @fv @iv @subj @obj @i-obj @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@s-pred-@adv = @fv @iv @subj @obj @i-obj @o-pred @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@s-pred-@o-pred = @fv @iv @subj @obj @i-obj @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@s-pred-@obj = @fv @iv @subj @i-obj @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@subj = @fv @iv @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@subj-@adv = @fv @iv @obj @i-obj @s-pred @o-pred @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@subst→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-@tittel = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
+
+SET ikke-@←adv = @alle-funksjoner - @←adv ;
+SET ikke-@←p-utfyll = @alle-funksjoner - @←p-utfyll ;
+SET ikke-@adj→-@adv→ = @alle-funksjoner - @adj→ - @adv→ ;
+SET ikke-@adv = @alle-funksjoner - @adv ;
+SET ikke-@adv-@adv→ = @alle-funksjoner - @adv - @adv→ ;
+SET ikke-@adv-@app = @alle-funksjoner - @adv - @app ;
+SET ikke-@app = @alle-funksjoner - @app ;
+SET ikke-@det→ = @alle-funksjoner - @det→ ;
+SET ikke-@det→-@←p-utfyll = @alle-funksjoner - @det→ - @←p-utfyll ;
+SET ikke-@fv = @alle-funksjoner - @fv ;
+SET ikke-@i-obj = @alle-funksjoner - @i-obj ;
+SET ikke-@iv = @alle-funksjoner - @iv ;
+SET ikke-@mod = @alle-funksjoner - @mod ;
+SET ikke-@mod-verb-@adv-@←p-utfyll = (inf) OR @alle-funksjoner - @mod - @adv - @←p-utfyll;
+SET ikke-@o-pred = @alle-funksjoner - @o-pred ;
+SET ikke-@obj = @alle-funksjoner - @obj ;
+SET ikke-@obj-@adv = @alle-funksjoner - @obj - @adv ;
+SET ikke-@obj-@i-obj = @alle-funksjoner - @obj - @i-obj ;
+SET ikke-@obj-@o-pred = @alle-funksjoner - @obj - @o-pred ;
+SET ikke-@s-pred = @alle-funksjoner - @s-pred ;
+SET ikke-@s-pred-@adv = @alle-funksjoner - @s-pred - @adv ;
+SET ikke-@s-pred-@o-pred = @alle-funksjoner - @s-pred - @o-pred ;
+SET ikke-@s-pred-@obj = @alle-funksjoner - @s-pred - @obj ;
+SET ikke-@subj = @alle-funksjoner - @subj ;
+SET ikke-@subj-@adv = @alle-funksjoner - @subj - @adv ;
+SET ikke-@subst→ = @alle-funksjoner - @subst→ ;
+SET ikke-@tittel = @alle-funksjoner - @tittel ;
+
 LIST ikke-adj-adv = vblex pr prn cnjsub "å" n ij det (clb cnjcoo) <anf> <ellipse> (cnjcoo <adv>) ;
 LIST ikke-adj-mask-ub-ent = (adj pst nt ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adj-nøyt-ub-ent = (adj pst mf ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
@@ -521,7 +525,7 @@ LIST sbu/infmerke = cnjsub "å" ;
 LIST sbu/sp = "hvorfor" "hvordan" "hvor" cnjsub ;
 LIST selv = "sjøl" "sjæl" "selv" ;
 LIST selv-adv = ("selv" adv) ("sjøl" adv) ("sjæl" adv) ;
-LIST setn-gr = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
+LIST setn-gr = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" cnjsub @sbu >>> <<< clb ;
 LIST setn-gr/parentes-beg = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" lpar cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" vblex cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb/subj = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" @subj vblex ("at" cnjsub) @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
@@ -537,7 +541,6 @@ LIST spørreadv = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" ;
 LIST spørsmål-t = "$?" ;
 LIST strek = guio ;
 LIST subst = n ;
-LIST subst-gen = (n gen) ;
 LIST subst-nøyt-ent = (n nt sg) ;
 LIST subst-pron/akk = n (prn pers acc) ;
 LIST subst-prop = (np) ;
@@ -18539,7 +18542,7 @@ SELECT:294 (@obj) IF
 	(1 @kon)
 	(NOT 1 clb)
 	(*2 ikke-mod-u-@kon LINK 0 @obj)
-	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj2)
+	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
 ;
 #  "5.12.2002: Han kjøper bil, fly og båt."))
 
@@ -18548,7 +18551,7 @@ SELECT:294 (@obj) IF
 #:293
 SELECT:293 (@obj) IF
 	(1C setn-gr)
-	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj2)
+	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
 ;
 #  "3.12.2002: Han kjøper bil og båt."))
 
