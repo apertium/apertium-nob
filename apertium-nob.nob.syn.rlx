@@ -18880,6 +18880,11 @@ REMOVE:265 (@subj) IF
 #  "25.11.2002: ikke subjekt når det ikke er verb i setningen"))
 
 
+REMOVE:som-gjelder-områdene (@subj) IF
+        (*-1 fv BARRIER ikke-@det→ LINK -1 @←sbu-rel)
+        ;
+# «Vedtaket som gjelder de andre områdene, begrunnes med at tilgangen på helsehjelp på Svalbard er begrenset …»
+
 
 CONSTRAINTS
 ########################################################
@@ -18908,3 +18913,4 @@ SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
 #SETPARENT (@fs-n←)
 #TO (*-1 @SUBJ→ LINK *-1 N)
 #~ TO (**-1 N) (NOT p SELF) ;
+
