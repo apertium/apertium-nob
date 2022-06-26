@@ -1100,8 +1100,6 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         ;
 # «sin beste Vårt Land-måling»
 
-"<tatt>" PROTECT pp ;
-
 # sec 1
 CONSTRAINTS
 
