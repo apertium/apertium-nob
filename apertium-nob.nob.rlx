@@ -24226,11 +24226,13 @@ SELECT:dette-var-det-vi-håpet-på pret IF
 
 SELECT:skal-X-fremstilles inf + pasv IF
         (0C pasv)
-        (*-1C fv + modalverb BARRIER clb OR vblex)
+        (*-1C fv + modalverb BARRIER clb OR vblex OR cnjsub)
         ;
 # «Torsdag skal de fem framstilles for varetektsfengsling.»
+# Ikkje: «skal<modal> den dobbeltemballeres med ny tøysekk før<cnjsub> den bringes<pres!> ut til urent lager.»
 # Men ikkje: «Det kan være bare timer fra en sikkerhetsoppdatering slippes»
 # (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
+
 
 
 SELECT:Det-har-vært-trist adj + nt IF
