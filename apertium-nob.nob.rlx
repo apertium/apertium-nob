@@ -3963,6 +3963,14 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
+"<frasagt>"i SELECT (vblex) IF
+	(-1* ("ha" vblex))
+;
+
+"<frasa>"i SELECT ("frasi" vblex) IF
+	(1 prn)
+;
+
 "<dekket>" SELECT:dekket-på-skipet n IF
 		(*1 ("skip") OR ("båt"))
 		;
