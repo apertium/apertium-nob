@@ -1790,6 +1790,12 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 		(1* n)
 		;
 
+"<gylden>" SELECT:100-gylden n IF	
+		(-1 talord-par-siffer)
+                (NEGATE -1 det + qnt + sg)
+		;
+                
+REMOVE:unlikely ("gylden"i) + n + sg + ind;
 
 # Prefer nouns in compounds, unless in exception-list:
 LIST allow-adjcmp = "klippe" "stemple";
