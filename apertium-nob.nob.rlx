@@ -8834,6 +8834,10 @@ REMOVE:Tyrkia-kjenner ("kjenne") IF
         (0 ("kjenner"))
         ;
 # "... sier Tyrkia-kjenner Kåre Willoch"
+"<siktet>" REMOVE:står-siktet n IF
+        (-1 ("stå"))
+        ;
+# "Kevin Spacey står siktet for å ha forgrepet seg på en rekke kvinner"
 REMOVE:terrorstemplet ("stempel") IF
         (*-1 ("være"))
         (0 ("stemple"))
