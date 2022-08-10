@@ -18907,6 +18907,10 @@ SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
         (*-1 (@subj) LINK 0 &&ADJ_N_AGR)
         ;
 
+SELECT:adj-pp-dis (adj pp @s-pred) + (sg) IF
+        (*-1 (@subj) LINK 0 (itg))
+        ;
+
 # SUBSTITUTE @alle-funksjoner (*) (*);
 
 
