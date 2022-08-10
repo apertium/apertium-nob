@@ -9193,13 +9193,21 @@ REMOVE:rekke-ut-handa ("rake") IF
         ;
 "<samarbeidet>" REMOVE:fortsette-samarbeidet vblex IF
         (-1 vblex + inf)
+        (NOT -1 ("ha"))
         ;
 "<vinner>" REMOVE:tippet-som-vinner ("vinne") IF
         (-2 ("tippe"))
         (-1 ("som"))
         ;
 "<bruker>" REMOVE:bruker-noe n IF
+        (NOT -1 ("en"))
         (*1 n BARRIER setn-gr)
+        ;
+"<smykket>" REMOVE:dette-smykket vblex IF
+        (-1 ("<dette>"))
+        ;
+"<ansatt>" REMOVE:ansatt-som pp IF
+        (1 ("som"))
         ;
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
@@ -9241,6 +9249,10 @@ REMOVE:er-hinsides pr IF
 # det er hinsides
 "<varen>" REMOVE:kjøpte-varen ("var") + n + m IF
         (-1 ("kjøpe"))
+        ;
+# kjøpte varen
+"<varen>" REMOVE:varen-inneholdt ("var") IF
+        (1 ("inneholde"))
         ;
 # kjøpte varen
 "<ordet>" REMOVE:få-ordet vblex IF
@@ -31696,7 +31708,11 @@ REMOVE:ikkje-skjor ("skjære") + n;
         (1C det OR n + def)
         ;
 
-
+"<så>"i SELECT:så-tegn-på vblex IF
+        (1 ("tegn"))
+        (2 ("på"))
+        ;
+# "Macron sier han så tegn på resesjon
 
 #:3433
 "<mens>"   REMOVE:3433   n IF
