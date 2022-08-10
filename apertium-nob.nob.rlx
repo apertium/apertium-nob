@@ -1949,6 +1949,10 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
 
+"<presset>"i SELECT:øker-presset n IF
+		(-1* ("øke") BARRIER setn-gr)
+		;
+
 "<presset>"i SELECT:føle-seg-presset adj + pp IF
 		(-2 ("føle") OR ("kjenne"))
 		(-1 ("seg"))
