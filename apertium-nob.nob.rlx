@@ -9176,6 +9176,14 @@ REMOVE:unlikely ("rukke") IF
 		(0 ("rukke") OR ("rekke"))
         ;
 # "fire runder ble rukket spilt"
+SELECT:transnasjonal SUB:1 ("trans") IF
+        (0/1 ("tran") OR ("trans"))
+        ;
+REMOVE:unlikely ("tran") IF
+		(0 cmp-split)
+		(0 ("tran") OR ("trans"))
+        ;
+# "Her er det snakk om transnasjonal kriminalitet "
 REMOVE:unlikely ("reke") IF
 		(-1* %være/bli%)
 		(0 ("reke") OR ("rekke¹"))
