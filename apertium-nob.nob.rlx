@@ -9171,6 +9171,13 @@ REMOVE:rekke-ut-handa ("rake") IF
         (1 ("ut"))
         ;
 # "Rekke ut hånda"
+"<roer>" REMOVE:være-roer ("ro") IF
+        (-1 ("være"))
+        ;
+"<vinner>" REMOVE:tippet-som-vinner ("vinne") IF
+        (-2 ("tippe"))
+        (-1 ("som"))
+        ;
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
