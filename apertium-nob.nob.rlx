@@ -8651,6 +8651,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<kokker>" REMOVE:kokke-unlikely ("kokke") IF
         (0 ("kokk"))
         ;
+"<kokkene>" REMOVE:kokke-unlikely-2 ("kokke") IF
+        (0 ("kokk"))
+        ;
 "<reist>"i REMOVE:n-pr-n-ble-reist pl IF
         (-4 n)
         (-3 pr)
@@ -8990,6 +8993,20 @@ SELECT:sittet-varetektsfengslet pp IF
         (-1 ("den"))
         ;
 # "lar det skinne"
+"<landet>"i REMOVE:Ukraina-er-langet vblex IF
+        (-2 np)
+        (-1 ("være"))
+        ;
+# "Til tross for straffetiltakene av Ukraina er landet fortsatt en betydelig energileverandø"
+"<helt>"i SELECT:en-sann-helt n IF
+        (-2 ("en") )
+        (-1 ("sann"))
+        ;
+# "en sann helt"
+"<skumleste>"i REMOVE:den-skumleste ("skumlese") IF
+        (-1 ("den"))
+        ;
+# "den er den skumleste av dem alle"
 "<anklage>"i SELECT:en-anklage n IF
         (-1 ("en"))
         ;
