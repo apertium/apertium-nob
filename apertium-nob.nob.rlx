@@ -8823,10 +8823,12 @@ REMOVE:to-ansatte vblex IF
         (-1 ("bli"))
         ;
 # "Er det tenkelig at dette kan bli stoppet?"
-"<blues>"i SELECT:blues-best n IF
-        (1 ("<best>"))
+"<blues>" REMOVE:unlikely vblex;
+REMOVE:heksebålene ("båle") IF
+        (0/1 cmp)
+        (0 ("bål"))
         ;
-# " - Blues best"
+# "heksebålene, sirkusbålene og fotballbålene"
 REMOVE:Tyrkia-kjenner ("kjenne") IF
         (0/1 cmp)
         (0 ("kjenner"))
