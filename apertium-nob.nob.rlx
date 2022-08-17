@@ -9307,6 +9307,21 @@ REMOVE ("pote") IF
         ;
 # 1 pota - oppskrift
 
+"<.*lovens?>"r SELECT:loven-paragraf np IF
+        (1 ("paragraf") OR ("§"))
+        (2 ("[0-9]+"r))
+        ;
+"<.*lovens?>"r SELECT:loven-paragraf-1 np IF
+        (1 ("§"))
+        (2 ("§"))
+        (3 ("[0-9]+"r))
+        ;
+# Utlendingsloven paragraf/§/§§ 121
+"<.*lovens?>"r REMOVE:loven-paragraf-2 np IF
+        ;
+# Utlendingslovens bestemmelser
+# Use the noun version of "lov"-names in most cases except the exceptions above
+
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
 	(0 adv)
