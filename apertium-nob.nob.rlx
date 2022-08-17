@@ -9260,6 +9260,17 @@ REMOVE:er-hinsides pr IF
         (1 ("inneholde"))
         ;
 # kjøpte varen
+"<varen>" REMOVE:prisnivå-på-varen ("var") IF
+        (*-1 ("pris") OR ("prisnivå") BARRIER setn-gr)
+        ;
+# prisnivået på denne varen er lavt
+REMOVE:rentehopp ("hoppe") IF
+        (0/1 cmp)
+        ;
+"<studier>" REMOVE:studier ("studie") IF
+        (*0/1 ("opptak") BARRIER setn-gr)
+        ;
+# mange er uenige i loddtrekning som opptaksmetode på populære studier
 "<ordet>" REMOVE:få-ordet vblex IF
         (-1 ("få"))
         ;
