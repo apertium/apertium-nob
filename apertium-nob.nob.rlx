@@ -2548,6 +2548,11 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (-1 %på%)
         ;
 
+"<steg>"i SELECT:neste-steg n IF
+        (-1 %neste%)
+        (NEGATE -2 det + dem)
+        ;
+
 ##############################################
 # "den¹" er påpeikande, blir «den» på nno òg #
 # "den" blir «han/ho»                        #
