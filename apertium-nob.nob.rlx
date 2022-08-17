@@ -9275,6 +9275,28 @@ REMOVE:rentehopp ("hoppe") IF
         (-1 ("få"))
         ;
 # han fikk ordet
+"<vannet>" REMOVE:har-vannet-begynt ("vanne") IF
+        (-1 ("ha"))
+        (1 pp)
+        ;
+# har vannet begynt å stige
+"<båret>" REMOVE:båret-vekk ("båre") IF
+        (1 ("vekk"))
+        ;
+# de ble båret vekk
+"<toer>" REMOVE:toer-med-seire ("toe") IF
+        (*1 ("seier"))
+        ;
+# Mol tok seg videre gruppespillet som toer med to seire 
+"<rådet>" REMOVE:som-rådet ("råd") IF
+        (-1 ("som"))
+        ;
+# stemningen som rådet i lokalet var dårlig
+"<brunsvidde>" SELECT:adj-og-brunsvidde ("brunsvidd") IF
+        (-2 adj)
+        (-1 cnjcoo)
+        ;
+# noen jorder er så uttørkede og brunsvidde at ingenting vil gro der
 "<utspilt>" REMOVE:bli-utspilt adj IF
         (-1 ("bli"))
         ;
