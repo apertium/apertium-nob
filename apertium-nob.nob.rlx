@@ -3477,6 +3477,23 @@ SELECT:default ("presse"i n) + sg + def
         ;
         # pressa
 
+SELECT:default ("li"i vblex) IF
+        (1 ("mot"))
+        ;
+        # det lei mot dag
+
+SELECT:default ("li"i vblex) IF
+        (2 ("mot"))
+        ;
+
+SELECT:default ("li"i vblex) IF
+        (-2 ("lakke" vblex))
+        ;
+        # lakke og li
+
+SELECT:default ("lide"i vblex)
+        ;
+
 SELECT:default pl IF
         (NEGATE -1* %et%)
         (NEGATE 0 vblex)                # å være / eit være
