@@ -3491,7 +3491,7 @@ SELECT:default ("li"i vblex) IF
         ;
         # lakke og li
 
-SELECT:default ("lide"i vblex)
+REMOVE:default ("li"i vblex)
         ;
 
 SELECT:default pl IF
