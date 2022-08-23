@@ -3079,6 +3079,41 @@ SELECT:den+prn ("den¹") IF
         (1 %som%)
         ;
 
+"<masse>" SELECT:masse-tøv adj IF
+        (1 n)
+        ;
+
+"<masse>" SELECT:kubikkmeter-masse n IF
+        (-1 n OR adj)
+        ;
+
+"<masse>" SELECT:en-masse-andre adj IF
+        (-1 det + qnt + m)
+        (1 det + dem)
+        ;
+
+"<masse>" SELECT:masse-tøffe-jenter adj IF
+        (1 adj OR det + dem)
+        (2 n)
+        ;
+
+"<masse>" SELECT:en-masse n IF
+        (-1 det + qnt + m)
+        ;
+
+"<masse>" SELECT:masse-annet adj IF
+        (1 det + dem)
+        ;
+
+"<masse>" SELECT:partikkelens-masse n IF
+        (-1 n + gen)
+        ;
+
+"<masse>" SELECT:søke-i-masse-under-jorda n IF
+        (-1 prep)
+        (1 prep)
+        ;
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
