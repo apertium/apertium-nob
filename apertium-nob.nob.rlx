@@ -1830,6 +1830,60 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
 ;
 #  "absolutt ikke"
 
+"<masse>" SELECT:en-masse n IF
+        (-1 det + qnt + m)
+        ;
+
+"<masse>" SELECT:kubikkmeter-masse n IF
+        (-1 n)
+        ;
+        # mange tonn masse; ein del masse; bosonets masse
+
+"<masse>" SELECT:grå-masse n IF
+        (-1 adj)
+        ;
+        # mykje masse; grå masse; komprimert masse
+
+"<masse>" SELECT:lære-masse adj IF
+        (-1 vblex)
+        (NEGATE -1 vblex + adj)
+        (NEGATE -1 ("miste"))
+        ;
+
+"<masse>" SELECT:søke-i-masse-under-jorda n IF
+        (-1 prep)
+        (1 prep)
+        ;
+
+"<masse>" SELECT:masse-annet adj IF
+        (1 ("annen") + det + dem + nt + sg + ind)
+        ;
+
+"<masse>" SELECT:masse-tøv adj IF
+        (1 n)
+        ;
+
+"<masse>" SELECT:masse-tøffe-jenter adj IF
+        (1 adj OR det + dem)
+        (2 n)
+        ;
+
+"<masse>" SELECT:masse-tøffe-jenter adj IF
+        (1 adj OR det + dem)
+        (2 cmp)
+        (3 n)
+        ;
+
+SELECT:masse-tiltak pl IF
+        (0 ("<tiltak>"i OR "<ting>"i))
+        (-1 ("masse"))
+        ;
+
+SELECT:restriktive-tiltak pl IF
+        (0 ("<tiltak>"i))
+        (-1 adj + pl)
+        ;
+
 "<at>" SELECT:antas-at sbu IF
 	(-1 %antas% OR ("skyldes"))
 ;
@@ -3077,41 +3131,6 @@ SELECT:den+prn ("den¹") IF
 
 "<samtidig>" SELECT:samtidig-som adv IF
         (1 %som%)
-        ;
-
-"<masse>" SELECT:masse-tøv adj IF
-        (1 n)
-        ;
-
-"<masse>" SELECT:kubikkmeter-masse n IF
-        (-1 n OR adj)
-        ;
-
-"<masse>" SELECT:en-masse-andre adj IF
-        (-1 det + qnt + m)
-        (1 det + dem)
-        ;
-
-"<masse>" SELECT:masse-tøffe-jenter adj IF
-        (1 adj OR det + dem)
-        (2 n)
-        ;
-
-"<masse>" SELECT:en-masse n IF
-        (-1 det + qnt + m)
-        ;
-
-"<masse>" SELECT:masse-annet adj IF
-        (1 det + dem)
-        ;
-
-"<masse>" SELECT:partikkelens-masse n IF
-        (-1 n + gen)
-        ;
-
-"<masse>" SELECT:søke-i-masse-under-jorda n IF
-        (-1 prep)
-        (1 prep)
         ;
 
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
