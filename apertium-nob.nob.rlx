@@ -9293,6 +9293,9 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-2 ("ha") OR ("være"))
         (-1 adv)
         ;
+"<skje>" REMOVE:vil-måtte-skje n IF
+        (-1 ("ville# måtte"))
+        ;
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
