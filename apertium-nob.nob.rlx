@@ -9285,6 +9285,14 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<ansatt>" REMOVE:ansatt-som pp IF
         (1 ("som"))
         ;
+"<utelukket>" SELECT:har-utelukket pp IF
+        (-1 ("ha") OR ("være"))
+        ;
+"<utelukket>" SELECT:har-foreløpig-utelukket pp IF
+        (-3 np OR n)
+        (-2 ("ha") OR ("være"))
+        (-1 adv)
+        ;
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
