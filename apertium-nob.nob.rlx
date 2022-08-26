@@ -37076,6 +37076,7 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 "<sikter>" REMOVE:default-sikter ("sikt" n f pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
 "<sikter>" REMOVE:default-sikter ("sikt" n m pl ind) ;	# keep sikte<n><nt><pl><ind>→sikte
 "<siktet>" REMOVE:default-siktet ("sikte" n nt sg def) ;	# keep sikte<adj><pp><pl>→sikta sikte<adj><pp><nt><sg><ind>→sikta sikte<vblex><pp>→sikta
+"<sintere>" REMOVE:default-seie ("sinter") ;	# keep sintere
 "<Sjelden>" REMOVE:default-Sjelden ("Sjelden" np cgguess) ;	# keep Sjelden<adj><sint><pst><mf><sg><ind>→Sjeldan Sjelden<adv>→Sjeldan
 "<skade>" REMOVE:default-skade ("skade" n m sg ind) ;	# keep skade<adj><pp><pl>→skadde
 "<skade>" REMOVE:default-skade ("skade" vblex inf) ;	# keep skade<adj><pp><pl>→skadde
