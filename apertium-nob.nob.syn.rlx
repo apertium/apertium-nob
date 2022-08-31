@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nob-disam|cg-conv -a 2>/dev/null" -*-
+# -*- cg-pre-pipe: "apertium -d ../apertium-nno-nob nob-nno_e-capstag|cg-conv -a 2>/dev/null" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
@@ -11819,7 +11819,16 @@ SELECT:790 (@subst→) IF
 ;
 #  "KH 1.11.2002: Nå så Mary Jones John Harries."))
 
+SELECT:verden-rundt (@subst→) IF
+        (0 ("<verden>") OR ("<landet>") OR ("<jorden>"i))
+        (1 ("<rundt>"))
+        ;
 
+SELECT:Frankrike-rundt (@subst→) IF
+        (-1 ("reise") OR ("seile") OR ("sende"))
+        (0 (top))
+        (1 ("<rundt>"))
+        ;
 
 #:789
 SELECT:789 (@subst→) IF
