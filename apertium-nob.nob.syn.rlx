@@ -28,7 +28,77 @@ SET ADJ_N_AGR = AGR_MF_SG OR AGR_NT_SG OR AGR_PL ;
 
 LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
-LIST cm = cm;
+LIST <<< = <<< ;
+LIST >>> = >>> ;
+
+# Apertium tagset:
+LIST vblex = vblex ;
+LIST pr = pr ;
+LIST prn = prn ;
+LIST det = det ;
+LIST expl = expl ;
+LIST ind = ind ;
+LIST def = def ;
+LIST nt = nt ;
+LIST f = f ;
+LIST m = m ;
+LIST n = n ;
+LIST np = np ;
+LIST pl = pl ;
+LIST sg = sg ;
+LIST sp = sp ;
+LIST pos = pos ;
+LIST guess = guess ;
+LIST cgguess = cgguess ;
+LIST cmp = cmp ;
+LIST cmp-split = cmp-split ;
+LIST cm = cm ;
+LIST pret = pret ;
+LIST pres = pres ;
+LIST imp = imp ;
+LIST inf = inf ;
+LIST p1 = p1 ;
+LIST p2 = p2 ;
+LIST p3 = p3 ;
+LIST pp = pp ;
+LIST pprs = pprs ;
+LIST pstv = pstv ;
+LIST pasv = pasv ;
+LIST qnt = qnt ;
+LIST neg = neg ;
+LIST ref = ref ;
+LIST comp = comp ;
+LIST sup = sup ;
+LIST pst = pst ;
+LIST lquot = lquot ;
+LIST rquot = rquot ;
+LIST top = top ;
+LIST al = al ;
+LIST cog = cog ;
+LIST ant = ant ;
+LIST org = org ;
+LIST attr = attr ;
+LIST adj = adj ;
+LIST ord = ord ;
+LIST clb = clb ;
+LIST sent = sent ;
+LIST remspc = remspc ;
+LIST dem = dem ;
+LIST emph = emph ;
+LIST pers = pers ;
+LIST gen = gen ;
+LIST un = un ;
+LIST mf = mf ;
+LIST acc = acc ;
+LIST guio = guio ;
+LIST apos = apos ;
+LIST lpar = lpar ;
+LIST rpar = rpar ;
+LIST cnjsub = cnjsub ;
+LIST cnjcoo = cnjcoo ;
+LIST date = date ;
+LIST ij = ij ;
+LIST itg = itg ;
 
 LIST -ende = ".*ende"r  ;
 LIST %all% = "all" ;
@@ -129,11 +199,8 @@ LIST %være/bli% = "være" "bli" ;
 LIST %være/bli%-fin = ("være" <auxp> pres) ("være" <auxp> pret) ("bli" pres) ("bli" pret) ;
 LIST %øy% = "øy" ;
 LIST %øye% = "øye" ;
-LIST <<< = <<< ;
 LIST <adv> = <adv> ;
 LIST <pres-part> = pprs ;
-LIST >>> = >>> ;
-LIST @&lt = @←p-utfyll ;
 LIST @←adv = @←adv ;
 LIST @←det = @←det ;
 LIST @←p-utfyll = @←p-utfyll ;
@@ -176,7 +243,6 @@ LIST @subj/@obj/@i-obj/@s-pred = @subj @obj @i-obj @s-pred ;
 LIST @subst→ = @subst→ ;
 LIST @tittel = @tittel ;
 LIST aci = "se" "merke" "la" "kjenne" "høre" "føle" "be" ;
-LIST adj = adj pst ;
 LIST adj-be = (adj def) (adj pprs) ;
 LIST adj-fl = (adj pl) (adj pprs) ;
 LIST adj-gen = (adj gen) ;
@@ -536,7 +602,6 @@ LIST sitatverb = "utbryte" "understreke" "true" "tro" "tilføye" "tenke" "svare"
 LIST slags/for-prep/%annet%/%mer% = "slags" ("for" pr) ("annen" nt) ("mye" comp) ;
 LIST slik-adv = ("slik" adv) ;
 LIST som-sbu = ("som" cnjsub) ;
-LIST sp = itg ;
 LIST spørreadv = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" ;
 LIST spørsmål-t = "$?" ;
 LIST strek = guio ;
@@ -4891,7 +4956,7 @@ CONSTRAINTS
 
 #:1264
 "<det>" SELECT:1264 (@subj) IF
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(1 kop)
 	(-1 s#setn-gr)
 	(*2 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK 1 @←sbu/@←sbu-rel)
@@ -4903,7 +4968,7 @@ CONSTRAINTS
 
 #:1263
 "<det>" SELECT:1263 (@subj) IF
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(1 kop)
 	(-1 s#setn-gr)
 	(*2 ikke-premod-@adv LINK 0 @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @←sbu/@←sbu-rel)
@@ -5911,7 +5976,10 @@ SELECT:1237 (@←p-utfyll) IF
 ;
 #  "April 2002: NOT 1 subst-prop: Han så den krokete skikkelsen til bestemor Gælion."))
 
-
+REMOVE:over-5000-arter (@←p-utfyll) IF
+        (-2 ("over"))
+        (-1 qnt)
+        ;
 
 #:1236
 SELECT:1236 (@←p-utfyll) IF
@@ -6715,7 +6783,7 @@ SELECT:1177 (@adv) IF
 	(NOT 0 ikke-@s-pred-@adv)
 	(-1 s#%det%)
 	(-2 @fv)
-	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK 0 sp)
+	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK 0 itg)
 ;
 #  " hva i all verden er det egentlig @ADV du vil?"))
 
@@ -7242,7 +7310,7 @@ SELECT:1137 (@obj) IF
 
 #:1136
 SELECT:1136 (@obj) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 kop LINK *1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 @obj LINK NOT 0 @iv)
 ;
 #  " det er ingen som spør hvem @OBJ hun ser 
@@ -7252,7 +7320,7 @@ SELECT:1136 (@obj) IF
 
 #:1135
 SELECT:1135 (@obj) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 kop LINK 1 s#setn-gr)
 ;
 #  " hva @OBJ jeg enn gjør, så..."))
@@ -7261,7 +7329,7 @@ SELECT:1135 (@obj) IF
 
 #:1134
 SELECT:1134 (@obj) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK *1 ikke-@iv LINK -1 @iv LINK NOT 0 kop LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @obj)
 ;
 #  " det er ingen som spør hvem @OBJ hun har sett
@@ -7271,7 +7339,7 @@ SELECT:1134 (@obj) IF
 
 #:1133
 SELECT:1133 (@obj) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK *1 s#tegnsetting LINK -1 @iv LINK NOT 0 kop LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@fv-@app)
 ;
 #  " hva @OBJ jeg enn har gjort, så..."))
@@ -7348,7 +7416,7 @@ SELECT:1123 (@obj) IF
 #:1131
 SELECT:1131 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT -1 @kon)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#setn-gr)
@@ -7361,7 +7429,7 @@ SELECT:1131 (@obj) IF
 #:1130
 SELECT:1130 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT -1 @kon)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#setn-gr)
@@ -7374,7 +7442,7 @@ SELECT:1130 (@obj) IF
 #:1122
 SELECT:1122 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(-1C @fv)
@@ -7386,7 +7454,7 @@ SELECT:1122 (@obj) IF
 #:1121
 SELECT:1121 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(NOT -1 @det→)
@@ -7399,7 +7467,7 @@ SELECT:1121 (@obj) IF
 #:1120
 SELECT:1120 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
@@ -7414,7 +7482,7 @@ SELECT:1120 (@obj) IF
 #:1119
 SELECT:1119 (@obj) IF
 	(NOT 0 %om%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
@@ -8336,7 +8404,7 @@ SELECT:1056 (@s-pred) IF
 
 #:1055
 SELECT:1055 (@s-pred) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK 0 kop LINK *1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 @obj LINK NOT 0 @iv)
 ;
 #  " det er ingen som spør hvem @S-PRED hun er 
@@ -8346,7 +8414,7 @@ SELECT:1055 (@s-pred) IF
 
 #:1054
 SELECT:1054 (@s-pred) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK 0 kop LINK 1 s#tegnsetting)
 ;
 #  " hva @S-PRED det enn er, så..."))
@@ -8355,7 +8423,7 @@ SELECT:1054 (@s-pred) IF
 
 #:1053
 SELECT:1053 (@s-pred) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK *1 ikke-@iv LINK -1 @iv LINK 0 kop LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @obj)
 	(*1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
@@ -8369,7 +8437,7 @@ SELECT:1053 (@s-pred) IF
 
 #:1052
 SELECT:1052 (@s-pred) IF
-	(0 sp)
+	(0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK *1 s#tegnsetting LINK -1 @iv LINK 0 kop LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@fv-@app)
 	(*1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
@@ -8874,7 +8942,7 @@ SELECT:1018 (@subj) IF
 SELECT:1017 (@subj) IF
 	(0 nom)
 	(NOT 0 @tittel)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 prop/hum-pron)
 	(NOT 1 nom)
 	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
@@ -8887,7 +8955,7 @@ SELECT:1017 (@subj) IF
 SELECT:1016 (@subj) IF
 	(0 nom)
 	(NOT 0 @tittel)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 prop/hum-pron)
 	(NOT 1 nom)
 	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
@@ -9322,7 +9390,7 @@ SELECT:980 (@subj) IF
 #:979
 SELECT:979 (@subj) IF
 	(0 prop/hum-pron)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 1 prop)
 	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
 ;
@@ -9333,7 +9401,7 @@ SELECT:979 (@subj) IF
 #:978
 SELECT:978 (@subj) IF
 	(0 prop/hum-pron)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 1 prop)
 	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
 ;
@@ -9346,7 +9414,7 @@ SELECT:978 (@subj) IF
 #:977
 SELECT:977 (@subj) IF
 	(0 prop/hum-pron)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 1 prop)
 	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 s#komma LINK *1 @kon LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
@@ -10826,6 +10894,12 @@ SELECT:861 (@subj) IF
 # et kompromiss om neste års budjsett @SUBJ kan komme til å ta"))
 
 
+SELECT:enkel-parentes (@app) IF
+	(NOT 0 @←p-utfyll)
+	(-1 parentes-beg/strek LINK *-1 @alle-funksjoner)
+	(1 parentes-slutt/strek)
+;
+# «Samferdselsminister Jon Georg Dale (Frp) bes om å redegjøre for seg.»
 
 #:860
 SELECT:860 (@subj) IF
@@ -12210,7 +12284,7 @@ REMOVE:763 (@adv) IF
 	(*-1C verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *1 s#setn-gr)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @s-pred)
 	(*-1 ikke-premod LINK NOT 1 s#komma)
-	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 sp)
+	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @s-pred)
 	(*1C periode-slutt/clb-konj BARRIER perf-part)
 ;
@@ -12245,7 +12319,7 @@ REMOVE:761 (@adv) IF
 	(*-1C verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *1 s#setn-gr)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @s-pred)
 	(*-1 ikke-premod LINK NOT 1 s#komma)
-	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 sp)
+	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 itg)
 	(*1C periode-slutt/clb-konj BARRIER @s-pred)
 	(*1C periode-slutt/clb-konj BARRIER perf-part)
 ;
@@ -12266,7 +12340,7 @@ REMOVE:760 (@adv) IF
 	(*-1C verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *1 s#setn-gr)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @s-pred)
 	(*-1 ikke-premod LINK NOT 1 s#komma)
-	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 sp)
+	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 itg)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK 0 @←sbu)
 	(*1C periode-slutt/clb-konj BARRIER perf-part)
 ;
@@ -13884,7 +13958,7 @@ REMOVE:600 (@s-pred) IF
 REMOVE:599 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15467,7 +15541,7 @@ REMOVE:488 (@s-pred) IF
 REMOVE:487 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15482,7 +15556,7 @@ REMOVE:487 (@s-pred) IF
 REMOVE:486 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15505,7 +15579,7 @@ REMOVE:486 (@s-pred) IF
 REMOVE:485 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15520,7 +15594,7 @@ REMOVE:485 (@s-pred) IF
 REMOVE:484 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15539,7 +15613,7 @@ REMOVE:484 (@s-pred) IF
 REMOVE:483 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15556,7 +15630,7 @@ REMOVE:483 (@s-pred) IF
 REMOVE:482 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15571,7 +15645,7 @@ REMOVE:482 (@s-pred) IF
 REMOVE:481 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15586,7 +15660,7 @@ REMOVE:481 (@s-pred) IF
 REMOVE:480 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15603,7 +15677,7 @@ REMOVE:480 (@s-pred) IF
 REMOVE:479 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15618,7 +15692,7 @@ REMOVE:479 (@s-pred) IF
 REMOVE:478 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15637,7 +15711,7 @@ REMOVE:478 (@s-pred) IF
 REMOVE:477 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15652,7 +15726,7 @@ REMOVE:477 (@s-pred) IF
 REMOVE:476 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15667,7 +15741,7 @@ REMOVE:476 (@s-pred) IF
 REMOVE:475 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15683,7 +15757,7 @@ REMOVE:475 (@s-pred) IF
 REMOVE:474 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15703,7 +15777,7 @@ REMOVE:474 (@s-pred) IF
 REMOVE:473 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15719,7 +15793,7 @@ REMOVE:473 (@s-pred) IF
 REMOVE:472 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15739,7 +15813,7 @@ REMOVE:472 (@s-pred) IF
 REMOVE:471 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15755,7 +15829,7 @@ REMOVE:471 (@s-pred) IF
 REMOVE:470 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15771,7 +15845,7 @@ REMOVE:470 (@s-pred) IF
 REMOVE:469 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15788,7 +15862,7 @@ REMOVE:469 (@s-pred) IF
 REMOVE:468 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15805,7 +15879,7 @@ REMOVE:468 (@s-pred) IF
 REMOVE:467 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15822,7 +15896,7 @@ REMOVE:467 (@s-pred) IF
 REMOVE:466 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15839,7 +15913,7 @@ REMOVE:466 (@s-pred) IF
 REMOVE:465 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15856,7 +15930,7 @@ REMOVE:465 (@s-pred) IF
 REMOVE:464 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15873,7 +15947,7 @@ REMOVE:464 (@s-pred) IF
 REMOVE:463 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -15890,7 +15964,7 @@ REMOVE:463 (@s-pred) IF
 REMOVE:462 (@s-pred) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -16755,7 +16829,7 @@ SELECT:397 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16772,7 +16846,7 @@ SELECT:396 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16789,7 +16863,7 @@ SELECT:395 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16806,7 +16880,7 @@ SELECT:394 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16823,7 +16897,7 @@ SELECT:393 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16840,7 +16914,7 @@ SELECT:392 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16858,7 +16932,7 @@ SELECT:391 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr LINK *1 @subj LINK NOT *1 @subj)
@@ -16875,7 +16949,7 @@ SELECT:390 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16892,7 +16966,7 @@ SELECT:389 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16909,7 +16983,7 @@ SELECT:388 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16926,7 +17000,7 @@ SELECT:387 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16943,7 +17017,7 @@ SELECT:386 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16960,7 +17034,7 @@ SELECT:385 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16977,7 +17051,7 @@ SELECT:384 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -16995,7 +17069,7 @@ SELECT:383 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17013,7 +17087,7 @@ SELECT:382 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17031,7 +17105,7 @@ SELECT:381 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17048,7 +17122,7 @@ SELECT:380 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17065,7 +17139,7 @@ SELECT:379 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17082,7 +17156,7 @@ SELECT:378 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17099,7 +17173,7 @@ SELECT:377 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17116,7 +17190,7 @@ SELECT:376 (@subj) IF
 	(NOT 0 s#%det/dette%)
 	(NOT 0 @adv)
 	(NOT 0 akk)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 %samme%)
 	(-1 @fv)
 	(*-2 s#setn-gr BARRIER @subj)
@@ -17133,7 +17207,7 @@ SELECT:376 (@subj) IF
 SELECT:375 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17151,7 +17225,7 @@ SELECT:375 (@subj) IF
 SELECT:374 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17169,7 +17243,7 @@ SELECT:374 (@subj) IF
 SELECT:373 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17186,7 +17260,7 @@ SELECT:373 (@subj) IF
 SELECT:372 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17203,7 +17277,7 @@ SELECT:372 (@subj) IF
 SELECT:371 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17220,7 +17294,7 @@ SELECT:371 (@subj) IF
 SELECT:370 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17237,7 +17311,7 @@ SELECT:370 (@subj) IF
 SELECT:369 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17254,7 +17328,7 @@ SELECT:369 (@subj) IF
 SELECT:368 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17271,7 +17345,7 @@ SELECT:368 (@subj) IF
 SELECT:367 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17287,7 +17361,7 @@ SELECT:367 (@subj) IF
 SELECT:366 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17303,7 +17377,7 @@ SELECT:366 (@subj) IF
 SELECT:365 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17319,7 +17393,7 @@ SELECT:365 (@subj) IF
 SELECT:364 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17335,7 +17409,7 @@ SELECT:364 (@subj) IF
 SELECT:363 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17351,7 +17425,7 @@ SELECT:363 (@subj) IF
 SELECT:362 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17367,7 +17441,7 @@ SELECT:362 (@subj) IF
 SELECT:361 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17384,7 +17458,7 @@ SELECT:361 (@subj) IF
 SELECT:360 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17401,7 +17475,7 @@ SELECT:360 (@subj) IF
 SELECT:359 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17418,7 +17492,7 @@ SELECT:359 (@subj) IF
 SELECT:358 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17434,7 +17508,7 @@ SELECT:358 (@subj) IF
 SELECT:357 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17450,7 +17524,7 @@ SELECT:357 (@subj) IF
 SELECT:356 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17466,7 +17540,7 @@ SELECT:356 (@subj) IF
 SELECT:355 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17482,7 +17556,7 @@ SELECT:355 (@subj) IF
 SELECT:354 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17498,7 +17572,7 @@ SELECT:354 (@subj) IF
 SELECT:353 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17514,7 +17588,7 @@ SELECT:353 (@subj) IF
 SELECT:352 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17540,7 +17614,7 @@ SELECT:352 (@subj) IF
 SELECT:351 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17560,7 +17634,7 @@ SELECT:351 (@subj) IF
 SELECT:350 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17576,7 +17650,7 @@ SELECT:350 (@subj) IF
 SELECT:349 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17596,7 +17670,7 @@ SELECT:349 (@subj) IF
 SELECT:348 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17616,7 +17690,7 @@ SELECT:348 (@subj) IF
 SELECT:347 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17632,7 +17706,7 @@ SELECT:347 (@subj) IF
 SELECT:346 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17653,7 +17727,7 @@ SELECT:346 (@subj) IF
 SELECT:345 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17674,7 +17748,7 @@ SELECT:345 (@subj) IF
 SELECT:344 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17691,7 +17765,7 @@ SELECT:344 (@subj) IF
 SELECT:343 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17709,7 +17783,7 @@ SELECT:343 (@subj) IF
 SELECT:342 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17727,7 +17801,7 @@ SELECT:342 (@subj) IF
 SELECT:341 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17745,7 +17819,7 @@ SELECT:341 (@subj) IF
 SELECT:340 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17763,7 +17837,7 @@ SELECT:340 (@subj) IF
 SELECT:339 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17781,7 +17855,7 @@ SELECT:339 (@subj) IF
 SELECT:338 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17801,7 +17875,7 @@ SELECT:338 (@subj) IF
 SELECT:337 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 @fv)
@@ -17818,7 +17892,7 @@ SELECT:337 (@subj) IF
 SELECT:336 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17834,7 +17908,7 @@ SELECT:336 (@subj) IF
 SELECT:335 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17850,7 +17924,7 @@ SELECT:335 (@subj) IF
 SELECT:334 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17866,7 +17940,7 @@ SELECT:334 (@subj) IF
 SELECT:333 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17882,7 +17956,7 @@ SELECT:333 (@subj) IF
 SELECT:332 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17898,7 +17972,7 @@ SELECT:332 (@subj) IF
 SELECT:331 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17914,7 +17988,7 @@ SELECT:331 (@subj) IF
 SELECT:330 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17930,7 +18004,7 @@ SELECT:330 (@subj) IF
 SELECT:329 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17946,7 +18020,7 @@ SELECT:329 (@subj) IF
 SELECT:328 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17962,7 +18036,7 @@ SELECT:328 (@subj) IF
 SELECT:327 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17978,7 +18052,7 @@ SELECT:327 (@subj) IF
 SELECT:326 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -17994,7 +18068,7 @@ SELECT:326 (@subj) IF
 SELECT:325 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18011,7 +18085,7 @@ SELECT:325 (@subj) IF
 SELECT:324 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18028,7 +18102,7 @@ SELECT:324 (@subj) IF
 SELECT:323 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18045,7 +18119,7 @@ SELECT:323 (@subj) IF
 SELECT:322 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18061,7 +18135,7 @@ SELECT:322 (@subj) IF
 SELECT:321 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18079,7 +18153,7 @@ SELECT:321 (@subj) IF
 SELECT:320 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18097,7 +18171,7 @@ SELECT:320 (@subj) IF
 SELECT:319 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 @fv)
@@ -18116,7 +18190,7 @@ SELECT:319 (@subj) IF
 SELECT:318 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18134,7 +18208,7 @@ SELECT:318 (@subj) IF
 SELECT:317 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18152,7 +18226,7 @@ SELECT:317 (@subj) IF
 SELECT:316 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18170,7 +18244,7 @@ SELECT:316 (@subj) IF
 SELECT:315 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18188,7 +18262,7 @@ SELECT:315 (@subj) IF
 SELECT:314 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18206,7 +18280,7 @@ SELECT:314 (@subj) IF
 SELECT:313 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18224,7 +18298,7 @@ SELECT:313 (@subj) IF
 SELECT:312 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18242,7 +18316,7 @@ SELECT:312 (@subj) IF
 SELECT:311 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18260,7 +18334,7 @@ SELECT:311 (@subj) IF
 SELECT:310 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18278,7 +18352,7 @@ SELECT:310 (@subj) IF
 SELECT:309 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18298,7 +18372,7 @@ SELECT:309 (@subj) IF
 SELECT:308 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18314,7 +18388,7 @@ SELECT:308 (@subj) IF
 SELECT:307 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18335,7 +18409,7 @@ SELECT:307 (@subj) IF
 SELECT:306 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18356,7 +18430,7 @@ SELECT:306 (@subj) IF
 SELECT:305 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18373,7 +18447,7 @@ SELECT:305 (@subj) IF
 SELECT:304 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18393,7 +18467,7 @@ SELECT:304 (@subj) IF
 SELECT:303 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
@@ -18409,7 +18483,7 @@ SELECT:303 (@subj) IF
 SELECT:302 (@subj) IF
 	(0 pron/subst/det)
 	(NOT 0 %samme%)
-	(NOT 0 sp)
+	(NOT 0 itg)
 	(NOT 0 akk)
 	(NOT 0 @adv)
 	(NOT 0 s#%det/dette%)
