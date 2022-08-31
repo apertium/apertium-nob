@@ -20065,6 +20065,14 @@ SELECT:jeg-så-den-cm-men pron-pers IF
 # ikke: en av ... en eller annen...en, to, tre"
 # 170908 Not 0 interj - "ho ho"
 
+SELECT:Den-tildeles-utøvere pers + nominativ IF
+        (-1 >>>)
+        (1 pres + pasv)
+        (0C nom OR acc)
+        (NOT 0 expl)            # «Det konsumeres ost daglig.»
+        ;
+# «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+
 SELECT:Likevel-gleder-han-seg pers + nominativ IF
         (-2C storbokstav + adv OR cnjsub)
         (-1C fv)

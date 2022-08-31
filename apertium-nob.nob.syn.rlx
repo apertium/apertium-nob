@@ -18981,6 +18981,14 @@ REMOVE:som-gjelder-områdene @subj IF
         ;
 # «Vedtaket som gjelder de andre områdene, begrunnes med at tilgangen på helsehjelp på Svalbard er begrenset …»
 
+REMOVE:Den-tildeles-utøvere @subj IF
+        (-3 >>>)
+        (-2C @subj)
+        (-1 pasv)
+        (0 @obj)
+        ;
+# «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+
 
 CONSTRAINTS
 ########################################################
