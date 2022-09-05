@@ -2884,6 +2884,10 @@ SELECT:den+prn ("den¹") IF
         (1C prep)
         ;
 
+"<døde>" SELECT:antallet-døde adj IF
+        (-1 ("antall" n + def))
+        ;
+
 "<døde>" SELECT:Den-døde-vegetasjonen adj IF
         (-1 %den%)
         (1C n)
@@ -2896,6 +2900,7 @@ SELECT:den+prn ("den¹") IF
 
 "<døde>" SELECT:funnet-3-døde-etter adj IF
         (-2C fv OR ("<funnet>") OR ("<bekreftet>"))
+
         ;
 # «Vi har 32 døde på grunn av terrorister»
 # «Ifølge myndighetene er det nå bekreftet 107 døde etter eksplosjonen»
@@ -3131,6 +3136,10 @@ SELECT:den+prn ("den¹") IF
 
 "<samtidig>" SELECT:samtidig-som adv IF
         (1 %som%)
+        ;
+
+"<blott>"i SELECT:saga-blott adj IF
+        (-1 ("saga" n + m + sg + ind))
         ;
 
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
@@ -12639,7 +12648,6 @@ REMOVE:antallet-solgte-billetter-har vblex IF
         ;
 # «Tidligere har SVT meldt at også  antall angrep  med håndgranater har økt kraftig i Sverige de åtte siste årene.»
 # «Nesten 800.000 personer tar sitt eget liv hvert år i verden, flere enn antall drept i krig og som følge av kriminelle handlinger»
-
 
 REMOVE:Asias-unge-sparket-det-hele-i-gang n IF
         (-2C np + gen)
