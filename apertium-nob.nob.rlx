@@ -3138,8 +3138,12 @@ SELECT:den+prn ("den¹") IF
         (1 %som%)
         ;
 
+"<blott>"i SELECT:blott-forfjamset adv IF
+        (1 adj)
+        ;
+
 "<blott>"i SELECT:saga-blott adj IF
-        (-1 ("saga" n + m + sg + ind))
+        (-1 ("saga" n) + m + sg + ind)
         ;
 
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
