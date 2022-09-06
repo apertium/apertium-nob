@@ -4951,7 +4951,12 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-1C fv)
         (NEGATE -1 %ha% OR %være/bli%)
         ;
-
+"<landet>" SELECT:det-lover-jeg-landet n IF
+        (-3 det OR prn)
+        (-2 vblex)
+        (-1 prn + pers OR np + cog)
+        ;
+# Det lover jeg lande
 "<landet>" SELECT:hun-landet pret IF
         (-1 prn + pers OR np + cog)
         ;
@@ -5968,6 +5973,10 @@ SELECT:glimre-med ("glimre" vblex) IF
         (1 %med%)
         ;
         # "glimre med sitt fråvær"
+"<rent>" SELECT:rent-flertall adj IF
+	(1 ("flertall"))
+        ;
+# rent flertall
 #:3346
   "<rent>"   SELECT:3346   (vblex pp) IF
 	(NOT 1 %for%)
@@ -9662,7 +9671,10 @@ REMOVE ("pote") IF
         ;
 # «Den erstattet Moskva-traktaten som utløp i 2012 og går ut på at antall kjernefysiske stridshoder reduseres til langt under antallet som var lov under den kalde krigen.»
 
-
+"<angrepet>" SELECT:at-angrepet n IF
+        (-1 ("at"))
+;
+# at angrepet også fikk titusener av russere til å forlate Krim
 "<angrepet>" REMOVE:det-verste-angrepet pp IF
         (-1 sup)
 ;
