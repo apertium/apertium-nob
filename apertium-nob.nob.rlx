@@ -3250,6 +3250,12 @@ SELECT:bilens-dekk ("<dekk>"i) + n + pl IF
         ;
         # bildekka
 
+SELECT:prosjektets-tre-ledere det IF
+        (-1 gen)
+        (0 ("tre"))
+        (1 n)
+        ;
+        # prosjektets tre ledere
 SELECT:partiets-fylkeslag n + nt + pl IF
         (-2 %av% OR ("<alle>"))
         (-1 gen)
