@@ -8832,6 +8832,10 @@ SELECT:i-adj-hevd ("hevd") IF
         (-1 adj)
         ;
 # "...i god hevd"
+"<Lovbruddene>" SELECT:lovbruddene n IF
+        (-1 setn-gr)
+        ;
+# "Lovbruddene..."
 REMOVE:unlikely ("hevd");
 # "å hevde" vs. "en hevd"
 REMOVE:to-ansatte vblex IF
