@@ -13022,6 +13022,9 @@ SELECT:ble-antent adj + pst IF
 		(0 ("<antent>"))
 		;
 
+"<påtent>"i SELECT:default adj + pst
+		;
+
 "<trykket>" SELECT:at-trykket-på-etatene n IF
 		(-1 ("at"))
 		;
