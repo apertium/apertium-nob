@@ -3156,6 +3156,14 @@ SELECT:den+prn ("den¹") IF
         (-1 ("saga" n) + m + sg + ind)
         ;
 
+"<utslått>" SELECT:default vblex + pp IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<utslått>" SELECT:default vblex + pp IF
+        (1 prep)
+        ;
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
