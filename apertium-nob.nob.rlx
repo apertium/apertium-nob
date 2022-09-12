@@ -2122,6 +2122,9 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         ;
         # "tant" tenkjeleg, men mest hypotetisk i bunden form ("tanten og fjaset")
 
+"<trivia>"i SELECT:default ("trivia" n)
+        ;
+
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
 	(NOT -1 fl-det)
