@@ -168,6 +168,7 @@ LIST %også/ikke/derimot%-adv = "også" "ikke" "derimot" ("og" adv) ;
 LIST %om% = "om" ;
 LIST %presentere% = "presentere" ;
 LIST %på/over% = "på" "over" ;
+LIST %minst/over/iallfall% = "over" "minst" "iallfall" ;
 LIST %regel% = "regel" ;
 LIST %samme% = "samme" ;
 LIST %sammen% = "sammen" ;
@@ -5962,6 +5963,15 @@ SELECT:1238 (@←p-utfyll) IF
 #  "KH 8.10.2002: Hovedfagsstudent i historie Bjarne Hansen"))
 
 
+REMOVE:over-5000-arter (@←p-utfyll) IF
+        (-2 %minst/over/iallfall%)
+        (-1 qnt)
+        ;
+
+REMOVE:over-5000-har (@←p-utfyll) IF
+        (-1 %minst/over/iallfall%)
+        (0 qnt)
+        ;
 
 #:1237
 SELECT:1237 (@←p-utfyll) IF
@@ -5975,11 +5985,6 @@ SELECT:1237 (@←p-utfyll) IF
 	(NOT 1 subst-prop)
 ;
 #  "April 2002: NOT 1 subst-prop: Han så den krokete skikkelsen til bestemor Gælion."))
-
-REMOVE:over-5000-arter (@←p-utfyll) IF
-        (-2 ("over"))
-        (-1 qnt)
-        ;
 
 #:1236
 SELECT:1236 (@←p-utfyll) IF
@@ -14000,7 +14005,6 @@ REMOVE:597 (@subj) IF
 #  "15.9.2003: Klokken 14.30 startet kampen."))
 
 
-
 #:596
 REMOVE:596 (@subj) IF
 	(*-1 s#setn-gr BARRIER @fv)
@@ -16226,6 +16230,12 @@ REMOVE:441 (@tittel) IF
 ;
 
 #som fange i england og som boms i Europa
+
+SELECT:hvert-år (@adv) IF
+        (-1 %hver%)
+        (0 adverbialsubst)
+        ;
+# Tek sjansar – antar at tidlegare reglar har fått unna «hver time teller» ol.
 
 
 #:6071
