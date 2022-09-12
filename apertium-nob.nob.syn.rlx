@@ -4002,6 +4002,62 @@ MAP:1365 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 # 1921"))
 
 
+#:1309
+MAP:klokka-halv-tre (@subst→)   ("klokke") IF
+	(0 %klokke%-be-ent%)
+	(1 %halv/kvart%-mask/fem)
+;
+#  " klokka halv tre/kvart på tre
+# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke.
+# Forandret \"klokke be ent\" til \"klokka\""
+#   :group 83))
+
+
+
+#:1308
+MAP:klokka-fem-dagen-etter (@subst→) ("klokke") IF
+	(0 %klokke%-be-ent%)
+	(1 klokkeslett)
+	(2 adverbialsubst)
+	(NOT 2 fl)
+;
+#  " klokka @SUBST→ fem dagen etter
+# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke.
+# Forandret \"klokke be ent\" til \"klokka\""
+#   :group 83))
+
+
+
+#:1307
+MAP:klokka-fem-på-halv-tre (@subst→)   ("klokke") IF
+	(0 %klokke%-be-ent%)
+	(1 klokkeslett)
+	(NOT 2 adverbialsubst)
+;
+#  " klokka @SUBST→ fem (på halv tre)
+#  IKKE: hun fant klokka @SUBST→ tre dager senere
+# Forandret \"klokke be ent\" til \"klokka\"
+# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke."
+#   :group 83))
+
+
+
+
+#:1303
+MAP:1303 (@adv)   ("kvart" n sg ind) IF
+	(0 ub-ent-subst)
+	(1 %på/over%)
+	(2 tall)
+	(NOT 2 ikke-tall)
+;
+#  " Som bemerket for determinativene ovenfor, ser det ut til å være 
+#  mest i samsvar med vårt system å bruke følgende analyse, selv om 
+#  den ikke ser intuitivt riktig ut: \"hun kom kvart @ADV på @ADV 
+#  fem @←P-UTFYLL\".
+#  hun kom kvart @ADV på tre
+#  klokka viser kvart på tre
+# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke."))
+
 
 #:1364
 MAP:n (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
@@ -4649,91 +4705,6 @@ MAP:1310 (@adv→)   ("ikke" adv) IF
 #:1310
 
 
-
-#:1309
-MAP:1309 (@subst→)   ("klokka") IF
-	(0 %klokke%-be-ent%)
-	(1 %halv/kvart%-mask/fem)
-;
-#  " klokka halv tre/kvart på tre
-# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke.
-# Forandret \"klokke be ent\" til \"klokka\""
-#   :group 83))
-
-
-
-#:1308
-MAP:1308 (@subst→)   ("klokka") IF
-	(0 %klokke%-be-ent%)
-	(1 klokkeslett)
-	(2 adverbialsubst)
-	(NOT 2 fl)
-;
-#  " klokka @SUBST→ fem dagen etter
-# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke.
-# Forandret \"klokke be ent\" til \"klokka\""
-#   :group 83))
-
-
-
-#:1307
-MAP:1307 (@subst→)   ("klokka") IF
-	(0 %klokke%-be-ent%)
-	(1 klokkeslett)
-	(NOT 2 adverbialsubst)
-;
-#  " klokka @SUBST→ fem (på halv tre)
-#  IKKE: hun fant klokka @SUBST→ tre dager senere
-# Forandret \"klokke be ent\" til \"klokka\"
-# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke."
-#   :group 83))
-
-
-
-#:1306
-MAP:1306 (@subst→)   ("klokken") IF
-	(0 %klokke%-be-ent%)
-	(1 klokkeslett)
-	(NOT 2 adverbialsubst)
-;
-#  "KH 5.11.2002: Klonet av \"klokka\"-regel!"))
-
-
-
-#:1305
-MAP:1305 (@subst→)   ("klokken") IF
-	(0 %klokke%-be-ent%)
-	(1 klokkeslett)
-	(2 adverbialsubst)
-	(NOT 2 fl)
-;
-#  "KH 5.11.2002: Klonet av \"klokka\"-regel!"))
-
-
-
-#:1304
-MAP:1304 (@subst→)   ("klokken") IF
-	(0 %klokke%-be-ent%)
-	(1 %halv/kvart%-mask/fem)
-;
-#  "KH 5.11.2002: Klonet av \"klokka\"-regel!"))
-
-
-
-#:1303
-MAP:1303 (@adv)   ("kvart" n sg ind) IF
-	(0 ub-ent-subst)
-	(1 %på/over%)
-	(2 tall)
-	(NOT 2 ikke-tall)
-;
-#  " Som bemerket for determinativene ovenfor, ser det ut til å være 
-#  mest i samsvar med vårt system å bruke følgende analyse, selv om 
-#  den ikke ser intuitivt riktig ut: \"hun kom kvart @ADV på @ADV 
-#  fem @←P-UTFYLL\".
-#  hun kom kvart @ADV på tre
-#  klokka viser kvart på tre
-# KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke."))
 
 
 
@@ -14007,6 +13978,29 @@ REMOVE:597 (@subj) IF
 	(*1 @fv LINK *1 kh#ikke-mod LINK 0 @subj)
 ;
 #  "15.9.2003: Klokken 14.30 startet kampen."))
+
+
+REMOVE:kl.14.45-natt-til-søndag (@subj) IF
+	(-1 %klokke/kl%)
+	(0 klokkeslett)
+	(NOT 0 ikke-tall)
+	(1 adverbialsubst)
+	(2 ("til"))
+	(3 adverbialsubst)
+	(*0 @subj)
+;
+# «Klokka 03 natt til søndag skrus klokka én time bakover – mot sommeren.»
+
+REMOVE:kl.14.45-NATT-til-søndag (@subj) IF
+	(-2 %klokke/kl%)
+	(-1 klokkeslett)
+	(NOT -1 ikke-tall)
+	(0 adverbialsubst)
+	(1 ("til"))
+	(2 adverbialsubst)
+	(*0 @subj)
+;
+# «Klokka 03 natt til søndag skrus klokka én time bakover – mot sommeren.»
 
 
 #:596
