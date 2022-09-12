@@ -18646,6 +18646,10 @@ SELECT:300 (@←p-utfyll) IF
 # "))
 
 
+SELECT:måten-det-gjøres (@subj) IF
+        (-1 ("måte") + sg + def)
+        (1 pasv)
+        ;
 
 #:299
 SELECT:299 (@app) IF
