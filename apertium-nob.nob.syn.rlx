@@ -19124,5 +19124,5 @@ AFTER-SECTIONS
 
 REMOVE:prefer-left-subj-of-clause (@subj) IF
         (*-1 pasv BARRIER fv OR setn-gr LINK *-1 @subj BARRIER fv OR setn-gr)
-        (0 @obj)
+        (0 @obj OR @i-obj)
         ;
