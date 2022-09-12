@@ -19041,3 +19041,11 @@ SELECT:adj-pp-dis (adj pp @s-pred) + (sg) IF
 #TO (*-1 @SUBJ→ LINK *-1 N)
 #~ TO (**-1 N) (NOT p SELF) ;
 
+AFTER-SECTIONS
+
+# Riskier rules that remove remaining ambiguity:
+
+REMOVE:prefer-left-subj-of-clause (@subj) IF
+        (*-1 pasv BARRIER fv OR setn-gr LINK *-1 @subj BARRIER fv OR setn-gr)
+        (0 @obj)
+        ;
