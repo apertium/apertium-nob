@@ -14471,7 +14471,7 @@ REMOVE:561 (@subj) IF
 #:560
 REMOVE:560 (@subj) IF
 	(*-1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @mod-@←p-utfyll-@adv-@app)
-	(*-1 @fv BARRIER @←sbu/@←sbu-rel/@iv/@subj)
+	(*-1 @fv BARRIER @←sbu/@←sbu-rel/@iv/@subj LINK NOT 0 sitatverb) # «, og sier rollen<@subj!> noen ganger tillegges for mye betydning»
 	(*-1 @fv BARRIER s#setn-gr)
 	(*1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @mod-@←p-utfyll-@adv-@app)
 	(*1 @fv BARRIER @←sbu/@←sbu-rel/@iv/@subj)
