@@ -147,10 +147,10 @@ LIST %ikke/aldri% = "ikke" "aldri" ;
 LIST %ingen/ingenting% = "ingenting" "ingen" ;
 LIST %kalle% = "kalle" ;
 LIST %kalle/døpe% = "kalle" "døpe" ;
-LIST %kl% = ("kl." n acr) ;
+LIST %kl% = ("kl." n acr) ("kl" n acr) ;
 LIST %klokka% = ("klokke" sg def) ;
 LIST %klokke%-be-ent% = ("klokke" n def sg) ;
-LIST %klokke/kl% = ("klokke" n) ("kl." n acr) ;
+LIST %klokke/kl% = ("klokke" n) ("kl." n acr) ("kl" n acr);
 LIST %kvart% = n sg ind ;
 LIST %la% = "la" ;
 LIST %la%-verb = ("la" vblex) ;
@@ -443,8 +443,7 @@ LIST kh#subst-fem-prop = (np f) ;
 LIST kh#subst-mask-prop = (np m) ;
 LIST kh#trans-med-nom-u-ditrans = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 ;
 LIST klamme-trans = tr10 tr11 tr14 tr16 tr17 tr18 tr19 tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 ;
-LIST klokke = <klokke> ;
-LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) <klokke> ;
+LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) ("." sent clb remspc) ;
 LIST kolon = ("$:" clb) ;
 LIST komma = "$," ;
 LIST komma/ellipse/kolon/semi/konj/adv = cm <ellipse> <kolon> <semi> cnjcoo adv <adv> ;
@@ -3592,7 +3591,8 @@ MAP:1404 (@subj @obj @i-obj @s-pred @app @laus-np)   (prn) IF
  
 
 #:1399
-MAP:1399 (@subst→)   (n <klokke>) IF
+MAP:1399 (@subst→)   ("." sent clb remspc) IF
+        (0/1 qnt)
 	(1 %tiden%)
 ;
 #  "15.9.2003: Han kom i 14.30 tiden."))
@@ -3643,9 +3643,9 @@ MAP:1395 (@s-pred @adv @←p-utfyll)   (n) IF
 
 
 #:1394
-MAP:1394 (@s-pred @adv @←p-utfyll)   (n) IF
+MAP:1394 (@s-pred @adv @←p-utfyll)  ("." sent clb remspc) IF
 	(NOT -1 %klokke/kl%)
-	(0 klokke)
+        (0/1 qnt)
 	(NOT 0 ikke-tall)
 	(NOT 1 nom)
 ;
@@ -8018,6 +8018,10 @@ SELECT:1087 (@s-pred) IF
 ;
 #  " så het de da Reim @S-PRED og Tir"))
 
+SELECT:kalles-delirium (@s-pred) IF
+        (-1 ("kalle") + pasv)
+        (0* (@subj))
+        ;
 
 
 #:1086
@@ -16237,6 +16241,11 @@ SELECT:hvert-år (@adv) IF
         ;
 # Tek sjansar – antar at tidlegare reglar har fått unna «hver time teller» ol.
 
+SELECT:spilles-18.mai (@adv) IF
+        (*-2 (@subj))
+        (-1 ord)
+        (0 måned/høytid/årstid/tidssubst)
+        ;
 
 #:6071
 SELECT:6071 (@subj) IF
