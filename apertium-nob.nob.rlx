@@ -31437,6 +31437,12 @@ CONSTRAINTS
 ;
 #  "kh feb 2004: som regel adverb"
 
+
+"<det>" REMOVE:som-det-generelt-meldes (acc) IF
+        (-1 %som%)
+        (*1 pasv BARRIER ikke-adv)
+        ;
+
  #:4092
  "<dette>"   REMOVE:4092   (vblex inf) IF
 	  (0 verb)
