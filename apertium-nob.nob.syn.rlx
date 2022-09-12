@@ -302,7 +302,6 @@ LIST det-mask-ent = (det m sg) ;
 LIST det-nøyt-ent = (det nt sg) ;
 LIST det/adj/adv/subst/infmerke = det adj adv n "å" ;
 LIST det/adj/tall-subst = "tusen" "trillion" "mrd." "million" "milliard" "mill." "kvadrillion" "hundre" "halvmillion" "billion" "billiard" det adj ;
-LIST ditrans = "donere" "forespeile" d1 d2 d3 d6 d7 rl6 rl7 rl8 ;
 LIST ditrans-prep = "mellom" "imellom" ;
 LIST ent = sg ;
 LIST ent-fem-subst = (n f sg) ;
@@ -441,8 +440,6 @@ LIST kh#nom-mask-ent-ub = (n m sg ind) (adj mf sg ind) (adj pprs) (adj comp) (ad
 LIST kh#pron-refl = (prn ref) ;
 LIST kh#subst-fem-prop = (np f) ;
 LIST kh#subst-mask-prop = (np m) ;
-LIST kh#trans-med-nom-u-ditrans = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 ;
-LIST klamme-trans = tr10 tr11 tr14 tr16 tr17 tr18 tr19 tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 ;
 LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) ("." sent clb remspc) ;
 LIST kolon = ("$:" clb) ;
 LIST komma = "$," ;
@@ -557,7 +554,6 @@ LIST prop-mask = (np m) ;
 LIST prop/ub-eint-subst = np (n sg ind) (n ubøy) ;
 LIST prop/ub-ent-subst = np (n sg ind) (n ubøy) ;
 LIST prop/ub-ent-subst/%ganger%/%klokka% = np (n sg ind) (n ubøy) ("gang" pl ind) ("klokke" sg def) ;
-LIST refl = rl1 rl2 rl3 rl4 rl5 rl6 rl7 rl8 rl9 rl10 rl11 rl12 rl13 rl14 rl15 rl16 rl17 rl18 rl19 rl20 ;
 LIST rel-pron = "som" ;
 LIST res/akk = res acc ;
 LIST s#%bare% = "bare" ;
@@ -633,11 +629,88 @@ LIST tidsadv = "tidlig" "sen" "sein" "nå" "lenge" "igjen" "før" "etterpå" "da
 LIST tidsadvsubst-nr1 = "torsdag" "tirsdag" "søndag" "september" "onsdag" "oktober" "november" "mars" "mandag" "mai" "lørdag" "juni" "juli" "januar" "fredag" "februar" "desember" "august" "april" ;
 LIST tidsadvsubst-nr2 = "natt" "måned" "morgen" "kveld" "formiddag" "ettermiddag" ;
 LIST tidssubst = "år" "uke" "time" "tiendelssekund" "tidelssekund" "sekund" "nanosekund" "måned" "minutt" "millisekund" "hundredelssekund" "halvår" "døgn" "dag" ;
-LIST trans-med-nom = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 d1 d2 d3 d4 ;
-LIST trans-u11 = tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 rl1 rl4 rl5 pr4 pa1 pa2 pa3 a6 a7 a8 a9 d1 d2 d3 rl6 rl7 rl8 ;
-LIST trans-u11-upresent = tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 rl1 rl4 rl5 pr4 pa1 pa2 pa3 a6 a7 a8 a9 d1 d2 d3 rl6 rl7 rl8 ;
-LIST trans-u11-upresent-upredik = tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 rl1 rl4 rl5 pa1 pa2 pa3 a6 a7 a8 a9 d1 d2 d3 rl6 rl7 rl8 ;
-LIST tullemengde = n ;
+
+
+# OBT sets converted to Apertium
+# Norsk ordbank transitivity codes:
+LIST d1 = "allokere" "anbefale" "anordne" "anvise" "avkle" "avkreve" "avlegge" "avlevere" "avlokke" "avlure" "avskjære" "avtvinge" "bake" "befale" "belære" "berøve" "beskikke" "beta" "betale" "betro" "bevilge" "bibringe" "blåse" "booke" "bringe" "by" "diktere" "erklære" "esle" "etle" "ettergi" "etterlate" "ettersende" "fakse" "forbeholde" "forby" "forebringe" "foredra" "foreholde" "forelegge" "foreskrive" "forespeile" "forevise" "forgi" "forklare" "forkynne" "forlate" "fortelle" "fortenke" "forunne" "forvolde" "forære" "frabeordre" "fradømme" "frakjenne" "fralokke" "franarre" "frarane" "frarå" "fraråde" "fraskille" "fraskrive" "frastjele" "frata" "fravriste" "gi" "gjengi" "godskrive" "handgi" "heimle" "hjemle" "hviske" "håndgi" "iberegne" "idømme" "ilegge" "iligne" "ilikne" "innberette" "innbetale" "innbille" "innbringe" "innpode" "innprente" "innvilge" "kaste" "kjøpe" "kreditere" "kviskre" "levere" "levne" "love" "lære" "låne" "meddele" "nekte" "nippe" "offerere" "ofre" "overbringe" "overlate" "overlevere" "overrekke" "oversende" "overtrekke" "poste" "presentere" "påføre" "pålegge" "påtvinge" "rekke" "selge" "sende" "servere" "si" "skaffe" "skjenke" "skrive" "skylde" "slenge" "spå" "svare" "syne" "testamentere" "tilbakebetale" "tilby" "tildele" "tildømme" "tilegne" "tilføre" "tilføye" "tilgi" "tilholde" "tilkjenne" "tilkjøre" "tilknytte" "tillate" "tillegge" "tilrå" "tilsende" "tilsette" "tilskrive" "tilstede" "tilstille" "tiltenke" "tiltro" "tiltru" "tilvise" "undergi" "underkaste" "underlegge" "underordne" "unne" "utbetale" "utlevere" "utlove" "vende" "verdige" "vie" "ville" "vise" "yte" ;
+LIST d2 = "bebreide" "betro" "forespeile" "forklare" "fortelle" "forunne" "innbille" "love" "meddele" "svare" "syne" "tilføre" "vise" ;
+LIST d3 = "anbefale" "byde" "forby" "frarå" "fraråde" "love" "lære" "skylde" ;
+LIST d4 = "adressere" "allokere" "anbefale" "anmelde" "anskaffe" "anvise" "avlevere" "avse" "be" "bede" "berette" "bevilge" "bringe" "dedisere" "delegere" "donere" "dotere" "egne" "eksportere" "esle" "etle" "ettersende" "fakse" "forklare" "fortelle" "framleie" "fremleie" "gi" "henskyte" "hviske" "innberette" "innsende" "kaste" "kjøpe" "kreve" "kviskre" "lange" "levere" "låne" "offerere" "ofre" "omadressere" "overbringe" "overdra" "overføre" "overgi" "overlate" "overlevere" "overrekke" "oversende" "poste" "prisgi" "referere" "reservere" "returnere" "selge" "sende" "servere" "si" "skaffe" "slenge" "stile" "supplikkere" "testamentere" "tigge" "tilbakebetale" "tilbakeføre" "tilegne" "tilføye" "tilstille" "transferere" "transmittere" "utbetale" "utby" "utdele" "utlevere" "utlove" "vende" "videresende" ;
+SET d5 = d4;
+LIST d6 = "anklage" "anmode" "anspore" "avskrekke" "avstå" "be" "bede" "bemyndige" "beordre" "beskylde" "bestikke" "bevege" "bønnfalle" "dømme" "formane" "formå" "fri" "få" "ha" "hindre" "hjelpe" "kommandere" "lokke" "mane" "mistenke" "motivere" "narre" "oppfordre" "oppmuntre" "overtale" "presse" "programmere" "påvirke" "redde" "rå" "råde" "stimulere" "true" "tvinge" "uteske" "utfordre" "venne" ;
+LIST d7 = "egge" "påby" "pålegge" "påtvinge" "tilholde" "tillate" "tilrå" "tilstede" "utrope" "vie" "vigsle" ;
+LIST d8 = "anse" "befale" "esle" "etle" "innvie" "krone" "omskape" "ordinere" "salve" "samle" "utpeke" ;
+LIST d9 = "arve" "forandre" ;
+
+LIST rl1 = "avspeile" "avtegne" "basere" "begrave" "bekymre" "beløpe" "bringe" "datere" "engste" "ergre" "eve" "finne" "flytte" "forelske" "forgape" "forgreine" "forgrene" "forlibe" "forlove" "forme" "forstikke" "fortape" "fortørne" "forundre" "fryde" "fryse" "føye" "få" "gjenspeile" "godgjøre" "godte" "gremme" "grue" "harme" "hufse" "hvelve" "hygge" "innfinne" "innforlive" "innlosjere" "installere" "irritere" "kaste" "keie" "kjøre" "klabbe" "kle" "klebe" "klede" "kleie" "klemme" "klistre" "klø" "klå" "knipe" "komme" "kose" "krenge" "kveike" "kvelve" "kvi" "kvie" "lee" "legge" "lekre" "lepje" "lette" "like" "lire" "løfte" "meske" "more" "måte" "naske" "nedfelle" "pine" "pirke" "range" "raspe" "regalere" "relatere" "renne" "rikke" "rive" "rufse" "rulle" "røre" "sjenere" "skake" "skamme" "skjule" "skjære" "skylle" "sleike" "slenge" "slikke" "slå" "smette" "smugle" "smøye" "sole" "spandere" "speile" "spenne" "stryke" "suge" "supe" "sverte" "ta" "trekke" "træ" "tørke" "uroe" "utkrystallisere" "utsette" "utvikle" "vaske" "velte" "vokse" "vrenge" "vrikke" "ønske" ;
+LIST rl2 = "forelske" "forlove" "forsone" "gifte" "late" "nedverdige" "sammensverge" "samrå" ;
+LIST rl3 = "avholde" "bare" "befatte" "beflitte" "bekvemme" "berede" "beslutte" "bestemme" "bestrebe" "betakke" "driste" "egne" "ernære" "forbanne" "forberede" "fordriste" "formaste" "fornedre" "forplikte" "fri" "få" "gi" "grue" "innrette" "innskrenke" "interessere" "konsentrere" "lure" "muntre" "nedlate" "nedverdige" "prøve" "skjønne" "stjele" "tvinge" "utgi" "vegre" "venne" "våge" "ydmyke" ;
+LIST rl4 = "absentere" "age" "akklimatisere" "akkommodere" "aksle" "akte" "aktivisere" "angre" "anspenne" "anstrenge" "artikulere" "assurere" "atspre" "atsprede" "avgrense" "avkjøle" "avmagre" "avsløre" "barbere" "bare" "barrikadere" "barske" "begrense" "beherske" "beklage" "bekvemme" "benke" "berge" "berike" "beruse" "besinne" "bestemme" "besvære" "betakke" "bete" "betenke" "bevege" "bevæpne" "bikte" "binde" "blakke" "blamere" "blande" "blotte" "blottstille" "blære" "bløte" "bløyte" "blåholde" "bole" "boltre" "brekke" "briske" "bruke" "brune" "bry" "bryne" "bryske" "bryste" "brødfø" "bære" "børste" "bøye" "dekke" "delikatere" "demaskere" "dempe" "disiplinere" "diskvalifisere" "distansere" "divertere" "dope" "drepe" "drukne" "dusje" "dy" "ekspatriere" "eksponere" "ekvipere" "emansipere" "endre" "engasjere" "ernære" "fatte" "feite" "fete" "fjerne" "fli" "flokke" "flotte" "flytte" "folke" "forankre" "forbedre" "forberede" "forbryte" "fordjupe" "fordriste" "fordype" "forflytte" "forfriske" "forgjelde" "forglemme" "forglømme" "forgripe" "forhaste" "forherde" "forhyre" "forhøre" "forivre" "forkjøpe" "forklare" "forkle" "forlese" "forlike" "forlyste" "forløfte" "formaste" "formere" "formulere" "formumme" "formæle" "fornedre" "fornekte" "fornye" "forplante" "forregne" "forse" "forsikre" "forskanse" "forskreve" "forsluke" "forsnakke" "forspise" "forspørre" "forstille" "forstrekke" "forsvare" "forsverge" "forsynde" "forsyne" "forsøke" "forsømme" "forta" "forte" "forvisse" "forynge" "fote" "frisere" "frottere" "fylke" "fylle" "føne" "føre" "førebu" "førtidspensjonere" "gardere" "gasse" "geberde" "geminere" "gerere" "gestalte" "gi" "gifte" "gjemme" "gjengifte" "gjenreise" "gjenta" "gjøde" "gjømme" "glattbarbere" "glattkjemme" "gre" "greie" "gruppere" "gynge" "habilitere" "halvgardere" "hegde" "heilgardere" "helgardere" "henge" "hevde" "hevle" "hevne" "hie" "hofferde" "immatrikulere" "innkapsle" "innordne" "innpasse" "innrette" "innskipe" "innskrenke" "innsmigre" "innynde" "installere" "interessere" "involvere" "isolere" "jamre" "jenke" "jøye" "jåle" "kamme" "kamuflere" "kjappe" "kjekke" "kjemme" "kjæte" "klare" "kle" "klede" "klippe" "klø" "kompromittere" "konsentrere" "konstituere" "kontrollere" "korse" "kro" "kroke" "krukse" "krympe" "krøke" "kutte" "kvalifisere" "kvare" "kvikke" "lauge" "lausrive" "lee" "legge" "legitimere" "leire" "leke" "lempe" "leske" "livberge" "livnære" "livsforsikre" "loppe" "lufte" "lukke" "lute" "lyske" "lægre" "løsrive" "male" "markedsføre" "markere" "maskere" "matberge" "melde" "misfare" "misregne" "missnakke" "mista" "moderere" "molde" "morske" "movere" "mulde" "natte" "nyansere" "nærme" "nøyte" "ofre" "oie" "okke" "olme" "ombestemme" "omrømme" "områ" "omskape" "omskole" "omskolere" "omstille" "omstrukturere" "omvende" "oppdatere" "oppe" "oppføre" "opphisse" "opplive" "oppløfte" "ordlegge" "organisere" "orientere" "orme" "overanstrenge" "overbelaste" "overbevise" "overeksponere" "overforsikre" "overgi" "pare" "parfymere" "pensjonere" "perfeksjonere" "posisjonere" "prekavere" "presentere" "presse" "profilere" "prostituere" "prøve" "pudre" "pynte" "rake" "ranke" "realisere" "reinvaske" "reise" "rekordforbedre" "rekreere" "renvaske" "reprodusere" "reservere" "restituere" "rettferdiggjøre" "revansjere" "ringe" "ruinere" "ruse" "rydde" "rømme" "røpe" "røre" "rådføre" "samordne" "sanse" "selge" "selvstendiggjøre" "separere" "sesse" "sette" "sjamponere" "sjarmantisere" "sjukemelde" "sjukmelde" "sjølstendiggjøre" "skalpere" "skamfere" "skandalisere" "skape" "skikke" "skille" "skjule" "sko" "skolere" "skrubbe" "skutte" "skynde" "slange" "slanke" "slikke" "sminke" "snirkle" "snu" "snyte" "snøgge" "sole" "sosialisere" "spanske" "speile" "spesialisere" "spissformulere" "spre" "sprede" "sprenge" "stagge" "stelle" "sterilisere" "stigmatisere" "strekke" "strukturere" "stusse" "stålsette" "subordinere" "sulte" "sutenere" "svale" "svelte" "sverte" "svinte" "sykemelde" "sykmelde" "syne" "tatovere" "te" "tegne" "trekke" "trolove" "trulove" "tupere" "tvette" "tyne" "tømme" "tøyle" "uffe" "ugge" "uleilige" "ulykkesforsikre" "umake" "undre" "unnse" "unnskylde" "unnslå" "utdanne" "utfolde" "utgyte" "utlate" "utlevere" "utmaie" "utmatte" "utmerke" "utprege" "utstaffere" "uttale" "vagle" "vaksinere" "vannkjemme" "vare" "varme" "vaske" "vasskjemme" "vege" "vegre" "veie" "verge" "verve" "videreutdanne" "videreutvikle" "vikte" "vinne" "vise" "vri" "væpne" "væte" "våge" "vånde" "ynke" "yppe" "ytre" "æresforplikte" "ødelegge" "øksle" "ømme" "øve" "øydelegge" "åpenbare" ;
+LIST rl5 = "anstå" "avleire" "avspeile" "avtegne" "bedre" "beke" "betale" "boge" "botnfelle" "bre" "breie" "brenne" "bue" "bunnfelle" "buske" "by" "dele" "disse" "dovne" "egne" "feste" "festne" "filtre" "flake" "flette" "flise" "floke" "fløke" "fonne" "forandre" "forbrenne" "forfryse" "forgreine" "forgrene" "forkaste" "forkjøle" "forme" "forplante" "forpuppe" "forrente" "forskyve" "forsove" "forstikke" "forta" "fortape" "fortorve" "forvandle" "forvede" "forverre" "frø" "føye" "gjenta" "godgjøre" "greine" "grene" "gryne" "harske" "heve" "hvile" "høve" "kake" "karte" "kinke" "kinkse" "kjøle" "klake" "klase" "kleppe" "klimatisere" "klumpe" "kløfte" "kløve" "kløyve" "knoppe" "knyte" "knytte" "komme" "konfirmere" "korke" "korne" "krave" "kruse" "krystallisere" "kurle" "kurve" "kuve" "kvile" "kvisle" "late" "ledde" "lege" "levre" "lugne" "lønne" "løse" "løyse" "låse" "magre" "make" "mate" "materialisere" "mishøre" "nærme" "oppløse" "oppløyse" "oppmagasinere" "ordne" "oste" "ovre" "pakke" "pløse" "pose" "rikke" "roe" "rote" "rotfeste" "sakte" "saktne" "sedimentere" "segmentere" "skavle" "skjemme" "skjære" "skorpe" "skove" "slå" "smule" "snerke" "speile" "stabilisere" "strekke" "stå" "svampe" "svare" "sømme" "tape" "tette" "tilspisse" "tilstoppe" "toppe" "tove" "tufse" "tuste" "tvinne" "tårne" "utbre" "utbreie" "utkrystallisere" "utskille" "utspille" "utspinne" "utvide" "utvikle" "væske" ;
+LIST rl6 = "anmasse" "anskaffe" "attachere" "avføre" "avkle" "bane" "bekjenne" "bemektige" "beregne" "betinge" "bevilge" "brøyte" "bygsle" "danne" "erverve" "etablere" "etterlate" "finne" "forbeholde" "foresette" "forestille" "foreta" "frabe" "fralegge" "frasi" "fraskrive" "frastøte" "få" "ha" "hente" "iføre" "ikle" "innbille" "kjøpe" "lage" "merke" "motsette" "nekte" "notere" "nyttiggjøre" "nærme" "påberope" "pådra" "påkalle" "påta" "sette" "sikre" "skaffe" "skape" "ta" "tilegne" "tilkjempe" "tilknytte" "tilnærme" "tilpasse" "tilrane" "tilrive" "tilslutte" "tilsnike" "tiltrekke" "tiltvinge" "tilvende" "tilvenne" "trygge" "undergi" "underkaste" "underlegge" "underordne" "understå" "unnbe" "unndra" "unne" "utbe" "utmale" "utse" "vedkjenne" "vedstå" "velge" "ønske" ;
+LIST rl7 = "forestille" "merke" "notere" "sikre" "tenke" "vedkjenne" "vedstå" ;
+LIST rl8 = "esle" "etle" "tenke" "tilby" "tillate" "vri" ;
+LIST rl9 = "adaptere" "alliere" "anmasse" "assosiere" "assurere" "avfinne" "avholde" "bare" "basere" "befatte" "beflitte" "befri" "begrense" "begripe" "bekjenne" "beklage" "bekymre" "belage" "bemøye" "benytte" "berge" "berike" "beskjeftige" "besvære" "betakke" "betjene" "betro" "bevæpne" "binde" "blande" "blottstille" "bruke" "bry" "bryne" "bryte" "diskutere" "distansere" "driste" "dy" "egle" "egne" "eksponere" "ekvipere" "engasjere" "ernære" "ete" "etse" "feste" "fjerne" "forarge" "forbanne" "forbarme" "forbause" "forberede" "forbitre" "forbryte" "fordjupe" "fordype" "forflytte" "forfriske" "forgripe" "forgå" "forhandle" "forholde" "forhøre" "forlate" "forlike" "forlyste" "forplikte" "forse" "forsikre" "forskrive" "forsone" "forstå" "forsynde" "forsyne" "forsøke" "fortrøste" "forvisse" "fri" "fylke" "førebu" "gardere" "gasse" "gi" "gifte" "gjemme" "gjette" "gjømme" "gjøre" "gnu" "godte" "grue" "hefte" "heilgardere" "helgardere" "henge" "hengi" "henholde" "henskyte" "henvende" "heve" "hevne" "hive" "hofferde" "hovmode" "hykle" "identifisere" "inngi" "innlate" "innordne" "innpasse" "innrette" "innstille" "innvikle" "interessere" "involvere" "jamre" "jenke" "kile" "kjære" "konsentrere" "kvalifisere" "kvitte" "lausrive" "leke" "lempe" "lene" "lense" "leske" "logge" "lure" "løsrive" "låse" "melde" "menge" "miskunne" "måle" "nære" "nøye" "ofre" "oie" "okke" "omgi" "omstille" "omvende" "opphøye" "oppkaste" "opplive" "oppøve" "ordne" "orientere" "overbevise" "overgi" "presse" "proppe" "pryde" "prøve" "referere" "reinvaske" "renvaske" "reservere" "resonnere" "rette" "ribbe" "rose" "ruse" "røpe" "rådføre" "samle" "sammenligne" "sammenlikne" "sammensverge" "samrå" "selge" "skille" "skjerme" "skjule" "skjønne" "sko" "skolere" "slutte" "slå" "smykke" "smøre" "solidarisere" "spesialisere" "spise" "spørre" "stjele" "styrke" "ta" "tegne" "tilknytte" "trekke" "trene" "trolove" "trulove" "trygge" "trøste" "tømme" "uffe" "uleilige" "umake" "underholde" "underordne" "understå" "undre" "unnskylde" "utbre" "utbreie" "utdanne" "utgyte" "utlate" "utruste" "utstyre" "uttale" "vaksinere" "vegre" "vende" "venne" "verge" "verne" "videreutdanne" "vikle" "vokte" "væpne" "våge" "ydmyke" "ynke" "ytre" "øve" "åpenbare" ;
+LIST rl10 = "basere" "beløpe" "datere" "finne" "forgape" "forme" "føye" "innfinne" "innforlive" "relatere" "utkrystallisere" "utsette" "utvikle" "ønske" ;
+LIST rl11 = "avspeile" "avtegne" "gjenspeile" "hvelve" "klebe" "klistre" "kose" "kveike" "kvelve" "kvi" "kvie" "nedfelle" "sole" "speile" ;
+LIST rl12 = "engste" "ergre" "fortørne" "forundre" "fryde" "godgjøre" "gremme" "harme" "hygge" "irritere" "lekre" "meske" "regalere" "skamme" ;
+LIST rl13 = "flytte" "hufse" "kaste" "kle" "klede" "krenge" "range" "rikke" "rulle" "røre" "skake" "slå" "spenne" "ta" "tørke" "vrikke" ;
+LIST rl14 = "bringe" "fryse" "få" "hufse" "kaste" "kjøre" "kle" "klede" "krenge" "lee" "legge" "lepje" "lette" "lire" "løfte" "måte" "naske" "range" "raspe" "renne" "rive" "rufse" "skylle" "slikke" "slå" "smette" "smugle" "smøye" "spandere" "spenne" "stryke" "suge" "supe" "ta" "trekke" "træ" "tørke" "vokse" "vrenge" ;
+LIST rl15 = "begrave" "forgreine" "forgrene" "forstikke" "innlosjere" "installere" "kaste" "klabbe" "kleie" "klø" "klå" "knipe" "komme" "legge" "pirke" "skjule" "skjære" "sleike" "slenge" "slå" "stryke" "sverte" "ta" "vaske" "velte" ;
+LIST rl16 = "ergre" ;
+LIST rl17 = "hygge" ;
+LIST rl18 = "forelske" "forlibe" "fortape" ;
+LIST rl19 = "forlove" ;
+LIST rl20 = "late" ;
+
+LIST nullv = "bakke" "bedage" "blåse" "brake" "brenne" "brise" "brumle" "bruse" "buldre" "dage" "dages" "demre" "dimme" "dryppe" "drønne" "dugge" "dundre" "dure" "duskregne" "dønne" "ebbe" "fate" "flø" "fossregne" "gråne" "gufse" "gule" "guste" "hagle" "høljeregne" "høljregne" "ise" "kime" "kitle" "klarne" "klikke" "klinge" "klirre" "klukke" "klunke" "klynke" "knake" "knase" "knatre" "knatte" "kneste" "knette" "knirke" "knitre" "knyste" "krase" "krasle" "krible" "krisle" "kritle" "kry" "kvakke" "kvekke" "kvelde" "kåre" "letne" "li" "linne" "ljome" "lyne" "lysne" "løye" "maure" "morgne" "mulne" "murre" "mørkne" "plinge" "prikke" "prikle" "rable" "rasle" "ratle" "regne¹" "rime" "ringe" "rumle" "runge" "ryke" "sabbe" "sildre" "silregne" "siregne" "sisle" "sitre" "skorte" "skrakle" "skrappe" "skrelle" "skumre" "skye" "sludde" "smale" "smelle" "sno" "snø" "somres" "sprake" "sprutregne" "stilne" "stokke" "storme" "stridregne" "striregne" "styrtregne" "støkke" "støve" "surre" "suse" "svartne" "svimle" "svimre" "svuppe" "søkke" "tjukne" "tordne" "trekke" "tusle" "tusse" "tykne" "tø" "tørne" "ulme" "verke" "vintres" "våre" "våres" "yre" "øsregne" ;
+
+LIST t1 = tr1 ; # huge set not included;
+LIST t2 = "affektere" "ane" "anta" "avgjøre" "avtale" "bebude" "bedyre" "befale" "bekjentgjøre" "beklage" "bekrefte" "bemerke" "benekte" "påklage" ;
+LIST t3 = tr3 ; # huge set not included
+LIST t4 = "angi" "be" "bede" "begjære" "betrakte" "ete" "formidle" "høre" "observere" "se" "skjøte" "spise" ;
+LIST t5 = tr5 ; # huge set not included
+LIST t6 = "angå" "begripe" "behøve" "bekomme" "dufte" "dø" "feile" "gjelde" "gjennomstrømme" "gjennomsyre" "ha" "implisere" "interessere" "mangle" "mankere" "miskle" "måtte" "omgi" "omgås" "omhandle" "omslutte" "oppleve" "romme" "runde" "tape" "tekkes" "tilfalle" "tilflyte" "tilhøre" "tilkomme" "tilsi" "tilstøte" "tilstøyte" "tilsvare" "tryte" "turve" "tyde" "undergå" "unnsleppe" "unnvære" "utstråle" "vante" "vederfares" "vederkvege" "vedkomme" "vite" "vone" "øyne" ;
+LIST t7 = "avkrefte" "fascinere" "henrive" "incitere" "keie" "kildre" "klemme" "kløkke" "kvege" "martre" "mette" "mishage" "more" "nage" "opprøre" "pirre" "plage" "satisfisere" "skake" "skremme" "smerte" "støkke" ;
+LIST t8 = "attrå" "avskrekke" "begjære" "døye" "fordra" "foretrekke" "forgude" "frykte" "føle" "gjenoppleve" "gutere" "hate" "kjenne" "kjeske" "like" "lyste" "minnes" "misbillige" "mislike" "nyte" "oppleve" "persipere" "sakne" "sanse" "savne" "skatte" "utholde" "utstå" ;
+LIST t9 = tr9 ; # huge set not included
+LIST t10 = tr10 ; # huge set not included
+LIST t11 = "vrikle" ;
+LIST t14 = "arve" "erholde" "erverve" "få" "motta" ;
+LIST t16 = "drømme" "foretrekke" "frykte" "føle" "hate" "like" "mislike" "presumere" ;
+LIST t17 = "foretrekke" "hate" "like" "lyste" "nyte";
+LIST t18 = "begripe" "ense" "erfare" "erindre" "fatte" "fortjene" "implisere" "indikere" "innebære" "involvere" "merke" "oppfatte" "oppleve" "skjønne" "tro" "tru" "tyde" "tåle" "unnskylde" "vente" "vite" "vone" "ønske" ;
+LIST t19 = "behøve" "fortjene" "innebære" "involvere" "oppleve" "trenge" "tåle" "vone" "ønske";
+
+SET trans = d1 OR d2 OR d3 OR d4 OR d5 OR d6 OR d7 OR d8 OR d9 OR t2 OR t4 OR t6 OR t7 OR t8 OR t11 OR t14 OR t16 OR t17 OR t18 OR t19 ;
+SET trans-med-inf = d3 OR t17 OR t19 ; # incomplete TODO
+SET ditrans = ("donere") OR ("forespeile" )OR d1 OR d2 OR d3 OR d6 OR d7 OR rl6 OR rl7 OR rl8 ;
+SET refl = rl1 OR rl2 OR rl3 OR rl4 OR rl5 OR rl6 OR rl7 OR rl8 OR rl9 OR rl10 OR rl11 OR rl12 OR rl13 OR rl14 OR rl15 OR rl16 OR rl17 OR rl18 OR rl19 OR rl20 ;
+SET n1 = nullv ;                # what is n1?
+SET ikke-refl = n OR np OR vblex - refl;
+# TODO:
+LIST tr1/tr4-10/tr14/dtr1-9/refl/pr1/pr3-10/adv2/adv6-11/adv13-14/kaus = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 tr14 d1 d2 d3 d4 d5 d6 d7 d8 d9 rl1 rl2 rl3 rl4 rl5 rl6 rl7 rl8 rl9 rl10 rl11 rl12 rl13 rl14 rl15 rl16 rl17 rl18 rl19 rl20 pr1 pr3 pr4 pr5 pr6 pr7 pr8 pr9 pr10 a2 a6 a7 a8 a9 a10 a11 a13 a14 k1 k2 ;
+LIST trans12/til = tr12/til ;
+LIST trans2 = tr2 tr18 ;
+
+LIST pr4 = pr4 ;                # TODO
+LIST pa1 = pa1 ;                # TODO
+LIST pa2 = pa2 ;                # TODO
+LIST pa3 = pa3 ;                # TODO
+LIST a6 = a6 ;                # TODO
+LIST a7 = a7 ;                # TODO
+LIST a8 = a8 ;                # TODO
+LIST a9 = a9 ;                # TODO
+SET trans-med-nom = t1 OR t4 OR t5 OR t6 OR t7 OR t8 OR t9 OR t10 OR d1 OR d2 OR d3 OR d4 ;
+SET trans-u11 = t1 OR t2 OR t3 OR t4 OR t5 OR t6 OR t7 OR t8 OR t9 OR t10 OR t14 OR rl1 OR rl4 OR rl5 OR pr4 OR pa1 OR pa2 OR pa3 OR a6 OR a7 OR a8 OR a9 OR d1 OR d2 OR d3 OR rl6 OR rl7 OR rl8 ;
+SET trans-u11-upresent = t1 OR t2 OR t3 OR t4 OR t5 OR t6 OR t7 OR t8 OR t9 OR t10 OR t14 OR rl1 OR rl4 OR rl5 OR pr4 OR pa1 OR pa2 OR pa3 OR a6 OR a7 OR a8 OR a9 OR d1 OR d2 OR d3 OR rl6 OR rl7 OR rl8 ;
+SET trans-u11-upresent-upredik = t1 OR t2 OR t3 OR t4 OR t5 OR t6 OR t7 OR t8 OR t9 OR t10 OR t14 OR rl1 OR rl4 OR rl5 OR pa1 OR pa2 OR pa3 OR a6 OR a7 OR a8 OR a9 OR d1 OR d2 OR d3 OR rl6 OR rl7 OR rl8 ;
+
+# TODO:
+LIST kh#trans-med-nom-u-ditrans = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 ;
+LIST klamme-trans = tr10 tr11 tr14 tr16 tr17 tr18 tr19 tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 ;
+
 LIST ub = ind ;
 LIST ub-adj/<adv> = (adj ind) (adj pprs) <adv> ;
 LIST ub-det = ("en" det) ("noen" det) ("ingen" det) ;
