@@ -31406,6 +31406,12 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove domain heur
 
+"<Andre>" REMOVE:Andre-tilbys-penger np IF
+        (-1 >>>)
+        (1C fv)
+        ;
+# tar sjansar på at det ikkje er namnet (har vel vanlegvis aksent)
+
 
 #:4013
   "<bare>"   REMOVE:4013   (adj pl) IF
