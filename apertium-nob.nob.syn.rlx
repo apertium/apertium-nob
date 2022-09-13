@@ -272,16 +272,16 @@ LIST be = def ;
 LIST be-adj = (adj def) (adj pprs) ;
 LIST be-adj/komp-adj = comp (adj def) (adj pprs) ;
 LIST be-ent = (def sg) ;
-LIST be-ent-adj/be-det/komp-be-sup-adj/ordenstall = ord (adj def sg) (det def) (adj comp) (adj sup def) (adj pprs) ;
-LIST be-ent-adj/komp-be-sup-adj = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
-LIST be-ent-fem-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-fem-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj/be-det/komp-be-sup-adj/ordenstall = ord (adj def sg) (adj def sp) (det def) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj/komp-be-sup-adj = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-fem-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-fem-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-fem-subst = (n f sg def) ;
-LIST be-ent-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-mask-subst = (n m sg def) ;
-LIST be-ent-nøyt-adj = (adj def sg) (adj sup def) (adj pprs) ;
-LIST be-ent-nøyt-adj/komp/sup = (adj def sg) (adj comp) (adj sup def) (adj pprs) ;
+LIST be-ent-nøyt-adj = (adj def sg) (adj def sp) (adj sup def) (adj pprs) ;
+LIST be-ent-nøyt-adj/komp/sup = (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ;
 LIST be-ent-nøyt-subst = (n nt sg def) ;
 LIST be-ent-subst = (n sg def) ;
 LIST be-fl-subst = (n pl def) ;
@@ -477,7 +477,7 @@ LIST m#%mye/lite% = "mye" "lite" ;
 LIST m#%noe% = ("noen" nt) ;
 LIST m#adj = adj ;
 LIST m#adv = adv ;
-LIST m#be-ent-adj-nr2det/komp-be-sup-adj/ordenstall = "samme" "eneste" ord (adj def sg) (adj comp) (adj sup def) (adj pprs) ("hver" det qnt pl) ("neste" det) ("annen" dem pl) ("slik" dem pl) ("sånn" dem pl) ("sådan" dem pl) ("egen" emph pl) ("eigen" emph pl) (adj comp) ;
+LIST m#be-ent-adj-nr2det/komp-be-sup-adj/ordenstall = "samme" "eneste" ord (adj def sg) (adj def sp) (adj comp) (adj sup def) (adj pprs) ("hver" det qnt pl) ("neste" det) ("annen" dem pl) ("slik" dem pl) ("sånn" dem pl) ("sådan" dem pl) ("egen" emph pl) ("eigen" emph pl) (adj comp) ;
 LIST m#be-fl-subst = (n pl def) (adj comp) (adj sup def) ;
 LIST m#fem = f ;
 LIST m#ikke-adj = adv vblex pr prn cnjsub "å" n ij det <ellipse> <kolon> <semi> (cnjcoo clb) (cm clb) ;
@@ -2129,6 +2129,12 @@ MAP:1551 (@adj→)   (adj) IF
 ;
 #  "8.9.2003: I de fleste andre land er det slik."))
 
+
+MAP:de-grunnleggende-ferdighetene (@adj→) (adj sp def) IF
+        (-1C det + dem + pl)
+        (1C n + pl + def)
+;
+# «kvalitetsarbeidet med en av de grunnleggende ferdighetene i skolen»
 
 
 #:1550
