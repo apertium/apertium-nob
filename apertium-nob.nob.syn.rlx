@@ -10988,7 +10988,7 @@ SELECT:860 (@subj) IF
 	(*-1 s#setn-gr LINK *1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
 	(*1 @iv BARRIER @subj)
 	(*1 @iv BARRIER clb)
-	(*1 @iv LINK *-1 @fv LINK NOT *-1 %som%-sbu)
+	(*1 @iv LINK *-1 @fv - pasv LINK NOT *-1 %som%-sbu)
 ;
 #  " i industrien har vi ingen problemer med de reglene 
 #  
@@ -10996,7 +10996,8 @@ SELECT:860 (@subj) IF
 #  NOT 0 @ADV: IKKE: å ta trikken ved Thune klokken to på 
 #  
 # halv ni @SUBJ er blitt en del av mitt \"image\""))
-
+#
+# Ikkje: «Han fradømmes arven etter kona og retten til å få utbetalt hennes livsforsikring på 2 millioner kroner.»
 
 
 #:859
