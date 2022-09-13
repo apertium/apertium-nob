@@ -1885,7 +1885,7 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
         ;
 
 SELECT:masse-tiltak pl IF
-        (0 ("<tiltak>"i OR "<ting>"i))
+        (0 ("<tiltak>"i) OR ("<ting>"i))
         (-1 ("masse"))
         ;
 
@@ -2898,7 +2898,7 @@ SELECT:den+prn ("den¹") IF
         ;
 
 "<døde>" SELECT:antallet-døde adj IF
-        (-1 ("antall" n + def))
+        (-1 ("antall") + n + def)
         ;
 
 "<døde>" SELECT:Den-døde-vegetasjonen adj IF
@@ -13059,6 +13059,7 @@ SELECT:ble-antent adj + pst IF
 		;
 
 "<påtent>"i SELECT:default adj + pst
+                ;
 
 "<trykket>" SELECT:at-trykket-på-etatene n IF
 		(-1 ("at"))
