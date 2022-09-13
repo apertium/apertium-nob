@@ -6055,6 +6055,14 @@ SELECT:element-fra-fotball-og-volleyball (@←p-utfyll) IF
 ;
 # «Blant de siste er "sepak takraw", der elementer fra fotball og volleyball kombineres.»
 
+SELECT:er-blant-forfatterne-som-tildeles (@subj) IF
+        (NEGATE *-1 @subj BARRIER @fv)
+        (0 n)
+        (1 %som%)
+        (2C @fv)
+        ;
+# «SV-politiker Inga Marte Thorkildsen er blant de 80 forfatterne som tildeles forfatterstipend til å lage ny sakprosa.»
+
 
 #:1236
 SELECT:1236 (@←p-utfyll) IF
