@@ -1577,7 +1577,7 @@ MAP:1605 (@adj→)   (adj nt ind sg) IF
 
 
 #:1604
-MAP:1604 (@adj→)   (adj def sg) IF
+MAP:1604 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(1 m#komma)
 	(NOT 2 subst)
 	(*3 ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst LINK NOT 0 m#ikke-subst LINK NOT *-1 m#ikke-adv-adj)
@@ -1586,7 +1586,7 @@ MAP:1604 (@adj→)   (adj def sg) IF
 
 
 #:1603
-MAP:1603 (@adj→)   (adj def sg) IF
+MAP:1603 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(1 m#komma)
 	(NOT 2 subst)
 	(*3C subst LINK NOT 0 fl LINK NOT *-1 m#ikke-adv-adj)
@@ -1595,14 +1595,14 @@ MAP:1603 (@adj→)   (adj def sg) IF
 
 
 #:1602
-MAP:1602 (@adj→)   (adj def sg) IF
+MAP:1602 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(1 ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst)
 	(NOT 1 m#ikke-subst)
 ;
 
 
 #:1601
-MAP:1601 (@adj→)   (adj def sg) IF
+MAP:1601 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(NOT 1 m#komma)
 	(*1 ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst LINK NOT 0 m#ikke-subst LINK NOT *-1 m#ikke-adj)
 	(*1 ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
@@ -1618,14 +1618,14 @@ MAP:1600 (@det→)   (adj gen) IF
 
 
 #:1599
-MAP:1599 (@adj→)   (adj def sg) IF
+MAP:1599 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(1C subst)
 	(NOT 1 fl)
 ;
 
 
 #:1598
-MAP:1598 (@adj→)   (adj def sg) IF
+MAP:1598 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(NOT 1 m#komma)
 	(*1C subst LINK NOT 0 fl LINK NOT *-1 m#ikke-adj)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
@@ -1633,7 +1633,7 @@ MAP:1598 (@adj→)   (adj def sg) IF
 
 
 #:1597
-MAP:1597 (@adj→)   (adj def sg) IF
+MAP:1597 (@adj→)   (adj def sg) OR (adj def sp) IF
 	(*1 be-ent-adj/komp-be-sup-adj LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 be-ent-adj/komp-be-sup-adj BARRIER ikke-adv-adj-u-konj)
 ;
