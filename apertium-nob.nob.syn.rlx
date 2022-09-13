@@ -6703,6 +6703,16 @@ SELECT:1192 (@adv) IF
 ;
 #  "Februar 2002: Torsdag forstod han frustrasjonen."))
 
+SELECT:Også-søndag-rammes (@adv) IF
+	(-2C setn-gr)
+	(-1C @adv)
+	(NOT 0 dato)
+	(0 adverbialsubst)
+	(1C pres/pret)
+	(2C nom)
+;
+# «Også søndag rammes flytrafikken av sykdommen.»
+
 
 
 #:1191
