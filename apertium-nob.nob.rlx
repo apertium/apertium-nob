@@ -35318,6 +35318,14 @@ SELECT:når-han-omtaler nominativ IF
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
 
+SELECT:før-det-stemmes cnjsub IF
+        (0C pr OR cnjsub)
+        (1C expl)
+        (2C pasv)
+        ;
+# «Lørdag tok Parlamentet igjen kontroll og tvang regjeringen til å presentere de nødvendige lovendringene før det stemmes over avtaleteksten.»
+
+
 SELECT:har-økt-samtidig-som-det-tas pres IF
         (*-2 fv BARRIER inf)
         (-1 expl)
