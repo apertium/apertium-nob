@@ -200,7 +200,7 @@ LIST %være/bli% = "være" "bli" ;
 LIST %være/bli%-fin = ("være" <auxp> pres) ("være" <auxp> pret) ("bli" pres) ("bli" pret) ;
 LIST %øy% = "øy" ;
 LIST %øye% = "øye" ;
-LIST <adv> = <adv> ;
+LIST <adv> = <adv> "både" "enten" "hverken" "verken" ;
 LIST <pres-part> = pprs ;
 LIST @←adv = @←adv ;
 LIST @←det = @←det ;
@@ -214,25 +214,25 @@ LIST @adj→ = @adj→ ;
 LIST @adv = @adv ;
 LIST @adv/@←p-utfyll = @adv @←p-utfyll ;
 LIST @adv→ = @adv→ ;
-LIST @alle-funksjoner = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST @alle-funksjoner = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST @app = @app ;
 LIST @det→ = @det→ ;
 LIST @fv = @fv ;
 LIST @hovedfunk-u-@subj = @fv @iv @obj @i-obj @s-pred @o-pred @adv @app @interj @laus-np ;
 LIST @i-obj = @i-obj ;
 LIST @iv = @iv ;
-LIST @kon = @kon ;
-LIST @mod = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon ;
-LIST @mod-@←p-utfyll-@adv = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @←p-utfyll @adv ;
-LIST @mod-@←p-utfyll-@adv-@app = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @←p-utfyll @adv @app ;
+LIST @kon/@nkon = @kon @nkon ;
+LIST @mod = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @nkon ;
+LIST @mod-@←p-utfyll-@adv = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @nkon @←p-utfyll @adv ;
+LIST @mod-@←p-utfyll-@adv-@app = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @nkon @←p-utfyll @adv @app ;
 LIST @o-pred = @o-pred ;
 LIST @obj = @obj ;
 LIST @obj/@i-obj = @obj @i-obj ;
 LIST @obj/@i-obj/@s-pred = @obj @i-obj @s-pred ;
 LIST @obj/@o-pred = @obj @o-pred ;
-LIST @premod = @det→ @adj→ @adv→ @subst→ @tittel @kon ;
-LIST @premod-u-@kon = @det→ @adj→ @adv→ @subst→ @tittel ;
-LIST @premod-u-@kon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-gr ;
+LIST @premod = @det→ @adj→ @adv→ @subst→ @tittel @kon @nkon ;
+LIST @premod-u-@kon/@nkon = @det→ @adj→ @adv→ @subst→ @tittel ;
+LIST @premod-u-@kon/@nkon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-gr ;
 LIST @s-gr = @s-gr ;
 LIST @s-pred = @s-pred ;
 LIST @s-pred/@obj = @s-pred @obj ;
@@ -257,15 +257,15 @@ LIST adj-sup-ub = (adj sup ind) ;
 LIST adj/adv = adj adv ;
 LIST adj/det = adj det ;
 LIST adj/perf-part = adj vblex pp ;
-LIST adv = adv <adv> ;
+LIST adv = adv <adv> "både" "enten" "hverken" "verken" ;
 LIST adv-anslag = "omtrent" "min." "maks." "cirka" "ca." "ca" ;
 LIST adv-mod = "tvert" "trill" "tjokkende" "søkkende" "særdeles" "såre" "såpass" "så pass" "så" "synderlig" "svinaktig" "stummende" "stikk" "steinsens" "splitter" "splinter" "spill" "spikende" "spenna" "sabla" "ruskende" "pukka" "pal" "overvettes" "overmåte" "nokså" "mukk" "midt" "meget" "luta" "likså" "like" "lagom" "kul" "knasende" "knapt" "kanon" "iltrende" "høyst" "hoppende" "hakkende" "gørr" "gullende" "ganske" "forholdsvis" "for" "fly" "flunkende" "enda" "dørgende" "dønn" "dorgende" "dess" "delvis" "dels" "bom" "blikk" "bitte" "bistrende" "bekende" "altfor" "aller" "aldeles" ;
-LIST adv/<adv> = adv <adv> ;
-LIST adv/<adv>/prep = adv <adv> pr ;
+LIST adv/<adv> = adv <adv> "både" "enten" "hverken" "verken" ;
+LIST adv/<adv>/prep = adv <adv> "både" "enten" "hverken" "verken" pr ;
 LIST adv/fv = adv (vblex pres) (vblex pret) (vblex imp) ;
-LIST adverb = adv <adv> (adj nt ind) ("nær" sup def) ("noen" det nt) ;
+LIST adverb = adv <adv> "både" "enten" "hverken" "verken" (adj nt ind) ("nær" sup def) ("noen" det nt) ;
 LIST adverbialsubst = "øyeblikk" "år" "vinter" "vei" "uke" "torsdag" "tonnkilometer" "tiår" "tirsdag" "time" "tiendelssekund" "tidelssekund" "tid" "søndag" "stykke" "stund" "steg" "sted" "sommer" "skritt" "sjømil" "september" "sekundmeter" "sekund" "påske" "pinse" "periode" "onsdag" "oktober" "november" "noengang" "natt" "nanosekund" "nanometer" "måned" "morgen" "minutt" "millisekund" "millimeter" "mil" "mikrometer" "meter" "mars" "mandag" "mai" "m." "lørdag" "kveld" "kvartmil" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "km" "klokke" "kilometer" "juni" "juli" "jul" "januar" "høst" "hverdag" "hundredelssekund" "helligdag" "helgedag" "halvår" "halvmil" "halvmeter" "gang" "fredag" "formiddag" "februar" "ettermiddag" "døgn" "desimeter" "desember" "dag" "centimeter" "august" "april" <dato> ("liv" sg def) ("vår" n) ;
-LIST advtype-konj = (cnjcoo <adv>) ;
+LIST advtype-konj = (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST akk = acc ;
 LIST anf = <anf> <ANF>;
 LIST be = def ;
@@ -372,16 +372,16 @@ SET ikke-@subj-@adv = @alle-funksjoner - @subj - @adv ;
 SET ikke-@subst→ = @alle-funksjoner - @subst→ ;
 SET ikke-@tittel = @alle-funksjoner - @tittel ;
 
-LIST ikke-adj-adv = vblex pr prn cnjsub "å" n ij det (clb cnjcoo) <anf> <ellipse> (cnjcoo <adv>) ;
+LIST ikke-adj-adv = vblex pr prn cnjsub "å" n ij det (clb cnjcoo) <anf> <ellipse> (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST ikke-adj-mask-ub-ent = (adj pst nt ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adj-nøyt-ub-ent = (adj pst mf ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adj-fem-ub-ent = (adj pst nt ind sg) (adj pst m ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adv = "siden" "$," vblex pr prn cnjsub cnjcoo "å" ij n det <ellipse> (adj m) (adj f) (adj mf) (adj pl) (adj comp) (adj sup) (adj pprs) (adj def) ;
-LIST ikke-adv-adj = "siden" "$:" vblex pr prn cnjsub "å" n ij det <ellipse> (clb cnjcoo) (clb cm) (cnjcoo <adv>) ;
-LIST ikke-adv-adj-det = "siden" "$:" vblex pr prn cnjsub "å" n ij <ellipse> (clb cnjcoo) (cnjcoo <adv>) ;
+LIST ikke-adv-adj = "siden" "$:" vblex pr prn cnjsub "å" n ij det <ellipse> (clb cnjcoo) (clb cm) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
+LIST ikke-adv-adj-det = "siden" "$:" vblex pr prn cnjsub "å" n ij <ellipse> (clb cnjcoo) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST ikke-adv-adj-nr2det = vblex pr prn cnjsub "å" n ij <ellipse> <kolon> <semi> ("hin" det) ("denne" det) ("dette" det) ("den" det) ("det" det) ("en" det) ("noen" det m) ("noen" det f) ("noen" det pl) ("ingen" det) (cnjcoo clb) (cm clb) ;
-LIST ikke-adv-adj-nr2det-be-det = vblex pr prn cnjsub "å" n ij <ellipse> <kolon> <semi> ("en" det) ("noen" det) ("ingen" det) (cnjcoo clb) (cm clb) (cnjcoo <adv>) ;
-LIST ikke-adv-adj-u-konj = vblex pr prn cnjsub "å" n ij det cnjcoo <ellipse> <kolon> <semi> (cm clb) (cnjcoo <adv>) ;
+LIST ikke-adv-adj-nr2det-be-det = vblex pr prn cnjsub "å" n ij <ellipse> <kolon> <semi> ("en" det) ("noen" det) ("ingen" det) (cnjcoo clb) (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
+LIST ikke-adv-adj-u-konj = vblex pr prn cnjsub "å" n ij det cnjcoo <ellipse> <kolon> <semi> (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST ikke-det-inkl-parentes-beg = vblex pr prn cnjsub cnjcoo "å" n ij adj adv lpar ;
 LIST ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv ;
 LIST ikke-mod-@←p-utfyll = inf @fv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @interj @laus-np @←sbu @←sbu-rel @s-gr ;
@@ -395,29 +395,29 @@ LIST ikke-mod-@←p-utfyll-@adv-@obj-@i-obj-@s-pred-@app = inf @fv @subj @o-pred
 LIST ikke-mod-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @adv @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-@fv-@←p-utfyll = @adv @iv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon ;
-LIST ikke-mod-u-@kon-@←p-utfyll-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon-@←p-utfyll-@adv-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon-@←p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/komma = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon cm ;
-LIST ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @obj @i-obj @s-pred @o-pred @kon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @nkon @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon/komma = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon cm ;
+LIST ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-u-perfpart-@←p-utfyll-@adv = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@fv-@app = @iv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-mod-u-perfpart-@adv = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-postmod = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @app @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @laus-np @s-gr ;
-LIST ikke-postmod-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @laus-np @s-gr ;
+LIST ikke-postmod = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @app @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
+LIST ikke-postmod-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
 LIST ikke-premod = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-premod-@adv = @fv @iv @subj @obj @i-obj @s-pred @o-pred @app @←det @←subst @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-premod-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-premod-@iv = @fv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@kon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@kon/@nkon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST ikke-premod-@s-gr = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel ;
-LIST ikke-premod-u-@det→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @det→ @←det @←subst @←p-utfyll @interj @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @kon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon-@s-gr = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @laus-np @←sbu @←sbu-rel ;
+LIST ikke-premod-u-@det→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @det→ @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon-@s-gr = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel ;
 LIST ikke-prep = cnjsub adv adj vblex prn "å" n ij det (clb cnjcoo) <anf> <ellipse> ;
 LIST ikke-sanns-ditrans = "skrive" "kjøpe" ;
 LIST ikke-sbu = det pr prn cnjcoo "å" n ij adj adv vblex ;
@@ -433,7 +433,7 @@ LIST infmerke = "å" ;
 LIST interj = ij ;
 LIST intrans = i1 i3 i4 ;
 LIST iv = (vblex inf) (vblex vblex pp) ;
-LIST kh#ikke-@subj/@obj/@i-obj = @fv @iv @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST kh#ikke-@subj/@obj/@i-obj = @fv @iv @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST kh#ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv <<< >>> ;
 LIST kh#nom-fl = (adj pl) (adj comp) (adj sup) (n pl) adv (adj pprs) ("eneste" def) ("egen" pl) ("eigen" pl) ;
 LIST kh#nom-mask-ent-ub = (n m sg ind) (adj mf sg ind) (adj pprs) (adj comp) (adj sup) (adj def) ("eneste" def) ("egen" m ind) ("eigen" m ind) ;
@@ -443,14 +443,13 @@ LIST kh#subst-mask-prop = (np m) ;
 LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) ("." sent clb remspc) ;
 LIST kolon = ("$:" clb) ;
 LIST komma = "$," ;
-LIST komma/ellipse/kolon/semi/konj/adv = cm <ellipse> <kolon> <semi> cnjcoo adv <adv> ;
+LIST komma/ellipse/kolon/semi/konj/adv = cm <ellipse> <kolon> <semi> cnjcoo adv <adv> "både" "enten" "hverken" "verken" ;
 LIST komma/konj = "$," cnjcoo ;
 LIST komma/konj/anf = cm cnjcoo <anf> ;
 LIST komma/strek/parentes-beg = cm guio lpar ;
 LIST komp = comp ;
 LIST komp/%så% = comp ("så" adv) ;
 LIST konj = cnjcoo ;
-LIST konj-<adv> = (cnjcoo <adv>) ;
 LIST konj/%bare% = "bare" cnjcoo ;
 LIST koord-konj = ("men" cnjcoo) ("og" cnjcoo) ("samt" cnjcoo) ("eller" cnjcoo) ;
 LIST kop = "være" "virke" "synes" "hete" "bli" ("kalle" pasv) ;
@@ -465,7 +464,7 @@ LIST lo#cause-verb = "ødelegge" "varme" "treffe" "tilintetgjøre" "smadre" "ska
 LIST lo#ikke-mod-@←p-utfyll-@adv-@app = "hvor" @iv @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr clb "å" cnjsub ;
 LIST lo#inanimat = "øyenvipp" "øyenskygge" "øyenhule" "øyenbryn" "øyelokk" "øyekrok" "øyeeple" "øye" "øye" "øy" "ørken" "ørering" "øregang" "øreflipp" "øre" "øre" "øre" "øl" "økning" "ødemark" "ødeleggelse" "æresbevisning" "årgangsvin" "åre" "åre" "årbok" "år" "år" "åpningstale" "åpning" "åker" "åk" "østen" "økourt" "zoomobjektiv" "zloty" "yttervegg" "ytterdør" "yoghurt" "yen" "wobler" "wire" "wienerbrød" "whisky" "wc" "walkie-talkie" "væte" "væske" "værmelding" "værmelding" "værhane" "våtområde" "vulkan" "vott" "vom" "vom" "vollgrav" "vokal" "vogn" "vogge" "vodka" "vitaminpille" "vitamin" "visker" "viskelær" "visittkort" "visir" "viser" "vise" "vise" "vise" "virus" "virksomhet" "virkning" "vippe" "vippe" "vinterhage" "vinstokk" "vinmark" "vinkart" "vinge" "vinflaske" "vinedikk" "vindusvisker" "vinduskarm" "vindu" "vindu" "vindrue" "vindjakke" "vindeltrapp" "vinde" "vin" "vin" "villmark" "villa" "viktighet" "vikarbyrå" "vik" "vignett" "vifte" "vielsesattest" "videospiller" "video" "vest" "veske" "veske" "vertsland" "vers" "vers" "vern" "vermut" "verk" "verk" "verdipapir" "verdenshjørne" "verdenshav" "verdensdel" "verdenscupseier" "verden" "verb" "veranda" "ventilator" "ventilasjonsanlegg" "ventil" "venteliste" "ventehall" "venstrehånd" "vennskapsby" "vene" "vending" "velling" "vell" "velferdsstat" "velferdsprogram" "vektskål" "vekst" "vekkerur" "veiledning" "veike" "veikart" "vei" "veggmaleri" "vegg" "vedtekt" "vedtak" "vedovn" "vederlag" "vatt" "vaskeri" "vaskepulver" "vaskemaskin" "vaselin" "vase" "varmeutstyr" "varmestue" "varmeapparat" "varetektsfengsling" "varedeklarasjon" "vannspeil" "vannseng" "vannrør" "vannpytt" "vannmelon" "vannmelon" "vannløp" "vannlilje" "vannledning" "vannkran" "vannkant" "vannfarge" "vanndråpe" "vanndamp" "vannbakkels" "vann" "vandreklitt" "vandelsattest" "valutareserve" "valuta" "vals" "valnøtt" "valmue" "valmue" "valgresultat" "vaktpost" "vaksine" "vagina" "vadested" "uttalelse" "utstyr" "utstyr" "utstillingsvindu" "utstillingsvindu" "utstilling" "utspill" "utsmykning" "utskrift" "utskrift" "utsikt" "utrustning" "utropstegn" "utreisetillatelse" "utløp" "utlån" "utlegg" "utkikkspost" "utkast" "utgivelse" "utgave" "utgang" "utflod" "utetthet" "utenriksdepartement" "utbetaling" "urverk" "urtete" "urtehage" "urt" "urskog" "urne" "urinrør" "urin" "unntak" "unnskyldning" "universitet" "univers" "uniform" "ungdomsskole" "ungdomsklubb" "ungdomsherberge" "ungdomsbolig" "undervisningsdepartement" "undertrøye" "undertittel" "undertekst" "underskriftsinnsamling" "underskrift" "underskjørt" "underretning" "undermunn" "underliv" "underleppe" "underkropp" "underkjeve" "underholdsbidrag" "underetasje" "underarm" "ullgarn" "uland" "ukvemsord" "ukelønn" "ukeblad" "ugress" "tøyle" "tøy" "tørkle" "tørketrommel" "tørkesnor" "tønne" "tømme" "tømme" "tøm" "tøffel" "tåteflaske" "tåspiss" "tåre" "tåre" "tåkelur" "tåke" "tå" "tyverialarm" "tyvegods" "tyttebær" "tyttebær" "tynntarm" "tykktarm" "tvil" "tverrligger" "tvangstrøye" "tut" "tusing" "tusenårsrike" "turistbyrå" "turbin" "turban" "tunnel" "tungmetall" "tunge" "tuner" "tulipan" "tulipan" "tue" "tråd" "tryne" "trykksverte" "trykksak" "trykknapp" "trykkluft" "trykkeri" "trygghetsfølelse" "trutmunn" "trussel" "truse" "trosse" "tronstol" "tromsøpalme" "trommel" "trommehinne" "tro" "triviallitteratur" "triumfbue" "triumfbue" "trisse" "tretopp" "trestubbe" "trestamme" "tresnitt" "tresko" "treningsdrakt" "trekull" "trefot" "tredjeplass" "tredjeland" "tredemølle" "trebein" "tre" "tre" "tre" "trau" "trapp" "transportbånd" "transformator" "transformator" "tranebær" "tranebær" "tram" "traktement" "traktat" "trakt" "trafikkgrunnlag" "torv" "torso" "torpedo" "torn" "topplue" "topp" "tomt" "tomt" "tommeltott" "tommelfinger" "tommel" "tomatpuré" "tomatpure" "tomat" "tolvfingertarm" "tobakk" "tobakk" "toast" "toalettbord" "toalett" "tjære" "tjukkmjølk" "tjor" "tjenestebolig" "tittel" "tissemann" "tippekupong" "tinnsoldat" "tinning" "ting" "tind" "timiankvist" "timeplan" "time" "tiltak" "tilståelse" "tilsetningsstoff" "tilpassing" "tillitt" "tillitserklæring" "tilleggsbevilling" "tillatelse" "tilholdssted" "tilgodehavende" "tilfluktssted" "tilbaketrekning" "tidsskrift" "tidsplan" "tid" "thriller" "thriller" "testikkel" "testamente" "terte" "terrorbombe" "territorium" "territorium" "terrin" "terreng" "terning" "termostat" "termos" "termorute" "terminal" "terminal" "term" "teppe" "tennplugg" "tennisball" "tenning" "temperament" "teltstang" "telt" "telegrambyrå" "telegram" "telefonsvarer" "telefonnummer" "telefonkatalog" "telefon" "tekstil" "tekstil" "tekst" "tekst" "tekopp" "teknikk" "teine" "tein" "tegning" "tegnestift" "tegneserie" "tegnefilm" "tegnebrett" "tegnebord" "tegneblokk" "tegn" "tegltak" "teglstein" "teater" "te" "te" "tavle" "taustige" "tau" "tatovering" "tast" "tarmkanal" "tarm" "tapet" "tannstikker" "tannsett" "tannregulering" "tannpasta" "tannhjul" "tann" "tank" "tangent" "tampong" "tallerken" "tale" "takvindu" "takstein" "takrenne" "taburett" "tablett" "søyle" "søppelpose" "søppelkasse" "søm" "søm" "sølvmedalje" "sølvfat" "sædcelle" "sæd" "sår" "såpestykke" "såpeboble" "såpe" "såle" "sytråd" "system" "syrin" "syre" "syngespill" "synagoge" "symfoni" "symaskin" "syltetøy" "sylte" "sylinderlås" "sykehus" "sydpol" "sydhavsøy" "syden" "swing" "sweatshirt" "svømmebasseng" "svømmebasseng" "svovelstikk" "sviske" "svingdør" "svingdør" "sverte" "svennebrev" "svelg" "svamp" "svalgang" "surmelksprodukt" "surdeig" "suppe" "supermarked" "sund" "sump" "sum" "sukkerrør" "sukkerrø" "sukkerlake" "sukkerert" "sugekopp" "substans" "støvsuger" "støvel" "støvel" "støtte" "støtte" "støtte" "støttann" "støtfanger" "stålrør" "stålampe" "stål" "styrthjelm" "stylte" "stykke" "stutteri" "stump" "stumfilm" "stue" "stue" "studenterlue" "stubbe" "strømpebånd" "strømpe" "stråhatt" "strå" "strupe" "struktur" "strekkode" "strek" "strek" "strede" "strandkant" "strandkant" "strand" "straffelov" "straff" "stortå" "stortingsdebatt" "stortingsbehandling" "storseil" "storby" "stoppeklokke" "stopp" "stolpe" "stol" "stokk" "stoff" "stoff" "stoff" "stoff" "stivelse" "stilk" "stiletthæl" "stikling" "stikkpille" "stikkontakt" "stikkelsbær" "stikkelsbær" "stigtrinn" "stige" "stift" "stift" "stereoanlegg" "steppe" "stemmebånd" "stellebord" "stekepanne" "stekegryte" "steinsetting" "steinfrukt" "stein" "steik" "stedsnavn" "sted" "stav" "stav" "statuett" "statue" "statsobligasjon" "stat" "stasjonsby" "stasjon" "stasjon" "start" "stang" "stall" "stakitt" "stake" "stake" "stag" "staffeli" "stadion" "stad" "stabel" "spørsmålstegn" "spørreskjema" "spøkelseshistorie" "spyttklyse" "sprøytemiddel" "sprøytemiddel" "springform" "springbrett" "sprengstoff" "sprengladning" "sprellemann" "sprekk" "sprayboks" "sporstoff" "spore" "spore" "sponplate" "spon" "spole" "spjeld" "spisestue" "spisesal" "spiserør" "spiselig" "spisekart" "spisebord" "spinner" "spinn" "spindelvev" "spillolje" "spillemål" "spillekort" "spillebord" "spilleautomat" "spill" "spill" "spiker" "spenne" "spekesild" "spekepølse" "speilegg" "speil" "spaserdrakt" "spann" "spagnum" "sovesofa" "sovesal" "sovepose" "sovepille" "sovemiddel" "sosiallov" "sosialkontor" "sosialdepartement" "sopp" "sonate" "solkrem" "solfanger" "solcelle" "solbær" "solbær" "sokk" "sogn" "software" "sofabord" "sofa" "snøscooter" "snømann" "snøklokke" "snøklokke" "snøfonn" "snøfnugg" "snøball" "snute" "snurrebass" "snor" "snittsår" "snitt" "sneip" "snegl" "smørbrød" "smør" "småkake" "smykke" "smutthull" "smokk" "smoking" "sminke" "smilehull" "smie" "smekke" "smekke" "smaragd" "smaksløk" "slør" "slåbrok" "slyngplante" "slynge" "slutt" "sluse" "slumkvarter" "slukt" "slott" "slips" "slimhinne" "slim" "slim" "slikkepinne" "sletteland" "slette" "slep" "slalåm" "slakteri" "slakterforretning" "slaktehus" "slagplan" "slagord" "slagmark" "slagg" "skøytesport" "skøyteforbund" "skøyte" "skøske" "skyttergrav" "skyteskive" "skyskraper" "skylapp" "skur" "skulptur" "skulderveske" "skulderblad" "skulder" "skulder" "skuespill" "skråning" "skrå" "skrue" "skrivepult" "skrivemaskin" "skrivebord" "skriv" "skrin" "skrifttegn" "skrift" "skrent" "skranke" "skramme" "skolebok" "skolebenk" "skole" "skogbunn" "skogbryn" "skog" "sko" "skjøte" "skjøt" "skjørt" "skjørt" "skjønnlitteratur" "skjønnhetsflekk" "skjærgård" "skjærebrett" "skjær" "skjorteerme" "skjorte" "skjold" "skjermterminal" "skjerm" "skjerm" "skjerf" "skjenk" "skjema" "skjelett" "skjeggstubb" "skjegg" "skjede" "skinnklær" "skinnben" "skinn" "skinke" "skilt" "skille" "skildring" "ski" "skattekort" "skattekart" "skatoll" "skap" "skamleppe" "skalle" "skall" "skafott" "sjøkart" "sjøbredd" "sjokoladebolle" "sjokolade" "sjampinjong" "sjakkspill" "sjakkbrett" "situasjon" "sitron" "sitat" "sirene" "silo" "silo" "silketrykk" "silkepapir" "silke" "silikon" "sikte" "sikkerhetssele" "sikkerhetsnål" "sikkerhetslenke" "signal" "sigarkasse" "side" "side" "show" "shampoo" "sett" "setning" "setning" "sete" "sesongbudsjett" "servitutt" "serviett" "service" "servant" "sennep" "senking" "sengeteppe" "seng" "sene" "sendrektighet" "sending" "senat" "seminar" "sement" "selvportrett" "selvbiografi" "selvangivelse" "selskapslokale" "seletøy" "sele" "sele" "seksjon" "seksjon" "sekretariat" "sekret" "sekk" "seil" "seddel" "scooter" "savanne" "saus" "sauna" "satsing" "satelitt" "sarkofag" "sangbok" "sang" "sang" "samme" "samling" "samfunn" "samarbeid" "salt" "sal" "sal" "sak" "sagn" "saga" "safir" "røyksky" "røyk" "rørsopp" "rørledning" "rør" "røntgenstråle" "røntgenbilde" "rødkål" "rødkål" "rødgran" "rødbete" "rævhull" "ræv" "råstoff" "råmateriale" "råk" "råd" "rynke" "ryggsøyle" "ryggstø" "ryggrad" "rygglene" "rygg" "rydning" "rutsjebane" "rutine" "ruteplan" "rute" "rustning" "rundstykke" "rundstokk" "rundskriv" "rundskriv" "rumpe" "rumpe" "rulling" "rulleskøyte" "rullepølse" "rullekake" "rullegardin" "rull" "rulett" "rugbrød" "rubin" "rot" "rosmarin" "rosmarin" "rosenkål" "rose" "rose" "roman" "rom" "rom" "rolle" "robot" "robe" "rist" "ris" "ris" "ripsgele" "ringperm" "ring" "ring" "rille" "riksdag" "rike" "rigg" "rift" "rideskole" "riddersal" "ribbevegg" "ribbein" "revle" "rev" "returbillett" "rettsstat" "rettssal" "rettslokale" "rett" "rett" "restaurant" "respirator" "resept" "resepsjon" "republikk" "reol" "renseri" "renne" "renn" "remulade" "remedium" "relé" "reling" "rekvisitt" "reklamebyrå" "reklame" "rekkverk" "reisebyrå" "reisebeskrivelse" "reip" "reim" "reguleringssak" "reguleringsforslag" "regnskog" "regnfrakk" "regionsykehus" "region" "redningsvest" "redegjørelse" "reddik" "redaksjon" "realskole" "reaktor" "rastaurant" "rapport" "ransel" "ramme" "raffinaderi" "radio" "radikal" "radiator" "radar" "rabarbra" "pøng" "pølse" "pæretre" "pære" "pære" "påvirkning" "påskrift" "påskelilje" "påskeegg" "påmelding" "pålegg" "påle" "påkledningsdukke" "påkledning" "påbygg" "pytt" "pyramide" "pynt" "putevar" "pute" "pustehull" "puss" "puss" "puslespill" "purre" "pupill" "pumpe" "pulver" "pult" "pulsåre" "pudder" "puck" "publikasjon" "pub" "prøveprosjekt" "prærie" "prydplante" "provinsby" "proton" "protokoll" "protokoll" "protese" "protein" "prosti" "prosjektil" "prosjekt" "prosessor" "prosent" "propp" "propell" "pronomen" "program" "program" "program" "prognose" "profil" "produkt" "produksjon" "problem" "problem" "privatskole" "prisme" "prisliste" "pris" "printer" "primærkommune" "presenning" "preparat" "premie" "prekestol" "preg" "praksis" "potteplante" "pote" "postkort" "postkontor" "postkasse" "posthus" "poster" "postei" "post" "posisjon" "pose" "portiere" "port" "port" "porsjon" "porsjon" "porselen" "pornofilm" "pore" "polypp" "polstring" "politistasjon" "politirapport" "politikk" "politikammer" "politietteretning" "pokal" "plombe" "plogfure" "plenklipper" "plen" "pleiehjem" "pledd" "platå" "platte" "platespiller" "plate" "plate" "plaster" "plassering" "plassering" "plassbillett" "plass" "plass" "plass" "plasma" "plantevernmiddel" "planteskole" "plante" "plantasje" "plansje" "plankegjerde" "planke" "planetarium" "planet" "plan" "plan" "plakat" "pizza" "pitabrød" "pistasjenøtt" "pipe" "pinnebrød" "pinne" "pille" "piletre" "pilekvist" "pil" "pil" "pikk" "pigment" "piggtråd" "piggsveis" "pigg" "pidestal" "pessar" "persienne" "permisjon" "perle" "pergola" "pergamentpapir" "pergament" "pepperrot" "pepperrot" "pepperkake" "pensjonat" "penis" "pengestøtte" "penger" "penge" "pendel" "pekefinger" "peisestue" "peis" "pedal" "paviljong" "patte" "patron" "pastinakk" "pastinakk" "pasta" "pass" "partitur" "parti" "parsell" "parlament" "parkeringsbot" "parfymeri" "parfyme" "parasoll" "parasitt" "paragraf" "paradis" "paradis" "parabolantenne" "papir" "pantebrev" "panser" "pannekake" "panne" "panne" "panel" "pamflett" "palmeblad" "palme" "palett" "pai" "pagode" "paddehatt" "pacemaker" "p-pille" "ovnsform" "ovn" "oversikt" "oversettelse" "overmunn" "overligger" "overleppe" "overkropp" "overflate" "overenskomst" "overarm" "overall" "osteløype" "ost" "orkide" "organisasjon" "organ" "organ" "ordrebok" "ordkrig" "ordbok" "ord" "opus" "opus" "opptenningsved" "oppslagsverk" "oppslagstavle" "oppslag" "oppskrift" "oppskrift" "oppholdssted" "oppheng" "oppgradering" "oppgave" "oppgave" "oppgang" "oppfatning" "oppakning" "operasjonsstue" "operasjonsbord" "omstilling" "område" "område" "omelett" "omegn" "oljemaling" "oljefyr" "olje" "olje" "olje" "olje" "oliventre" "oliven" "oldsak" "oker" "odde" "odd" "observatorium" "obligasjon" "objektiv" "oase" "nøytron" "nøtteskall" "nøttekjerne" "nøtt" "nøkkerose" "nøkkelhull" "nødutgang" "nærlys" "næringsmelding" "næring" "nåløye" "nytteplante" "nytte" "nysgjerrighet" "nyre" "nyre" "nummerskilt" "nummer" "novellesamling" "novelle" "nougat" "note" "notatblokk" "notatblokk" "notat" "notat" "nord" "noe" "nobelpris" "nitrat" "nite" "nisje" "neve" "netthinne" "nesebor" "nese" "nervesystem" "nervepille" "nervemedisin" "nerve" "neon" "nellik" "nellik" "nellik" "nekrolog" "nek" "negl" "nedtegnelse" "nedløpsrør" "nedgang" "navneskilt" "navn" "navn" "navlestreng" "navle" "naturmedisin" "naturgass" "natur" "nattklubb" "nasjonalscene" "nasjonalsang" "nasjon" "nasjon" "narresmokk" "nakkestøtte" "nakke" "nagle" "nabokommune" "møydom" "møtested" "mønster" "møne" "møne" "møllpose" "mølle" "møblement" "møbel" "månedsblad" "måne" "myr" "mynte" "mynte" "mynt" "mye" "mutter" "muslingskall" "muskulatur" "muskatt" "muskatnøtt" "muskatnøtt" "musikkstykke" "musikkskole" "musikkonservatorium" "murstein" "mur" "munnvik" "munning" "munnhule" "munn" "mumie" "mule" "mousse" "motor" "motiv" "motgift" "motell" "mosebok" "morkake" "morene" "monument" "montasje" "monopol" "monogram" "monografi" "monitor" "molekyl" "modifikasjon" "missil" "misdannelse" "minnesmerke" "minkfarm" "mineral" "milt" "millionbeløp" "milepæl" "mile" "mikstur" "mikroprosessor" "mikroorganisme" "mikrobølgeovn" "midtgang" "metalltråd" "metall" "merkevare" "merke" "merke" "meny" "mening" "mengde" "melon" "melon" "mellomrom" "mellomnavn" "melding" "melding" "meieri" "medlemskort" "medium" "medisterpølse" "medisin" "medisin" "medikament" "meddelelse" "medaljong" "medaljong" "medalje" "matvare" "matte" "materie" "materiale" "materiale" "mat" "mat" "masse" "massasjeinstitutt" "massasjeinstitutt" "maskinpistol" "maskingevær" "maskineri" "maskin" "maskin" "maskering" "mascara" "marsipanbrød" "marmelade" "markise" "mark" "marionett" "marinade" "margeritt" "margarin" "manual" "manifest" "mango" "mandel" "mandarin" "malm" "malm" "maling" "maleri" "makron" "make-up" "mahogni" "magnet" "magesekk" "mage" "løvtre" "løvskog" "løvetann" "løvetann" "løpstikke" "løpstikke" "løpeseddel" "løkke" "løk" "løgnhistorie" "løe" "lærreim" "læreplan" "lærebok" "lårbein" "lår" "lysstoffrør" "lysning" "lyske" "lyskaster" "lysingstid" "lysekrone" "lysbilde" "lys" "lyktestolpe" "lykt" "lykkehjul" "lydbånd" "lyd" "lunge" "lund" "luftvei" "luftrør" "luft" "lue" "lov" "lov" "lotto" "lotteri" "losji" "losje" "lommebok" "lokk" "lokale" "lokalavis" "loggbok" "loft" "loft" "loft" "lodd" "livmor" "liv" "liv" "litteratur" "liste" "lisse" "linoleum" "lindetre" "lind" "liming" "lillefinger" "lilje" "lilje" "lian" "levested" "leverpostei" "lever" "leseundersøkelse" "leserbrev" "lerret" "lerret" "lerk" "leppestift" "leppe" "leopardskinn" "lenke" "lenestol" "lend" "lem" "lem" "lem" "lekt" "leirbål" "leilighet" "leiebolig" "legg" "legering" "legemsdel" "legemiddel" "legeattest" "ledningsnett" "ledning" "ledning" "leddbånd" "lavland" "lava" "lav" "laurbærblad" "laurbær" "landsted" "landsdel" "land" "land" "lampe" "lagerrom" "lagerplass" "lager" "laboratorium" "køkultur" "kz-leir" "kvarter" "kvalme" "kurs" "kupong" "kunstverk" "kunstmuseum" "kunst" "krypt" "krostue" "kropp" "krone" "krone" "kro" "kritikk" "krig" "krematorium" "krav" "kraft" "kraft" "kostnad" "kort" "kort" "kort" "korridor" "kor" "kopp" "konversasjonsleksikon" "kontrakt" "kontor" "kontakt" "konsulat" "konstruksjon" "konsertsal" "konsentrasjonsleir" "konjakk" "konferanse" "komposisjon" "komponent" "kommunekontor" "kommune" "kommune" "kommandobro" "kombinert" "kok" "kode" "knekt" "knehasene" "kne" "kløver" "klippe" "klinikk" "kleshenger" "kjøttkake" "kjøkkenvifte" "kjøkkenhage" "kjole" "kjennelse" "kjeft" "kjeft" "kiwi" "kirsebær" "kirsebær" "kirke" "kiosk" "kinn" "kilometer" "kasse" "kart" "kantine" "kantine" "kanal" "kanal" "kanal" "kamp" "kalkulator" "kake" "kakao" "kafeteria" "jur" "jorde" "jordbær" "jordbær" "jobb" "is" "inventar" "interesse" "institusjon" "institusjon" "installasjon" "inspirasjon" "inntrykk" "inntrykk" "innslag" "innsjø" "initiativ" "illustrasjon" "idrettshall" "høyhastighetsbane" "hår" "hår" "håp" "håndbok" "håndbak" "hånd" "hånd" "hånd" "hytte" "hybelkanin" "hvitløk" "hvite" "hva" "hus" "hus" "hus" "hurtigløpssport" "hull" "hule" "hud" "hovedfagsoppgave" "hotell" "hospital" "hopp" "hop" "hoftene" "hode" "hjul" "hjul" "hjerte" "hjerne" "hjemstavn" "hjemland" "hjemby" "hjem" "hjelp" "historie" "historie" "historie" "hefte" "hede" "hav" "hav" "hav" "hav" "haug" "haug" "hatt" "hanske" "hank" "hane" "handlingsprogram" "halssmykke" "hals" "hall" "hake" "hagtornhekk" "hagtorn" "grønnsak" "gryte" "gruppering" "gruppe" "grunnstoff" "grunn" "grunn" "grotte" "griljermel" "gressløk" "grense" "grein" "grantre" "gran" "godteri" "glassplint" "glass" "gjenstand" "gjenlyd" "geysir" "genteknologi" "genser" "gemakk" "garderobe" "garderobe" "gang" "galleri" "galleri" "første" "føflekk" "føde" "fyrstikkeske" "fyrstikk" "fyrrom" "fyr" "furutre" "frukt" "fritidsklubb" "fritidshus" "fritidshjem" "fotsåle" "fotnote" "fot" "fossil" "foss" "forventning" "forutsetning" "fortelling" "fortegnelse" "fortann" "forsvar" "forslag" "forslag" "forslag" "forskrift" "forsikringspolise" "forråd" "forretning" "forord" "formålsparagraf" "formular" "formue" "formue" "forkle" "forkjølelsessår" "forhøyning" "forhåndsomtale" "forhold" "forfatning" "fordøyelseskanal" "fordypning" "forbundsstat" "forbundsrepublikk" "forbud" "forbrenning" "forbein" "forandring" "forandring" "folketing" "folkesagn" "folder" "foaje" "fnugg" "flodleie" "flodbredd" "flod" "flis" "flette" "flenge" "flekk" "flate" "flass" "flaske" "flanke" "fjør" "fjære" "fjærdrakt" "fjord" "fjellkjede" "fjell" "fjell" "fitte" "fiskesuppe" "fiskerett" "fiskekort" "fiskekake" "fiskefilet" "firkløver" "fippskjegg" "fiol" "fiol" "finne" "fingerspiss" "finger" "filofax" "film" "film" "film" "filler" "fikentre" "fiber" "fiber" "fettstoff" "fetaost" "feta" "festskrift" "festmåltid" "festmåltid" "ferielandsby" "fennikel" "femøring" "femtedel" "femogtjueøring" "femmer" "feltseng" "feil" "feil" "feber" "fauna" "fatle" "fat" "fat" "fastland" "fasit" "fasade" "fargestoff" "fargefilm" "fang" "familieliv" "fallskjerm" "fakkel" "fajanse" "fajanse" "faglitteratur" "fagbok" "fagblad" "fabrikkhall" "fabrikk" "evighet" "eventyr" "evangelium" "etikett" "eter" "etasje" "estragon" "estragon" "esse" "espalier" "eske" "ert" "ernæring" "erme" "erklæring" "eple" "enzym" "entredør" "ensym" "enkeltbillett" "enhet" "enhet" "enhet" "engangsbeløp" "eng" "endringsforslag" "endring" "endring" "endetarm" "ende" "ende" "emblem" "emalje" "emalje" "elv" "element" "elektron" "ekvator" "ekteseng" "ekstrakt" "einer" "einebær" "eiketre" "eiketre" "eik" "eik" "eiendom" "eiendom" "eiendel" "egn" "eggstokk" "eggleder" "eggeplomme" "eggehvitestoff" "eggehvite" "eggcelle" "egg" "egg" "egg" "egenskap" "effekt" "edelmetall" "eddik" "edb-anlegg" "dørklokke" "dør" "dødsattest" "dødsannonse" "dåpsattest" "dypfryser" "dypfryser" "dynge" "dynetrekk" "dusør" "duell" "drønn" "drue" "drivhus" "dritt" "dressing" "dreieskive" "dreieskive" "dreiebok" "drakt" "drakt" "dragkampen" "drage" "drag" "dongeribukser" "domkirke" "domisil" "dollar" "dokument" "doktoravhandling" "dokke" "dobbeltseng" "dobbeltseier" "distrikt" "diskotek" "diskett" "direktørstol" "direktiv" "direktiv" "diplom" "dinar" "dimensjon" "dill" "dill" "diktsamling" "dikt" "digitalur" "dieselolje" "dieselmotor" "diamant" "dessert" "departement" "departement" "deodorant" "del" "del" "del" "del" "deksel" "deklarasjon" "dataskjerm" "datamaskin" "datamaskin" "dapenge" "dampmaskin" "dam" "dam" "dalføre" "daler" "dagsavis" "daginstitusjon" "daghjem" "dagbok" "container" "computer" "collage" "cocktail" "chutney" "chrysanthemum" "chemise" "champagne" "celle" "celle" "carport" "cardigan" "bøtte" "bøketre" "bøketre" "bøkeskog" "bøk" "bøk" "bærepose" "båtbrygge" "båre" "båndopptaker" "bål" "bygning" "bygging" "byggestein" "byggemateriale" "byggekloss" "byggeareal" "by" "butterdeig" "butikk" "busk" "burgunder" "bunke" "bunke" "buljongterning" "bukser" "brønn" "brødskive" "brød" "brød" "bryst" "bryst" "bruksrett" "brosje" "bronkie" "brokkoli" "brokkoli" "brokke" "brokk" "broderi" "brisk" "bringebær" "bringebær" "bringe" "brilleglass" "brille" "brie" "brevsprekk" "brevkort" "brev" "brev" "brennetid" "brennesle" "bremse" "bregne" "brannsår" "brannalarm" "bowler" "bot" "borg" "bordbein" "bord" "bomullsgarn" "bombe" "bolle" "bolle" "bolig" "bolig" "bokstav" "boks" "boks" "bok" "boikott" "bog" "bløtkake" "blåbær" "blåbær" "bluse" "bluse" "blues" "blonde" "blomsterpotte" "blomkål" "blomkål" "blodåre" "blodkar" "blindtarm" "blikkboks" "blekk" "bleie" "blazer" "blankett" "blad" "blad" "bjørk" "bjerk" "bjelle" "bjelke" "bitter" "bit" "bistro" "bisetning" "biografi" "binge" "bind" "bilradio" "billykt" "billett" "billedrør" "billedbok" "bildekk" "bilde" "bilag" "bil" "bikini" "biff" "bibliotek" "bibliotek" "bibliografi" "betydning" "betong" "betaling" "besvarelse" "bestselger" "bestemmelse" "bestanddel" "beskyldning" "beskjed" "beskadigelse" "bergflette" "bergart" "beretning" "bensinstasjon" "ben" "beløp" "beløp" "beliggenhet" "bekledning" "bekkenbunn" "bekk" "bein" "bein" "beholder" "beholder" "behandlingstilbud" "befalskole" "bedring" "bartre" "bart" "bart" "barskog" "barnetilskudd" "barnehavetilbud" "barnehageplass" "barnebok" "barnebidrag" "barm" "bank" "banestrekning" "banan" "balle" "ball" "bag" "avvisning" "avtrekker" "avsnitt" "avkastning" "avis" "avhandling" "avfallspose" "avdrag" "avdeling" "avdeling" "avdeling" "avdeling" "automat" "attest" "atomkjerne" "atom" "asparges" "ask" "artikkel" "artikkel" "armbånd" "arm" "arm" "ark" "arbeidsplass" "arbeide" "arbeid" "arbeid" "appelsin" "anvisning" "antall" "annonse" "annonse" "anleggsbrakke" "anlegg" "anemone" "anemone" "andedam" "ammoniakk" "alter" "alt" "alpinrenn" "almetre" "alkohol" "alfalfa" "aldershjem" "albue" "akvakultur" "akuttavdeling" "aktstykke" "aktivum" "aktivum" "akademi" "afghaner" "adresse" "administrasjon" "adjektiv" "aceton" "zimbabwe" "zambia" "zaire" "yemen" "yding" "wien" "værløse" "vridsløselille" "vridsløse" "vordingborg" "vojens" "vogesene" "vietnam" "viborg" "vestindia" "vesten" "vesten" "vest-tyskland" "vest-samoa" "venezuela" "venezia" "vendsyssel" "velferdsprogram" "vejle" "vejen" "vatikanstaten" "vatikanet" "varde" "vanuatu" "vanløse" "vallensbæk" "valby" "uruguay" "uranus" "ungarn" "ukraina" "uganda" "usa" "tønder" "tyskland" "tyrol" "tyrkia" "tuvalu" "tunø" "tunisia" "tsjekkoslovakia" "trinidad" "toten" "torshavn" "tonga" "togo" "tibet" "tiberen" "thyborøn" "thy" "thurø" "thule" "thisted" "themsen" "thailand" "tchad" "tanzania" "taiwan" "sør-yemen" "sør-jylland" "sør-afrika" "sønderborg" "sæby" "syria" "sydpolen" "syd-schleswig" "syd-korea" "syd-amerika" "swaziland" "sverige" "svendborg" "sveits" "svartehavet" "svaneke" "sundeved" "sudan" "stubbekøbing" "struer" "storebelt" "storbritannia" "stor-københavn" "stockholm" "stillehavet" "stevns" "stege" "sprogø" "spania" "sovjetunionen" "sovjet" "sorø" "somalia" "slovenia" "slovakia" "slagelse" "skælskør" "skåne" "skottland" "skjern" "skive" "skandinavia" "skanderborg" "skagerrak" "skagen" "sjælland" "sjustjernen" "singapore" "sinai" "silkeborg" "sild" "sicilia" "sibir" "shetlandsøyene" "seychellene" "serbia" "senegal" "seinen" "schleswig" "saturn" "sardinia" "sandvig" "samsø" "samoa" "salomonøyene" "salling" "sakskøbing" "rønne" "rønde" "rømø" "rødehavet" "rødby" "rwanda" "russland" "rudkøbing" "roskilde" "romerriket" "romania" "roma" "ringsted" "ringkøbing" "ribe" "rhinen" "regjeringen" "randers" "Qatar" "påskeøya" "pyreneene" "præstø" "provence" "preussen" "praha" "portugal" "pommern" "polynesia" "politiforbund" "polen" "polarstjernen" "pluto" "peru" "persia" "peloponnes" "pedersker" "paris" "paraguay" "panama" "palestina" "pakistan" "ostindia" "oslo" "oslo" "orkenøyene" "ordrup" "oman" "oljedirektiv" "odense" "odder" "oceania" "olbilletter" "ol-billetter" "nørresundby" "næstved" "nysted" "nykøbing" "nyborg" "nubia" "norskehavet" "norge" "nordsjøen" "nordkapp" "nordkalotten" "nord-yemen" "nord-schleswig" "nord-korea" "nord-jylland" "nord-amerika" "nigeria" "niger" "nicaragua" "nibe" "neptun" "nepal" "neksø" "nederland" "nato" "napoli" "namibia" "nakskov" "nato" "møn" "moskva" "mosambik" "mors" "mongolia" "monaco" "milano" "midt-østen" "middelhavet" "mexico" "merkur" "mellom-europa" "mellom-amerika" "melkeveien" "melanesia" "mauretania" "marstal" "marokko" "marina" "maribo" "mariager" "mandø" "mandsjuria" "malta" "mallorca" "mali" "malaysia" "malaya" "malawi" "makedonia" "løgstør" "limfjorden" "lillebelt" "likudregjeringen" "kypros" "Kors" "Karibien" "Kamerun" "justisdepartementet" "indremisjonsselskapet" "hedmark" "gudbrandsdalen" "gudbrandsdalen" "group" "gomanbakeri" "giga" "fosssaken" "folkpartiet" "flensburg" "flandern" "finland" "filippinene" "fiji" "femø" "femern" "farum" "fanø" "falster" "fakse" "eøsavtalen" "europa" "eurasia" "etruria" "etiopia" "estland" "esrum" "esbjerg" "england" "elsero" "elsass" "elfenbenskysten" "elben" "drejø" "dragør" "dolomittene" "ditmarsken" "damaskus" "cuba" "colombia" "canada" "california" "byutviklingskomiteen" "bretagne" "brasil" "bolivia" "bogense" "bloksberg" "berlin" "bergen" "belgia" "atlanterhavet" "atlanterhavet" "athen" "argentina" "antillene" "angola" "andalusia" "amerika" "alpinanlegg" "akershus" "afrika" "afghanistan" "adriaterhavet" "abessinia" "as" ("denne" prn pers) ("disse" prn pers) ("all" nt sg) ("det" prn pers) ("god" adj sup def) ("hel" adj pst def sg) ("dette" prn pers) ("den" prn pers) ;
 LISt lo#kop-pass = "være" "virke" "hete" "bli" pasv ;
-LIST lo#mod-@adv-@←p-utfyll = "seg" "at" @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @kon @←p-utfyll @adv @s-gr clb ;
+LIST lo#mod-@adv-@←p-utfyll = "seg" "at" @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @kon @nkon @←p-utfyll @adv @s-gr clb ;
 LIST lo#presentering-verb = i2 pstv ;
 LIST lo#reverse-verb = "vettskremme" "vedrøre" "vedkomme" "vedgå" "urø" "tynge" "treffe" "tilstøte" "tilkomme" "tilhøre" "tilfredsstille" "tilfalle" "terge" "særprege" "særmerke" "såre" "symbolisere" "støte" "støkke" "streife" "stigmatisere" "speile" "smitte" "smigre" "smerte" "skyldes" "skuffe" "skremme" "skake" "sjokkere" "sjenere" "sjarmere" "seigpine" "satisfisere" "ryste" "romme" "reflektere" "påhvile" "pryde" "prege" "plage" "plage" "pirre" "pine" "passe" "overvelde" "overskygge" "overrisle" "oppta" "opprøre" "oppirre" "opphisse" "omslynge" "omslutte" "omhandle" "omgi" "omfatte" "nage" "more" "mishage" "mette" "mette" "lindre" "lamslå" "kle" "kjede" "kile" "irritere" "involvere" "interessere" "innramme" "inneholde" "innebære" "innbefatte" "incitere" "henrykke" "henrive" "henføre" "harme" "gripe" "glede" "gjennomsyre" "gjennomstrømme" "gjelde" "gavne" "gagne" "frustrere" "forvirre" "forurolige" "forundre" "forulempe" "foruleilige" "fortørne" "forskrekke" "fornøye" "fornærme" "forfjamse" "forferde" "forbløffe" "forbause" "forarge" "fjetre" "favne" "fascinere" "erstatte" "ergre" "enervere" "ekvivalere" "egge" "dupere" "desillusjonere" "deprimere" "blidgjøre" "bevege" "beta" "berøre" "beruse" "berolige" "berettige" "bekymre" "bekomme" "behage" "begeistre" "bedøve" "bedåre" "bedrøve" "avspeile" "atskille" "angå" "affisere" ;
 LIST lo#top-setn-gr = clb <<< >>> ("at" cnjsub) guio ;
@@ -712,7 +711,7 @@ LIST kh#trans-med-nom-u-ditrans = tr1 tr4 tr5 tr6 tr7 tr8 tr9 tr10 ;
 LIST klamme-trans = tr10 tr11 tr14 tr16 tr17 tr18 tr19 tr1 tr2 tr3 tr4 tr5 tr6 tr7 tr8 tr9 ;
 
 LIST ub = ind ;
-LIST ub-adj/<adv> = (adj ind) (adj pprs) <adv> ;
+LIST ub-adj/<adv> = (adj ind) (adj pprs) <adv> "både" "enten" "hverken" "verken" ;
 LIST ub-det = ("en" det) ("noen" det) ("ingen" det) ;
 LIST ub-ent = (ind sg) (sg ind) ;
 LIST ub-ent-fem-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj f ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt f sg) ("neste" det) ("annen" dem f ind sg) ("slik" dem f sg) ("sånn" dem f sg) ("sådan" dem f sg) ("egen" emph f ind sg) ("eigen" emph f ind sg) ("halvannen" qnt f) (adj comp) ;
@@ -774,7 +773,7 @@ MAP:6011 (@det→)   ("slags" n ubøy) IF
 ;
 
 #:1674
-MAP:1674 (@adv @adv→)   (<adv>) IF
+MAP:1674 (@adv @adv→)   <adv> IF
 	 (NOT 0 adj-komp)
 	 (NOT 1C fv)
 ;
@@ -783,7 +782,7 @@ MAP:1674 (@adv @adv→)   (<adv>) IF
 
 
 #:1673
-MAP:1673 (@adv)   (<adv>) IF
+MAP:1673 (@adv)   <adv> IF
 	(1C fv)
 ;
 #  "28.11.2002: Hun verken spiser eller drikker."))
@@ -5022,7 +5021,7 @@ CONSTRAINTS
 	(NOT 0 itg)
 	(1 kop)
 	(-1 s#setn-gr)
-	(*2 ikke-premod-@adv LINK 0 @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @←sbu/@←sbu-rel)
+	(*2 ikke-premod-@adv LINK 0 @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @←sbu/@←sbu-rel)
 ;
 #  " det var hensynet til partiet og partilederen som styrte"))
 
@@ -5148,7 +5147,7 @@ CONSTRAINTS
 
 #:1245
 "<som>" REMOVE:1245 (@s-pred) IF
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(*-1C s#periode-beg/clb-konj BARRIER %som%-@s-pred)
 ;
 #  " Fjern @S-PRED på \"som\" hvis det står konjunksjon foran og 
@@ -5991,7 +5990,7 @@ SELECT:1240 (@←p-utfyll) IF
 
 #:1239
 SELECT:1239 (@←p-utfyll) IF
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-2 parentes-beg/strek LINK 1C prep LINK NOT *1 s#setn-gr)
 	(*-2 parentes-beg/strek BARRIER verb)
 	(*-2 parentes-beg/strek BARRIER parentes-slutt/strek)
@@ -6049,7 +6048,7 @@ SELECT:element-fra-fotball-og-volleyball (@←p-utfyll) IF
         (*-4 @subj BARRIER setn-gr)
 	(-3C prep)
 	(-2C @←p-utfyll)
-	(-1C @kon)
+	(-1C @kon/@nkon)
 	(NOT -1 prep-intrans)
 	(NOT 1 subst-prop)
 ;
@@ -6108,8 +6107,8 @@ SELECT:1234 (@←p-utfyll) IF
 	(NOT 0 @fv)
 	(NOT 0 @←subst)
 	(*-2C prep LINK NOT 1 tegnsetting/parentes/konj)
-	(*-2C prep LINK *1 ikke-@det→ LINK NOT 0 ikke-mod-@←p-utfyll LINK *1 ikke-@adj→-@adv→ LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-u-@det→)
-	(*-1 @kon LINK NOT -1 ikke-premod LINK NOT 0 tegnsetting/parentes LINK NOT 2 ikke-premod)
+	(*-2C prep LINK *1 ikke-@det→ LINK NOT 0 ikke-mod-@←p-utfyll LINK *1 ikke-@adj→-@adv→ LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-u-@det→)
+	(*-1 @kon/@nkon LINK NOT -1 ikke-premod LINK NOT 0 tegnsetting/parentes LINK NOT 2 ikke-premod)
 ;
 
 
@@ -6122,8 +6121,8 @@ SELECT:1233 (@←p-utfyll) IF
 	(NOT 0 @←subst)
 #	(NOT 0 @subst→)
 	(*-2C prep LINK NOT 1 tegnsetting/parentes/konj)
-	(*-2C prep LINK *1 ikke-@det→ LINK NOT 0 ikke-mod-@←p-utfyll LINK *1 ikke-@adj→-@adv→ LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-u-@det→)
-	(*-1 @kon LINK NOT -1 ikke-premod LINK NOT 0 tegnsetting/parentes LINK NOT 2 ikke-premod)
+	(*-2C prep LINK *1 ikke-@det→ LINK NOT 0 ikke-mod-@←p-utfyll LINK *1 ikke-@adj→-@adv→ LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-u-@det→)
+	(*-1 @kon/@nkon LINK NOT -1 ikke-premod LINK NOT 0 tegnsetting/parentes LINK NOT 2 ikke-premod)
 ;
 #  " uttrykk for en ideologisk og kulturell holdning
 #  opprettelsen av lokale (@←P-UTFYLL/@ADJ→) og rådgivende 
@@ -6140,7 +6139,7 @@ SELECT:1232 (@←p-utfyll) IF
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
 	(NOT *-3 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 ;
 #  " av verdens totale fangst og produksjon @←P-UTFYLL av 
 #  
@@ -6155,7 +6154,7 @@ SELECT:1231 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-2 advtype-konj LINK -1C prep LINK NOT *1 s#setn-gr)
 	(*-2 advtype-konj BARRIER verb)
 ;
@@ -6170,7 +6169,7 @@ SELECT:1230 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-2 advtype-konj LINK 1C prep LINK NOT *1 s#setn-gr)
 	(*-2 advtype-konj BARRIER verb)
 ;
@@ -6185,7 +6184,7 @@ SELECT:1229 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 nom LINK NOT 0 verb LINK *1 ikke-@adv LINK -1 prep)
 ;
 #  " at uten mat og drikke @←P-UTFYLL duger helten ikke"))
@@ -6199,7 +6198,7 @@ SELECT:1228 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK 0 verb LINK *1 ikke-@adv LINK -1 prep)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 nom)
 ;
@@ -6215,7 +6214,7 @@ SELECT:1227 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK 0 verb LINK *1 ikke-@adv LINK -1 prep)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 nom LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
@@ -6232,7 +6231,7 @@ SELECT:1226 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK 0 verb LINK *1 ikke-@adv LINK -1 prep)
 	(*-3 ikke-mod-@←p-utfyll-@adv-@app LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 nom LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 nom)
 ;
@@ -6249,7 +6248,7 @@ SELECT:1225 (@←p-utfyll) IF
 	(NOT 0 @det→)
 	(NOT 0 @fv)
 #	(NOT 0 @subst→)
-	(*-2C @←p-utfyll LINK 1 @kon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
+	(*-2C @←p-utfyll LINK 1 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-premod-@adv)
 	(*-3C prep LINK 0 ditrans-prep)
 ;
 #  " mangelen på balanse mellom tilbud og etterspørsel @←P-UTFYLL"))
@@ -6279,7 +6278,7 @@ SELECT:1224 (@←sbu) IF
 SELECT:1223 (@←sbu) IF
 	(0 %at/om%/infmerke)
 	(NOT -1 s#komma/konj)
-	(*-1C @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1C @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 #  "det er svært interessant for mannen med hatt og frakk 
 # å @←SBU tilhøre en slik familie"))
@@ -6373,7 +6372,7 @@ SELECT:1215 (@←sbu-rel) IF
 #:1214
 SELECT:1214 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(*-1C @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1C @s-pred LINK 1 prep LINK *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 #  " det var hensynet til partiet og partilederen som styrte"
 #      :group 86))
@@ -6383,7 +6382,7 @@ SELECT:1214 (@←sbu-rel) IF
 #:1213
 SELECT:1213 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(*1 %som%-sbu LINK -1 @kon LINK *-1 @fv LINK NOT *-1 @fv)
+	(*1 %som%-sbu LINK -1 @kon/@nkon LINK *-1 @fv LINK NOT *-1 @fv)
 ;
 #  "Velg @←SBU-REL hvis det kommer en koordinert relativsetning 
 # etter. \"Heuristisk\" - vi kan ikke vite med sikkerhet 
@@ -6394,7 +6393,7 @@ SELECT:1213 (@←sbu-rel) IF
 #:1212
 SELECT:1212 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(*1 %som%-sbu LINK -1 @kon LINK *-1 @fv LINK *-1 @fv LINK NOT *-1 @fv)
+	(*1 %som%-sbu LINK -1 @kon/@nkon LINK *-1 @fv LINK *-1 @fv LINK NOT *-1 @fv)
 	(*1 %som%-sbu LINK *-1 s#sbu LINK NOT *-1 s#sbu)
 ;
 #  "Samme som forrige, men godtar annen setning med synlig 
@@ -6405,7 +6404,7 @@ SELECT:1212 (@←sbu-rel) IF
 #:1211
 SELECT:1211 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(*1 @fv LINK *1 setn-slutt/fin-verb LINK -1 prep LINK NOT *-1 s#komma)
 ;
 #  " huset som jeg bor i og som @←SBU-REL jeg er glad i,(@S-GR) er fint
@@ -6427,7 +6426,7 @@ SELECT:1211 (@←sbu-rel) IF
 #:1210
 SELECT:1210 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(*1 @fv LINK *1 setn-slutt/fin-verb LINK -1 prep LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
 ;
 #  "Her godtar vi ikke-clb-komma mellom, men bare så lenge det står 
@@ -6439,7 +6438,7 @@ SELECT:1210 (@←sbu-rel) IF
 #:1209
 SELECT:1209 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(*-3 %som%-sbu LINK NOT 0 @adv LINK *1 @fv LINK NOT *1 @fv)
 ;
 #  "Koordinering av @←SBU-REL:
@@ -6455,7 +6454,7 @@ SELECT:1209 (@←sbu-rel) IF
 #:1208
 SELECT:1208 (@←sbu-rel) IF
 	(NOT 0 prep)
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(*-5 %som%-sbu LINK NOT 0 @adv LINK *1 @fv LINK *1 @fv LINK NOT *1 @fv)
 	(*-5 %som%-sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -6728,7 +6727,7 @@ SELECT:1191 (@adv) IF
 	(NOT 0 %selv%)
 	(1 @iv)
 	(NOT -1 s#komma)
-	(*-1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @subj BARRIER s#komma)
 ;
 
@@ -6742,7 +6741,7 @@ SELECT:1190 (@adv) IF
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
 	(*1 @iv BARRIER infmerke)
-	(*-1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @subj BARRIER s#komma)
 ;
 #  " ...ble han en dag @ADV kjent med at..."))
@@ -6761,7 +6760,7 @@ SELECT:1189 (@adv) IF
 #:1188
 SELECT:1188 (@adv) IF
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 infmerke BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 infmerke BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 infmerke BARRIER s#komma)
 ;
 #  " å hele tiden @ADV stille spørsmål"))
@@ -6770,7 +6769,7 @@ SELECT:1188 (@adv) IF
 
 #:1187
 SELECT:1187 (@adv) IF
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 infmerke BARRIER ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 infmerke LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
@@ -6803,7 +6802,7 @@ SELECT:1184 (@adv) IF
 	(NOT 0 @subj)
 	(NOT 0 @iv)
 	(*-1 %som%-sbu BARRIER ikke-mod-@←p-utfyll-@adv-@app)
-	(*1 @fv BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*1 @fv BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 %som%-sbu BARRIER s#komma)
 ;
 #  " ...som offentlig @ADV hevdet paradoksale meninger"))
@@ -6841,7 +6840,7 @@ SELECT:1180 (@adv) IF
 	(NOT 0 s#sbu)
 	(NOT -1 s#komma)
 	(*1 @fv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 s#sbu LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 s#sbu LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @subj BARRIER s#komma)
 ;
 #  " ...at det hele tiden @ADV stilles spørsmål
@@ -6863,7 +6862,7 @@ SELECT:1179 (@adv) IF
 #:1178
 SELECT:1178 (@adv) IF
 	(NOT 0 s#sbu)
-	(*-1 ikke-premod-u-@kon LINK 0 @kon LINK NOT 0 clb LINK -1 @adv LINK NOT 0 ikke-@adv)
+	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 clb LINK -1 @adv LINK NOT 0 ikke-@adv)
 ;
 #  " NB!! Ingen eksempler på _tilsiktet_ bruk av denne regelen 
 #  i treningskorpuset."))
@@ -6926,7 +6925,7 @@ SELECT:1173 (@i-obj) IF
 	(NOT 0 @det→)
 	(NOT 1 infmerke)
 	(NOT 1 @adv)
-	(NOT 1 @kon)
+	(NOT 1 @kon/@nkon)
 	(NOT -1 @adv)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK 0 @fv)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK 0 ditrans)
@@ -7067,7 +7066,7 @@ SELECT:1165 (@i-obj) IF
 SELECT:1164 (@i-obj) IF
 	(NOT 0 @adv)
 	(NOT 0 @det→)
-	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7107,7 +7106,7 @@ SELECT:1161 (@i-obj) IF
 	(-1 ditrans)
 	(-1C @iv)
 	(NOT -1 kop)
-	(*1C @obj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*1C @obj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 
 
@@ -7119,7 +7118,7 @@ SELECT:1160 (@i-obj) IF
 	(-1 ditrans)
 	(-1C @iv)
 	(NOT -1 kop)
-	(*1C @obj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*1C @obj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 
 
@@ -7128,11 +7127,11 @@ SELECT:1159 (@i-obj) IF
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(1 prep)
-	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
-	(*1C @obj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*1C @obj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 #  " å gi mannen med hatt og frakk den aller største tillit"))
 
@@ -7143,11 +7142,11 @@ SELECT:1158 (@i-obj) IF
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(1 prep)
-	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
-	(*1C @obj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*1C @obj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 
 
@@ -7159,14 +7158,14 @@ SELECT:1157 (@i-obj) IF
 	(*-1C @iv LINK 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
-	(*1C @obj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*1C @obj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
 
 
 #:1156
 SELECT:1156 (@i-obj) IF
 	(*1C @i-obj BARRIER ikke-mod-@←p-utfyll-@adv-@app)
-	(*1C @i-obj LINK *-1 @kon)
+	(*1C @i-obj LINK *-1 @kon/@nkon)
 ;
 #  " USA ga FN @I-OBJ og Boutros-Ghalis den ene politiske bredside 
 #  
@@ -7256,7 +7255,7 @@ SELECT:1148 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 1 subst-prop)
 	(*-1C @iv BARRIER s#setn-gr)
-	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7270,7 +7269,7 @@ SELECT:1147 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 1 subst-prop)
 	(*-1C @iv BARRIER s#setn-gr)
-	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7291,7 +7290,7 @@ SELECT:1146 (@obj) IF
 #:1145
 SELECT:1145 (@obj) IF
 	(NOT 0 @det→)
-	(*-1C @i-obj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @i-obj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @i-obj BARRIER s#komma)
 	(*-1C @i-obj BARRIER s#setn-gr)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7305,7 +7304,7 @@ SELECT:1145 (@obj) IF
 #:1144
 SELECT:1144 (@obj) IF
 	(NOT 0 @det→)
-	(*-1C @i-obj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @i-obj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @i-obj BARRIER s#komma)
 	(*-1C @i-obj BARRIER s#setn-gr)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7331,7 +7330,7 @@ SELECT:1143 (@obj) IF
 #:1142
 SELECT:1142 (@obj) IF
 	(NOT 0 @det→)
-	(*-1C @i-obj LINK 1 prep LINK *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1C @i-obj LINK 1 prep LINK *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @i-obj BARRIER s#setn-gr)
 	(*-1C @i-obj LINK *-1 verb LINK NOT 0 fv)
 ;
@@ -7353,7 +7352,7 @@ SELECT:1140 (@obj) IF
 	(0 %at%/infmerke)
 	(NOT -1 s#komma)
 	(*-1 verb BARRIER s#setn-gr)
-	(*-1 verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 verb BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
 ;
@@ -7442,7 +7441,7 @@ SELECT:1133 (@obj) IF
 #:1132
 SELECT:1132 (@obj) IF
 	(0 %at%)
-	(-1 @kon)
+	(-1 @kon/@nkon)
 	(NOT -1 clb)
 	(*-2 %at% LINK NOT 0 ikke-@obj LINK *1 @fv LINK NOT *1 @fv)
 ;
@@ -7480,7 +7479,7 @@ SELECT:1124 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(NOT -1 s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 kop LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK NOT *1 s#setn-gr)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 kop LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK NOT *1 s#setn-gr)
 	(*-1 @fv BARRIER s#komma)
 	(*-1 @fv BARRIER kop)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7510,7 +7509,7 @@ SELECT:1123 (@obj) IF
 SELECT:1131 (@obj) IF
 	(NOT 0 %om%)
 	(NOT 0 itg)
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#setn-gr)
 	(*-1C @fv LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
@@ -7523,7 +7522,7 @@ SELECT:1131 (@obj) IF
 SELECT:1130 (@obj) IF
 	(NOT 0 %om%)
 	(NOT 0 itg)
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#setn-gr)
 	(*-1C @fv LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
@@ -7539,7 +7538,7 @@ SELECT:1122 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 0 @det→)
 	(-1C @fv)
-	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER @fv)
 ;
 
@@ -7552,7 +7551,7 @@ SELECT:1121 (@obj) IF
 	(NOT 0 @det→)
 	(NOT -1 @det→)
 	(-1C @fv)
-	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @fv)
 ;
 
@@ -7563,7 +7562,7 @@ SELECT:1120 (@obj) IF
 	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
-	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#komma)
 	(*-1C @fv BARRIER s#setn-gr)
 	(*-1C @fv BARRIER kop)
@@ -7578,7 +7577,7 @@ SELECT:1119 (@obj) IF
 	(NOT 0 itg)
 	(NOT 0 @adv)
 	(NOT 0 @det→)
-	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2C %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @fv BARRIER s#komma)
 	(*-1C @fv BARRIER s#setn-gr)
 	(*-1C @fv BARRIER kop)
@@ -7599,7 +7598,7 @@ SELECT:1129 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 0 subst-prop)
 	(*-1C @iv BARRIER s#setn-gr)
-	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7615,7 +7614,7 @@ SELECT:1128 (@obj) IF
 	(NOT 0 @adv)
 	(NOT 0 subst-prop)
 	(*-1C @iv BARRIER s#setn-gr)
-	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C @iv LINK NOT 0 ditrans LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C @iv BARRIER verb)
 	(*-1C @iv BARRIER s#komma)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7679,7 +7678,7 @@ SELECT:1117 (@obj) IF
 SELECT:1116 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK NOT -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7693,7 +7692,7 @@ SELECT:1116 (@obj) IF
 SELECT:1115 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK NOT -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7707,7 +7706,7 @@ SELECT:1115 (@obj) IF
 SELECT:1114 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK NOT -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7721,7 +7720,7 @@ SELECT:1114 (@obj) IF
 SELECT:1113 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK NOT -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -7735,7 +7734,7 @@ SELECT:1113 (@obj) IF
 SELECT:1112 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1C verb LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj)
@@ -7750,7 +7749,7 @@ SELECT:1112 (@obj) IF
 SELECT:1111 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1C verb LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj)
@@ -7777,7 +7776,7 @@ SELECT:1111 (@obj) IF
 SELECT:1110 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1C verb LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj)
@@ -7792,7 +7791,7 @@ SELECT:1110 (@obj) IF
 SELECT:1109 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK -1 @fv LINK NOT 3 s#tegnsetting/konj)
 	(*-1C verb LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj)
@@ -8048,7 +8047,7 @@ SELECT:1092 (@obj) IF
 SELECT:1091 (@obj) IF
 	(NOT 0 @adv)
 	(*-1 @subj LINK *-1 ikke-premod LINK NOT 0 s#sbu LINK NOT 0 @←p-utfyll LINK NOT 0 @adv)
-	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK NOT 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-komma LINK NOT 2 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -8101,7 +8100,7 @@ SELECT:1087 (@s-pred) IF
 	(0 subst-prop)
 	(NOT 0 @←sbu)
 	(NOT 0 @adv)
-	(*-1 ikke-premod-u-@kon-@app LINK NOT 0 be-subst)
+	(*-1 ikke-premod-u-@kon/@nkon-@app LINK NOT 0 be-subst)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep LINK NOT 0 tegnsetting/parentes LINK -1 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK 0 kop LINK NOT *1 s#setn-gr)
 ;
 #  " så het de da Reim @S-PRED og Tir"))
@@ -8116,7 +8115,7 @@ SELECT:kalles-delirium (@s-pred) IF
 SELECT:1086 (@s-pred) IF
 	(0 subst-prop)
 	(-1C @subj)
-	(*-1 ikke-premod-u-@kon-@app LINK NOT 0 be-subst)
+	(*-1 ikke-premod-u-@kon/@nkon-@app LINK NOT 0 be-subst)
 	(*-2 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK 0 @fv LINK 0 kop LINK NOT *1 s#setn-gr)
 ;
 #  " så het de Reim @S-PRED og Tir
@@ -8132,7 +8131,7 @@ SELECT:1085 (@s-pred) IF
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
 	(-1 kop-inf)
-	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
 ;
 
@@ -8143,7 +8142,7 @@ SELECT:1084 (@s-pred) IF
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
 	(-1 kop-inf)
-	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
 ;
 
@@ -8153,7 +8152,7 @@ SELECT:1083 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*-1 kop-inf BARRIER s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
@@ -8167,7 +8166,7 @@ SELECT:1082 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 infmerke LINK *1 ikke-@adv LINK 0 kop-inf LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*-1 kop-inf BARRIER s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
@@ -8205,7 +8204,7 @@ SELECT:1079 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 perf-part LINK 0 kop LINK NOT *1 s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
@@ -8217,7 +8216,7 @@ SELECT:1078 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 perf-part LINK 0 kop LINK NOT *1 s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
@@ -8256,7 +8255,7 @@ SELECT:1075 (@s-pred) IF
 	(NOT 0 s#sbu)
 	(NOT 0 @det→)
 	(NOT 0 s#%mye/lite%)
-	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*-1 kop BARRIER s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
@@ -8269,7 +8268,7 @@ SELECT:1074 (@s-pred) IF
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
 	(NOT 0 @det→)
-	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app)
+	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app)
 	(*-1 kop BARRIER s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
@@ -8310,7 +8309,7 @@ SELECT:1071 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(NOT 0 @det→)
 	(-1 kop)
-	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
 ;
 
@@ -8322,7 +8321,7 @@ SELECT:1070 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(NOT 0 @det→)
 	(-1 kop)
-	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 %som%-sbu LINK *1 ikke-@adv LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
 ;
 
@@ -8334,7 +8333,7 @@ SELECT:1069 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(-1 perf-part)
 	(-1 kop)
-	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
 ;
 
@@ -8346,7 +8345,7 @@ SELECT:1068 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(-1 perf-part)
 	(-1 kop)
-	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 infmerke LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
 ;
 
@@ -8358,7 +8357,7 @@ SELECT:1067 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(-1 perf-part)
 	(-1 kop)
-	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
 ;
 
@@ -8370,7 +8369,7 @@ SELECT:1066 (@s-pred) IF
 	(NOT 0 s#%mye/lite%)
 	(-1 perf-part)
 	(-1 kop)
-	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
 ;
 
@@ -8380,7 +8379,7 @@ SELECT:1065 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 perf-part LINK *1 kop LINK NOT *1 s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 periode-slutt/clb-konj BARRIER perf-part)
@@ -8392,7 +8391,7 @@ SELECT:1064 (@s-pred) IF
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#sbu)
 	(NOT 0 s#%mye/lite%)
-	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-3 %som%-sbu LINK *1 ikke-@adv LINK 0 @fv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 perf-part LINK *1 kop LINK NOT *1 s#komma)
 	(*-1 ikke-premod LINK NOT 0 prep)
 	(*1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 perf-part)
@@ -8435,7 +8434,7 @@ SELECT:1061 (@s-pred) IF
 #:1060
 SELECT:1060 (@s-pred) IF
 	(0 %at/om%)
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 	(NOT -1 s#komma)
 	(*-1 kop-u-%synes% BARRIER ikke-@adv)
 	(*-1 ikke-@adv LINK NOT 1 prep)
@@ -8545,7 +8544,7 @@ SELECT:1052 (@s-pred) IF
 #:1051
 SELECT:1051 (@s-pred) IF
 	(NOT 0 s#sbu)
-	(*-1 ikke-premod-u-@kon LINK 0 @kon LINK NOT 0 clb LINK -1 @s-pred LINK NOT 0 ikke-@s-pred)
+	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 clb LINK -1 @s-pred LINK NOT 0 ikke-@s-pred)
 ;
 #  " regelverket for våpeneksport er klart og greit @S-PRED"))
 
@@ -8560,7 +8559,7 @@ SELECT:1049 (@s-pred) IF
 	(-1 verb)
 	(-1 kop)
 	(*-1C @subj LINK *1 verb LINK NOT *1 @fv)
-	(*-1C @subj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@fv-@app)
+	(*-1C @subj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app)
 	(*-1C @subj BARRIER s#komma)
 	(*-1C @subj BARRIER s#setn-gr)
 	(*1 periode-slutt/clb-konj BARRIER @fv)
@@ -8577,7 +8576,7 @@ SELECT:1050 (@s-pred) IF
 	(NOT 0 @det→)
 	(NOT 0 @iv)
 	(*-1C @subj LINK *1 verb LINK NOT *1 @fv)
-	(*-1C @subj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@fv-@app)
+	(*-1C @subj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app)
 	(*-1C @subj BARRIER s#komma)
 	(*-1C @subj BARRIER s#setn-gr)
 	(*-1 verb LINK 0 kop LINK NOT 1 tegnsetting/parentes/konj)
@@ -8597,10 +8596,10 @@ SELECT:1048 (@s-pred) IF
 	(-1 kop)
 	(-1 verb)
 	(*-1C @subj LINK *1 verb LINK NOT *1 @fv)
-	(*-1C @subj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@fv-@app)
+	(*-1C @subj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app)
 	(*-1C @subj BARRIER s#komma)
 	(*-1C @subj BARRIER s#setn-gr)
-	(*1 @fv LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*1 @fv LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
 #  " NOT *R @FV: IKKE: av det han skrev fra denne tiden 
@@ -8621,7 +8620,7 @@ SELECT:1047 (@s-pred) IF
 	(*-1C @subj BARRIER ikke-mod-@←p-utfyll-@adv-@fv-@app)
 	(*-1C @subj LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
 	(*-1C @subj BARRIER s#setn-gr)
-	(*1 @fv LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*1 @fv LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
 
@@ -8648,12 +8647,12 @@ SELECT:1045 (@s-pred) IF
 	(NOT 0 @det→)
 	(NOT 0 @iv)
 	(*-1C @subj LINK *1 verb LINK NOT *1 @fv)
-	(*-1C @subj BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@fv-@app)
+	(*-1C @subj BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app)
 	(*-1C @subj BARRIER s#komma)
 	(*-1C @subj BARRIER s#setn-gr)
 	(*-1 verb LINK 0 kop LINK NOT 1 tegnsetting/parentes/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
-	(*1 @fv LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*1 @fv LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
 #  " hun er ofte hoppende glad @S-PRED
@@ -8680,7 +8679,7 @@ SELECT:1044 (@s-pred) IF
 	(*-1C @subj LINK *1 s#komma/konj LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
 	(*-1C @subj BARRIER s#setn-gr)
 	(*-1 verb LINK 0 kop LINK NOT 1 tegnsetting/parentes/konj)
-	(*1 @fv LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*1 @fv LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 s#setn/infkonstr-gr BARRIER %la%-verb)
 ;
 
@@ -8718,7 +8717,7 @@ SELECT:1041 (@s-pred) IF
 	(NOT 0 @det→)
 	(NOT 0 @iv)
 	(*-1 @subj)
-	(*-1C verb LINK 0 kop LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C verb LINK 0 kop LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C verb BARRIER s#komma)
 	(*-1C verb LINK -1 clb-konj LINK NOT 2 s#tegnsetting/konj)
 	(*-1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
@@ -9042,7 +9041,7 @@ SELECT:1017 (@subj) IF
 	(NOT 0 itg)
 	(NOT 0 prop/hum-pron)
 	(NOT 1 nom)
-	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "26.11.2002: \"Det er slik,\" sier de to (subj)"))
 
@@ -9055,7 +9054,7 @@ SELECT:1016 (@subj) IF
 	(NOT 0 itg)
 	(NOT 0 prop/hum-pron)
 	(NOT 1 nom)
-	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "26.11.2002: \"Det er ikke mer igjen, sier de to @subj.\"
 # Det er slik, sier fysiologiprofessoren @subj ved Universitetet.
@@ -9070,7 +9069,7 @@ SELECT:1015 (@subj) IF
 	(*1 ikke-subst-prop LINK NOT 0 kh#pron-refl LINK NOT 0 @iv)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 ditrans LINK NOT 0 ikke-sanns-ditrans)
-	(NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "KH 11.10.2002 Nå gir Gullit Grodås sjansen
 # Kopiert fra hovedregel pga: Først  ga Kari Rebecka Larsen seg til kjenne gjennom dette."))
@@ -9083,7 +9082,7 @@ SELECT:1014 (@subj) IF
 	(NOT *1 overskrift)
 	(*1 ikke-subst-prop LINK NOT 0 kh#pron-refl LINK NOT 0 konj LINK NOT 0 nom LINK NOT 0 @iv)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "27.2.2003: I 1974 møtte Assad (subj) Richard Nixon i Damaskus."))
 
@@ -9112,7 +9111,7 @@ SELECT:1012 (@subj) IF
 	(NOT *1 overskrift)
 	(NOT 1 subst-prop)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "KH 23.9.2002 For å ta det som blir igjen når dette er unntatt: I dag løp lektor Hansen."))
 
@@ -9127,7 +9126,7 @@ SELECT:1011 (@subj) IF
 	(NOT 0 subst-prop)
 	(NOT *1 overskrift)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#setn-gr LINK 0 %at/om% LINK NOT 1 adv/fv)
 ;
 #  "kh jan 2004: For alle andre at/om enn: Han sa jeg at (ikke) leste boka."))
@@ -9156,14 +9155,14 @@ SELECT:1009 (@subj) IF
 	(NOT 0 ub-ent-subst)
 	(NOT *1 overskrift)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT -1 @←p-utfyll LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT -1 @←p-utfyll LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#setn-gr LINK NOT 0 %at/om%)
 ;
 #  " i lengre tid bearbeidet Kongsberg-gruppen @SUBJ
 #  
 # det tyrkiske marked
 #  NOT LR0 %SOM%: IKKE: Det er han som gir uttrykk @SUBJ for dette
-#  ...-U-@KON-...: IKKE: vil bort fra akkorden og timelønnen @SUBJ og 
+#  ...-U-@KON/@NKON-...: IKKE: vil bort fra akkorden og timelønnen @SUBJ og 
 # 
 # de samme trettende bevegelsene
 #  NOT LR0 @SUBJ: IKKE: Hva drev ham @SUBJ til dette?
@@ -9191,7 +9190,7 @@ SELECT:1008 (@subj) IF
 
 #:1007
 SELECT:1007 (@subj) IF
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK -1 clb-komma LINK *-1 @fv LINK NOT 0 ikke-@fv LINK -1 periode-beg/clb-konj)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK -1 clb-komma LINK *-1 @fv LINK NOT 0 ikke-@fv LINK -1 periode-beg/clb-konj)
 ;
 #  "Mars 2002: Er det slik, gir Per(@Subj) Kari et eple."))
 
@@ -9209,7 +9208,7 @@ SELECT:1006 (@subj) IF
 #:1005
 SELECT:1005 (@subj) IF
 	(NOT 0 @det→)
-	(*-1C s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#sbu BARRIER s#komma)
 ;
 #  " som den lille gutten vet,...
@@ -9229,7 +9228,7 @@ SELECT:1004 (@subj) IF
 #:1003
 SELECT:1003 (@subj) IF
 	(NOT 0 @det→)
-	(*-1C s#sbu BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#sbu BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#sbu BARRIER s#komma)
 	(*1 @fv LINK -1C @adv LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 ;
@@ -9240,7 +9239,7 @@ SELECT:1003 (@subj) IF
 #:1002
 SELECT:1002 (@subj) IF
 	(NOT 0 @det→)
-	(*-1C s#sbu BARRIER ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#sbu BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#sbu BARRIER s#komma)
 	(*1 @fv BARRIER @←p-utfyll)
 	(*1 @fv LINK *-1 @adv)
@@ -9489,7 +9488,7 @@ SELECT:979 (@subj) IF
 	(0 prop/hum-pron)
 	(NOT 0 itg)
 	(NOT 1 prop)
-	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 s#komma LINK 1 anf LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "April 2002: \"Det er slik,\" sier Mira (subj)"))
 
@@ -9500,7 +9499,7 @@ SELECT:978 (@subj) IF
 	(0 prop/hum-pron)
 	(NOT 0 itg)
 	(NOT 1 prop)
-	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  " ..., sier han
 #  ..., sier Jørgensen
@@ -9514,7 +9513,7 @@ SELECT:977 (@subj) IF
 	(NOT 0 itg)
 	(NOT 1 prop)
 	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 s#komma LINK *1 @kon LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
+	(*-1 s#komma LINK *1 @kon/@nkon LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
 ;
 
 
@@ -9523,7 +9522,7 @@ SELECT:977 (@subj) IF
 SELECT:976 (@subj) IF
 	(0 be-subst)
 	(*1 ikke-mod-@←p-utfyll-@adv LINK 0 @app LINK NOT 0 ikke-@app)
-	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  " ..., sier søndagsentusiasten @SUBJ Torstein Sætre (@APP)"))
 
@@ -9534,7 +9533,7 @@ SELECT:975 (@subj) IF
 	(0 be-subst)
 	(*1 ikke-mod-@←p-utfyll-@adv LINK 0 @app LINK NOT 0 ikke-@app)
 	(*-2 s#komma LINK 1C @fv LINK 0 sitatverb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 s#komma LINK *1 @kon LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
+	(*-1 s#komma LINK *1 @kon/@nkon LINK 1 @premod LINK -2 @premod LINK NOT *1 s#komma/konj)
 ;
 
 
@@ -9672,7 +9671,7 @@ SELECT:965 (@subj) IF
 
 #:964
 SELECT:964 (@subj) IF
-	(*-1 ikke-premod-u-@kon LINK 0 @kon LINK -1 @subj LINK NOT 0 ikke-@subj LINK NOT *1 clb)
+	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK -1 @subj LINK NOT 0 ikke-@subj LINK NOT *1 clb)
 ;
 #  " både vi og andre konserner @SUBJ søker ..."))
 
@@ -9680,7 +9679,7 @@ SELECT:964 (@subj) IF
 
 #:963
 SELECT:963 (@subj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*2 ikke-premod LINK 0 @subj LINK NOT 0 ikke-@subj LINK NOT *-1 clb)
 ;
 #  " både universitetene @SUBJ og høgskolene er blitt 
@@ -9712,7 +9711,7 @@ SELECT:961 (@subj) IF
 #:960
 SELECT:960 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9726,9 +9725,9 @@ SELECT:960 (@subj) IF
 #:959
 SELECT:959 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 #  " CLB men når kontordamene går gjennom hallen, ser de @SUBJ på
@@ -9740,7 +9739,7 @@ SELECT:959 (@subj) IF
 #:958
 SELECT:958 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9754,9 +9753,9 @@ SELECT:958 (@subj) IF
 #:957
 SELECT:957 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 #  " CLB men selv om kontordamene går gjennom hallen, ser de @SUBJ ikke på
@@ -9768,7 +9767,7 @@ SELECT:957 (@subj) IF
 #:956
 SELECT:956 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9783,9 +9782,9 @@ SELECT:956 (@subj) IF
 #:955
 SELECT:955 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
@@ -9798,7 +9797,7 @@ SELECT:955 (@subj) IF
 #:954
 SELECT:954 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9812,9 +9811,9 @@ SELECT:954 (@subj) IF
 #:953
 SELECT:953 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 #  " CLB men når kontordamene tror at de jobber, ser de @SUBJ på
@@ -9826,7 +9825,7 @@ SELECT:953 (@subj) IF
 #:952
 SELECT:952 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9840,9 +9839,9 @@ SELECT:952 (@subj) IF
 #:951
 SELECT:951 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 #  " CLB men selv om kontordamene tror at de jobber, ser de @SUBJ ikke på
@@ -9854,7 +9853,7 @@ SELECT:951 (@subj) IF
 #:950
 SELECT:950 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -9869,9 +9868,9 @@ SELECT:950 (@subj) IF
 #:949
 SELECT:949 (@subj) IF
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
@@ -9885,7 +9884,7 @@ SELECT:949 (@subj) IF
 SELECT:948 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -9904,9 +9903,9 @@ SELECT:948 (@subj) IF
 SELECT:947 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 ;
 #  " CLB men når kontordamene går gjennom hallen, ser de @SUBJ etter dem
 #  NOT LR0 %AT/OM/SOM%: IKKE: at de selvfølgelig også kan ha rett, 
@@ -9923,7 +9922,7 @@ SELECT:947 (@subj) IF
 SELECT:946 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -9935,9 +9934,9 @@ SELECT:946 (@subj) IF
 SELECT:945 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
 ;
 #  " CLB men selv om kontordamene går gjennom hallen, ser de @SUBJ dem ikke"))
 
@@ -9947,7 +9946,7 @@ SELECT:945 (@subj) IF
 SELECT:944 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
@@ -9960,9 +9959,9 @@ SELECT:944 (@subj) IF
 SELECT:943 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
 #  " CLB men om kontordamene går gjennom hallen, ser de @SUBJ dem ikke"))
@@ -9973,7 +9972,7 @@ SELECT:943 (@subj) IF
 SELECT:942 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -9985,9 +9984,9 @@ SELECT:942 (@subj) IF
 SELECT:941 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
 #  " CLB men når kontordamene tror at de jobber, ser de @SUBJ etter dem"))
 
@@ -9997,7 +9996,7 @@ SELECT:941 (@subj) IF
 SELECT:940 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -10009,9 +10008,9 @@ SELECT:940 (@subj) IF
 SELECT:939 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
 #  " CLB men selv om kontordamene tror at de jobber, ser de @SUBJ dem ikke"))
 
@@ -10021,7 +10020,7 @@ SELECT:939 (@subj) IF
 SELECT:938 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
@@ -10034,9 +10033,9 @@ SELECT:938 (@subj) IF
 SELECT:937 (@subj) IF
 	(NOT *1 @fv)
 	(*-1C @fv BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
 #  " CLB men om kontordamene tror at de jobber, ser de @SUBJ dem ikke"))
@@ -10047,7 +10046,7 @@ SELECT:937 (@subj) IF
 SELECT:936 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -10057,9 +10056,9 @@ SELECT:936 (@subj) IF
 SELECT:935 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 ;
 
 
@@ -10067,7 +10066,7 @@ SELECT:935 (@subj) IF
 SELECT:934 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -10077,9 +10076,9 @@ SELECT:934 (@subj) IF
 SELECT:933 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
 ;
 
 
@@ -10087,7 +10086,7 @@ SELECT:933 (@subj) IF
 SELECT:932 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
@@ -10098,9 +10097,9 @@ SELECT:932 (@subj) IF
 SELECT:931 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
 
@@ -10109,7 +10108,7 @@ SELECT:931 (@subj) IF
 SELECT:930 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -10119,9 +10118,9 @@ SELECT:930 (@subj) IF
 SELECT:929 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
 
 
@@ -10129,7 +10128,7 @@ SELECT:929 (@subj) IF
 SELECT:928 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
@@ -10139,9 +10138,9 @@ SELECT:928 (@subj) IF
 SELECT:927 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 ;
 
 
@@ -10149,7 +10148,7 @@ SELECT:927 (@subj) IF
 SELECT:926 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
@@ -10160,9 +10159,9 @@ SELECT:926 (@subj) IF
 SELECT:925 (@subj) IF
 	(NOT *1 @fv)
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
 
@@ -10170,7 +10169,7 @@ SELECT:925 (@subj) IF
 #:924
 SELECT:924 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10180,9 +10179,9 @@ SELECT:924 (@subj) IF
 #:923
 SELECT:923 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 
@@ -10190,7 +10189,7 @@ SELECT:923 (@subj) IF
 #:922
 SELECT:922 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10200,9 +10199,9 @@ SELECT:922 (@subj) IF
 #:921
 SELECT:921 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 
@@ -10210,7 +10209,7 @@ SELECT:921 (@subj) IF
 #:920
 SELECT:920 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10221,9 +10220,9 @@ SELECT:920 (@subj) IF
 #:919
 SELECT:919 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
@@ -10232,7 +10231,7 @@ SELECT:919 (@subj) IF
 #:918
 SELECT:918 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10242,9 +10241,9 @@ SELECT:918 (@subj) IF
 #:917
 SELECT:917 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT 0 %at/om/som% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 
@@ -10252,7 +10251,7 @@ SELECT:917 (@subj) IF
 #:916
 SELECT:916 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 s#setn-gr LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10262,9 +10261,9 @@ SELECT:916 (@subj) IF
 #:915
 SELECT:915 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 selv-adv LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 3 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 
@@ -10272,7 +10271,7 @@ SELECT:915 (@subj) IF
 #:914
 SELECT:914 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
 	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 s#setn-gr LINK 1 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10283,9 +10282,9 @@ SELECT:914 (@subj) IF
 #:913
 SELECT:913 (@subj) IF
 	(*-1 s#komma/konj LINK 1 @premod LINK -2 @premod)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *-1 ikke-@adv LINK NOT 0 @kon/@nkon)
 	(*-1 @fv LINK *-1 @fv LINK NOT 0 ikke-@fv LINK NOT *1 @subj)
-	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
+	(*-1 @fv LINK *-1 @fv LINK *-1 s#setn-gr LINK 0 s#sbu LINK *-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-premod LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK 0 %om% LINK -1 @kon/@nkon LINK -1 periode-beg/clb LINK 2 s#sbu LINK *1 s#sbu LINK NOT *1 s#sbu)
 	(*1 @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT *-1 clb)
 ;
@@ -10355,7 +10354,7 @@ SELECT:907 (@subj) IF
 	(NOT 0 infmerke)
 	(NOT -1C prep)
 	(NOT -1 @adj→)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv LINK *-1 ikke-adv LINK NOT 0 @subj)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
@@ -10375,7 +10374,7 @@ SELECT:906 (@subj) IF
 	(NOT 0 @adv)
 	(NOT 0 infmerke)
 	(1 @iv)
-	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 ;
 
@@ -10394,7 +10393,7 @@ SELECT:905 (@subj) IF
 SELECT:904 (@subj) IF
 	(NOT 0 @adv)
 	(NOT 0 infmerke)
-	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
@@ -10407,10 +10406,10 @@ SELECT:904 (@subj) IF
 SELECT:903 (@subj) IF
 	(NOT 0 @adv)
 	(NOT 0 infmerke)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
-	(*1 @iv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-postmod-@app)
+	(*1 @iv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-postmod-@app)
 	(*1 @iv BARRIER infmerke)
 	(*1 @iv BARRIER clb)
 ;
@@ -10511,7 +10510,7 @@ SELECT:901 (@subj) IF
 	(NOT -1C prep)
 	(NOT -1 @adj→)
 	(*-1 s#setn-gr BARRIER @subj)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
@@ -10531,7 +10530,7 @@ SELECT:900 (@subj) IF
 	(NOT -1C prep)
 	(NOT -1 @adj→)
 	(*-1 s#setn-gr BARRIER @subj)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 ;
 #  "12.9.2003: NOT -1 prep"))
@@ -10543,7 +10542,7 @@ SELECT:899 (@subj) IF
 	(NOT 0 infmerke)
 	(1 @iv)
 	(*-1 s#setn-gr BARRIER @subj)
-	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 ;
 
@@ -10562,7 +10561,7 @@ SELECT:898 (@subj) IF
 SELECT:897 (@subj) IF
 	(NOT 0 infmerke)
 	(*-1 s#setn-gr BARRIER @subj)
-	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *1 ikke-postmod-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
 	(*1 @iv BARRIER ikke-mod-@←p-utfyll-@adv-@app)
@@ -10574,10 +10573,10 @@ SELECT:897 (@subj) IF
 SELECT:896 (@subj) IF
 	(NOT 0 infmerke)
 	(*-1 s#setn-gr BARRIER @subj)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
-	(*1 @iv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT 0 clb LINK NOT *-1 ikke-postmod-@app)
+	(*1 @iv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT 0 clb LINK NOT *-1 ikke-postmod-@app)
 	(*1 @iv BARRIER infmerke)
 ;
 
@@ -10628,7 +10627,7 @@ SELECT:871 (@subj) IF
 	(NOT 0 @adv)
 	(NOT 0 @←p-utfyll)
 	(*1 ikke-adv LINK 0 @iv LINK NOT 0 ikke-@iv)
-	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 @fv LINK 0 hj-verb LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1 @fv BARRIER s#komma)
 	(*-1 @fv LINK NOT 1 prep)
 	(*-1 @fv LINK NOT 1 %ingen/ingenting%)
@@ -10645,7 +10644,7 @@ SELECT:888 (@subj) IF
 	(NOT 0 s#setn-gr)
 	(NOT *1 overskrift)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 	(*-1C s#setn-gr LINK NOT 0 %at/om%)
 ;
@@ -10659,7 +10658,7 @@ SELECT:887 (@subj) IF
 	(NOT 0 s#setn-gr)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT -1 @←p-utfyll LINK NOT -1 @←p-utfyll)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT -1 @←p-utfyll LINK NOT -1 @←p-utfyll)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 ;
 
@@ -10669,7 +10668,7 @@ SELECT:886 (@subj) IF
 	(NOT 0 s#setn-gr)
 	(*-1C s#setn-gr LINK 0 clb-konj LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1 s#setn-gr LINK -1 periode-beg)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 ;
 
@@ -10680,7 +10679,7 @@ SELECT:881 (@subj) IF
 	(NOT 0 @adv)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @kon LINK NOT -1 @←p-utfyll LINK NOT -1 @←p-utfyll)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @kon/@nkon LINK NOT -1 @←p-utfyll LINK NOT -1 @←p-utfyll)
 ;
 
 
@@ -10690,7 +10689,7 @@ SELECT:880 (@subj) IF
 	(NOT 0 @adv)
 	(*-1C s#setn-gr LINK 0 clb-konj LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1 s#setn-gr LINK -1 periode-beg)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 
 
@@ -10700,7 +10699,7 @@ SELECT:870 (@subj) IF
 	(NOT 0 @←p-utfyll)
 	(NOT *1 overskrift)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 	(*-1C s#setn-gr LINK 0 %at/om% LINK NOT 1 adv/fv)
 ;
@@ -12139,9 +12138,9 @@ SELECT:782 (@tittel) IF
 
 #:781
 SELECT:781 (@tittel) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(NOT 1 clb)
-	(*2C @tittel BARRIER ikke-premod-@kon)
+	(*2C @tittel BARRIER ikke-premod-@kon/@nkon)
 ;
 #  " olympiamester og verdensmester Fred Børre Lundberg"))
 
@@ -12321,7 +12320,7 @@ REMOVE:769 (@←p-utfyll) IF
 	(NOT 0 s#sbu)
 	(NOT *1 @←p-utfyll)
 	(*-1 prep LINK *1C @←p-utfyll)
-	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon)
+	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon/@nkon)
 ;
 #  " IKKE: hun fyller noe i et gap, en umettelig kjeft @←P-UTFYLL"))
 
@@ -12361,7 +12360,7 @@ REMOVE:766 (@←p-utfyll) IF
 REMOVE:765 (@←p-utfyll) IF
 	(NOT 0 s#sbu)
 	(*-1 prep LINK *1C @←p-utfyll)
-	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon)
+	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon/@nkon)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK *-1 @←p-utfyll LINK NOT *-1 s#komma/konj)
 ;
 #  " IKKE: hun fyller noe i et gap, en umettelig kjeft @←P-UTFYLL 
@@ -12375,7 +12374,7 @@ REMOVE:764 (@←p-utfyll) IF
 	(NOT 0 s#sbu)
 	(NOT *1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*-1 prep LINK *1C @←p-utfyll)
-	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon)
+	(*-1 ikke-premod-@adv LINK 1 s#komma LINK NOT 1 @kon/@nkon)
 	(*1C periode-slutt LINK *-1 @←p-utfyll LINK NOT *-1 s#komma/konj)
 ;
 
@@ -12386,7 +12385,7 @@ REMOVE:763 (@adv) IF
 	(NOT 0 s#%mye/lite%)
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#setn-gr)
-	(*1 ikke-postmod LINK 0 @kon)
+	(*1 ikke-postmod LINK 0 @kon/@nkon)
 	(*-1C verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *1 s#setn-gr)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @s-pred)
 	(*-1 ikke-premod LINK NOT 1 s#komma)
@@ -12404,7 +12403,7 @@ REMOVE:762 (@adv) IF
 	(NOT 0 s#%mye/lite%)
 	(NOT 0 adverbialsubst)
 	(NOT 0 s#setn-gr)
-	(*1 ikke-postmod LINK 0 @kon)
+	(*1 ikke-postmod LINK 0 @kon/@nkon)
 	(*-1C verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *1 s#setn-gr)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @s-pred)
 	(*-1 ikke-premod LINK NOT 1 s#komma)
@@ -12524,7 +12523,7 @@ REMOVE:756 (@adv) IF
 REMOVE:755 (@adv) IF
 	(NOT 0 %som%-sbu)
 	(*1 verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *-1 s#setn/infkonstr-gr)
-	(*1 verb BARRIER @kon)
+	(*1 verb BARRIER @kon/@nkon)
 	(*1 verb LINK NOT *1 %sammen%)
 	(*1 verb LINK NOT *1 ikke-adj-adv)
 	(*-1 s#periode-beg/clb-konj BARRIER @s-pred)
@@ -12532,7 +12531,7 @@ REMOVE:755 (@adv) IF
 	(*1 s#setn/infkonstr-gr BARRIER perf-part)
 ;
 #  " IKKE: så enkelt @ADV det er 
-#  NOT *L @KON: jeg ville spise fort @ADV og bli mett"))
+#  NOT *L @KON/@NKON: jeg ville spise fort @ADV og bli mett"))
 
 
 
@@ -12540,7 +12539,7 @@ REMOVE:755 (@adv) IF
 REMOVE:754 (@adv) IF
 	(NOT 0 %som%-sbu)
 	(*1 verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *-1 s#setn/infkonstr-gr)
-	(*1 verb BARRIER @kon)
+	(*1 verb BARRIER @kon/@nkon)
 	(*1 verb LINK NOT *1 %sammen%)
 	(*1 verb LINK *1 ikke-adj-adv LINK NOT 0 @subj LINK NOT 0 prep)
 	(*-1 s#periode-beg/clb-konj BARRIER @s-pred)
@@ -12555,7 +12554,7 @@ REMOVE:754 (@adv) IF
 REMOVE:753 (@adv) IF
 	(NOT 0 %som%-sbu)
 	(*1 verb LINK 0 kop LINK NOT 0 %virke% LINK NOT *-1 s#setn/infkonstr-gr)
-	(*1 verb BARRIER @kon)
+	(*1 verb BARRIER @kon/@nkon)
 	(*1 verb LINK NOT *1 %sammen%)
 	(*1 verb LINK *1 ikke-adj-adv LINK 0 @subj LINK *1 ikke-adj-adv LINK NOT 0 prep)
 	(*-1 s#periode-beg/clb-konj BARRIER @s-pred)
@@ -12634,7 +12633,7 @@ REMOVE:747 (@i-obj) IF
 	(1 subst-prop)
 	(NOT *1 overskrift)
 	(*1 ikke-subst-prop LINK 0 @iv LINK *-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "KH 28.2.2003: I formannskapet i går ville Per (ikke i-obj) A. Torbjørnsen vite dette."))
 
@@ -12646,7 +12645,7 @@ REMOVE:746 (@i-obj) IF
 	(1 subst-prop)
 	(NOT *1 overskrift)
 	(*1 ikke-subst-prop LINK 0 @iv LINK *-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  ""))
 
@@ -12819,7 +12818,7 @@ REMOVE:730 (@i-obj) IF
 
 #:729
 REMOVE:729 (@i-obj) IF
-	(*-1 s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  " IKKE: som den lille gutten @I-OBJ vet,...
 #  da han @I-OBJ kom hjem,...
@@ -12896,7 +12895,7 @@ REMOVE:722 (@i-obj) IF
 #:721
 REMOVE:721 (@i-obj) IF
 	(*-1 @fv LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 @i-obj LINK *-1 ikke-premod LINK 1 @kon LINK NOT 0 clb)
+	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 @i-obj LINK *-1 ikke-premod LINK 1 @kon/@nkon LINK NOT 0 clb)
 ;
 
 
@@ -12910,7 +12909,7 @@ REMOVE:720 (@i-obj) IF
 #:719
 REMOVE:719 (@i-obj) IF
 	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @obj)
-	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 @i-obj LINK *-1 ikke-premod LINK 1 @kon LINK NOT 0 clb)
+	(*1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 @i-obj LINK *-1 ikke-premod LINK 1 @kon/@nkon LINK NOT 0 clb)
 ;
 #  " IKKE: Kongsberg-gruppen har derfor innledet samarbeide med 
 # 
@@ -13179,7 +13178,7 @@ REMOVE:689 (@i-obj) IF
 #:688
 REMOVE:688 (@i-obj) IF
 	(*-1C @i-obj BARRIER setn/infkonstr-gr/verb)
-	(*-1C @i-obj BARRIER @kon)
+	(*-1C @i-obj BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER konj/%bare%)
 ;
 #  " NOT *L KONJ/%BARE%: de ga ikke alle, bare noen @I-OBJ, fri"))
@@ -13189,7 +13188,7 @@ REMOVE:688 (@i-obj) IF
 #:687
 REMOVE:687 (@i-obj) IF
 	(*-1C @i-obj BARRIER setn/infkonstr-gr/verb)
-	(*-1C @i-obj BARRIER @kon)
+	(*-1C @i-obj BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER @i-obj)
 ;
 
@@ -13197,7 +13196,7 @@ REMOVE:687 (@i-obj) IF
 #:686
 REMOVE:686 (@i-obj) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @i-obj LINK NOT 0 ikke-@i-obj LINK NOT *-1 s#%bare%)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @i-obj LINK NOT 0 ikke-@i-obj LINK NOT *-1 s#%bare%)
 ;
 #  " NOT *L %BARE%: de ga ikke alle @O-PRED, bare noen, fri"))
 
@@ -13206,7 +13205,7 @@ REMOVE:686 (@i-obj) IF
 #:685
 REMOVE:685 (@i-obj) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @i-obj LINK NOT 0 ikke-@i-obj LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @i-obj LINK NOT 0 ikke-@i-obj LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
 ;
 
 
@@ -13222,21 +13221,21 @@ REMOVE:683 (@i-obj) IF
 ;
 #  " IKKE: han ga kvinnen alt @I-OBJ hun ville ha
 #  IKKE: det ga han henne hele tida @S-PRED 
-#  NOT R+1 KOMMA/KONJ/ANF fordi @KON er med i PREMOD"))
+#  NOT R+1 KOMMA/KONJ/ANF fordi @KON/@NKON er med i PREMOD"))
 
 
 
 #:682
 REMOVE:682 (@i-obj) IF
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *1 s#ikke-prep LINK 0 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon)
-	(*1C periode-slutt/clb-konj BARRIER @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *1 s#ikke-prep LINK 0 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon/@nkon)
+	(*1C periode-slutt/clb-konj BARRIER @kon/@nkon)
 ;
 
 
 #:681
 REMOVE:681 (@i-obj) IF
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK 1 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon)
-	(*1C periode-slutt/clb-konj BARRIER @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK 1 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon/@nkon)
+	(*1C periode-slutt/clb-konj BARRIER @kon/@nkon)
 ;
 #  " IKKE: de ønsker bare å komme seg bort fra der de er, de 
 #  
@@ -13316,7 +13315,7 @@ REMOVE:673 (@i-obj) IF
 
 #:672
 REMOVE:672 (@i-obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(NOT 1 clb)
 	(*-1 @fv LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
 	(*1C periode-slutt/clb-konj LINK *-1 @obj LINK NOT *-1 @obj)
@@ -13326,7 +13325,7 @@ REMOVE:672 (@i-obj) IF
 
 #:671
 REMOVE:671 (@i-obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(NOT 1 clb)
 	(*-1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @obj)
 	(*1C periode-slutt/clb-konj LINK *-1 @obj LINK NOT *-1 @obj)
@@ -13336,7 +13335,7 @@ REMOVE:671 (@i-obj) IF
 
 #:670
 REMOVE:670 (@i-obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*1 ikke-mod-@adv LINK NOT 0 @i-obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1 ikke-mod-@←p-utfyll-@adv BARRIER @fv)
@@ -13345,7 +13344,7 @@ REMOVE:670 (@i-obj) IF
 
 #:669
 REMOVE:669 (@i-obj) IF
-	(*1 ikke-mod-@adv LINK NOT 0 @i-obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon)
+	(*1 ikke-mod-@adv LINK NOT 0 @i-obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon/@nkon)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1 ikke-mod-@←p-utfyll-@adv BARRIER @fv)
 ;
@@ -13368,7 +13367,7 @@ REMOVE:667 (@o-pred) IF
 #:666
 REMOVE:666 (@o-pred) IF
 	(*-1C @o-pred BARRIER setn/infkonstr-gr/verb)
-	(*-1C @o-pred BARRIER @kon)
+	(*-1C @o-pred BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER konj/%bare%)
 ;
 #  " NOT *L KONJ/%BARE%: det gjorde ham ikke slem, bare litt uforsiktig @O-PRED "))
@@ -13378,7 +13377,7 @@ REMOVE:666 (@o-pred) IF
 #:665
 REMOVE:665 (@o-pred) IF
 	(*-1C @o-pred BARRIER setn/infkonstr-gr/verb)
-	(*-1C @o-pred BARRIER @kon)
+	(*-1C @o-pred BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER @o-pred)
 ;
 #  " IKKE: de kalte det sterkt engasjement særlig fra 
@@ -13392,7 +13391,7 @@ REMOVE:665 (@o-pred) IF
 #:664
 REMOVE:664 (@o-pred) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @o-pred LINK NOT 0 ikke-@o-pred LINK NOT *-1 s#%bare%)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @o-pred LINK NOT 0 ikke-@o-pred LINK NOT *-1 s#%bare%)
 ;
 #  " NOT *L %BARE%: det gjorde ham ikke slem @O-PRED, bare litt uforsiktig"))
 
@@ -13401,7 +13400,7 @@ REMOVE:664 (@o-pred) IF
 #:663
 REMOVE:663 (@o-pred) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @o-pred LINK NOT 0 ikke-@o-pred LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @o-pred LINK NOT 0 ikke-@o-pred LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
 ;
 
 
@@ -13417,7 +13416,7 @@ REMOVE:661 (@o-pred) IF
 ;
 #  " IKKE: de kalte henne kvinnen alle @O-PRED snakker om
 #  IKKE: de kalte henne det hele tida @S-PRED 
-#  NOT R+1 KOMMA/KONJ/ANF fordi @KON er med i PREMOD"))
+#  NOT R+1 KOMMA/KONJ/ANF fordi @KON/@NKON er med i PREMOD"))
 
 
 
@@ -13432,7 +13431,7 @@ REMOVE:660 (@o-pred) IF
 
 #:659
 REMOVE:659 (@o-pred) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*1 ikke-mod-@adv LINK NOT 0 @o-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
@@ -13441,7 +13440,7 @@ REMOVE:659 (@o-pred) IF
 
 #:658
 REMOVE:658 (@o-pred) IF
-	(*1 ikke-mod-@adv LINK NOT 0 @o-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon)
+	(*1 ikke-mod-@adv LINK NOT 0 @o-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon/@nkon)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
 ;
@@ -13462,7 +13461,7 @@ REMOVE:657 (@obj) IF
 REMOVE:656 (@obj) IF
 	(NOT -1 %at/om%)
 	(*-1C @obj BARRIER setn/infkonstr-gr/verb)
-	(*-1C @obj BARRIER @kon)
+	(*-1C @obj BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER @obj)
 ;
 #  " IKKE: dette forutsetter et sterkt engasjement særlig fra 
@@ -13479,7 +13478,7 @@ REMOVE:655 (@obj) IF
 	(NOT -1 %at/om%)
 	(NOT 0 %at%)
 	(*-1C @obj BARRIER setn/infkonstr-gr/verb)
-	(*-1C @obj BARRIER @kon)
+	(*-1C @obj BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER konj/%bare%)
 ;
 #  " IKKE: han har derfor bedt det amerikanske direktorat for 
@@ -13634,7 +13633,7 @@ REMOVE:643 (@obj) IF
 
 #:642
 REMOVE:642 (@obj) IF
-	(*-1 s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1 s#sbu LINK NOT 0 %at% LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  " IKKE: som den lille gutten @OBJ vet,...
 #  da han @OBJ kom hjem,...
@@ -13660,7 +13659,7 @@ REMOVE:640 (@obj) IF
 	(NOT 0 s#setn-gr)
 	(NOT *1 overskrift)
 	(*-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  " IKKE: i lengre tid bearbeidet Kongsberg-gruppen @OBJ
 #  
@@ -13676,7 +13675,7 @@ REMOVE:639 (@obj) IF
 	(NOT 0 s#setn-gr)
 	(*-1C s#setn-gr LINK 0 clb-konj LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
 	(*-1C s#setn-gr LINK -1 periode-beg)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 
 
@@ -13684,7 +13683,7 @@ REMOVE:639 (@obj) IF
 REMOVE:638 (@obj) IF
 	(*-1 verb)
 	(NOT 1 komma)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 ikke-@obj LINK NOT -1 komma LINK NOT *-1 s#%bare%)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 ikke-@obj LINK NOT -1 komma LINK NOT *-1 s#%bare%)
 ;
 #  " IKKE: det innbragte meg @OBJ nok penger
 #  NOT *L %BARE%: det betyr ikke at vi fornekter materien 
@@ -13697,7 +13696,7 @@ REMOVE:638 (@obj) IF
 REMOVE:637 (@obj) IF
 	(*-1 verb)
 	(NOT 1 komma)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 ikke-@obj LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @obj LINK NOT 0 ikke-@obj LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
 ;
 #  " IKKE: det innbragte meg @OBJ mange, mange penger"))
 
@@ -13721,7 +13720,7 @@ REMOVE:635 (@obj) IF
 #  NOT LR0 SBU: IKKE FJERN hun sier at penger @OBJ 
 # 
 # hadde han ikke
-#  NOT R+1 KOMMA/KONJ/ANF fordi @KON er med i PREMOD"))
+#  NOT R+1 KOMMA/KONJ/ANF fordi @KON/@NKON er med i PREMOD"))
 
 
 
@@ -13730,7 +13729,7 @@ REMOVE:634 (@obj) IF
 	(-1 s#tegnsetting)
 	(NOT -1 clb)
 	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK NOT *1 s#ikke-prep)
-	(*1C periode-slutt/clb-konj BARRIER @kon)
+	(*1C periode-slutt/clb-konj BARRIER @kon/@nkon)
 ;
 
 
@@ -13776,8 +13775,8 @@ REMOVE:630 (@obj) IF
 
 #:629
 REMOVE:629 (@obj) IF
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK NOT 0 imp LINK *1 s#ikke-prep LINK 0 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon)
-	(*1C periode-slutt/clb-konj BARRIER @kon)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK NOT 0 imp LINK *1 s#ikke-prep LINK 0 s#tegnsetting LINK NOT 0 clb LINK NOT *1 @kon/@nkon)
+	(*1C periode-slutt/clb-konj BARRIER @kon/@nkon)
 ;
 #  " IKKE: de ønsker bare å komme seg bort fra der de er, de 
 #  
@@ -13823,7 +13822,7 @@ REMOVE:625 (@obj) IF
 
 #:624
 REMOVE:624 (@obj) IF
-	(*-1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj LINK NOT 0 ikke-@obj LINK NOT *1 @subj)
+	(*-1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj LINK NOT 0 ikke-@obj LINK NOT *1 @subj)
 ;
 #  " IKKE: han prøver også å snakke om forhandlingene 
 #  
@@ -13835,7 +13834,7 @@ REMOVE:624 (@obj) IF
 
 #:623
 REMOVE:623 (@obj) IF
-	(*-1 ikke-mod-u-@kon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj LINK NOT 0 ikke-@obj LINK *1 @subj LINK NOT 0 s#%det%)
+	(*-1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj LINK NOT 0 ikke-@obj LINK *1 @subj LINK NOT 0 s#%det%)
 ;
 # IKKE: "det forutsettes likevel at rovdyrene kan forekomme også andre steder @OBJ"
 
@@ -13898,7 +13897,7 @@ REMOVE:617 (@obj) IF
 
 #:616
 REMOVE:616 (@obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
@@ -13907,7 +13906,7 @@ REMOVE:616 (@obj) IF
 
 #:615
 REMOVE:615 (@obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER ditrans)
@@ -13916,7 +13915,7 @@ REMOVE:615 (@obj) IF
 
 #:614
 REMOVE:614 (@obj) IF
-	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon)
+	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon/@nkon)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
 ;
@@ -13924,7 +13923,7 @@ REMOVE:614 (@obj) IF
 
 #:613
 REMOVE:613 (@obj) IF
-	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK *-1 ikke-premod LINK 1 @kon)
+	(*1 ikke-mod-@adv LINK NOT 0 @obj LINK NOT 0 @mod LINK *-1 ikke-premod LINK 1 @kon/@nkon)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER ditrans)
 ;
@@ -13976,7 +13975,7 @@ REMOVE:609 (@s-pred) IF
 #:608
 REMOVE:608 (@s-pred) IF
 	(*-1C @s-pred BARRIER setn/infkonstr-gr/verb)
-	(*-1C @s-pred BARRIER @kon)
+	(*-1C @s-pred BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER konj/%bare%)
 ;
 #  " NOT *L KONJ/%BARE%: han er ikke slem, bare litt uforsiktig @S-PRED "))
@@ -13986,7 +13985,7 @@ REMOVE:608 (@s-pred) IF
 #:607
 REMOVE:607 (@s-pred) IF
 	(*-1C @s-pred BARRIER setn/infkonstr-gr/verb)
-	(*-1C @s-pred BARRIER @kon)
+	(*-1C @s-pred BARRIER @kon/@nkon)
 	(*1C periode-slutt/clb-konj BARRIER @s-pred)
 ;
 #  " IKKE: dette er sterkt engasjement saerlig fra 
@@ -14000,7 +13999,7 @@ REMOVE:607 (@s-pred) IF
 #:606
 REMOVE:606 (@s-pred) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK NOT 0 ikke-@s-pred LINK NOT *-1 s#%bare%)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK NOT 0 ikke-@s-pred LINK NOT *-1 s#%bare%)
 ;
 #  " NOT *L %BARE%: han er ikke slem @S-PRED, bare litt uforsiktig"))
 
@@ -14009,7 +14008,7 @@ REMOVE:606 (@s-pred) IF
 #:605
 REMOVE:605 (@s-pred) IF
 	(*-1 verb)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK NOT 0 ikke-@s-pred LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @s-pred LINK NOT 0 ikke-@s-pred LINK *-1 s#komma LINK 1 @premod LINK -2 @premod LINK NOT *-1 s#komma)
 ;
 
 
@@ -14028,7 +14027,7 @@ REMOVE:603 (@s-pred) IF
 #  NOT LR0 SBU: IKKE FJERN sannheten er at gjerrig @S-PRED 
 # 
 # var han aldri
-#  NOT R+1 KOMMA/KONJ/ANF fordi @KON er med i PREMOD"))
+#  NOT R+1 KOMMA/KONJ/ANF fordi @KON/@NKON er med i PREMOD"))
 
 
 
@@ -14043,7 +14042,7 @@ REMOVE:602 (@s-pred) IF
 
 #:601
 REMOVE:601 (@s-pred) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(*1 ikke-mod-@adv LINK NOT 0 @s-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
@@ -14052,7 +14051,7 @@ REMOVE:601 (@s-pred) IF
 
 #:600
 REMOVE:600 (@s-pred) IF
-	(*1 ikke-mod-@adv LINK NOT 0 @s-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon)
+	(*1 ikke-mod-@adv LINK NOT 0 @s-pred LINK NOT 0 @mod LINK NOT 0 @←p-utfyll LINK *-1 ikke-premod LINK 1 @kon/@nkon)
 	(*1 ikke-mod-@adv BARRIER clb)
 	(*-1C s#periode-beg/clb-konj BARRIER @fv)
 ;
@@ -14156,7 +14155,7 @@ REMOVE:594 (@subj) IF
 	(1 subst-prop)
 	(NOT *1 overskrift)
 	(*1 ikke-subst-prop LINK 0 @iv LINK *-1C s#setn-gr LINK NOT 0 clb LINK NOT 0 %som% LINK NOT 0 @subj LINK NOT *1 @subj)
-	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app)
+	(*-1C s#setn-gr LINK *1 @fv LINK NOT 0 imp LINK NOT 0 passiv LINK 0 kh#trans-med-nom-u-ditrans LINK NOT *1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 ;
 #  "KH 28.2.2003: I formannskapet i går ville Per (ikke subj) A. Torbjørnsen vite dette."))
 
@@ -14294,8 +14293,8 @@ REMOVE:582 (@subj) IF
 REMOVE:581 (@subj) IF
 	(*-1 @subj BARRIER s#komma)
 	(*1C periode-slutt/clb-konj LINK *-1 @fv LINK NOT *-1 @fv)
-	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-premod-u-@kon LINK 0 @←p-utfyll LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
+	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-premod-u-@kon/@nkon LINK 0 @←p-utfyll LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: i industrien har vi ingen problemer @SUBJ med de reglene 
 #  
@@ -14308,7 +14307,7 @@ REMOVE:580 (@subj) IF
 	(*-1 @subj BARRIER s#komma)
 	(*1C periode-slutt/clb-konj LINK *-1 @fv LINK NOT *-1 @fv)
 	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: da inngår de heller avtaler @SUBJ med andre selskaper enn 
 #  
@@ -14320,7 +14319,7 @@ REMOVE:580 (@subj) IF
 REMOVE:579 (@subj) IF
 	(*-1 @subj BARRIER s#komma)
 	(*1 clb-komma BARRIER @fv)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: da inngår de heller avtaler @SUBJ med andre selskaper enn 
 #  
@@ -14331,7 +14330,7 @@ REMOVE:579 (@subj) IF
 #:578
 REMOVE:578 (@subj) IF
 	(*1 clb-komma BARRIER @fv)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon LINK -1 @premod LINK 2 @premod)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon/@nkon LINK -1 @premod LINK 2 @premod)
 	(*-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: da inngår de heller gode og langvarige avtaler @SUBJ 
@@ -14342,7 +14341,7 @@ REMOVE:578 (@subj) IF
 
 #:577
 REMOVE:577 (@subj) IF
-	(*-1 ikke-mod-u-@kon-@adv LINK 0 @kon LINK NOT 0 clb LINK -1C @←p-utfyll LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
+	(*-1 ikke-mod-u-@kon/@nkon-@adv LINK 0 @kon/@nkon LINK NOT 0 clb LINK -1C @←p-utfyll LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
 ;
 #  " IKKE: ..., og vil bort fra akkorden og @SUBJ timelønnen"))
 
@@ -14381,15 +14380,15 @@ REMOVE:573 (@subj) IF
 
 #:572
 REMOVE:572 (@subj) IF
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK NOT 0 prop LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT *1 @fv)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK NOT 0 prop LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT *1 @fv)
 	(*-1C s#setn-gr BARRIER @fv)
 ;
 
 
 #:571
 REMOVE:571 (@subj) IF
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK 0 prop LINK *-1 ikke-@subst→ LINK NOT 0 be-subst)
-	(*1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT *1 @fv)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK 0 prop LINK *-1 ikke-@subst→ LINK NOT 0 be-subst)
+	(*1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT *1 @fv)
 	(*-1C s#setn-gr BARRIER @fv)
 ;
 #  " IKKE: hvor mange @SUBJ klokken er?
@@ -14429,8 +14428,8 @@ REMOVE:568 (@subj) IF
 #:567
 REMOVE:567 (@subj) IF
 	(*1C periode-slutt/clb-konj LINK *-1 @fv LINK NOT *-1 @fv)
-	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-premod-u-@kon LINK 0 @←p-utfyll LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon LINK -1 @premod LINK 2 @premod)
+	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-premod-u-@kon/@nkon LINK 0 @←p-utfyll LINK NOT *-1 ikke-mod-@←p-utfyll-@adv-@app)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon/@nkon LINK -1 @premod LINK 2 @premod)
 	(*-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: i industrien har vi store og nærmest håpløse problemer @SUBJ 
@@ -14443,7 +14442,7 @@ REMOVE:567 (@subj) IF
 REMOVE:566 (@subj) IF
 	(*1C periode-slutt/clb-konj LINK *-1 @fv LINK NOT *-1 @fv)
 	(*1C periode-slutt/clb-konj LINK *-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon LINK -1 @premod LINK 2 @premod)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon/@nkon LINK -1 @premod LINK 2 @premod)
 	(*-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: da inngår de heller gode og langvarige avtaler @SUBJ 
@@ -14471,10 +14470,10 @@ REMOVE:565 (@subj) IF
 REMOVE:564 (@subj) IF
 	(*1C periode-slutt/clb-konj BARRIER @fv)
 	(*-1 @subj BARRIER s#komma)
-	(*-1 ikke-mod-u-@kon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
+	(*-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: ..., får industrien problemer @SUBJ
-#  ...-U-@KON-...: ...har sportsfiskere og elveeiere @SUBJ 
+#  ...-U-@KON/@NKON-...: ...har sportsfiskere og elveeiere @SUBJ 
 #  
 # prøvd å hjelpe"))
 
@@ -14483,7 +14482,7 @@ REMOVE:564 (@subj) IF
 #:563
 REMOVE:563 (@subj) IF
 	(*1C periode-slutt/clb-konj BARRIER @fv)
-	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon LINK -1 @premod LINK 2 @premod)
+	(*-1 ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK *1 @kon/@nkon LINK -1 @premod LINK 2 @premod)
 	(*-1C @subj LINK *-1 ikke-mod-@←p-utfyll-@adv-@app-@subj LINK 0 @fv LINK NOT 0 ikke-@fv)
 ;
 #  " IKKE: ..., får industrien store og nærmest håpløse problemer @SUBJ"))
@@ -15637,14 +15636,14 @@ REMOVE:489 (@s-pred) IF
 	(NOT 0 infmerke)
 	(NOT 0 adj-mask-fem-be-sup/%som%)
 	(*1C s#setn/infkonstr-gr LINK *-1C @iv LINK NOT 0 kop LINK NOT *-1 @subj)
-	(*1C s#setn/infkonstr-gr LINK *-1C @iv LINK NOT -1 @kon)
+	(*1C s#setn/infkonstr-gr LINK *-1C @iv LINK NOT -1 @kon/@nkon)
 	(*1C s#setn/infkonstr-gr LINK *-1C @iv LINK NOT *-1 %som%-sbu)
 ;
 #  " IKKE: dette @S-PRED er vi blitt lovet
 #  NOT *L @SUBJ/NOT *L %SOM%-SBU: det var et pøtisk 
 #  
 # bilde @S-PRED han hadde gitt meg
-#  NOT L-1 @KON: nå er gutten snart seks år @S-PRED og 
+#  NOT L-1 @KON/@NKON: nå er gutten snart seks år @S-PRED og 
 #  
 # gjenforent(@IV) med foreldrene"))
 
@@ -18651,16 +18650,16 @@ CONSTRAINTS
 #:1256
 "<noe>" REMOVE:1256 (@app) IF
 	(NOT -1 komma/strek/parentes-beg)
-	(-2 ikke-premod-u-@kon-@s-gr)
-	(NOT -2 @kon)
+	(-2 ikke-premod-u-@kon/@nkon-@s-gr)
+	(NOT -2 @kon/@nkon)
 	(NOT -2 @adv)
-	(NOT -2 @premod-u-@kon-@s-gr)
+	(NOT -2 @premod-u-@kon/@nkon-@s-gr)
 ;
 
 
 #:1255
 "<noe>" REMOVE:1255 (@app) IF
-	(*-1 ikke-premod-u-@kon-@s-gr LINK NOT 0 @premod-u-@kon-@s-gr LINK NOT 0 @adv LINK NOT 0 @kon LINK NOT 1 komma/strek/parentes-beg LINK NOT 1 komma/strek/parentes-beg)
+	(*-1 ikke-premod-u-@kon/@nkon-@s-gr LINK NOT 0 @premod-u-@kon/@nkon-@s-gr LINK NOT 0 @adv LINK NOT 0 @kon/@nkon LINK NOT 1 komma/strek/parentes-beg LINK NOT 1 komma/strek/parentes-beg)
 ;
 
 
@@ -18672,10 +18671,10 @@ CONSTRAINTS
 
 #:301
 SELECT:301 (@←p-utfyll) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(NOT 1 clb)
-	(*2 ikke-mod-u-@kon LINK 0 @←p-utfyll)
-	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll)
+	(*2 ikke-mod-u-@kon/@nkon LINK 0 @←p-utfyll)
+	(*-1 ikke-mod-u-@kon/@nkon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll)
 ;
 #  "5.12.2002: Han spør hvilke grupper innen lensmannsetaten, domstolen og politiet som bør ha streikerett. "))
 
@@ -18684,7 +18683,7 @@ SELECT:301 (@←p-utfyll) IF
 #:300
 SELECT:300 (@←p-utfyll) IF
 	(1C setn-gr)
-	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll LINK NOT 0 fl-det)
+	(*-1 ikke-mod-u-@kon/@nkon LINK 0 konj LINK NOT 0 clb LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll LINK NOT 0 fl-det)
 ;
 #  "3.12.2002: Han spør hvilke grupper innen lensmannsetaten og politiet som bør ha streikerett. 
 # Ikke: Innfrysningsprogrammet som ledet til FOS-konkursen i 1991, fôringsstoppene i 1995 og fôrkvotene (ikke @←p-utfyll) som næringen nå sliter med, er i ferd med å redusere Norge til en annenrangs oppdrettsnasjon.
@@ -18701,7 +18700,7 @@ SELECT:299 (@app) IF
 	(0 subst-prop)
 	(NOT 1 subst-prop)
 	(NOT -1 subst-gen)
-	(*-1 ikke-premod-u-@kon-@app LINK 0 be-ent-subst)
+	(*-1 ikke-premod-u-@kon/@nkon-@app LINK 0 be-ent-subst)
 ;
 #  "
 # (NOT LR0 @I-OBJ *R)
@@ -18718,7 +18717,7 @@ SELECT:299 (@app) IF
 SELECT:298 (@app) IF
 	(0 subst-prop)
 	(NOT 1 prop)
-	(*-1C ikke-premod-u-@kon LINK 0 @kon LINK NOT 0 clb LINK *-1 ikke-mod-u-@kon-@←p-utfyll-@adv LINK 0 @app LINK NOT 0 ikke-@app LINK *-1 be-subst LINK 0 fl)
+	(*-1C ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 clb LINK *-1 ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv LINK 0 @app LINK NOT 0 ikke-@app LINK *-1 be-subst LINK 0 fl)
 ;
 #  " samarbeide med industrigigantene Raytheon og Hughes
 #  LR0 FL: klesbutikken @SUBJ Hennes @APP & 
@@ -18731,7 +18730,7 @@ SELECT:298 (@app) IF
 SELECT:297 (@app) IF
 	(NOT 0 @←p-utfyll)
 	(*-1 parentes-beg/strek LINK *-1 @alle-funksjoner)
-	(*-1 parentes-beg/strek LINK NOT 1 @kon)
+	(*-1 parentes-beg/strek LINK NOT 1 @kon/@nkon)
 	(*-1 parentes-beg/strek BARRIER ikke-mod-@←p-utfyll-@adv)
 	(*1 parentes-slutt/strek LINK NOT -1 @adv)
 	(*1 parentes-slutt/strek BARRIER ikke-mod-@←p-utfyll-@adv)
@@ -18743,7 +18742,7 @@ SELECT:297 (@app) IF
 # frigjøringsteologien @APP - som vi for korhets skyld kaller den - 
 #  
 # sier at Gud hater urett
-#  NOT R+1 @KON: IKKE: i Kulleruds fascinerende psykologiske portrett 
+#  NOT R+1 @KON/@NKON: IKKE: i Kulleruds fascinerende psykologiske portrett 
 #  
 # er hovmotet - og bekjempelsen @APP av det - et leitmotiv
 #  NOT L-1 @ADV: IKKE: med fasiten i hånden - 200 år @APP etter - kan 
@@ -18763,7 +18762,7 @@ SELECT:296 (@app) IF
 #:295
 SELECT:295 (@app) IF
 	(NOT 0 adj/adv)
-	(*-1 ikke-premod-@app LINK 1 s#komma LINK NOT 1 @kon)
+	(*-1 ikke-premod-@app LINK 1 s#komma LINK NOT 1 @kon/@nkon)
 	(*1 ikke-mod-@←p-utfyll-@adv-@app-@s-gr LINK 0 @fv LINK -1 s#komma)
 ;
 #  " landslagssjef i langrenn, Erik Røste @APP, brukes ...
@@ -18773,10 +18772,10 @@ SELECT:295 (@app) IF
 
 #:294
 SELECT:294 (@obj) IF
-	(1 @kon)
+	(1 @kon/@nkon)
 	(NOT 1 clb)
-	(*2 ikke-mod-u-@kon LINK 0 @obj)
-	(*-1 ikke-mod-u-@kon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
+	(*2 ikke-mod-u-@kon/@nkon LINK 0 @obj)
+	(*-1 ikke-mod-u-@kon/@nkon/komma LINK 0 komma LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
 ;
 #  "5.12.2002: Han kjøper bil, fly og båt."))
 
@@ -18785,7 +18784,7 @@ SELECT:294 (@obj) IF
 #:293
 SELECT:293 (@obj) IF
 	(1C setn-gr)
-	(*-1 ikke-mod-u-@kon LINK 0 konj LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
+	(*-1 ikke-mod-u-@kon/@nkon LINK 0 konj LINK NOT 0 clb LINK -1 @obj LINK NOT 0 ikke-@obj)
 ;
 #  "3.12.2002: Han kjøper bil og båt."))
 
@@ -18839,8 +18838,8 @@ REMOVE:6072 (acc @subj) IF
 #:290
 REMOVE:290 (@app) IF
 	(0 @←p-utfyll)
-	(*-1 ikke-mod-u-@kon-@adv LINK 0 @kon LINK NOT 0 clb)
-	(*-1 ikke-mod-u-@kon-@adv LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll)
+	(*-1 ikke-mod-u-@kon/@nkon-@adv LINK 0 @kon/@nkon LINK NOT 0 clb)
+	(*-1 ikke-mod-u-@kon/@nkon-@adv LINK -1 @←p-utfyll LINK NOT 0 ikke-@←p-utfyll)
 	(*1C setn-gr BARRIER fv)
 ;
 #  "April 2002: De har gjort slike framstøt i Tyskland og Frankrike (ikke-app)."))
@@ -18850,8 +18849,8 @@ REMOVE:290 (@app) IF
 #:288
 REMOVE:288 (@app) IF
 	(0 subst-prop)
-	(*-1 ikke-premod-u-@kon LINK NOT 0 ikke-premod-u-@kon LINK NOT 0 @kon LINK 0 subst LINK NOT 0 be LINK *-1 ikke-@adj→-@adv→ LINK NOT 0 poss/gen)
-	(*-1C ikke-premod-u-@kon LINK NOT 1 komma/strek/parentes-beg)
+	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 ikke-premod-u-@kon/@nkon LINK NOT 0 @kon/@nkon LINK 0 subst LINK NOT 0 be LINK *-1 ikke-@adj→-@adv→ LINK NOT 0 poss/gen)
+	(*-1C ikke-premod-u-@kon/@nkon LINK NOT 1 komma/strek/parentes-beg)
 ;
 #  " IKKE: ..., da Jan T. Jørgensen @APP sa dette
 #  IKKE FJERN: ... med industrigigantene Raytheon @APP og 
@@ -18864,9 +18863,9 @@ REMOVE:288 (@app) IF
 REMOVE:287 (@app) IF
 	(0 subst-prop)
 	(-1 subst)
-	(-1C ikke-premod-u-@kon)
+	(-1C ikke-premod-u-@kon/@nkon)
 	(NOT -1 be)
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 	(*-2 ikke-@adj→-@adv→ LINK NOT 0 poss/gen)
 ;
 #  ""))
@@ -18876,16 +18875,16 @@ REMOVE:287 (@app) IF
 #:286
 REMOVE:286 (@app) IF
 	(0 subst-prop)
-	(-1C ikke-premod-u-@kon)
+	(-1C ikke-premod-u-@kon/@nkon)
 	(NOT -1 subst)
-	(NOT -1 @kon)
+	(NOT -1 @kon/@nkon)
 ;
 
 
 #:285
 REMOVE:285 (@app) IF
 	(0 subst-prop)
-	(*-1 ikke-premod-u-@kon LINK NOT 0 ikke-premod-u-@kon LINK NOT 0 @kon LINK NOT 0 subst LINK NOT 1 komma/strek/parentes-beg)
+	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 ikke-premod-u-@kon/@nkon LINK NOT 0 @kon/@nkon LINK NOT 0 subst LINK NOT 1 komma/strek/parentes-beg)
 ;
 
 
@@ -18991,10 +18990,10 @@ REMOVE:276 (@app) IF
 	(NOT 0 s#%noe%)
 	(NOT 0 prop)
 	(NOT -1 komma/strek/parentes-beg)
-	(-2 ikke-premod-u-@kon)
-	(NOT -2 @kon)
+	(-2 ikke-premod-u-@kon/@nkon)
+	(NOT -2 @kon/@nkon)
 	(NOT -2 @adv)
-	(NOT -2 @premod-u-@kon)
+	(NOT -2 @premod-u-@kon/@nkon)
 ;
 
 
@@ -19002,7 +19001,7 @@ REMOVE:276 (@app) IF
 REMOVE:275 (@app) IF
 	(NOT 0 s#%noe%)
 	(NOT 0 prop)
-	(*-1 ikke-premod-u-@kon LINK NOT 0 @premod-u-@kon LINK NOT 0 @adv LINK NOT 0 @kon LINK NOT 1 komma/strek/parentes-beg LINK NOT 1 komma/strek/parentes-beg)
+	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 @premod-u-@kon/@nkon LINK NOT 0 @adv LINK NOT 0 @kon/@nkon LINK NOT 1 komma/strek/parentes-beg LINK NOT 1 komma/strek/parentes-beg)
 ;
 #  " IKKE: ..., og fant en hatt @APP
 #  IKKE: man kan oppnå en midlertidig, kortvarig 
@@ -19026,7 +19025,7 @@ REMOVE:274 (@app) IF
 
 #:273
 REMOVE:273 (@app) IF
-	(*-1 ikke-premod-u-@kon LINK NOT 0 ikke-premod-u-@kon LINK 0 @kon LINK NOT 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
+	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
 ;
 #  " IKKE: i dialog med myndighetene om regelverk og 
 #  
@@ -19036,8 +19035,8 @@ REMOVE:273 (@app) IF
 
 #:272
 REMOVE:272 (@app) IF
-	(*-1 ikke-premod-u-@kon LINK 0 @kon LINK 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
-	(*-1 @kon LINK NOT -1 tegnsetting/parentes)
+	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
+	(*-1 @kon/@nkon LINK NOT -1 tegnsetting/parentes)
 ;
 #  " IKKE: i dialog med myndighetene om regelverk 
 #  eller rammebetingelser @APP
