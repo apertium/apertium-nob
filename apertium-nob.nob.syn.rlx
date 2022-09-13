@@ -5123,6 +5123,10 @@ CONSTRAINTS
 	(NOT 1 komp/%så%)
 ;
 
+"<grep>" REMOVE:ta-grep (@subj) IF
+        (-1 ("ta"))
+        ;
+
 
 #:1247
 "<som>" REMOVE:1247 (@s-pred) IF
