@@ -8862,6 +8862,10 @@ SELECT:i-adj-hevd ("hevd") IF
         (-1 adj)
         ;
 # "Disse blå lysene..."
+"<asken>" REMOVE:asken-etter ("ask") IF
+        (1 ("etter"))
+        ;
+# "Der er også asken etter hennes søster."
 "<sort>" REMOVE:kle-seg-i-sort n IF
         (-3 ("kle"))
         (-2 ("seg"))
