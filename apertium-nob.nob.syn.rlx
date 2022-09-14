@@ -11027,12 +11027,18 @@ SELECT:859 (@subj) IF
 
 
 
-SELECT:en-strekning..er-bevart @subj IF
+SELECT:en-strekning..er-bevart (@subj) IF
         (NEGATE *-1C @subj BARRIER cm OR setn-gr)
         (1 @adv LINK *1 kop-fin BARRIER ikke-@det→-@←p-utfyll LINK 1 @s-pred)
         ;
 # «Den 78 kilometer lange strekningen åpnet i 1896 og ble nedlagt i 1962, men en strekning på 8 kilometer er bevart og drives i dag som museumsjernbane.»
 
+SELECT:cm-og-faren-kategoriseres (@subj) IF
+        (NEGATE *-1C @subj LINK NEGATE 0* @fv BARRIER clb) # if there's a left subject, ensure it has a verb
+        (-1C cnjcoo + clb)
+        (1C @fv)
+        ;
+# «Verdiene er skyhøye, og skogbrannfaren kategoriseres som «meget stor fare» i hele landet med unntak av de tre nordligste fylkene»
 
 
 #:858
