@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d . nob-seg | cg-conv a" -*-
+# -*- cg-pre-pipe: "apertium -d . nob-segment | cg-conv a" -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
@@ -20343,6 +20343,14 @@ SELECT:jeg-så-den-cm-men pron-pers IF
 # ikke: en av ... en eller annen...en, to, tre"
 # 170908 Not 0 interj - "ho ho"
 
+SELECT:Den-tildeles-utøvere pers + nominativ IF
+        (-1 >>>)
+        (1 pres + pasv)
+        (0C nom OR acc)
+        (NOT 0 expl)            # «Det konsumeres ost daglig.»
+        ;
+# «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+
 SELECT:Likevel-gleder-han-seg pers + nominativ IF
         (-2C storbokstav + adv OR cnjsub)
         (-1C fv)
@@ -31398,6 +31406,12 @@ CONSTRAINTS
 #CONSTRAINTS
 ## remove domain heur
 
+"<Andre>" REMOVE:Andre-tilbys-penger np IF
+        (-1 >>>)
+        (1C fv)
+        ;
+# tar sjansar på at det ikkje er namnet (har vel vanlegvis aksent)
+
 
 #:4013
   "<bare>"   REMOVE:4013   (adj pl) IF
@@ -31428,6 +31442,12 @@ CONSTRAINTS
 	(0 adv)
 ;
 #  "kh feb 2004: som regel adverb"
+
+
+"<det>" REMOVE:som-det-generelt-meldes (acc) IF
+        (-1 %som%)
+        (*1 pasv BARRIER ikke-adv)
+        ;
 
  #:4092
  "<dette>"   REMOVE:4092   (vblex inf) IF
@@ -35581,6 +35601,14 @@ SELECT:når-han-omtaler nominativ IF
         (1 fv)
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
+
+SELECT:før-det-stemmes cnjsub IF
+        (0C pr OR cnjsub)
+        (1C expl)
+        (2C pasv)
+        ;
+# «Lørdag tok Parlamentet igjen kontroll og tvang regjeringen til å presentere de nødvendige lovendringene før det stemmes over avtaleteksten.»
+
 
 SELECT:har-økt-samtidig-som-det-tas pres IF
         (*-2 fv BARRIER inf)
