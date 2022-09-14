@@ -390,6 +390,7 @@ LIST %om% = "om"  ;
 LIST %om/enn/som/hvis% = "som"  "om"  "hvis"  "enn"  ;
 LIST %opp% = "opp"  ;
 LIST %over% = "over"  ;
+LIST %pga% = "pga" "pga." "på grunn av" ;
 LIST %pik% = "pik"  ;
 LIST %puste% = "puste"  ;
 LIST %på% = "på"  ;
@@ -10920,7 +10921,6 @@ REMOVE:høgd greiner;
 #  "ser bort fra: bare ved \"ett rent ingenting\""
 
 
-
 #:3508
   "<intet>"   REMOVE:3508   (det nt) IF
 	(*-1 nøyt-det BARRIER ikke-adv-adj)
@@ -20330,6 +20330,13 @@ SELECT:at-det-ble-registrert det + expl IF
 SELECT:Der-findes expl IF
         (-1 setn-gr)
         (1 ("finnes") OR ("være"))
+        ;
+
+SELECT:Der-det-pga-X-er expl IF
+        (-1 cnjsub OR adv)
+        (1 %pga%)
+        (2 n)
+        (3 fv)
         ;
 
 #:2607
@@ -31173,6 +31180,11 @@ CONSTRAINTS
 
 "<lekker>" SELECT:virkelig-lekker adj IF
         (-1 forsterkende-ord)
+        ;
+
+
+"<ingen>" SELECT:ingen-anelse det + sg IF
+        (1C n + sg)
         ;
 
 #:4055

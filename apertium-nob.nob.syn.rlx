@@ -19178,7 +19178,7 @@ REMOVE:prefer-left-subj-of-clause (@subj) IF
         ;
 
 SELECT:prefer-left-subj-of-clause (@subj) IF
-        (NEGATE *-1 @subj BARRIER fv OR setn-gr)
+        (NEGATE *-1 @subj BARRIER setn-gr)
         (0 @obj OR @i-obj)
         ;
 
