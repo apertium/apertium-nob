@@ -36822,6 +36822,7 @@ SELECT:default ("råd") + pl ;
 SELECT:default ("gjeng") + m + ind ;
 SELECT:default ("kart") + nt ;
 SELECT:default ("kart") + sg ;
+SELECT:default ("jorda"i) + top;
 
 
 
