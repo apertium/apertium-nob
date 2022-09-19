@@ -77,6 +77,7 @@ LIST al = al ;
 LIST cog = cog ;
 LIST ant = ant ;
 LIST org = org ;
+LIST init = init ;
 LIST attr = attr ;
 LIST adj = adj ;
 LIST ord = ord ;
@@ -1079,6 +1080,8 @@ SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess
 # «Kommunenes<not np> utfordring i forhold til Kommunenes<np> Hus på torsdag.»
 LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse" "tall" "myndighet" "gruppe" "mor" ;
 
+"<A-å.>"i SELECT:initial np IF (1 np);
+
 APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
         (0 storbokstav)
         (NOT 0 not-np-guess)
@@ -1328,8 +1331,6 @@ REMOVE:acronym-dash ("[A-ZÆØÅ]?[a-zæøå]+-.*"r) IF
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
-SELECT:initial-M np IF (1 np);
-SELECT:initial-M np IF (-1 np);
 
 
 ########################################################
@@ -9194,6 +9195,10 @@ SELECT:sittet-varetektsfengslet pp IF
         (-1 ("ha"))
         ;
 # å ha landet
+
+"<løvene>"i SELECT:dyret ("løve");
+        # lauva mindre frekvent og sjeldan nytta i fleirtal (jf. "løvet/løvene faller av")
+        # i Nynorskkorpuset gir "løvene" 87 treff, "lauva" (s.) 4 treff
 
 SELECT:default ("rom") + n + nt IF
         (0/1 cmp)
