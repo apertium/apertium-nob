@@ -1328,6 +1328,8 @@ REMOVE:acronym-dash ("[A-ZÆØÅ]?[a-zæøå]+-.*"r) IF
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
+SELECT:initial-M np IF (1 np);
+SELECT:initial-M np IF (-1 np);
 
 
 ########################################################
