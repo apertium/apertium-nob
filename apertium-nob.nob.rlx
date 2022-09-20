@@ -37365,6 +37365,7 @@ REMOVE:default-fondene ("fond" m) ;
 REMOVE:default-profil ("profil" nt) ;
 
 "<vinder>" REMOVE:default ("vinde") ;
+"<Etter>" REMOVE:default np ;
 
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
