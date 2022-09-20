@@ -3775,7 +3775,6 @@ SELECT:default pl IF
 #  "kh jan 2004: for meget"
 
 
-
 #:3651
   "<for>"   SELECT:3651   (adv) IF
 	(1 %mye/lite%)
@@ -4008,6 +4007,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 # I bm er de fleste for-verb-eksemplene verb + prep"
 #	(*-1 setn-gr BARRIER fv)
 #	(*1 setn-gr BARRIER fv)
+
+
+"<forene>" SELECT:forene-seg inf IF
+        (1 %seg%)
+        ;
 
 "<fortsatt>" SELECT (adv) IF
 	(1 ("til"))
@@ -37364,6 +37368,7 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 REMOVE:default-fondene ("fond" m) ;
 REMOVE:default-profil ("profil" nt) ;
 
+"<skillet>"i REMOVE:default ("skill") ;
 "<vinder>" REMOVE:default ("vinde") ;
 "<Etter>" REMOVE:default np ;
 
