@@ -36590,6 +36590,12 @@ SELECT:et-snev $$GENDER + $$NUMBER IF
 # «– Likevel er det ikke et snev av tvil, som Frp selv sa da de begrunnet hvorfor de gikk ut av regjering»
 # Men ikkje: «Den franske avisen skriver at brannmennene, som tilhører det franske militæret, møtte tre kvinnelige norske studenter på en   bar   fredag kveld.»
 
+REMOVE:dannet-grunnlaget adj + ind IF
+        (NEGATE 0* fv BARRIER setn-gr)
+        (0C fv OR adj + ind)
+        (1C n + def)
+        ;
+# «Den militære situasjonen i 1945 og en rekke avtaler mellom de allierte på konferanser under og like etter krigen i Europa (Casablanca og Teheran i 1943, Jalta og Potsdam i 1945)   dannet   grunnlaget for fredsordningen.»
 
 SELECT:hvilke-typer-som-er-innbringende &&ADJ_N_AGR IF
         (*-1 kop-fv BARRIER clb OR fv
