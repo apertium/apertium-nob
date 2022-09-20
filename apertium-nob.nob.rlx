@@ -37364,6 +37364,8 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 REMOVE:default-fondene ("fond" m) ;
 REMOVE:default-profil ("profil" nt) ;
 
+"<vinder>" REMOVE:default ("vinde") ;
+
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 
