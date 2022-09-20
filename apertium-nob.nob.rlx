@@ -36766,6 +36766,10 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		;
 
 
+"<varsler>"i REMOVE:varsler ("varsler") IF
+        (NOT -1 qnt)
+        ;
+# sannsynlegvis ikkje whistleblower viss me har komme så langt ned i disambigueringa
 
 REMOVE:vindus- gen IF
         (0 cmp-split)
