@@ -1104,6 +1104,149 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         ;
 # «sin beste Vårt Land-måling»
 
+"<de>"i SELECT:de-Roquefort np + attr IF
+        (1 np + storbokstav OR ukjent + storbokstav)
+        (-1 np + storbokstav OR ukjent + storbokstav OR ("si" vblex) OR ("opplyse" vblex) OR ("uttale" vblex) OR n)
+        ; # ballkunstnaren de Bruyne
+"<la>"i SELECT:La-Dauphin np + attr IF
+        (0 titlecase)
+        (1 np OR ukjent + storbokstav)
+        ; # Uvanleg med liten forbokstav
+"<de>"i SELECT:de-la-Rivière np + attr IF
+        (1 ("<la>"i) + np)
+        (2 np + storbokstav OR ukjent + storbokstav)
+        ; # de franske kunstnerne de la Croix, Camille Corot, Theodore Rousseau og Andre Dereian
+          # Hypotetisk: de la Guri for kvelden, de la Polarstjerne til kai
+"<de>"i REMOVE:unlikely np;
+"<la>"i REMOVE:unlikely np;
+
+"<du>"i SELECT:du-Plessis np + attr IF
+        (1 np + storbokstav OR ukjent + storbokstav)
+        (-1 np + storbokstav OR ukjent + storbokstav OR ("si" vblex) OR ("opplyse" vblex) OR ("uttale" vblex) OR n)
+        ; # Styreformann Jan du Plessis
+"<du>"i REMOVE:unlikely np;
+
+"<des>"i SELECT:Des-Voeux np + attr IF (1 np OR ukjent + storbokstav); # sykkelrittet Tour des Fjords, Haus des Rundfunks
+"<des>"i REMOVE:unlikely np;
+
+"<el>"i SELECT:El-Niño np + attr IF
+        (0 titlecase)
+        (1 np OR ukjent + storbokstav); # El Diario Vasco
+"<el>"i REMOVE:unlikely np;
+
+"<il>"i SELECT:Il-Tempo-Gigante np + attr IF
+        (0 titlecase)
+        (1 np OR ukjent + storbokstav); # Il Fatto Quotidiano, Kim Il Sung; også IL Runar
+"<il>"i REMOVE:unlikely np;
+
+"<del>"i SELECT:del-Toro np + attr IF
+        (1 np OR ukjent + storbokstav)
+        (NEGATE -1 ("en") + det + qnt + m)
+        ;
+"<del>"i REMOVE:unlikely np;
+
+"<della>"i SELECT:del-Toro np + attr IF (1 np OR ukjent + storbokstav); #safe
+"<della>"i REMOVE:unlikely np;
+
+"<bin>"i SELECT:bin-Laden np + attr IF (1 np OR ukjent + storbokstav); #safe; Mohammed bin Salman
+"<bin>"i REMOVE:unlikely np;
+
+"<al>"i SELECT:al-Kubaisi np + attr IF (1 np OR ukjent + storbokstav); #safe; Al Furqan, Mohammed bin Zayed al Nahyan
+"<al>"i REMOVE:unlikely np;
+
+"<los>"i SELECT:Los-Tuxtlas np + attr IF 
+        (0 storbokstav)
+        (1 np OR ukjent + storbokstav); # Los Lobos
+"<los>"i REMOVE:unlikely np;
+
+"<las>"i SELECT:Las-Palmas np + attr IF
+        (0 storbokstav)
+        (1 np OR ukjent + storbokstav); # Las Vegas
+"<las>"i REMOVE:unlikely np;
+
+"<y>"i SELECT:Rodrigo-y-Gabriela np + attr IF
+        (-1 np OR ukjent + storbokstav)
+        (1 np OR ukjent + storbokstav); # Cultural y Deportiva Leonesa, Construcciones y Auxiliar de Ferrocarriles
+"<y>"i REMOVE:unlikely np;
+
+"<di>"i SELECT:Di-Vittorio np + attr IF (1 np OR ukjent + storbokstav); # Angel Di Maria, Lago di Tesero
+"<di>"i REMOVE:unlikely np;
+
+"<van>"i SELECT:van-Dam np + attr IF (1 np OR ukjent + storbokstav); # Dries Van Gestel, van Foreest
+"<van>"i REMOVE:unlikely np;
+
+"<van der>"i SELECT:van-der-Hagen np + attr IF (1 np OR ukjent + storbokstav); # Audrey van der Meer
+"<van der>"i REMOVE:unlikely np;
+
+"<van den>"i SELECT:Van-den-Broeck np + attr IF (1 np OR ukjent + storbokstav); # Tomas van den Spiegel
+"<van den>"i REMOVE:unlikely np;
+
+"<van de>"i SELECT:Daniëlle-van-de-Donk np + attr IF (1 np OR ukjent + storbokstav); # Van de Keere
+"<van de>"i REMOVE:unlikely np;
+
+"<af>"i SELECT:af-Kleen np + attr IF
+        (0 berre-litenbokstav)
+        (1 np OR ukjent + storbokstav);
+"<af>"i REMOVE:unlikely np;
+
+"<av>"i SELECT:av-Assisi np + attr IF
+        (0 berre-litenbokstav)
+        (-1 np OR ukjent + storbokstav)
+        (1 np OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
+"<av>"i REMOVE:unlikely np;
+
+"<von>"i SELECT:von-Hanno np + attr IF (1 np OR ukjent + storbokstav); # Henrik von Achen; Linebackar Von Miller
+"<von>"i REMOVE:unlikely np;
+
+"<vom>"i SELECT:Mathilda-vom-Geestmoor np + attr IF (1 np OR ukjent + storbokstav);
+"<vom>"i REMOVE:unlikely np;
+
+"<von der>"i SELECT:von-der-Lippe np + attr IF (1 np OR ukjent + storbokstav); # Ursula Gertrud von der Leyen
+"<von der>"i REMOVE:unlikely np;
+
+"<von den>"i SELECT:Karl-von-den-Steinen np + attr IF (1 np OR ukjent + storbokstav);
+"<von den>"i REMOVE:unlikely np;
+
+"<am>"i SELECT:Rüdesheim-am-Rhein np + attr IF
+        (0 berre-litenbokstav)
+        (-1 np OR ukjent + storbokstav)
+        (1 np OR ukjent + storbokstav); # Bernau am Chiemsee, Welt am Sonntag
+"<am>"i REMOVE:unlikely np;
+
+"<im>"i SELECT:St.-Peter-im-Schwarzwald np + attr IF
+        (0 berre-litenbokstav)
+        (-1 np OR ukjent + storbokstav)
+        (1 np OR ukjent + storbokstav);
+"<im>"i REMOVE:unlikely np;
+
+"<zu>"i SELECT:Humboldt-Universität-zu-Berlin np + attr IF (1 np OR ukjent + storbokstav);
+"<zu>"i REMOVE:unlikely np;
+
+"<zum>"i SELECT:Schule-Zum-Römerturm np + attr IF (1 np OR ukjent + storbokstav);
+"<zum>"i REMOVE:unlikely np;
+
+"<zur>"i SELECT:Harald-zur-Hausen np + attr IF (1 np OR ukjent + storbokstav);
+"<zur>"i REMOVE:unlikely np;
+
+"<zu den>"i SELECT:Evangelische-Kirche-Zu-den-Zwölf-Aposteln np + attr IF (1 np OR ukjent + storbokstav);
+"<zu den>"i REMOVE:unlikely np;
+
+"<an der>"i SELECT:Brandenburg-an-der-Havel np + attr IF (1 np OR ukjent + storbokstav);
+"<an der>"i REMOVE:unlikely np;
+
+"<Ó>"i SELECT:Sinéad-Ó-Brien np + attr IF (1 np OR ukjent + storbokstav);
+"<Ó>"i REMOVE:unlikely np;
+
+"<Mac>"i SELECT:Mac-Master np + attr IF
+        (0 titlecase)
+        (1 np OR ukjent + storbokstav); # Mac Franz
+"<Mac>"i REMOVE:unlikely np;
+
+"<Mc>"i SELECT:Mc-Laughlin np + attr IF
+        (0 titlecase)
+        (1 np OR ukjent + storbokstav);
+"<Mc>"i REMOVE:unlikely np;
+
 # sec 1
 CONSTRAINTS
 
@@ -18028,7 +18171,7 @@ REMOVE:forventes-også-at adv IF
 
 
 "<la>" SELECT pret IF
-        (NOT -1 ("<viva>"i) OR ("<hasta>"i) OR ("<de>"i) OR ("<à>"i) OR ("<a>"i) OR ("<pour>"i))
+        (NOT -1 ("<viva>"i) OR ("<hasta>"i) OR ("<à>"i) OR ("<a>"i) OR ("<pour>"i))
         (-1C np OR storbokstav)
         (1C np OR storbokstav)
         ;
@@ -31088,16 +31231,16 @@ CONSTRAINTS
 	(-1 ("møte") + pres)
 	(1 ukjent + storbokstav)
         ;
-"<de>" REMOVE:har-de-Høyre-styrte-kommunene np IF
-	(1 ("<.*-.*>"r))
-        ;
-"<de>" REMOVE:de-np np IF
-	(NOT 1 np)
-	(NOT 1 ukjent + storbokstav)
-        ;
-"<De>" REMOVE:de-np np IF
-	(NOT 1 np)
-        ;
+#"<de>" REMOVE:har-de-Høyre-styrte-kommunene np IF
+#	(1 ("<.*-.*>"r))
+#        ;
+#"<de>" REMOVE:de-np np IF
+#	(NOT 1 np)
+#	(NOT 1 ukjent + storbokstav)
+#        ;
+#"<De>" REMOVE:de-np np IF
+#	(NOT 1 np)
+#        ;
 
 "<De>" REMOVE:de-acc (acc);
 "<de>" REMOVE:de-acc (acc) IF
