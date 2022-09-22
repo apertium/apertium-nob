@@ -1172,6 +1172,9 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
 "<di>"i SELECT:Di-Vittorio np + attr IF (1 np OR ukjent + storbokstav); # Angel Di Maria, Lago di Tesero
 "<di>"i REMOVE:unlikely np;
 
+"<do>"i SELECT:Praia-do-Beliche np + attr IF (1 np OR ukjent + storbokstav); # Angel Di Maria, Lago di Tesero
+"<do>"i REMOVE:unlikely np;
+
 "<van>"i SELECT:van-Dam np + attr IF (1 np OR ukjent + storbokstav); # Dries Van Gestel, van Foreest
 "<van>"i REMOVE:unlikely np;
 
