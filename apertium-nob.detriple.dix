@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet>ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÄÅÆÇÈÉÊËÍÑÒÓÔÕÖØÙÚÜČĐŊŠŦŽabcdefghijklmnopqrstuvwxyzàáâäåæçèéêëíñòóôõöøùúüčđŋšŧž­-</alphabet>
+  <sdefs>
+    <sdef n="n" 	c="Noun"/>
+  </sdefs>
+  <pardefs>
+  </pardefs>
+  <section id="main" type="standard">
+    <!--
+        Turn double consonants in front of ¤ into single consonants,
+        in order to allow compounds where triple consonants are just
+        double, ie. ^toppoeng/topp+poeng$ (the forms being top+poeng).
+
+        The analyser puts a ¤ right before the compound border to
+        allow this.
+    -->
+
+    <e><p><l>bb¤</l><r>b</r></p></e>
+
+    <e><p><l>dd¤</l><r>d</r></p></e>
+
+    <e><p><l>ff¤</l><r>f</r></p></e>
+
+    <e><p><l>gg¤</l><r>g</r></p></e>
+
+    <e><p><l>kk¤</l><r>k</r></p></e>
+
+    <e><p><l>ll¤</l><r>l</r></p></e>
+
+    <e><p><l>mm¤</l><r>m</r></p></e>
+
+    <e><p><l>nn¤</l><r>n</r></p></e>
+
+    <e><p><l>pp¤</l><r>p</r></p></e>
+
+    <e><p><l>rr¤</l><r>r</r></p></e>
+
+    <e><p><l>ss¤</l><r>s</r></p></e>
+
+    <e><p><l>tt¤</l><r>t</r></p></e>
+
+    <e><p><l>vv¤</l><r>v</r></p></e>
+
+    <!-- <e><p><l>¤</l><r></r></p></e> -->
+
+  </section>
+</dictionary>
