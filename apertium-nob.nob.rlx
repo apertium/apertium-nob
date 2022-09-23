@@ -92,6 +92,7 @@ LIST un = un ;
 LIST mf = mf ;
 LIST acc = acc ;
 LIST guio = guio ;
+LIST detriple = detriple ;
 LIST apos = apos ;
 LIST lpar = lpar ;
 LIST rpar = rpar ;
@@ -971,6 +972,43 @@ TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
 BEFORE-SECTIONS
+
+
+#### BEGIN consonant tripling
+LIST lastChar = ".*([a-z])"r ;
+SET nonDetriple = (*) - detriple ;
+# NB. The order of these rules is important – 4 parts before 3 parts before 2 parts
+#
+# TODO: How to ensure these subreadings are on the same reading? Need
+# a SUBLINK operator, or magic set for the reading being REMOVE'd
+# Test case: politikilder (politikk+ilder, vs politi+kilder, the
+# undoubled k of politikk matches kilder).
+# For now, require that the consonant is doubled in the form (<.*$1$1.*>).
+APPEND:not-triple-but-unk3 ("*$1"v) TARGET ("<(.*)>"r) IF
+        (0/3 detriple)
+        (NEGATE 0/* nonDetriple)
+	(NEGATE 0/3 lastChar LINK 0/2 (VSTR:"$2.*"r))
+	;
+APPEND:not-triple-but-unk2 ("*$1"v) TARGET ("<(.*)>"r) IF
+        (0/2 detriple)
+        (NEGATE 0/* nonDetriple)
+	(NEGATE 0/2 lastChar LINK 0/1 (VSTR:"$2.*"r))
+	;
+APPEND:not-triple-but-unk1 ("*$1"v) TARGET ("<(.*)>"r) IF
+	(0/1 detriple)
+        (NEGATE 0/* nonDetriple)
+	(NEGATE 0/1 lastChar LINK 0/0 (VSTR:"$2.*"r))
+	;
+REMOVE:not-triple3 SUB:3 detriple + lastChar IF
+	(NEGATE 0/2 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	;
+REMOVE:not-triple2 SUB:2 detriple + lastChar IF
+	(NEGATE 0/1 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	;
+REMOVE:not-triple1 SUB:1 detriple + lastChar IF
+	(NEGATE 0/0 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	;
+#### END consonant tripling
 
 # Words that may appear capitalised at start of sentence, but
 # mid-sentence appear more often lowercase than uppercase are
@@ -37747,3 +37785,8 @@ SELECT:issue37 SUB:2 org ;
 SELECT:issue37 SUB:2 al ;
 SELECT:issue37 SUB:2 top ;
 SELECT:issue37 SUB:2 np ;
+
+REMOVE:issue37 SUB:1 detriple;
+REMOVE:issue37 SUB:2 detriple;
+REMOVE:issue37 SUB:3 detriple;
+REMOVE:issue37 SUB:* detriple;
