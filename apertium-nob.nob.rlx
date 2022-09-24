@@ -2012,6 +2012,12 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 REMOVE:unlikely ("gylden"i) + n + sg + ind;
 
+
+REMOVE:unlikely ("plage") IF (0 ("lag")); # topplagene
+
+# Some unlikely nouns ambig with adj's in compounds:
+REMOVE:unlikely ("kram") IF (0 ("ramme")); # sjokkrammet
+
 # Prefer nouns in compounds, unless in exception-list:
 LIST allow-adjcmp = "klippe" "stemple" "ramme";
 REMOVE:prefer-ncmp adj IF
