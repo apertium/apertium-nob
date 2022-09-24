@@ -986,17 +986,17 @@ SET nonDetriple = (*) - detriple ;
 # modifier. Test case: politikilder (politikk+ilder, vs
 # politi+kilder, the undoubled k of politikk matches kilder).
 APPEND:not-triple-but-unk3 ("*$1"v) TARGET ("<(.*)>"r) IF
-        (0/3 detriple)
+        (0/3 detriple - (dummy1))
         (NEGATE 0/* nonDetriple)
 	(NEGATE T0/3 lastChar LINK T0/2 (VSTR:"$2.*"r))
 	;
 APPEND:not-triple-but-unk2 ("*$1"v) TARGET ("<(.*)>"r) IF
-        (0/2 detriple)
+        (0/2 detriple - (dummy2))
         (NEGATE 0/* nonDetriple)
 	(NEGATE T0/2 lastChar LINK T0/1 (VSTR:"$2.*"r))
 	;
 APPEND:not-triple-but-unk1 ("*$1"v) TARGET ("<(.*)>"r) IF
-	(0/1 detriple)
+	(0/1 detriple - (dummy3))
         (NEGATE 0/* nonDetriple)
 	(NEGATE T0/1 lastChar LINK T0/0 (VSTR:"$2.*"r))
 	;
