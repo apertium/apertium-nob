@@ -978,35 +978,36 @@ BEFORE-SECTIONS
 LIST lastChar = ".*([a-z])"r ;
 SET nonDetriple = (*) - detriple ;
 # NB. The order of these rules is important – 4 parts before 3 parts before 2 parts
+# possibly related to https://github.com/GrammarSoft/cg3/issues/101
 #
-# TODO: How to ensure these subreadings are on the same reading? Need
-# a SUBLINK operator, or magic set for the reading being REMOVE'd
-# Test case: politikilder (politikk+ilder, vs politi+kilder, the
-# undoubled k of politikk matches kilder).
-# For now, require that the consonant is doubled in the form (<.*$1$1.*>).
+# https://github.com/GrammarSoft/cg3/issues/38
+#
+# We ensure the subreadings are on the target reading with the T
+# modifier. Test case: politikilder (politikk+ilder, vs
+# politi+kilder, the undoubled k of politikk matches kilder).
 APPEND:not-triple-but-unk3 ("*$1"v) TARGET ("<(.*)>"r) IF
         (0/3 detriple)
         (NEGATE 0/* nonDetriple)
-	(NEGATE 0/3 lastChar LINK 0/2 (VSTR:"$2.*"r))
+	(NEGATE T0/3 lastChar LINK T0/2 (VSTR:"$2.*"r))
 	;
 APPEND:not-triple-but-unk2 ("*$1"v) TARGET ("<(.*)>"r) IF
         (0/2 detriple)
         (NEGATE 0/* nonDetriple)
-	(NEGATE 0/2 lastChar LINK 0/1 (VSTR:"$2.*"r))
+	(NEGATE T0/2 lastChar LINK T0/1 (VSTR:"$2.*"r))
 	;
 APPEND:not-triple-but-unk1 ("*$1"v) TARGET ("<(.*)>"r) IF
 	(0/1 detriple)
         (NEGATE 0/* nonDetriple)
-	(NEGATE 0/1 lastChar LINK 0/0 (VSTR:"$2.*"r))
+	(NEGATE T0/1 lastChar LINK T0/0 (VSTR:"$2.*"r))
 	;
 REMOVE:not-triple3 SUB:3 detriple + lastChar IF
-	(NEGATE 0/2 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	(NEGATE T0/2 (VSTR:"$1.*"r))
 	;
 REMOVE:not-triple2 SUB:2 detriple + lastChar IF
-	(NEGATE 0/1 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	(NEGATE T0/1 (VSTR:"$1.*"r))
 	;
 REMOVE:not-triple1 SUB:1 detriple + lastChar IF
-	(NEGATE 0/0 (VSTR:"$1.*"r) LINK 0 (VSTR:"<.*$1$1.*>"r))
+	(NEGATE T0/0 (VSTR:"$1.*"r))
 	;
 #### END consonant tripling
 
