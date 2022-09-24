@@ -1,0 +1,36 @@
+[1VIT_L9DITQP#0] ^Vikingane/*Vikingane$^./.<sent><clb>$
+[/1VIT_L9DITQP]
+[2OhyVmoO1sUC#0] ^politikilder/politikilde<n><m><pl><ind>$^./.<sent><clb>$
+[/2OhyVmoO1sUC]
+[4kBuucex88WW#0] ^straffeslagkonkurransen/*straffeslagkonkurransen$^./.<sent><clb>$
+[/4kBuucex88WW]
+[7NZkl9bqR43t#0] ^toppreken/topp<n><m><sg><ind><cmp>+reke<n><m><sg><def>$^./.<sent><clb>$
+[/7NZkl9bqR43t]
+[7tg_-l11tPKH#0] ^topplager/topp<n><m><sg><ind><cmp><detriple>+plage<n><m><pl><ind>$^./.<sent><clb>$
+[/7tg_-l11tPKH]
+[9k-xRhbzVaon#0] ^Kokuka/*Kokuka$^./.<sent><clb>$
+[/9k-xRhbzVaon]
+[IIXsSYwi7Jfr#0] ^toppoenget/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><def>$^./.<sent><clb>$
+[/IIXsSYwi7Jfr]
+[Mv4qSDbDVZOW#0] ^riksrettssaken/riks<n><m><sg><ind><cmp>+rettssak<n><m><sg><def>/riksrett<n><m><sg><ind><cmp>+sak<n><m><sg><def>$^./.<sent><clb>$
+[/Mv4qSDbDVZOW]
+[RAfnxjWl8e2C#0] ^menneskehandelsaker/menneskehandel<n><m><sg><ind><cmp>+sak<n><m><pl><ind>$^./.<sent><clb>$
+[/RAfnxjWl8e2C]
+[V2Q98fqD7K59#0] ^poenget/poeng<n><nt><sg><def>$^./.<sent><clb>$
+[/V2Q98fqD7K59]
+[YNO4C-1BaJf3#0] ^politikost/politi<n><m><sg><ind><cmp>+kost<n><m><sg><ind>$^./.<sent><clb>$
+[/YNO4C-1BaJf3]
+[jG1Z3CGbrr8r#0] ^gultrøyene/gult<n><nt><sp><cmp>+røy<n><m><pl><def>/gult<n><nt><sp><cmp>+røye<n><m><pl><def>$^./.<sent><clb>$
+[/jG1Z3CGbrr8r]
+[k47z9mR_-tyw#0] ^toppoengmannen/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind><cmp>+mann<n><m><sg><def>$^./.<sent><clb>$
+[/k47z9mR_-tyw]
+[nE1o59h6v5IT#0] ^sjokkrammet/sjokk<n><nt><sg><ind><cmp>+ramme<adj><pp><nt><sg><ind>$^./.<sent><clb>$
+[/nE1o59h6v5IT]
+[qB5wtWfYyg26#0] ^FyllingenBergen/*FyllingenBergen$^./.<sent><clb>$
+[/qB5wtWfYyg26]
+[sP-VF_P3Ig49#0] ^helårspoeng/hel<n><m><sg><ind><cmp>+år<n><nt><sg><ind><cmp>+poeng<n><nt><sg><ind>$^./.<sent><clb>$
+[/sP-VF_P3Ig49]
+[t8owrkuUOcoz#0] ^toppoeng/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind>$^./.<sent><clb>$
+[/t8owrkuUOcoz]
+[wiOFacT2nEpt#0] ^Kokukemannen/*Kokukemannen$^./.<sent><clb>$
+[/wiOFacT2nEpt]
