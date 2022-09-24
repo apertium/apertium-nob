@@ -2012,7 +2012,7 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 REMOVE:unlikely ("gylden"i) + n + sg + ind;
 
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-adjcmp = "klippe" "stemple";
+LIST allow-adjcmp = "klippe" "stemple" "ramme";
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
