@@ -868,6 +868,7 @@ LIST sted = top ;
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
+LIST forbokstavord-genitiv = "<\\p{Lu}+(s|'|’)>"r ;
 LIST titlecase = "<\\p{Lu}\\p{Ll}+>"r ;
 LIST strek = guio ;
 LIST strek/parentes = guio lpar rpar ;
@@ -1103,6 +1104,15 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         (-1 berre-litenbokstav)
         ;
 # «sin beste Vårt Land-måling»
+ 
+# Forbokstavord, genitiv: "UNFCCCs avgjørelse", "pave Benedict XVIs tale"
+APPEND:np-guess-nom ("$1"v np org cgguess gen)     TARGET ("<([\\p{Lu}]+)(s|'|’)>"r) IF
+        (0 ukjent + forbokstavord-genitiv)
+        ;
+# Forbokstavord: "UNFCCC", "(pave Benedict) XVI"
+APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+)>"r) IF
+        (0 ukjent + berre-storbokstav)
+        ;
 
 "<de>"i SELECT:de-Roquefort np + attr IF
         (1 np + storbokstav OR ukjent + storbokstav)
@@ -1172,7 +1182,7 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
 "<di>"i SELECT:Di-Vittorio np + attr IF (1 np OR ukjent + storbokstav); # Angel Di Maria, Lago di Tesero
 "<di>"i REMOVE:unlikely np;
 
-"<do>"i SELECT:Praia-do-Beliche np + attr IF (1 np OR ukjent + storbokstav); # Angel Di Maria, Lago di Tesero
+"<do>"i SELECT:Praia-do-Beliche np + attr IF (1 np OR ukjent + storbokstav); # Rio Grande do Sul, Complexo do Alemão
 "<do>"i REMOVE:unlikely np;
 
 "<van>"i SELECT:van-Dam np + attr IF (1 np OR ukjent + storbokstav); # Dries Van Gestel, van Foreest
