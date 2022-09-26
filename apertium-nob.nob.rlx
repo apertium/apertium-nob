@@ -4414,6 +4414,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 ("C"))
         ;
 
+"<grensa>" SELECT:på-grensa-til n IF
+        (-1 %på%)
+        (1 %til%)
+        ;
+
 "<grenser>" SELECT:mellom-frihet-og-grenser n IF
         (-1 %og%)
         (1 setn-gr OR rquot)
