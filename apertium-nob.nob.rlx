@@ -1106,12 +1106,12 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
 # «sin beste Vårt Land-måling»
 
 # Forbokstavord, genitiv: "UNFCCCs avgjørelse", "pave Benedict XVIs tale"
-APPEND:np-guess-nom ("$1"v np org cgguess gen)     TARGET ("<([\\p{Lu}]+)(s|'|’)>"r) IF
-        (0 ukjent + forbokstavord-genitiv)
+APPEND:np-guess-nom ("$1"v np org cgguess gen) TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)(s|'|’)>"r) IF
+        (0 ukjent)
         ;
 # Forbokstavord: "UNFCCC", "(pave Benedict) XVI"
-APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+)>"r) IF
-        (0 ukjent + berre-storbokstav)
+APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)>"r) IF
+        (0 ukjent)
         ;
 
 "<de>"i SELECT:de-Roquefort np + attr IF
