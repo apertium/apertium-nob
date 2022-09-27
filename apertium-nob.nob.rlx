@@ -1308,6 +1308,7 @@ REMOVE:np-guess-safe cgguess IF
         (NEGATE -1 %og% LINK -1 storbokstav)
         (NEGATE 0C np OR n + sg + def LINK -1 ("i"))
         (NEGATE 0C np OR n + sg + gen LINK 1 pres) # «– Jets gambler med Kåre Vedvik som sin nye kicker»
+        (NEGATE 0C cgguess OR ukjent) # berre viss me har andre kjende lesingar
         ;
 
 REMOVE:Prestens-forsvarer cgguess IF
