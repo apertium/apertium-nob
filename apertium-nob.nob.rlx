@@ -1104,7 +1104,7 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
         (-1 berre-litenbokstav)
         ;
 # «sin beste Vårt Land-måling»
- 
+
 # Forbokstavord, genitiv: "UNFCCCs avgjørelse", "pave Benedict XVIs tale"
 APPEND:np-guess-nom ("$1"v np org cgguess gen)     TARGET ("<([\\p{Lu}]+)(s|'|’)>"r) IF
         (0 ukjent + forbokstavord-genitiv)
@@ -1164,7 +1164,7 @@ APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+)>"r) IF
 "<al>"i SELECT:al-Kubaisi np + attr IF (1 np OR ukjent + storbokstav); #safe; Al Furqan, Mohammed bin Zayed al Nahyan
 "<al>"i REMOVE:unlikely np;
 
-"<los>"i SELECT:Los-Tuxtlas np + attr IF 
+"<los>"i SELECT:Los-Tuxtlas np + attr IF
         (0 storbokstav)
         (1 np OR ukjent + storbokstav); # Los Lobos
 "<los>"i REMOVE:unlikely np;
@@ -1937,7 +1937,7 @@ SELECT:for-laget ("<laget>"i) + n IF
 		(-2 ("som"))
 		(-1 %ha% OR %være/bli%)
 		;
-"<laget>" SELECT:sikre-laget-en-seier n IF	
+"<laget>" SELECT:sikre-laget-en-seier n IF
 		(-1C vblex)
 		(NOT -1 %ha% OR %være/bli%)
 		(1 det)
@@ -1960,11 +1960,11 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 		(1* n)
 		;
 
-"<gylden>" SELECT:100-gylden n IF	
+"<gylden>" SELECT:100-gylden n IF
 		(-1 talord-par-siffer)
                 (NEGATE -1 det + qnt + sg)
 		;
-                
+
 REMOVE:unlikely ("gylden"i) + n + sg + ind;
 
 # Prefer nouns in compounds, unless in exception-list:
@@ -2272,10 +2272,10 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
         ;
 
-"<presset>"i SELECT:default pret 
+"<presset>"i SELECT:default pret
         ;
 
-"<fanger>i" SELECT:default-fangar ("fange" n m pl ind) 
+"<fanger>i" SELECT:default-fangar ("fange" n m pl ind)
         ;
 
 "<tanten>"i SELECT:default ("tante" n)
@@ -3487,7 +3487,7 @@ SELECT:satt-av ("sette") + vblex + pp IF
 		(1 %av%)
 		;
 		# setje av
-                
+
 SELECT:satt-pris-på ("sette")  IF
 		(1 ("pris"))
 		(2 ("på"))
@@ -4229,14 +4229,14 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 ("<den>"))
 	(2 ("sist"))
 	(3 n + def)
-; 
+;
 "<fortsatt>" SELECT (vblex) IF
 	(-4 ("ha"))
 	(-3 ("den"))
 	(-2 ("sist"))
 	(-1 n + def)
 	(NOT 1 vblex)
-; 
+;
 "<fortsatt>" SELECT (vblex) IF
 	(*-3 ("ha"))
 	(*-2 vblex + pp)
@@ -9004,13 +9004,13 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
 REMOVE:fatte-mot pr IF
-        (-1 ("fatte")) 
-        (1 pr OR adv) ;        
+        (-1 ("fatte"))
+        (1 pr OR adv) ;
         ;
 # "Vi fattet mot"
 REMOVE:vante-gang n IF
-        (0 ("vant")) 
-        (1 ("gang"))     
+        (0 ("vant"))
+        (1 ("gang"))
         ;
 # "Gå sin vante gang"
 SELECT:på-nære-nippet ("nipp") IF
@@ -9018,7 +9018,7 @@ SELECT:på-nære-nippet ("nipp") IF
         ;
 # "på nære nippet"
 SELECT:i-adj-hevd ("hevd") IF
-        (-2 ("i")) 
+        (-2 ("i"))
         (-1 adj)
         ;
 # "...i god hevd"
@@ -9045,7 +9045,7 @@ REMOVE:unlikely ("hevd");
 # "å hevde" vs. "en hevd"
 REMOVE:to-ansatte vblex IF
         (0 ("to") OR ("toer"))
-        (1 n OR np OR vblex) ;         
+        (1 n OR np OR vblex) ;
         ;
 # "To ansatte i Flyktninghjelpen savnet"
 "<Reiten>" REMOVE:Reiten n IF
@@ -9342,7 +9342,7 @@ SELECT:sittet-varetektsfengslet pp IF
 "<sender>"i REMOVE:allierte-sender-til n IF
         (-1 ("alliert"))
         (1 pr)
-        ; 
+        ;
 # å erstatte våpen og kjøretøy som landets allierte sender til Ukraina.
 "<grunnlegger>"i REMOVE:grunnlegger-av vblex IF
         (-2 np)
@@ -9610,7 +9610,7 @@ REMOVE:rentehopp ("hoppe") IF
 "<toer>" REMOVE:toer-med-seire ("toe") IF
         (*1 ("seier"))
         ;
-# Mol tok seg videre gruppespillet som toer med to seire 
+# Mol tok seg videre gruppespillet som toer med to seire
 "<rådet>" REMOVE:som-rådet ("råd") IF
         (-1 ("som"))
         ;
@@ -13258,7 +13258,7 @@ SELECT:ble-antent adj + pst IF
 "<trykket>" SELECT:har-trykket-vært-stort n IF
 		(-1 %ha%)
 		(1 %være%)
-		;	
+		;
 "<trykket>" SELECT:det-indre-trykket n IF
 		(-1 ("indre"))
 		;
@@ -13572,7 +13572,7 @@ SELECT:framskutt adj + pp IF
 SELECT:fremskutt adj + pp IF
     (*-1 %være/bli%)
     (0 ("<fremskutt>"))
-    ;      
+    ;
 
 REMOVE:beskutt-nt mf IF
     (*-1 n + nt BARRIER n + mORf)
@@ -24841,7 +24841,7 @@ SELECT:Vi-har-hoppet vblex + pp IF
         (3 prn OR n OR vblex)
         (4* %være/bli%)
         ;
-        # "til større de er, til større blir de" 
+        # "til større de er, til større blir de"
         # Uvanleg, munnleg
 
 "<til>" REMOVE:default cnjsub OR np ;
@@ -31159,6 +31159,11 @@ REMOVE:å-stjele-showet pret OR pp IF
 CONSTRAINTS
 ## select domain heur
 
+"<antenner>" SELECT:..ing-av-antenner n IF
+        (-2 (".*ing"ri))
+        (-1 %av%)
+        ;
+
 "<anket>" SELECT:anket-dommen pret IF
         (1 def + dom-ord)
         ;
@@ -36042,7 +36047,7 @@ SELECT:veg-sving-kurve ("kurve" n) IF
 
 SELECT:kurve-vei ("kurve" n) IF
 		(*1 ("vei" n) OR ("sving" n) OR ("krysse"))
-		; 	
+		;
 
 SELECT:utflatning ("kurve" vblex) IF
 		(1 %seg% OR n);
