@@ -37406,6 +37406,7 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 "<skjell>" REMOVE:default-skjel ("skjell" n nt pl ind) ;	# keep skjell<n><nt><sp>→skil
 "<skjell>" REMOVE:default-skjel ("skjell" n nt sg ind) ;	# keep skjell<n><nt><sp>→skil
 "<skjerpet>" REMOVE:default-skjerpte ("skjerpe" vblex pret) ;	# keep skjerpe<vblex><pp>→skjerpt
+"<skillene>" REMOVE:default ("skill") ;
 "<skoler>" REMOVE:default-skuler ("skole" vblex pres) ;	# keep skole<n><m><pl><ind>→skular
 "<skoles>" REMOVE:default-skules ("skole" vblex pasv) ;
 "<skrev>" REMOVE:default-skrev ("skreve" vblex imp) ;	# keep skrive<vblex><pret>→skreiv
