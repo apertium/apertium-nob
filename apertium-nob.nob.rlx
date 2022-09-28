@@ -8866,6 +8866,15 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<tykt>"i REMOVE:tykt ("tykke") IF
         (0 ("tykke") OR ("tykk"))
         ;
+"<strøket>"i SELECT:bli-strøket pl IF
+        (-6 ("bli"))
+        (-5 n + pl)
+        (-4 pr)
+        (-3 n OR np)
+        (-2 cnjcoo)
+        (-1 n OR np)
+        ;
+# Blir tidene til Lawson og Iwasa strøket...
 "<hjerter>"i REMOVE:hjerter ("hjerter") IF
         (0 ("hjerter") OR ("hjerte"))
         ;
