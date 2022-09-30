@@ -1774,6 +1774,7 @@ REMOVE:unlikely ("avgifte") ;    # more likely avgifte
 REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("<ordet>"i "orde"); # more likely noun
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
+REMOVE:unlikely ("<lysene>"i "lyse"); # more likely lys
 
 SELECT:er-oppløftet adj IF
 		(-1* %være/bli%)
