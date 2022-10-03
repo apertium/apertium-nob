@@ -1167,6 +1167,7 @@ APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)
 "<al>"i SELECT:al-Kubaisi np + attr IF (1 np OR ukjent + storbokstav); #safe; Al Furqan, Mohammed bin Zayed al Nahyan
 "<al>"i REMOVE:unlikely np;
 
+"<LOs>" SELECT:LO ("LO") + gen;
 "<los>"i SELECT:Los-Tuxtlas np + attr IF
         (0 storbokstav)
         (1 np OR ukjent + storbokstav); # Los Lobos
