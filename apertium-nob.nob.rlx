@@ -1246,6 +1246,7 @@ APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)
 "<af>"i REMOVE:unlikely np;
 
 "<av>"i SELECT:av-Assisi np + attr IF
+        (NEGATE *-2 pasv BARRIER ikke-adv)        # «administereres Jan Mayen av Fylkesmannen»
         (0 berre-litenbokstav)
         (-1 np OR ukjent + storbokstav)
         (1 np OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
