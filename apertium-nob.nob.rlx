@@ -8883,6 +8883,12 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<hjerter>"i REMOVE:hjerter ("hjerter") IF
         (0 ("hjerter") OR ("hjerte"))
         ;
+"<anklager>"i REMOVE:anklager-mot vblex IF
+        (1 ("mot"))
+        ;
+"<Glimt>" SELECT:Glimt-spiller np IF
+        (1 vblex)
+        ;
 "<frykter>"i REMOVE:frykter n IF
         (0 ("frykt") OR ("frykte"))
         ;
