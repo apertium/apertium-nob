@@ -92,6 +92,7 @@ LIST un = un ;
 LIST mf = mf ;
 LIST acc = acc ;
 LIST guio = guio ;
+LIST detriple = detriple ;
 LIST apos = apos ;
 LIST lpar = lpar ;
 LIST rpar = rpar ;
@@ -971,6 +972,44 @@ TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
 BEFORE-SECTIONS
+
+
+#### BEGIN consonant tripling
+LIST lastChar = ".*([a-z])"r ;
+SET nonDetriple = (*) - detriple ;
+# NB. The order of these rules is important – 4 parts before 3 parts before 2 parts
+# possibly related to https://github.com/GrammarSoft/cg3/issues/101
+#
+# https://github.com/GrammarSoft/cg3/issues/38
+#
+# We ensure the subreadings are on the target reading with the T
+# modifier. Test case: politikilder (politikk+ilder, vs
+# politi+kilder, the undoubled k of politikk matches kilder).
+APPEND:not-triple-but-unk3 ("*$1"v) TARGET ("<(.*)>"r) IF
+        (0/3 detriple - (dummy1))
+        (NEGATE 0/* nonDetriple)
+	(NEGATE T0/3 lastChar LINK T0/2 (VSTR:"$2.*"r))
+	;
+APPEND:not-triple-but-unk2 ("*$1"v) TARGET ("<(.*)>"r) IF
+        (0/2 detriple - (dummy2))
+        (NEGATE 0/* nonDetriple)
+	(NEGATE T0/2 lastChar LINK T0/1 (VSTR:"$2.*"r))
+	;
+APPEND:not-triple-but-unk1 ("*$1"v) TARGET ("<(.*)>"r) IF
+	(0/1 detriple - (dummy3))
+        (NEGATE 0/* nonDetriple)
+	(NEGATE T0/1 lastChar LINK T0/0 (VSTR:"$2.*"r))
+	;
+REMOVE:not-triple3 SUB:3 detriple + lastChar IF
+	(NEGATE T0/2 (VSTR:"$1.*"r))
+	;
+REMOVE:not-triple2 SUB:2 detriple + lastChar IF
+	(NEGATE T0/1 (VSTR:"$1.*"r))
+	;
+REMOVE:not-triple1 SUB:1 detriple + lastChar IF
+	(NEGATE T0/0 (VSTR:"$1.*"r))
+	;
+#### END consonant tripling
 
 # Words that may appear capitalised at start of sentence, but
 # mid-sentence appear more often lowercase than uppercase are
@@ -1973,8 +2012,14 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 REMOVE:unlikely ("gylden"i) + n + sg + ind;
 
+
+REMOVE:unlikely ("plage") IF (0 ("lag")); # topplagene
+
+# Some unlikely nouns ambig with adj's in compounds:
+REMOVE:unlikely ("kram") IF (0 ("ramme")); # sjokkrammet
+
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-adjcmp = "klippe" "stemple";
+LIST allow-adjcmp = "klippe" "stemple" "ramme";
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
@@ -37747,3 +37792,8 @@ SELECT:issue37 SUB:2 org ;
 SELECT:issue37 SUB:2 al ;
 SELECT:issue37 SUB:2 top ;
 SELECT:issue37 SUB:2 np ;
+
+REMOVE:issue37 SUB:1 detriple;
+REMOVE:issue37 SUB:2 detriple;
+REMOVE:issue37 SUB:3 detriple;
+REMOVE:issue37 SUB:* detriple;

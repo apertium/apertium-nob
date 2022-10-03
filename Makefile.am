@@ -22,10 +22,16 @@ $(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $<
 	lt-comp rl $< $@
 
-$(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx
+.deps/$(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx .deps/.d
 	apertium-validate-dictionary $<
 	apertium-validate-acx $(BASENAME).$(LANG1).acx
 	lt-comp lr $< $@ $(BASENAME).$(LANG1).acx
+
+.deps/$(LANG1).detriple.bin: $(BASENAME).detriple.dix
+	lt-comp lr $< $@
+
+$(LANG1).automorf.bin: .deps/$(LANG1).automorf.bin .deps/$(LANG1).detriple.bin
+	lt-compose --inverted --anywhere $^ $@
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.bin
 	lt-print $< | gzip -9 -c -n > $@

@@ -2,5 +2,12 @@
     "nob": {
         "input": "nob-input.txt",
         "mode": "nob-morph"
+    },
+    "nob-disam": {
+        "input": "nob-disam-input.txt",
+        "mode": "nob-disam"
+    },
+    "settings": {
+        "structure": "nested"
     }
 }

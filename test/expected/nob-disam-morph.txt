@@ -1,0 +1,36 @@
+[1VIT_L9DITQP#0] ^Vikingane/vik<n><m><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gane<n><m><sg><ind>/vik<n><f><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gane<n><m><sg><ind>/vikk<n><m><sg><ind><cmp><detriple>+inn<n><nt><sp><cmp><detriple>+gane<n><m><sg><ind>$^./.<sent><clb>$
+[/1VIT_L9DITQP]
+[2OhyVmoO1sUC#0] ^politikilder/politikilde<n><m><pl><ind>$^./.<sent><clb>$
+[/2OhyVmoO1sUC]
+[4kBuucex88WW#0] ^straffeslagkonkurransen/straff<n><m><sg><ind><cmp>+slagg<n><nt><sg><ind><cmp><detriple>+konkurranse<n><m><sg><def>/straffe<vblex><inf><cmp>+slagg<n><nt><sg><ind><cmp><detriple>+konkurranse<n><m><sg><def>/straffe<n><m><sg><ind><cmp>+slagg<n><nt><sg><ind><cmp><detriple>+konkurranse<n><m><sg><def>$^./.<sent><clb>$
+[/4kBuucex88WW]
+[7NZkl9bqR43t#0] ^toppreken/topp<n><m><sg><ind><cmp><detriple>+preke<n><m><sg><def>/topp<n><m><sg><ind><cmp>+reke<n><m><sg><def>/topp<n><m><sg><ind><cmp><detriple>+preken<n><m><sg><ind>$^./.<sent><clb>$
+[/7NZkl9bqR43t]
+[7tg_-l11tPKH#0] ^topplager/topp<n><m><sg><ind><cmp><detriple>+plage<n><m><pl><ind>/topp<n><m><sg><ind><cmp><detriple>+plage<n><f><pl><ind>/topp<n><m><sg><ind><cmp><detriple>+plager<n><m><sg><ind>/topp<n><m><sg><ind><cmp>+lager<n><nt><sg><ind>/topp<n><m><sg><ind><cmp>+lager<n><nt><pl><ind>$^./.<sent><clb>$
+[/7tg_-l11tPKH]
+[9k-xRhbzVaon#0] ^Kokuka/kokk<n><m><sg><ind><cmp><detriple>+uke<n><f><sg><def>$^./.<sent><clb>$
+[/9k-xRhbzVaon]
+[IIXsSYwi7Jfr#0] ^toppoenget/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><def>$^./.<sent><clb>$
+[/IIXsSYwi7Jfr]
+[Mv4qSDbDVZOW#0] ^riksrettssaken/riks<n><nt><sg><ind><cmp>+rettssak<n><m><sg><def>/riks<n><m><sg><ind><cmp>+rettssak<n><m><sg><def>/riks<n><nt><sg><ind><cmp><detriple>+rettssak<n><m><sg><def>/riks<n><m><sg><ind><cmp><detriple>+rettssak<n><m><sg><def>/riksrett<n><m><sg><ind><cmp>+sak<n><m><sg><def>$^./.<sent><clb>$
+[/Mv4qSDbDVZOW]
+[RAfnxjWl8e2C#0] ^menneskehandelsaker/menneskehandel<n><m><sg><ind><cmp>+sak<n><m><pl><ind>/menneskehandel<n><m><sg><ind><cmp>+sak<n><f><pl><ind>$^./.<sent><clb>$
+[/RAfnxjWl8e2C]
+[V2Q98fqD7K59#0] ^poenget/poeng<n><nt><sg><def>$^./.<sent><clb>$
+[/V2Q98fqD7K59]
+[YNO4C-1BaJf3#0] ^politikost/politikk<n><m><sg><ind><cmp><detriple>+ost<n><nt><sp>/politikk<n><m><sg><ind><cmp><detriple>+ose<adj><pp><pl>/politi<n><nt><sg><ind><cmp>+kost<n><nt><sg><ind>/politi<n><nt><sg><ind><cmp>+kost<n><nt><pl><ind>/politi<n><nt><sg><ind><cmp>+kost<n><m><sg><ind>/politi<n><m><sg><ind><cmp>+kost<n><nt><sg><ind>/politi<n><m><sg><ind><cmp>+kost<n><nt><pl><ind>/politi<n><m><sg><ind><cmp>+kost<n><m><sg><ind>/politikk<n><m><sg><ind><cmp><detriple>+ost<n><m><sg><ind>/politi<n><nt><sg><ind><cmp>+kose<adj><pp><nt><sg><ind>/politi<n><nt><sg><ind><cmp>+kose<adj><pp><mf><sg><ind>/politi<n><m><sg><ind><cmp>+kose<adj><pp><nt><sg><ind>/politi<n><m><sg><ind><cmp>+kose<adj><pp><mf><sg><ind>/politikk<n><m><sg><ind><cmp><detriple>+ose<adj><pp><nt><sg><ind>/politikk<n><m><sg><ind><cmp><detriple>+ose<adj><pp><mf><sg><ind>$^./.<sent><clb>$
+[/YNO4C-1BaJf3]
+[jG1Z3CGbrr8r#0] ^gultrøyene/gult<n><nt><sp><cmp>+røy<n><m><pl><def>/gult<n><nt><sp><cmp>+røy<n><f><pl><def>/gull<n><nt><sg><ind><cmp><detriple>+trøye<n><f><pl><def>/gull<n><nt><sg><ind><cmp><detriple>+trøye<n><m><pl><def>/gult<n><nt><sp><cmp>+røye<n><f><pl><def>/gult<n><nt><sp><cmp>+røye<n><m><pl><def>$^./.<sent><clb>$
+[/jG1Z3CGbrr8r]
+[k47z9mR_-tyw#0] ^toppoengmannen/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind><cmp>+mann<n><m><sg><def>$^./.<sent><clb>$
+[/k47z9mR_-tyw]
+[nE1o59h6v5IT#0] ^sjokkrammet/sjokk<n><nt><sg><ind><cmp><detriple>+kram<n><nt><sg><def>/sjokk<n><nt><sg><ind><cmp><detriple>+kramme<adj><pp><pl>/sjokk<n><nt><sg><ind><cmp>+ramme<adj><pp><pl>/sjokk<n><nt><sg><ind><cmp><detriple>+kramme<adj><pp><nt><sg><ind>/sjokk<n><nt><sg><ind><cmp><detriple>+kramme<adj><pp><mf><sg><ind>/sjokk<n><nt><sg><ind><cmp>+ramme<adj><pp><nt><sg><ind>/sjokk<n><nt><sg><ind><cmp>+ramme<adj><pp><mf><sg><ind>$^./.<sent><clb>$
+[/nE1o59h6v5IT]
+[qB5wtWfYyg26#0] ^FyllingenBergen/fyll<n><nt><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><cog>/fyll<n><nt><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><top>/fyll<n><nt><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><cog>/fyll<n><nt><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><top>/fyll<n><m><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><cog>/fyll<n><m><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><top>/fyll<n><m><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><cog>/fyll<n><m><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><top>/fyll<n><f><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><cog>/fyll<n><f><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><nt><sg><ind><cmp>+Bergen<np><top>/fyll<n><f><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><cog>/fyll<n><f><sg><ind><cmp>+inn<n><nt><sp><cmp><detriple>+gen<n><m><sg><ind><cmp>+Bergen<np><top>$^./.<sent><clb>$
+[/qB5wtWfYyg26]
+[sP-VF_P3Ig49#0] ^helårspoeng/hel<n><m><sg><ind><cmp>+år<n><nt><sg><ind><cmp>+poeng<n><nt><sg><ind>/hel<n><m><sg><ind><cmp>+år<n><nt><sg><ind><cmp>+poeng<n><nt><pl><ind>/hell<n><nt><sg><ind><cmp><detriple>+år<n><nt><sg><ind><cmp>+poeng<n><nt><sg><ind>/hell<n><nt><sg><ind><cmp><detriple>+år<n><nt><sg><ind><cmp>+poeng<n><nt><pl><ind>$^./.<sent><clb>$
+[/sP-VF_P3Ig49]
+[t8owrkuUOcoz#0] ^toppoeng/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind>/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><pl><ind>$^./.<sent><clb>$
+[/t8owrkuUOcoz]
+[wiOFacT2nEpt#0] ^Kokukemannen/kokk<n><m><sg><ind><cmp><detriple>+uke<n><m><sg><ind><cmp>+mann<n><m><sg><def>/kokk<n><m><sg><ind><cmp><detriple>+uke<n><f><sg><ind><cmp>+mann<n><m><sg><def>$^./.<sent><clb>$
+[/wiOFacT2nEpt]
