@@ -9437,7 +9437,11 @@ SELECT:sittet-varetektsfengslet pp IF
         (-1 ("menneskelig"))
         ;
 # det menneskelige øret
-
+"<gleder>"i SELECT:sorger-og-gleder n IF
+        (-2 ("<sorger>"))
+        (-1 ("og"))
+        ;
+# sorger og gleder
 "<landet>"i SELECT:å-ha-landet vblex IF
         (-2 ("å"))
         (-1 ("ha"))
