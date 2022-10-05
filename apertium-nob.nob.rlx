@@ -5160,6 +5160,12 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
         # ikkje fleirtal av jordet
 
+"<landet>" SELECT:landet-i-Norge vblex IF
+	(NOT -1 ("på"))
+        (1 ("i"))
+        (2 ("Norge"))
+        ;
+# Ruud har akkurat landet i Norge
 "<landet>" SELECT:landet-utenfor-Norge n IF
         (*1 ("Norge"))
         ;
