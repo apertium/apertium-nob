@@ -869,7 +869,10 @@ LIST sted = top ;
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
-LIST forbokstavord-genitiv = "<\\p{Lu}+(s|'|’)>"r ;
+LIST forbokstavord =  ("<[\\p{Lu}\\p{Pd}\\p{Nd}]+>"r);
+LIST forbokstavord-genitiv = "<[\\p{Lu}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
+LIST forbokstavord-blanda =  ("<[\\p{L}\\p{Pd}\\p{Nd}]+>"r);
+LIST forbokstavord-blanda-genitiv = "<[\\p{L}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
 LIST titlecase = "<\\p{Lu}\\p{Ll}+>"r ;
 LIST strek = guio ;
 LIST strek/parentes = guio lpar rpar ;
@@ -1148,12 +1151,21 @@ APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]
 # «sin beste Vårt Land-måling»
 
 # Forbokstavord, genitiv: "UNFCCCs avgjørelse", "pave Benedict XVIs tale"
-APPEND:np-guess-nom ("$1"v np org cgguess gen) TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)(s|'|’)>"r) IF
-        (0 ukjent)
+APPEND:np-guess-nom ("$1"v np org cgguess gen) TARGET ("<([\\p{Lu}]+[\\p{Lu}\\p{Pd}\\p{Nd}]+)(s|'|’)>"r) IF
+        (0 ukjent + forbokstavord-genitiv)
         ;
 # Forbokstavord: "UNFCCC", "(pave Benedict) XVI"
-APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+[\\p{Lu}-]*)>"r) IF
-        (0 ukjent)
+APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<([\\p{Lu}]+[\\p{Lu}\\p{Pd}\\p{Nd}]+)>"r) IF
+        (0 ukjent + forbokstavord)
+        ;
+# Forbokstavord + små bokstavar, genitiv: "ZDNets brukere", "CMores program"
+APPEND:np-guess-nom ("$1"v np org cgguess gen) TARGET ("<(\\p{Lu}{2}[\\p{L}\\p{Nd}]+)(s|'|’)>"r) IF
+        (0 ukjent + forbokstavord-blanda-genitiv)
+        (1 n + ind OR adj + def)
+        ;
+# Forbokstavord + små bokstavar: "ZDNet", "CMore"
+APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[\\p{L}\\p{Nd}]+)>"r) IF
+        (0 ukjent + forbokstavord-blanda)
         ;
 
 "<de>"i SELECT:de-Roquefort np + attr IF
