@@ -37153,6 +37153,7 @@ SELECT:default ("gjeng") + m + ind ;
 SELECT:default ("kart") + nt ;
 SELECT:default ("kart") + sg ;
 SELECT:default ("jorda"i) + top;
+SELECT:default ("<beinet>") + n + def ;
 
 
 
@@ -37227,7 +37228,6 @@ REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 "<begravd>" REMOVE:default-gravlagd ("begrave" adj pp mf sg ind) ;	# keep begrave<vblex><pp>→gravlagt begrave<adj><pp><nt><sg><ind>→gravlagt
 "<beholder>" REMOVE:default-behaldar ("beholder" n m sg ind) ;	# keep beholde<vblex><pres>→beheld
 "<beholdt>" REMOVE:default-beheldt ("beholde" vblex pret) ;	# keep beholde<vblex><pp>→behalde
-"<beinet>" REMOVE:default-beinet ("bein" n nt sg def) ;	# keep beine<adj><pp><nt><sg><ind>→beina beine<adj><pp><mf><sg><ind>→beina beine<vblex><pp>→beina beine<vblex><pret>→beina
 "<berget>" REMOVE:default-berget ("berg" n nt sg def) ;	# keep berge<vblex><pp>→berga berge<adj><pp><nt><sg><ind>→berga berge<vblex><pret>→berga
 "<besluttet>" REMOVE:default-vedtatt ("beslutte" vblex pp) ;	# keep beslutte<vblex><pret>→vedtok
 "<besluttet>" REMOVE:default-vedtatt ("beslutte" pl) ;	# keep beslutte<vblex><pret>→vedtok
