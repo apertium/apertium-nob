@@ -6974,6 +6974,9 @@ REMOVE:unlikely ("<ris>") + pasv;
 #      :group 3
 
 
+"<slang>" SELECT:slang-og-dialekt n IF
+        (0* ("dialekt") OR ("prate") OR ("snakke"))
+        ;
 
 #:3273
   "<slags>"   SELECT:3273   (n f) IF
