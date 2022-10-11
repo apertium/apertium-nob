@@ -1204,9 +1204,10 @@ APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[\\p{L}\\p{N
 "<il>"i REMOVE:unlikely np;
 
 "<del>"i SELECT:del-Toro np + attr IF
-        (1 np OR ukjent + storbokstav)
-        (NEGATE -1 ("en") + det + qnt + m)
+        (1 np + storbokstav OR ukjent + storbokstav)
+        (NEGATE -1 ("en") OR ("stor") OR ("liten") OR ("ta"))
         ;
+# Ikkje: Utmalingsgraden er hvor stor  del  av<np> kornet som er blitt til mel
 "<del>"i REMOVE:unlikely np;
 
 "<della>"i SELECT:del-Toro np + attr IF (1 np OR ukjent + storbokstav); #safe
@@ -1260,8 +1261,8 @@ APPEND:np-guess-nom ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[\\p{L}\\p{N
 "<av>"i SELECT:av-Assisi np + attr IF
         (NEGATE *-2 pasv BARRIER ikke-adv)        # «administereres Jan Mayen av Fylkesmannen»
         (0 berre-litenbokstav)
-        (-1 np OR ukjent + storbokstav)
-        (1 np OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
+        (-1 np + storbokstav OR ukjent + storbokstav)
+        (1 np + storbokstav OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
 "<av>"i REMOVE:unlikely np;
 
 "<von>"i SELECT:von-Hanno np + attr IF (1 np OR ukjent + storbokstav); # Henrik von Achen; Linebackar Von Miller
@@ -6975,7 +6976,7 @@ REMOVE:unlikely ("<ris>") + pasv;
 
 
 "<slang>" SELECT:slang-og-dialekt n IF
-        (0* ("dialekt") OR ("prate") OR ("snakke"))
+        (0* ("dialekt") OR ("prate") OR ("snakke") OR ("fagspråk") OR ("sjargong") OR ("stilnivå"))
         ;
 
 #:3273
