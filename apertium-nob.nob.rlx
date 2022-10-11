@@ -1349,7 +1349,7 @@ APPEND:np-guess-nom ("$1"v np cog cgguess)     TARGET ("<((De|Di|Mac|Mc)\\p{Lu}\
 
 # Etternamn etter fornamn, etternanm, initial eller attributt, genitiv: "De Biasis' familie", "von der Leyens tale", "Mac Allisters skåring", "H.G. Wells' mesterverk"
 APPEND:np-guess-nom ("$1"v np cog cgguess gen) TARGET ("<(\\p{Lu}\\p{Ll}+(-\\p{Lu}\\p{Ll}+)?)(s|'|’)>"r) IF
-        (0C ukjent + forbokstavord-blanda)
+        (0C ukjent + forbokstavord-blanda-genitiv)
         (-1 np + attr OR np + cog OR np + ant OR np + init)
         (1 n + ind OR adj + def)
         ;
