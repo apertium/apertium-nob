@@ -5365,6 +5365,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 # Ikke: Legg er det eneste som blir pent."
 
 
+"<ledd>" SELECT:som-ledd-i n + sg IF
+        (-1 ("som"))
+        (1 ("i"))
+        ;
+
 
 #:3484
   "<lei>"   SELECT:3484   (n) IF
