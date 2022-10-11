@@ -8044,6 +8044,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "sånn (adv) at "))
 
+"<såret>" SELECT:på-såret n IF
+        (-1 ("på"))
+        (1 setn-gr)
+        ;
 
 
 
@@ -8843,6 +8847,7 @@ REMOVE:unlikely SUB:* ("sel") IF (0/* ("selv")); # selv|eier|bolig vs |sel|veier
 REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
+REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -12421,6 +12426,7 @@ SELECT:skrev vblex IF
 	(*-1 setn-gr BARRIER %ha/få%)
 ;
 
+"<svant>" REMOVE ("svane") ;
 
 #:3203
   "<så>"   REMOVE:3203   (n) IF
@@ -37208,7 +37214,16 @@ REMOVE:default ("slått") + n ;
 REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
 REMOVE:default ("ingen") + sg ;
+REMOVE:default ("tenner") IF (0 ("tann")) ;
+REMOVE:default ("tenne") IF (0 ("tann")) ;
+REMOVE:default ("kul") + pl ; # vanlegare at dette betyr "kule" (viss du har «kuler» er du uheldig!)
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
+
+# TODO: generalisera over dette?
+REMOVE:juniorbokser ("boks") IF (0 ("bokser")) (-1 det + sg) ;
+REMOVE:kakaobokser ("bokser") IF (0 ("boks")) ;
+REMOVE:breiflabbtråler ("stråler") IF (0 ("tråler")) (-1 det + sg) ;
+REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
