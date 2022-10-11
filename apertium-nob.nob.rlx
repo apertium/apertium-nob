@@ -2862,6 +2862,11 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         ;
 # Ikkje: «Yordanov er eneste bryter med ti VM-medaljer i premieskapet.»
 
+"<brystet>" SELECT:tungt-for n IF
+        (-2 ("<tungt>"))
+        (-1 ("<for>"))
+        ;
+
 "<bukkene>" SELECT subst-mask;
 
 "<blitt>" SELECT:er-blitt vblex IF
