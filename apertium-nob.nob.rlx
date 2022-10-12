@@ -9209,6 +9209,9 @@ REMOVE:to-ansatte vblex IF
 "<Reiten>" REMOVE:Reiten n IF
         (-1 setn-gr)
         ;
+"<lik>" SELECT:antall-lik n IF
+        (-1 ("antall"))
+        ;
 "<fatt>"i REMOVE:fatt-mot adv IF
         (1 ("mot"))
         ;
