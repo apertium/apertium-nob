@@ -588,7 +588,7 @@ LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtt
 LIST farlige-mask-subst = "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ;
 LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i ;
-LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ;
+LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
 LIST fem-det = (det f) ;
@@ -1196,9 +1196,10 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 "<il>"i REMOVE:unlikely np;
 
 "<del>"i SELECT:del-Toro np + attr IF
-        (1 np OR ukjent + storbokstav)
-        (NEGATE -1 ("en") + det + qnt + m)
+        (1 np + storbokstav OR ukjent + storbokstav)
+        (NEGATE -1 ("en") OR ("stor") OR ("liten") OR ("ta"))
         ;
+# Ikkje: Utmalingsgraden er hvor stor  del  av<np> kornet som er blitt til mel
 "<del>"i REMOVE:unlikely np;
 
 "<della>"i SELECT:del-Toro np + attr IF (1 np OR ukjent + storbokstav); #safe
@@ -1252,8 +1253,8 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 "<av>"i SELECT:av-Assisi np + attr IF
         (NEGATE *-2 pasv BARRIER ikke-adv)        # «administereres Jan Mayen av Fylkesmannen»
         (0 berre-litenbokstav)
-        (-1 np OR ukjent + storbokstav)
-        (1 np OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
+        (-1 np + storbokstav OR ukjent + storbokstav)
+        (1 np + storbokstav OR ukjent + storbokstav); # Frans av Assisi (frå Assisi)
 "<av>"i REMOVE:unlikely np;
 
 "<von>"i SELECT:von-Hanno np + attr IF (1 np OR ukjent + storbokstav); # Henrik von Achen; Linebackar Von Miller
@@ -2852,6 +2853,11 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (1 %med%)
         ;
 # Ikkje: «Yordanov er eneste bryter med ti VM-medaljer i premieskapet.»
+
+"<brystet>" SELECT:tungt-for n IF
+        (-2 ("<tungt>"))
+        (-1 ("<for>"))
+        ;
 
 "<bukkene>" SELECT subst-mask;
 
@@ -5351,6 +5357,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 # Ikke: Legg er det eneste som blir pent."
 
 
+"<ledd>" SELECT:som-ledd-i n + sg IF
+        (-1 ("som"))
+        (1 ("i"))
+        ;
+
 
 #:3484
   "<lei>"   SELECT:3484   (n) IF
@@ -6966,6 +6977,9 @@ REMOVE:unlikely ("<ris>") + pasv;
 #      :group 3
 
 
+"<slang>" SELECT:slang-og-dialekt n IF
+        (0* ("dialekt") OR ("prate") OR ("snakke") OR ("fagspråk") OR ("sjargong") OR ("stilnivå"))
+        ;
 
 #:3273
   "<slags>"   SELECT:3273   (n f) IF
@@ -8022,6 +8036,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "sånn (adv) at "))
 
+"<såret>" SELECT:på-såret n IF
+        (-1 ("på"))
+        (1 setn-gr)
+        ;
 
 
 
@@ -8821,6 +8839,7 @@ REMOVE:unlikely SUB:* ("sel") IF (0/* ("selv")); # selv|eier|bolig vs |sel|veier
 REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
+REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -9181,6 +9200,9 @@ REMOVE:to-ansatte vblex IF
 # "To ansatte i Flyktninghjelpen savnet"
 "<Reiten>" REMOVE:Reiten n IF
         (-1 setn-gr)
+        ;
+"<lik>" SELECT:antall-lik n IF
+        (-1 ("antall"))
         ;
 "<fatt>"i REMOVE:fatt-mot adv IF
         (1 ("mot"))
@@ -12399,6 +12421,7 @@ SELECT:skrev vblex IF
 	(*-1 setn-gr BARRIER %ha/få%)
 ;
 
+"<svant>" REMOVE ("svane") ;
 
 #:3203
   "<så>"   REMOVE:3203   (n) IF
@@ -37186,7 +37209,17 @@ REMOVE:default ("slått") + n ;
 REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
 REMOVE:default ("ingen") + sg ;
+REMOVE:default ("mor") IF (0 ("morene")) ;
+REMOVE:default ("tenner") IF (0 ("tann")) ;
+REMOVE:default ("tenne") IF (0 ("tann")) ;
+REMOVE:default ("kul") + pl ; # vanlegare at dette betyr "kule" (viss du har «kuler» er du uheldig!)
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
+
+# TODO: generalisera over dette?
+REMOVE:juniorbokser ("boks") IF (0 ("bokser")) (-1 det + sg) ;
+REMOVE:kakaobokser ("bokser") IF (0 ("boks")) ;
+REMOVE:breiflabbtråler ("stråler") IF (0 ("tråler")) (-1 det + sg) ;
+REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
