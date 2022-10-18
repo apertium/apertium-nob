@@ -2075,19 +2075,26 @@ REMOVE:unlikely ("plage") IF (0 ("lag")); # topplagene
 REMOVE:unlikely ("kram") IF (0 ("ramme")); # sjokkrammet
 
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-adjcmp = "klippe" "stemple" "ramme";
+LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" ;
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
         (NEGATE 0 adjn)            # «Den spiontiltalte nordmannen ber …»
-        (NEGATE 0 allow-adjcmp)   # «tvangsklippet»
+        (NEGATE 0 allow-verb/adjcmp)   # «tvangsklippet»
         ;
 # TODO: Probably too conservative
 
-REMOVE:prefer-ncmp SUB:* vblex + cmp IF
+REMOVE:prefer-inf-over-adj-split adj + cmp-split IF
+        (0 inf)
+        ;
+# «lytte- og sabotasjeutstyr»
+
+REMOVE:prefer-ncmp SUB:* vblex + cmp - allow-verb/adjcmp IF
         (0 n)
         ;
-REMOVE:prefer-ncmp-split vblex + cmp-split ;
+REMOVE:prefer-ncmp-split vblex + cmp-split - allow-verb/adjcmp IF
+        (0 n)
+        ;
 
 "<Flytt>" SELECT:flytt-den imp IF
 		(-1 guio)
