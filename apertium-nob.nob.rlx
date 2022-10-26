@@ -9723,6 +9723,14 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<taklet>" SELECT:ble-taklet ("takle") IF
         (-1 ("bli"))
         ;
+"<beholder>" REMOVE:beholder ("beholder") IF
+        (-2* ("ende") BARRIER setn-gr)
+        (-1 ("og"))
+        ;
+"<dekkene>"i SELECT:dekkene-er-skiftet ("dekk") IF
+        (1 ("være"))
+        (2 ("skifte") OR ("bytte"))
+        ;
         
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
