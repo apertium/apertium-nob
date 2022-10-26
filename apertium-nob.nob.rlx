@@ -9705,6 +9705,11 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<skje>" REMOVE:vil-måtte-skje n IF
         (-1 ("ville# måtte"))
         ;
+"<løyet>" SELECT:vinden-hadde-løyet ("løye") IF
+        (-2* ("vind") BARRIER setn-gr)
+        (-1 ("ha"))
+        ;
+
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
