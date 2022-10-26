@@ -25774,6 +25774,7 @@ REMOVE:meget-stor-betydning (adj pp nt ind sg) IF
 	(-1C verb)
 	(NOT 1 subst/adj)
 	(NOT 1 komma/konj)
+        (NEGATE *-1 subst/adj + AGR_MF)
 ;
 #  "Dessuten henger speilet på veggen"
 
