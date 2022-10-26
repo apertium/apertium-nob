@@ -9062,6 +9062,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<begrepet>"i REMOVE:benytte-begrepet ("begripe") IF
         (-1 ("benytte"))
         ;
+"<begrepet>"i REMOVE:oppfant-begrepet ("begripe") IF
+        (-1 ("oppfinne"))
+        ;
 "<fattet>"i SELECT:beslutningen-om-dette-fattet-av pp + mf IF
         (-3 n + m OR n + f)
         (-2 ("om"))
@@ -9709,7 +9712,18 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-2* ("vind") BARRIER setn-gr)
         (-1 ("ha"))
         ;
-
+"<baker>" SELECT:jobbet-som-baker n IF
+        (-2* ("jobbe") BARRIER setn-gr)
+        (-1 ("som"))
+        ;
+"<flytte>" SELECT:fikk-flytte-inn ("flytte") IF
+        (-1* ("få") BARRIER setn-gr)
+        (1 ("inn"))
+        ;
+"<taklet>" SELECT:ble-taklet ("takle") IF
+        (-1 ("bli"))
+        ;
+        
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
