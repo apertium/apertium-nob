@@ -1792,6 +1792,10 @@ REMOVE:unlikely ("ond") OR ("vond") IF
         (-1 >>> OR guio)
         ;
 
+"<Dronningens>" SELECT:Dronningens-setningsstart n IF
+        (-1 >>> OR guio)
+        ;
+
 "<sure>" SELECT:unlikely ("sur");               # very unlikely «sura»
 "<fort>" SELECT:unlikely ("fort");
 "<Fort>" SELECT:unlikely ("fort");
