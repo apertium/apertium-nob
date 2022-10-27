@@ -100,6 +100,9 @@ LIST date = date ;
 LIST ij = ij ;
 LIST itg = itg ;
 
+LIST ukjent = ("\\*.*"r) ukjent ;
+LIST storbokstav = "<\\p{Lu}.*>"r ;
+
 LIST -ende = ".*ende"r  ;
 LIST %all% = "all" ;
 LIST %an% = ("an" adv) ;
@@ -19135,6 +19138,8 @@ REMOVE:Den-tildeles-utøvere @subj IF
         ;
 # «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
 
+REMOVE:default ("bærer") IF (0 ("bære")) ;
+
 
 CONSTRAINTS
 ########################################################
@@ -19146,6 +19151,11 @@ SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
 
 SELECT:adj-pp-dis (adj pp @s-pred) + (sg) IF
         (*-1 (@subj) LINK 0 (itg))
+        ;
+
+SELECT:adj-pp-dis (adj pp sg @s-pred) IF
+        (*-1 ukjent + storbokstav)
+        (NEGATE 0* (@subj) BARRIER setn-gr)
         ;
 
 # SUBSTITUTE @alle-funksjoner (*) (*);
