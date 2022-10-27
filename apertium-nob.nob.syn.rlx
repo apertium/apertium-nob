@@ -9244,8 +9244,7 @@ SELECT:1002 (@subj) IF
 	(NOT 0 @det→)
 	(*-1C s#sbu BARRIER ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app)
 	(*-1C s#sbu BARRIER s#komma)
-	(*1 @fv BARRIER @←p-utfyll)
-	(*1 @fv LINK *-1 @adv)
+	(*1 @fv BARRIER @←p-utfyll OR setn-gr LINK *-1 @adv)
 ;
 
 
@@ -12190,7 +12189,6 @@ REMOVE:at-det-skapes-jobber (@subj) IF
         (1 setn-gr)
         ;
 # «– Når vi nå ser at økonomien går bedre, at det skapes jobber, arbeidsledigheten går ned og investeringene øker, forventer vi at pensjonene kommer til å øke i årene som kommer, sa statsråden.»
-
 
 #:6078
 REMOVE:6078 (@fv) IF
@@ -18831,6 +18829,14 @@ SELECT:291 (@subj) IF
 #;
 #Jenny (subj) var riktignok ikke den venninnen ,,, 
 #Hva med: Sara nektet Anders å ... Riktig å velge her?
+
+SELECT:så-låser-det-seg (@fv) IF
+        (-1C cnjsub)
+        (0C n OR vblex)
+        (1 @subj)
+        (NEGATE *1 @fv BARRIER setn-gr)
+        ;
+# «– Det er god dialog, men når vi ikke klarer å bli enige om ting, så  låser  det seg, sier han.»
 
 
 #CONSTRAINTS
