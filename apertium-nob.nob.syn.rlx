@@ -297,7 +297,7 @@ LIST clb-konj = (clb cnjcoo) ;
 LIST dato = <dato> ;
 LIST dem = dem ;
 LIST dem/%så%-adv = dem ("så" adv) ;
-LIST dem/poss/gen = dem posi gen ;
+LIST dem/poss/gen = dem pos gen ;
 LIST det = det ;
 LIST det-ent = (det sg) ;
 LIST det-kvant = (det qnt) ;
@@ -322,7 +322,7 @@ LIST etternavn = "united" "times" "idrettslag" "city" "blad" ;
 LIST f-subj = ("det" prn) ;
 LIST farlige-subst-gen = ("cowboy" n gen) ("disko" n gen) ("bok" n gen) ("ly" n gen) ("pil" n gen) ("aften" n gen) ;
 LIST fem = f mf (adj def) ;
-LIST fem-ent = (f sg) (mf sg) (adj def) (f ubøy) (np) ;
+LIST fem-ent = (f sg) (mf sg) (adj def) (f sp) (np) ;
 LIST fin-ind = pres pret ;
 LIST fin-verb/%kalle% = "kalle" pres pret imp ;
 LIST fl = pl ;
@@ -495,10 +495,10 @@ LIST m#mask = m ;
 LIST m#sbu = cnjsub ;
 LIST m#setn-gr = "hvorfor" "hvordan" "hvor" "hva" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST m-hj-verb-m/inf = "ville" "skulle" "måtte" "kunne" "burde" ;
-LIST mange-få-pos-komp/enkelt-fl = ("mange" posi) ("mange" comp) ("få" posi) ("få" comp) ("enkelt" pl) ;
+LIST mange-få-pos-komp/enkelt-fl = ("mange" pos) ("mange" comp) ("få" pos) ("få" comp) ("enkelt" pl) ;
 LIST mange/få/lang/lenge = "mange" "lenge" "lang" "få" ;
 LIST mask = m mf (adj def) ;
-LIST mask-ent = (m sg) (mf sg) (adj def) (m ubøy) (np) ;
+LIST mask-ent = (m sg) (mf sg) (adj def) (m sp) (np) ;
 LIST mask/fem = m f mf (adj def) (adj pprs) ;
 LIST mengdeord-bestemt = ("antall" sg def) ;
 LIST mengdeord = "flokk" "pund" "serie" "sett" "pakke" "smule" "rekke" "sum" "boks" "utall" "type" "teskje" "tallerken" "spiseskje" "slump" "skje" "samling" "porsjon" "parti" "onkel" "neve" "mengde" "mellomfag" "masse" "kvanta" "kopp" "knippe" "kasse" "håndfull" "hovedfag" "haug" "handfull" "gruppe" "grunnfag" "glass" "generasjon" "flaske" "fat" "dose" "del" "bunke" "antall" "andel" "allehånde" "par" ("grad" pl) ;
@@ -512,7 +512,7 @@ LIST nom/adv = n adj det prn adv ;
 LIST nominativ = nom ;
 LIST nr2det = "sånn" "sådan" "slik" "samme" "neste" "hver" "halvannen" "eneste" "ene" "eigen" "egen" "annen" (det qnt pl) ;
 LIST nøyt = nt ;
-LIST nøyt-ent = (nt sg) (adj def) (nt ubøy) (np) ;
+LIST nøyt-ent = (nt sg) (adj def) (nt sp) (np) ;
 LIST ordenstall = ord ;
 LIST overskrift = <overskrift> ;
 LIST parentes = lpar rpar ;
@@ -534,9 +534,9 @@ LIST periode-slutt/clb-konj = <<< (clb cnjcoo) ;
 LIST periode-slutt/clb-konj/clb-tegnsetting = <<< (clb cnjcoo) (clb cm) (clb <ellipse>) (clb <kolon>) (clb <semi>) (clb guio) ;
 LIST periode-slutt/konj-clb = <<< (clb cnjcoo) ;
 LIST politiske-partier = "v" "h" "ap" "sv" "sp" "frp" "krf" ;
-LIST poss = posi ;
-LIST poss/gen = posi gen ;
-LIST poss/gen/hvilken = "hvilken" posi gen ;
+LIST poss = pos ;
+LIST poss/gen = pos gen ;
+LIST poss/gen/hvilken = "hvilken" pos gen ;
 LIST prep = pr ;
 LIST prep-intrans = "vekke" "utenfra" "underveis" "inne" "imot" "iblant" "iblandt" "hjemme" "hit" "herifra" "herfra" "her" "heime" "frem" "fram" "etterpå" "dit" "derifra" "derfra" "der" ;
 LIST prep/%som% = "som" pr ;
@@ -553,9 +553,9 @@ LIST prop = np ;
 LIST prop-fem = (np f) ;
 LIST prop/hum-pron = np (prn pers hum) (prn pers m) (prn pers f) (prn pers 1) (prn pers 2) (prn pers pl) ;
 LIST prop-mask = (np m) ;
-LIST prop/ub-eint-subst = np (n sg ind) (n ubøy) ;
-LIST prop/ub-ent-subst = np (n sg ind) (n ubøy) ;
-LIST prop/ub-ent-subst/%ganger%/%klokka% = np (n sg ind) (n ubøy) ("gang" pl ind) ("klokke" sg def) ;
+LIST prop/ub-eint-subst = np (n sg ind) (n sp) ;
+LIST prop/ub-ent-subst = np (n sg ind) (n sp) ;
+LIST prop/ub-ent-subst/%ganger%/%klokka% = np (n sg ind) (n sp) ("gang" pl ind) ("klokke" sg def) ;
 LIST rel-pron = "som" ;
 LIST res/akk = res acc ;
 LIST s#%bare% = "bare" ;
@@ -720,13 +720,13 @@ LIST ub-ent = (ind sg) (sg ind) ;
 LIST ub-ent-fem-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj f ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt f sg) ("neste" det) ("annen" dem f ind sg) ("slik" dem f sg) ("sånn" dem f sg) ("sådan" dem f sg) ("egen" emph f ind sg) ("eigen" emph f ind sg) ("halvannen" qnt f) (adj comp) ;
 LIST ub-ent-fem-adj/komp-adj = (adj f ind sg) (adj mf ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-fem-subst = (n f sg ind) ;
-LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f ubøy) ("gang" pl) ;
-LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f ubøy) ("gang" pl) np ;
+LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f sp) ("gang" pl) ;
+LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f sp) ("gang" pl) np ;
 LIST ub-ent-mask-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj m ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m ind sg) ("eigen" emph m ind sg) ("halvannen" qnt m) (adj comp) ;
 LIST ub-ent-mask-adj/komp-adj = (adj m ind sg) (adj mf ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-mask-subst = (n m sg ind) ;
-LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m ubøy) ("gang" pl) ;
-LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m ubøy) ("gang" pl) np ;
+LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m sp) ("gang" pl) ;
+LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m sp) ("gang" pl) np ;
 LIST ub-ent-mask/fem-adj = (adj m ind sg) (adj f ind sg) (adj mf ind sg) (adj pprs) ;
 LIST ub-ent-mf-adj = (adj mf ind sg) (adj pprs) ;
 LIST ub-ent-mf-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m ind sg) ("eigen" emph m ind sg) ("halvannen" qnt m) (adj comp) ;
@@ -737,14 +737,14 @@ LIST ub-ent-nøyt-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj nt 
 LIST ub-ent-nøyt-adj/komp = (adj nt ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-nøyt-adj/komp-adj = (adj nt ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-nøyt-subst = (n nt sg ind) ;
-LIST ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n nt sg ind) (n nt ubøy) ("gang" pl) ;
-LIST ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n nt sg ind) (n nt ubøy) ("gang" pl) np ;
+LIST ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n nt sg ind) (n nt sp) ("gang" pl) ;
+LIST ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n nt sg ind) (n nt sp) ("gang" pl) np ;
 LIST ub-ent-nøyt/komp = (nt ind sg) comp ;
 LIST ub-ent-nøyt/komp/ub-sup = (nt ind sg) (sup ind) comp ;
 LIST ub-ent-subst = (n ind sg) ;
-LIST ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n ubøy) ("gang" pl) ;
-LIST ub-ent-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n ubøy) ("gang" pl) np ;
-LIST ub-ent-subst/tall/mål/tid/gen = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n ubøy) ("gang" pl) ;
+LIST ub-ent-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n sp) ("gang" pl) ;
+LIST ub-ent-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n sp) ("gang" pl) np ;
+LIST ub-ent-subst/tall/mål/tid/gen = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n sg ind) (n sp) ("gang" pl) ;
 LIST ub-fl-subst = (n pl ind) ;
 LIST ub-fl-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n pl ind) ("gang" pl) ;
 LIST ub-subst = (n ind) ;
@@ -770,7 +770,7 @@ MAP:6000 (@←det)   ("1") IF
 
 
 #:6011
-MAP:6011 (@det→)   ("slags" n ubøy) IF
+MAP:6011 (@det→)   ("slags" n sp) IF
 	 (0 gen/%slags%)
 	 (1 subst/adj)
 ;
@@ -959,7 +959,7 @@ MAP:1658 (@adj→)   (adj m ind sg) IF
 	(*3C subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 m#ikke-adv-adj)
 	(*3C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " en god @ADJ→, fin slags (ubøy) ting"
+#  " en god @ADJ→, fin slags (sp) ting"
 #   :group 74))
 
 
@@ -972,7 +972,7 @@ MAP:1657 (@adj→)   (adj m ind sg) IF
 	(*4C subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK *-1 m#ikke-adj LINK 0 %nok%)
 	(*4C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " en god @ADJ→ nok, fin slags (ubøy) ting"
+#  " en god @ADJ→ nok, fin slags (sp) ting"
 #   :group 74))
 
 
@@ -1062,7 +1062,7 @@ MAP:1649 (@adj→)   (adj m ind sg) IF
 	(*1C subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 m#ikke-adj)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " en god @ADJ→ slags (ubøy) ting"
+#  " en god @ADJ→ slags (sp) ting"
 #   :group 74))
 
 
@@ -1074,7 +1074,7 @@ MAP:1648 (@adj→)   (adj m ind sg) IF
 	(*2C subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK *-1 m#ikke-adj LINK 0 %nok%)
 	(*2C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " en god @ADJ→ nok slags (ubøy) ting"
+#  " en god @ADJ→ nok slags (sp) ting"
 #   :group 74))
 
 
@@ -1326,7 +1326,7 @@ MAP:1625 (@adj→)   (adj f ind sg) IF
 	(*2C subst LINK NOT 0 m#mask LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK *-1 m#ikke-adj LINK 0 %nok%)
 	(*2C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " ei lita @ADJ→ nok slags (ubøy) bøtte"
+#  " ei lita @ADJ→ nok slags (sp) bøtte"
 #   :group 74))
 
 
@@ -1551,7 +1551,7 @@ MAP:1607 (@adj→)   (adj nt ind sg) IF
 	(*1C subst LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 m#ikke-adj)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " et lite @ADJ→ slags (ubøy) hus"
+#  " et lite @ADJ→ slags (sp) hus"
 #   :group 75))
 
 
@@ -1563,7 +1563,7 @@ MAP:1606 (@adj→)   (adj nt ind sg) IF
 	(*2C subst LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 be LINK NOT 0 fl LINK *-1 m#ikke-adj LINK 0 %nok%)
 	(*2C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " et lite @ADJ→ nok slags (ubøy) hus"
+#  " et lite @ADJ→ nok slags (sp) hus"
 #   :group 75))
 
 
@@ -1663,7 +1663,7 @@ MAP:1595 (@adj→)   (adj pl) IF
 	(*3C subst LINK NOT 0 ent LINK NOT *-1 ikke-adv-adj-nr2det)
 	(*3C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " de beste @ADJ→, fineste slags (ubøy) ting"))
+#  " de beste @ADJ→, fineste slags (sp) ting"))
 
 
 
@@ -1696,7 +1696,7 @@ MAP:1591 (@adj→)   (adj pl) IF
 	(*1C subst LINK NOT 0 ent LINK NOT *-1 ikke-adv-adj-nr2det)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " de beste @ADJ→ slags (ubøy) ting"))
+#  " de beste @ADJ→ slags (sp) ting"))
 
 
 
@@ -2641,7 +2641,7 @@ MAP:1499 (@det→)   (det emph m ind sg) IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
-#  " (en) egen slags (mask ubøy) naturlov"))
+#  " (en) egen slags (mask sp) naturlov"))
 
 
 
@@ -2773,7 +2773,7 @@ MAP:1482 (@det→)   (det emph def sg) IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst BARRIER ikke-adv-adj-nr2det)
 ;
-#  " hans egne søken (ubøy) etter frihet"))
+#  " hans egne søken (sp) etter frihet"))
 
 
 
@@ -5769,7 +5769,7 @@ SELECT:6048 (adj nt ind sg @adj→) IF
 	(*1C subst LINK NOT 0 subst-prop LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 be LINK NOT 0 gen LINK NOT 0 fl LINK NOT *-1 m#ikke-adj)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " et lite @ADJ→ slags (ubøy) hus"
+#  " et lite @ADJ→ slags (sp) hus"
 #   :group 75))
 
 
@@ -5781,7 +5781,7 @@ SELECT:6049 (adj nt ind sg @adj→) IF
 	(*2C subst LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 gen LINK NOT 0 be LINK NOT 0 fl LINK *-1 m#ikke-adj LINK 0 %nok%)
 	(*2C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " et lite @ADJ→ nok slags (ubøy) hus"
+#  " et lite @ADJ→ nok slags (sp) hus"
 #   :group 75))
 
 
@@ -5886,7 +5886,7 @@ SELECT:6058 (adj pst pl @adj→) IF
 #	(*3C subst LINK NOT 0 ent LINK NOT *-1 ikke-adv-adj-nr2det)
 #	(*3C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 #;
-#  " de beste @ADJ→, fineste slags (ubøy) ting"))
+#  " de beste @ADJ→, fineste slags (sp) ting"))
 
 
 #:6060
@@ -5921,7 +5921,7 @@ SELECT:6063 (adj pst pl @adj→) IF
 	(*1C subst LINK NOT 0 ent LINK NOT *-1 ikke-adv-adj-nr2det)
 	(*1C subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 ;
-#  " de beste @ADJ→ slags (ubøy) ting"))
+#  " de beste @ADJ→ slags (sp) ting"))
 
 
 #:6064
