@@ -667,7 +667,7 @@ LIST rl20 = "late" ;
 
 LIST nullv = "bakke" "bedage" "blåse" "brake" "brenne" "brise" "brumle" "bruse" "buldre" "dage" "dages" "demre" "dimme" "dryppe" "drønne" "dugge" "dundre" "dure" "duskregne" "dønne" "ebbe" "fate" "flø" "fossregne" "gråne" "gufse" "gule" "guste" "hagle" "høljeregne" "høljregne" "ise" "kime" "kitle" "klarne" "klikke" "klinge" "klirre" "klukke" "klunke" "klynke" "knake" "knase" "knatre" "knatte" "kneste" "knette" "knirke" "knitre" "knyste" "krase" "krasle" "krible" "krisle" "kritle" "kry" "kvakke" "kvekke" "kvelde" "kåre" "letne" "li" "linne" "ljome" "lyne" "lysne" "løye" "maure" "morgne" "mulne" "murre" "mørkne" "plinge" "prikke" "prikle" "rable" "rasle" "ratle" "regne¹" "rime" "ringe" "rumle" "runge" "ryke" "sabbe" "sildre" "silregne" "siregne" "sisle" "sitre" "skorte" "skrakle" "skrappe" "skrelle" "skumre" "skye" "sludde" "smale" "smelle" "sno" "snø" "somres" "sprake" "sprutregne" "stilne" "stokke" "storme" "stridregne" "striregne" "styrtregne" "støkke" "støve" "surre" "suse" "svartne" "svimle" "svimre" "svuppe" "søkke" "tjukne" "tordne" "trekke" "tusle" "tusse" "tykne" "tø" "tørne" "ulme" "verke" "vintres" "våre" "våres" "yre" "øsregne" ;
 
-LIST t1 = tr1 ; # huge set not included;
+LIST t1 = tr1 "oppveie" ; # huge set not included;
 LIST t2 = "affektere" "ane" "anta" "avgjøre" "avtale" "bebude" "bedyre" "befale" "bekjentgjøre" "beklage" "bekrefte" "bemerke" "benekte" "påklage" ;
 LIST t3 = tr3 ; # huge set not included
 LIST t4 = "angi" "be" "bede" "begjære" "betrakte" "ete" "formidle" "høre" "observere" "se" "skjøte" "spise" ;
@@ -3657,15 +3657,14 @@ MAP:1405 (@subj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn) IF
 
 
 #:1404
-MAP:1404 (@subj @obj @i-obj @s-pred @app @laus-np)   (prn) IF
-	(0 pron)
-;
+MAP:1404-nom (@subj @s-pred @app @laus-np)   pron-nom ;
 #  " den var der
 #  mannen fant den
 #  mannen ga den mat
 #  hva heter mannen?
 #  mannen vet ingenting
 #  hvilken er det?"))
+MAP:1404-akk (@obj @i-obj @s-pred @app @laus-np)   pron-akk ;
 
 
  
@@ -18860,6 +18859,7 @@ SELECT:så-låser-det-seg (@fv) IF
 #6072
 REMOVE:6072 (acc @subj) IF
 	(0 pron-akk)
+	(NEGATE 0 nominativ)
 ;
 #noen pronomener i akkusativ blir mappet med subj. Må fjernes!
 
@@ -19246,6 +19246,11 @@ SELECT:prefer-left-subj-of-clause (@subj) IF
         (NEGATE *-1 @subj BARRIER setn-gr)
         (0 @obj OR @i-obj)
         ;
+
+REMOVE:default-pp-sg pp + pl IF
+        (0 pp + sg)
+        ;
+# Typically sounds less wrong when unsure
 
 # REMOVE:prefer-left-subj-past-cnjcoo (@subj) IF
 #         (*-1 pasv BARRIER fv OR setn-gr LINK *-1 cnjcoo BARRIER ikke-adv LINK *-1 pasv BARRIER fv OR setn-gr LINK *-1 @subj BARRIER fv OR setn-gr)
