@@ -16325,6 +16325,15 @@ REMOVE:441 (@tittel) IF
 	(*-1C ikke-premod-@adv LINK *1 @det→)
 ;
 
+REMOVE:innskot-v @s-gr IF
+        (0 cm)
+        (*1  cm BARRIER vblex OR pp OR cnjsub OR setn-gr)
+        ;
+
+REMOVE:innskot-h (@s-gr) IF
+        (-*1 cm BARRIER vblex OR pp OR cnjsub OR setn-gr)
+        (0 cm)
+        ;
 
 #CONSTRAINTS
 ## select domain heur1
@@ -18669,6 +18678,13 @@ CONSTRAINTS
 	(*-1 ikke-premod-u-@kon/@nkon-@s-gr LINK NOT 0 @premod-u-@kon/@nkon-@s-gr LINK NOT 0 @adv LINK NOT 0 @kon/@nkon LINK NOT 1 komma/strek/parentes-beg LINK NOT 1 komma/strek/parentes-beg)
 ;
 
+"<døde>" REMOVE:døde-no-other-fv ("død") IF
+        (0 @fv)
+        (NEGATE 1 adj OR n)
+        (NEGATE *0 @fv BARRIER setn-gr)
+        ;
+# «–Trenerinteressen har økt hos 43-åringen etter at hans onkel og trener, Roger Mayweather (59), døde i mars.»
+
 
 CONSTRAINTS
 ## select ndomain heur2
@@ -19143,6 +19159,9 @@ REMOVE:Den-tildeles-utøvere @subj IF
         (0 @obj)
         ;
 # «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+
+
+
 
 REMOVE:default ("bærer") IF (0 ("bære")) ;
 
