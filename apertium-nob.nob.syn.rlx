@@ -19170,16 +19170,25 @@ REMOVE:Den-tildeles-utøvere @subj IF
 
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
-        (1 qnt + pl)
-        (2 n + pl)
-        (3 setn-gr)
+        (1C det + &&ADJ_N_AGR)
+        (2C n + &&ADJ_N_AGR)
+        (3C setn-gr)
         ;
 # «NBA utestengte ham fra alle basketarenaer.»
+
+REMOVE:over-den-egyptiske-grensen adv IF
+        (0C pr OR adv)
+        (1C det + &&ADJ_N_AGR)
+        (2C adj + &&ADJ_N_AGR)
+        (3C n + &&ADJ_N_AGR)
+        (4C setn-gr)
+        ;
+# «Tirsdag skal de bringes over den egyptiske grensen.»
 
 REMOVE:etterpå-smalt pr IF
         (0 adv)
         (0 @adv)
-        (NEGATE 1 n OR adj OR np OR det + qnt)
+        (NEGATE 1 n OR adj OR np OR det)
         ;
 # «Rett etterpå smalt ballen i stolpen.»
 
