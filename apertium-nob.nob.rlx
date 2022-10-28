@@ -17103,6 +17103,11 @@ SELECT:2963 (adj nt ind sg) IF
 	(1 n)
 	;
 
+"<slipp>" REMOVE:slipp-oppi n IF
+        (NEGATE -1 det + sg OR adj + sg)
+        (1C pr)
+        ;
+
 #:2921
  SELECT:2921 (adj mf ind sg) IF
 	(NOT 0 orden)
@@ -27854,7 +27859,7 @@ REMOVE:Løs-oppgaven-og-si n OR adj + ind IF
 
 #:2114
 REMOVE:imp+fv (imp) IF
-	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp LINK NOT -1 %som%)
+	(**1CO setn-gr LINK **-1C fv LINK NOT 0 imp LINK NEGATE *-1 %som% BARRIER ikke-adv)
 ;
 #  "Stryker imp om det er et annet finitt verb i setn"
 # Ikkje: «Bygg en kasse som er 20 cm høy»

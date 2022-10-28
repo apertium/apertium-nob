@@ -3462,7 +3462,7 @@ MAP:1421 (@kon)   (cnjcoo) IF
 
 
 #:1420
-MAP:1420 (@adv)   (pr) IF
+MAP:1420 (@adv)   (pr) IF       # TODO: shouldn't we have something like @pr→ ?
 	(0 prep)
 ;
 
@@ -19146,6 +19146,14 @@ REMOVE:265 (@subj) IF
 ;
 #  "25.11.2002: ikke subjekt når det ikke er verb i setningen"))
 
+REMOVE:for-Trøndelag (@subj) IF
+        (-2 >>>)
+        (-1 pr)
+        (1 @fv)
+        (*2 @subj BARRIER setn-gr)
+        ;
+# «For Trøndelag ventes temperaturene å ligge høyt.»
+
 
 REMOVE:som-gjelder-områdene @subj IF
         (*-1 fv BARRIER ikke-@det→ LINK -1 @←sbu-rel)
@@ -19161,6 +19169,20 @@ REMOVE:Den-tildeles-utøvere @subj IF
 # «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
 
 
+REMOVE:han-fra-alle adv IF
+        (0C pr OR adv)
+        (1 qnt + pl)
+        (2 n + pl)
+        (3 setn-gr)
+        ;
+# «NBA utestengte ham fra alle basketarenaer.»
+
+REMOVE:etterpå-smalt pr IF
+        (0 adv)
+        (0 @adv)
+        (NEGATE 1 n OR adj OR np OR det + qnt)
+        ;
+# «Rett etterpå smalt ballen i stolpen.»
 
 
 REMOVE:default ("bærer") IF (0 ("bære")) ;
