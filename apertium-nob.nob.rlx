@@ -967,6 +967,9 @@ LIST yrkestittel-ord = "adjunkt" "admiral" "advokat" "agent"  "ambassadør" "ana
 LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
+LIST bot-ord = ".*bot"r ".*regning"r ;
+# /nanowordnet
+
 
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" "kår" ;
 LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r ;
@@ -22740,10 +22743,11 @@ SELECT:Den-som-gråter (vblex pres) IF
 "<gjester>" SELECT:gjester-ved-baren n IF
 		(1 ("ved"))
 		;
-"<gjester>" SELECT:gjester-på-stedet n IF
-		(1 ("på"))
-		(2 ("sted"))
-		;
+"<gjester>"i SELECT:gjester-på-stedet n IF
+	(1 ("på"))
+        (2 n)
+        (2 def OR pl)           # uterestauranter
+	;
 "<gjester>" SELECT:Staysman-og-gjester n IF
 		(-2 n OR np)
 		(NOT -2 ("mandag") OR ("tirsdag") OR ("onsdag") OR ("torsdag") OR ("fredag") OR ("lørdag") OR ("søndag"))
@@ -25286,9 +25290,9 @@ REMOVE:forblir-fanget pret IF
 
 
 #:2330
- REMOVE:pos>pp (adj pp nt ind sg) IF
-	(0 pos-ub-ent-nøyt)
-;
+ # REMOVE:pos>pp (adj pp nt ind sg) IF
+	# (0 pos-ub-ent-nøyt)
+# ;
 # group: 51
 
 
@@ -31838,6 +31842,10 @@ CONSTRAINTS
 ;
 #  "kh feb 2004: som regel adverb"
 
+"<dekke>" REMOVE n IF
+        (1 bot-ord)
+        ;
+
 
 "<det>" REMOVE:som-det-generelt-meldes (acc) IF
         (-1 %som%)
@@ -36426,6 +36434,9 @@ REMOVE:unlikely ("trekk") + n + m + pl + def ; #trekkane -> trekka
 		(-1 ord)
 		;
 
+"<trekker>" SELECT pres IF
+        (NEGATE -1 sg LINK 0C adj OR det)
+        ;
 SELECT:default ("<trekker>") + vblex + pres IF
 		(NOT 0 ("trekker") + n + sg + ind)
 		;
@@ -37213,6 +37224,7 @@ SELECT:default ("kart") + nt ;
 SELECT:default ("kart") + sg ;
 SELECT:default ("jorda"i) + top;
 SELECT:default ("<beinet>") + n + def ;
+SELECT:default ("<Graver>") + np ;
 
 
 
