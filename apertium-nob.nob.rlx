@@ -4375,7 +4375,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(2 ("før"))
 ;
 # Siden da har pilene fortsatt å peke oppover
-"<fortsatt>" SELECT (adv) IF
+"<fortsatt>"i SELECT adv IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
@@ -13407,6 +13407,10 @@ SELECT:mannen-i-50-årene-som-ble-meldt-savnet pp + mf IF
 # «Saken handlet om en dagmamma i slutten av 40-årene som i 2006 ble siktet for å ha ristet et barn»
 
 SELECT:default ("<styret>"i) + n ;
+
+"<erklært>" SELECT:erklært-frie pl IF
+        (1C adj + pl)
+        ;
 
 SELECT:det-har-blitt-solgt pp + nt IF
 	(-3 subst-nøyt OR %det/dette%-pron)
