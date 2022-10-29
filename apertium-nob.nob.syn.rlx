@@ -19193,6 +19193,8 @@ REMOVE:etterpå-smalt pr IF
 # «Rett etterpå smalt ballen i stolpen.»
 
 
+SELECT:default ("lenger") ;
+
 REMOVE:default ("bærer") IF (0 ("bære")) ;
 
 

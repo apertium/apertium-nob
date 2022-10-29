@@ -8854,6 +8854,7 @@ REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
 REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
+REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -23464,7 +23465,7 @@ SELECT:å-spille-og-score inf IF
 
 
 #:2397
- SELECT:2397 (vblex pp) IF
+ SELECT:2397 pp IF
 	(NOT 0 farlige-part)
 	(-1C konj)
 	(NOT -1 clb)
