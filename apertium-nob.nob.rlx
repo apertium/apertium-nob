@@ -10428,6 +10428,9 @@ REMOVE:data-not-datum ("datum");
 "<En>"   REMOVE:default   adv OR ("man") ;
 # "En kvinne i 90-årene ble …"
 
+"<Enda>" REMOVE:Enda-klarere np IF
+        (NOT -1 berre-litenbokstav)
+        ;
 
 #:3682
   "<enn>"   REMOVE:3682   (adv) IF

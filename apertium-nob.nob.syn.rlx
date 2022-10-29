@@ -19195,7 +19195,9 @@ REMOVE:etterpå-smalt pr IF
 
 SELECT:default ("lenger") ;
 
+REMOVE:default ("rase")  IF (0 ("ras")) ;
 REMOVE:default ("bærer") IF (0 ("bære")) ;
+REMOVE:default ("vie")   IF (0 ("via")) ;
 
 
 CONSTRAINTS
