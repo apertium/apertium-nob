@@ -19209,7 +19209,7 @@ SELECT:adj-pp-dis (adj pp @s-pred) + (sg) IF
         ;
 
 SELECT:adj-pp-dis (adj pp sg @s-pred) IF
-        (*-1 ukjent + storbokstav)
+        (*-1 storbokstav LINK 0 ukjent OR np LINK NOT 0 pl)
         (NEGATE 0* (@subj) BARRIER setn-gr)
         ;
 
