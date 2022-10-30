@@ -37143,6 +37143,10 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		;
 # «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
 
+"<velger>" SELECT vblex IF
+        (1 infmerke)
+        ;
+
 "<anklager>" SELECT:en-rekke-anklager n IF
 		(-2 ("en"))
 		(-1 ("rekke"))
