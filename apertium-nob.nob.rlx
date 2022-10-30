@@ -37239,6 +37239,7 @@ SELECT:default ("kart") + sg ;
 SELECT:default ("jorda"i) + top;
 SELECT:default ("<beinet>") + n + def ;
 SELECT:default ("<Graver>") + np ;
+SELECT:default ("toer") ;
 
 
 
