@@ -37277,6 +37277,8 @@ REMOVE:default ("mor") IF (0 ("morene")) ;
 REMOVE:default ("tenner") IF (0 ("tann")) ;
 REMOVE:default ("tenne") IF (0 ("tann")) ;
 REMOVE:default ("kul") + pl ; # vanlegare at dette betyr "kule" (viss du har «kuler» er du uheldig!)
+REMOVE:default ("dokk") IF (0 ("dekk")) ; # dekkene
+REMOVE:default ("dekke") + n IF (0 ("dekk")) ; # dekkene
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 
 # TODO: generalisera over dette?
