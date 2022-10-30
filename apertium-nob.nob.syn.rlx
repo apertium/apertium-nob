@@ -345,7 +345,8 @@ LIST gen = gen ;
 LIST gen/%slags% = "slags" gen ;
 LIST gen-subst = (n gen) ;
 LIST subst-gen = (n gen) ;
-LIST hj-verb = "være" "ville" "skulle" "måtte" "kunne" "ha" "få" "burde" "bli" ;
+LIST hj-verb   = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" "bli" "ha" "være" ;
+LIST m-hj-verb = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" ;
 
 SET ikke-@←adv = @alle-funksjoner - @←adv ;
 SET ikke-@←p-utfyll = @alle-funksjoner - @←p-utfyll ;
@@ -686,7 +687,8 @@ LIST t19 = "behøve" "fortjene" "innebære" "involvere" "oppleve" "trenge" "tål
 
 SET trans = d1 OR d2 OR d3 OR d4 OR d5 OR d6 OR d7 OR d8 OR d9 OR t2 OR t4 OR t6 OR t7 OR t8 OR t11 OR t14 OR t16 OR t17 OR t18 OR t19 ;
 SET trans-med-inf = d3 OR t17 OR t19 ; # incomplete TODO
-SET ditrans = ("donere") OR ("forespeile" )OR d1 OR d2 OR d3 OR d6 OR d7 OR rl6 OR rl7 OR rl8 ;
+SET ditrans-alle = ("donere") OR ("forespeile" ) OR d1 OR d2 OR d3 OR d6 OR d7 OR rl6 OR rl7 OR rl8 ;
+SET ditrans = ditrans-alle - ("ha") ; # "ha" sjeldan (aldri?) ditrans
 SET refl = rl1 OR rl2 OR rl3 OR rl4 OR rl5 OR rl6 OR rl7 OR rl8 OR rl9 OR rl10 OR rl11 OR rl12 OR rl13 OR rl14 OR rl15 OR rl16 OR rl17 OR rl18 OR rl19 OR rl20 ;
 SET n1 = nullv ;                # what is n1?
 SET ikke-refl = n OR np OR vblex - refl;
@@ -19193,22 +19195,28 @@ REMOVE:etterpå-smalt pr IF
 # «Rett etterpå smalt ballen i stolpen.»
 
 REMOVE:Samtidig-holder-han n IF
-        (-2 >>> OR sent)
+        (-2 >>> OR sent OR guio + clb)
         (-1 @adv)
-        (-1C adv OR adj)
+        (-1C adv OR adj OR cnjsub)
         (0 @fv)
         (1C nominativ)
         ;
 # «Samtidig holder han fast ved at han vil ta Storbritannia ut av EU 31.»»
+# «– Hvordan rangerer du denne kampen rent følelsesmessig sammenlignet med dine andre 34 proffkamper?»
 
 REMOVE:Ukjentord-lover n IF
-        (-2 >>> OR sent)
+        (-2 >>> OR sent OR guio + clb)
         (-1 ukjent)             # unknowns more likely noun/name than verb
         (0 @fv)
         (NEGATE *1 @fv BARRIER setn-gr)
         ;
 # «Swedbank lover styrket innsats mot hvitvasking.
 
+SELECT:har-tipset-dem @iv IF
+        (-1C m-hj-verb OR ("ha"))
+        (0C n OR pp)
+        (1C n + def OR n + pl OR akk)
+        ;
 
 
 SELECT:default ("lenger") ;
@@ -19266,6 +19274,7 @@ REMOVE:prefer-left-subj-of-clause (@subj) IF
 
 SELECT:prefer-left-subj-of-clause (@subj) IF
         (NEGATE *-1 @subj BARRIER setn-gr)
+        (NEGATE *-1 @fv BARRIER setn-gr LINK -1 @←sbu-rel LINK *-1 @subj BARRIER setn-gr) # @subj som har n/v
         (0 @obj OR @i-obj)
         ;
 
