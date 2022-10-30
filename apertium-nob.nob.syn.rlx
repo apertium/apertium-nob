@@ -19276,6 +19276,7 @@ SELECT:prefer-left-subj-of-clause (@subj) IF
         (NEGATE *-1 @subj BARRIER setn-gr)
         (NEGATE *-1 @fv BARRIER setn-gr LINK -1 @←sbu-rel LINK *-1 @subj BARRIER setn-gr) # @subj som har n/v
         (0 @obj OR @i-obj)
+        (NEGATE 0 @fv)
         ;
 
 REMOVE:default-pp-sg pp + pl IF
