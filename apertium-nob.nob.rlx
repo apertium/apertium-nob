@@ -37911,6 +37911,14 @@ MAP:dedikert-og-helt-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
 ;
 # «Han får fortelle sin utrolige og usensurerte historie»
 
+MAP:norske-torg-og-møteplasser (@nkon) %og/eller% IF
+        (-2C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (-1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (NOT 0 clb)
+        (1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+;
+# «De neste ukene fylles norske torg og møteplasser opp med lokalpolitikere på velgerjakt»
+
 SELECT:Nordøst-London SUB:1 n IF
         (0/1 ("nordøst") or ("sørøst"))
         ;
