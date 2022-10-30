@@ -24723,6 +24723,12 @@ SELECT:2335 (vblex) IF
 ### Fleire reglar for partisipp og samsvar / adj pp-dis: ###
 ############################################################
 
+SELECT:vært-og-drukket vblex + pp IF
+        (*-2 ("være") + pp BARRIER ikke-adv-adj-subst-det-prep)
+        (-1 cnjcoo)
+        (0C pp)
+        ;
+
 SELECT:den-drepte-var pp + sg + def IF
         (-1 dem + sg)
 	(1 %være/bli%)
