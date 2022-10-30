@@ -19192,6 +19192,24 @@ REMOVE:etterpå-smalt pr IF
         ;
 # «Rett etterpå smalt ballen i stolpen.»
 
+REMOVE:Samtidig-holder-han n IF
+        (-2 >>> OR sent)
+        (-1 @adv)
+        (-1C adv OR adj)
+        (0 @fv)
+        (1C nominativ)
+        ;
+# «Samtidig holder han fast ved at han vil ta Storbritannia ut av EU 31.»»
+
+REMOVE:Ukjentord-lover n IF
+        (-2 >>> OR sent)
+        (-1 ukjent)             # unknowns more likely noun/name than verb
+        (0 @fv)
+        (NEGATE *1 @fv BARRIER setn-gr)
+        ;
+# «Swedbank lover styrket innsats mot hvitvasking.
+
+
 
 SELECT:default ("lenger") ;
 
