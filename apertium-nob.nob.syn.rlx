@@ -127,7 +127,7 @@ LIST %en%-det = ("en" det) ;
 LIST %enn% = "enn" ;
 LIST %enn%-prep = ("enn" pr) ;
 LIST %et% = ("en" det qnt nt sg) ;
-LIST %etter/etterpå/før/senere/tidligere% = "etterpå" "etter" ("tidlig" adj comp) ("sen" adj comp) ("før" pr) ;
+LIST %etter/etterpå/før/senere/tidligere% = "etterpå" "etter" ("tidlig" adj comp) ("sen" adj comp) ("før" pr) "senere" ;
 LIST %finne%-verb = ("finne" vblex) ;
 LIST %flere/få/mange/noen% = ("mange" pl) ("noen" pl) ("få" pl) ("mange" adj comp) ;
 LIST %fleste% = ("mange" adj sup def) ;
@@ -11030,6 +11030,7 @@ SELECT:859 (@subj) IF
 
 
 SELECT:en-strekning..er-bevart (@subj) IF
+        (NEGATE 0 adverbialsubst) # «Noen timer tidligere ble Anne observert»
         (NEGATE *-1C @subj BARRIER cm OR setn-gr)
         (1 @adv LINK *1 kop-fin BARRIER ikke-@det→-@←p-utfyll LINK 1 @s-pred)
         ;
@@ -11047,11 +11048,12 @@ SELECT:cm-og-faren-kategoriseres (@subj) IF
 SELECT:858 (@subst→) IF
 	(0 adverbialsubst)
 	(NOT 0 prop)
+	(-1 det-kvant OR ("få"))
 	(1 %etter/etterpå/før/senere/tidligere%)
-	(-1 det-kvant)
 	(*2 kh#ikke-mod LINK NOT 0 @←p-utfyll)
 ;
 #  "8.10.2003: Det skjedde to år tidligere."))
+# «Få uker senere ble Anne Paust skutt og drept.»
 
 
 
