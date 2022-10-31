@@ -10665,6 +10665,8 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 #  "bare subst ved \"et stort fort\"
 # eller ved \"mange fort\""
 
+"<fornøyde>" REMOVE:fornøyde pp ;
+
 "<fortsatte>" REMOVE:cm-fortsatte-Neymar pp IF
         (-1 cm)
         (*1 storbokstav)
