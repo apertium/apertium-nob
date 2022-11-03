@@ -32230,6 +32230,13 @@ CONSTRAINTS
         ;
 # «Hjemmelaget ledet fram til 6-5 før Elverum tok over.»
 
+"<leger>" REMOVE:leger-sjeldan-verb vblex IF
+        (NEGATE -1 ("<tiden>")) # tiden leger alle sår
+        (NEGATE *1 ("<sykdom>") OR ("sår") BARRIER ikke-det) # lege en sykdom
+        (NEGATE -1 ("<alt>"))    # alt leger seg
+        (NEGATE 1 ("<alt>"))    # en is som leger alt
+        ;
+
 #:3483
   "<lei>"   REMOVE:3483   (n) IF
 	(0 adj)
@@ -33066,8 +33073,9 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
 
 
 #:1813
- SELECT:1813 (clb cnjcoo) IF
+SELECT:og-det-er (clb cnjcoo) IF
 	(0 clb/konj-konj)
+        (*1 pres/pret)
 	(*1O setn-gr/parentes-beg LINK *-1 pres/pret)
 	(*1O pres/pret LINK NOT 0 farlige-verb LINK NOT 0 perf-part LINK NOT -1 prep/komma)
 	(*1O pres/pret LINK NOT -1 subst-gen)
