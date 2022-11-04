@@ -20724,6 +20724,10 @@ SELECT:Der-findes expl IF
         (1 ("finnes") OR ("være"))
         ;
 
+SELECT:findes-der expl IF
+        (-1 ("finnes") OR ("være"))
+        ;
+
 SELECT:Der-det-pga-X-er expl IF
         (-1 cnjsub OR adv)
         (1 %pga%)
@@ -32302,6 +32306,7 @@ REMOVE:ikkje-skjor ("skjære") + n;
 	(0 adv)
 ;
 
+REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepleie"/"hjelpepleie" in the abstract
 
 
 "<så>"   REMOVE:så pret IF
