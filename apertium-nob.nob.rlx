@@ -227,6 +227,7 @@ LIST %at/om% = "om"  "at"  ;
 LIST %av% = "av"  ;
 LIST %av/for% = ("av"  pr) ("for"  pr) ;
 LIST %bare% = ("bare"  adv) ;
+LIST %bare/kun% = ("bare"  adv) "kun" ;
 LIST %begge/selve/alle% = "selv"  "begge"  ("all"  det pl) ;
 LIST %bla% = "blant annet" "bl.a." ;
 LIST %blikk% = ("blikk"  adv) ;
@@ -3147,10 +3148,10 @@ SELECT:den+prn ("den¹") IF
         ;
 
 #:3717
-  "<det>"   SELECT:3717   (prn) IF
+"<det>" SELECT:var-det-grunn expl IF
 	(-1 fv)
-	(1C present-ub)
 	(-1C present-verb)
+	(1C present-ub)
 ;
 #  "I går sto (FV/PRESENT-V) det (pron)
 # (forts) en (UB) mann på veien
@@ -20752,6 +20753,24 @@ SELECT:kan-det-gå expl IF
 SELECT:det-kan-gå expl IF
         (1 m-hj-verb)
         (2 %gå%)
+        ;
+
+SELECT:det-kan-bli-en expl IF
+        (1 m-hj-verb)
+        (2 inf)
+        (*3 ("en") BARRIER (*) - ref) # tillat «seg» før "en"
+        ;
+
+SELECT:hvis-det-går expl IF
+        (-1 cnjsub)
+        (1 fv)
+        ;
+
+
+SELECT:det-skal-kun expl IF
+        (1 m-hj-verb)
+        (2 %bare/kun%)
+        (3 ("få") OR ("liten") OR ("litt"))
         ;
 
 #:2607
