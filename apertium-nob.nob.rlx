@@ -9199,6 +9199,13 @@ SELECT:i-adj-hevd ("hevd") IF
         (-2 det)
         (-1 adj)
         ;
+
+"<av>" REMOVE:er-av-ulike-typer adv IF
+        (-1 kop)
+        (1 adj + ind)
+        (2 n)
+        ;
+
 # "Disse blå lysene..."
 "<asken>" REMOVE:asken-etter ("ask") IF
         (1 ("etter"))
