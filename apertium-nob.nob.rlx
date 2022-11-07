@@ -20744,6 +20744,16 @@ SELECT:Der-det-pga-X-er expl IF
         (3 fv)
         ;
 
+SELECT:kan-det-gå expl IF
+        (-1 m-hj-verb)
+        (1 %gå%)
+        ;
+
+SELECT:det-kan-gå expl IF
+        (1 m-hj-verb)
+        (2 %gå%)
+        ;
+
 #:2607
 SELECT:jeg-så-den-cm-men pron-pers IF
 	(NOT 0 poss-det)
