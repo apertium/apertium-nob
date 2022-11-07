@@ -10281,6 +10281,8 @@ REMOVE:data-not-datum ("datum");
 ;
 #  "Mest vanlig som dages"
 
+"<dansker>" REMOVE:danskere ("dansk") ;
+
 "<De>" REMOVE:setn-start cog IF
         (-1 setn-gr)
         ;
