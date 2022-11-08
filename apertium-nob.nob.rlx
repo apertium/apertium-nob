@@ -13499,6 +13499,19 @@ SELECT:ble-antent adj + pst IF
 		(*-2 ("da"))
 		(NOT *-1 ("ha"))
 		;
+                
+"<leit>" SELECT:på-leit n IF
+		(-1 %på%)
+		;
+"<leit>" SELECT:trist-og-leit adj IF
+		(-2 adj)
+		;
+"<leit>" REMOVE:unlikely n
+		;
+
+"<sin>" SELECT:sin-søken det IF
+		(1 ("<søken>"))
+		;
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
