@@ -13513,6 +13513,16 @@ SELECT:ble-antent adj + pst IF
 		(1 ("<søken>"))
 		;
 
+"<latt>" SELECT:latt-i-stikken adj + pp IF
+		(1 %i%)
+                (2 ("<stikken>"))
+		;
+
+"<levnet>" SELECT:levnet-i-stikken adj + pp IF
+		(1 %i%)
+                (2 ("<stikken>"))
+		;
+
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
