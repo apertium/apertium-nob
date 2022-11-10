@@ -2720,6 +2720,12 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 ;
 #De åpnet Bislet bad..
 
+"<badet>"i   SELECT:badet-i-sol vblex IF
+	(1 %i%)
+	(2 n OR adj OR det + qnt + sg)
+        (NEGATE -1 %på%)
+;
+
 "<bar>" SELECT:bar-preg pret IF
         (1 ("preg"))
         ;
@@ -6439,6 +6445,18 @@ REMOVE:unlikely ("<ris>") + pasv;
 ;
 #  "ha/få råd til"
 
+"<de>"i SELECT:de-forlovede det IF
+		(1 ("forlovede"))
+		;
+REMOVE:de-forlovede adj IF
+		(-1 det + dem OR prn + pers)
+		(0 ("<forlovede>"))
+		(NOT 1 n)
+		;
+SELECT:NNs-forlovede n IF
+		(-1 gen)
+		(0 ("<forlovede>"))
+		;
 
 # TODO: any exceptions?
 "<seg>" REMOVE fv IF
@@ -34567,12 +34585,6 @@ REMOVE:de-amerikanske-sanksjonene prn + pers + pl IF
         (2C n + pl + def)
         ;
 # «Maduro oppgir de amerikanske sanksjonene»
-
-REMOVE:de-forlovede adj IF
-		(-1 det + dem)
-		(0 ("<forlovede>"))
-		(NOT 1 n)
-		;
 
 REMOVE:seks-av-ti-leser n + sg IF
         (-1C det + pl)
