@@ -9767,6 +9767,13 @@ REMOVE:rekke-ut-handa ("rake") IF
         (2 ("å"))
         (3 ("møtes"))
         ;
+"<revet>"i SELECT:revet-ost ("rive") IF
+        (1 ("ost"))
+        ;
+"<henger>"i SELECT:på-veggen-henger ("henge") IF
+        (-2 ("på"))
+        (-1 ("vegg"))
+        ;
         
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
