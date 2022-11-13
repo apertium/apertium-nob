@@ -9762,6 +9762,11 @@ REMOVE:rekke-ut-handa ("rake") IF
         (1 ("være"))
         (2 ("skifte") OR ("bytte"))
         ;
+"<endene>"i SELECT:endene-til-å-møtes ("ende") IF
+        (1 ("til"))
+        (2 ("å"))
+        (3 ("møtes"))
+        ;
         
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
