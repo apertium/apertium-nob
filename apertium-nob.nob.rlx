@@ -9774,6 +9774,12 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-2 ("på"))
         (-1 ("vegg"))
         ;
+"<trengte>"i SELECT:hun-trengte pret IF
+        (-1 pron)
+        ;
+"<Løy>"i SELECT:Løy-du ("lyve") IF
+        (1 pron)
+        ;
         
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
