@@ -37932,6 +37932,7 @@ MAP:mellom-statens-inntekter-og-utgifter (@nkon) %og/eller% IF
         (-1C n + ind LINK NOT 0 gen)
         (NOT 0 clb)
         ( 1C n + ind LINK NOT 0 gen LINK NOT 1 simple-nkon-border-right)
+        (NEGATE -1 ("(.*)"r) LINK 2 (VSTR:"$1")) # «arbeidsmiljølovens bestemmelser og bestemmelser gitt i forskriftene»
 ;
 # tillat «mellom» viss andre substantiv kjem rett etter, då er det tryggare å rekna med genitiven styrer heile [n og n]
 # Ikkje: «sammenheng mellom foreldres<gen> holdning<n>  og  barn<n> og unges alkoholforbruk»
