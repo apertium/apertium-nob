@@ -35896,7 +35896,7 @@ REMOVE:Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
         (NOT -1 pos + pl OR gen)
-        (**-1C ent - gen LINK -1 >>>)
+        (**-1C ent - gen BARRIER cnjsub LINK -1 >>>)
         (*-1 hj-verb)
         ;
 
@@ -35904,7 +35904,7 @@ REMOVE:-Fondet-har-blitt-verdens-største-fond fl-subst IF
         (0C subst)
         (0 ent-subst)
         (NOT -1 pos + pl)
-        (**-1C ent LINK -1 guio LINK -1 >>>)
+        (**-1C ent BARRIER cnjsub LINK -1 guio LINK -1 >>>)
         (*-1 hj-verb)
         ;
 
@@ -37404,6 +37404,10 @@ REMOVE:kakaobokser ("bokser") IF (0 ("boks")) ;
 REMOVE:breiflabbtråler ("stråler") IF (0 ("tråler")) (-1 det + sg) ;
 REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 
+REMOVE:default ("hjem") + pl ; # unngå heimar
+REMOVE:default (".+hjem"r) + sg ; # men vanlegvis «fosterheimar»
+REMOVE:default (".*bygg"r) + sg ; # vanlegvis «næringsbygninger»
+
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
 "<Alvorlig>" REMOVE:default-Alvorlig ("Alvorlig" np cgguess) ;	# keep Alvorlig<adj><sint><pst><mf><sg><ind>→Alvorleg Alvorlig<adj><sint><pst><nt><sg><ind>→Alvorleg
@@ -37561,7 +37565,6 @@ REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 "<henger>" REMOVE:default-henger ("henge¹" vblex pres) ;	# keep henge<vblex><pres>→heng
 "<hindre>" REMOVE:default-hinder ("hinder" n nt pl ind) ;	# keep hindre<vblex><inf>→hindre
 "<hindret>" REMOVE:default-hinderet ("hinder" n nt sg def) ;	# keep hindre<vblex><pret>→hindra hindre<vblex><pp>→hindra
-"<hjem>" REMOVE:default-heimar ("hjem" n nt pl ind) ;	# keep hjem<pr>→heim hjem<n><nt><sg><ind>→heim
 "<Hjemmet>" REMOVE:default-Hjemmet ("Hjemmet" np org) ;	# keep Hjem<n><nt><sg><def>→Heimen
 "<Hold>" REMOVE:default-Hold ("hold" n nt sg ind) ;	# keep Holde<vblex><imp>→Hald
 "<holdt på>" REMOVE:default-heldt-på ("holde# på" vblex pret) ;	# keep holde# på<vblex><pp>→halde på
