@@ -6101,6 +6101,13 @@ SELECT:sløvande-middel ("middel") + nt IF
         (0 n)
         ;
 
+"<kjerne>"i SELECT:kjerne-smør vblex IF
+        (1 ("smør") OR ("rømme"))
+        ;
+
+"<kjerne>"i SELECT:default n
+        ;
+
 LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
 LIST regn_vann = ("regn" n) ;
