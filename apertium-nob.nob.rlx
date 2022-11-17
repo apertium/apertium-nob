@@ -15286,6 +15286,13 @@ SELECT:jeg-er-UTROLIG-takknemlig adj + nt + sg + ind IF
         (1C adj + mf + sg + ind)
         ;
 
+"<forbundet>" SELECT:forbundet-med pp IF
+        (1 ("<med>"))
+        ;
+# «Da han startet opp i Bergen for 21 år siden, var det forbundet med stor usikkerhet å starte opp.»
+# Blir stort sett rett, utanom eit par vanskelege som:
+# «Skiforbundet i Norge er også det forbundet med lengst skihistorie»
+
 "<forbundet>" SELECT:forbundet-må-vurdere n IF
         (NOT -1 ("<nært>"i) OR ("<tett>"i))
         (1 vblex OR adj + pp OR clb OR %som% OR pr OR %også%)
