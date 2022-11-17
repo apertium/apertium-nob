@@ -9106,11 +9106,17 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (1 vblex)
         (2 pr)
         ;
+
 "<hete>"i REMOVE:vil-heretter-hete n IF
         (-2 ("ville"))
         (-1 pr OR adv)
         (*1 np OR n)
         ;
+
+"<hette>" REMOVE:han-hette n OR adj IF
+        (-1 pers)
+        ;
+
 "<landet>"i REMOVE:skal-ha-landet-i n IF
         (-2 modalverb)
         (-1 ("ha"))
@@ -31759,6 +31765,11 @@ CONSTRAINTS
         (NOT -1 ("om"))         # be om lov
         ;
 
+SELECT ("mark¹") IF (*1 ("krok") BARRIER (*) - pr) ;
+SELECT ("mark¹") IF (*-1 ("ete") BARRIER vblex OR setn-gr);
+SELECT ("mark¹") IF (*-1 ("leve") BARRIER vblex OR setn-gr LINK 1 ("av"));
+SELECT ("mark¹") IF (1 ("i")) (2 ("mage"));
+
 
 "<Man>" SELECT prn IF
         (1 fv)
@@ -37357,8 +37368,8 @@ SELECT:default ("jorda"i) + top;
 SELECT:default ("<beinet>") + n + def ;
 SELECT:default ("<Graver>") + np ;
 SELECT:default ("toer") ;
-
-
+SELECT:default ("mark") ;       # not mark¹
+SELECT:default ("mark") + sg ;  # not pl
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -37652,10 +37663,6 @@ REMOVE:default (".*bygg"r) + sg ; # vanlegvis «næringsbygninger»
 "<løslatt>" REMOVE:default-lauslate ("løslate" adj pp nt sg ind) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
 "<løslatt>" REMOVE:default-lauslate ("løslate" vblex pp) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
 "<løst>" REMOVE:default-laust ("løs" adj sint pst nt sg ind) ;	# keep løse<vblex><pp>→løyst
-"<mark>" REMOVE:default-marker ("mark" n f pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
-"<Mark>" REMOVE:default-Marker ("mark" n f pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
-"<mark>" REMOVE:default-marker ("mark" n m pl ind) ;	# keep mark<n><f><sg><ind>→mark mark<n><m><sg><ind>→mark
-"<Mark>" REMOVE:default-Marker ("mark" n m pl ind) ;	# keep Mark<n><f><sg><ind>→Mark Mark<np><cog>→Mark Mark<n><m><sg><ind>→Mark Mark<np><ant><m>→Mark
 "<materiale>" REMOVE:default-material ("materiale" n nt sg ind) ;	# keep material<adj><pst><un><pl><ind>→materiale material<adj><pst><un><sp><def>→materiale
 "<medlem>" REMOVE:default-medlem ("medlem" n nt pl ind) ;	# keep medlem<n><nt><sg><ind>→medlem
 "<meldt>" REMOVE:default-meld ("melde" adj pp mf sg ind) ;	# keep melde<vblex><pp>→meldt melde<adj><pp><nt><sg><ind>→meldt
