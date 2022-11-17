@@ -34233,6 +34233,13 @@ SELECT:at-han-kom cnjsub IF
 #  "noen dager før (sbu) krigen brøt ut holdt han en tale"
 #      :group 73
 
+SELECT:i_tilfelle-det-ble cnjsub IF
+        (NEGATE -1 cnjsub)
+        (0C adv OR cnjsub)
+        (1C expl)
+        (2C kop-fv)
+        ;
+# «Vestmaktene ville bygge opp lager av forsyninger i Berlin i tilfelle det ble en ny sovjetisk blokade»
 
 
 #:1734
@@ -37423,9 +37430,9 @@ REMOVE:kakaobokser ("bokser") IF (0 ("boks")) ;
 REMOVE:breiflabbtråler ("stråler") IF (0 ("tråler")) (-1 det + sg) ;
 REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 
-REMOVE:default ("hjem") + pl ; # unngå heimar
-REMOVE:default (".+hjem"r) + sg ; # men vanlegvis «fosterheimar»
-REMOVE:default (".*bygg"r) + sg ; # vanlegvis «næringsbygninger»
+REMOVE:default ("hjem") + pl IF (0 sg); # unngå heimar
+REMOVE:default (".+hjem"r) + sg IF (0 pl) ; # men vanlegvis «fosterheimar»
+REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
