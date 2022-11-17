@@ -19232,6 +19232,22 @@ CONSTRAINTS
 ########################################################
 ### adj pp-dis til bruk i predikativ samsvarsbøying: ###
 ########################################################
+
+# Fjern adj.pp etter ha (og være brukt som ha):
+REMOVE:har-ankommet adj + pp IF
+        (0 vblex + pp)
+        (-*1 ("ha") BARRIER setn-gr OR fv)
+        ;
+# «Rundt 330 av det totale antallet kvoteflyktninger som har fått opphold så langt i år, har allerede ankommet Norge.»
+
+LIST w_komme_foregå_bli_blive = "komme" "foregå" "bli" "blive" ;
+REMOVE:er-kommet adj + pp IF
+        (0 w_komme_foregå_bli_blive)
+        (0 vblex + pp)
+        (-*1 ("være") BARRIER setn-gr OR fv)
+        ;
+
+
 SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
         (*-1 (@subj) LINK 0 &&ADJ_N_AGR)
         ;
@@ -19245,7 +19261,6 @@ SELECT:adj-pp-dis (adj pp sg @s-pred) IF
         (NEGATE 0* (@subj) BARRIER setn-gr)
         ;
 
-# SUBSTITUTE @alle-funksjoner (*) (*);
 
 
 #7000
