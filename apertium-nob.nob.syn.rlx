@@ -10999,6 +10999,12 @@ SELECT:enkel-parentes (@app) IF
 ;
 # «Samferdselsminister Jon Georg Dale (Frp) bes om å redegjøre for seg.»
 
+SELECT:parentes-np (@laus-np) IF
+	(*-1 parentes-beg/strek BARRIER (*) - @premod)
+	(1 parentes-slutt/strek)
+;
+# «I tillegg ble en forretningsidé (eksklusive solbriller) brakt opp av et par av spillerne.»
+
 #:860
 SELECT:860 (@subj) IF
 	(NOT 0 @←p-utfyll)
