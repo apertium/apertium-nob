@@ -19252,6 +19252,10 @@ CONSTRAINTS
 ### adj pp-dis til bruk i predikativ samsvarsbøying: ###
 ########################################################
 
+REMOVE:prefer-pp@spred @subj IF
+        (0 adj + pp + @s-pred)
+        ;
+
 # Fjern adj.pp etter ha (og være brukt som ha):
 REMOVE:har-ankommet adj + pp IF
         (0 vblex + pp)
