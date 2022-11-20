@@ -12205,6 +12205,13 @@ SELECT:og-et-begrenset-antall-er @subj IF
         ;
 
 
+SELECT:fra-en-oppdatering-slippes-til @subj IF
+        (*-1 ("fra") BARRIER ikke-premod)
+        (1C @fv)
+        (*2 ("til") LINK *1 @subj LINK *1 @fv)
+        ;
+# «Det kan være bare timer fra en sikkerhetsoppdatering slippes fra en leverandør, til det første angrepet oppdages, sier Bente Hoff, som leder Nasjonal cybersikkerhetssenter i NSM.»
+
 #CONSTRAINTS
 ## remove ndomain
 
@@ -14287,9 +14294,7 @@ REMOVE:585 (@subj) IF
 	(*-1C @iv BARRIER s#setn-gr)
 	(*1 @fv LINK *-1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT *-1 clb-konj)
 ;
-#  " IKKE: den vil dessuten alltid være nisjepreget @SUBJ ; 
-#  
-# det vet vi"))
+# IKKE: «den vil dessuten alltid være nisjepreget@subj; det vet vi»
 
 
 
