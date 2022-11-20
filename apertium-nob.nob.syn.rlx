@@ -3482,6 +3482,14 @@ MAP:1419 (@det→)   (prn) IF
 
 
 
+MAP:blant-dem-som (@subj @obj @i-obj @s-pred @app @←p-utfyll) prn IF
+	(0 res/akk)
+	(-1C prep)
+        (*1 cnjsub + %som% BARRIER (*) - cm)
+;
+# Subject of relative clause.
+# «Det er rundt 60 prosent kvinner blant dem som diagnostiseres, men det er også langt flere kvinner enn menn som tester seg.»
+
 #:1418
 MAP:1418 (@←p-utfyll)   (prn) IF
 	(0 res/akk)
@@ -5161,6 +5169,12 @@ CONSTRAINTS
 
 
 
+#CONSTRAINTS
+## select relative subjects
+# We tag subjects of relative sentences with @subj, even though
+# they function as @←p-utfyll to the main clause.
+# TODO: Might want a separate tag for these subclause-subjects?
+
 SELECT:ellipsrel-tatt @subj IF
         (0C n + pl)
         (1C adj + pp + pl)
@@ -5169,6 +5183,24 @@ SELECT:ellipsrel-tatt @subj IF
         ;
 # Ellipsed «som» in short relative clause
 # «Jeg er her på grunn av beslutninger tatt på europeiske møter hvor Merkel manipulerer deltakerne.»
+
+SELECT:i-50-årene-som @subj IF
+        (0 @obj OR @s-pred)
+        (1 ("i"))
+        (2 (".*-år"r) OR top)
+        (*3 cnjsub + @←sbu-rel BARRIER (*) - cm)
+        ;
+# «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
+# «Den andre skal ha vært en mann i 20-årene, som ble drept i Qalandiya utenfor Jerusalem.»
+
+SELECT:cm-som @subj IF
+        (0 @obj OR @s-pred)
+        (NEGATE 0 (".*-år"r) OR top LINK -2 @subj)
+        (*1 cnjsub + @←sbu-rel BARRIER (*) - cm)
+        ;
+# «De har gått til angrep mot provinsen, som kontrolleres av noen.
+# «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
+# «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
 
 CONSTRAINTS
@@ -14179,15 +14211,15 @@ REMOVE:596 (@subj) IF
 
 
 #:595
-REMOVE:595 (@subj) IF
+REMOVE:1subj (@subj) IF
 	(*-1 s#setn-gr BARRIER @fv)
-	(*1 lo#ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *1 lo#ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj)
+	(*1 lo#ikke-mod-@←p-utfyll-@adv-@app LINK 0 @fv LINK NOT 0 ikke-@fv LINK *1 lo#ikke-mod-@←p-utfyll-@adv-@app LINK 0 @subj LINK NOT 0 ikke-@subj LINK NEGATE 1 %som%)
 	(*1 s#setn-gr LINK *-1 @fv LINK NOT *-1 @fv)
 	(*1 s#setn-gr LINK NOT 0 %at/om%)
 ;
 #  "LO 3.9.2003: Fjerner subj om det er funnet et entydig subjekt i setningen.
 # kh jan 2004: NOT LR0 at/om: Han har jeg sagt at har lest boka."))
-
+# Ikkje ved %som% – det er subj for relativsetningen!
 
 
 #:594
