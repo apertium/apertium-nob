@@ -12185,6 +12185,12 @@ SELECT:på-8-km @←p-utfyll IF
         (0 adverbialsubst)
         ;
 
+SELECT:og-et-begrenset-antall-er @subj IF
+	(*-1C periode-slutt/clb-konj BARRIER @fv OR @subj)
+        (1C @fv)
+        (NEGATE *2C @subj)
+        ;
+
 
 #CONSTRAINTS
 ## remove ndomain
