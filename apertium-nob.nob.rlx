@@ -11380,6 +11380,8 @@ REMOVE:unlikely ("internasjonale") + n IF (0 adj);
 ;
 #neppe forkortelsen IS
 
+"<inneholdt>" REMOVE:unlikely pp;
+# «Byens voldsrate har blitt halvert de siste 20 årene, i tråd med en nasjonal nedgang i kriminalitet i USA, men perioden inneholdt også år med oppgang, til tross for nye grensegjerder og murer.»
 
 #:3503
   "<jeg>"   REMOVE:3503   (prn p1) IF
@@ -25977,19 +25979,6 @@ REMOVE:meget-stor-betydning (adj pp nt ind sg) IF
 ;
 #  "men også gjort (ikke <perf-part> slike forsøk"))
 
-
-
-#:2276
- REMOVE:2276 (adj pp) IF
-	(0 perf-part)
-	(-1C subst)
-	(NOT 1 subst/adj)
-	(NOT -2 prep)
-;
-#  "en norsk-utviklet rakett beregnet
-# (forts) (ikke <perf-part) på ...
-# NOT -2 PREP: ligger rester av kjøkkenet knust
-# 6.8.2001: (0 perf-part)"))
 
 
 
