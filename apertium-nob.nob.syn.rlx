@@ -4996,7 +4996,10 @@ MAP:6090 (@laus-np)   (acr) IF
 CONSTRAINTS
 ## select domain
 
-
+"<anledninger>" SELECT:ved-flere-anledninger @←p-utfyll IF
+        (-2 ("<ved>"))
+        (-1 ("<flere>"))
+        ;
 
 #:
 "<at>" SELECT:1281 (@←sbu) IF
@@ -5157,6 +5160,15 @@ CONSTRAINTS
 #  det ikke finnes noe \"som\" med @S-PRED tidligere i setningen."))
 
 
+
+SELECT:ellipsrel-tatt @subj IF
+        (0C n + pl)
+        (1C adj + pp + pl)
+        (1C ("<tatt>"))         # other safe ones?
+        (2C pr)
+        ;
+# Ellipsed «som» in short relative clause
+# «Jeg er her på grunn av beslutninger tatt på europeiske møter hvor Merkel manipulerer deltakerne.»
 
 
 CONSTRAINTS
@@ -5934,6 +5946,7 @@ SELECT:6064 (adj pst pl @adj→) IF
 ;
 #  "etterfulgt av adjektiv uten påfølgende substantiv og uten 
 # konjunksjon mellom."))
+
 
 
 
