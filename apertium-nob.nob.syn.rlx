@@ -19233,12 +19233,14 @@ SELECT:ble-de-raskt-sendt @subj IF
         (1 adv OR adj + nt + sg)
         ;
 # «Da UNE i 2013 fikk brakt på det rene at familien hadde løyet om bakgrunnen, ble de raskt sendt til Jordan.»
+
 SELECT:har-tipset-dem @iv IF
         (-1C m-hj-verb OR ("ha"))
         (0C n OR pp)
         (1C n + def OR n + pl OR akk)
         ;
 
+SELECT:adverbialsubst adverbialsubst + @adv;
 
 SELECT:default ("lenger") ;
 
