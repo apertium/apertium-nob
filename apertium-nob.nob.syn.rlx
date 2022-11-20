@@ -211,13 +211,13 @@ LIST @←p-utfyll = @←p-utfyll ;
 LIST @←sbu = @←sbu ;
 LIST @←sbu-rel = @←sbu-rel ;
 LIST @←sbu/@←sbu-rel = @←sbu @←sbu-rel ;
-LIST @←sbu/@←sbu-rel/@iv/@subj = @←sbu @←sbu-rel @iv @subj ;
+LIST @←sbu/@←sbu-rel/@iv/@subj = @←sbu @←sbu-rel @iv @subj @xubj ;
 LIST @←subst = @←subst ;
 LIST @adj→ = @adj→ ;
 LIST @adv = @adv ;
 LIST @adv/@←p-utfyll = @adv @←p-utfyll ;
 LIST @adv→ = @adv→ ;
-LIST @alle-funksjoner = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST @alle-funksjoner = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
 LIST @app = @app ;
 LIST @det→ = @det→ ;
 LIST @fv = @fv ;
@@ -239,11 +239,12 @@ LIST @premod-u-@kon/@nkon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-g
 LIST @s-gr = @s-gr ;
 LIST @s-pred = @s-pred ;
 LIST @s-pred/@obj = @s-pred @obj ;
+LIST @xubj = @xubj ;
 LIST @subj = @subj ;
-LIST @subj/@←sbu-rel = @subj @←sbu-rel ;
-LIST @subj/@obj = @subj @obj ;
-LIST @subj/@obj/@i-obj = @subj @obj @i-obj ;
-LIST @subj/@obj/@i-obj/@s-pred = @subj @obj @i-obj @s-pred ;
+LIST @subj/@←sbu-rel = @subj @xubj @←sbu-rel ;
+LIST @subj/@obj = @subj @xubj @obj ;
+LIST @subj/@obj/@i-obj = @subj @xubj @obj @i-obj ;
+LIST @subj/@obj/@i-obj/@s-pred = @subj @xubj @obj @i-obj @s-pred ;
 LIST @subst→ = @subst→ ;
 LIST @tittel = @tittel ;
 LIST aci = "se" "merke" "la" "kjenne" "høre" "føle" "be" ;
@@ -387,41 +388,41 @@ LIST ikke-adv-adj-nr2det = vblex pr prn cnjsub "å" n ij <ellipse> <kolon> <semi
 LIST ikke-adv-adj-nr2det-be-det = vblex pr prn cnjsub "å" n ij <ellipse> <kolon> <semi> ("en" det) ("noen" det) ("ingen" det) (cnjcoo clb) (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST ikke-adv-adj-u-konj = vblex pr prn cnjsub "å" n ij det cnjcoo <ellipse> <kolon> <semi> (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcccoo "enten") (cnjcccoo "hverken") (cnjcccoo "verken") ;
 LIST ikke-det-inkl-parentes-beg = vblex pr prn cnjsub cnjcoo "å" n ij adj adv lpar ;
-LIST ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv ;
-LIST ikke-mod-@←p-utfyll = inf @fv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@←p-utfyll-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@←p-utfyll-@adv-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr cnjsub ;
-LIST ikke-mod-@←p-utfyll-@adv-@app-@s-gr = inf @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel cnjsub ;
+LIST ikke-mod = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv ;
+LIST ikke-mod-@←p-utfyll = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@←p-utfyll-@adv = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@←p-utfyll-@adv-@app = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr cnjsub ;
+LIST ikke-mod-@←p-utfyll-@adv-@app-@s-gr = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel cnjsub ;
 LIST ikke-mod-@←p-utfyll-@adv-@app-@subj = inf @fv @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr cnjsub ;
-LIST ikke-mod-@←p-utfyll-@adv-@app-u/iv = @iv @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr cnjsub ;
-LIST ikke-mod-@←p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@←p-utfyll-@adv-@obj-@i-obj-@s-pred-@app = inf @fv @subj @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @adv @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-@fv-@←p-utfyll = @adv @iv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/@nkon = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon ;
-LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app = inf @fv @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app = inf @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/@nkon-@adv = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @kon @nkon @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-@kon/@nkon/komma = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon cm ;
-LIST ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-perfpart-@←p-utfyll-@adv = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@fv-@app = @iv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-mod-u-perfpart-@adv = @iv @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-postmod = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @app @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
-LIST ikke-postmod-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @adv→ @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
-LIST ikke-premod = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@adv = @fv @iv @subj @obj @i-obj @s-pred @o-pred @app @←det @←subst @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@iv = @fv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@kon/@nkon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-@s-gr = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel ;
-LIST ikke-premod-u-@det→ = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @det→ @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon/@nkon = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon/@nkon-@app = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST ikke-premod-u-@kon/@nkon-@s-gr = @fv @iv @subj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel ;
+LIST ikke-mod-@←p-utfyll-@adv-@app-u/iv = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr cnjsub ;
+LIST ikke-mod-@←p-utfyll-@adv-@fv-@app = inf @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@←p-utfyll-@adv-@obj-@i-obj-@s-pred-@app = inf @fv @subj @xubj @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@adv = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@app = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-@fv-@←p-utfyll = @adv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@app = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@←p-utfyll-@adv-@fv-@app = inf @subj @xubj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon-@adv = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @kon @nkon @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-@kon/@nkon/komma = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv @kon @nkon cm ;
+LIST ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-perfpart-@←p-utfyll-@adv = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@app = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-perfpart-@←p-utfyll-@adv-@fv-@app = @iv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-mod-u-perfpart-@adv = @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-postmod = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @adv→ @app @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
+LIST ikke-postmod-@app = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @adv→ @tittel @det→ @subst→ @←p-utfyll @interj @adj→ @kon @nkon @laus-np @s-gr ;
+LIST ikke-premod = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@adv = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←det @←subst @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@app = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@iv = @fv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@kon/@nkon = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-@s-gr = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @laus-np @←sbu @←sbu-rel ;
+LIST ikke-premod-u-@det→ = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @det→ @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon-@app = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
+LIST ikke-premod-u-@kon/@nkon-@s-gr = @fv @iv @subj @xubj @obj @i-obj @s-pred @o-pred @adv @←adv @app @←det @←subst @←p-utfyll @interj @kon @nkon @laus-np @←sbu @←sbu-rel ;
 LIST ikke-prep = cnjsub adv adj vblex prn "å" n ij det (clb cnjcoo) <anf> <ellipse> ;
 LIST ikke-sanns-ditrans = "skrive" "kjøpe" ;
 LIST ikke-sbu = det pr prn cnjcoo "å" n ij adj adv vblex ;
@@ -438,7 +439,7 @@ LIST interj = ij ;
 LIST intrans = i1 i3 i4 ;
 LIST iv = (vblex inf) (vblex vblex pp) ;
 LIST kh#ikke-@subj/@obj/@i-obj = @fv @iv @s-pred @o-pred @adv @adv→ @←adv @app @tittel @det→ @←det @subst→ @←subst @←p-utfyll @interj @adj→ @kon @nkon @laus-np @←sbu @←sbu-rel @s-gr ;
-LIST kh#ikke-mod = inf @fv @subj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv <<< >>> ;
+LIST kh#ikke-mod = inf @fv @subj @xubj @obj @i-obj @s-pred @o-pred @app @←p-utfyll @laus-np @←sbu @←sbu-rel @s-gr @adv <<< >>> ;
 LIST kh#nom-fl = (adj pl) (adj comp) (adj sup) (n pl) adv (adj pprs) ("eneste" def) ("egen" pl) ("eigen" pl) ;
 LIST kh#nom-mask-ent-ub = (n m sg ind) (adj mf sg ind) (adj pprs) (adj comp) (adj sup) (adj def) ("eneste" def) ("egen" m ind) ("eigen" m ind) ;
 LIST kh#pron-refl = (prn ref) ;
@@ -465,7 +466,7 @@ LIST lo#animat = "øyenvitne" "øyensten" "øyenlege" "østtysker" "østerriker"
 LIST lo#animat-pron/det = "vi" "noen" "mange" "man" "jeg" "hvem" "hun" "han" "du" "begge" "annen" ("dere" nom) ("ingen" m) ("ingen" f) ("de" prn pers) ("all" pl) ("en" prn) ;
 LIST lo#animat-prop = "wangerud" "vinmonopolkøere" "vesten" "usa" "toten" "torkill" "smirnov" "skane" "schipper" "regjeringen" "readyjente" "readygutt" "politiforbund" "plesner" "palacio" "oslo" "nato" "nato" "matthew" "matthaus" "mannesmann" "lykambes" "likudregjeringen" "lawrence" "kors" "killengreen" "justisdepartementet" "jarvoll" "indremisjonsselskapet" "hemingkjørerne" "heie" "herman" "gudmunsson" "gudbrandsdalen" "group" "gregard" "gomanbakeri" "giga" "folkpartiet" "fanebust" "elsero" "elgin" "djurhuus" "clinton" "carney" "byutviklingskomiteen" "byutviklingskomiteen" "breiby" "blumenthal" "beth" "bergelevene" "baste" "alpinanlegg" "akershus" "as" <person> <org> ;
 LIST lo#cause-verb = "ødelegge" "varme" "treffe" "tilintetgjøre" "smadre" "skade" "lukke" "knuse" "knekke" "forringe" "drepe" "drepe" "destruere" "brekke" "beskadige" ;
-LIST lo#ikke-mod-@←p-utfyll-@adv-@app = "hvor" @iv @fv @subj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr clb "å" cnjsub ;
+LIST lo#ikke-mod-@←p-utfyll-@adv-@app = "hvor" @iv @fv @subj @xubj @obj @i-obj @s-pred @o-pred @laus-np @←sbu @←sbu-rel @s-gr clb "å" cnjsub ;
 LIST lo#inanimat = "øyenvipp" "øyenskygge" "øyenhule" "øyenbryn" "øyelokk" "øyekrok" "øyeeple" "øye" "øye" "øy" "ørken" "ørering" "øregang" "øreflipp" "øre" "øre" "øre" "øl" "økning" "ødemark" "ødeleggelse" "æresbevisning" "årgangsvin" "åre" "åre" "årbok" "år" "år" "åpningstale" "åpning" "åker" "åk" "østen" "økourt" "zoomobjektiv" "zloty" "yttervegg" "ytterdør" "yoghurt" "yen" "wobler" "wire" "wienerbrød" "whisky" "wc" "walkie-talkie" "væte" "væske" "værmelding" "værmelding" "værhane" "våtområde" "vulkan" "vott" "vom" "vom" "vollgrav" "vokal" "vogn" "vogge" "vodka" "vitaminpille" "vitamin" "visker" "viskelær" "visittkort" "visir" "viser" "vise" "vise" "vise" "virus" "virksomhet" "virkning" "vippe" "vippe" "vinterhage" "vinstokk" "vinmark" "vinkart" "vinge" "vinflaske" "vinedikk" "vindusvisker" "vinduskarm" "vindu" "vindu" "vindrue" "vindjakke" "vindeltrapp" "vinde" "vin" "vin" "villmark" "villa" "viktighet" "vikarbyrå" "vik" "vignett" "vifte" "vielsesattest" "videospiller" "video" "vest" "veske" "veske" "vertsland" "vers" "vers" "vern" "vermut" "verk" "verk" "verdipapir" "verdenshjørne" "verdenshav" "verdensdel" "verdenscupseier" "verden" "verb" "veranda" "ventilator" "ventilasjonsanlegg" "ventil" "venteliste" "ventehall" "venstrehånd" "vennskapsby" "vene" "vending" "velling" "vell" "velferdsstat" "velferdsprogram" "vektskål" "vekst" "vekkerur" "veiledning" "veike" "veikart" "vei" "veggmaleri" "vegg" "vedtekt" "vedtak" "vedovn" "vederlag" "vatt" "vaskeri" "vaskepulver" "vaskemaskin" "vaselin" "vase" "varmeutstyr" "varmestue" "varmeapparat" "varetektsfengsling" "varedeklarasjon" "vannspeil" "vannseng" "vannrør" "vannpytt" "vannmelon" "vannmelon" "vannløp" "vannlilje" "vannledning" "vannkran" "vannkant" "vannfarge" "vanndråpe" "vanndamp" "vannbakkels" "vann" "vandreklitt" "vandelsattest" "valutareserve" "valuta" "vals" "valnøtt" "valmue" "valmue" "valgresultat" "vaktpost" "vaksine" "vagina" "vadested" "uttalelse" "utstyr" "utstyr" "utstillingsvindu" "utstillingsvindu" "utstilling" "utspill" "utsmykning" "utskrift" "utskrift" "utsikt" "utrustning" "utropstegn" "utreisetillatelse" "utløp" "utlån" "utlegg" "utkikkspost" "utkast" "utgivelse" "utgave" "utgang" "utflod" "utetthet" "utenriksdepartement" "utbetaling" "urverk" "urtete" "urtehage" "urt" "urskog" "urne" "urinrør" "urin" "unntak" "unnskyldning" "universitet" "univers" "uniform" "ungdomsskole" "ungdomsklubb" "ungdomsherberge" "ungdomsbolig" "undervisningsdepartement" "undertrøye" "undertittel" "undertekst" "underskriftsinnsamling" "underskrift" "underskjørt" "underretning" "undermunn" "underliv" "underleppe" "underkropp" "underkjeve" "underholdsbidrag" "underetasje" "underarm" "ullgarn" "uland" "ukvemsord" "ukelønn" "ukeblad" "ugress" "tøyle" "tøy" "tørkle" "tørketrommel" "tørkesnor" "tønne" "tømme" "tømme" "tøm" "tøffel" "tåteflaske" "tåspiss" "tåre" "tåre" "tåkelur" "tåke" "tå" "tyverialarm" "tyvegods" "tyttebær" "tyttebær" "tynntarm" "tykktarm" "tvil" "tverrligger" "tvangstrøye" "tut" "tusing" "tusenårsrike" "turistbyrå" "turbin" "turban" "tunnel" "tungmetall" "tunge" "tuner" "tulipan" "tulipan" "tue" "tråd" "tryne" "trykksverte" "trykksak" "trykknapp" "trykkluft" "trykkeri" "trygghetsfølelse" "trutmunn" "trussel" "truse" "trosse" "tronstol" "tromsøpalme" "trommel" "trommehinne" "tro" "triviallitteratur" "triumfbue" "triumfbue" "trisse" "tretopp" "trestubbe" "trestamme" "tresnitt" "tresko" "treningsdrakt" "trekull" "trefot" "tredjeplass" "tredjeland" "tredemølle" "trebein" "tre" "tre" "tre" "trau" "trapp" "transportbånd" "transformator" "transformator" "tranebær" "tranebær" "tram" "traktement" "traktat" "trakt" "trafikkgrunnlag" "torv" "torso" "torpedo" "torn" "topplue" "topp" "tomt" "tomt" "tommeltott" "tommelfinger" "tommel" "tomatpuré" "tomatpure" "tomat" "tolvfingertarm" "tobakk" "tobakk" "toast" "toalettbord" "toalett" "tjære" "tjukkmjølk" "tjor" "tjenestebolig" "tittel" "tissemann" "tippekupong" "tinnsoldat" "tinning" "ting" "tind" "timiankvist" "timeplan" "time" "tiltak" "tilståelse" "tilsetningsstoff" "tilpassing" "tillitt" "tillitserklæring" "tilleggsbevilling" "tillatelse" "tilholdssted" "tilgodehavende" "tilfluktssted" "tilbaketrekning" "tidsskrift" "tidsplan" "tid" "thriller" "thriller" "testikkel" "testamente" "terte" "terrorbombe" "territorium" "territorium" "terrin" "terreng" "terning" "termostat" "termos" "termorute" "terminal" "terminal" "term" "teppe" "tennplugg" "tennisball" "tenning" "temperament" "teltstang" "telt" "telegrambyrå" "telegram" "telefonsvarer" "telefonnummer" "telefonkatalog" "telefon" "tekstil" "tekstil" "tekst" "tekst" "tekopp" "teknikk" "teine" "tein" "tegning" "tegnestift" "tegneserie" "tegnefilm" "tegnebrett" "tegnebord" "tegneblokk" "tegn" "tegltak" "teglstein" "teater" "te" "te" "tavle" "taustige" "tau" "tatovering" "tast" "tarmkanal" "tarm" "tapet" "tannstikker" "tannsett" "tannregulering" "tannpasta" "tannhjul" "tann" "tank" "tangent" "tampong" "tallerken" "tale" "takvindu" "takstein" "takrenne" "taburett" "tablett" "søyle" "søppelpose" "søppelkasse" "søm" "søm" "sølvmedalje" "sølvfat" "sædcelle" "sæd" "sår" "såpestykke" "såpeboble" "såpe" "såle" "sytråd" "system" "syrin" "syre" "syngespill" "synagoge" "symfoni" "symaskin" "syltetøy" "sylte" "sylinderlås" "sykehus" "sydpol" "sydhavsøy" "syden" "swing" "sweatshirt" "svømmebasseng" "svømmebasseng" "svovelstikk" "sviske" "svingdør" "svingdør" "sverte" "svennebrev" "svelg" "svamp" "svalgang" "surmelksprodukt" "surdeig" "suppe" "supermarked" "sund" "sump" "sum" "sukkerrør" "sukkerrø" "sukkerlake" "sukkerert" "sugekopp" "substans" "støvsuger" "støvel" "støvel" "støtte" "støtte" "støtte" "støttann" "støtfanger" "stålrør" "stålampe" "stål" "styrthjelm" "stylte" "stykke" "stutteri" "stump" "stumfilm" "stue" "stue" "studenterlue" "stubbe" "strømpebånd" "strømpe" "stråhatt" "strå" "strupe" "struktur" "strekkode" "strek" "strek" "strede" "strandkant" "strandkant" "strand" "straffelov" "straff" "stortå" "stortingsdebatt" "stortingsbehandling" "storseil" "storby" "stoppeklokke" "stopp" "stolpe" "stol" "stokk" "stoff" "stoff" "stoff" "stoff" "stivelse" "stilk" "stiletthæl" "stikling" "stikkpille" "stikkontakt" "stikkelsbær" "stikkelsbær" "stigtrinn" "stige" "stift" "stift" "stereoanlegg" "steppe" "stemmebånd" "stellebord" "stekepanne" "stekegryte" "steinsetting" "steinfrukt" "stein" "steik" "stedsnavn" "sted" "stav" "stav" "statuett" "statue" "statsobligasjon" "stat" "stasjonsby" "stasjon" "stasjon" "start" "stang" "stall" "stakitt" "stake" "stake" "stag" "staffeli" "stadion" "stad" "stabel" "spørsmålstegn" "spørreskjema" "spøkelseshistorie" "spyttklyse" "sprøytemiddel" "sprøytemiddel" "springform" "springbrett" "sprengstoff" "sprengladning" "sprellemann" "sprekk" "sprayboks" "sporstoff" "spore" "spore" "sponplate" "spon" "spole" "spjeld" "spisestue" "spisesal" "spiserør" "spiselig" "spisekart" "spisebord" "spinner" "spinn" "spindelvev" "spillolje" "spillemål" "spillekort" "spillebord" "spilleautomat" "spill" "spill" "spiker" "spenne" "spekesild" "spekepølse" "speilegg" "speil" "spaserdrakt" "spann" "spagnum" "sovesofa" "sovesal" "sovepose" "sovepille" "sovemiddel" "sosiallov" "sosialkontor" "sosialdepartement" "sopp" "sonate" "solkrem" "solfanger" "solcelle" "solbær" "solbær" "sokk" "sogn" "software" "sofabord" "sofa" "snøscooter" "snømann" "snøklokke" "snøklokke" "snøfonn" "snøfnugg" "snøball" "snute" "snurrebass" "snor" "snittsår" "snitt" "sneip" "snegl" "smørbrød" "smør" "småkake" "smykke" "smutthull" "smokk" "smoking" "sminke" "smilehull" "smie" "smekke" "smekke" "smaragd" "smaksløk" "slør" "slåbrok" "slyngplante" "slynge" "slutt" "sluse" "slumkvarter" "slukt" "slott" "slips" "slimhinne" "slim" "slim" "slikkepinne" "sletteland" "slette" "slep" "slalåm" "slakteri" "slakterforretning" "slaktehus" "slagplan" "slagord" "slagmark" "slagg" "skøytesport" "skøyteforbund" "skøyte" "skøske" "skyttergrav" "skyteskive" "skyskraper" "skylapp" "skur" "skulptur" "skulderveske" "skulderblad" "skulder" "skulder" "skuespill" "skråning" "skrå" "skrue" "skrivepult" "skrivemaskin" "skrivebord" "skriv" "skrin" "skrifttegn" "skrift" "skrent" "skranke" "skramme" "skolebok" "skolebenk" "skole" "skogbunn" "skogbryn" "skog" "sko" "skjøte" "skjøt" "skjørt" "skjørt" "skjønnlitteratur" "skjønnhetsflekk" "skjærgård" "skjærebrett" "skjær" "skjorteerme" "skjorte" "skjold" "skjermterminal" "skjerm" "skjerm" "skjerf" "skjenk" "skjema" "skjelett" "skjeggstubb" "skjegg" "skjede" "skinnklær" "skinnben" "skinn" "skinke" "skilt" "skille" "skildring" "ski" "skattekort" "skattekart" "skatoll" "skap" "skamleppe" "skalle" "skall" "skafott" "sjøkart" "sjøbredd" "sjokoladebolle" "sjokolade" "sjampinjong" "sjakkspill" "sjakkbrett" "situasjon" "sitron" "sitat" "sirene" "silo" "silo" "silketrykk" "silkepapir" "silke" "silikon" "sikte" "sikkerhetssele" "sikkerhetsnål" "sikkerhetslenke" "signal" "sigarkasse" "side" "side" "show" "shampoo" "sett" "setning" "setning" "sete" "sesongbudsjett" "servitutt" "serviett" "service" "servant" "sennep" "senking" "sengeteppe" "seng" "sene" "sendrektighet" "sending" "senat" "seminar" "sement" "selvportrett" "selvbiografi" "selvangivelse" "selskapslokale" "seletøy" "sele" "sele" "seksjon" "seksjon" "sekretariat" "sekret" "sekk" "seil" "seddel" "scooter" "savanne" "saus" "sauna" "satsing" "satelitt" "sarkofag" "sangbok" "sang" "sang" "samme" "samling" "samfunn" "samarbeid" "salt" "sal" "sal" "sak" "sagn" "saga" "safir" "røyksky" "røyk" "rørsopp" "rørledning" "rør" "røntgenstråle" "røntgenbilde" "rødkål" "rødkål" "rødgran" "rødbete" "rævhull" "ræv" "råstoff" "råmateriale" "råk" "råd" "rynke" "ryggsøyle" "ryggstø" "ryggrad" "rygglene" "rygg" "rydning" "rutsjebane" "rutine" "ruteplan" "rute" "rustning" "rundstykke" "rundstokk" "rundskriv" "rundskriv" "rumpe" "rumpe" "rulling" "rulleskøyte" "rullepølse" "rullekake" "rullegardin" "rull" "rulett" "rugbrød" "rubin" "rot" "rosmarin" "rosmarin" "rosenkål" "rose" "rose" "roman" "rom" "rom" "rolle" "robot" "robe" "rist" "ris" "ris" "ripsgele" "ringperm" "ring" "ring" "rille" "riksdag" "rike" "rigg" "rift" "rideskole" "riddersal" "ribbevegg" "ribbein" "revle" "rev" "returbillett" "rettsstat" "rettssal" "rettslokale" "rett" "rett" "restaurant" "respirator" "resept" "resepsjon" "republikk" "reol" "renseri" "renne" "renn" "remulade" "remedium" "relé" "reling" "rekvisitt" "reklamebyrå" "reklame" "rekkverk" "reisebyrå" "reisebeskrivelse" "reip" "reim" "reguleringssak" "reguleringsforslag" "regnskog" "regnfrakk" "regionsykehus" "region" "redningsvest" "redegjørelse" "reddik" "redaksjon" "realskole" "reaktor" "rastaurant" "rapport" "ransel" "ramme" "raffinaderi" "radio" "radikal" "radiator" "radar" "rabarbra" "pøng" "pølse" "pæretre" "pære" "pære" "påvirkning" "påskrift" "påskelilje" "påskeegg" "påmelding" "pålegg" "påle" "påkledningsdukke" "påkledning" "påbygg" "pytt" "pyramide" "pynt" "putevar" "pute" "pustehull" "puss" "puss" "puslespill" "purre" "pupill" "pumpe" "pulver" "pult" "pulsåre" "pudder" "puck" "publikasjon" "pub" "prøveprosjekt" "prærie" "prydplante" "provinsby" "proton" "protokoll" "protokoll" "protese" "protein" "prosti" "prosjektil" "prosjekt" "prosessor" "prosent" "propp" "propell" "pronomen" "program" "program" "program" "prognose" "profil" "produkt" "produksjon" "problem" "problem" "privatskole" "prisme" "prisliste" "pris" "printer" "primærkommune" "presenning" "preparat" "premie" "prekestol" "preg" "praksis" "potteplante" "pote" "postkort" "postkontor" "postkasse" "posthus" "poster" "postei" "post" "posisjon" "pose" "portiere" "port" "port" "porsjon" "porsjon" "porselen" "pornofilm" "pore" "polypp" "polstring" "politistasjon" "politirapport" "politikk" "politikammer" "politietteretning" "pokal" "plombe" "plogfure" "plenklipper" "plen" "pleiehjem" "pledd" "platå" "platte" "platespiller" "plate" "plate" "plaster" "plassering" "plassering" "plassbillett" "plass" "plass" "plass" "plasma" "plantevernmiddel" "planteskole" "plante" "plantasje" "plansje" "plankegjerde" "planke" "planetarium" "planet" "plan" "plan" "plakat" "pizza" "pitabrød" "pistasjenøtt" "pipe" "pinnebrød" "pinne" "pille" "piletre" "pilekvist" "pil" "pil" "pikk" "pigment" "piggtråd" "piggsveis" "pigg" "pidestal" "pessar" "persienne" "permisjon" "perle" "pergola" "pergamentpapir" "pergament" "pepperrot" "pepperrot" "pepperkake" "pensjonat" "penis" "pengestøtte" "penger" "penge" "pendel" "pekefinger" "peisestue" "peis" "pedal" "paviljong" "patte" "patron" "pastinakk" "pastinakk" "pasta" "pass" "partitur" "parti" "parsell" "parlament" "parkeringsbot" "parfymeri" "parfyme" "parasoll" "parasitt" "paragraf" "paradis" "paradis" "parabolantenne" "papir" "pantebrev" "panser" "pannekake" "panne" "panne" "panel" "pamflett" "palmeblad" "palme" "palett" "pai" "pagode" "paddehatt" "pacemaker" "p-pille" "ovnsform" "ovn" "oversikt" "oversettelse" "overmunn" "overligger" "overleppe" "overkropp" "overflate" "overenskomst" "overarm" "overall" "osteløype" "ost" "orkide" "organisasjon" "organ" "organ" "ordrebok" "ordkrig" "ordbok" "ord" "opus" "opus" "opptenningsved" "oppslagsverk" "oppslagstavle" "oppslag" "oppskrift" "oppskrift" "oppholdssted" "oppheng" "oppgradering" "oppgave" "oppgave" "oppgang" "oppfatning" "oppakning" "operasjonsstue" "operasjonsbord" "omstilling" "område" "område" "omelett" "omegn" "oljemaling" "oljefyr" "olje" "olje" "olje" "olje" "oliventre" "oliven" "oldsak" "oker" "odde" "odd" "observatorium" "obligasjon" "objektiv" "oase" "nøytron" "nøtteskall" "nøttekjerne" "nøtt" "nøkkerose" "nøkkelhull" "nødutgang" "nærlys" "næringsmelding" "næring" "nåløye" "nytteplante" "nytte" "nysgjerrighet" "nyre" "nyre" "nummerskilt" "nummer" "novellesamling" "novelle" "nougat" "note" "notatblokk" "notatblokk" "notat" "notat" "nord" "noe" "nobelpris" "nitrat" "nite" "nisje" "neve" "netthinne" "nesebor" "nese" "nervesystem" "nervepille" "nervemedisin" "nerve" "neon" "nellik" "nellik" "nellik" "nekrolog" "nek" "negl" "nedtegnelse" "nedløpsrør" "nedgang" "navneskilt" "navn" "navn" "navlestreng" "navle" "naturmedisin" "naturgass" "natur" "nattklubb" "nasjonalscene" "nasjonalsang" "nasjon" "nasjon" "narresmokk" "nakkestøtte" "nakke" "nagle" "nabokommune" "møydom" "møtested" "mønster" "møne" "møne" "møllpose" "mølle" "møblement" "møbel" "månedsblad" "måne" "myr" "mynte" "mynte" "mynt" "mye" "mutter" "muslingskall" "muskulatur" "muskatt" "muskatnøtt" "muskatnøtt" "musikkstykke" "musikkskole" "musikkonservatorium" "murstein" "mur" "munnvik" "munning" "munnhule" "munn" "mumie" "mule" "mousse" "motor" "motiv" "motgift" "motell" "mosebok" "morkake" "morene" "monument" "montasje" "monopol" "monogram" "monografi" "monitor" "molekyl" "modifikasjon" "missil" "misdannelse" "minnesmerke" "minkfarm" "mineral" "milt" "millionbeløp" "milepæl" "mile" "mikstur" "mikroprosessor" "mikroorganisme" "mikrobølgeovn" "midtgang" "metalltråd" "metall" "merkevare" "merke" "merke" "meny" "mening" "mengde" "melon" "melon" "mellomrom" "mellomnavn" "melding" "melding" "meieri" "medlemskort" "medium" "medisterpølse" "medisin" "medisin" "medikament" "meddelelse" "medaljong" "medaljong" "medalje" "matvare" "matte" "materie" "materiale" "materiale" "mat" "mat" "masse" "massasjeinstitutt" "massasjeinstitutt" "maskinpistol" "maskingevær" "maskineri" "maskin" "maskin" "maskering" "mascara" "marsipanbrød" "marmelade" "markise" "mark" "marionett" "marinade" "margeritt" "margarin" "manual" "manifest" "mango" "mandel" "mandarin" "malm" "malm" "maling" "maleri" "makron" "make-up" "mahogni" "magnet" "magesekk" "mage" "løvtre" "løvskog" "løvetann" "løvetann" "løpstikke" "løpstikke" "løpeseddel" "løkke" "løk" "løgnhistorie" "løe" "lærreim" "læreplan" "lærebok" "lårbein" "lår" "lysstoffrør" "lysning" "lyske" "lyskaster" "lysingstid" "lysekrone" "lysbilde" "lys" "lyktestolpe" "lykt" "lykkehjul" "lydbånd" "lyd" "lunge" "lund" "luftvei" "luftrør" "luft" "lue" "lov" "lov" "lotto" "lotteri" "losji" "losje" "lommebok" "lokk" "lokale" "lokalavis" "loggbok" "loft" "loft" "loft" "lodd" "livmor" "liv" "liv" "litteratur" "liste" "lisse" "linoleum" "lindetre" "lind" "liming" "lillefinger" "lilje" "lilje" "lian" "levested" "leverpostei" "lever" "leseundersøkelse" "leserbrev" "lerret" "lerret" "lerk" "leppestift" "leppe" "leopardskinn" "lenke" "lenestol" "lend" "lem" "lem" "lem" "lekt" "leirbål" "leilighet" "leiebolig" "legg" "legering" "legemsdel" "legemiddel" "legeattest" "ledningsnett" "ledning" "ledning" "leddbånd" "lavland" "lava" "lav" "laurbærblad" "laurbær" "landsted" "landsdel" "land" "land" "lampe" "lagerrom" "lagerplass" "lager" "laboratorium" "køkultur" "kz-leir" "kvarter" "kvalme" "kurs" "kupong" "kunstverk" "kunstmuseum" "kunst" "krypt" "krostue" "kropp" "krone" "krone" "kro" "kritikk" "krig" "krematorium" "krav" "kraft" "kraft" "kostnad" "kort" "kort" "kort" "korridor" "kor" "kopp" "konversasjonsleksikon" "kontrakt" "kontor" "kontakt" "konsulat" "konstruksjon" "konsertsal" "konsentrasjonsleir" "konjakk" "konferanse" "komposisjon" "komponent" "kommunekontor" "kommune" "kommune" "kommandobro" "kombinert" "kok" "kode" "knekt" "knehasene" "kne" "kløver" "klippe" "klinikk" "kleshenger" "kjøttkake" "kjøkkenvifte" "kjøkkenhage" "kjole" "kjennelse" "kjeft" "kjeft" "kiwi" "kirsebær" "kirsebær" "kirke" "kiosk" "kinn" "kilometer" "kasse" "kart" "kantine" "kantine" "kanal" "kanal" "kanal" "kamp" "kalkulator" "kake" "kakao" "kafeteria" "jur" "jorde" "jordbær" "jordbær" "jobb" "is" "inventar" "interesse" "institusjon" "institusjon" "installasjon" "inspirasjon" "inntrykk" "inntrykk" "innslag" "innsjø" "initiativ" "illustrasjon" "idrettshall" "høyhastighetsbane" "hår" "hår" "håp" "håndbok" "håndbak" "hånd" "hånd" "hånd" "hytte" "hybelkanin" "hvitløk" "hvite" "hva" "hus" "hus" "hus" "hurtigløpssport" "hull" "hule" "hud" "hovedfagsoppgave" "hotell" "hospital" "hopp" "hop" "hoftene" "hode" "hjul" "hjul" "hjerte" "hjerne" "hjemstavn" "hjemland" "hjemby" "hjem" "hjelp" "historie" "historie" "historie" "hefte" "hede" "hav" "hav" "hav" "hav" "haug" "haug" "hatt" "hanske" "hank" "hane" "handlingsprogram" "halssmykke" "hals" "hall" "hake" "hagtornhekk" "hagtorn" "grønnsak" "gryte" "gruppering" "gruppe" "grunnstoff" "grunn" "grunn" "grotte" "griljermel" "gressløk" "grense" "grein" "grantre" "gran" "godteri" "glassplint" "glass" "gjenstand" "gjenlyd" "geysir" "genteknologi" "genser" "gemakk" "garderobe" "garderobe" "gang" "galleri" "galleri" "første" "føflekk" "føde" "fyrstikkeske" "fyrstikk" "fyrrom" "fyr" "furutre" "frukt" "fritidsklubb" "fritidshus" "fritidshjem" "fotsåle" "fotnote" "fot" "fossil" "foss" "forventning" "forutsetning" "fortelling" "fortegnelse" "fortann" "forsvar" "forslag" "forslag" "forslag" "forskrift" "forsikringspolise" "forråd" "forretning" "forord" "formålsparagraf" "formular" "formue" "formue" "forkle" "forkjølelsessår" "forhøyning" "forhåndsomtale" "forhold" "forfatning" "fordøyelseskanal" "fordypning" "forbundsstat" "forbundsrepublikk" "forbud" "forbrenning" "forbein" "forandring" "forandring" "folketing" "folkesagn" "folder" "foaje" "fnugg" "flodleie" "flodbredd" "flod" "flis" "flette" "flenge" "flekk" "flate" "flass" "flaske" "flanke" "fjør" "fjære" "fjærdrakt" "fjord" "fjellkjede" "fjell" "fjell" "fitte" "fiskesuppe" "fiskerett" "fiskekort" "fiskekake" "fiskefilet" "firkløver" "fippskjegg" "fiol" "fiol" "finne" "fingerspiss" "finger" "filofax" "film" "film" "film" "filler" "fikentre" "fiber" "fiber" "fettstoff" "fetaost" "feta" "festskrift" "festmåltid" "festmåltid" "ferielandsby" "fennikel" "femøring" "femtedel" "femogtjueøring" "femmer" "feltseng" "feil" "feil" "feber" "fauna" "fatle" "fat" "fat" "fastland" "fasit" "fasade" "fargestoff" "fargefilm" "fang" "familieliv" "fallskjerm" "fakkel" "fajanse" "fajanse" "faglitteratur" "fagbok" "fagblad" "fabrikkhall" "fabrikk" "evighet" "eventyr" "evangelium" "etikett" "eter" "etasje" "estragon" "estragon" "esse" "espalier" "eske" "ert" "ernæring" "erme" "erklæring" "eple" "enzym" "entredør" "ensym" "enkeltbillett" "enhet" "enhet" "enhet" "engangsbeløp" "eng" "endringsforslag" "endring" "endring" "endetarm" "ende" "ende" "emblem" "emalje" "emalje" "elv" "element" "elektron" "ekvator" "ekteseng" "ekstrakt" "einer" "einebær" "eiketre" "eiketre" "eik" "eik" "eiendom" "eiendom" "eiendel" "egn" "eggstokk" "eggleder" "eggeplomme" "eggehvitestoff" "eggehvite" "eggcelle" "egg" "egg" "egg" "egenskap" "effekt" "edelmetall" "eddik" "edb-anlegg" "dørklokke" "dør" "dødsattest" "dødsannonse" "dåpsattest" "dypfryser" "dypfryser" "dynge" "dynetrekk" "dusør" "duell" "drønn" "drue" "drivhus" "dritt" "dressing" "dreieskive" "dreieskive" "dreiebok" "drakt" "drakt" "dragkampen" "drage" "drag" "dongeribukser" "domkirke" "domisil" "dollar" "dokument" "doktoravhandling" "dokke" "dobbeltseng" "dobbeltseier" "distrikt" "diskotek" "diskett" "direktørstol" "direktiv" "direktiv" "diplom" "dinar" "dimensjon" "dill" "dill" "diktsamling" "dikt" "digitalur" "dieselolje" "dieselmotor" "diamant" "dessert" "departement" "departement" "deodorant" "del" "del" "del" "del" "deksel" "deklarasjon" "dataskjerm" "datamaskin" "datamaskin" "dapenge" "dampmaskin" "dam" "dam" "dalføre" "daler" "dagsavis" "daginstitusjon" "daghjem" "dagbok" "container" "computer" "collage" "cocktail" "chutney" "chrysanthemum" "chemise" "champagne" "celle" "celle" "carport" "cardigan" "bøtte" "bøketre" "bøketre" "bøkeskog" "bøk" "bøk" "bærepose" "båtbrygge" "båre" "båndopptaker" "bål" "bygning" "bygging" "byggestein" "byggemateriale" "byggekloss" "byggeareal" "by" "butterdeig" "butikk" "busk" "burgunder" "bunke" "bunke" "buljongterning" "bukser" "brønn" "brødskive" "brød" "brød" "bryst" "bryst" "bruksrett" "brosje" "bronkie" "brokkoli" "brokkoli" "brokke" "brokk" "broderi" "brisk" "bringebær" "bringebær" "bringe" "brilleglass" "brille" "brie" "brevsprekk" "brevkort" "brev" "brev" "brennetid" "brennesle" "bremse" "bregne" "brannsår" "brannalarm" "bowler" "bot" "borg" "bordbein" "bord" "bomullsgarn" "bombe" "bolle" "bolle" "bolig" "bolig" "bokstav" "boks" "boks" "bok" "boikott" "bog" "bløtkake" "blåbær" "blåbær" "bluse" "bluse" "blues" "blonde" "blomsterpotte" "blomkål" "blomkål" "blodåre" "blodkar" "blindtarm" "blikkboks" "blekk" "bleie" "blazer" "blankett" "blad" "blad" "bjørk" "bjerk" "bjelle" "bjelke" "bitter" "bit" "bistro" "bisetning" "biografi" "binge" "bind" "bilradio" "billykt" "billett" "billedrør" "billedbok" "bildekk" "bilde" "bilag" "bil" "bikini" "biff" "bibliotek" "bibliotek" "bibliografi" "betydning" "betong" "betaling" "besvarelse" "bestselger" "bestemmelse" "bestanddel" "beskyldning" "beskjed" "beskadigelse" "bergflette" "bergart" "beretning" "bensinstasjon" "ben" "beløp" "beløp" "beliggenhet" "bekledning" "bekkenbunn" "bekk" "bein" "bein" "beholder" "beholder" "behandlingstilbud" "befalskole" "bedring" "bartre" "bart" "bart" "barskog" "barnetilskudd" "barnehavetilbud" "barnehageplass" "barnebok" "barnebidrag" "barm" "bank" "banestrekning" "banan" "balle" "ball" "bag" "avvisning" "avtrekker" "avsnitt" "avkastning" "avis" "avhandling" "avfallspose" "avdrag" "avdeling" "avdeling" "avdeling" "avdeling" "automat" "attest" "atomkjerne" "atom" "asparges" "ask" "artikkel" "artikkel" "armbånd" "arm" "arm" "ark" "arbeidsplass" "arbeide" "arbeid" "arbeid" "appelsin" "anvisning" "antall" "annonse" "annonse" "anleggsbrakke" "anlegg" "anemone" "anemone" "andedam" "ammoniakk" "alter" "alt" "alpinrenn" "almetre" "alkohol" "alfalfa" "aldershjem" "albue" "akvakultur" "akuttavdeling" "aktstykke" "aktivum" "aktivum" "akademi" "afghaner" "adresse" "administrasjon" "adjektiv" "aceton" "zimbabwe" "zambia" "zaire" "yemen" "yding" "wien" "værløse" "vridsløselille" "vridsløse" "vordingborg" "vojens" "vogesene" "vietnam" "viborg" "vestindia" "vesten" "vesten" "vest-tyskland" "vest-samoa" "venezuela" "venezia" "vendsyssel" "velferdsprogram" "vejle" "vejen" "vatikanstaten" "vatikanet" "varde" "vanuatu" "vanløse" "vallensbæk" "valby" "uruguay" "uranus" "ungarn" "ukraina" "uganda" "usa" "tønder" "tyskland" "tyrol" "tyrkia" "tuvalu" "tunø" "tunisia" "tsjekkoslovakia" "trinidad" "toten" "torshavn" "tonga" "togo" "tibet" "tiberen" "thyborøn" "thy" "thurø" "thule" "thisted" "themsen" "thailand" "tchad" "tanzania" "taiwan" "sør-yemen" "sør-jylland" "sør-afrika" "sønderborg" "sæby" "syria" "sydpolen" "syd-schleswig" "syd-korea" "syd-amerika" "swaziland" "sverige" "svendborg" "sveits" "svartehavet" "svaneke" "sundeved" "sudan" "stubbekøbing" "struer" "storebelt" "storbritannia" "stor-københavn" "stockholm" "stillehavet" "stevns" "stege" "sprogø" "spania" "sovjetunionen" "sovjet" "sorø" "somalia" "slovenia" "slovakia" "slagelse" "skælskør" "skåne" "skottland" "skjern" "skive" "skandinavia" "skanderborg" "skagerrak" "skagen" "sjælland" "sjustjernen" "singapore" "sinai" "silkeborg" "sild" "sicilia" "sibir" "shetlandsøyene" "seychellene" "serbia" "senegal" "seinen" "schleswig" "saturn" "sardinia" "sandvig" "samsø" "samoa" "salomonøyene" "salling" "sakskøbing" "rønne" "rønde" "rømø" "rødehavet" "rødby" "rwanda" "russland" "rudkøbing" "roskilde" "romerriket" "romania" "roma" "ringsted" "ringkøbing" "ribe" "rhinen" "regjeringen" "randers" "Qatar" "påskeøya" "pyreneene" "præstø" "provence" "preussen" "praha" "portugal" "pommern" "polynesia" "politiforbund" "polen" "polarstjernen" "pluto" "peru" "persia" "peloponnes" "pedersker" "paris" "paraguay" "panama" "palestina" "pakistan" "ostindia" "oslo" "oslo" "orkenøyene" "ordrup" "oman" "oljedirektiv" "odense" "odder" "oceania" "olbilletter" "ol-billetter" "nørresundby" "næstved" "nysted" "nykøbing" "nyborg" "nubia" "norskehavet" "norge" "nordsjøen" "nordkapp" "nordkalotten" "nord-yemen" "nord-schleswig" "nord-korea" "nord-jylland" "nord-amerika" "nigeria" "niger" "nicaragua" "nibe" "neptun" "nepal" "neksø" "nederland" "nato" "napoli" "namibia" "nakskov" "nato" "møn" "moskva" "mosambik" "mors" "mongolia" "monaco" "milano" "midt-østen" "middelhavet" "mexico" "merkur" "mellom-europa" "mellom-amerika" "melkeveien" "melanesia" "mauretania" "marstal" "marokko" "marina" "maribo" "mariager" "mandø" "mandsjuria" "malta" "mallorca" "mali" "malaysia" "malaya" "malawi" "makedonia" "løgstør" "limfjorden" "lillebelt" "likudregjeringen" "kypros" "Kors" "Karibien" "Kamerun" "justisdepartementet" "indremisjonsselskapet" "hedmark" "gudbrandsdalen" "gudbrandsdalen" "group" "gomanbakeri" "giga" "fosssaken" "folkpartiet" "flensburg" "flandern" "finland" "filippinene" "fiji" "femø" "femern" "farum" "fanø" "falster" "fakse" "eøsavtalen" "europa" "eurasia" "etruria" "etiopia" "estland" "esrum" "esbjerg" "england" "elsero" "elsass" "elfenbenskysten" "elben" "drejø" "dragør" "dolomittene" "ditmarsken" "damaskus" "cuba" "colombia" "canada" "california" "byutviklingskomiteen" "bretagne" "brasil" "bolivia" "bogense" "bloksberg" "berlin" "bergen" "belgia" "atlanterhavet" "atlanterhavet" "athen" "argentina" "antillene" "angola" "andalusia" "amerika" "alpinanlegg" "akershus" "afrika" "afghanistan" "adriaterhavet" "abessinia" "as" ("denne" prn pers) ("disse" prn pers) ("all" nt sg) ("det" prn pers) ("god" adj sup def) ("hel" adj pst def sg) ("dette" prn pers) ("den" prn pers) ;
 LISt lo#kop-pass = "være" "virke" "hete" "bli" pasv ;
 LIST lo#mod-@adv-@←p-utfyll = "seg" "at" @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @kon @nkon @←p-utfyll @adv @s-gr clb ;
@@ -592,7 +593,7 @@ LIST selv-adv = ("selv" adv) ("sjøl" adv) ("sjæl" adv) ;
 LIST setn-gr = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" cnjsub @sbu >>> <<< clb ;
 LIST setn-gr/parentes-beg = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" lpar cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-gr/verb = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" vblex cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
-LIST setn-gr/verb/subj = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" @subj vblex ("at" cnjsub) @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
+LIST setn-gr/verb/subj = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" @subj @xubj vblex ("at" cnjsub) @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-slutt/fin-verb = <<< clb (vblex pres) (vblex pret) ;
 LIST setn/infkonstr-gr = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn/infkonstr-gr/verb = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< clb vblex ;
@@ -801,7 +802,7 @@ MAP:1664 (@adj→)   (adj ord) IF
 
 
 #:1672
-MAP:1672 (@subj @obj @i-obj @←p-utfyll @app @laus-np)   (ord) IF
+MAP:1672 (@subj @xubj @obj @i-obj @←p-utfyll @app @laus-np)   (ord) IF
 	(0 ordenstall)
 ;
 #  " en tredje begynte å skjære
@@ -814,7 +815,7 @@ MAP:1672 (@subj @obj @i-obj @←p-utfyll @app @laus-np)   (ord) IF
 
 
 #:1671
-MAP:1671 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np @adv)   (adj) IF
+MAP:1671 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np @adv)   (adj) IF
 	(0 %mulig%-nøyt)
 	(NOT 1 ub-subst)
 	(NOT 1 adj)
@@ -834,7 +835,7 @@ MAP:1670 (@adj→)   (adj) IF
 
 
 #:1669
-MAP:1669 (@subj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
+MAP:1669 (@subj @xubj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
 	(*-1 ikke-adv LINK NOT 0 subst/pron)
 	(1 komma)
 	(1 clb)
@@ -844,7 +845,7 @@ MAP:1669 (@subj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj ppr
 
 
 #:1668
-MAP:1668 (@subj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
+MAP:1668 (@subj @xubj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
 	(*-1 ikke-adv LINK NOT 0 subst/pron)
 	(NOT 1 komma)
 	(NOT 1 subst/adj)
@@ -854,7 +855,7 @@ MAP:1668 (@subj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj ppr
 
 
 #:1667
-MAP:1667 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1667 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(NOT 1 subst/adj)
 	(NOT 0 adv)
 	(NOT 0 <pres-part>)
@@ -874,7 +875,7 @@ MAP:1666 (@adj→)   (adj pprs) IF
 
 
 #:1665
-MAP:1665 (@subj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
+MAP:1665 (@subj @xubj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (adj pprs) IF
 	(NOT 1 subst/adj)
 	(NOT 1 komma)
 	(*-1 ikke-adv LINK 0 subst/pron)
@@ -1782,7 +1783,7 @@ MAP:1584 (@adj→)   (adj comp) IF
 
 
 #:1583
-MAP:1583 (@adj→ @adv @subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj pprs) IF
+MAP:1583 (@adj→ @adv @subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj pprs) IF
 	(1 subst)
 	(1 fv)
 ;
@@ -1917,7 +1918,7 @@ MAP:1570 (@adj→)   (adj) IF
 
 
 #:1569
-MAP:1569 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1569 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 mange-få-pos-komp/enkelt-fl)
 ;
 #  " enkelte mener at...
@@ -1944,7 +1945,7 @@ MAP:1567 (@adv→)   (adj comp) IF
 
 
 #:1566
-MAP:1566 (@subj @obj @adv @s-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1566 (@subj @xubj @obj @adv @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 s#%mye/lite%)
 ;
 #  " mye har blitt gjort
@@ -1955,7 +1956,7 @@ MAP:1566 (@subj @obj @adv @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1565
-MAP:1565 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1565 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(NOT 0 %særlig%)
 	(*-1 verb LINK 0 %kalle%)
@@ -1971,7 +1972,7 @@ MAP:1565 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1564
-MAP:1564 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1564 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(NOT 0 %særlig%)
 	(*1 verb LINK 0 %kalle%)
@@ -1982,7 +1983,7 @@ MAP:1564 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1563
-MAP:1563 (@subj @obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1563 (@subj @xubj @obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(NOT 0 %særlig%)
 	(*-1 %nø/alt% BARRIER m#ikke-adv-adj)
@@ -1995,7 +1996,7 @@ MAP:1563 (@subj @obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1562
-MAP:1562 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1562 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(*-1 verb LINK 0 %kalle%)
 	(*-3 m#%et% LINK 1 m#%eller% LINK 1 %annet% LINK NOT *1 m#ikke-adv-adj)
@@ -2005,7 +2006,7 @@ MAP:1562 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1561
-MAP:1561 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1561 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(*1 verb LINK 0 %kalle%)
 	(*-3 m#%et% LINK 1 m#%eller% LINK 1 %annet% LINK NOT *1 m#ikke-adv-adj)
@@ -2015,7 +2016,7 @@ MAP:1561 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 
 
 #:1560
-MAP:1560 (@subj @obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1560 (@subj @xubj @obj @s-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp)
 	(*-3 m#%et% LINK 1 m#%eller% LINK 1 %annet% LINK NOT *1 m#ikke-adv-adj)
 ;
@@ -2074,7 +2075,7 @@ MAP:1557 (@o-pred)   (adj nt ind sg) IF
 
 
 #:1556
-MAP:1556 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np @adv)   (adj) IF
+MAP:1556 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np @adv)   (adj) IF
 	(0 %mulig%-nøyt)
 	(NOT 1 ub-fl-subst)
 ;
@@ -2104,7 +2105,7 @@ MAP:1554 (@s-pred @adv @app @laus-np)   (adj) IF
 
 
 #:1553
-MAP:1553 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj ind sg) IF
+MAP:1553 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj ind sg) IF
 	(*-1 det-kvant BARRIER m#ikke-adv-adj)
 ;
 #  " en utenforstående @SUBJ ville ikke forstå
@@ -2141,7 +2142,7 @@ MAP:de-grunnleggende-ferdighetene (@adj→) (adj sp def) IF
 
 
 #:1550
-MAP:1550 (@subj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
+MAP:1550 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
 	(NOT 0 pres-part)
 	(NOT 0 <adv>)
 	(NOT 0 %mulig%-nøyt)
@@ -2872,7 +2873,7 @@ MAP:6076 (@det→) (n gen) IF
 
 
 #:1472
-MAP:1472 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
+MAP:1472 (@det→ @subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
 	(0 tall)
 	(NOT 0 ikke-tall)
 	(1 m#komma/konj)
@@ -2886,7 +2887,7 @@ MAP:1472 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred) 
 
 
 #:1471
-MAP:1471 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
+MAP:1471 (@det→ @subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
 	(0 tall)
 	(NOT 0 ikke-tall)
 	(1 m#komma/konj)
@@ -2900,7 +2901,7 @@ MAP:1471 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred) 
 
 
 #:1470
-MAP:1470 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (det) IF
+MAP:1470 (@det→ @subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (det) IF
 	(0 tall)
 	(NOT 0 ikke-tall)
 	(1 m#komma/konj)
@@ -2913,7 +2914,7 @@ MAP:1470 (@det→ @subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (det) 
 
 
 #:1469
-MAP:1469 (@subj @obj @s-pred @adv @←p-utfyll)   (det) IF
+MAP:1469 (@subj @xubj @obj @s-pred @adv @←p-utfyll)   (det) IF
 	(0 klokkeslett)
 	(NOT 0 ikke-tall)
 	(1 %på/over%)
@@ -2931,7 +2932,7 @@ MAP:1469 (@subj @obj @s-pred @adv @←p-utfyll)   (det) IF
 
 
 #:1468
-MAP:1468 (@subj @obj @s-pred @adv @←p-utfyll)   (det) IF
+MAP:1468 (@subj @xubj @obj @s-pred @adv @←p-utfyll)   (det) IF
 	(0 klokkeslett)
 	(NOT 0 ikke-tall)
 	(1 %på/over%)
@@ -2944,7 +2945,7 @@ MAP:1468 (@subj @obj @s-pred @adv @←p-utfyll)   (det) IF
 
 
 #:1467
-MAP:1467 (@subj @s-pred @adv @←p-utfyll)   (det) IF
+MAP:1467 (@subj @xubj @s-pred @adv @←p-utfyll)   (det) IF
 	(-1 %klokka%)
 	(0 klokkeslett)
 	(NOT 0 ikke-tall)
@@ -2957,7 +2958,7 @@ MAP:1467 (@subj @s-pred @adv @←p-utfyll)   (det) IF
 
 
 #:1466
-MAP:1466 (@subj @s-pred @adv @←p-utfyll)   (det) IF
+MAP:1466 (@subj @xubj @s-pred @adv @←p-utfyll)   (det) IF
 	(-2 %klokka%)
 	(-1 %halv%-mask/fem)
 	(0 klokkeslett)
@@ -3056,7 +3057,7 @@ MAP:1460 (@←det)   (det) IF
 
 
 #:1459
-MAP:1459 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
+MAP:1459 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
 	(NOT 0 poss)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
 ;
@@ -3065,7 +3066,7 @@ MAP:1459 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) 
 
 
 #:1458
-MAP:1458 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
+MAP:1458 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) IF
 	(NOT 0 poss)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
 ;
@@ -3074,7 +3075,7 @@ MAP:1458 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np @o-pred)   (det) 
 
 
 #:1457
-MAP:1457 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (det) IF
+MAP:1457 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   (det) IF
 	(NOT 0 poss)
 ;
 
@@ -3106,7 +3107,7 @@ MAP:6099 (@det→)   (det m sg) IF
 #hans eller hennes fortid
 
 #:1456
-MAP:1456 (@subj @obj @s-pred)   (det m sg) IF
+MAP:1456 (@subj @xubj @obj @s-pred)   (det m sg) IF
 	(NOT -1 be-ent-mask-subst)
 	(NOT 1 kh#nom-mask-ent-ub)
 	(NOT 1 subst-prop)
@@ -3145,7 +3146,7 @@ MAP:1451 (@det→)   (det pl) IF
 
 
 #:1452
-MAP:1452 (@subj @obj @s-pred)   (det pl) IF
+MAP:1452 (@subj @xubj @obj @s-pred)   (det pl) IF
 	(NOT -1 m#be-fl-subst)
 	(NOT 1 kh#nom-fl)
 ;
@@ -3416,7 +3417,7 @@ MAP:1427 (@←sbu)   ("å") IF
 
 
 #:1426
-MAP:1426 (@subj @obj @s-pred @o-pred @←sbu)   ("å") IF
+MAP:1426 (@subj @xubj @obj @s-pred @o-pred @←sbu)   ("å") IF
 	(-1 nom)
 	(*-1 periode-beg/clb-konj LINK *1 %kalle%)
 	(*-1 periode-beg/clb-konj LINK *1 %det%-pron)
@@ -3426,7 +3427,7 @@ MAP:1426 (@subj @obj @s-pred @o-pred @←sbu)   ("å") IF
 
 
 #:1425
-MAP:1425 (@subj @obj @s-pred @o-pred @←sbu)   ("å") IF
+MAP:1425 (@subj @xubj @obj @s-pred @o-pred @←sbu)   ("å") IF
 	(-1 m#setn-gr)
 	(*1 periode-beg/clb-konj LINK *-1 %kalle%)
 	(*1 periode-beg/clb-konj LINK *-1 %det%-pron)
@@ -3436,13 +3437,13 @@ MAP:1425 (@subj @obj @s-pred @o-pred @←sbu)   ("å") IF
 
 
 #:1424
-MAP:1424 (@subj @obj @s-pred @←sbu)   ("å") IF
+MAP:1424 (@subj @xubj @obj @s-pred @←sbu)   ("å") IF
 	(-1 nom)
 ;
 
 
 #:1423
-MAP:1423 (@subj @obj @s-pred @←p-utfyll)   ("å") IF
+MAP:1423 (@subj @xubj @obj @s-pred @←p-utfyll)   ("å") IF
 	(0 infmerke)
 ;
 
@@ -3482,12 +3483,12 @@ MAP:1419 (@det→)   (prn) IF
 
 
 
-MAP:blant-dem-som (@subj @obj @i-obj @s-pred @app @←p-utfyll) prn IF
+MAP:blant-dem-som (@subj @xubj @obj @i-obj @s-pred @app @←p-utfyll) prn IF
 	(0 res/akk)
 	(-1C prep)
         (*1 cnjsub + %som% BARRIER (*) - cm)
 ;
-# Subject of relative clause.
+# Possible subject of relative clause.
 # «Det er rundt 60 prosent kvinner blant dem som diagnostiseres, men det er også langt flere kvinner enn menn som tester seg.»
 
 #:1418
@@ -3578,7 +3579,7 @@ MAP:1412 (@←p-utfyll @app)   (prn pers) IF
 
 
 #:1411
-MAP:1411 (@subj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn pers) IF
+MAP:1411 (@subj @xubj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn pers) IF
 	(0 nominativ)
 	(*-1 periode-beg/clb-konj LINK *1 prep)
 	(1C prep/%som%)
@@ -3590,7 +3591,7 @@ MAP:1411 (@subj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn pers) IF
 
 
 #:1410
-MAP:1410 (@subj @obj @i-obj @s-pred @app @laus-np)   (prn pers) IF
+MAP:1410 (@subj @xubj @obj @i-obj @s-pred @app @laus-np)   (prn pers) IF
 	(0 nominativ)
 	(1C prep/pron/%som%)
 	(NOT 1 res/akk)
@@ -3605,7 +3606,7 @@ MAP:1410 (@subj @obj @i-obj @s-pred @app @laus-np)   (prn pers) IF
 
 
 #:1409
-MAP:1409 (@subj @s-pred)   (prn pers) IF
+MAP:1409 (@subj @xubj @s-pred)   (prn pers) IF
 	(0 nominativ)
 	(1 %være/bli%)
 	(2 m#%det%)
@@ -3627,7 +3628,7 @@ MAP:1409 (@subj @s-pred)   (prn pers) IF
 
 
 #:1408
-MAP:1408 (@subj @s-pred @laus-np @app)   (prn pers) IF
+MAP:1408 (@subj @xubj @s-pred @laus-np @app)   (prn pers) IF
 	(0 nominativ)
 	(NOT 0 pron-akk)
 	(*-1 verb BARRIER m#setn-gr)
@@ -3640,7 +3641,7 @@ MAP:1408 (@subj @s-pred @laus-np @app)   (prn pers) IF
 
 
 #:1407
-MAP:1407 (@subj @laus-np @app)   (prn pers) IF
+MAP:1407 (@subj @xubj @laus-np @app)   (prn pers) IF
 	(0 nominativ)
 	(NOT 0 pron-akk)
 ;
@@ -3650,7 +3651,7 @@ MAP:1407 (@subj @laus-np @app)   (prn pers) IF
 
 
 #:1406
-MAP:1406 (@subj @←p-utfyll)   (prn) IF
+MAP:1406 (@subj @xubj @←p-utfyll)   (prn) IF
 	(-1C prep)
 ;
 #  " dekker tilfeller med sikker foregående preposisjon
@@ -3661,13 +3662,13 @@ MAP:1406 (@subj @←p-utfyll)   (prn) IF
 
 
 #:1405
-MAP:1405 (@subj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn) IF
+MAP:1405 (@subj @xubj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn) IF
 	(*-1 periode-beg/clb-konj LINK *1 prep)
 ;
 
 
 #:1404
-MAP:1404-nom (@subj @s-pred @app @laus-np)   pron-nom ;
+MAP:1404-nom (@subj @xubj @s-pred @app @laus-np)   pron-nom ;
 #  " den var der
 #  mannen fant den
 #  mannen ga den mat
@@ -3744,7 +3745,7 @@ MAP:1394 (@s-pred @adv @←p-utfyll)  ("." sent clb remspc) IF
 
 
 #:1393
-MAP:1393 (@subj @s-pred @adv @←p-utfyll)   (n) IF
+MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) IF
 	(-1 %klokke/kl%)
 	(0 klokkeslett)
 	(NOT 0 ikke-tall)
@@ -3755,7 +3756,7 @@ MAP:1393 (@subj @s-pred @adv @←p-utfyll)   (n) IF
 
 
 #:1392
-MAP:1392 (@←subst @subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
 	(-1 subst)
 	(NOT -1 ikke-subst)
 	(-1 mengdeord)
@@ -3766,7 +3767,7 @@ MAP:1392 (@←subst @subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @ap
 
 
 #:6122
-MAP:6122 (@←subst @subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:6122 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
 	(*-1 mengdeord LINK NOT 0 ikke-subst LINK NOT 1 komma/konj)	
 	(*-1 mengdeord LINK NOT 0 ikke-subst LINK NOT *1 ikke-adj-adv)
 	(NOT -1 komma/konj)
@@ -3776,7 +3777,7 @@ MAP:6122 (@←subst @subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @ap
 ;
 
 #6126:
-MAP:6126 (@←subst @subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
 	(*-1 mengdeord LINK 0 subst-ub LINK NOT *1 ikke-adv-adj LINK 0 subst-ub LINK 1 komma/konj LINK NOT *1 ikke-adj-adv)
 	(0 subst-ub)
 	(NOT 0 ikke-subst)
@@ -3891,7 +3892,7 @@ MAP:1385 (@det→)   (n gen) IF
 
 
 #:1384
-MAP:1384 (@subj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred)   (np) IF
+MAP:1384 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred)   (np) IF
 	(*-1C verb LINK 0 %kalle/døpe% LINK NOT *1 m#setn-gr)
 ;
 # group: 82
@@ -3899,7 +3900,7 @@ MAP:1384 (@subj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred
 
 
 #:1383
-MAP:1383 (@subj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred)   (np) IF
+MAP:1383 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred)   (np) IF
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle/døpe%)
 ;
 # group: 82
@@ -3907,7 +3908,7 @@ MAP:1383 (@subj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @o-pred
 
 
 #:1382
-MAP:1382 (@subj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) IF
+MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) IF
 	(0 subst-prop)
 ;
 
@@ -3962,7 +3963,7 @@ MAP:1378 (@subst→)   (n) IF
 
 
 #:1377
-MAP:1377 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1377 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(NOT 0 be)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
@@ -3972,7 +3973,7 @@ MAP:1377 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1376
-MAP:1376 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1376 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 adj/det)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
@@ -3982,7 +3983,7 @@ MAP:1376 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1375
-MAP:1375 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1375 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 konj)
 	(-2 adverbialsubst)
@@ -3994,7 +3995,7 @@ MAP:1375 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1374
-MAP:1374 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1374 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
 	(NOT 0 adverbialsubst)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
 ;
@@ -4003,7 +4004,7 @@ MAP:1374 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1373
-MAP:1373 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1373 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(NOT 0 be)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
@@ -4013,7 +4014,7 @@ MAP:1373 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1372
-MAP:1372 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1372 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 adj/det)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
@@ -4023,7 +4024,7 @@ MAP:1372 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1371
-MAP:1371 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
+MAP:1371 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 konj)
 	(-2 adverbialsubst)
@@ -4035,7 +4036,7 @@ MAP:1371 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1370
-MAP:1370 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1370 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
 	(NOT 0 adverbialsubst)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
 ;
@@ -4044,7 +4045,7 @@ MAP:1370 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1369
-MAP:1369 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1369 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
 	(0 adverbialsubst)
 	(NOT 0 be)
 ;
@@ -4053,7 +4054,7 @@ MAP:1369 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1368
-MAP:1368 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1368 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 adj/det)
 ;
@@ -4062,7 +4063,7 @@ MAP:1368 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1367
-MAP:1367 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1367 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
 	(0 adverbialsubst)
 	(-1 konj)
 	(-2 adverbialsubst)
@@ -4073,7 +4074,7 @@ MAP:1367 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1366
-MAP:1366 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1366 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
 	(0 adverbialsubst)
 	(1 %før/etter/rundt/igjennom%-prep)
 ;
@@ -4082,7 +4083,7 @@ MAP:1366 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np
 
 
 #:1365
-MAP:1365 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1365 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
 	(0 måned/høytid/årstid)
 	(1 tall)
 	(NOT 1 ikke-tall)
@@ -4149,7 +4150,7 @@ MAP:1303 (@adv)   ("kvart" n sg ind) IF
 
 
 #:1364
-MAP:n (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
+MAP:n (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
 ;
 
 
@@ -4263,7 +4264,7 @@ MAP:1353 (@det→)   ("alt") IF
 
 
 #:1352
-MAP:1352 (@det→ @subj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
+MAP:1352 (@det→ @subj @xubj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
 	(0 nøyt-ent)
 	(1 ent-nøyt-subst)
 ;
@@ -4316,7 +4317,7 @@ MAP:1348 (@det→)   ("alt") IF
 
 
 #:1347
-MAP:1347 (@det→ @subj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
+MAP:1347 (@det→ @subj @xubj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
 	(0 nøyt-ent)
 	(1 ent-nøyt-dem-det/ent-nøyt-3-pron)
 ;
@@ -4333,7 +4334,7 @@ MAP:1346 (@←p-utfyll)   ("alt") IF
 
 
 #:1345
-MAP:1345 (@subj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
+MAP:1345 (@subj @xubj @obj @s-pred @←p-utfyll @app @laus-np)   ("alt") IF
 	(0 nøyt-ent)
 ;
 #  " han lo av alt @OBJ den gamle mannen sa
@@ -4424,7 +4425,7 @@ MAP:1336 (@←sbu)   ("at") IF
 
 
 #:1335
-MAP:1335 (@subj @obj @s-pred @←p-utfyll @←sbu)   ("at") IF
+MAP:1335 (@subj @xubj @obj @s-pred @←p-utfyll @←sbu)   ("at") IF
 	(*-1 verb LINK 0 %vise% LINK 1 %seg% LINK *-1 m#%det%)
 ;
 #  " det kan komme andre typer ord mellom \"det\" og \"vise\" 
@@ -4434,7 +4435,7 @@ MAP:1335 (@subj @obj @s-pred @←p-utfyll @←sbu)   ("at") IF
 
 
 #:1334
-MAP:1334 (@subj @obj @s-pred @←sbu)   ("at") IF
+MAP:1334 (@subj @xubj @obj @s-pred @←sbu)   ("at") IF
 	(-1 ent-subst/ub-ent-nøyt-adj/%det%)
 ;
 #  " \"At\" kan også ellers være utfylling hvis det står etter 
@@ -4455,7 +4456,7 @@ MAP:1333 (@←p-utfyll)   ("at") IF
 
 
 #:1332
-MAP:1332 (@subj @obj @s-pred @←sbu)   ("at") IF
+MAP:1332 (@subj @xubj @obj @s-pred @←sbu)   ("at") IF
 	(*-1 m#setn-gr LINK *1 m#%det%)
 ;
 #  " \"At\" kan også være @←SBU etter andre typer ord hvis det finnes 
@@ -4465,7 +4466,7 @@ MAP:1332 (@subj @obj @s-pred @←sbu)   ("at") IF
 
 
 #:1331
-MAP:1331 (@subj @obj @s-pred @←p-utfyll)   ("at") IF
+MAP:1331 (@subj @xubj @obj @s-pred @←p-utfyll)   ("at") IF
 	(0 %at%)
 ;
 
@@ -4493,7 +4494,7 @@ MAP:1281 (@←sbu-rel @adv @s-pred)   ("som" cnjsub) IF
 
 
 #:1311
-MAP:1311 (@←p-utfyll @subj @obj @s-pred)   ("hvorvidt" cnjsub) IF
+MAP:1311 (@←p-utfyll @subj @xubj @obj @s-pred)   ("hvorvidt" cnjsub) IF
 	(0 sbu)
 ;
 #  " jeg lurer på hvorvidt det går an
@@ -4525,7 +4526,7 @@ MAP:1291 (@adv)   ("om" cnjsub) IF
 
 
 #:1290
-MAP:1290 (@←p-utfyll @adv @subj @obj @s-pred @←sbu)   ("om" cnjsub) IF
+MAP:1290 (@←p-utfyll @adv @subj @xubj @obj @s-pred @←sbu)   ("om" cnjsub) IF
 	(0 sbu)
 	(-1 ent-subst/ub-ent-nøyt-adj)
 ;
@@ -4536,7 +4537,7 @@ MAP:1290 (@←p-utfyll @adv @subj @obj @s-pred @←sbu)   ("om" cnjsub) IF
 
 
 #:1289
-MAP:1289 (@←p-utfyll @adv @subj @obj @s-pred)   ("om" cnjsub) IF
+MAP:1289 (@←p-utfyll @adv @subj @xubj @obj @s-pred)   ("om" cnjsub) IF
 	(0 sbu)
 ;
 #  " jeg lurer på om det går an
@@ -4615,7 +4616,7 @@ MAP:1327 (@det→)   ("begge") IF
 
 
 #:1326
-MAP:1326 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det" prn) IF
+MAP:1326 (@subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det" prn) IF
 	(0 pron)
 	(*-1 periode-beg/clb-konj LINK *1 prep)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
@@ -4628,7 +4629,7 @@ MAP:1326 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det"
 
 
 #:1325
-MAP:1325 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det" prn) IF
+MAP:1325 (@subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det" prn) IF
 	(0 pron)
 	(*-1 periode-beg/clb-konj LINK *1 prep)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
@@ -4639,7 +4640,7 @@ MAP:1325 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np @←p-utfyll)   ("det"
 
 
 #:1324
-MAP:1324 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np)   ("det" prn) IF
+MAP:1324 (@subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np)   ("det" prn) IF
 	(0 pron)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
 ;
@@ -4648,7 +4649,7 @@ MAP:1324 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np)   ("det" prn) IF
 
 
 #:1323
-MAP:1323 (@subj @obj @i-obj @s-pred @o-pred @app @laus-np)   ("det" prn) IF
+MAP:1323 (@subj @xubj @obj @i-obj @s-pred @o-pred @app @laus-np)   ("det" prn) IF
 	(0 pron)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
 ;
@@ -4798,7 +4799,7 @@ MAP:1310 (@adv→)   ("ikke" adv) IF
 
 
 #:1302
-MAP:1302 (@subj @obj @adv @s-pred @o-pred @←p-utfyll @app @laus-np @adj→)   ("lite") IF
+MAP:1302 (@subj @xubj @obj @adv @s-pred @o-pred @←p-utfyll @app @laus-np @adj→)   ("lite") IF
 	(0 adj)
 	(0 ub-ent-nøyt/komp/ub-sup)
 ;
@@ -4892,7 +4893,7 @@ MAP:1296 (@adv→)   ("litt" nt) IF
 
 
 #:1295
-MAP:1295 (@subj)   ("man" prn) IF
+MAP:1295 (@subj @xubj)   ("man" prn) IF
 	(0 pron)
 ;
 #  " \"man\" kan bare være subjekt (NRG, s. 344)
@@ -4901,7 +4902,7 @@ MAP:1295 (@subj)   ("man" prn) IF
 
 
 #:1294
-MAP:1294 (@subj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   ("mange" adj sup def) IF
+MAP:1294 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @app @laus-np)   ("mange" adj sup def) IF
 	(-1 %de%-det)
 ;
 #  " de fleste mener det
@@ -4921,7 +4922,7 @@ MAP:1293 (@←adv)   ("nok" adv) IF
 
 
 #:1288
-MAP:1288 (@subj @obj @i-obj @s-pred @←p-utfyll @tittel @app @laus-np @adv)   ("resten") IF
+MAP:1288 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @app @laus-np @adv)   ("resten") IF
 	(0 be-ent)
 ;
 #  "KH 5.11.2002: Pga systemfeil legger vi til mengdetilhørighet fordi feks (\"selv\" adv) ikke ser ut til å virke."))
@@ -5175,7 +5176,7 @@ CONSTRAINTS
 # they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
 
-SELECT:ellipsrel-tatt @subj IF
+SELECT:ellipsrel-tatt @xubj IF
         (0C n + pl)
         (1C adj + pp + pl)
         (1C ("<tatt>"))         # other safe ones?
@@ -5184,7 +5185,7 @@ SELECT:ellipsrel-tatt @subj IF
 # Ellipsed «som» in short relative clause
 # «Jeg er her på grunn av beslutninger tatt på europeiske møter hvor Merkel manipulerer deltakerne.»
 
-SELECT:i-50-årene-som @subj IF
+SELECT:i-50-årene-som @xubj IF
         (0 @obj OR @s-pred)
         (1 ("i"))
         (2 (".*-år"r) OR top)
@@ -5193,15 +5194,16 @@ SELECT:i-50-årene-som @subj IF
 # «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Den andre skal ha vært en mann i 20-årene, som ble drept i Qalandiya utenfor Jerusalem.»
 
-SELECT:cm-som @subj IF
+SELECT:cm-som @xubj IF
         (0 @obj OR @s-pred)
-        (NEGATE 0 (".*-år"r) OR top LINK -2 @subj)
+        (NEGATE 0 (".*-år"r) OR top LINK -2 @xubj)
         (*1 cnjsub + @←sbu-rel BARRIER (*) - cm)
         ;
 # «De har gått til angrep mot provinsen, som kontrolleres av noen.
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
+REMOVE @xubj;
 
 CONSTRAINTS
 ## select ndomain
