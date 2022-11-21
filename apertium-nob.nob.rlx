@@ -37485,7 +37485,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<beholder>" REMOVE:default-behaldar ("beholder" n m sg ind) ;	# keep beholde<vblex><pres>→beheld
 "<beholdt>" REMOVE:default-beheldt ("beholde" vblex pret) ;	# keep beholde<vblex><pp>→behalde
 "<berget>" REMOVE:default-berget ("berg" n nt sg def) ;	# keep berge<vblex><pp>→berga berge<adj><pp><nt><sg><ind>→berga berge<vblex><pret>→berga
-"<besluttet>" REMOVE:default-vedtatt ("beslutte" vblex pp) ;	# keep beslutte<vblex><pret>→vedtok
+"<besluttet>" REMOVE:default-vedtatt ("beslutte" pp) ;	# keep beslutte<vblex><pret>→vedtok
 "<besluttet>" REMOVE:default-vedtatt ("beslutte" pl) ;	# keep beslutte<vblex><pret>→vedtok
 "<bestemt>" REMOVE:default-bestemd ("bestemt" adj sint pst mf sg ind) ;	# keep bestemme<vblex><pp>→avgjort
 "<bestemte>" REMOVE:default-bestemde ("bestemt" adj sint pst un pl ind) ;	# keep bestemme<vblex><pret>→avgjorde
