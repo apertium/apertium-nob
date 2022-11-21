@@ -5171,7 +5171,7 @@ CONSTRAINTS
 
 
 #CONSTRAINTS
-## select relative subjects
+## select relative and subclause subjects
 # We tag subjects of relative sentences with @subj, even though
 # they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
@@ -5202,6 +5202,12 @@ SELECT:cm-som @xubj IF
 # «De har gått til angrep mot provinsen, som kontrolleres av noen.
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
+
+SELECT:et-antall-av-krigerne @xubj IF
+        (*-1 mengdeord BARRIER (*) - ("av") - pos)
+        ;
+# «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
+# «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
 
 REMOVE @xubj;
 
