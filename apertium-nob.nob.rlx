@@ -25167,6 +25167,15 @@ SELECT:Huset-som-raste-kan-bli-savnet pp + nt IF
         (0C adj OR pp)
 ;
 
+SELECT:Ingen-er-pågrepet-eller-mistenkt adj IF
+        (*-1 kop-fv BARRIER ikke-adv LINK -1 nominativ)
+        (0C pp)
+        (0 $$ADJ_N_AGR)
+        (1C cnjcoo)
+        (2C pp)
+        (2 $$ADJ_N_AGR)
+        ;
+# «Ingen er så langt pågrepet eller mistenkt, men operasjonslederen forteller at de jobber opp mot spesielle miljøer.»
 
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF

@@ -12252,6 +12252,9 @@ SELECT:fra-en-oppdatering-slippes-til @subj IF
         ;
 # «Det kan være bare timer fra en sikkerhetsoppdatering slippes fra en leverandør, til det første angrepet oppdages, sier Bente Hoff, som leder Nasjonal cybersikkerhetssenter i NSM.»
 
+# TODO:
+# «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
+
 #CONSTRAINTS
 ## remove ndomain
 
