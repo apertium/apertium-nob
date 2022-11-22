@@ -32189,6 +32189,12 @@ SELECT ("mark¹") IF (1 ("i")) (2 ("mage"));
 	(NOT 0* fv)
 ;
 
+"<funnet>" REMOVE:funnet-bevisstløs vblex IF
+        (1C adj + &&ADJ_N_AGR) # unification only happens once, so keep the fixed-distance one first
+        (*-1 n + &&ADJ_N_AGR)
+        (0 adj)
+        ;
+
 "<hende>" REMOVE:kan-det-hende adj OR n IF
         (-2 ("<kan>"i))
         (-1 ("<det>"i))
