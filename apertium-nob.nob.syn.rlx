@@ -6082,6 +6082,16 @@ REMOVE:over-5000-har (@←p-utfyll) IF
         (0 qnt)
         ;
 
+
+SELECT:fra-en-oppdatering-slippes-til @subj IF
+        (*-1 ("fra") BARRIER ikke-premod)
+        (1C @fv)
+        (**2 ("til") LINK *1 @subj LINK *1 @fv)
+        ;
+# «Det kan være bare timer fra en sikkerhetsoppdatering slippes fra en leverandør, til det første angrepet oppdages, sier Bente Hoff, som leder Nasjonal cybersikkerhetssenter i NSM.»
+# «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
+
+
 #:1237
 SELECT:1237 (@←p-utfyll) IF
 	(NOT 0 %all%)
@@ -12244,16 +12254,6 @@ SELECT:og-et-begrenset-antall-er @subj IF
         (NEGATE *2C @subj)
         ;
 
-
-SELECT:fra-en-oppdatering-slippes-til @subj IF
-        (*-1 ("fra") BARRIER ikke-premod)
-        (1C @fv)
-        (*2 ("til") LINK *1 @subj LINK *1 @fv)
-        ;
-# «Det kan være bare timer fra en sikkerhetsoppdatering slippes fra en leverandør, til det første angrepet oppdages, sier Bente Hoff, som leder Nasjonal cybersikkerhetssenter i NSM.»
-
-# TODO:
-# «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
 
 #CONSTRAINTS
 ## remove ndomain
