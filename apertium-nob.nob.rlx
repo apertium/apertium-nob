@@ -13236,6 +13236,14 @@ SELECT:Som-forteller-kjennetegnes-Gaute-av n + ind + sg IF
         ;
 # Ikkje: «… hva/og som  bør  inkluderes i en tiltale»
 
+SELECT:mange-av-dem-barn pl IF
+        (-3 ("mange"))
+        (-2 ("av"))
+        (-1 ("de"))
+        (0C n + ind)
+        ;
+# «Minst ti sivile, flere av dem barn, skal ha blitt drept i et flyangrep mot et marked nord i Jemen.»
+
 SELECT:de-så-løper-etter-løper-passere n IF
         (0 ("<(.*)>"r))
         (1 pr)
