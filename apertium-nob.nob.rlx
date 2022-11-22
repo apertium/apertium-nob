@@ -26105,6 +26105,7 @@ REMOVE:at-paret (adj pp) IF
  REMOVE:2284 (adj pp) IF
 	(NOT 0 %tiltalte%)
 	(-1C verb)
+        (NOT -1 kop-fv)         # er skadd
 	(NOT 1 subst/adj)
 	(NOT 1 komma/konj)
 	(NOT 1 prep)
