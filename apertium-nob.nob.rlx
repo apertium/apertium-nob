@@ -1313,6 +1313,7 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         (1 np OR ukjent + storbokstav);
 "<Mc>"i REMOVE:unlikely np;
 
+
 # Arabiske etternamn på al-/Al- eller bin-/Bin-, genitiv: "Al-Amiris familie", "al-Nahyans familie"
 APPEND:np-guess-etternamn-arab-gen ("$1"v np cog cgguess gen) TARGET ("<((al|Al|bin|Bin)-\\p{Lu}\\p{Ll}+)(s|'|’)>"r) IF
         (0C ukjent)
@@ -2930,6 +2931,9 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (-1 %neste%)
         (NEGATE -2 det + dem)
         ;
+
+
+"<Den>" REMOVE:setnstart np IF (-1 >>>);
 
 ##############################################
 # "den¹" er påpeikande, blir «den» på nno òg #
