@@ -37501,7 +37501,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<banket>" REMOVE:default-banket ("bank" n nt sg def) ;	# keep banke<adj><pp><nt><sg><ind>→banka banke<vblex><pret>→banka banke<adj><pp><mf><sg><ind>→banka banke<vblex><pp>→banka
 "<bar>" REMOVE:default-barar ("bar" n m pl ind) ;	# keep bære<vblex><pret>→bar bar<n><nt><pl><ind>→bar
 "<basert>" REMOVE:default-baserte ("basere" adj pp pl) ;	# keep basere<vblex><pp>→basert basere<adj><pp><nt><sg><ind>→basert
-"<bedt>" REMOVE:default-bede ("bede" vblex pp) ;	# keep be<vblex><pp>→bedt
+"<bedt>" REMOVE:default-bede ("bede" pp) ;	# keep be<vblex><pp>→bedt
 "<begravd>" REMOVE:default-gravlagd ("begrave" adj pp mf sg ind) ;	# keep begrave<vblex><pp>→gravlagt begrave<adj><pp><nt><sg><ind>→gravlagt
 "<beholder>" REMOVE:default-behaldar ("beholder" n m sg ind) ;	# keep beholde<vblex><pres>→beheld
 "<beholdt>" REMOVE:default-beheldt ("beholde" vblex pret) ;	# keep beholde<vblex><pp>→behalde
@@ -37520,11 +37520,11 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<blåst>" REMOVE:default-blåst ("blåst" n m sg ind) ;	# keep blåse<vblex><pp>→blåse
 "<bo>" REMOVE:default-bo ("bo" n m sg ind) ;	# keep bo<n><nt><pl><ind>→bu
 "<bo>" REMOVE:default-bo ("bo" n mf sp) ;	# keep bo<n><nt><pl><ind>→bu
-"<bordet>" REMOVE:default-borda ("borde" vblex pp) ;	# keep bord<n><nt><sg><def>→bordet
+"<bordet>" REMOVE:default-borda ("borde" pp) ;	# keep bord<n><nt><sg><def>→bordet
 "<borger>" REMOVE:default-borger pl OR vblex ; # keep borgar
 "<brast>" REMOVE:default-brasa ("brase" adj pp mf sg ind) ;	# keep breste<vblex><pret>→brast
 "<brast>" REMOVE:default-brasa ("brase" adj pp nt sg ind) ;	# keep breste<vblex><pret>→brast
-"<brast>" REMOVE:default-brasa ("brase" vblex pp) ;	# keep breste<vblex><pret>→brast
+"<brast>" REMOVE:default-brasa ("brase" pp) ;	# keep breste<vblex><pret>→brast
 "<brent>" REMOVE:default-brunnen ("brenne" adj pp mf sg ind) ;	# keep brenne<vblex><pp>→brunne brenne<adj><pp><nt><sg><ind>→brunne
 "<brukt>" REMOVE:default-brukte ("bruke" adj pp pl) ;	# keep bruke<vblex><pp>→brukt bruke<adj><pp><nt><sg><ind>→brukt
 "<brutt>" REMOVE:default-broten ("bryte" adj pp mf sg ind) ;	# keep bryte<vblex><pp>→brote bryte<adj><pp><nt><sg><ind>→brote
@@ -37567,9 +37567,9 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<erklæring>" REMOVE:default-erklæring ("erklæring" n m sg ind) ;	# keep erklæring<n><f><sg><ind>→fråsegn
 "<etterfølger>" REMOVE:default-etterfølgjar ("etterfølger" n m sg ind) ;	# keep etterfølge<vblex><pres>→følgjer
 "<evner>" REMOVE:default-evnar ("evne" vblex pres) ;	# keep evne<n><m><pl><ind>→evner evne<n><f><pl><ind>→evner
-"<falt fra>" REMOVE:default-falle-frå ("falle# fra" vblex pp) ;	# keep falle# fra<vblex><pret>→fall frå
-"<falt i>" REMOVE:default-falle-i ("falle# i" vblex pp) ;	# keep falle# i<vblex><pret>→fall i
-"<falt>" REMOVE:default-falle ("falle" vblex pp) ;	# keep falle<vblex><pret>→fall
+"<falt fra>" REMOVE:default-falle-frå ("falle# fra" pp) ;	# keep falle# fra<vblex><pret>→fall frå
+"<falt i>" REMOVE:default-falle-i ("falle# i" pp) ;	# keep falle# i<vblex><pret>→fall i
+"<falt>" REMOVE:default-falle ("falle" pp) ;	# keep falle<vblex><pret>→fall
 "<fangene>" REMOVE:default-fanga (n nt pl def) ;	# keep fange<n><m><pl><def>→fangane
 "<fanget>" REMOVE:default-fanget ("fang" n nt sg def) ;	# keep fange<vblex><pp>→fanga
 "<fanget>" REMOVE:default-fanget ("fange" n nt sg def) ;	# keep fange<vblex><pp>→fanga
@@ -37585,22 +37585,22 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<flommer>" REMOVE:default-fløymer ("flomme" vblex pres) ;	# keep flom<n><m><pl><ind>→flaumar
 "<flyene>" REMOVE:default-flyene ("fly" n f pl def) ;	# keep fly<n><nt><pl><def>→flya
 "<flyene>" REMOVE:default-flyene ("fly" n m pl def) ;	# keep fly<n><nt><pl><def>→flya
-"<forbeholdt>" REMOVE:default-øyremerkt ("forbeholde" vblex pp) ;	# keep forbeholde<vblex><pret>→øyremerkte
+"<forbeholdt>" REMOVE:default-øyremerkt ("forbeholde" pp) ;	# keep forbeholde<vblex><pret>→øyremerkte
 "<forbruker>" REMOVE:default-forbruker ("forbruke" vblex pres) ;	# keep forbruker<n><m><sg><ind>→forbrukar
 "<forbudt>" REMOVE:default-forboden ("forby" adj pp mf sg ind) ;	# keep forby<vblex><pp>→forbode forby<adj><pp><nt><sg><ind>→forbode
 "<forbundet>" REMOVE:default-forbunde ("forbinde" adj pp nt sg ind) ;	# keep forbund<n><nt><sg><def>→forbundet
-"<forbundet>" REMOVE:default-forbunde ("forbinde" vblex pp) ;	# keep forbund<n><nt><sg><def>→forbundet
+"<forbundet>" REMOVE:default-forbunde ("forbinde" pp) ;	# keep forbund<n><nt><sg><def>→forbundet
 "<forstått>" REMOVE:default-forstådd ("forstå" adj pp mf sg ind) ;	# keep forstå<vblex><pp>→forstått forstå<adj><pp><nt><sg><ind>→forstått
 "<forteller>" REMOVE:default-forteljar ("forteller" n m sg ind) ;	# keep fortelle<vblex><pres>→fortel
 "<fostret>" REMOVE:default ("foster") ;
 "<fot>" REMOVE:default-føter ("fot" n m pl ind) ;	# keep fot<n><m><sg><ind>→fot
-"<framholdt>" REMOVE:default-peikt-på ("framholde" vblex pp) ;	# keep framholde<vblex><pret>→peika på
+"<framholdt>" REMOVE:default-peikt-på ("framholde" pp) ;	# keep framholde<vblex><pret>→peika på
 "<frifunnet>" REMOVE:default-frifunnen ("frifinne" adj pp mf sg ind) ;	# keep frifinne<vblex><pp>→frifunne frifinne<adj><pp><nt><sg><ind>→frifunne
 "<friskmeldt>" REMOVE:default-friskmeldt ("friskmelde" adj pp nt sg ind) ;	# keep friskmelde<adj><pp><mf><sg><ind>→friskmeld
-"<friskmeldt>" REMOVE:default-friskmeldt ("friskmelde" vblex pp) ;	# keep friskmelde<adj><pp><mf><sg><ind>→friskmeld
+"<friskmeldt>" REMOVE:default-friskmeldt ("friskmelde" pp) ;	# keep friskmelde<adj><pp><mf><sg><ind>→friskmeld
 "<frykter>" REMOVE:default-frykter ("frykt" n m pl ind) ;	# keep frykte<vblex><pres>→fryktar
 "<fulgt>" REMOVE:default-følgd ("følge" adj pp mf sg ind) ;	# keep følge<vblex><pp>→følgt følge<adj><pp><nt><sg><ind>→følgt
-"<Funnet>" REMOVE:default-Funne ("finne" vblex pp) ;	# keep Funn<n><nt><sg><def>→Funnet
+"<Funnet>" REMOVE:default-Funne ("finne" pp) ;	# keep Funn<n><nt><sg><def>→Funnet
 "<funnet>" REMOVE:default-funnet ("funn" n nt sg def) ;	# keep finne<vblex><pp>→funne
 "<føler>" REMOVE:default-følar ("føler" n m sg ind) ;	# keep føle<vblex><pres>→føler
 "<fører>" REMOVE:default-fører ("føre" vblex pres) ;	# keep føre<n><nt><pl><ind>→føre
@@ -37609,7 +37609,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<glemt>" REMOVE:default-gløymd ("glemme" adj pp mf sg ind) ;	# keep glemme<adj><pp><nt><sg><ind>→gløymt glemme<vblex><pp>→gløymt
 "<glimt>" REMOVE:default-glima ("glime" adj pp mf sg ind) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
 "<glimt>" REMOVE:default-glima ("glime" adj pp nt sg ind) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
-"<glimt>" REMOVE:default-glima ("glime" vblex pp) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
+"<glimt>" REMOVE:default-glima ("glime" pp) ;	# keep glimt<n><m><sg><ind>→glimt glimt<n><nt><pl><ind>→glimt glimt<n><nt><sg><ind>→glimt
 "<goder>" REMOVE:default-godar ("gode" n m pl ind) ;	# keep gode<n><nt><pl><ind>→gode
 "<godkjent>" REMOVE:default-godkjente ("godkjenne" adj pp pl) ;	# keep godkjenne<vblex><pp>→godkjent godkjenne<adj><pp><nt><sg><ind>→godkjent
 "<gren>" REMOVE:default-gren ("gren" n nt pl ind) ;	# keep gren<n><f><sg><ind>→grein gren<n><m><sg><ind>→grein grine<vblex><pret>→grein
@@ -37659,19 +37659,19 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<kjenner>" REMOVE:default-kjenne ("kjenne" n nt pl ind) ;	# keep kjenne<vblex><pres>→kjenner
 "<kjent>" REMOVE:default-kjend ("kjent" adj pst mf sg ind) ;	# keep kjent<adj><pst><nt><sg><ind>→kjent
 "<kjørt>" REMOVE:default-køyrt ("kjøre" adj pp nt sg ind) ;	# keep kjøre<adj><pp><pl>→køyrde
-"<kjørt>" REMOVE:default-køyrt ("kjøre" vblex pp) ;	# keep kjøre<adj><pp><pl>→køyrde
+"<kjørt>" REMOVE:default-køyrt ("kjøre" pp) ;	# keep kjøre<adj><pp><pl>→køyrde
 "<kjøttet>" REMOVE:default-kjøttet ("kjøtt" n nt sg def) ;	# keep kjøtte<adj><pp><nt><sg><ind>→kjøtt kjøtte<vblex><pp>→kjøtt
 "<klarer>" REMOVE:default-klarar ("klare" n f pl ind) ;	# keep klare<vblex><pres>→klarer
 "<klarer>" REMOVE:default-klarar ("klare" n m pl ind) ;	# keep klare<vblex><pres>→klarer
 "<kneet>" REMOVE:default-knea ("knee" pp) ;	# keep kne<n><nt><sg><def>→kneet
 "<knivstukket>" REMOVE:default-knivstukke ("knivstikke" adj pp nt sg ind) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
-"<knivstukket>" REMOVE:default-knivstukke ("knivstikke" vblex pp) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
+"<knivstukket>" REMOVE:default-knivstukke ("knivstikke" pp) ;	# keep knivstikke<adj><pp><mf><sg><ind>→knivstukken
 "<knytter>" REMOVE:default-knyte ("knytte" n nt pl ind) ;	# keep knytte<vblex><pres>→knyter
 "<knyttet>" REMOVE:default-knytt ("knytte" vblex pret) ;	# keep knytte<vblex><pp>→knytt
 "<kommet>" REMOVE:default-kommen ("komme" adj pp mf sg ind) ;	# keep komme<adj><pp><nt><sg><ind>→komme komme<vblex><pp>→komme
 "<kostet>" REMOVE:default-kostet ("kost" n nt sg def) ;	# keep koste<vblex><pp>→kosta
 "<krangler>" REMOVE:default-kranglar ("krangel" n m pl ind) ;	# keep krangel<n><nt><pl><ind>→krangel
-"<Kravet>" REMOVE:default-Krava ("krave" vblex pp) ;	# keep Krav<n><nt><sg><def>→Kravet
+"<Kravet>" REMOVE:default-Krava ("krave" pp) ;	# keep Krav<n><nt><sg><def>→Kravet
 "<krysset>" REMOVE:default-krysset ("kryss" n nt sg def) ;	# keep krysse<vblex><pret>→kryssa
 "<kuttet>" REMOVE:default-kuttet ("kutt" n nt sg def) ;	# keep kutte<vblex><pret>→kutta
 "<kvitter>" REMOVE:default-kvitter ("kvitter" n nt pl ind) ;	# keep kvitte<vblex><pres>→kvittar
@@ -37687,7 +37687,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un pl ind) ;	# keep lege<n><m><sg><ind>→lege
 "<lege>" REMOVE:default-leke ("leg" adj sint pst un sp def) ;	# keep lege<n><m><sg><ind>→lege
 "<legger>" REMOVE:default-legger ("legg" n m pl ind) ;	# keep legge<vblex><pres>→legg
-"<leid>" REMOVE:default-leigd ("leie" vblex pp) ;	# keep li<vblex><pret>→lei
+"<leid>" REMOVE:default-leigd ("leie" pp) ;	# keep li<vblex><pret>→lei
 "<leie>" REMOVE:default-leige ("leie" n f sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
 "<leie>" REMOVE:default-leige ("leie" n m sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
 "<leiren>" REMOVE:default-leira ("leire" n m sg def) ;	# keep leir<n><m><sg><def>→leiren
@@ -37708,7 +37708,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<løftet>" REMOVE:default-løftet ("løfte" n nt sg def) ;	# keep løfte<vblex><pret>→løfta
 "<løp>" REMOVE:default-laupte ("løpe" vblex pret) ;	# keep løp<n><nt><sg><ind>→løp løp<n><nt><pl><ind>→løp
 "<løslatt>" REMOVE:default-lauslate ("løslate" adj pp nt sg ind) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
-"<løslatt>" REMOVE:default-lauslate ("løslate" vblex pp) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
+"<løslatt>" REMOVE:default-lauslate ("løslate" pp) ;	# keep løslate<adj><pp><mf><sg><ind>→lauslaten
 "<løst>" REMOVE:default-laust ("løs" adj sint pst nt sg ind) ;	# keep løse<vblex><pp>→løyst
 "<materiale>" REMOVE:default-material ("materiale" n nt sg ind) ;	# keep material<adj><pst><un><pl><ind>→materiale material<adj><pst><un><sp><def>→materiale
 "<medlem>" REMOVE:default-medlem ("medlem" n nt pl ind) ;	# keep medlem<n><nt><sg><ind>→medlem
@@ -37734,7 +37734,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<overhodet>" REMOVE:default-overhovudet ("overhode" n nt sg def) ;	# keep overhodet<adv>→i det heile
 "<Overraskende>" REMOVE:default-Overraskende ("Overraskende" np cgguess) ;	# keep Overraskende<adj><pst><mf><sg><ind>→Overraskande Overraskende<adj><pst><nt><sg><ind>→Overraskande Overraskende<adj><pst><un><pl><ind>→Overraskande Overraskende<adj><pst><un><sp><def>→Overraskande
 "<pakket>" REMOVE:default-pakket ("pakk" n nt sg def) ;	# keep pakke<vblex><pret>→pakka pakke<vblex><pp>→pakka pakke<adj><pp><nt><sg><ind>→pakka pakke<adj><pp><mf><sg><ind>→pakka
-"<passet>" REMOVE:default-passa ("passe" vblex pp) ;	# keep pass<n><nt><sg><def>→passet
+"<passet>" REMOVE:default-passa ("passe" pp) ;	# keep pass<n><nt><sg><def>→passet
 "<planter>" REMOVE:default-plantar ("plante" vblex pres) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
 "<planter>" REMOVE:default-plantar ("planter" n m sg ind) ;	# keep plante<n><f><pl><ind>→planter plante<n><m><pl><ind>→planter
 "<plasser>" REMOVE:default-plasser ("plassere" vblex imp) ;	# keep plass<n><m><pl><ind>→plassar
@@ -37763,10 +37763,10 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<respektive>" REMOVE:default-respektive ("respektiv" adj pst un sp def) ;	# keep respektive<adv>→høvesvis
 "<revene>" REMOVE:default-reva ("rev" n nt pl def) ;	# keep rev<n><m><pl><def>→revane
 "<revet>" REMOVE:default-reva ("reve" adj pp nt sg ind) ;	# keep rive<adj><pp><nt><sg><ind>→rive rive<vblex><pp>→rive
-"<revet>" REMOVE:default-reva ("reve" vblex pp) ;	# keep rive<adj><pp><nt><sg><ind>→rive rive<vblex><pp>→rive
-"<rommet>" REMOVE:default-romma ("romme" vblex pp) ;	# keep rom<n><nt><sg><def>→rommet
+"<revet>" REMOVE:default-reva ("reve" pp) ;	# keep rive<adj><pp><nt><sg><ind>→rive rive<vblex><pp>→rive
+"<rommet>" REMOVE:default-romma ("romme" pp) ;	# keep rom<n><nt><sg><def>→rommet
 "<roser>" REMOVE:default-rosar ("ros" n m pl ind) ;	# keep rose<n><f><pl><ind>→roser rose<n><m><pl><ind>→roser
-"<rukket>" REMOVE:default-rukka ("rukke" vblex pp) ;	# keep rekke<vblex><pp>→rokke
+"<rukket>" REMOVE:default-rukka ("rukke" pp) ;	# keep rekke<vblex><pp>→rokke
 "<rykk>" REMOVE:default-rykk ("rykk" n m sg ind) ;	# keep rykk<n><m><pl><ind>→rykker
 "<rykk>" REMOVE:default-rykk ("rykk" n nt pl ind) ;	# keep rykk<n><m><pl><ind>→rykker
 "<rykk>" REMOVE:default-rykk ("rykk" n nt sg ind) ;	# keep rykk<n><m><pl><ind>→rykker
@@ -37805,7 +37805,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<skipet>" REMOVE:default-skipa ("skipe" vblex pret) ;	# keep skip<n><nt><sg><def>→skipet
 "<skjedd>" REMOVE:default-skjedd ("skje" adj pp mf sg ind) ;	# keep skje<adj><pp><pl>→skjedde
 "<skjedd>" REMOVE:default-skjedd ("skje" adj pp nt sg ind) ;	# keep skje<adj><pp><pl>→skjedde
-"<skjedd>" REMOVE:default-skjedd ("skje" vblex pp) ;	# keep skje<adj><pp><pl>→skjedde
+"<skjedd>" REMOVE:default-skjedd ("skje" pp) ;	# keep skje<adj><pp><pl>→skjedde
 "<skjell>" REMOVE:default-skjel ("skjell" n f sg ind) ;	# keep skjell<n><nt><sp>→skil
 "<skjell>" REMOVE:default-skjel ("skjell" n m sg ind) ;	# keep skjell<n><nt><sp>→skil
 "<skjell>" REMOVE:default-skjel ("skjell" n nt pl ind) ;	# keep skjell<n><nt><sp>→skil
@@ -37818,7 +37818,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<skrevet>" REMOVE:default-skriven ("skrive" adj pp mf sg ind) ;	# keep skrive<vblex><pp>→skrive skrive<adj><pp><nt><sg><ind>→skrive
 "<skriver>" REMOVE:default-skrivar ("skriver" n m sg ind) ;	# keep skrive<vblex><pres>→skriv
 "<skøyter>" REMOVE:default-skøytar ("skøyte" vblex pres) ;	# keep skøyte<n><f><pl><ind>→skøyter skøyte<n><m><pl><ind>→skøyter
-"<slaget>" REMOVE:default-slaga ("slage" vblex pp) ;	# keep slag<n><nt><sg><def>→slaget
+"<slaget>" REMOVE:default-slaga ("slage" pp) ;	# keep slag<n><nt><sg><def>→slaget
 "<sluppet>" REMOVE:default-sloppen ("sleppe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
 "<sluppet>" REMOVE:default-sloppen ("slippe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
 "<snakket>" REMOVE:default-snakket ("snakk" n nt sg def) ;	# keep snakke<vblex><pp>→snakka snakke<vblex><pret>→snakka snakke<adj><pp><mf><sg><ind>→snakka
@@ -37826,7 +37826,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<solgt>" REMOVE:default-seld ("selge" adj pp mf sg ind) ;	# keep selge<vblex><pp>→selt selge<adj><pp><nt><sg><ind>→selt
 "<sort>" REMOVE:default-sort ("sort" n m sg ind) ;	# keep sort<adj><sint><pst><mf><sg><ind>→svart sort<adj><sint><pst><nt><sg><ind>→svart
 "<spille>" REMOVE:default-spille ("spille" n mf sp) ;	# keep spille<vblex><inf>→spele
-"<sporet>" REMOVE:default-spora ("spore" vblex pp) ;	# keep spor<n><nt><sg><def>→sporet
+"<sporet>" REMOVE:default-spora ("spore" pp) ;	# keep spor<n><nt><sg><def>→sporet
 "<sporet>" REMOVE:default-spora ("spore" vblex pret) ;	# keep spor<n><nt><sg><def>→sporet
 "<sport>" REMOVE:default-sport ("sport" n m sg ind) ;	# keep spore<adj><pp><mf><sg><ind>→spora spore<adj><pp><nt><sg><ind>→spora
 "<statsrådene>" REMOVE:default-statsråda ("statsråd" n nt pl def) ;	# keep statsråd<n><m><pl><def>→statsrådane
@@ -37839,7 +37839,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<Sterkere>" REMOVE:default-Sterkere ("Sterkere" np cgguess) ;	# keep Sterk<adj><sint><comp><un><sp>→Sterkare
 "<sto>" REMOVE:default-sto ("sto" n nt pl ind) ;	# keep stå<vblex><pret>→stod
 "<sto>" REMOVE:default-sto ("sto" n nt sg ind) ;	# keep stå<vblex><pret>→stod
-"<stoffet>" REMOVE:default-stoffa ("stoffe" vblex pp) ;	# keep stoff<n><nt><sg><def>→stoffet
+"<stoffet>" REMOVE:default-stoffa ("stoffe" pp) ;	# keep stoff<n><nt><sg><def>→stoffet
 "<stolt>" REMOVE:default-stolte ("stole" adj pp pl) ;	# keep stolt<adj><sint><pst><nt><sg><ind>→stolt stolt<adj><sint><pst><mf><sg><ind>→stolt
 "<stoppet>" REMOVE:default-stoppet ("stopp" n nt sg def) ;	# keep stoppe<adj><pp><nt><sg><ind>→stoppa stoppe<vblex><pp>→stoppa stoppe<adj><pp><pl>→stoppa
 "<strider>" REMOVE:default-strider ("strid" n m pl ind) ;	# keep stride<vblex><pres>→strid
@@ -37859,13 +37859,13 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<syns>" REMOVE:default-syns ("syn" n nt sg ind gen) ;	# keep synes<vblex><pstv><pres>→synest
 "<såret>" REMOVE:default-såret ("sår" n nt sg def) ;	# keep såre<vblex><pret>→såra såre<vblex><pp>→såra såre<adj><pp><nt><sg><ind>→såra såre<adj><pp><mf><sg><ind>→såra
 "<søker>" REMOVE:default-søker ("søke" vblex pres) ;	# keep søker<n><m><sg><ind>→søkar
-"<søkt>" REMOVE:default-sokke ("søkke" vblex pp) ;	# keep søke<vblex><pp>→søkt
+"<søkt>" REMOVE:default-sokke ("søkke" pp) ;	# keep søke<vblex><pp>→søkt
 "<taklet>" REMOVE:default-takkelet ("takkel") ;	# keep takle<vblex><pret>→takla
 "<takker>" REMOVE:default-takker ("takk" n f pl ind) ;	# keep takke<vblex><pres>→takkar
 "<takker>" REMOVE:default-takker ("takk" n m pl ind) ;	# keep takke<vblex><pres>→takkar
 "<taler>" REMOVE:default ("tale") + n ;	# keep taler
 "<tall>" REMOVE:default-tall ("talle" vblex imp) ;	# keep tall<n><nt><sg><ind>→tal tall<n><nt><pl><ind>→tal
-"<tallet>" REMOVE:default-talla ("talle" vblex pp) ;	# keep tall<n><nt><sg><def>→talet
+"<tallet>" REMOVE:default-talla ("talle" pp) ;	# keep tall<n><nt><sg><def>→talet
 "<talte>" REMOVE:default-talde ("telle" vblex pret) ;	# keep tale<vblex><pret>→talte
 "<tang>" REMOVE:default-tang ("tang" n nt pl ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
 "<tang>" REMOVE:default-tang ("tang" n nt sg ind) ;	# keep tang<n><m><sg><ind>→tong tang<n><f><sg><ind>→tong
@@ -37879,7 +37879,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<tilhører>" REMOVE:default-tilhøyrar ("tilhører" n m sg ind) ;	# keep tilhøre<vblex><pres>→tilhøyrer
 "<Tilsett>" REMOVE:default-Tilset ("tilsette" vblex imp) ;	# keep Tilse<vblex><pp>→Tilsett
 "<tjener>" REMOVE:default-tenar ("tjener" n m sg ind) ;	# keep tjene<vblex><pres>→tener
-"<toget>" REMOVE:default-toga ("toge" vblex pp) ;	# keep tog<n><nt><sg><def>→toget
+"<toget>" REMOVE:default-toga ("toge" pp) ;	# keep tog<n><nt><sg><def>→toget
 "<Toget>" REMOVE:default-Toga ("toge" vblex pret) ;	# keep Tog<n><nt><sg><def>→Toget
 "<trakk>" REMOVE:default-trakk ("trakke" vblex imp) ;	# keep trekke<vblex><pret>→trekte
 "<trener>" REMOVE:default-trener ("trenere" vblex imp) ;	# keep trene<vblex><pres>→trenar trener<n><m><sg><ind>→trenar
@@ -37922,7 +37922,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adj pst un sp def) ;	# keep vedrørende<pr>→rundt
 "<vedrørende>" REMOVE:default-vedrørande ("vedrørende" adv) ;	# keep vedrørende<pr>→rundt
 "<veid>" REMOVE:default-vege ("veie" adj pp nt sg ind) ;	# keep veie<adj><pp><mf><sg><ind>→vegen
-"<veid>" REMOVE:default-vege ("veie" vblex pp) ;	# keep veie<adj><pp><mf><sg><ind>→vegen
+"<veid>" REMOVE:default-vege ("veie" pp) ;	# keep veie<adj><pp><mf><sg><ind>→vegen
 "<veier>" REMOVE:default-vegar ("vei" n m pl ind) ;	# keep veie<vblex><pres>→veg
 "<vekket>" REMOVE:default-vekte ("vekke" vblex pret) ;	# keep vekke<vblex><pp>→vekt vekke<adj><pp><nt><sg><ind>→vekt
 "<Velger>" REMOVE:default-Veljar ("velger" n m sg ind) ;	# keep Velge<vblex><pres>→Vel
@@ -37947,7 +37947,7 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 "<økt>" REMOVE:default-økt ("økt" n m sg ind) ;	# keep øke<vblex><pp>→auka øke<adj><pp><nt><sg><ind>→auka
 "<øst>" REMOVE:default-øst ("øse" adj pp mf sg ind) ;	# keep øst<pr>→aust
 "<øst>" REMOVE:default-øst ("øse" adj pp nt sg ind) ;	# keep øst<pr>→aust
-"<øst>" REMOVE:default-øst ("øse" vblex pp) ;	# keep øst<pr>→aust
+"<øst>" REMOVE:default-øst ("øse" pp) ;	# keep øst<pr>→aust
 "<trikkene>" REMOVE:default-trikkene ("trikk" nt) ;	# keep trikkene<n><m>→trikkane
 "<øyeblikk>" REMOVE:default-augneblinkar ("øyeblikk" n nt pl ind) ;	# keep øyeblikk<n><nt><sg><ind>→augneblink
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
