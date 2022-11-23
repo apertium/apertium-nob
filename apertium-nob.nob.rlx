@@ -12119,6 +12119,8 @@ REMOVE:tilbakekaller-leker ("lek") IF
 "<områder>" SELECT:ikkje-områr subst;
 "<området>" SELECT:ikkje-områdde subst;
 
+"<omkomne>" SELECT:ikkje-omkomme pst; # pp blir typisk feil her
+
 "<ølet>" SELECT:ølet subst;
 
 "<økt>" SELECT:økt-pris adj IF
