@@ -621,6 +621,7 @@ LIST subst/sp-pron = n (prn itg) ;
 LIST subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) ("gang" pl) n ;
 LIST subst/ub-adj = n (adj ind) (adj pprs) ;
 LIST sup = sup ;
+LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
 LIST tall = "1" (det qnt pl) ("en" det qnt) ("én" det qnt) ;
 LIST tall-fl = (det qnt pl) ;
 LIST tall-subst = "tusen" "trillion" "titusen" "mrd." "million" "milliard" "mill." "kvadrillion" "hundre" "halvmillion" "billion" "billiard" ;
@@ -5202,10 +5203,11 @@ SELECT:cm-som @xubj IF
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
 SELECT:et-antall-av-krigerne @xubj IF
-        (*-1 mengdeord BARRIER (*) - ("av") - pos)
+        (*-1 mengdeord BARRIER (*) - ("av") - pos - adj-nøyt-ub)
         ;
 # «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
 # «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
+# «Antallet internt fordrevne i verden var i 2018 det høyeste noen gang, med 41,3 millioner mennesker på flukt i eget land, ifølge en rapport fra Flyktninghjelpen.»
 
 SELECT:ønsker-saken-avgjort @xubj + &&ADJ_N_AGR IF
         (-1 ("ønske"))
@@ -5213,7 +5215,23 @@ SELECT:ønsker-saken-avgjort @xubj + &&ADJ_N_AGR IF
         (1 adj + &&ADJ_N_AGR)
         ;
 
+SELECT:100-er-blitt-drept @xubj + siffer IF
+        (0C det + qnt)
+        (1 ("være"))
+        (2 ("bli"))
+        ;
+# «Portforbud opphevet i Irak etter nesten 100 er blitt drept i uro.»
+
+SELECT:største-boten-noensinne-utstedt @xubj IF
+        (-1 sup)
+        (1 ("noensinne"))
+        (2 pp)
+        ;
+# «Amerikanske myndigheter vurderer å gi Facebook den største boten noensinne utstedt for manglende beskyttelse av brukeres data, skriver Washington Post.»
+
+
 REMOVE:not-xubj @xubj;
+
 
 CONSTRAINTS
 ## select ndomain
