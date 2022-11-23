@@ -205,6 +205,7 @@ LIST %øy% = "øy" ;
 LIST %øye% = "øye" ;
 LIST <adv> = <adv> "både" "enten" "hverken" "verken" ;
 LIST <pres-part> = pprs ;
+LIST @kon = @kon ;
 LIST @←adv = @←adv ;
 LIST @←det = @←det ;
 LIST @←p-utfyll = @←p-utfyll ;
@@ -3794,7 +3795,7 @@ MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst�
 
 #:1391
 MAP:1391 (@det→)   (n gen) IF
-	(1 prop)
+	(1 prop OR ukjent + storbokstav)
 ;
 #  " dagens Norge
 #  NOT 0 PROP: Norges Bondelag (velger heller Norges @SUBST→)"))
@@ -4146,7 +4147,8 @@ MAP:1303 (@adv)   ("kvart" n sg ind) IF
 
 
 #:1364
-MAP:n (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) OR (np) ;
+MAP:n (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) OR (np) OR ukjent ;
+# Merk: ukjende får ikkje med seg syntaks-taggane av cg-proc, men dei er tilgjengelege "internt" når denne fila køyrer
 
 
 #:1363
@@ -19314,6 +19316,23 @@ SELECT:har-tipset-dem @iv IF
         (0C n OR pp)
         (1C n + def OR n + pl OR akk)
         ;
+
+SELECT:Samatta-trengte-bare fv IF
+        (-1 @subj)
+        (0C fv OR pp)
+        (1 @adv)
+        (NEGATE *0 @fv BARRIER setn-gr)
+        ;
+# «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
+
+SELECT:båten-Andhøy-kjøpte fv IF
+        (-2C n + def)
+        (-1 @subj)
+        (-1C ukjent + storbokstav)
+        (0C @fv OR pp)
+        (NEGATE *1 @fv)
+        ;
+# «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
 
 SELECT:adverbialsubst adverbialsubst + @adv;
 
