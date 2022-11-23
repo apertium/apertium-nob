@@ -12254,6 +12254,11 @@ SELECT:og-et-begrenset-antall-er @subj IF
         (NEGATE *2C @subj)
         ;
 
+SELECT:måten-prøvene-ble-tatt-på @subj IF
+        (-1 ("måte"))
+        (0 n  LINK 0 def OR pl)
+        (*2 ("på") LINK *-1 @fv)
+        ;
 
 #CONSTRAINTS
 ## remove ndomain
