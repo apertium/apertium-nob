@@ -6854,7 +6854,8 @@ SELECT:1186 (@adv) IF
 
 
 #:1185
-SELECT:1185 (@adv) IF
+SELECT:blir-stadig-mistenkeliggjort (@adv) IF
+        (NOT 0 @iv)
 	(NOT 0 @subj)
 	(NOT 0 %selv%)
 	(*1 @iv LINK NOT -1 tegnsetting/parentes)
