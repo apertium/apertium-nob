@@ -2866,7 +2866,6 @@ MAP:1473 (@←det)   (det) IF
 #:6076
 MAP:6076 (@det→) (n gen) IF
 	(0 gen)
-	(NOT 0 subst-prop)
 	(1 subst)
 ;
 # den umoderne 1980-talls depperockpåkledningen
@@ -3692,7 +3691,7 @@ MAP:1399 (@subst→)   ("." sent clb remspc) IF
 
 
 #:1398
-MAP:1398 (@subst→)   (n) IF
+MAP:1398 (@subst→)   (n) OR (np) IF
 	(0 %kl%)
 	(1 klokkeslett)
 	(2 adverbialsubst)
@@ -3703,7 +3702,7 @@ MAP:1398 (@subst→)   (n) IF
 
 
 #:1397
-MAP:1397 (@subst→)   (n) IF
+MAP:1397 (@subst→)   (n) OR (np) IF
 	(0 %kl%)
 	(1 klokkeslett)
 	(NOT 2 adverbialsubst)
@@ -3713,7 +3712,7 @@ MAP:1397 (@subst→)   (n) IF
 
 
 #:1396
-MAP:1396 (@subst→)   (n) IF
+MAP:1396 (@subst→)   (n) OR (np) IF
 	(0 %kl%)
 	(1 %halv/kvart%-mask/fem)
 ;
@@ -3722,7 +3721,7 @@ MAP:1396 (@subst→)   (n) IF
 
 
 #:1395
-MAP:1395 (@s-pred @adv @←p-utfyll)   (n) IF
+MAP:1395 (@s-pred @adv @←p-utfyll)   (n) OR (np) IF
 	(NOT -1 %klokke/kl%)
 	(0 dato)
 	(NOT 0 ikke-tall)
@@ -3745,7 +3744,7 @@ MAP:1394 (@s-pred @adv @←p-utfyll)  ("." sent clb remspc) IF
 
 
 #:1393
-MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) IF
+MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) OR (np) IF
 	(-1 %klokke/kl%)
 	(0 klokkeslett)
 	(NOT 0 ikke-tall)
@@ -3756,7 +3755,7 @@ MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) IF
 
 
 #:1392
-MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(-1 subst)
 	(NOT -1 ikke-subst)
 	(-1 mengdeord)
@@ -3767,7 +3766,7 @@ MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst�
 
 
 #:6122
-MAP:6122 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:6122 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(*-1 mengdeord LINK NOT 0 ikke-subst LINK NOT 1 komma/konj)	
 	(*-1 mengdeord LINK NOT 0 ikke-subst LINK NOT *1 ikke-adj-adv)
 	(NOT -1 komma/konj)
@@ -3777,7 +3776,7 @@ MAP:6122 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst�
 ;
 
 #6126:
-MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(*-1 mengdeord LINK 0 subst-ub LINK NOT *1 ikke-adv-adj LINK 0 subst-ub LINK 1 komma/konj LINK NOT *1 ikke-adj-adv)
 	(0 subst-ub)
 	(NOT 0 ikke-subst)
@@ -3795,7 +3794,6 @@ MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst�
 
 #:1391
 MAP:1391 (@det→)   (n gen) IF
-	(NOT 0 prop)
 	(1 prop)
 ;
 #  " dagens Norge
@@ -3804,7 +3802,7 @@ MAP:1391 (@det→)   (n gen) IF
 
 
 #:1390
-MAP:1390 (@det→)   (n gen) IF
+MAP:1390 (@det→)   (n gen) OR (np gen) IF
 	(*1 subst-ub LINK NOT 0 prop LINK NOT 0 m#ikke-adj-subst LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
 #  " Pers (samme gamle) hatt
@@ -3817,7 +3815,7 @@ MAP:1390 (@det→)   (n gen) IF
 
 
 #:6012
-MAP:6012 (@det→) (n gen) IF
+MAP:6012 (@det→) (n gen) OR (np gen) IF
 	(-1 prep)
 	(NOT 0 farlige-subst-gen)
 	(1 subst)
@@ -3827,7 +3825,7 @@ MAP:6012 (@det→) (n gen) IF
 
 
 #:1389
-MAP:1389 (@det→)   (n gen) IF
+MAP:1389 (@det→)   (n gen) OR (np gen) IF
 	(1 anf)
 	(*2 anf BARRIER fv)
 	(*2 anf BARRIER m#setn-gr)
@@ -3841,7 +3839,7 @@ MAP:1389 (@det→)   (n gen) IF
 
 
 #:1388
-MAP:1388 (@det→)   (n gen) IF
+MAP:1388 (@det→)   (n gen) OR (np gen) IF
 	(1 konj)
 	(2 gen-subst)
 	(3 subst)
@@ -3854,7 +3852,7 @@ MAP:1388 (@det→)   (n gen) IF
 
 
 #:1387
-MAP:1387 (@det→)   (n gen) IF
+MAP:1387 (@det→)   (n gen) OR (np gen) IF
 	(1 m#komma)
 	(2 gen-subst)
 	(3 konj)
@@ -3869,7 +3867,7 @@ MAP:1387 (@det→)   (n gen) IF
 
 
 #:1386
-MAP:1386 (@det→)   (n gen) IF
+MAP:1386 (@det→)   (n gen) OR (np gen) IF
 	(1 m#adj)
 	(NOT 1 m#ikke-adj-subst)
 ;
@@ -3879,7 +3877,7 @@ MAP:1386 (@det→)   (n gen) IF
 
 
 #:1385
-MAP:1385 (@det→)   (n gen) IF
+MAP:1385 (@det→)   (n gen) OR (np gen) IF
 	(1C nr2det)
 ;
 #  " den var Pers egen"
@@ -3908,13 +3906,11 @@ MAP:1383 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @
 
 
 #:1382
-MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) IF
-	(0 subst-prop)
-;
+MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) ;
 
 
 #:1381
-MAP:1381 (@subst→)   (n) IF
+MAP:1381 (@subst→)   (n) OR (np) IF
 	(0 målsubst)
 	(-1 det/adj/tall-subst)
 	(1 subst/ub-adj)
@@ -3938,7 +3934,7 @@ MAP:1380 (@subst→)   (n) IF
 
 
 #:1379
-MAP:1379 (@subst→)   (n) IF
+MAP:1379 (@subst→)   (n) OR (np) IF
 	(0 tidssubst)
 	(1 gammel/lang)
 	(-1 tall/tall-subst)
@@ -3950,7 +3946,7 @@ MAP:1379 (@subst→)   (n) IF
 
 
 #:1378
-MAP:1378 (@subst→)   (n) IF
+MAP:1378 (@subst→)   (n) OR (np) IF
 	(0 tidsadvsubst-nr1)
 	(1 tidsadvsubst-nr2)
 	(NOT 1 be)
@@ -3995,7 +3991,7 @@ MAP:1375 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @l
 
 
 #:1374
-MAP:1374 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1374 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(NOT 0 adverbialsubst)
 	(*-1C verb LINK 0 %kalle% LINK NOT *1 m#setn-gr)
 ;
@@ -4036,7 +4032,7 @@ MAP:1371 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @l
 
 
 #:1370
-MAP:1370 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) IF
+MAP:1370 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(NOT 0 adverbialsubst)
 	(*1 m#setn-gr LINK *-1C verb LINK 0 %kalle%)
 ;
@@ -4083,7 +4079,7 @@ MAP:1366 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @l
 
 
 #:1365
-MAP:1365 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) IF
+MAP:1365 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @adv)   (n) OR (np) IF
 	(0 måned/høytid/årstid)
 	(1 tall)
 	(NOT 1 ikke-tall)
@@ -4150,8 +4146,7 @@ MAP:1303 (@adv)   ("kvart" n sg ind) IF
 
 
 #:1364
-MAP:n (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) IF
-;
+MAP:n (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np)   (n) OR (np) ;
 
 
 #:1363
