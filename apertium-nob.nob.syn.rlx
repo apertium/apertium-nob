@@ -5075,6 +5075,7 @@ CONSTRAINTS
 "<som>" SELECT:1250 (@adv) IF
 	(0 s#sbu)
 	(-1 @adv)
+        (NEGATE -1 itg)         # «hva som er skjedd»
 	(NOT -1 prep)
 ;
 #  " samtidig som han viser til...
