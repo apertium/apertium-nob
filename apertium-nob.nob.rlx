@@ -15322,11 +15322,6 @@ SELECT:er-med-noen-unge-og-til-dels-urutinerte-spillere adj + pl IF
         ;
 # «Hun sier at det er med noen unge og til dels urutinerte spillere.»
 
-SELECT:det-året-vi-har-lagt-bak-oss adj + nt + sg + ind IF
-        (-1 %ha%-pres/pret LINK -1C pron-nom LINK -1 n + nt + def)
-        ;
-# «– Jeg er ikke overrasket over det året vi har lagt bak oss.»
-
 SELECT:jeg-er-utrolig-TAKKNEMLIG adj + mf + sg + ind IF
         (*-1 %være/bli% BARRIER setn-gr OR pr OR pprs LINK -1 p1 + sg)
         (NOT 1 adj + mf + sg + ind)
@@ -37270,6 +37265,12 @@ SELECT:sg-after-første sg IF
         (0C n)
         ;
 
+SELECT:har-X-falt vblex + pp IF
+        (-2C %ha%-pres/pret)
+        (-1 ukjent)
+        (0 pp OR pret)
+        (NEGATE *1 pp)
+        ;
 
 SELECT:subject-per-clause nominativ IF
         (-1 fv)
@@ -37447,6 +37448,7 @@ SELECT:default ("<Graver>") + np ;
 SELECT:default ("toer") ;
 SELECT:default ("mark") ;       # not mark¹
 SELECT:default ("mark") + sg ;  # not pl
+SELECT:default ("blø") + vblex ;  # unngå «blødd» (er det nokon gong rett?)
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -37502,6 +37504,7 @@ REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 REMOVE:default ("hjem") + pl IF (0 sg); # unngå heimar
 REMOVE:default (".+hjem"r) + sg IF (0 pl) ; # men vanlegvis «fosterheimar»
 REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
+
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
