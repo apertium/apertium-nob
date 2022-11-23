@@ -5205,7 +5205,13 @@ SELECT:et-antall-av-krigerne @xubj IF
 # «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
 # «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
 
-REMOVE @xubj;
+SELECT:ønsker-saken-avgjort @xubj + &&ADJ_N_AGR IF
+        (-1 ("ønske"))
+        (0 n + def)
+        (1 adj + &&ADJ_N_AGR)
+        ;
+
+REMOVE:not-xubj @xubj;
 
 CONSTRAINTS
 ## select ndomain
