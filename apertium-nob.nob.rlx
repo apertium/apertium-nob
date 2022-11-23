@@ -10272,6 +10272,11 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
         (2 ("ung") OR ("unge"))
         ;
 
+"<barn>"i SELECT:barn pl IF
+        (NEGATE -1 adj + sg OR det + qnt + sg)
+        ;
+        # et barn, et bråkete barn
+
 "<blinkene>" REMOVE:blinkane nt IF
         (NEGATE -1 adj + def)
         ;
