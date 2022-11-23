@@ -13244,6 +13244,13 @@ SELECT:mange-av-dem-barn pl IF
         ;
 # «Minst ti sivile, flere av dem barn, skal ha blitt drept i et flyangrep mot et marked nord i Jemen.»
 
+SELECT:blant-dem-barn pl IF
+        (-2 ("blant"))
+        (-1 ("de") + acc)
+        (0C n + ind)
+        ;
+# «25 mennesker, blant dem barn, er drept i et angrep mot et sikh-tempel i Afghanistans hovedstad Kabul.»
+
 SELECT:de-så-løper-etter-løper-passere n IF
         (0 ("<(.*)>"r))
         (1 pr)
@@ -26337,6 +26344,14 @@ REMOVE:at-paret (adj pp) IF
 #  "skrev som en rasende"
 #      :group 58
 
+REMOVE:da-børsen-stengte-ble pp IF
+        (-3C setn-gr)
+        (-2 cnjsub LINK 0C cnjsub OR adv)
+        (-1C n + def)
+        (0C pp OR pret OR pres)
+        (1C fv)
+        ;
+# «Da børsen stengte ble et fat nordsjøolje omsatt for 65,92 dollar.»
 
 
 #:2232
@@ -31459,10 +31474,9 @@ REMOVE:mange-timer-kan vblex IF
         (NEGATE -1 prn + pers LINK -1 n + def) # «pengegavene de får skal»
 	(0 fv)
 	(1C pres/pret)
-	(NOT *-1 %som% BARRIER setn-gr)
+	(NEGATE *-1 cnjsub BARRIER setn-gr)
 ;
 #  "mange timer (ikke verb) kan ..."))
-
 
 
 #:1832
