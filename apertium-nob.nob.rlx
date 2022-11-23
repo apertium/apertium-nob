@@ -13615,6 +13615,7 @@ SELECT:ble-antent adj + pst IF
                 (2 ("<stikken>"))
 		;
 
+
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
 	(-2 %ha%-pres/pret)
@@ -32205,9 +32206,10 @@ SELECT ("mark¹") IF (1 ("i")) (2 ("mage"));
 ;
 
 "<funnet>" REMOVE:funnet-bevisstløs vblex IF
-        (1C adj + &&ADJ_N_AGR) # unification only happens once, so keep the fixed-distance one first
+        (1 adj + &&ADJ_N_AGR) # unification only happens once, so keep the fixed-distance one first
         (*-1 n + &&ADJ_N_AGR)
         (0 adj)
+        (1C adj OR pp)
         ;
 
 "<hende>" REMOVE:kan-det-hende adj OR n IF

@@ -11064,6 +11064,12 @@ SELECT:parentes-np (@laus-np) IF
 ;
 # «I tillegg ble en forretningsidé (eksklusive solbriller) brakt opp av et par av spillerne.»
 
+SELECT:tirsdag-funnet @adv IF
+        (*-1 @fv BARRIER ikke-adj-adv)
+        (0 tidsadvsubst-nr1)
+        (1 pp)
+        ;
+
 #:860
 SELECT:860 (@subj) IF
 	(NOT 0 @←p-utfyll)
