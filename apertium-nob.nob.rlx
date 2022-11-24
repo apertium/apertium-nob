@@ -10544,6 +10544,13 @@ REMOVE:data-not-datum ("datum");
 	(NEGATE *1 pres/pret BARRIER clb)
 ;
 
+
+
+#Hvitveisen -> Kvitveisen i setningsstart
+"<Hvitveisen>" REMOVE np IF (NEGATE -1 berre-litenbokstav);
+
+
+
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
 
 
