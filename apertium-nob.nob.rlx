@@ -37518,6 +37518,8 @@ REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 REMOVE:default ("hjem") + pl IF (0 sg); # unngå heimar
 REMOVE:default (".+hjem"r) + sg IF (0 pl) ; # men vanlegvis «fosterheimar»
 REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
+REMOVE:default (".+barn"r) + sg IF (0 pl) ; # «spedbarn» vanlegvis fleire barn viss umarkert
+REMOVE:default ("avvik"r) + sg IF (0 pl) ; # vanlegvis fleire viss umarkert
 
 
 # Corpus-based default rules:
