@@ -8655,29 +8655,29 @@ SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
 
 
 SELECT:det-nest-største ("<nest>") + adv IF
-		(1 adj + sup)
-		;
-		# det nest største
+        (1 adj + sup)
+        ;
+# det nest største
 
 SELECT:glatte-veier ("<veier>"i) + n IF
-		(-1 adj)
-		;
-		# glatte vegar
+        (-1 adj + pl + ind)
+        ;
+# glatte vegar
 
 SELECT:ha-slitt ("<slitt>"i) + vblex IF
-		(-1* ("ha" vblex) BARRIER setn-gr)
-		;
+        (-1* ("ha" vblex) BARRIER setn-gr)
+        ;
 
 SELECT:være-lei-av ("<lei>"i) + adj IF
-		(-1 %være/bli%)
-		(1 ("av"))
-		;
-		# vere lei av
+        (-1 %være/bli%)
+        (1 ("av"))
+        ;
+# vere lei av
 
 SELECT:strenge ("<strenge>"i) + adj IF
-		(NEGATE 1 ("opp"))
-		;
-		# strengje opp, elles strenge
+        (NEGATE 1 ("opp"))
+        ;
+# strengje opp, elles strenge
 
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
