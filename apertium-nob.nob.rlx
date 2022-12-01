@@ -3653,10 +3653,52 @@ SELECT:satt-pris-på ("sette")  IF
 SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
 		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
 		;
+                
+SELECT:eier-bygget ("<bygget>"i) + n IF
+		(-1 ("<eier>"i))
+		;
+
+"<eier>"i SELECT:han-som-eier-skipet vblex IF
+        (-1 %som%)
+        (1 n OR np)
+        ;
+                
+"<eier>"i SELECT:som-eier-er n IF
+        (1 vblex + pres OR vblex + pret)
+        ;
 
 SELECT:eier-av ("<eier>"i) + n IF
 		(1 %av%)
 		;
+       
+SELECT:som-eier-med ("<eier>"i) + n IF
+        (-1 %som%)
+	(1 prep)
+        (NEGATE -2 cm)
+	;
+        # Hegnar, som eier i underkant av ...
+
+"<eier>"i SELECT:som-eier-hytter vblex IF
+        (-1 %som%)
+        (1 n OR np)
+        ;
+
+"<eier>"i SELECT:personer-som-eier vblex IF
+        (-2 n OR prn OR cm)
+        (-1 %som%)
+        ;
+
+"<eier>"i SELECT:som-eier-en-hytte vblex IF
+        (-1 %som%)
+        (2 n)
+        ;
+        # en, to, slike, flere, mange osv.
+
+"<eier>"i SELECT:som-eier-en-slik-hytte vblex IF
+        (-1 %som%)
+        (3 n)
+        ;
+
 
 SELECT:i-kok ("<kok>"i) + nt IF
 		(-1 %i%)
@@ -9515,6 +9557,15 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("de"))
         ;
 # "alt de eier er..."
+"<eier>"i SELECT:ta-over-som-eier n IF
+        (-1 %som%)
+        (-2 %over%)
+        (-3 ("ta" vblex))
+        ;
+"<eier>"i SELECT:slutte-som-eier n IF
+        (-1 %som%)
+        (-2 vblex)
+        ;
 SELECT:sittet-varetektsfengslet pp IF
         (-1 ("sitte"))
         (0 (".*fengsle"ri))
