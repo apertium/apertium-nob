@@ -8397,6 +8397,11 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 "<trær>" SELECT:likely-tre n;
 
+"<øyene>" SELECT:blår-i-øyene nt IF
+        (-1 %i%)
+        ;
+        # kaste blår i øy(n)ene på, ha tårer i øy(n)ene
+
 
 #:3171
 #"<tusen>"   SELECT:3171 (det pl) IF
