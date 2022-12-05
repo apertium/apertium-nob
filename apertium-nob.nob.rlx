@@ -31795,6 +31795,12 @@ CONSTRAINTS
 	(*-1 m-hj-verb BARRIER perf-part)
 ;
 
+"<felles>" SELECT:blir-løsere-og-felles-når pasv IF
+        (-3 ("bli"))
+        (-2 adj)
+        (-1 cnjcoo)
+        ;
+
 "<fylket>" SELECT:unlikely-fylke n IF
         (NOT 1 ("hær"))
         (NOT 1 %seg%)
