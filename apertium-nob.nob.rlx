@@ -37583,6 +37583,8 @@ REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
 REMOVE:default (".+barn"r) + sg IF (0 pl) ; # «spedbarn» vanlegvis fleire barn viss umarkert
 REMOVE:default ("avvik"r) + sg IF (0 pl) ; # vanlegvis fleire viss umarkert
 
+REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
+
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
