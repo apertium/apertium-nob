@@ -8402,6 +8402,18 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         ;
         # kaste blår i øy(n)ene på, ha tårer i øy(n)ene
 
+"<tankene>"i SELECT:klare-tankene ("tanke") IF
+        (*-1 ("klare" vblex))
+        ;
+
+"<klar>"i SELECT:klar-over adj IF
+        (1 %over%)
+        ;
+
+"<over>"i SELECT:klar-over adv IF
+        (-1 ("klar" adj))
+        ;
+
 
 #:3171
 #"<tusen>"   SELECT:3171 (det pl) IF
