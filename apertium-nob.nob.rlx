@@ -969,6 +969,7 @@ LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 LIST bot-ord = ".*bot"r ".*regning"r ;
+LIST husdyr-ord = "ku" "gris" "sau" "slakt" "kylling" "høne" "kalv" ;
 LIST ernæring-ord = "glutenfri" "korn" "kolesterol" "salt" "jod" "diett" ("kost" m) "alkohol" "kjøtt" "grønnsak" "glukose" ;
 # /nanowordnet
 
@@ -13698,6 +13699,10 @@ SELECT:ble-antent adj + pst IF
 		(1 %i%)
                 (2 ("<stikken>"))
 		;
+
+"<lemmet>" SELECT:lem n
+        (NEGATE 0* husdyr-ord)
+        ;
 
 "<levnet>" SELECT:levnet-i-stikken adj + pp IF
 		(1 %i%)
