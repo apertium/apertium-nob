@@ -10624,7 +10624,16 @@ REMOVE:data-not-datum ("datum");
 "<Kilde>" REMOVE np IF
 (-1 >>>)
 (1 kolon)
+;
 
+
+#Remove finitt verb hvis er + pron i setningsstart.
+#Er du lærer: -> Er du lærar
+"<lærer>" REMOVE pres IF
+(-3 >>>)
+(-2 pres/pret)
+(-1 pron)
+;
 
 
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
