@@ -36762,6 +36762,10 @@ REMOVE:unlikely ("russ") + pl ;
 
 REMOVE:unlikely ("bok") + sg + ind + gen ;
 
+REMOVE:unlikely ("blei") + sg + def ;
+
+
+
 # LEX: nettene vs. netta
 LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" ;
 
