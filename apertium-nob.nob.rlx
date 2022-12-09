@@ -10620,6 +10620,12 @@ REMOVE:data-not-datum ("datum");
 "<Hvitveisen>" REMOVE np IF (NEGATE -1 berre-litenbokstav);
 
 
+#Kilde: -> Kjelde: i setningsstart
+"<Kilde>" REMOVE np IF
+(-1 >>>)
+(1 kolon)
+
+
 
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
 
