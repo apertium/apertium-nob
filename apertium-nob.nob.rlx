@@ -20968,6 +20968,12 @@ SELECT:findes-der expl IF
         (NEGATE 1 n + def)    # «det er det språket cellen bruker»
         ;
 
+SELECT:det-også-finnes expl IF
+        (-1 fv)
+        (*1 ("finnes") OR ("være") BARRIER ikke-adv)
+        ;
+# «Samtidig kan det også finnes betennelse i ryggmargen.»
+
 SELECT:Der-det-pga-X-er expl IF
         (-1 cnjsub OR adv)
         (1 %pga%)
@@ -21002,6 +21008,7 @@ SELECT:det-skal-kun expl IF
         (2 %bare/kun%)
         (3 ("få") OR ("liten") OR ("litt"))
         ;
+
 
 #:2607
 SELECT:jeg-så-den-cm-men pron-pers IF
