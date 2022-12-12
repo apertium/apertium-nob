@@ -5786,7 +5786,7 @@ SELECT:sløvande-middel ("middel") + nt IF
 
 "<noe>" SELECT:noe-mindre adv IF
         (NEGATE *-1 %ikke%)
-        (1 ("<mindre>") OR ("<mer>"))
+        (1 ("<mindre>") OR ("<mer>") OR ("<under>"))
         ;
 "<noe>" REMOVE:ikke-noe-mer adv ;
 "<Noe>" REMOVE:ikke-noe-mer adv ;
