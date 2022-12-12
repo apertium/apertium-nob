@@ -20964,7 +20964,8 @@ SELECT:Der-findes expl IF
 
 SELECT:findes-der expl IF
         (-1 ("finnes") OR ("være"))
-        (NEGATE 1 adj + def)    # det var det første objekt
+        (NEGATE 1 adj + def)    # «det var det første objekt»
+        (NEGATE 1 n + def)    # «det er det språket cellen bruker»
         ;
 
 SELECT:Der-det-pga-X-er expl IF
