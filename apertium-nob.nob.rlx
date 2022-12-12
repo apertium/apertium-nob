@@ -20467,6 +20467,7 @@ SELECT:2643 (pr) IF
 
 #:2651
 SELECT:til-andre-lands-forsvar-komma (pr) IF
+        (NEGATE -1 clb) # «problemer med bærekraft,    der    fattigdom, helseproblem og utnyttelse av arbeidskraft er …»
 	(0 sbu)
 	(NOT 0 %som%)
         (NOT 1 ikke-adv-adj-subst-det-prep)
