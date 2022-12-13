@@ -8415,6 +8415,14 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (-1 ("klar" adj))
         ;
 
+"<fjæra>"i SELECT:i-fjæra ("fjære" n) IF
+        (-1 %i% OR ("nedi"))
+        ;
+
+"<fjæren>"i SELECT:i-fjæra ("fjære" n) IF
+        (-1 %i% OR ("nedi"))
+        ;
+
 
 #:3171
 #"<tusen>"   SELECT:3171 (det pl) IF
