@@ -11442,6 +11442,12 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 	(0 imp)
 ;
 
+
+#Hesten spiser høy. Spiser du høy? -> høy (n), ikkje høg (adj).
+"<høy>" SELECT (n) IF (-1 ("spise")); 
+"<høy>" SELECT (n) IF (-2 ("spise")); 
+
+
 "<høy>" REMOVE:meter-høy n IF
         (NEGATE 0* ("korn") OR ("halm") OR (".*fôr"r) OR ("gras") OR ("gress") OR ("rundball"))
         ;
