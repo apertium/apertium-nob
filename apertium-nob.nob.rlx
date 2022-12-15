@@ -9607,6 +9607,20 @@ SELECT:sittet-varetektsfengslet pp IF
         (2 n)
         ;
 # "telt og mat"
+"<tør>"i SELECT:tør-opp ("tø") IF
+        (1 %opp%)
+        ;
+"<tør>"i SELECT:snøen-tør ("tø") IF
+        (-1 ("snø") OR ("is"))
+        ;
+# "isen tør"
+"<tør>"i SELECT:tør-om-våren ("tø") IF
+        (1 %om% OR %på% OR ("utpå"))
+        (2 ("<våren>"i) OR ("<sommeren>"i))
+        ;
+"<tør>"i REMOVE:unlikely ("tø") 
+        ;
+
 "<fly>"i REMOVE:flere-fly vblex IF
         (-1 ("mange"))
         ;
