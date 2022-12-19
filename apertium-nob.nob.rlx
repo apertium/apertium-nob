@@ -8154,6 +8154,9 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (1 setn-gr)
         ;
 
+"<såret>" SELECT:såret-til-å-gro n IF
+        (*0 ("gro"))
+        ;
 
 
 #:3199
@@ -13261,6 +13264,13 @@ SELECT:Den-siktede xgrau OR adj IF
 # sec 2
 CONSTRAINTS
 ## select ndomain
+
+SELECT:som-sår-som-ikke n IF
+        (-1 ("som"))
+        (1 ("som"))
+        (2C adv OR fv)
+        ;
+# «Kreft i munnslimhinnen kan også manifestere seg som sår som ikke vil gro,»
 
 SELECT:SUBST-sett-under-ett n IF
         (1 ("<sett>"))
