@@ -3187,6 +3187,12 @@ SELECT:den+prn ("den¹") IF
 # I går var (FV/PRESENT-V) det (pron)
 # (forts) grunn (UB) til ..."))
 
+"<det>" SELECT:kommer-det-raskt expl IF
+        (-1 fv OR cm)
+        (-1C fv OR nt + pl OR cm)
+        (1C ("<raskt>") OR adv OR %inn% OR ("<flere>") OR ("<mange>"))
+        ;
+
 #:5019
  "<dette>"   SELECT:5019   (vblex inf) IF
 	  (-1 hj-verb)
