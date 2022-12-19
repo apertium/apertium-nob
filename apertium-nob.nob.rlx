@@ -10616,10 +10616,11 @@ REMOVE:data-not-datum ("datum");
 #  "tar sjansen på at man ikke eller så mye ..."
 
 "<en>" SELECT:skulle-en-kanskje-tro ("man") IF
-        (-1 ("skulle"))
-        (*2 ("tro") BARRIER ikke-adv)
+        (-1 ("skulle") OR ("burde"))
+        (*1 ("tro") OR ("kunne") BARRIER ikke-adv)
         ;
 # «Med økt optimisme skulle en kanskje tro at spareviljen falt.»
+# «Før 3-månedersalderen bør en kunne oppnå god øyekontakt og smil.»
 
 
 #:3689
