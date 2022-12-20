@@ -4591,6 +4591,8 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 %så%)
         ;
 
+"<gyllen>" REMOVE:unlikely n;
+
 "<særlig>" SELECT:ventes-det-særlig adv IF
         (-2 ("<ventes>"))
         (-1 ("<det>"))
