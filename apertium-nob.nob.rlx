@@ -37677,6 +37677,7 @@ REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
 REMOVE:default ("ingen") + sg ;
 REMOVE:default ("mor") IF (0 ("morene")) ;
+REMOVE:default ("krave") IF (0 ("krav")) ;
 REMOVE:default ("tenner") IF (0 ("tann")) ;
 REMOVE:default ("tenne") IF (0 ("tann")) ;
 REMOVE:default ("kul") + pl ; # vanlegare at dette betyr "kule" (viss du har «kuler» er du uheldig!)
