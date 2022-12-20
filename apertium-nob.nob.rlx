@@ -580,7 +580,7 @@ LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
-LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" ;
+LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" "<jorda>"i "<bena>"i "<tanna>"i ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
@@ -588,7 +588,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" "samene" ;
 LIST farlige-mask-subst = "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
-LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" ;
+LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ("rolle" pres) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -5305,6 +5305,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 "<husket>" SELECT:default vblex
         ;
         # ikkje "et husk" -> "hugsen"
+
+"<jorda>" SELECT:i-jorda n IF
+        (-1 ("i"))
+        ;
 
 "<jordas>" SELECT:default n + f IF
         ;
@@ -10678,7 +10682,6 @@ REMOVE:data-not-datum ("datum");
 
 
 #mye mer enn (prep) trafikkregler for den enkelte kristne ...
-
 
 "<enn>" REMOVE:at-mye-annet-enn-klima-kan cnjsub IF
         (-3 %at%)
@@ -25551,6 +25554,10 @@ CONSTRAINTS
 #bad (adj) guy og andre engelske bad
 
 
+"<ende>" REMOVE:ende adv IF
+        (NEGATE 1 ("over") OR ("ned") OR ("opp") OR ("til")) # jf. ymse faste uttrykk
+        ;
+
 SELECT:vart-det-kjent adj + nt  IF
         (-2 %være/bli%)
         (-1 %det/dette%)
@@ -33067,6 +33074,7 @@ SELECT:titlecase-np np + titlecase IF
 SELECT:fredag-ventes-det expl IF
         (-2 vekedag OR adverbialsubst OR adv)
         (-1 pasv)
+        (NEGATE 1C adj + def LINK 1C n + nt + def) # «det osmotiske trykket»
         ;
 
 SELECT:Ifølge-tollvesenet-er-det-store-mørketall expl IF
@@ -37638,6 +37646,9 @@ SELECT:default ("toer") ;
 SELECT:default ("mark") ;       # not mark¹
 SELECT:default ("mark") + sg ;  # not pl
 SELECT:default ("blø") + vblex ;  # unngå «blødd» (er det nokon gong rett?)
+SELECT:default ("<bena>" "ben") ;
+SELECT:default ("<lukt>" "lukt") ;
+SELECT:default ("<tanna>" "tann") ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
@@ -37683,6 +37694,9 @@ REMOVE:default ("tenne") IF (0 ("tann")) ;
 REMOVE:default ("kul") + pl ; # vanlegare at dette betyr "kule" (viss du har «kuler» er du uheldig!)
 REMOVE:default ("dokk") IF (0 ("dekk")) ; # dekkene
 REMOVE:default ("dekke") + n IF (0 ("dekk")) ; # dekkene
+REMOVE:default ("flor") IF (0 ("flora")) ;
+REMOVE:default ("mask") IF (0 ("maske")) ;
+REMOVE:default adv + ("ende") ;
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 
 # TODO: generalisera over dette?
@@ -37698,6 +37712,7 @@ REMOVE:default (".+barn"r) + sg IF (0 pl) ; # «spedbarn» vanlegvis fleire barn
 REMOVE:default ("avvik"r) + sg IF (0 pl) ; # vanlegvis fleire viss umarkert
 
 REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
+REMOVE:default ("gir") + n IF (0 pres) ;
 
 
 # Corpus-based default rules:
