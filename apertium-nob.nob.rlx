@@ -4671,6 +4671,12 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 	(-1 subst OR setn-gr)
 ;
 
+"<grunnet>" SELECT:redusert-grunnet-en pr IF
+	(-1 adj + pp)
+	(1 det)
+        (2C adj OR n)
+;
+
 
 
 
@@ -11150,14 +11156,13 @@ REMOVE ("frø") IF
 
 
 #:3577
-  "<grunnet>"   REMOVE:3577   (pr) IF
+"<grunnet>"   REMOVE:3577 pr IF
 	(-1 subst)
 	(NOT 1 nom)
 ;
 
-
 #:3578
-  "<grunnet>"   REMOVE:3578   (pr) IF
+"<grunnet>"   REMOVE:3578 pr IF
 	(NOT -1 komma)
 	(NOT -1 subst)
 ;
@@ -37649,6 +37654,7 @@ SELECT:default ("blø") + vblex ;  # unngå «blødd» (er det nokon gong rett?)
 SELECT:default ("<bena>" "ben") ;
 SELECT:default ("<lukt>" "lukt") ;
 SELECT:default ("<tanna>" "tann") ;
+REMOVE:default ("<karet>" "kar") ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
