@@ -25559,6 +25559,12 @@ SELECT:offentlig-ansatte def IF
 #CONSTRAINTS
 ## remove ndomain
 
+REMOVE:lovkravene ("krave") IF
+        (0 ("krav"))
+        (0/1 cmp)
+        ;
+# Ingen treff som ser ut som kragar i ntb-korpus iallfall
+
 REMOVE:åtteseters ("seter") IF
         (0 gen)
         (0/1 cmp)
