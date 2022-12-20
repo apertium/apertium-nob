@@ -1711,12 +1711,12 @@ REMOVE:unlikely ("sin") + adv ;
 "<varetektsfengslet>" REMOVE:unlikely n IF
         (NEGATE -1 prep)
         ;
-        
+
 "<fengslet>" REMOVE:unlikely n IF
         (1 n)
         ;
         # fengslet uigur -> fengsla uigur
-        
+
 "<fengslet>" REMOVE:unlikely n IF
         (NEGATE -1 prep)
         ;
@@ -3662,7 +3662,7 @@ SELECT:satt-pris-på ("sette")  IF
 SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
 		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
 		;
-                
+
 SELECT:eier-bygget ("<bygget>"i) + n IF
 		(-1 ("<eier>"i))
 		;
@@ -3671,7 +3671,7 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
         (-1 %som%)
         (1 n OR np)
         ;
-                
+
 "<eier>"i SELECT:som-eier-er n IF
         (1 vblex + pres OR vblex + pret)
         ;
@@ -3679,7 +3679,7 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
 SELECT:eier-av ("<eier>"i) + n IF
 		(1 %av%)
 		;
-       
+
 SELECT:som-eier-med ("<eier>"i) + n IF
         (-1 %som%)
 	(1 prep)
@@ -4374,6 +4374,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 "<forene>" SELECT:forene-seg inf IF
         (1 %seg%)
+        ;
+
+"<fort>" SELECT:Beograd-fort n + sg IF
+        (-1C top)
+        (1 setn-gr OR fv)
         ;
 
 "<fortsatt>" SELECT (adv) IF
@@ -9629,7 +9634,7 @@ SELECT:sittet-varetektsfengslet pp IF
         (1 %om% OR %på% OR ("utpå"))
         (2 ("<våren>"i) OR ("<sommeren>"i))
         ;
-"<tør>"i REMOVE:unlikely ("tø") 
+"<tør>"i REMOVE:unlikely ("tø")
         ;
 
 "<fly>"i REMOVE:flere-fly vblex IF
@@ -9917,7 +9922,7 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<Løy>"i SELECT:Løy-du ("lyve") IF
         (1 pron)
         ;
-        
+
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
@@ -10882,9 +10887,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 
 
 #:3616
-  "<fort>"   REMOVE:3616   (n) IF
-	(NOT *-1 ub-nøyt-det)
-	(NOT -1 adj-fl)
+"<fort>" REMOVE:et-fort   (n) IF
+	(NEGATE *-1 ub-nøyt-det)
+	(NEGATE -1 adj-fl)
+        (NEGATE -1 top)         # «Beograd fort»
 ;
 #  "bare subst ved \"et stort fort\"
 # eller ved \"mange fort\""
@@ -11470,8 +11476,8 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 
 
 #Hesten spiser høy. Spiser du høy? -> høy (n), ikkje høg (adj).
-"<høy>" SELECT (n) IF (-1 ("spise")); 
-"<høy>" SELECT (n) IF (-2 ("spise")); 
+"<høy>" SELECT (n) IF (-1 ("spise"));
+"<høy>" SELECT (n) IF (-2 ("spise"));
 
 
 "<høy>" REMOVE:meter-høy n IF
@@ -13743,7 +13749,7 @@ SELECT:ble-antent adj + pst IF
 		(*-2 ("da"))
 		(NOT *-1 ("ha"))
 		;
-                
+
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
 		;
@@ -25542,6 +25548,7 @@ CONSTRAINTS
 ;
 #bad (adj) guy og andre engelske bad
 
+
 SELECT:vart-det-kjent adj + nt  IF
         (-2 %være/bli%)
         (-1 %det/dette%)
@@ -25564,6 +25571,12 @@ REMOVE:lovkravene ("krave") IF
         (0/1 cmp)
         ;
 # Ingen treff som ser ut som kragar i ntb-korpus iallfall
+
+REMOVE:lovkravene ("galler") IF
+        (0 ("galle"))
+        (0/1 cmp)
+        ;
+# Ingen treff som ser ut som gallarar i ntb-korpus iallfall
 
 REMOVE:åtteseters ("seter") IF
         (0 gen)
