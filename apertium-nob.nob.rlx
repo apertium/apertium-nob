@@ -9005,6 +9005,7 @@ REMOVE:unlikely SUB:* ("sel") IF (0/* ("selv")); # selv|eier|bolig vs |sel|veier
 REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
+REMOVE:unlikely ("ulne");
 REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 
