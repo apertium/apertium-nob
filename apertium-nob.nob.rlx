@@ -37655,6 +37655,7 @@ SELECT:default ("<bena>" "ben") ;
 SELECT:default ("<lukt>" "lukt") ;
 SELECT:default ("<tanna>" "tann") ;
 REMOVE:default ("<karet>" "kar") ;
+REMOVE:default ("<bakken>" "bakke") ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
