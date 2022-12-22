@@ -1905,6 +1905,13 @@ REMOVE:unlikely ("<ordet>"i "orde"); # more likely noun
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 REMOVE:unlikely ("<lysene>"i "lyse"); # more likely lys
 REMOVE:unlikely ("id") IF (0 ("side")); # eiersiden
+REMOVE:unlikely ("<stykka>"i vblex) IF (NEGATE 1 %opp% OR %ut%); # fordele stykka / stykka opp
+REMOVE:unlikely ("<stykka>"i adj) IF (NEGATE 1 %opp% OR %ut%);
+REMOVE:unlikely ("<stykke>"i n) IF (-1 ("å"));
+REMOVE:unlikely ("stykke" n) IF (-1 modalverb) (1 %opp% OR %ut%); # eiendommen skal stykkes opp
+REMOVE:unlikely ("<stykker>"i vblex) IF (-1 qnt); # tre stykker, 103 stykker
+REMOVE:unlikely ("stykke" vblex) IF (0* vblex); # de som har laget stykket, stykket er
+REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykket er
 
 SELECT:er-oppløftet adj IF
 		(-1* %være/bli%)
