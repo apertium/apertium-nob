@@ -1531,6 +1531,11 @@ REMOVE:Brannmannskap-har cgguess IF
         (1C fv)
         ;
 
+SELECT:ringe-113 vblex IF
+        (1 det + qnt)
+        (0 ("<ringe>"i))         # Folk bes ringe 02800.
+        ;
+
 REMOVE:VM-renn SUB:1 cgguess IF (0/1 (*) - cgguess) ;
 REMOVE:VM-renn SUB:2 cgguess IF (0/1 (*) - cgguess) ;
 REMOVE:VM-renn SUB:3 cgguess IF (0/1 (*) - cgguess) ;
@@ -1674,6 +1679,7 @@ REMOVE:unlikely ("lokal") + m IF (0 ("lokale")) (0/1 cmp) ;
 REMOVE:unlikely ("jens") + def ;
 REMOVE:unlikely ("ringer") IF (0 ("ring")) (0/1 cmp) ;
 REMOVE:unlikely ("ringe") IF (0 ("ring")) (0/1 cmp) ;
+REMOVE:unlikely ("ring" adj) IF (0 ("<ringe>"i)) (NEGATE -1 vblex OR ("den"));
 REMOVE:unlikely ("gode") + mORf ;
 REMOVE:unlikely ("yrke") + mORf ;
 REMOVE:unlikely ("skjelv") + m ;
