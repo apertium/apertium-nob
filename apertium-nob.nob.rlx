@@ -37884,6 +37884,7 @@ REMOVE:default ("gir") + n IF (0 pres) ;
 "<Hel>" REMOVE:default-heil n OR np ;
 "<hel>" REMOVE:default-heil n OR np ;
 "<helgen>" REMOVE:default-helgen ("helgen" n m sg ind) ;	# keep helg<n><m><sg><def>→helga
+"<henger>" REMOVE:default-henger ("henger" n m sg ind) ;	# keep henge<vblex><pres>
 "<henger>" REMOVE:default-henger ("henge¹" vblex pres) ;	# keep henge<vblex><pres>→heng
 "<hindre>" REMOVE:default-hinder ("hinder" n nt pl ind) ;	# keep hindre<vblex><inf>→hindre
 "<hindret>" REMOVE:default-hinderet ("hinder" n nt sg def) ;	# keep hindre<vblex><pret>→hindra hindre<vblex><pp>→hindra
