@@ -9566,10 +9566,22 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 pr)
         ;
 # "Nicolaidis/Carracher tok kommandoen og rykket ifra"
-"<følger>"i SELECT:fatale-følger ("følge") IF
-        (-1 ("<fatale>"))
+"<følger>"i SELECT:få-følger ("følge" n + m) IF
+        (0* ("få" vblex))
         ;
 # "det kan få fatale følger"
+"<følger>"i SELECT:følger-for ("følge" n + m) IF
+        (1 ("for"))
+        ;
+"<følger>"i SELECT:følger-loven ("følge" vblex) IF
+        (1 n OR np OR %med% OR %opp%)
+        ;
+"<følger>"i SELECT:få-følger ("følge") IF
+        (0* ("få" vblex))
+        ;
+"<følger>"i REMOVE:unlikely ("følger" n + m) 
+        ;
+# sjeldan ub eint
 "<øyeblikk>"i SELECT:riktig-øyeblikk sg IF
         (-1 ("<riktig>"))
         ;
