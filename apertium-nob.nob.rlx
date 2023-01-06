@@ -6219,6 +6219,8 @@ LIST regn_vann = ("regn" n) ;
 LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" "på"; # regnet som uteble, regnet utover mandag, regnet fra vest
 LIST regn-verb = "komme" "falle" "hølje" "se";
 
+REMOVE:regne¹-imp regne_vann + imp ; # IF NOT "hyadene" OR "Frøy"
+
 "<regnet>" SELECT:kommer-regnet regn_vann IF
         (-1 regn-verb)
         (-1C vblex)
@@ -9568,11 +9570,11 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 pr)
         ;
 # "Nicolaidis/Carracher tok kommandoen og rykket ifra"
-"<følger>"i SELECT:få-følger ("følge" n + m) IF
+"<følger>"i SELECT:få-følger ("følge") + n + m IF
         (0* ("få" vblex))
         ;
 # "det kan få fatale følger"
-"<følger>"i SELECT:følger-for ("følge" n + m) IF
+"<følger>"i SELECT:følger-for ("følge") + n + m IF
         (1 ("for"))
         ;
 "<følger>"i SELECT:følger-loven ("følge" vblex) IF
@@ -9581,7 +9583,7 @@ REMOVE:terrorstemplet ("stempel") IF
 "<følger>"i SELECT:få-følger ("følge") IF
         (0* ("få" vblex))
         ;
-"<følger>"i REMOVE:unlikely ("følger" n + m) 
+"<følger>"i REMOVE:unlikely ("følger") + n + m
         ;
 # sjeldan ub eint
 "<øyeblikk>"i SELECT:riktig-øyeblikk sg IF
