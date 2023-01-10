@@ -38065,6 +38065,7 @@ REMOVE:default ("gir") + n IF (0 pres) ;
 "<saken>" REMOVE:default-saken ("sake" n m sg def) ;	# keep sak<n><m><sg><def>→saka
 "<samarbeider>" REMOVE:default-samarbeide ("samarbeide" n nt pl ind) ;	# keep samarbeid<n><nt><pl><ind>→samarbeid
 "<samarbeidet>" REMOVE:default-samarbeidde ("samarbeide" vblex pret) ;	# keep samarbeid<n><nt><sg><def>→samarbeidet samarbeide<n><nt><sg><def>→samarbeidet
+"<hjelpearbeider>" REMOVE:default-hjelpearbeide ("hjelpearbeider" n nt pl ind) ;	# keep hjelpearbeider<n><m><sg><ind>→hjelpearbeider
 "<samtaler>" REMOVE:default-samtaler ("samtale" vblex pres) ;	# keep samtale<n><m><pl><ind>→samtalar
 "<satt>" REMOVE:default-sat ("sitte" vblex pret) ;	# keep sette<vblex><pp>→sett
 "<selger>" REMOVE:default-seljar ("selger" n m sg ind) ;	# keep selge<vblex><pres>→sel
