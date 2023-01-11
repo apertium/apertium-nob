@@ -35928,6 +35928,9 @@ REMOVE:noen-hundre neg OR sg IF
         (1 %hundre/tusen/osv%)
         ;
 
+REMOVE:noen-mil neg OR sg IF
+	(1 målsubst)
+;
 SELECT:noen-d   <noen> + det + neg IF
 	(0C det-kvant + fl)
 	(*-1 %ikke% BARRIER setn-gr)
