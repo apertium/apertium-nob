@@ -35866,6 +35866,12 @@ SELECT:Mens-noen-presist-følgte <noen> + pl IF
 REMOVE:noen-års-tid <noen> + mask/fem/mf IF
 	(1C nøyt)
 ;
+
+SELECT:verb-noen-en prn + neg IF
+	(-1 vblex)
+	(0 ("noe"))
+	(1 ("en"))
+;
 REMOVE:noen-betydning <noen> + pl IF
 	(1C sg)
 ;
