@@ -37477,6 +37477,13 @@ SELECT:De-eldre-drikker-oftere fv IF
         ;
 # «De fagorganiserte streiker for at»
 
+SELECT:Prest-knivstukket adj IF
+        (-2 >>>)
+        (-1C n OR np)
+        (0C pp)
+        ;
+# «Prest knivstukket i kirke i Canada.»
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:alle-kommunens-idrettslag pl IF
@@ -38394,6 +38401,11 @@ MAP:norske-torg-og-møteplasser (@nkon) %og/eller% IF
         (1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
 ;
 # «De neste ukene fylles norske torg og møteplasser opp med lokalpolitikere på velgerjakt»
+
+#### /@nkon
+
+
+### Compound-parts
 
 SELECT:Nordøst-London SUB:1 n IF
         (0/1 ("nordøst") or ("sørøst"))
