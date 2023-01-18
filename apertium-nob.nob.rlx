@@ -28830,14 +28830,22 @@ REMOVE:imp+fv (imp) IF
 
 
 
-#:2056
- REMOVE:2056 (prn acc) IF
+REMOVE:Det-blir-han-bøtelagt-for nominativ IF
+	(-1C setn-gr/parentes-beg)
+	(0 %det% + acc)
+	(1 kop-fv)
+        (2 prn + nominativ)
+        (3 pp)
+        ;
+# «Det blir han bøtelagt for, ifølge internasjonale medier som   BBC .»
+# (overstyr neste regel)
+
+REMOVE:nom-ikkje-akk (prn acc) IF
+	(-1C setn-gr/parentes-beg)
 	(0 pron-nom/%seg%)
 	(1 kop-fv)
-	(-1C setn-gr/parentes-beg)
 ;
 #  "så dere (nom) blir ikke ført bort"
-#      :group 62
 
 
 
