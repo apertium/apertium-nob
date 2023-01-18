@@ -32523,6 +32523,14 @@ SELECT ("mark¹") IF (1 ("i")) (2 ("mage"));
         (1 ("inn") OR ("inn til"))
         ;
 
+"<klager>" REMOVE:klager-over n IF
+        (NEGATE -1 vblex)
+        (1 %over%)
+        ;
+# «Han hevder også at FIFA har gitt uriktige opplysninger om hans pensjon og klager   over at FIFA ikke har levert tilbake hans private eiendeler som ble konfiskert da han ble suspendert.»
+# Unntak:
+# «Vi har blant annet fått klager   over avslag på innsyn»
+# «UNE er et domstolslignende organ som behandler klager   over Utlendingsdirektoratets (UDI) vedtak.»
 
 "<laget>" REMOVE:vi-har-laget n IF
         (-2C nominativ OR infmerke)
