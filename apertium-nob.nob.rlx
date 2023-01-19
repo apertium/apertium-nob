@@ -22449,6 +22449,13 @@ SELECT:varslet-både vblex IF
 ;
 #  "så å si ikkeeksisterende"
 
+SELECT:er-fransk adj IF
+        (-2 %som% OR prn OR n)
+        (-1 %være%)
+        (0 språk)               # ev. nasjonalitet
+        (0C n OR adj)
+        ;
+
 SELECT:den-selvstyrte-demokratiske-øya adj + sp + def IF
         (-3 be-det + $$NUMBER)
         (-2 adj + sp + def)
