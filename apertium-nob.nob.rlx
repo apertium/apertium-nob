@@ -29272,6 +29272,12 @@ REMOVE:før-min-tid (cnjsub) IF
 #  "røde (ikke subst ent) og hvite petunia"
 #      :group 64
 
+REMOVE:former-for-PL ent-subst IF
+        (-2 ("form") + pl + ind OR ("type") + pl + ind)
+        (-1 %for% OR %av%)
+        (0C n)
+        (0 pl)
+        ;
 
 
 #:2025
