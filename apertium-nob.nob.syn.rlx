@@ -6658,6 +6658,14 @@ SELECT:1205 (@adv) IF
 #  "7.10.2003: fredag kveld"))
 
 
+SELECT:siste-ukene (@adv) IF
+        (-2 ("den"))
+        (-1 ("sist"))
+	(0 adverbialsubst + def)
+;
+# «En våpenhvile som ble forhandlet fram mellom Israel og Hamas i mai, har de siste ukene blitt brutt stadig oftere.»
+
+
 
 #:1204
 SELECT:1204 (@adv) IF
