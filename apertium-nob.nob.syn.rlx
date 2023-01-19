@@ -5224,6 +5224,14 @@ SELECT:100-er-blitt-drept @xubj + siffer IF
         ;
 # «Portforbud opphevet i Irak etter nesten 100 er blitt drept i uro.»
 
+SELECT:100-er-omkomne @xubj + siffer IF
+        (0C det + qnt)
+        (1 ("være"))
+        (2 pp)
+        (3 setn-gr OR pr)
+        ;
+# «En offentlig kringkaster oppgir at rundt 30 er omkommet, et anslag som nyhetsbyrået AFP får bekreftet av en lokal tjenestemann.»
+
 SELECT:største-boten-noensinne-utstedt @xubj IF
         (-1 sup)
         (1 ("noensinne"))
