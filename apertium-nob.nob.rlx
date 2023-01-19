@@ -7895,7 +7895,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 
 #:3227
-  "<så>"   SELECT:3227   (adv) IF
+"<så>"   SELECT:så-er-det-vel   (adv) IF
 	(1C fv)
 ;
 #  "så er det vel"
@@ -8005,6 +8005,14 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "Pass deg så du ikke blir våt!"
 
+
+"<så>" SELECT:om-vi-så-skulle (adv) IF
+        (-2 cnjsub)
+        (-1 nominativ)
+	(1 m-hj-verb-fv)
+	(*2 perf-part BARRIER setn-gr)
+;
+# «Om vi så skulle levd i et diktatur, og jeg hadde risikert dødsstraff! sier Arne Viste til Vårt Land.»
 
 
 #:3214
@@ -25414,6 +25422,7 @@ SELECT:Ingen-er-pågrepet-eller-mistenkt adj IF
         (2 $$ADJ_N_AGR)
         ;
 # «Ingen er så langt pågrepet eller mistenkt, men operasjonslederen forteller at de jobber opp mot spesielle miljøer.»
+
 
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
