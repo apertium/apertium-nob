@@ -3366,43 +3366,43 @@ SELECT:den+prn ("den¹") IF
         ;
 
 "<drept>" SELECT:de-som-er-drept adj + pl IF
-		(-3 pl OR talord-pl OR siffer)
+        (-3 pl OR talord-pl OR siffer)
         (-2 %som%)
-		(-1 %være/bli%)
+        (-1 %være/bli%)
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + mf IF
-		(-3 m OR f)
+        (-3 m OR f)
         (-2 ("skutt") OR ("påkjørt"))
-		(-1 %og%)
+        (-1 %og%)
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + nt IF
-		(-3 nt)
+	(-3 nt)
         (-2 ("skutt") OR ("påkjørt"))
-		(-1 %og%)
+	(-1 %og%)
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + pl IF
-		(-3 pl)
+        (-3 pl)
         (-2 ("skutt") OR ("påkjørt"))
-		(-1 %og%)
+        (-1 %og%)
         ;
 
 "<drept>" SELECT:er-drept adj + mf + sg IF
         (-1 %være/bli%)
         (-2* n + m + sg OR n + f + sg BARRIER setn-gr)
-		;
+        ;
 
 "<drept>" SELECT:er-drept adj + nt + sg IF
         (-1 %være/bli%)
         (-2* n + nt + sg BARRIER setn-gr)
-		;
+        ;
 
 "<drept>" SELECT:kvinne-drept-av adj + mf + sg IF
         (1 %av%)
         (-1 n + m + sg OR n + f + sg)
-		;
+        ;
 
 "<drept>" SELECT:dyr-drept-av adj + mf + sg IF
         (1 %av%)
@@ -9252,6 +9252,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<begrepet>"i REMOVE:oppfant-begrepet ("begripe") IF
         (-1 ("oppfinne"))
         ;
+"<Begrepet>" REMOVE:begrepet-X-er ("begripe") IF
+        (1 n OR fork/ukjent-ord)
+        (2 kop-fv)
+        ;
 "<fattet>"i SELECT:beslutningen-om-dette-fattet-av pp + mf IF
         (-3 n + m OR n + f)
         (-2 ("om"))
@@ -14062,6 +14066,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         (NEGATE -1 målsubst)
+        (0* sg LINK 0 n OR prn OR det)
         ;
 
 SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
@@ -37157,10 +37162,17 @@ SELECT:den-mest-betydningsfulle sp + def IF
         (0C adj + pst)
         ;
 
+SELECT:Ansatt sg IF
+        (-1 >>>)
+        (0 (".*ansatt"ri))
+        (1 pp OR fv)
+        ;
+
 SELECT:ansatte-fl fl IF
         (0 ("ansatt"i))
-        (NOT -1C det + sg)
-        (NOT -1 det + def OR adj + def)
+        (NEGATE -1C det + sg)
+        (NEGATE -1 det + def OR adj + def)
+        (NEGATE 0 sg LINK -1 >>>) # Ansatt dømt for forbrytelser
         ;
 
 SELECT:ansatte-def def IF
@@ -37680,6 +37692,11 @@ REMOVE:vindus- gen IF
         ;
 # «vindus- og bilkollisjoner»
 
+REMOVE:no-possible-objects adj + pp IF
+        (0 vblex)
+        (NEGATE 0* det OR n OR np)
+        ;
+# «Aldri skjedd før.»
 
 # See nob-nno.t3x <def-list n="n_needs_det"> – we insert determiners
 # before these if transfer changes them from ind to def. So
