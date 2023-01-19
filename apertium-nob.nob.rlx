@@ -9188,6 +9188,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<Savnet>" REMOVE:Sakna-mann n IF
         (1 n)
         ;
+"<Savnet>" REMOVE:Sakna-mann-funnen pret IF
+        (1C n)
+        (2 pp)
+        ;
 "<tapene>"i REMOVE:tapene ("tape") IF
         (0 ("tape") OR ("tap"))
         ;
@@ -24824,7 +24828,6 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(*-1 fv CBARRIER setn-gr)
 ;
 #  "Det er slik det er, sa hun"
-
 
 
 #:2380
