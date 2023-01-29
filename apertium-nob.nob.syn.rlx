@@ -5173,8 +5173,8 @@ CONSTRAINTS
 
 #CONSTRAINTS
 ## select relative and subclause subjects
-# We tag subjects of relative sentences with @subj, even though
-# they function as @←p-utfyll to the main clause.
+# We tag subjects of relative sentences as "subjects" (with the @xubj
+# tag), even though they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
 
 SELECT:ellipsrel-tatt @xubj IF
@@ -19303,6 +19303,13 @@ REMOVE:Den-tildeles-utøvere @subj IF
         (0 @obj)
         ;
 # «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+
+REMOVE:vi-er-glade-for (@subj)
+        (-2C @subj + &&ADJ_N_AGR)
+        (-1 kop)
+        (0 adj + &&ADJ_N_AGR)
+        ;
+# «– Vi er glade for at innspillingen av filmen med foreløpig tittel B25, er vurdert lagt til Norge.»
 
 
 REMOVE:han-fra-alle adv IF
