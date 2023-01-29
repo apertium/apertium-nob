@@ -2223,21 +2223,28 @@ SELECT:restriktive-tiltak pl IF
 	(-1 %antas% OR ("skyldes"))
 ;
 
-"<at>" SELECT:førte-til-at sbu IF
+"<at>" SELECT:førte-til-at clb IF
 	(-2 %føre%)
         (-1 %til%)
 ;
 
-"<at>" SELECT:etter-at sbu IF
+"<at>" SELECT:etter-at clb IF
         (-1 %etter%)
         (1 nominativ OR expl)
 ;
 
-"<at>" SELECT:sa-X-at cnjsub IF
+"<at>" SELECT:sa-X-at clb IF
         (*-1 sier-verb BARRIER ikke-subst)
         (1 nominativ OR subst)
 ;
 # «I pausen sa AaFK-trener Lars Bohinen at de var nødt til å angripe kampen.»
+
+"<at>" SELECT:for-at clb IF
+        (-1 %for%)
+        ;
+# nob-nno 3b88ee453ee65f1f1a4742c06898917439ec86e3 removed it from
+# bidix as single token so we can transform «bevis for» without
+# worrying about following «at» – but «at» is still a clb there
 
 "<laget>" REMOVE:fikk-laget pret IF
         (-1C fv)
