@@ -2246,6 +2246,15 @@ SELECT:restriktive-tiltak pl IF
 # bidix as single token so we can transform «bevis for» without
 # worrying about following «at» – but «at» is still a clb there
 
+"<at>" SELECT:ble-kjent-at clb IF
+        (*-2 ("bli") BARRIER ikke-subst-adj-det-pron-adv)
+        (-1 ("<kjent>"))
+        ;
+
+"<at>" SELECT:opplyser-at clb IF
+        (-1 ("opplyse") + fv)
+        ;
+
 "<laget>" REMOVE:fikk-laget pret IF
         (-1C fv)
         ;
@@ -33718,7 +33727,7 @@ SELECT:og-det-er (clb cnjcoo) IF
 
 
 #:1783
- SELECT:1783 (clb) IF
+SELECT:fv-cm-fv (clb) IF
 	(0 komma)
 	(*1O setn-gr LINK **-1C pres/pret LINK NOT -1 nom)
 	(*-1 pres/pret CBARRIER setn-gr)
