@@ -5170,6 +5170,10 @@ CONSTRAINTS
 #  det ikke finnes noe \"som\" med @S-PRED tidligere i setningen."))
 
 
+"<valget>" REMOVE @subj IF
+        (NEGATE -1 pasv)
+        (-1 ("vinne"))
+        ;
 
 #CONSTRAINTS
 ## select relative and subclause subjects

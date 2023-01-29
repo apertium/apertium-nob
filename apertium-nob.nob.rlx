@@ -6450,6 +6450,16 @@ SELECT:glimre-med ("glimre" vblex) IF
         (1 %med%)
         ;
         # "glimre med sitt fråvær"
+
+
+
+"<reiser>" SELECT:karentene-og-reiser n IF
+        (-2 ("karantene") OR ("flyging") OR ("flyvning") OR ("opphold"))
+        (-1 %og/eller%)
+        (NOT -1C clb)
+        ;
+
+
 "<rent>" SELECT:rent-flertall adj IF
 	(1 ("flertall"))
         ;
@@ -9052,6 +9062,7 @@ REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
 REMOVE:unlikely ("ulne");
+REMOVE:unlikely ("reis") IF (0 ("reise"));
 REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 REMOVE:unlikely (".*hjelp"r) IF (0 (".*hjelper"r)); # ein hjelpar usannsynleg fleirtal
