@@ -2219,8 +2219,8 @@ SELECT:restriktive-tiltak pl IF
         (-1 adj + pl)
         ;
 
-"<at>" SELECT:antas-at sbu IF
-	(-1 %antas% OR ("skyldes"))
+"<at>" SELECT:antas-at clb IF
+	(-1 %antas% OR ("skyldes") OR ("bekrefte") OR ("opplyse"))
 ;
 
 "<at>" SELECT:førte-til-at clb IF
@@ -2249,10 +2249,6 @@ SELECT:restriktive-tiltak pl IF
 "<at>" SELECT:ble-kjent-at clb IF
         (*-2 ("bli") BARRIER ikke-subst-adj-det-pron-adv)
         (-1 ("<kjent>"))
-        ;
-
-"<at>" SELECT:opplyser-at clb IF
-        (-1 ("opplyse") + fv)
         ;
 
 "<laget>" REMOVE:fikk-laget pret IF
