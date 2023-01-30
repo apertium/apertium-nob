@@ -19315,6 +19315,16 @@ REMOVE:vi-er-glade-for (@subj)
         ;
 # «– Vi er glade for at innspillingen av filmen med foreløpig tittel B25, er vurdert lagt til Norge.»
 
+REMOVE:dette-er-gode-nyheter (@subj)
+        (-5 setn-gr)
+        (-4 ("<Dette>") OR expl OR @subj + &&ADJ_N_AGR)
+        (-3 kop)
+        (-2 adv)
+        (-1 adj + &&ADJ_N_AGR)
+        (0 n + &&ADJ_N_AGR)
+        ;
+# «– Dette er svært gledelige nyheter og gjør meg stolt på vegne av norsk leverandørindustri! sier Høyres petroleumspolitiske talskvinne Tina Bru i en pressemelding.»
+
 
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
