@@ -19325,6 +19325,23 @@ REMOVE:dette-er-gode-nyheter (@subj)
         ;
 # «– Dette er svært gledelige nyheter og gjør meg stolt på vegne av norsk leverandørindustri! sier Høyres petroleumspolitiske talskvinne Tina Bru i en pressemelding.»
 
+REMOVE:som-omfatter-x-Y-og-z (@subj) IF
+        (-3C @fv)
+        (-2C @obj)
+        (-1C cm - clb)
+        (0 @obj)
+        (1 koord-konj - clb - ("men"))
+        (2 @obj)
+        ;
+
+REMOVE:som-omfatter-x-y-og-Z (@subj) IF
+        (-5C @fv)
+        (-4C @obj)
+        (-3C cm - clb)
+        (-2 @obj)
+        (-1C koord-konj - clb - ("men"))
+        (0 @obj)
+        ;
 
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
