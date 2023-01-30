@@ -8482,8 +8482,21 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (NOT *1 ("i kraft"))
         ;
 
-"<trygge>" SELECT:frie-og-trygge adj IF
-        (-2 ("fri"))
+"<trygge>" SELECT:gode-og-trygge adj IF
+        (-2 adj)
+        ;
+
+"<trygge>" SELECT:trygge-og-gode adj IF
+        (2 adj)
+        ;
+
+"<trygge>" SELECT:trygge-på adj IF
+        (1 prep)
+        ;
+
+"<trygge>" SELECT:føle-seg-trygge adj IF
+        (-2* ("føle" vblex))
+        (-1* prn + acc)
         ;
 
 "<trær>" SELECT:likely-tre n;
