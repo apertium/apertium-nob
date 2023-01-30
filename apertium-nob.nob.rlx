@@ -2239,6 +2239,9 @@ SELECT:restriktive-tiltak pl IF
 ;
 # «I pausen sa AaFK-trener Lars Bohinen at de var nødt til å angripe kampen.»
 
+"<at>" SELECT:om-at clb IF
+        (-1 %om%)
+        ;
 "<at>" SELECT:for-at clb IF
         (-1 %for%)
         ;
