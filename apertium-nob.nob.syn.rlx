@@ -19343,6 +19343,15 @@ REMOVE:som-omfatter-x-y-og-Z (@subj) IF
         (0 @obj)
         ;
 
+REMOVE:Det-koster-4-kroner (@subj) IF
+        (-4C setn-gr)
+        (-3C @subj)
+        (-2C @fv)
+        (-1C @det→)
+        (0 @obj)
+        (1C setn-gr)
+        ;
+
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
         (1C det + &&ADJ_N_AGR)
