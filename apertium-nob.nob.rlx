@@ -8495,7 +8495,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         ;
 
 "<trygge>" SELECT:føle-seg-trygge adj IF
-        (-2* ("føle" vblex))
+        (-2* ("føle") OR ("kjenne") LINK 0 vblex)
         (-1* prn + acc)
         ;
 
