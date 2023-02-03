@@ -8501,6 +8501,21 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 "<trær>" SELECT:likely-tre n;
 
+"<asken>" SELECT:asken ("ask" n) IF
+        (-1 ("gammel") OR ("stor") OR ("liten") OR ("diger") OR ("råtten"))
+        ;
+
+"<asken>" SELECT:asken ("ask" n) IF
+        (-1* ("grein") OR ("kvist") OR ("stamme") OR ("tre") OR ("løvtre") OR ("trevirke") OR ("årring") OR ("blad") OR ("løv") OR ("rot") OR ("bark") OR ("hogge" vblex) OR ("felle" vblex) OR ("Yggdrasil"))
+        ;
+
+"<asken>" SELECT:asken ("ask" n) IF
+        (1* ("grein") OR ("kvist") OR ("stamme") OR ("tre") OR ("løvtre") OR ("trevirke") OR ("årring") OR ("blad") OR ("løv") OR ("rot") OR ("bark") OR ("hogge" vblex) OR ("felle" vblex) OR ("Yggdrasil"))
+        ;
+
+"<asken>" REMOVE:asken ("ask" n)
+        ;
+
 "<øyene>" SELECT:blår-i-øyene nt IF
         (-1 %i%)
         ;
