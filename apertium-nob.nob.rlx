@@ -1709,6 +1709,7 @@ REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
 REMOVE:unlikely ("<rykker>"i) + n; # en rykker -> ein rykkjar; kreditor
 REMOVE:unlikely ("<trekker>"i) + n; # (skru)trekker -> å trekke - trekker
 REMOVE:unlikely ("<sen>"i) + n; # sene -> sein
+REMOVE:unlikely ("<snek>"i) + n; # snek -> sneik
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
