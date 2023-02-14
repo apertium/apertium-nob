@@ -13662,7 +13662,7 @@ LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*dra"ri ".*gi"ri "se" "
 REMOVE:no-pred-samsvar-unless-attrc adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
-        (NEGATE 0 adj + pp + sg + ind LINK 1C n + sg + ind LINK NOT 0 vekedag) # «en beslaglagt gjenstand», men ikkje «offentliggjort søndag»
+        (NEGATE 0 adj + pp + sg + ind LINK 1 n + sg + ind LINK NOT 0 vekedag) # «en beslaglagt gjenstand», men ikkje «offentliggjort søndag»
         ;
 # Ingen predikativ samsvar her:
 # - De ble tatt av skredet.
