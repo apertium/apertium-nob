@@ -2131,6 +2131,14 @@ REMOVE:prefer-ncmp adj IF
         ;
 # TODO: Probably too conservative
 
+SELECT ("skrelle¹") IF
+        (-1 ("<det>"i))
+        (1 ("i"))
+        ;
+
+REMOVE ("skrelle¹")
+        ;
+
 REMOVE:prefer-inf-over-adj-split adj + cmp-split IF
         (0 inf)
         ;
