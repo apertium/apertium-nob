@@ -1921,6 +1921,8 @@ REMOVE:unlikely ("stykke" n) IF (-1 modalverb) (1 %opp% OR %ut%); # eiendommen s
 REMOVE:unlikely ("<stykker>"i vblex) IF (-1 qnt); # tre stykker, 103 stykker
 REMOVE:unlikely ("stykke" vblex) IF (0* vblex); # de som har laget stykket, stykket er
 REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykket er
+REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av farge
+REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farge, aksentfargar
 
 SELECT:er-oppløftet adj IF
 		(-1* %være/bli%)
