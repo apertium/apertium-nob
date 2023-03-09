@@ -5513,6 +5513,30 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<dundret>" REMOVE:unlikely n ;
 
+SELECT:kråker-og-kaier ("kaie") + n IF
+        (*0 ("kråke") OR ("ravn") OR ("fugl") OR ("kråkefugl") OR ("koloni") OR ("flokk") OR ("egg")  OR ("rede") OR ("reir") OR ("hekking") OR ("hekketid") OR ("nebb") OR ("vinge") OR ("fly" vblex) OR ("flakse" vblex) OR ("ruge" vblex))
+        (NEGATE 0/* cmp)
+        ;
+        # turistkaiane (brygge) er fulle av kråker
+        # kaiene (fuglen) mengjer seg ofte med kråker
+
+SELECT:hannkaie ("kaie") + n IF
+        (0/* ("hann") OR ("hunn") OR ("ung") OR ("tam"))
+        ;
+        # tamkaie, hokaie
+
+SELECT:kaien ("kaie") + n IF
+        (-1 ("svart") OR ("grå") OR ("ung") OR ("gammel") OR ("pjuskete") OR ("klok") OR ("levende") OR ("død") OR ("tam") OR ("syk"))
+        ;
+
+REMOVE:ferjekaier ("kaie") + pl IF 
+        (0/* cmp)
+        ;
+
+REMOVE:ferjekaien ("kaie") + sg + def IF 
+        (0/* cmp)
+        ;
+
 #:3486
   "<legg>"   SELECT:3486   (vblex imp) IF
 	(-1 setn-gr)
