@@ -36513,7 +36513,6 @@ REMOVE:møtes pstv + pp IF
 
 "<så>" SELECT:så-kalt adv IF
         (1 ("<kalt>"))
-        (NEGATE 2 ("<det>"))    # så kalt det er
         ;
 # «Hun har holdt seg hjemme i koronatiden og har nesten hver dag lest fra en av bøkene sine på Instagram – så kalt karanteneopplesning.»
 
