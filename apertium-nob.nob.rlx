@@ -36511,6 +36511,11 @@ REMOVE:møtes pstv + pp IF
         ;
 # «Gately hadde sine tvil om mulighetene for å finne noe så lite på et så stort område, men han og turkamerat Brendan Cheever tok med metalldetektor på en organisert tur.»
 
+"<så>" SELECT:så-kalt adv IF
+        (1 ("<kalt>"))
+        (NEGATE 2 ("<det>"))    # så kalt det er
+        ;
+# «Hun har holdt seg hjemme i koronatiden og har nesten hver dag lest fra en av bøkene sine på Instagram – så kalt karanteneopplesning.»
 
 "<de>" SELECT:fikk-de-også prn IF
         (-1C fv)
