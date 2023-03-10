@@ -5537,6 +5537,11 @@ REMOVE:ferjekaien ("kaie") + sg + def IF
         (0/* cmp)
         ;
 
+REMOVE:ulikely ("larv") + n IF 
+        (NEGATE -1 ("<den>"))
+        ;
+        # den larven!
+
 #:3486
   "<legg>"   SELECT:3486   (vblex imp) IF
 	(-1 setn-gr)
