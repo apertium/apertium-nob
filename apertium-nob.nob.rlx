@@ -9719,11 +9719,18 @@ REMOVE:terrorstemplet ("stempel") IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
 # "Landskapet er veldig mykt"
+
 "<dopet>"i REMOVE:med-dopet-følger vblex IF
         (-1 pr)
         (1 ("følge"))
         ;
 # "Med dopet følger også vold og helseproblemer."
+
+"<dopet>" REMOVE:dopet-ned n IF
+        (1 ("ned"))
+        ;
+# «Da ble målvakten dopet ned og svindlet.»
+
 "<skutt>"i SELECT:skutt-fart vblex + pp IF
 	(*-1 %ha% BARRIER setn-gr)
         (1 ("fart"))
