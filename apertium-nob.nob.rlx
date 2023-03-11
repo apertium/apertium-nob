@@ -2422,9 +2422,10 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         ;
 
 "<presset>"i SELECT:størst-er-presset ("press") IF
-        (-2 adj)
-        (-1 %være/bli% )
+        (-2C adj LINK 0 nt OR pp OR pl)
+        (-1 %være/bli% - pp)
         ;
+# Ikkje: «er det siste året<adj/n> blitt presset»
 
 "<presset>"i SELECT:ble-presset pp IF
         (-1* %være/bli% BARRIER setn-gr)
