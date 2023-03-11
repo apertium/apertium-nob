@@ -9572,11 +9572,21 @@ REMOVE:to-ansatte vblex IF
         (1 ("at"))
         ;
 # "Jeg så en av de fremste utenrikspolitiske ekspertene si at..."
+
+"<ønsket>"i REMOVE:ønsket-om vblex OR adj IF
+        (1 ("om"))
+        ;
+
+"<Ønsket>" REMOVE:ønsket-mitt vblex IF
+        (1C pos)
+        ;
+
 "<ønsket>"i REMOVE:komma-ønsket n IF
-        (-1 setn-gr)
-        (*1 n)
+        (-1 cm)
+        (*1C n BARRIER fv)
         ;
 # "Etter måneder med stor uro i klubben, ønsket det nye klubbstyret å bryte"
+
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
