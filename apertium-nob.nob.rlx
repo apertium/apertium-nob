@@ -21855,7 +21855,8 @@ SELECT:da-gruvedriften-tok-til cnjsub IF
 #:2555
  SELECT:2555 fl-subst IF
 	(-1 %hundre/tusen/osv%)
-	(NOT -1 gen)
+	(NEGATE -1 gen)
+	(NEGATE -1C pl + def)    # Millionene ruller
 ;
 #  "hundre kroner"
 
@@ -23344,7 +23345,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 
 
 #:2466
- SELECT:2466 (vblex pres) IF
+SELECT:Mannen-gir-adgang pres IF
 	(NOT 0 farlige-forledd-verb)
 	(NOT 0 pret)
 	(-1C subst)
@@ -23353,6 +23354,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 ;
 #  "Mannen gir adgang"
 #      :group 43
+# «Millionene ruller i jula.»
 
 "<styrker>" SELECT:styrker-fra n IF
 		(1 ("fra"))
