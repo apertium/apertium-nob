@@ -32228,7 +32228,11 @@ SELECT ("mark¹") IF (*1 ("krok") BARRIER (*) - pr) ;
 SELECT ("mark¹") IF (*-1 ("ete") BARRIER vblex OR setn-gr);
 SELECT ("mark¹") IF (*-1 ("leve") BARRIER vblex OR setn-gr LINK 1 ("av"));
 SELECT ("mark¹") IF (1 ("i")) (2 ("mage"));
-
+SELECT:tyske-mark ("mark²" "<mark>") IF
+        (-1 talord-par-siffer OR ("tysk"))
+        ;
+# «1,95583 mark per euro.»
+# «Fant en halv milliard tyske mark i orgelet.»»
 
 "<Man>" SELECT prn IF
         (1 fv)
