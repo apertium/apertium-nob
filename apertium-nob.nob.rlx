@@ -9581,6 +9581,11 @@ REMOVE:to-ansatte vblex IF
         (1C pos)
         ;
 
+"<ønsket>"i REMOVE:ønsket-om n OR pret IF
+        (-2 ("lenger") OR ("lengre") OR comp)
+        (-1 ("enn"))
+        ;
+
 "<ønsket>"i REMOVE:komma-ønsket n IF
         (-1 cm)
         (*1C n BARRIER fv)
