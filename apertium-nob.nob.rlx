@@ -1119,7 +1119,7 @@ LIST not-np-guess-f_lc>f_uc =
     "<Forbrukerne>" "<Flyttingen>" "<Far>" "<Eventuelle>" "<Enorme>" "<Energi>" "<Ekstremværet>" "<Eksempler>" "<Dødstallene>" "<Dramatisk>" "<Dom>" "<Dernest>" "<Delstaten>" "<Daværende>" "<Butikkene>" "<Bussen>"
     "<Budsjettet>" "<Brorparten>" "<Brannmannskapene>" "<Bra>" "<Bestanden>" "<Avdelingsleder>" "<Ambisjonen>" "<Aktivister>" "<Våpenhvilen>" "<Von>" "<Videoen>" "<Varmest>" "<Vann>" "<Valgresultatet>"
     "<Utvalgets>" "<Uklart>" "<Uenighet>" "<Turistene>" "<Total>" "<Tilbakekallingen>" "<Søk>" "<Sveitsiske>" "<Står>" "<Størrelsen>" "<Strafferammen>" "<Spillere>" "<Sosiale>" "<Siktet>" "<Selskaper>" "<Sanksjonene>"
-    "<Sammenlagt>" "<Riksadvokat>" "<Retningslinjene>" "<Regjerende>" "<Politiadvokaten>" "<Palestinerne>" "<Befolkningen>" "<Rødlista>"
+    "<Sammenlagt>" "<Riksadvokat>" "<Retningslinjene>" "<Regjerende>" "<Politiadvokaten>" "<Palestinerne>" "<Befolkningen>" "<Rødlista>" "<Skylder>"
     ;
 
 LIST lemma-titlecase = "\\p{Lu}.*"r ;
