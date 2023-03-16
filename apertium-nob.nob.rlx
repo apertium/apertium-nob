@@ -32337,6 +32337,12 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<sykehjem>" SELECT:Kvaløysletta-sykehjem sg IF
+        (-1C top OR org)
+        ;
+# «Kvaløysletta sykehjem var første stopp i Tromsø mandag ettermiddag.»
+
+
 "<tapet>" SELECT ("tapet") IF
         (-1 (".*mønstret"r))    # ein av få trygge tapet-kontekstar
         ;
