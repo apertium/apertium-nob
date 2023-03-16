@@ -32166,8 +32166,18 @@ CONSTRAINTS
         ;
 
 
-"<ingen>" SELECT:ingen-anelse det + sg IF
+"<ingen>"i SELECT:ingen-anelse det + sg IF
         (1C n + sg)
+        ;
+
+
+"<ingen>"i SELECT:ingen-slik-anelse det + sg IF
+        (1C det + sg OR adv)
+        (2C n + sg)
+        ;
+
+"<ingen>"i SELECT:ingen-av prn IF
+        (1 ("av"i));
         ;
 
 #:4055
@@ -37699,6 +37709,11 @@ SELECT:Orklas-resultat sg + (".*resultat"r) IF
         (-1 org + gen)
         ;
 
+SELECT:det-ingen-flaggermus pl IF
+        (*-1 ("ingen") BARRIER ikke-adj LINK -1 expl)
+        (0C subst)
+        ;
+
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl OR gen + pl)
         (0C subst)
@@ -37953,7 +37968,7 @@ REMOVE:default ("<Vær>") + n ;
 REMOVE:default ("slått") + n ;
 REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
-REMOVE:default ("ingen") + sg ;
+REMOVE:default ("ingen") + prn + sg ; # ingen er permittertE
 REMOVE:default ("mor") IF (0 ("morene")) ;
 REMOVE:default ("krave") IF (0 ("krav")) ;
 REMOVE:default ("tenner") IF (0 ("tann")) ;
