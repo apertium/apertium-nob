@@ -12319,6 +12319,13 @@ SELECT:måten-prøvene-ble-tatt-på @subj IF
         (*2 ("på") LINK *-1 @fv)
         ;
 
+
+SELECT:ulykken-ikke-skyldtes-svikt @obj IF
+        (*-1C @fv + pstv BARRIER (*) - @adj→ LINK *-1C @subj BARRIER (*) - @adv)
+        ;
+# «Tekniske undersøkelser viser at ulykken ikke skyldtes teknisk   svikt  .»
+
+
 #CONSTRAINTS
 ## remove ndomain
 
