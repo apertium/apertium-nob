@@ -2141,6 +2141,19 @@ SELECT ("skrelle¹") IF
 REMOVE ("skrelle¹")
         ;
 
+SELECT:bøyen-på ("bøy") + sg + def IF
+	(1 %på%)
+        (2 ("rør") + def OR ("stang") + def OR ("fiskestang") + def  OR ("skjerm") + def OR ("sperre") + def OR ("vei") + def OR ("sti") + def  OR ("meie") + def OR ("ski") + def OR ("skitupp") + def OR ("materialet") + def OR det + dem)
+	;
+        # bøygen på røyret, bøygen på den store stonga
+        # oftare bøygen enn bøya/bøyen
+
+REMOVE ("bøy") + n + sg + def
+        ;
+
+REMOVE ("bøy") + n + pl
+        ;
+
 REMOVE:prefer-inf-over-adj-split adj + cmp-split IF
         (0 inf)
         ;
