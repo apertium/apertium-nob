@@ -19379,6 +19379,12 @@ REMOVE:Det-koster-4-kroner (@subj) IF
         (1C setn-gr)
         ;
 
+REMOVE:default-adv @s-pred IF
+        (0 @adv)
+        (NEGATE *-1 kop)
+        ;
+# «Bergen Ap vil at Norge de neste fem årene skal ta imot 5.000 kvoteflyktninger årlig<@adv!>»
+
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
         (1C det + &&ADJ_N_AGR)
