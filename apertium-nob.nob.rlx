@@ -2178,6 +2178,12 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
 
 
 ## select domain
+
+"<antall>"i SELECT:Antall-solgte-billetter sg IF
+        (NEGATE -1 pl LINK 0 det OR adj)
+        (*1 n BARRIER (*) - adj)
+        ;
+
 #:3787
   "<absolutt>"   SELECT:3787   (adj pst nt ind sg) IF
 	(1 %ikke/ingen%)
@@ -31972,6 +31978,7 @@ REMOVE:å-stjele-showet pret OR pp IF
 CONSTRAINTS
 ## select domain heur
 
+
 "<antenner>" SELECT:..ing-av-antenner n IF
         (-2 (".*ing"ri))
         (-1 %av%)
@@ -37251,6 +37258,8 @@ SELECT:talentane ("talent") + n + m + pl IF
 		;
 
 REMOVE:unlikely ("talent") + n + m ;
+
+REMOVE:Bruken-av ("Bruken") + np IF (NOT -1 berre-litenbokstav) ;
 
 SELECT:merka ("merke") + n + nt + pl ; # TODO: 'fire merker smør', 'betale dei 30 markane'
 
