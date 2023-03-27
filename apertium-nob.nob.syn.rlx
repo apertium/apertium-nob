@@ -779,6 +779,16 @@ MAP:6000 (@←det)   ("1") IF
 #  Joh 4, 1 @←DET"))
 
 
+MAP:nummer-fem (@adv) ("nummer" sg ind) IF
+        (-1 n + sg + ind)
+	(1 qnt)
+;
+MAP:nummer-fem (@←det) qnt IF
+        (-1 ("nummer" sg ind) + @adv)
+;
+# «Trøye nummer 11 er spesiell i de fleste klubber, og i United-sammenheng forbindes den kanskje først og fremst med Ryan Giggs.»
+
+
 #:6011
 MAP:6011 (@det→)   ("slags" n sp) IF
 	 (0 gen/%slags%)
