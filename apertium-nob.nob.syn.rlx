@@ -18942,6 +18942,12 @@ SELECT:295 (@app) IF
 #  det er ikke helt sant, mutter @APP, sier han"))
 
 
+SELECT:antallet-X @obj IF
+        (*-1 ("antall") OR ("andel") BARRIER ikke-adj-adv)
+        (NEGATE *1 ("som") OR adj BARRIER fv)
+        ;
+# Det finst ingenting for antallet-objektet å samsvara med:
+# «Antall solgte billetter var rekordhøyt<antall>.»
 
 #:294
 SELECT:294 (@obj) IF
