@@ -11141,6 +11141,11 @@ SELECT:tirsdag-funnet @adv IF
         (1 pp)
         ;
 
+SELECT:neste-5-årene @adv IF
+        (*-1 %forrige/neste% BARRIER (*) - qnt)
+        (0 tidssubst)
+        ;
+
 #:860
 SELECT:860 (@subj) IF
 	(NOT 0 @←p-utfyll)
