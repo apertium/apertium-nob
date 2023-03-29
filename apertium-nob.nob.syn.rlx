@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium -d ../apertium-nno-nob nob-nno_e-capstag|cg-conv -a 2>/dev/null" -*-
+# -*- cg-pre-pipe: "apertium -d ../apertium-nno-nob nob-nno_e-capstag|cg-conv -a 2>/dev/null"; cg-output-always-highlight: (("^[^;\n]*@.ubj" . outline-1)) -*-
 # GPL-2, more info at:
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
