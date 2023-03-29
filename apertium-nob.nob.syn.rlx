@@ -5214,7 +5214,17 @@ SELECT:i-50-årene-som @xubj IF
 # «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Den andre skal ha vært en mann i 20-årene, som ble drept i Qalandiya utenfor Jerusalem.»
 
+SELECT:p-utfyll+xubj @xubj IF
+        (NOT -2 @xubj)          # den første personen<@xubj> i  Belgia<@p-utfyll>  som
+        (-1 pr)
+        (1 cnjsub + @←sbu-rel)
+        (2 pasv)
+        (*3 @subj)
+        ;
+# «Ifølge alternativene som vurderes kan de kreve erstatning.»
+
 SELECT:cm-som @xubj IF
+        (*-1 @subj)
         (0 @obj OR @s-pred)
         (NEGATE 0 (".*-år"r) OR top LINK -2 @xubj)
         (*1 cnjsub + @←sbu-rel BARRIER (*) - cm)
