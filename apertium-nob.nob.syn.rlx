@@ -463,7 +463,8 @@ LIST konj = cnjcoo ;
 LIST konj/%bare% = "bare" cnjcoo ;
 LIST koord-konj = ("men" cnjcoo) ("og" cnjcoo) ("samt" cnjcoo) ("eller" cnjcoo) ;
 LIST kop = "være" "virke" "synes" "hete" "bli" ("kalle" pasv) ;
-LIST kop-fin = ("være" pres) ("være" pret) ("bli" pres) ("bli" pret) ("hete" pres) ("hete" pret) ("synes" pres) ("synes" pret) ("virke" pres) ("virke" pret) ("kalle" pres pasv) ("kalle" pret pasv) ;
+SET kop/holdes = kop OR ("holde" pasv) ;
+SET kop-fin = kop + pres OR kop + pret ;
 LIST kop-inf = ("være" inf) ("bli" inf) ("hete" inf) ("synes" inf) ("virke" inf) ("kalle" inf pasv) ;
 LIST kop-u-%synes% = "være" "virke" "hete" "bli" ("kalle" pasv) ;
 LIST kvant/sp = qnt itg ;
@@ -8926,6 +8927,17 @@ SELECT:1036 (@s-pred) IF
 #  OGSå FAST PRED: sliten var han
 # NOT 0 %mange%: mange har jenta likt"))
 
+SELECT:markedet-holdes-stabilt (@s-pred) IF
+        (*-1 kop/holdes BARRIER (*) - @adv→ LINK *-1C @subj + &&ADJ_N_AGR)
+        (0 adj + &&ADJ_N_AGR)
+        ;
+
+
+SELECT:holdes-markedet-stabilt (@s-pred) IF
+        (*-1 @subj + &&ADJ_N_AGR BARRIER (*) - @adv→ LINK *-1 kop/holdes BARRIER setn-gr OR fv)
+        (0 adj + &&ADJ_N_AGR)
+        ;
+# «Men også antall boliger som legges ut til salg er rekordhøyt, og dermed holdes markedet relativt stabilt.»
 
 
 #:1035
@@ -19462,6 +19474,7 @@ SELECT:båten-Andhøy-kjøpte fv IF
         (NEGATE *1 @fv)
         ;
 # «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
+
 
 SELECT:adverbialsubst adverbialsubst + @adv;
 
