@@ -16069,6 +16069,7 @@ SELECT:2963 (adj nt ind sg) IF
  SELECT:2975 (adj nt ind sg) IF
 	(NOT 0 ikke-adj)
 	(NOT 0 farlige-adj)
+	(NOT 0 pasvpp_tar_pp + pp)
 	(NOT 0 orden)
 	(1C adj)
 	(NOT *-1 det)
@@ -25465,6 +25466,14 @@ SELECT:ble-funnet-drept pp + $$GENDER IF
         ;
 # «Det var i dette området de ble funnet drept mandag.»
 # Men ikkje: «Nettsiden har frem til den ble stengt tilbydt piratversjoner av filmer.»
+
+SELECT:mann-funnet-drept pp + &&ADJ_N_AGR IF
+        (-2 n + &&ADJ_N_AGR)
+        (-1 pp + &&ADJ_N_AGR + pasvpp_tar_pp)
+        (NOT 0 adv OR det)
+        ;
+# «Savnet 20-åring funnet druknet i Hemnessjøen i Aurskog-Høland.»
+
 
 SELECT:at-arbeidet-som-ble-utført n + def OR n + pl IF
         (-1 cnjsub)
