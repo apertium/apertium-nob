@@ -19450,6 +19450,12 @@ REMOVE:Samtidig-holder-han n IF
 # «Samtidig holder han fast ved at han vil ta Storbritannia ut av EU 31.»»
 # «– Hvordan rangerer du denne kampen rent følelsesmessig sammenlignet med dine andre 34 proffkamper?»
 
+REMOVE:det-spilles-kamper @subj IF
+        (-2C @subj OR @xubj)
+        (-1C pasv + @fv)
+        (0 @obj OR @i-obj)
+        ;
+
 REMOVE:Ukjentord-lover n IF
         (-2 >>> OR sent OR guio + clb)
         (-1 ukjent)             # unknowns more likely noun/name than verb
@@ -19570,7 +19576,7 @@ REMOVE:prefer-left-subj-of-clause (@subj) IF
         ;
 
 SELECT:prefer-left-subj-of-clause (@subj) IF
-        (NEGATE *-1 @subj BARRIER setn-gr)
+        (NEGATE *-1 @subj OR (@xubj) BARRIER setn-gr)
         (NEGATE *-1 @fv BARRIER setn-gr LINK -1 @←sbu-rel LINK *-1 @subj BARRIER setn-gr) # @subj som har n/v
         (0 @obj OR @i-obj)
         (NEGATE 0 @fv)
