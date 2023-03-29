@@ -19577,6 +19577,10 @@ REMOVE:default-pp-sg pp + pl IF
         ;
 # Typically sounds less wrong when unsure
 
+REMOVE:default-adv @s-pred IF
+        (0 adj)
+        ;
+
 # REMOVE:prefer-left-subj-past-cnjcoo (@subj) IF
 #         (*-1 pasv BARRIER fv OR setn-gr LINK *-1 cnjcoo BARRIER ikke-adv LINK *-1 pasv BARRIER fv OR setn-gr LINK *-1 @subj BARRIER fv OR setn-gr)
 #         (0 @obj)
