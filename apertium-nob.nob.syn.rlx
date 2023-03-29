@@ -19486,6 +19486,11 @@ SELECT:båten-Andhøy-kjøpte fv IF
 # «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
 
 
+SELECT:konsekvent-overholdt @adv IF
+        (1C vblex + pp)
+        ;
+# «– Slik kameraer ulovlig plassert i forbindelse med et nattlig innbrudd har dokumentert, er avstandsreglene øyensynlig ikke konsekvent overholdt under treningen.»
+
 SELECT:adverbialsubst adverbialsubst + @adv;
 
 SELECT:default ("lenger") ;
