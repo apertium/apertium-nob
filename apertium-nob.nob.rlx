@@ -21480,7 +21480,8 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 
 
 #:2594
- SELECT:2594 (prn nom) IF
+SELECT:2594 (prn nom) IF
+        (NEGATE -1C pr) # i motsetning til<pr> dere<acc!> var<pret> jeg
 	(0 nom/akk-pron)
 	(NOT 0 gen)
 	(1 pres/pret)
