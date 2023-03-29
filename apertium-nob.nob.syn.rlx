@@ -5268,6 +5268,10 @@ SELECT:største-boten-noensinne-utstedt @xubj IF
         ;
 # «Amerikanske myndigheter vurderer å gi Facebook den største boten noensinne utstedt for manglende beskyttelse av brukeres data, skriver Washington Post.»
 
+SELECT:At-x-er-y-er-z @xubj IF
+        (-1 ("at") + @subj)
+        (*1 @fv LINK *1 @fv)    # to finitte verb til høgre
+        ;
 
 REMOVE:not-xubj @xubj;
 
