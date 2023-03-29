@@ -12210,6 +12210,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "mest sannsynlig at det er prep i denne posisjonen"
 
+"<motsatt>" REMOVE vblex IF
+        (0 adj)
+        (1 n)
+        (NEGATE 0 ind LINK 1 def)
+        ;
 
 
 #:3415
