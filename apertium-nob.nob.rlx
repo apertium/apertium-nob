@@ -9100,6 +9100,7 @@ REMOVE:unlikely ("<helt>"i "helle") + pp;
 REMOVE:unlikely ("<jakter>"i "jakt") + pl;
 REMOVE:unlikely ("<veier>"i "veier");
 REMOVE:unlikely ("midel");
+REMOVE:unlikely ("midle");   # finst det kontekstar kor dette er rett?
 REMOVE:unlikely ("put");
 REMOVE:unlikely ("legat") IF (0 ("gate")); # hand|legaten
 REMOVE:unlikely ("møll") IF (0 ("mølle")); # meir vanleg no til dags, dessverre
