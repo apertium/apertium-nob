@@ -32320,6 +32320,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 ;
 #  "dette har tvunget fram kravet om (prep) fast ansatt sekretær"))
 
+"<pest>" SELECT n IF
+        (NOT *-1 %ha% BARRIER ikke-adv)
+        ;
+
 "<rammer>" SELECT:setter-rammer-for n IF
         (-1 ("sette"))
         ;
