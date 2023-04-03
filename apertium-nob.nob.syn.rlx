@@ -242,6 +242,7 @@ LIST @s-pred = @s-pred ;
 LIST @s-pred/@obj = @s-pred @obj ;
 LIST @xubj = @xubj ;
 LIST @subj = @subj ;
+LIST @subj/@xubj = @subj @xubj ;
 LIST @subj/@←sbu-rel = @subj @xubj @←sbu-rel ;
 LIST @subj/@obj = @subj @xubj @obj ;
 LIST @subj/@obj/@i-obj = @subj @xubj @obj @i-obj ;
@@ -19334,6 +19335,12 @@ REMOVE:266 (@obj) IF
 ;
 #  "27.2.2003: Jeg ble også foruroliget da jeg så Tor (ikke obj) Viker utenfor porten"))
 
+REMOVE:det-ventes-en-vekst @subj IF
+        (-3 @subj/@xubj + expl)
+        (-2 @fv + pasv)
+        (-1 @det→)
+        ;
+# «Konklusjonen er at det ventes en vekst på 1 prosent.»
 
 
 #:265
@@ -19451,7 +19458,7 @@ REMOVE:Samtidig-holder-han n IF
 # «– Hvordan rangerer du denne kampen rent følelsesmessig sammenlignet med dine andre 34 proffkamper?»
 
 REMOVE:det-spilles-kamper @subj IF
-        (-2C @subj OR @xubj)
+        (-2C @subj/@xubj)
         (-1C pasv + @fv)
         (0 @obj OR @i-obj)
         ;
