@@ -3565,6 +3565,18 @@ SELECT:den+prn ("den¹") IF
         (1 prep)
         ;
 
+REMOVE:være-vant-til ("<vant>") + vblex IF
+        (-1 %være/bli%)
+        (1 %til%)
+        ;
+# "være vant til"
+
+REMOVE:vant-til-å ("<vant>") + vblex IF
+        (1 %til%)
+        (2 ("å"))
+        ;
+# "vant til å"
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
