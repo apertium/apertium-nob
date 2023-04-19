@@ -2405,6 +2405,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(2 ("å"))
         ;
 
+"<presset>"i SELECT:få-presset pp IF
+		(-1 ("få"))
+        ;
+        # få pressa gjennom
+
 "<presset>"i SELECT:presset-vitner-til-å pp IF
 		(2 %til%)
 		(3 ("å"))
