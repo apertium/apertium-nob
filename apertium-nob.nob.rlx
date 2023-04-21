@@ -10138,8 +10138,9 @@ REMOVE:rekke-ut-handa ("rake") IF
         (3 ("møtes"))
         ;
 "<revet>"i SELECT:revet-ost ("rive") IF
-        (1 ("ost"))
+        (1 ("ost") OR ("parmesan") OR ("mozzrella"i) OR  %opp% OR %ned% OR ("vekk") OR ("bort"))
         ;
+        #riven ost, riven opp, riven vekk
 "<henger>"i SELECT:på-veggen-henger ("henge") IF
         (-2 ("på"))
         (-1 ("vegg"))
