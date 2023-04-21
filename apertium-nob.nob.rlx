@@ -9155,6 +9155,7 @@ REMOVE:unlikely ("van") IF (0 ("vane")) ;
 REMOVE:unlikely ("flott") + nt ;
 REMOVE:unlikely ("balle") IF (0 ("ball")) ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
+REMOVE:unlikely ("men") + cnjcoo IF (-1 ("varig")) ; # «varige men»
 REMOVE:unlikely ("vente") + gen;
 REMOVE:unlikely ("<yrket>") + pret;
 REMOVE:unlikely ("<løs>"i) + np;
