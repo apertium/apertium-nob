@@ -1713,6 +1713,7 @@ REMOVE:unlikely ("Kütt") IF (0 ("<Kutt>")) ;
 REMOVE:unlikely ("Gün") IF (0 ("<Gun>")) ;
 REMOVE:unlikely ("Björg") IF (0 ("<Bjorg>")) ; # Bjorg Lambrecht
 REMOVE:unlikely ("Stemmen") + np IF (-1 setn-gr);
+REMOVE:unlikely ("Kos") + np IF (0 ("Koss") + np);
 REMOVE:unlikely ("toe") + imp; # å toe
 REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
 REMOVE:unlikely ("<rykker>"i) + n; # en rykker -> ein rykkjar; kreditor
