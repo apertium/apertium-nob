@@ -1703,6 +1703,7 @@ REMOVE:unlikely ("ap") IF (0 ("ape"));
 REMOVE:unlikely ("katte") IF (0 ("katt"));
 REMOVE:unlikely ("klubbe") IF (0 ("klubb"));
 REMOVE:unlikely ("Henne") + np + gen;
+REMOVE:unlikely ("Hoëm") IF (0 ("Hoem")) ;
 REMOVE:unlikely ("Stemmen") + np IF (-1 setn-gr);
 REMOVE:unlikely ("toe") + imp; # å toe
 REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
