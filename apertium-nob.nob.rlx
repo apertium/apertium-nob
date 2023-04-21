@@ -12490,6 +12490,12 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # Ikke: feiltolkninger og (clb) ikke minst er det slik at "))
 
 
+"<og>" REMOVE:mellom-N-og-N clb IF
+        (*-1 ("mellom") BARRIER (*) - np - storbokstav)
+        (1 np OR storbokstav)
+        ;
+# «har vi konkludert med at avtalen mellom Petter Northug og Toppidrettsveka opprettholdes.»
+
 #:3380
 "<og>"   REMOVE:3380   clb IF
 	(-1C subst)
