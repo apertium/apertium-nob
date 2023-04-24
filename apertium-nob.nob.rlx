@@ -10701,6 +10701,11 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
         (-1 ("disse"))
         ;
 
+"<deler>"i REMOVE:deler-av vblex IF
+        (1 %av%)
+        ;
+        # delar av tiltalen
+
 REMOVE:data-not-datum ("datum");
 
 #:3726
