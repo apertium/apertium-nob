@@ -1705,6 +1705,8 @@ REMOVE:unlikely ("klubbe") IF (0 ("klubb"));
 REMOVE:unlikely ("Henne") + np + gen;
 REMOVE:unlikely ("Hoëm") IF (0 ("Hoem")) ;
 REMOVE:unlikely ("Kütt") IF (0 ("<Kutt>")) ;
+REMOVE:unlikely ("Gün") IF (0 ("<Gun>")) ;
+REMOVE:unlikely ("Björg") IF (0 ("<Bjorg>")) ; # Bjorg Lambrecht
 REMOVE:unlikely ("Stemmen") + np IF (-1 setn-gr);
 REMOVE:unlikely ("toe") + imp; # å toe
 REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
