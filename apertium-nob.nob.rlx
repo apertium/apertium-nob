@@ -9453,6 +9453,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<kokkene>" REMOVE:kokke-unlikely-2 ("kokke") IF
         (0 ("kokk"))
         ;
+"<verken>" REMOVE:verken-unlikely ("verken") + n IF
+        (0 ("verken"))
+        (1 n OR det OR adj OR prn)
+        ;
 "<reist>"i REMOVE:n-pr-n-ble-reist pl IF
         (-4 n)
         (-3 pr)
