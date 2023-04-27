@@ -1927,6 +1927,7 @@ REMOVE:unlikely ("stykke" vblex) IF (0* vblex); # de som har laget stykket, styk
 REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykket er
 REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av farge
 REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farge, aksentfargar
+REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
 
 SELECT:er-oppløftet adj IF
 		(-1* %være/bli%)
