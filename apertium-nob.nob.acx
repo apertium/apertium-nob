@@ -12,12 +12,20 @@
   <!-- Find candidate chars using: -->
   <!-- $ tr -d '[ -~]' < apertium-nno-nob.nno-nob.dix |sed 's/./&\n/g'|grep .|sort|uniq -c|sort -nr|less -->
   <char value="đ"> <equiv-char value="d"/> </char>
+  <char value="Đ"> <equiv-char value="D"/> </char>
   <char value="ŧ"> <equiv-char value="t"/> </char>
   <char value="ŋ"> <equiv-char value="n"/> </char>
 
-  <char value="š"> <equiv-char value="s"/> <equiv-char value="ś"/> </char>
+  <char value="š"> <equiv-char value="s"/> </char>
+  <char value="Š"> <equiv-char value="S"/> </char>
+  <char value="ś"> <equiv-char value="s"/> <equiv-char value="š"/> </char>
+  <char value="Ś"> <equiv-char value="S"/> <equiv-char value="Š"/> </char>
   <char value="č"> <equiv-char value="c"/> <equiv-char value="ć"/> </char>
+  <char value="Č"> <equiv-char value="C"/> <equiv-char value="Ć"/> </char>
+  <char value="ć"> <equiv-char value="c"/> </char>
+  <char value="Ć"> <equiv-char value="C"/> </char>
   <char value="ž"> <equiv-char value="z"/> <equiv-char value="ź"/> </char>
+  <char value="Ž"> <equiv-char value="Z"/> <equiv-char value="Ź"/> </char>
   <char value="ě"> <equiv-char value="e"/> <equiv-char value="è"/> <equiv-char value="é"/> </char>
   <char value="ň"> <equiv-char value="n"/> <equiv-char value="ǹ"/> <equiv-char value="ń"/> </char>
   <char value="ř"> <equiv-char value="r"/> <equiv-char value="ŕ"/> </char>
@@ -29,17 +37,22 @@
   <char value="ā"> <equiv-char value="a"/> <equiv-char value="à"/> <equiv-char value="á"/>  </char>
 
   <char value="ġ"> <equiv-char value="g"/> <equiv-char value="ǧ"/> <equiv-char value="ǵ"/> </char>
+  <char value="Ġ"> <equiv-char value="G"/> <equiv-char value="Ǧ"/> <equiv-char value="Ǵ"/> </char>
   <char value="ż"> <equiv-char value="z"/> <equiv-char value="ź"/> </char>
+  <char value="Ż"> <equiv-char value="Z"/> <equiv-char value="Ź"/> </char>
   <char value="ť"> <equiv-char value="t"/> </char>
   <char value="ș"> <equiv-char value="s"/> </char>
   <char value="ű"> <equiv-char value="u"/> <equiv-char value="ü"/> <equiv-char value="ù"/> <equiv-char value="ú"/> </char>
   <char value="ő"> <equiv-char value="o"/> <equiv-char value="ö"/> <equiv-char value="ò"/> <equiv-char value="ó"/> </char>
 
   <char value="þ"> <equiv-char value="t"/> </char>
+  <char value="Þ"> <equiv-char value="T"/> </char>
   <char value="ð"> <equiv-char value="d"/> </char>
 
   <char value="ç"> <equiv-char value="c"/> </char>
+  <char value="Ç"> <equiv-char value="C"/> </char>
   <char value="ş"> <equiv-char value="s"/> </char>
+  <char value="Ş"> <equiv-char value="S"/> </char>
   <char value="ė"> <equiv-char value="e"/> </char>
 
   <char value="ñ"> <equiv-char value="n"/> </char>
@@ -53,7 +66,9 @@
   <char value="ţ"> <equiv-char value="t"/> </char>
 
   <char value="ü"> <equiv-char value="u"/> </char>
+  <char value="Ü"> <equiv-char value="U"/> </char>
   <char value="ö"> <equiv-char value="o"/> </char>
+  <char value="Ö"> <equiv-char value="O"/> </char>
   <char value="ä"> <equiv-char value="æ"/> </char>
   <char value="ë"> <equiv-char value="e"/> </char>
   <char value="ï"> <equiv-char value="i"/> </char>
@@ -68,8 +83,11 @@
   <char value="ô"> <equiv-char value="o"/> <equiv-char value="ò"/> <equiv-char value="ó"/> </char>
   <char value="û"> <equiv-char value="u"/> <equiv-char value="ù"/> <equiv-char value="ú"/> </char>
   <char value="î"> <equiv-char value="i"/> <equiv-char value="ì"/> <equiv-char value="í"/> </char>
+  <char value="Î"> <equiv-char value="I"/> <equiv-char value="Ì"/> <equiv-char value="Í"/> </char>
+  <char value="İ"> <equiv-char value="I"/> <equiv-char value="Ì"/> <equiv-char value="Í"/> </char>
 
   <char value="ł"> <equiv-char value="l"/> </char>
+  <char value="Ł"> <equiv-char value="L"/> </char>
 
   <char value="µ"> <equiv-char value="𝜇"/> </char>
 
@@ -80,13 +98,18 @@
   <char value="ý"> <equiv-char value="ỳ"/> <equiv-char value="y"/> </char>
   <char value="ỳ"> <equiv-char value="ý"/> <equiv-char value="y"/> </char>
   <char value="ú"> <equiv-char value="ù"/> <equiv-char value="u"/> </char>
+  <char value="Ú"> <equiv-char value="Ù"/> <equiv-char value="U"/> </char>
   <char value="ù"> <equiv-char value="ú"/> <equiv-char value="u"/> </char>
   <char value="í"> <equiv-char value="ì"/> <equiv-char value="i"/> </char>
+  <char value="Í"> <equiv-char value="Ì"/> <equiv-char value="I"/> </char>
   <char value="ì"> <equiv-char value="í"/> <equiv-char value="i"/> </char>
   <char value="ó"> <equiv-char value="ò"/> <equiv-char value="o"/> </char>
+  <char value="Ó"> <equiv-char value="Ò"/> <equiv-char value="O"/> </char>
   <char value="ò"> <equiv-char value="ó"/> <equiv-char value="o"/> </char>
   <char value="á"> <equiv-char value="à"/> <equiv-char value="a"/> </char>
+  <char value="Á"> <equiv-char value="À"/> <equiv-char value="A"/> </char>
   <char value="à"> <equiv-char value="á"/> <equiv-char value="a"/> </char>
   <char value="é"> <equiv-char value="è"/> <equiv-char value="e"/> </char>
+  <char value="É"> <equiv-char value="È"/> <equiv-char value="E"/> </char>
   <char value="è"> <equiv-char value="é"/> <equiv-char value="e"/> </char>
 </analysis-chars>
