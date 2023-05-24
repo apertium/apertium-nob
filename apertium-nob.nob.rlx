@@ -9179,7 +9179,6 @@ REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 REMOVE:unlikely (".*hjelp"r) IF (0 (".*hjelper"r)); # ein hjelpar usannsynleg fleirtal
 REMOVE:unlikely SUB:* ("melke") + n IF (0/* ("melk")); # sannsynlegvis ikkje rogn
-REMOVE:unlikely ("<fraktes>"i) + inf IF (-1 ("å")); # å fraktes, pres.pasv.
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
