@@ -2,7 +2,7 @@
 [/1VIT_L9DITQP]
 [2OhyVmoO1sUC#0] ^politikilder/politikilde<n><m><pl><ind>$^./.<sent><clb>$
 [/2OhyVmoO1sUC]
-[4kBuucex88WW#0] ^straffeslagkonkurransen/*straffeslagkonkurransen$^./.<sent><clb>$
+[4kBuucex88WW#0] ^straffeslagkonkurransen/straffeslag<n><nt><sg><ind><cmp>+konkurranse<n><m><sg><def>$^./.<sent><clb>$
 [/4kBuucex88WW]
 [7NZkl9bqR43t#0] ^toppreken/topp<n><m><sg><ind><cmp>+reke<n><m><sg><def>$^./.<sent><clb>$
 [/7NZkl9bqR43t]
