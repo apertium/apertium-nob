@@ -10131,6 +10131,9 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1* ("få") BARRIER setn-gr)
         (1 ("inn"))
         ;
+"<over>" SELECT:flytte-over ("over") + pr IF
+        (-1 vblex + pres + pasv)
+        ;
 "<taklet>" SELECT:ble-taklet ("takle") IF
         (-1 ("bli"))
         ;
