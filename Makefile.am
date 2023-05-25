@@ -18,20 +18,28 @@ TARGETS_COMMON = $(LANG1).automorf.bin $(LANG1).autogen.bin \
 ## Norwegian Bokmål transducer
 ###############################################################################
 
-$(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
+.deps/%.autogen.bin: $(BASENAME).%.dix .deps/.d
 	apertium-validate-dictionary $<
 	lt-comp rl $< $@
 
-.deps/$(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx .deps/.d
+$(LANG1).autogen.bin: .deps/$(LANG1).autogen.bin .deps/proper-$(LANG1).autogen.bin
+	lt-append $^ $@
+
+# .deps/improper-$(LANG1).automorf.bin  and  .deps/$(LANG1).automorf.bin:
+.deps/%.automorf.bin: $(BASENAME).%.dix $(BASENAME).$(LANG1).acx .deps/.d
 	apertium-validate-dictionary $<
 	apertium-validate-acx $(BASENAME).$(LANG1).acx
 	lt-comp lr $< $@ $(BASENAME).$(LANG1).acx
 
+.deps/withproper-$(LANG1).automorf.bin: .deps/$(LANG1).automorf.bin .deps/proper-$(LANG1).automorf.bin
+	lt-append $^ $@
+
 .deps/$(LANG1).detriple.bin: $(BASENAME).detriple.dix
 	lt-comp lr $< $@
 
-$(LANG1).automorf.bin: .deps/$(LANG1).automorf.bin .deps/$(LANG1).detriple.bin
+$(LANG1).automorf.bin: .deps/withproper-$(LANG1).automorf.bin .deps/$(LANG1).detriple.bin
 	lt-compose --inverted --anywhere $^ $@
+
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.bin
 	lt-print $< | gzip -9 -c -n > $@
@@ -42,12 +50,13 @@ $(LANG1).automorf.att.gz: $(LANG1).automorf.bin
 ###############################################################################
 ## Distribution
 ###############################################################################
-EXTRA_DIST=$(BASENAME).$(LANG1).dix \
-           $(BASENAME).$(LANG1).rlx \
-	   $(BASENAME).$(LANG1).seg.rlx \
-	   $(BASENAME).$(LANG1).syn.rlx \
-           $(LANG1).prob            \
-	   $(BASENAME).$(LANG1).tsx \
+EXTRA_DIST=$(BASENAME).$(LANG1).dix        \
+           $(BASENAME).proper-$(LANG1).dix \
+           $(BASENAME).$(LANG1).rlx        \
+	   $(BASENAME).$(LANG1).seg.rlx    \
+	   $(BASENAME).$(LANG1).syn.rlx    \
+           $(LANG1).prob                   \
+	   $(BASENAME).$(LANG1).tsx        \
 	   modes.xml
 
 ###############################################################################
