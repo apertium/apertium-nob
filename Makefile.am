@@ -87,9 +87,10 @@ clean-local:
 ## Test
 ###############################################################################
 
+.PHONY: test
 test: all
-	@grep -nE 'lm=".*/([a-zæøå]+)__' $(BASENAME).$(LANG1).dix \
-	    | grep -vE '<i?g/?>'                                  \
-	    | grep -vE  'lm="(.*)(.*)".*/\2__'                    \
-	    | sed 's%^%WARNING: lemma vs par/tail inconsistency on line %'
+	@grep -nE 'lm=".*/([a-zæøå]+)_(\\[^_]+|)_' $(BASENAME).*$(LANG1).dix \
+	    | grep -vE '<i?g/?>'                                             \
+	    | grep -vE  'lm="(.*)(.*)".*/\2_(\\[^_]+|)_'                     \
+	    | sed 's%^%WARNING: lemma vs par/tail inconsistency in %'
 	apertium-regtest test
