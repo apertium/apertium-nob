@@ -11149,6 +11149,12 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         ;
 # «Jeg er her for å hjelpe klubben og for å gjøre en jobb som en utøver for klubben, fortsatte Neymar.»
 
+
+"<fortsatte>" REMOVE:fortsatte-med pp IF
+        (1 %med%)
+        ;
+        # pret: heldt fram med
+
 REMOVE ("frø") IF
         (0 ("<frøs>"i))
         (NOT -1 hj-verb)
