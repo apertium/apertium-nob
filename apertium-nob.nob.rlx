@@ -1179,8 +1179,13 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         (2 np + storbokstav OR ukjent + storbokstav)
         ; # de franske kunstnerne de la Croix, Camille Corot, Theodore Rousseau og Andre Dereian
           # Hypotetisk: de la Guri for kvelden, de la Polarstjerne til kai
-"<de>"i REMOVE:unlikely np;
-"<la>"i REMOVE:unlikely np;
+"<de>" SELECT:de-*Blasio np + attr IF
+        (-1 cnjsub)
+        (1 np + storbokstav OR ukjent + storbokstav)
+        (*2 fv BARRIER clb OR n + pl + def) # unngå «de *Ukjent *Ukjent-støttede opprørerne.n.pl.def»
+        ;
+"<de>"i REMOVE:default np;
+"<la>"i REMOVE:default np;
 
 "<du>"i SELECT:du-Plessis np + attr IF
         (1 np + storbokstav OR ukjent + storbokstav)
