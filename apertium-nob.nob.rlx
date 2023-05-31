@@ -4481,6 +4481,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 setn-gr OR fv)
         ;
 
+"<fortsatt>" SELECT (vblex) IF
+	(-4 ("ha"))
+        (-2 adj)
+	(-1 n + def)
+;
 "<fortsatt>" SELECT (adv) IF
 	(1 ("til"))
 	(2 ("gode"))
