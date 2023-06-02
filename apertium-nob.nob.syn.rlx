@@ -13822,13 +13822,14 @@ REMOVE:644 (@obj) IF
 
 
 #:643
-REMOVE:643 (@obj) IF
+REMOVE:lone-copula (@obj) IF
 	(*-1 verb BARRIER s#setn-gr)
-	(*-1 verb LINK 0 kop LINK *-1 s#periode-beg/clb-konj LINK *1 verb LINK NOT *1 verb)
+	(*-1 verb LINK 0 kop LINK *-1 s#periode-beg/clb-konj LINK *1 verb LINK NOT *1 verb OR pp)
 ;
-#  " IKKE: ..., men viktigere er det at @OBJ kontrakten åpner 
-#  
-# perspektiver"))
+# Ser ut som intensjonen er at det er berre eitt verb (eit kopula) i dette leddet, og det er til venstre.
+#
+# IKKE: ..., men viktigere er det at @OBJ kontrakten åpner perspektiver
+# IKKE: Fire måneder senere ble det i januar fortsatt funnet<pp!> udetonert dynamitt på stedet.
 
 
 
