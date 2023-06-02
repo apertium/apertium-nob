@@ -1958,6 +1958,10 @@ REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
 "<Åtte>" REMOVE:unlikely vblex;   # remove even if no verb in sent (probably headline)
 "<Monsen>" SELECT:Monsen-not-mons np;
 
+"<Moren>" REMOVE:Mor np IF
+        (NEGATE -1 np)
+        ;
+
 REMOVE:poengsum ("sum") + nt IF (0/* cmp) (0 m);
 REMOVE:dopingfri ("fri") + nt IF (0/* cmp) (0 adj);
 
