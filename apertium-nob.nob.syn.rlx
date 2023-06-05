@@ -225,6 +225,7 @@ LIST @fv = @fv ;
 LIST @hovedfunk-u-@subj = @fv @iv @obj @i-obj @s-pred @o-pred @adv @app @interj @laus-np ;
 LIST @i-obj = @i-obj ;
 LIST @iv = @iv ;
+LIST @laus-np = @laus-np ;
 LIST @kon/@nkon = @kon @nkon ;
 LIST @mod = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @nkon ;
 LIST @mod-@←p-utfyll-@adv = vblex pp @det→ @←det @adj→ @adv→ @←adv @subst→ @←subst @tittel @kon @nkon @←p-utfyll @adv ;
@@ -5296,6 +5297,16 @@ SELECT:At-x-er-y-er-z @xubj IF
         (-1 ("at") + @subj)
         (*1 @fv LINK *1 @fv)    # to finitte verb til høgre
         ;
+
+SELECT:savnet-FISKER-funnet @xubj IF
+        (-2 periode-beg OR guio)
+        (-1C &&ADJ_N_AGR)
+        (0C &&ADJ_N_AGR)
+        (1 &&ADJ_N_AGR)
+        (1C pp)
+        ;
+# Antar overskrift – forsiktig regel
+# «Savnet turfisker funnet i god form i Hjartdal.»
 
 REMOVE:not-xubj @xubj;
 
@@ -19465,6 +19476,16 @@ REMOVE:default-adv @s-pred IF
         (NEGATE *-1 kop)
         ;
 # «Bergen Ap vil at Norge de neste fem årene skal ta imot 5.000 kvoteflyktninger årlig<@adv!>»
+
+REMOVE:savnet-fisker-FUNNET @iv IF
+        (-3 periode-beg/tegnsetting)
+        (-2C &&ADJ_N_AGR)
+        (-1C &&ADJ_N_AGR)
+        (0 &&ADJ_N_AGR)
+        (0C pp)
+        ;
+# Antar overskrift – forsiktig regel
+# «Savnet turfisker funnet i god form i Hjartdal.»
 
 REMOVE:han-fra-alle adv IF
         (0C pr OR adv)
