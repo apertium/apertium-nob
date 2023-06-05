@@ -1437,10 +1437,10 @@ SELECT:mennenes-VM n IF
 		;
 
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
+LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 SELECT:storbokstav-np np IF
         (0 storbokstav)
-        (NOT -1 storbokstav-ok-etter)
-        (NEGATE -1 ("[0-9.]+"r) LINK -1 storbokstav-ok-etter)
+        (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
         ;
 # TODO: ikkje ved
 # «– Da jeg forlot øya, ETTER at uværet hadde inntruffet, oppga de alt fra 6 til 18 dødsfall.»
@@ -32833,6 +32833,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 # «Vi har blant annet fått klager   over avslag på innsyn»
 # «UNE er et domstolslignende organ som behandler klager   over Utlendingsdirektoratets (UDI) vedtak.»
 
+"<Kampen>" REMOVE:Kampen np IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        ;
+
 "<laget>" REMOVE:vi-har-laget n IF
         (-2C nominativ OR infmerke)
         (NOT -2 nt)             # «men det er laget jeg først og fremst skal kjøre for»
@@ -33416,11 +33420,6 @@ SELECT:nest-høyeste-nivå n + sg IF
 # «på aller høyeste  nivå »
 # Ikkje: «men alltid rundet av nedover til nærmeste  hele  tall.»
 # Ikkje: «Norges aller rikeste eier stadig mer.»
-
-SELECT:titlecase-np np + titlecase IF
-        (NOT -1 >>>)
-        (NOT -1 guio OR lpar LINK -1 >>>)
-        ;
 
 SELECT:fredag-ventes-det expl IF
         (-2 vekedag OR adverbialsubst OR adv)
@@ -35150,7 +35149,7 @@ SELECT:no-pres-pres subst
 SELECT:men-Valset-sier np
 	(0 storbokstav)
 	(NOT 0 romertall)
-	(NOT -1 >>>)
+        (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
 	(NOT -1 lpar)
 	(NOT -1 anf)
 	(NOT -1 strek)
