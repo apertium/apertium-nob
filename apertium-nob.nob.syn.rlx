@@ -240,7 +240,7 @@ LIST @premod-u-@kon/@nkon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-g
 LIST @s-gr = @s-gr ;
 LIST @s-pred = @s-pred ;
 LIST @s-pred/@obj = @s-pred @obj ;
-LIST @xubj = @xubj ;
+LIST @xubj = @xubj ;       # subjects of relative clauses / subclauses
 LIST @subj = @subj ;
 LIST @subj/@xubj = @subj @xubj ;
 LIST @subj/@←sbu-rel = @subj @xubj @←sbu-rel ;
@@ -5192,7 +5192,11 @@ CONSTRAINTS
         ;
 
 #CONSTRAINTS
-## select relative and subclause subjects
+
+##################################################
+# SELECT @XUBJ – RELATIVE AND SUBCLAUSE SUBJECTS #
+##################################################
+
 # We tag subjects of relative sentences as "subjects" (with the @xubj
 # tag), even though they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
@@ -5223,6 +5227,14 @@ SELECT:p-utfyll+xubj @xubj IF
         (*3 @subj)
         ;
 # «Ifølge alternativene som vurderes kan de kreve erstatning.»
+
+SELECT:der-rundt-100-er-evakuert @xubj IF
+        (NOT -2 @xubj)          # den første personen<@xubj> i  Belgia<@p-utfyll>  som
+        (*-1 pr BARRIER (*) - @det→ LINK -1 cnjsub LINK *-1 @subj)
+        (1 kop + fv)
+        ;
+# «Tyfonen fortsatte sin ville ferd mot Hongkong og det sørlige Kina der rundt 2,5 millioner mennesker er evakuert»
+
 
 SELECT:cm-som @xubj IF
         (*-1 @subj)
