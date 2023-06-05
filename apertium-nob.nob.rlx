@@ -32749,6 +32749,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (1C adj OR pp)
         ;
 
+"<Flyplass>" REMOVE:Flyplass np IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        ;
+
 "<hende>" REMOVE:kan-det-hende adj OR n IF
         (-2 ("<kan>"i))
         (-1 ("<det>"i))
