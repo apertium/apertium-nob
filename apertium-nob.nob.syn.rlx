@@ -12423,7 +12423,7 @@ REMOVE:6088 (n pl) IF
 
 
 #:780
-REMOVE:780 (@←p-utfyll) IF
+REMOVE:780-ingen-prep-før-clb (@←p-utfyll) IF
 	(*-1C s#periode-beg/clb-konj BARRIER prep)
 ;
 
@@ -18917,6 +18917,25 @@ SELECT:300 (@←p-utfyll) IF
 # Ikke: Innfrysningsprogrammet som ledet til FOS-konkursen i 1991, fôringsstoppene i 1995 og fôrkvotene (ikke @←p-utfyll) som næringen nå sliter med, er i ferd med å redusere Norge til en annenrangs oppdrettsnasjon.
 # "))
 
+SELECT:fra-både-X-og-y (@←p-utfyll) IF
+        (-2 pr)
+        (-1 ("både"))
+        (1 ("og"))
+        (2 @←p-utfyll)
+        ;
+SELECT:fra-både-x-og-Y (@←p-utfyll) IF
+        (-4 pr)
+        (-3 ("både"))
+        (-2 @←p-utfyll)
+        (-1 ("og"))
+        ;
+SELECT:FRA-både-x-og-y pr IF
+        (0C pr OR adv)
+        (1 ("både"))
+        (2 @←p-utfyll)
+        (3 ("og"))
+        (4 @←p-utfyll)
+        ;
 
 SELECT:måten-det-gjøres (@subj) IF
         (-1 ("måte") + sg + def)
@@ -19456,7 +19475,7 @@ REMOVE:over-den-egyptiske-grensen adv IF
 REMOVE:etterpå-smalt pr IF
         (0 adv)
         (0 @adv)
-        (NEGATE 1 n OR adj OR np OR det)
+        (NEGATE 1 n OR adj OR np OR det OR ("både"))
         ;
 # «Rett etterpå smalt ballen i stolpen.»
 
