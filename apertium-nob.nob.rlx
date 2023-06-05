@@ -6157,7 +6157,11 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "De tør nærme seg hverandre."
 
-
+"<nær>" SELECT:utstasjonert-nær pr IF
+        (-1C pp)
+        (1 top)
+        ;
+# «– To syriske regimesoldater utstasjonert nær Ain Issa ble drept tirsdag kveld …»
 
 #:3371
   "<om>"   SELECT:3371   (pr) IF
