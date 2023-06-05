@@ -8456,6 +8456,15 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 ;
 #  "av og til"
 
+"<til>" SELECT:fra-melding-kom-til cnjsub IF
+        (-3 %fra%)
+        (-2 pers OR n OR np - top)
+        (-1 fv)
+        (1 pers OR n OR np - top)
+        (2 fv)
+        ;
+# «– Fra meldingen kom til de ble funnet, går det 32 minutter, sier operasjonssjef Elisabeth Kalvøy i Trøndelag politidistrikt til avisa  .»
+
 
 #:3184
   "<til>"   SELECT:3184   (pr) IF
