@@ -38062,6 +38062,7 @@ SELECT:default ("<lukt>" "lukt") ;
 SELECT:default ("<tanna>" "tann") ;
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
+REMOVE:default ("tiltak") + sg IF (0 pl) ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
