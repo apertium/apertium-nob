@@ -240,7 +240,7 @@ LIST @premod-u-@kon/@nkon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-g
 LIST @s-gr = @s-gr ;
 LIST @s-pred = @s-pred ;
 LIST @s-pred/@obj = @s-pred @obj ;
-LIST @xubj = @xubj ;
+LIST @xubj = @xubj ;       # subjects of relative clauses / subclauses
 LIST @subj = @subj ;
 LIST @subj/@xubj = @subj @xubj ;
 LIST @subj/@←sbu-rel = @subj @xubj @←sbu-rel ;
@@ -3778,11 +3778,12 @@ MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) OR (np) IF
 MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(-1 subst)
 	(NOT -1 ikke-subst)
-	(-1 mengdeord)
+	(-1 mengdeord OR målsubst)
 	(0 subst-ub)
 	(NOT 0 ikke-subst)
 ;
 #  "kh 5.9.2003: en flaske vin"))
+# «Da ble 10 liter øl drukket»
 
 
 #:6122
@@ -3927,6 +3928,16 @@ MAP:1383 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @
 
 #:1382
 MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) ;
+
+
+MAP:10-liter-øl (@subj)   (n) OR (np) IF
+	(0 målsubst OR mengdeord)
+	(-1 det/adj/tall-subst)
+	(1 subst/ub-adj + @xubj)
+	(NOT 1 be)
+;
+# «I 2013 ble 260 kilo heroin funnet skjult i traktorer importert fra Pakistan.»
+# «To år tidligere ble 90 kilo kokain funnet i containere»
 
 
 #:1381
@@ -5192,7 +5203,11 @@ CONSTRAINTS
         ;
 
 #CONSTRAINTS
-## select relative and subclause subjects
+
+##################################################
+# SELECT @XUBJ – RELATIVE AND SUBCLAUSE SUBJECTS #
+##################################################
+
 # We tag subjects of relative sentences as "subjects" (with the @xubj
 # tag), even though they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
@@ -5224,6 +5239,14 @@ SELECT:p-utfyll+xubj @xubj IF
         ;
 # «Ifølge alternativene som vurderes kan de kreve erstatning.»
 
+SELECT:der-rundt-100-er-evakuert @xubj IF
+        (NOT -2 @xubj)          # den første personen<@xubj> i  Belgia<@p-utfyll>  som
+        (*-1 pr BARRIER (*) - @det→ LINK -1 cnjsub LINK *-1 @subj)
+        (1 kop + fv)
+        ;
+# «Tyfonen fortsatte sin ville ferd mot Hongkong og det sørlige Kina der rundt 2,5 millioner mennesker er evakuert»
+
+
 SELECT:cm-som @xubj IF
         (*-1 @subj)
         (0 @obj OR @s-pred)
@@ -5234,8 +5257,8 @@ SELECT:cm-som @xubj IF
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
-SELECT:et-antall-av-krigerne @xubj IF
-        (*-1 mengdeord BARRIER (*) - ("av") - pos - adj-nøyt-ub)
+SELECT:et-antall-av-krigerne @xubj + pl IF
+        (*-1 mengdeord OR målsubst BARRIER (*) - ("av") - pos - adj-nøyt-ub)
         ;
 # «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
 # «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
@@ -12411,7 +12434,7 @@ REMOVE:6088 (n pl) IF
 
 
 #:780
-REMOVE:780 (@←p-utfyll) IF
+REMOVE:780-ingen-prep-før-clb (@←p-utfyll) IF
 	(*-1C s#periode-beg/clb-konj BARRIER prep)
 ;
 
@@ -18905,6 +18928,25 @@ SELECT:300 (@←p-utfyll) IF
 # Ikke: Innfrysningsprogrammet som ledet til FOS-konkursen i 1991, fôringsstoppene i 1995 og fôrkvotene (ikke @←p-utfyll) som næringen nå sliter med, er i ferd med å redusere Norge til en annenrangs oppdrettsnasjon.
 # "))
 
+SELECT:fra-både-X-og-y (@←p-utfyll) IF
+        (-2 pr)
+        (-1 ("både"))
+        (1 ("og"))
+        (2 @←p-utfyll)
+        ;
+SELECT:fra-både-x-og-Y (@←p-utfyll) IF
+        (-4 pr)
+        (-3 ("både"))
+        (-2 @←p-utfyll)
+        (-1 ("og"))
+        ;
+SELECT:FRA-både-x-og-y pr IF
+        (0C pr OR adv)
+        (1 ("både"))
+        (2 @←p-utfyll)
+        (3 ("og"))
+        (4 @←p-utfyll)
+        ;
 
 SELECT:måten-det-gjøres (@subj) IF
         (-1 ("måte") + sg + def)
@@ -19444,7 +19486,7 @@ REMOVE:over-den-egyptiske-grensen adv IF
 REMOVE:etterpå-smalt pr IF
         (0 adv)
         (0 @adv)
-        (NEGATE 1 n OR adj OR np OR det)
+        (NEGATE 1 n OR adj OR np OR det OR ("både"))
         ;
 # «Rett etterpå smalt ballen i stolpen.»
 

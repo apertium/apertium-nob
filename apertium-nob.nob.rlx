@@ -1320,6 +1320,9 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         (1 np OR ukjent + storbokstav);
 "<Mc>"i REMOVE:unlikely np;
 
+"<Er>"i REMOVE:unlikely np;
+"<Hele>"i REMOVE:unlikely np;
+
 
 # Arabiske etternamn på al-/Al- eller bin-/Bin-, genitiv: "Al-Amiris familie", "al-Nahyans familie"
 APPEND:np-guess-etternamn-arab-gen ("$1"v np cog cgguess gen) TARGET ("<((al|Al|bin|Bin)-\\p{Lu}\\p{Ll}+)(s|'|’)>"r) IF
@@ -1437,10 +1440,10 @@ SELECT:mennenes-VM n IF
 		;
 
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
+LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 SELECT:storbokstav-np np IF
         (0 storbokstav)
-        (NOT -1 storbokstav-ok-etter)
-        (NEGATE -1 ("[0-9.]+"r) LINK -1 storbokstav-ok-etter)
+        (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
         ;
 # TODO: ikkje ved
 # «– Da jeg forlot øya, ETTER at uværet hadde inntruffet, oppga de alt fra 6 til 18 dødsfall.»
@@ -1713,6 +1716,7 @@ REMOVE:unlikely ("Kütt") IF (0 ("<Kutt>")) ;
 REMOVE:unlikely ("Gün") IF (0 ("<Gun>")) ;
 REMOVE:unlikely ("Björg") IF (0 ("<Bjorg>")) ; # Bjorg Lambrecht
 REMOVE:unlikely ("Stemmen") + np IF (-1 setn-gr);
+REMOVE:unlikely ("Kos") + np IF (0 ("Koss") + np);
 REMOVE:unlikely ("toe") + imp; # å toe
 REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
 REMOVE:unlikely ("<rykker>"i) + n; # en rykker -> ein rykkjar; kreditor
@@ -6158,7 +6162,11 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "De tør nærme seg hverandre."
 
-
+"<nær>" SELECT:utstasjonert-nær pr IF
+        (-1C pp)
+        (1 top)
+        ;
+# «– To syriske regimesoldater utstasjonert nær Ain Issa ble drept tirsdag kveld …»
 
 #:3371
   "<om>"   SELECT:3371   (pr) IF
@@ -8449,6 +8457,15 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 	(-2 %av%)
 ;
 #  "av og til"
+
+"<til>" SELECT:fra-melding-kom-til cnjsub IF
+        (-3 %fra%)
+        (-2 pers OR n OR np - top)
+        (-1 fv)
+        (1 pers OR n OR np - top)
+        (2 fv)
+        ;
+# «– Fra meldingen kom til de ble funnet, går det 32 minutter, sier operasjonssjef Elisabeth Kalvøy i Trøndelag politidistrikt til avisa  .»
 
 
 #:3184
@@ -12491,6 +12508,12 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # Ikke: Og (clb i beg. av setn) ikke minst
 # Ikke: feiltolkninger og (clb) ikke minst er det slik at "))
 
+
+"<og>" REMOVE:mellom-N-og-N clb IF
+        (*-1 ("mellom") BARRIER (*) - np - storbokstav)
+        (1 np OR storbokstav)
+        ;
+# «har vi konkludert med at avtalen mellom Petter Northug og Toppidrettsveka opprettholdes.»
 
 #:3380
 "<og>"   REMOVE:3380   clb IF
@@ -32744,6 +32767,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (1C adj OR pp)
         ;
 
+"<Flyplass>" REMOVE:Flyplass np IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        ;
+
 "<hende>" REMOVE:kan-det-hende adj OR n IF
         (-2 ("<kan>"i))
         (-1 ("<det>"i))
@@ -32827,6 +32854,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 # Unntak:
 # «Vi har blant annet fått klager   over avslag på innsyn»
 # «UNE er et domstolslignende organ som behandler klager   over Utlendingsdirektoratets (UDI) vedtak.»
+
+"<Kampen>" REMOVE:Kampen np IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        ;
 
 "<laget>" REMOVE:vi-har-laget n IF
         (-2C nominativ OR infmerke)
@@ -33411,11 +33442,6 @@ SELECT:nest-høyeste-nivå n + sg IF
 # «på aller høyeste  nivå »
 # Ikkje: «men alltid rundet av nedover til nærmeste  hele  tall.»
 # Ikkje: «Norges aller rikeste eier stadig mer.»
-
-SELECT:titlecase-np np + titlecase IF
-        (NOT -1 >>>)
-        (NOT -1 guio OR lpar LINK -1 >>>)
-        ;
 
 SELECT:fredag-ventes-det expl IF
         (-2 vekedag OR adverbialsubst OR adv)
@@ -35145,7 +35171,7 @@ SELECT:no-pres-pres subst
 SELECT:men-Valset-sier np
 	(0 storbokstav)
 	(NOT 0 romertall)
-	(NOT -1 >>>)
+        (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
 	(NOT -1 lpar)
 	(NOT -1 anf)
 	(NOT -1 strek)
@@ -38038,6 +38064,7 @@ SELECT:default ("<lukt>" "lukt") ;
 SELECT:default ("<tanna>" "tann") ;
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
+REMOVE:default ("tiltak") + sg IF (0 pl) ;
 
 # REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
