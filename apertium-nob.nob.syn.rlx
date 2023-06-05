@@ -3778,11 +3778,12 @@ MAP:1393 (@subj @xubj @s-pred @adv @←p-utfyll)   (n) OR (np) IF
 MAP:1392 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n) OR (np) IF
 	(-1 subst)
 	(NOT -1 ikke-subst)
-	(-1 mengdeord)
+	(-1 mengdeord OR målsubst)
 	(0 subst-ub)
 	(NOT 0 ikke-subst)
 ;
 #  "kh 5.9.2003: en flaske vin"))
+# «Da ble 10 liter øl drukket»
 
 
 #:6122
@@ -3927,6 +3928,16 @@ MAP:1383 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @
 
 #:1382
 MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) ;
+
+
+MAP:10-liter-øl (@subj)   (n) OR (np) IF
+	(0 målsubst OR mengdeord)
+	(-1 det/adj/tall-subst)
+	(1 subst/ub-adj + @xubj)
+	(NOT 1 be)
+;
+# «I 2013 ble 260 kilo heroin funnet skjult i traktorer importert fra Pakistan.»
+# «To år tidligere ble 90 kilo kokain funnet i containere»
 
 
 #:1381
@@ -5246,8 +5257,8 @@ SELECT:cm-som @xubj IF
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
-SELECT:et-antall-av-krigerne @xubj IF
-        (*-1 mengdeord BARRIER (*) - ("av") - pos - adj-nøyt-ub)
+SELECT:et-antall-av-krigerne @xubj + pl IF
+        (*-1 mengdeord OR målsubst BARRIER (*) - ("av") - pos - adj-nøyt-ub)
         ;
 # «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
 # «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
