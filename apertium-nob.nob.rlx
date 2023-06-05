@@ -4027,10 +4027,12 @@ SELECT:årets-spelar ("<spiller>"i) + n + sg + ind IF
         (-1 ("år") + n + gen)
         ;
 
-SELECT:fasen ("fase"i) IF
+SELECT:fasen ("fase") IF
         (0 ("<fasen>") OR ("<faser>") OR ("<fasene>"))
         ;
         # jf. ein fas
+REMOVE:fasen ("fas") IF
+        (NEGATE 0 ("fas") + sg + ind)
 
 SELECT:pressen-i-buksa ("press"i n) + sg + def IF
         (1 %i%)
