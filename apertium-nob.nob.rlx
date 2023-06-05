@@ -4037,6 +4037,7 @@ SELECT:fasen ("fase") IF
         # jf. ein fas
 REMOVE:fasen ("fas") IF
         (NEGATE 0 ("fas") + sg + ind)
+        ;
 
 SELECT:pressen-i-buksa ("press"i n) + sg + def IF
         (1 %i%)
