@@ -30084,6 +30084,7 @@ REMOVE:for-økt-sysselsetting subst IF
 #:1991
  REMOVE:1991 subst IF
 	(0 retning)
+        (NEGATE -1 top)         # «Oslo øst»
 ;
 #  "nord (prep) for spissen av ...
 # Han såg sola gå opp i aust (prep)
@@ -36177,7 +36178,6 @@ REMOVE:ble-lest-opp n IF
 REMOVE:ble-hensyntatt pl IF
 		(0 ("<hensyntatt>"))
 		;
-
 
 REMOVE:pp-overskrift vblex + pp IF
         (0C pp)
