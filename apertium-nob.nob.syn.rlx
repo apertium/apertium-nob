@@ -12399,6 +12399,14 @@ SELECT:måten-prøvene-ble-tatt-på @subj IF
         (*2 ("på") LINK *-1 @fv)
         ;
 
+SELECT:men-mannen-INSK-er @subj IF
+        (1C cm - clb)
+        (2C @det→)
+        (3C @app)
+        (4C cm - clb)
+        (5C @fv)
+        ;
+# «Vi har ingen opplysninger om relasjoner mellom de tre eller detaljer rundt hva som har skjedd, men den ene mannen, en 44-åring, er pågrepet.»
 
 SELECT:ulykken-ikke-skyldtes-svikt @obj IF
         (*-1C @fv + pstv BARRIER (*) - @adj→ LINK *-1C @subj BARRIER (*) - @adv)
