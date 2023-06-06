@@ -13829,7 +13829,7 @@ SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «git
         ;
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
-LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare";
+LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare" "skje" ;
 REMOVE:no-pred-samsvar-unless-attrc adj + pp + no-pred-samsvar IF
         (NEGATE 0 adj + pp + pl LINK 1C n + pl + def)
         (NEGATE 0 adj + pp + sg + def LINK 1C n + sg + def) # den mest sette fotballkampen
@@ -25558,6 +25558,13 @@ SELECT:mann-funnet-drept pp + &&ADJ_N_AGR IF
         (NOT 0 adv OR det)
         ;
 # «Savnet 20-åring funnet druknet i Hemnessjøen i Aurskog-Høland.»
+
+REMOVE:unngå-fl-overskrift adj + pp + pl IF
+        (-1 ("<Aldri>") OR ("Ikke"))
+        ;
+# Unngå fleirtalsformer ved elliptisk "ha"/subjekt:
+# «Aldri skjedd før.»
+# «Aldri opplevd slik atmosfære i Norge før.»
 
 
 SELECT:at-arbeidet-som-ble-utført n + def OR n + pl IF
