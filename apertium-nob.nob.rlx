@@ -35820,7 +35820,6 @@ REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 # knallhard dom at ..."
 
 
-
 #:1681
  REMOVE:1681 (vblex pret) IF
 	(NOT 0 m-hj-verb)
@@ -36178,6 +36177,15 @@ REMOVE:ble-lest-opp n IF
 REMOVE:ble-hensyntatt pl IF
 		(0 ("<hensyntatt>"))
 		;
+
+
+REMOVE:pp-overskrift vblex + pp IF
+        (0C pp)
+        (NEGATE *-1 p-hj-verb)
+        ;
+# Me vil ha adj-samsvar viss partisippet ikkje er styrt av hjelpeverb:
+# «Siktede ikke   avhørt  .»
+# «13 franske kvinner som satt fengslet i Syria   mistenkt   for å være jihadister og IS-tilhengere, har rømt, opplyser en fransk organisasjon.»
 
 
 #################################################################
