@@ -9074,6 +9074,7 @@ REMOVE:unlikely ("<liker>") + n;
 REMOVE:unlikely ("<været>" "være");
 REMOVE:unlikely ("<Aker>" "ake");
 REMOVE:unlikely ("<spilles>") + n;
+REMOVE:unlikely ("<stilles>") + n;
 REMOVE:unlikely ("<to>") + imp;
 REMOVE:unlikely ("<To>") + cog IF (NOT -1 storbokstav); # «To er funnet omkommet»
 REMOVE:unlikely ("<vis>") + m;
