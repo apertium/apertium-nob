@@ -1822,7 +1822,21 @@ REMOVE:en-fot ("fot") + pl IF
 
 REMOVE:unlikely n + ("lenge") ;
 REMOVE:unlikely ("ond") OR ("vond") IF
-        (0 ("verre") OR ("verst"));     # unlikely «vondare/vondast»
+        (0 ("verre") OR ("verst")) ;     # unlikely «vondare/vondast»
+
+SELECT:gått ("<gått>"i) + vblex + pp IF
+        (0 adj + pp)
+        (-1* %ha%)
+        ;
+SELECT:gått ("<gått>"i) + vblex + pp IF
+        (1 ("konkurs") OR ("tom") OR prep)
+        ;
+        # er gått konkurs, var gått tom, være gått over til
+SELECT:inngått ("<inngått>"i) + vblex + pp IF
+        (0 adj + pp)
+        (-1* %ha%)
+        ;
+
 
 "<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
 
