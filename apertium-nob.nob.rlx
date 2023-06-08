@@ -4505,7 +4505,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (-1C top)
         (1 setn-gr OR fv)
         ;
-
+"<fortsatt med>" SELECT (adv) IF
+        (0 vblex + pp)
+	(-1 vblex)
+	(NEGATE -1* %ha/få% OR modalverb)
+;
 "<fortsatt>" SELECT (vblex) IF
 	(-4 ("ha"))
         (-2 adj)
