@@ -768,6 +768,8 @@ LIST verb = vblex ;
 
 LIST etter-prop-ord = "kommune" "katedralskole" "skole" "rådhus" "by" ".*s(y|ju)kehus"r "lufthavn" "lufthamn" "stadion" "fort" "slott" "tingrett" "sentrum" "politidistrikt" "bispedømme" "bystyre" "domkirke" "politistasjon" "fengsel" ".*bibliotek"r ; # «Sarpsborg stadion»
 
+LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
+LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 
 MAPPINGS
 
@@ -19095,6 +19097,25 @@ SELECT:291 (@subj) IF
 #  "LO 2.9.2003: Den mørke jenta med det lange håret liker bilen.
 # "))
 
+SELECT:Mann-dømt (@subj) IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom - @adj→)
+        (0 n + ind)
+        (1C pp)
+        (NEGATE *2 @fv)
+        ;
+# «Mann dømt for koronasvindel.»
+
+SELECT:Mann-i-50-åra-dømt (@subj) IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom - @adj→)
+        (0 n + ind)
+        (1 ("i"))
+        (2 ("[0-9]+-år"r) OR top) # «i 50-åra», «i Tyskland»
+        (3C pp)
+        (NEGATE *4 @fv)
+        ;
+# «Mann dømt for koronasvindel.»
+
+
 #:6094
 #SELECT:6094 (@subj) IF
 #	(NOT 0 sbu/infmerke)
@@ -19406,7 +19427,7 @@ REMOVE:det-ventes-en-vekst @subj IF
 
 
 #:265
-REMOVE:265 (@subj) IF
+REMOVE:no-fv (@subj) IF
 	(*-1C s#periode-beg/clb-konj BARRIER verb)
 	(*1C periode-slutt/clb-konj BARRIER verb)
 	(*1 overskrift)

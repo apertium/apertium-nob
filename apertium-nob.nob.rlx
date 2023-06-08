@@ -1439,7 +1439,7 @@ SELECT:mennenes-VM n IF
 		(1 ("<grønne>"))
 		;
 
-LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r ;
+LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
 LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 SELECT:storbokstav-np np IF
         (0 storbokstav)
@@ -5793,6 +5793,9 @@ SELECT ("lyve") IF
 # KBU: som 2553, utan Careful – om "en" au kan vere pronomen er
 # irrellevant
 
+"<Mann>" SELECT:Mann-dømt n IF
+        (1C pp)
+        ;
 
 #:3449
   "<meg>"   SELECT:3449   (prn) IF
