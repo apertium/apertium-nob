@@ -766,7 +766,9 @@ LIST utfyllingssubj = "hvori" "hvorfra" "enn" ;
 LIST vanlig-prep-tittel = "verdensmester" "student" "skribent" "prosjektleder" "professor" "president" "norgesmester" "lærer" "lektor" "leder" "hovedfagsstudent" "førsteamauensis" "formann" "forfatter" "europamester" "direktør" "astronom" "amanuensis" "lege" ;
 LIST verb = vblex ;
 
+
 LIST etter-prop-ord = "kommune" "katedralskole" "skole" "rådhus" "by" ".*s(y|ju)kehus"r "lufthavn" "lufthamn" "stadion" "fort" "slott" "tingrett" "sentrum" "politidistrikt" "bispedømme" "bystyre" "domkirke" "politistasjon" "fengsel" ".*bibliotek"r ; # «Sarpsborg stadion»
+LIST siktede-ord = "siktede" "tiltalt" "domfelt" "medtiltalt" "tillitsvalgt" "medsammensvoren" "sakkyndig" "etterlatt" "sistnevnt" ;
 
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
 LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
@@ -19115,6 +19117,19 @@ SELECT:Mann-i-50-åra-dømt (@subj) IF
         ;
 # «Mann dømt for koronasvindel.»
 
+
+SELECT:Siktede-løslatt (@subj) IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        (0 siktede-ord + storbokstav + n)
+        (NEGATE 0 gen)
+        ;
+
+SELECT:Siktedes-bror-siktet (@subj) IF
+        (*-2 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        (-1 siktede-ord + storbokstav + n)
+        (-1 gen)
+        (0C n + ind)
+        ;
 
 #:6094
 #SELECT:6094 (@subj) IF
