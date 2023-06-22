@@ -14736,8 +14736,9 @@ REMOVE:563 (@subj) IF
 
 
 #:562
-REMOVE:562 (@subj) IF
+REMOVE:S-før-V (@subj) IF
 	(*1C periode-slutt/clb-konj BARRIER @fv)
+        (NEGATE *-1 @fv LINK *-1 @adv)
 	(*-1 @fv LINK NOT 0 ikke-@fv LINK *1 s#ikke-prep LINK 0 s#tegnsetting/konj LINK NOT 0 <adv>)
 ;
 #  " IKKE: maskinene durer, det fine støvet @SUBJ i luften,...
