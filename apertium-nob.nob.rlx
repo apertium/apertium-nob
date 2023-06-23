@@ -5138,6 +5138,14 @@ SELECT:lurer-på-hvor adv IF
         (NEGATE *0 spørreadv OR %når%)
         ;
 
+"<hvor>" SELECT:saker-hvor-domfelte-er cnjsub IF
+        (*-2C fv BARRIER cnjsub OR clb)
+        (-1C n)
+        (1C n OR pp OR pret)
+        (*2C fv BARRIER cnjsub OR clb)
+        ;
+# «Hittil er det identifisert 78 saker hvor domfelte er berørt av feiltolkningen.»
+
 "<hvor>" SELECT:men-hvor-det-bare-skal-avgjøres cnjsub IF
         (NEGATE *-3 spørreadv OR %når% BARRIER setn-gr LINK 0 adv)
         (-2 cm)
