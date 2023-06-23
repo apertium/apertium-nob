@@ -929,7 +929,9 @@ LIST ub-ent-fem-subst = (n f sg ind) (np f sg ind) ;
 LIST ub-ent-mask-adj = (adj m ind sg) (adj mf ind sg) (adj pprs) ;
 LIST ub-ent-mask-adj/adverb = (adj m ind sg) (adj mf ind sg) (adj ind nt) adv <adv> (adj pprs) ;
 LIST ub-ent-mask-adj/komp = (adj m ind sg) (adj mf ind sg) (adj pprs) (adj comp) ;
+
 LIST ub-ent-mask-subst = (n m sg ind) (np m sg ind) ;
+SET ub-ent-mask-subst/namn = ub-ent-mask-subst OR cog OR ant + m OR ant + f ;
 LIST ub-ent-mask/fem-adj = (adj m ind sg) (adj f ind sg) (adj mf ind sg) (adj pprs) ;
 LIST ub-ent-mask/fem-det = ("én" det m sg) ("en"  det m sg) ("noen"  det m sg) ("ingen"  det m sg) ("en"  det f sg) ("noen"  det f sg) ("ingen"  det f sg) ;
 LIST ub-ent-mask/fem-subst = (n m sg ind) (np m sg ind) (n f sg ind) (np f sg ind) (n m sg ind gen) (np m sg ind gen) (n f sg ind gen) (np f sg ind gen) ;
@@ -17673,14 +17675,15 @@ SELECT:2963 (adj nt ind sg) IF
 
 
 #:2916
- SELECT:2916 (adj mf ind sg) IF
+ SELECT:en-tydelig-frustrert-mann (adj mf ind sg) IF
 	(NOT 0 farlige-adj)
 	(NOT 1C adj)
 	(*-1 ub-mask-det BARRIER ikke-adv-adj)
-	(*1 ub-ent-mask-subst BARRIER ikke-adv-adj)
-	(*1O ub-ent-mask-subst LINK NOT -1 komma/konj)
+	(*1 ub-ent-mask-subst/namn BARRIER ikke-adv-adj)
+	(*1O ub-ent-mask-subst/namn LINK NOT -1 komma/konj)
 ;
 #  "en gul bil
+# «Da utlignet amerikaneren til 5,5-5,5 mot en tydelig frustrert Carlsen.»
 # NOT 1 ADJ: en veldig (adj nøyt=adv) gul bil"))
 
 
