@@ -11553,6 +11553,11 @@ REMOVE ("frø") IF
 #  "Forlang infmerke for å tillate inf ved \"heime\"!"
 
 
+"<hel>" REMOVE:fersk-hæl-laks n IF
+        (-1C adj + mask/fem/mf)
+        (1C n + mask/fem/mf)
+        ;
+
 "<hel>" REMOVE:serveres-hæl n IF
         (-1 ("servere"))
         ;
