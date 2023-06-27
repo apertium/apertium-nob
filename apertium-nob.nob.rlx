@@ -9687,6 +9687,11 @@ REMOVE:to-ansatte vblex IF
         ;
 # "Jeg så en av de fremste utenrikspolitiske ekspertene si at..."
 
+"<Rundtom>" REMOVE:Rundtom-er prep IF
+        (NEGATE 1 prep)
+        ;
+        # "Rundtom er leiar for ..."; elles "rundt om"
+
 "<ønsket>"i REMOVE:ønsket-om vblex OR adj IF
         (1 ("om"))
         ;
