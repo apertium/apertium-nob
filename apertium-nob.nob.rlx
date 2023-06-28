@@ -9585,6 +9585,11 @@ REMOVE:mange-fotografier m IF
         (0 ("fotografi"))
         ;
 # "Det er flere familiefotografier ..."
+"<Glimt>" SELECT:Glimt-fra-n ("glimt") IF
+        (1 ("fra"))
+        (2 n)
+        ;
+# "Glimt fra historien."
 REMOVE:fatte-mot pr IF
         (-1 ("fatte"))
         (1 pr OR adv) ;
