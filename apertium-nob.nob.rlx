@@ -9580,6 +9580,11 @@ REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
+REMOVE:mange-fotografier m IF
+        (0/1 ("familie"))
+        (0 ("fotografi"))
+        ;
+# "Det er flere familiefotografier ..."
 REMOVE:fatte-mot pr IF
         (-1 ("fatte"))
         (1 pr OR adv) ;
