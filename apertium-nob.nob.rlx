@@ -1625,7 +1625,6 @@ REMOVE:unlikely nt        IF (0 ("bestand") LINK 0 m);
 REMOVE:unlikely ("tane");
 REMOVE:unlikely ("sambo");
 REMOVE:unlikely ("skjøt");
-REMOVE:unlikely ("<skjente>"i "skjene");
 REMOVE:unlikely ("<skjent>"i "skjene");
 REMOVE:unlikely ("åt");
 REMOVE:unlikely m         IF (0 ("intervjuer") + sg + ind);
@@ -6588,7 +6587,18 @@ SELECT:glimre-med ("glimre" vblex) IF
         ;
         # "glimre med sitt fråvær"
 
+SELECT:skjene-ut ("skjene" vblex) IF
+        (1 %ut% OR %til% OR %over% OR ("unna") OR %av% OR %mot% OR ("av gårde"))
+        ;
+        # Flyet kom litt opp i luften, men skjente ut til venstre
 
+SELECT:skjene-ut ("skjene" vblex) IF
+        (2 %ut% OR %til% OR %over% OR ("unna") OR %av% OR %mot% OR ("av gårde"))
+        ;
+        # da skjente hun til venstre
+
+REMOVE:unlikely ("<skjente>"i "skjene");
+        # jf. skeine
 
 "<reiser>" SELECT:karentene-og-reiser n IF
         (-2 ("karantene") OR ("flyging") OR ("flyvning") OR ("opphold"))
