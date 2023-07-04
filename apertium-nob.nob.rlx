@@ -12641,6 +12641,13 @@ REMOVE:tilbakekaller-leker ("lek") IF
 
 "<ølet>" SELECT:ølet subst;
 
+"<øl>" SELECT:liter-øl nt IF
+        (-1 målsubst)
+        ;
+# «20 liter øl»
+# unngå «ølar»
+
+
 "<økt>" SELECT:økt-pris adj IF
         (1 subst OR ukjent OR talord-par-siffer)
         ;
