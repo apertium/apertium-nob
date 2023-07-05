@@ -9595,6 +9595,12 @@ REMOVE:mange-fotografier m IF
         (0 ("fotografi"))
         ;
 # "Det er flere familiefotografier ..."
+"<annen>" SELECT:andre-omgang adj IF
+        (1 ("omgang") OR ("seier") OR ("periode"))
+        ;
+# "Det er annen omgang"
+SELECT:default ("<annen>"i) + det ;
+# "Det er en helt annen"
 "<Glimt>" SELECT:Glimt-fra-n ("glimt") IF
         (1 ("fra"))
         (2 n)
