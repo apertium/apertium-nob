@@ -9603,6 +9603,10 @@ SELECT:ts-salt ("salt") IF
         (-1 ("ts") OR ("ss"))
         ;
 # "1 ts salt"
+SELECT:du-leser ("lese") IF
+        (-1 prn + pers)
+        ;
+# " ... hvilken bok som skal være den neste du leser, sier Pauline."
 "<annen>" SELECT:andre-omgang adj IF
         (1 ("omgang") OR ("seier") OR ("periode"))
         ;
