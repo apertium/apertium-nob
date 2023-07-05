@@ -9595,6 +9595,14 @@ REMOVE:mange-fotografier m IF
         (0 ("fotografi"))
         ;
 # "Det er flere familiefotografier ..."
+REMOVE:kyllingvinger ("ving") IF
+        (0/1 ("kylling") OR ("fugl"))
+        ;
+# "Det er flere kyllingvinger ..."
+SELECT:ts-salt ("salt") IF
+        (-1 ("ts") OR ("ss"))
+        ;
+# "1 ts salt"
 "<annen>" SELECT:andre-omgang adj IF
         (1 ("omgang") OR ("seier") OR ("periode"))
         ;
