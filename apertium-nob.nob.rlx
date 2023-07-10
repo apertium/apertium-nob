@@ -10,7 +10,7 @@ DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" se
 LIST GENDER = m f nt mf ;
 LIST NUMBER = sg pl sp ;
 LIST DEFNES = def ind ;
-LIST TEMPUS = inf pres pasv pret pp imp ;
+LIST TEMPUS = inf pres pret pp imp ; # not pasv, messes up tag unification
 
 # For use with http://beta.visl.sdu.dk/cg3/single/#set-unification-set
 # as &&ADJ_N_AGR (also works for demonstratives):
@@ -13229,6 +13229,9 @@ SELECT:skrev vblex IF
         (NOT -1 infmerke)
         ;
 
+"<tørkes>" REMOVE n IF
+        (NEGATE *1 n BARRIER ikke-adj-det);
+
 "<ubevoktet>" SELECT adj IF
         (1 ("øyeblikk"))
         ;
@@ -23699,6 +23702,45 @@ SELECT:Dit-går-de pres IF
 
 
 
+# Verbsekvensar – trygge først:
+
+SELECT:må-tørkes-kokes inf IF
+        (-3C m-hj-verb)         # C!
+        (-2C inf)
+        (-1 cm)
+        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
+        (1 cm OR %og/eller%)
+        ;
+# «Sopp kan hermetiseres, tørkes, avkokes, sammenkokes, saltes og fryses, alt ettersom hva den skal brukes til.»
+
+
+SELECT:LØYET-narret-og-bedratt $$TEMPUS IF
+        (NEGATE -1 cm OR %og/eller% LINK -1 vblex)
+        (NEGATE 0 n LINK 2 n)   # armer, ben og bryst
+        (1 cm)
+        (2 $$TEMPUS)
+        (3 cm OR %og/eller%)
+        (4 $$TEMPUS)
+        ;
+
+SELECT:løyet-NARRET-og-bedratt $$TEMPUS IF
+        (-2 $$TEMPUS)
+        (-1 cm)
+        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
+        (1 cm OR %og/eller%)
+        (2 $$TEMPUS)
+        ;
+
+SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
+        (-4 $$TEMPUS)
+        (-3 cm)
+        (-2 $$TEMPUS)
+        (-1 cm OR %og/eller%)
+        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
+        ;
+
+
+
 #:2472
  SELECT:2472 (vblex pres) IF
 	(NOT 0 pret)
@@ -25089,31 +25131,6 @@ SELECT:vel-anvendte-midler adj IF
 #  "Derfor gjaldt det
 # Stadig oftere gjaldt det"
 #      :group 48
-
-
-SELECT:LØYET-narret-og-bedratt $$TEMPUS IF
-        (NEGATE 0 n LINK 2 n)   # armer, ben og bryst
-        (1 cm)
-        (2 $$TEMPUS)
-        (3 cm OR %og%)
-        (4 $$TEMPUS)
-        ;
-
-SELECT:løyet-NARRET-og-bedratt $$TEMPUS IF
-        (-2 $$TEMPUS)
-        (-1 cm)
-        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
-        (1 cm OR %og%)
-        (2 $$TEMPUS)
-        ;
-
-SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
-        (-4 $$TEMPUS)
-        (-3 cm)
-        (-2 $$TEMPUS)
-        (-1 cm OR %og%)
-        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
-        ;
 
 
 #:2376
