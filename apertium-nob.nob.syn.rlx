@@ -5264,11 +5264,12 @@ SELECT:cm-som @xubj IF
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
 SELECT:et-antall-av-krigerne @xubj + pl IF
-        (*-1 mengdeord OR målsubst BARRIER (*) - ("av") - pos - adj-nøyt-ub)
+        (*-1 mengdeord OR målsubst BARRIER (*) - ("av") - pos - adj-nøyt-ub LINK NEGATE *-1 pr BARRIER (*) - siffer)
         ;
 # «Egyptiske medier melder at et ukjent antall demonstranter ble pågrepet på Tahrirplassen i Kairo.»
 # «SDF bekrefter angrepet og sier at et antall av deres.det.pos krigere@xubj ble drept og såret.»
 # «Antallet internt fordrevne i verden var i 2018 det høyeste noen gang, med 41,3 millioner mennesker på flukt i eget land, ifølge en rapport fra Flyktninghjelpen.»
+# Ikkje: «på 3000 meter hinder»
 
 SELECT:ønsker-saken-avgjort @xubj + &&ADJ_N_AGR IF
         (-1 ("ønske"))
@@ -6093,7 +6094,12 @@ SELECT:6064 (adj pst pl @adj→) IF
 # konjunksjon mellom."))
 
 
-
+SELECT:på-3000-meter-hinder (@←p-utfyll) IF
+        (-3 @adv)
+        (-2 siffer)
+        (-1 ("meter"))
+        (0 ("hinder") OR ("hekk") OR ("<flatt>") OR ("rygg") OR ("<innendørs>") OR ("bryst") OR ("butterfly") OR ("<fri>") OR ("stafett") OR ("medley"))
+        ;
 
 #:6069
  SELECT:6069 (@←p-utfyll) IF
