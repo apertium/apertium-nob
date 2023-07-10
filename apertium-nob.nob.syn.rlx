@@ -3935,14 +3935,15 @@ MAP:1383 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np @
 MAP:1382 (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @subst→ @app @laus-np)   (np) ;
 
 
-MAP:10-liter-øl (@subj)   (n) OR (np) IF
+MAP:10-liter-øl (@subj @xubj @obj @i-obj @s-pred @←p-utfyll @laus-np)   (n) OR (np) IF
 	(0 målsubst OR mengdeord)
 	(-1 det/adj/tall-subst)
 	(1 subst/ub-adj + @xubj)
 	(NOT 1 be)
 ;
-# «I 2013 ble 260 kilo heroin funnet skjult i traktorer importert fra Pakistan.»
-# «To år tidligere ble 90 kilo kokain funnet i containere»
+# @subj: «I 2013 ble 260 kilo heroin funnet skjult i traktorer importert fra Pakistan.»
+# @subj: «To år tidligere ble 90 kilo kokain funnet i containere»
+# @obj: «Den ene eksadvokaten, som innrømmer å ha solgt om lag to kilo amfetamin, er dømt til samfunnsstraff 340 timer.»
 
 
 #:1381
