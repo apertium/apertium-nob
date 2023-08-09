@@ -1952,6 +1952,7 @@ REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykke
 REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av farge
 REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farge, aksentfargar
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
+REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
 
 SELECT:er-oppløftet adj IF
 		(-1* %være/bli%)
@@ -6635,7 +6636,7 @@ REMOVE:unlikely ("<skjente>"i "skjene");
 # Gutten har rent (perf-part) på ski"))
 
 "<rente>" SELECT:uendret-rente n IF
-        (NOT 1 %ned% OR %ut% OR ("<begeret>") OR %det% OR ("mer"))
+        (NOT 1 %ned% OR %ut% OR ("<begeret>") OR %det% OR ("<mer>"))
         ;
 
 
@@ -7567,6 +7568,13 @@ SELECT:NNs-forlovede n IF
         ;
 
 
+"<stadig>" SELECT:modifies-adj/n adj IF
+        (1C n OR %mye/lite% OR ("<mer>"))
+        ;
+# «Det felles stadig mer jerv.»
+"<stadig>" SELECT:modifies-verb adv ;
+# «fortsetter den britiske mutasjonen stadig å dukke opp»
+
 #:3242
   "<stand>"   SELECT:3242   (n sg) IF
 	(-1 %i%)
@@ -8411,7 +8419,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 "<steget>"   SELECT:har-bare-steget-med ("stige") IF
         (*-1C hj-verb)
-        (1C %med% OR ("kraftig") OR ("mer"))
+        (1C %med% OR ("kraftig") OR ("<mer>"))
         ;
 
 "<steget>"   SELECT:det-siste-steget n IF
