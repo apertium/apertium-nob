@@ -8845,6 +8845,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 #  "kh feb 2004: Jeg vil grave ei veit langs veien."
 
 
+"<vekt>" SELECT:vekt-under-23-kilo n IF
+        (1 %under% OR %over%)
+        ;
+
 
 #:3147
   "<vel>"   SELECT:3147   (adv) IF
@@ -32968,6 +32972,15 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 # Unntak:
 # «Vi har blant annet fått klager   over avslag på innsyn»
 # «UNE er et domstolslignende organ som behandler klager   over Utlendingsdirektoratets (UDI) vedtak.»
+
+"<klager>" REMOVE:300-klager-etter n IF
+        (-1 qnt + pl OR %mange%)
+        (1 %etter%)
+        ;
+"<klager>" REMOVE:pågang-av-klager-etter n IF
+        (-1 %av% LINK -1 ("pågang"))
+        (1 %etter%)
+        ;
 
 "<Kampen>" REMOVE:Kampen np IF
         (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
