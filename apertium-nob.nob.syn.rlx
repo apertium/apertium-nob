@@ -10801,6 +10801,7 @@ SELECT:895 (@subj) IF
 SELECT:890 (@subj) IF
 	(NOT 0 infmerke)
 	(NOT 0 s#sbu)
+        (NOT 0 tidsadvsubst-nr1) # «Mandag ble Mamic dømt i …»
 	(-1 s#periode-beg/clb-konj)
 	(*1C @fv LINK *1C @fv LINK -1 clb-komma)
 	(*1C @fv LINK *1C @fv LINK *1 ikke-mod-@←p-utfyll-@adv-@app LINK NOT 0 @subj)
@@ -10811,6 +10812,7 @@ SELECT:890 (@subj) IF
 SELECT:889 (@subj) IF
 	(NOT 0 infmerke)
 	(NOT 0 s#sbu)
+        (NOT 0 tidsadvsubst-nr1) # «Mandag ble Mamic dømt i …»
 	(*-1 s#periode-beg/clb-konj LINK NOT 1 prep)
 	(*-1 s#periode-beg/clb-konj BARRIER ikke-mod-@←p-utfyll-@adv-@app)
 	(*1C @fv LINK *1C @fv LINK -1 clb-komma)
@@ -12374,10 +12376,16 @@ SELECT:781 (@tittel) IF
 #  " olympiamester og verdensmester Fred Børre Lundberg"))
 
 
+SELECT:nå-er-han-dømt (@s-pred) IF
+        (*-2 %være/bli%-fin BARRIER ikke-adv-adj-det LINK -1 @adv)
+	(-1 @subj)
+;
+# «Mandag ble Mamic dømt i den høyeste rettsinstansen i Kroatia, opplyser Reuters som siterer den kroatiske TV-kanalen HRT.»
+
 #6001
-SELECT:6001 (@iv) IF
-	 (-1 @subj)
-	 (*-2 hj-verb BARRIER ikke-adv-adj-det LINK 0 @fv LINK -1 @adv)
+SELECT:nå-har-prisen-økt (@iv) IF
+	(*-2 hj-verb BARRIER ikke-adv-adj-det LINK 0 @fv LINK -1 @adv)
+	(-1 @subj)
 ;
 #nå har prisen økt (@iv) 
 
