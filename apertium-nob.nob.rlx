@@ -4595,10 +4595,20 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 %som%)
 	(2 ("før"))
 ;
+
 # Siden da har pilene fortsatt å peke oppover
 "<fortsatt>"i SELECT adv IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
+
+"<fortsatte>" SELECT:den-fortsatte-stengingen pp + def IF
+        (-1 det + dem + &&ADJ_N_AGR)
+        (1 n + def + &&ADJ_N_AGR)
+        ;
+# «Den fortsatte stengingen skjer til tross for at fritidsaktiviteter og idrett for barn opp til ungdomsskolealder, unntatt cuper og kamper, skulle åpne igjen onsdag.»
+
+"<fortsatte>"i REMOVE:fortsatte-unlikely-adj adj;
+
 
 "<frasagt>"i SELECT (vblex) IF
 	(-1* ("ha" vblex))
