@@ -37597,17 +37597,17 @@ SELECT:den-mest-betydningsfulle sp + def IF
         (0C adj + pst)
         ;
 
-SELECT:Ansatt sg IF
+SELECT:Ansatt-sg sg IF
         (-1 >>>)
-        (0 (".*ansatt"ri))
+        (0 ("<.*ansatt>"ri))
         (1 pp OR fv)
         ;
+# «Ansatt dømt for forbrytelser»
 
 SELECT:ansatte-fl fl IF
         (0 ("ansatt"i))
         (NEGATE -1C det + sg)
         (NEGATE -1 det + def OR adj + def)
-        (NEGATE 0 sg LINK -1 >>>) # Ansatt dømt for forbrytelser
         ;
 
 SELECT:ansatte-def def IF
