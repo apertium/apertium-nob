@@ -15832,6 +15832,20 @@ SELECT:496 (@subj) IF
 	(*-1C @obj/@i-obj/@s-pred LINK *-1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 verb)
 ;
 
+SELECT:overskrift @subj IF
+        (0 @laus-np)
+        (NEGATE 0* @fv)
+        (NEGATE 0 @fv)
+        (*1 @s-pred)
+        ;
+
+SELECT:overskrift @s-pred IF
+        (0 @laus-np)
+        (NEGATE 0* @fv)
+        (NEGATE 0 @fv)
+        (*-1 @subj)
+        ;
+
 
 CONSTRAINTS
 ## remove ndomain heur1
