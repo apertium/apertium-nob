@@ -4603,7 +4603,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(NEGATE -1 ("ha") LINK 2 ("med"))
 ;
 
-"<fortsatte>" SELECT:den-fortsatte-stengingen pp + def IF
+"<fortsatte>" SELECT:den-fortsatte-stengingen adj + def IF
         (-1 det + dem + &&ADJ_N_AGR)
         (1 n + def + &&ADJ_N_AGR)
         ;
