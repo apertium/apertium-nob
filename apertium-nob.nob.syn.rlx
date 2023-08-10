@@ -15832,6 +15832,8 @@ SELECT:496 (@subj) IF
 	(*-1C @obj/@i-obj/@s-pred LINK *-1 ikke-mod-u-perfpart-@←p-utfyll-@adv-@app LINK NOT 0 verb)
 ;
 
+
+# Prioriter subj/s-pred-analyser av lause np-ar i overskrifter:
 SELECT:overskrift @subj IF
         (0 @laus-np)
         (NEGATE 0* @fv)
@@ -15843,6 +15845,7 @@ SELECT:overskrift @s-pred IF
         (0 @laus-np)
         (NEGATE 0* @fv)
         (NEGATE 0 @fv)
+        (NEGATE 1 @s-pred) # may modify the following s-pred, e.g. «betydelig redusert»
         (*-1 @subj)
         ;
 
