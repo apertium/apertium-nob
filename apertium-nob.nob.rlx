@@ -9952,6 +9952,12 @@ REMOVE:Isnes-ansatt vblex IF
         (1 ("delta"))
         ;
 # "Tangen deltar på Verdens økonomiske forum (WEF) i Davos"
+"<ting>" SELECT:andre-ting ("ting") + m IF
+        (-3 ("være"))
+        (-2 ("<det>"))
+        (-1 ("<andre>"))
+        ;
+# "... for de fleste plagene er det andre ting som betyr meir"
 "<mykt>"i REMOVE:er-veldig-mykt ("myke") IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
