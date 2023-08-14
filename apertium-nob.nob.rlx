@@ -107,7 +107,8 @@ LIST %éi% = ("én" f) ;
 LIST siffer-millioner = "[0-9]+([., ][0-9]+)* (tusen|[mb]illi(on|ard)er)"r ;
 LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
 LIST emdash-endash = "–" "—" ;
-# TODO: use apertium-deshtml -o
+# When running with `apertium -H`, headers like `<h1>` (if -f html)
+# will have the ❡ character inserted right before the `</h1>` by apertium-deshtml -o
 LIST overskrift = overskrift "❡" ;
 
 LIST mwe-verb = ".*# .*"r ;
