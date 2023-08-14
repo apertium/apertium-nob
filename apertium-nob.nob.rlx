@@ -9944,6 +9944,14 @@ REMOVE:Isnes-ansatt vblex IF
         (-1 ("<riktig>"))
         ;
 # "Det er ikke riktig øyeblikk ennå"
+"<fart>"i SELECT:god-nok-fart ("fart") IF
+        (-1 ("<nok>"))
+        ;
+# "... heller ikke på 50 meter hadde hun nok fart til å komme seg videre."
+"<Tangen>" SELECT:Tangen-deltar ("Tangen") IF
+        (1 ("delta"))
+        ;
+# "Tangen deltar på Verdens økonomiske forum (WEF) i Davos"
 "<mykt>"i REMOVE:er-veldig-mykt ("myke") IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
