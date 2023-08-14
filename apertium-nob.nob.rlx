@@ -9907,6 +9907,13 @@ REMOVE:terrorstemplet ("stempel") IF
 "<følger>"i REMOVE:unlikely ("følger") + n + m
         ;
 # sjeldan ub eint
+REMOVE:unlikely ("ufør") + adj + nt
+        ;
+# Sjeldan adj nt
+"<s(ju|y)ke?meldt>"ri SELECT:100-prosent-sykemeldt sg IF
+        (-1 ("prosent") OR ("<.*%>"ri))
+        ;
+# "100 prosent sykemeldt/sykmeldt/sjukmeldt/sjukemeldt"
 "<øyeblikk>"i SELECT:riktig-øyeblikk sg IF
         (-1 ("<riktig>"))
         ;
