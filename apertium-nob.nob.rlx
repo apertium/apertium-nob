@@ -9915,6 +9915,26 @@ REMOVE:unlikely ("ufør") + adj + nt
         (-1 ("prosent") OR ("<.*%>"ri))
         ;
 # "100 prosent sykemeldt/sykmeldt/sjukmeldt/sjukemeldt"
+REMOVE:en-rekke-av-X-jagerfly sg IF
+        (-6 ("en"))
+        (-5 ("rekke"))
+        (-4 pr)
+        (-3 det)
+        (-2 adj)
+        (-1 n + gen)
+        (0 ("jagerfly"))
+        ;
+# "... en rekke av det spanske flyvåpenets jagerfly."
+REMOVE:1-stor-bit pl IF
+        (-2 det + qnt + un + sg)
+        (-1 adj)
+        (0 ("<bit>"))
+        ;
+# "1 stor bit ingefær"
+REMOVE:Isnes-ansatt vblex IF
+        (0 ("<Isnes>"))
+        ;
+# "Isnes ansatt som Godset-trener"
 "<øyeblikk>"i SELECT:riktig-øyeblikk sg IF
         (-1 ("<riktig>"))
         ;
