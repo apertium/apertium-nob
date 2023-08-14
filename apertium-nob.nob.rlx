@@ -26129,6 +26129,13 @@ REMOVE:mot-angivelig-russisk-støtte adv IF
         (1C pst)
         ;
 
+REMOVE:permisjonsvarsler ("varsler") IF
+        (0 sg + ind)
+        (0/1 cmp)
+        (NEGATE 1 np)
+        (NEGATE -2 ("si") OR ("mene") OR ("fortelle") OR ("ifølge") )
+        ;
+
 #:4090
 REMOVE:4090 (vblex)
 	(0 %flekke%)
