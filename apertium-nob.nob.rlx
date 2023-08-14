@@ -1722,6 +1722,8 @@ REMOVE:unlikely ("toe") + imp; # å toe
 REMOVE:unlikely ("<anriket>"i) + pp; # anriket uran
 REMOVE:unlikely ("<rykker>"i) + n; # en rykker -> ein rykkjar; kreditor
 REMOVE:unlikely ("<trekker>"i) + n; # (skru)trekker -> å trekke - trekker
+REMOVE:unlikely ("type") + vblex + inf; # å type -> en type
+REMOVE:unlikely ("type") + vblex + pres; # å type -> en type
 REMOVE:unlikely ("<sen>"i) + n; # sene -> sein
 REMOVE:unlikely ("<snek>"i) + n; # snek -> sneik
 REMOVE:unlikely ("oversvømme") + adj + pp; # oversvømmet -> overflødd
@@ -3064,6 +3066,10 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 # og difor akseptabelt med «Den».
 
 
+"<den>" SELECT:den-type-moral  ("den¹") IF
+        (1 ("type"))
+        ;
+
 "<den>" SELECT:den-det-gjelder ("den¹") IF
         (1 ("den"))
         (2 ("gjelde"))
@@ -3185,7 +3191,6 @@ LIST at/om/av/som = "at" "om" "av" "som" ;
         (*3C fv BARRIER (*) - np)
         ;
 # «Savnet etter den skadde Nora Mørk er stort hos Norge»
-
 
 SELECT:Ta-den ("den¹") IF
         (-2 setn-gr)
@@ -11983,6 +11988,11 @@ REMOVE:unlikely ("internasjonale") + n IF (0 adj);
 	(*-1 %et% BARRIER ikke-adv-adj)
 ;
 #  "\"et egentlig jeg\".."
+
+REMOVE:den-type-jobber vblex + pres IF
+        (-1 ("type") + n + ind)
+        ;
+        # den type jobber
 
 "<jobber>" REMOVE:de-jobber-for-luselønn n IF
         (-1 nominativ)
