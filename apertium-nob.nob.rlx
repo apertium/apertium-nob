@@ -9955,6 +9955,19 @@ REMOVE:1-stor-bit pl IF
         (1 ("før") OR ("etter"))
         ;
 # "... tre kvarter etter"
+"<spiller>"i SELECT:seg-som-spiller n IF
+        (-2 ("seg"))
+        (-1 ("som"))
+        ;
+# "... ga seg som spiller ..." 
+SELECT:oppfordrer-jeg-dere acc IF
+        (-4 setn-gr)
+        (-3 adv)
+        (-2 vblex)
+        (-1 prn + pers + nom)
+        (0C prn + pers)
+        ;
+# "I dag oppfordrer jeg dere ..."
 REMOVE:Isnes-ansatt vblex IF
         (0 ("<Isnes>"))
         ;
