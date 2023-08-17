@@ -5078,6 +5078,14 @@ LIST hes-ord = "synge" "lyd" "stemme" "låte" "forkjølelse" "forkjøle" "hviske
 #  "to hundre (subst nøyt fl) kroner"))
 
 
+"<Hva>" SELECT:kva-gjeld-det adv IF
+        (1 ("gjelde"))
+        (2 dem OR n + def)
+        (*3 spørsmål-t)
+        ;
+"<hva>"i SELECT:når-det-gjeld prn IF
+        (1 ("gjelde"))
+        ;
 
 #:3518
   "<hver>"   SELECT:3518   (det) IF
