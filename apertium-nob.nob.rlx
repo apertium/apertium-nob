@@ -9945,6 +9945,16 @@ REMOVE:1-stor-bit pl IF
         (0 ("<bit>"))
         ;
 # "1 stor bit ingefær"
+"<skottenes>"i SELECT:skottenes-mål ("skotte") IF
+        (0 gen)
+        (1* ("mål"))
+        ;
+# "Det førte til skottenes utligningsmål"  
+"<kvarter>"i SELECT:tre-kvarter-etter ("kvarter") IF
+        (-1 det + qnt)
+        (1 ("før") OR ("etter"))
+        ;
+# "... tre kvarter etter"
 REMOVE:Isnes-ansatt vblex IF
         (0 ("<Isnes>"))
         ;
