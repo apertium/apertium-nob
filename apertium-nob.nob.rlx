@@ -9968,6 +9968,11 @@ SELECT:oppfordrer-jeg-dere acc IF
         (0C prn + pers)
         ;
 # "I dag oppfordrer jeg dere ..."
+"<fremme>"i SELECT:søke-og-fremme vblex IF
+        (*-2C vblex)
+        (-1 cnjcoo)
+        ;
+# "søke dialog og fremme internasjonale allianser"
 REMOVE:Isnes-ansatt vblex IF
         (0 ("<Isnes>"))
         ;
