@@ -9925,10 +9925,15 @@ REMOVE:terrorstemplet ("stempel") IF
 REMOVE:unlikely ("ufør") + adj + nt
         ;
 # Sjeldan adj nt
-"<s(ju|y)ke?meldt>"ri SELECT:100-prosent-sykemeldt sg IF
+"<s(ju|y)ke?meldt>"ri SELECT:100-prosent-sykemeldt sg + mf IF
         (-1 ("prosent") OR ("<.*%>"ri))
         ;
 # "100 prosent sykemeldt/sykmeldt/sjukmeldt/sjukemeldt"
+"<s(ju|y)ke?meldt>"ri SELECT:sykemeldt-eller-X-sykemeldt sg + mf IF
+        (-3 ("sykmelde") OR ("sykemelde") OR ("sjukmelde") OR ("sjukemelde"))
+        (-2 cnjcoo)
+        ;
+# "... 100 prosent sykmeldt eller gradert sykmeld"
 REMOVE:en-rekke-av-X-jagerfly sg IF
         (-6 ("en"))
         (-5 ("rekke"))
