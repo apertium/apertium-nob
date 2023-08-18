@@ -1953,7 +1953,7 @@ REMOVE:unlikely ("stykke" n) IF (-1 modalverb) (1 %opp% OR %ut%); # eiendommen s
 REMOVE:unlikely ("<stykker>"i vblex) IF (-1 qnt); # tre stykker, 103 stykker
 REMOVE:unlikely ("stykke" vblex) IF (0* vblex); # de som har laget stykket, stykket er
 REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykket er
-REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av fargevære
+REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av farge
 REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farge, aksentfargar
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
 REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
@@ -26161,6 +26161,15 @@ SELECT:offentlig-ansatte def IF
 
 #CONSTRAINTS
 ## remove ndomain
+
+REMOVE:seg-som pres OR pl IF
+        (*-3 fv BARRIER pr)     # not «har gener i seg som gjør den i stand til …»
+        (-2 ("seg"))
+        (-1 ("som"))
+        (NEGATE 0 farlige-verb)
+        ;
+# «I løpet av livet sitt utmerket han seg som maler, billedhugger, arkitekt, oppfinner og vitenskapsmann.»
+
 
 REMOVE:lovkravene ("krave") IF
         (0 ("krav"))
