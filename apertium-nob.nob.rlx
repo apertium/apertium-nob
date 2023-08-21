@@ -12492,6 +12492,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
 #  "kh jan 2004"
 
 
+"<mente>" REMOVE:mente adj ;    # when is this ever adj?
 
 #:3432
   "<mente>"   REMOVE:3432   (n) IF
