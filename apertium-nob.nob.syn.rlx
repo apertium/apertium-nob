@@ -5322,6 +5322,15 @@ SELECT:Mann-dømt-for @xubj IF
         (1C pp)
         ;
 
+SELECT:fram-til-salget-var-gjort @xubj IF
+        (*-2 clb BARRIER ikke-@adv)
+        (-1 ("til") OR ("inntil"))
+        (0C def)
+        (1 fv)
+        (*2 setn-gr CBARRIER ikke-@s-pred)
+        ;
+# «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
+
 REMOVE:not-xubj @xubj;
 
 
@@ -6205,7 +6214,7 @@ REMOVE:over-5000-har (@←p-utfyll) IF
 SELECT:fra-en-oppdatering-slippes-til @subj IF
         (*-1 ("fra") BARRIER ikke-premod)
         (1C @fv)
-        (**2 ("til") LINK *1 @subj LINK *1 @fv BARRIER clb)
+        (**2 ("til") LINK *1 @subj/@xubj LINK *1 @fv BARRIER clb)
         ;
 # «Det kan være bare timer fra en sikkerhetsoppdatering slippes fra en leverandør, til det første angrepet oppdages, sier Bente Hoff, som leder Nasjonal cybersikkerhetssenter i NSM.»
 # «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
