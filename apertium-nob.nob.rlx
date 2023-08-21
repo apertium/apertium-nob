@@ -25961,17 +25961,34 @@ SELECT:Ingen-er-pågrepet-eller-mistenkt adj IF
 # «Ingen er så langt pågrepet eller mistenkt, men operasjonslederen forteller at de jobber opp mot spesielle miljøer.»
 
 
+
+SELECT:innskot-har-angrepet vblex + pp IF
+	(*-1 p-hj-verb - %være/bli% BARRIER perf-part OR fv OR setn-gr
+        LINK -1 cm        # innskot-slutt
+        LINK *-1 cm       # innskot-start
+        LINK -1 nom)
+	(NEGATE 0 farlige-part)
+	(NEGATE -1 det-prep-infmerke-adjbe)
+	(NEGATE -2 be-nøyt-det)
+        (NEGATE 0 adv OR n + def LINK 1 perf-part)
+        ;
+
+SELECT:Det-er-tatt vblex + pp IF
+	(*-1 %være/bli% BARRIER perf-part OR fv OR setn-gr LINK *-1 expl BARRIER setn-gr)
+	(NEGATE 0 farlige-part)
+	(NEGATE -1 det-prep-infmerke-adjbe)
+	(NEGATE -2 be-nøyt-det)
+        (NEGATE 0 adv OR n + def LINK 1 perf-part)
+        ;
+# «Det er også tatt blodprøver av mannen, som politiet mistenker kjørte i narkorus.»
+
 #:2410
 SELECT:Vi-har-hoppet vblex + pp IF
-	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
-	(NOT -2 be-nøyt-det)
-	(*-1 p-hj-verb BARRIER fv LINK NOT 0 ("bli") OR ("være"))
-	(*-1 p-hj-verb BARRIER perf-part)
-	(*-1 p-hj-verb BARRIER setn-gr)
-	(*-1 nom BARRIER setn-gr)
-        (NEGATE 0 adv LINK 1 perf-part)
-        (NEGATE 0 n + def LINK 1 perf-part)
+	(*-1 p-hj-verb - %være/bli% BARRIER perf-part OR fv OR setn-gr LINK *-1 nom BARRIER setn-gr)
+	(NEGATE 0 farlige-part)
+	(NEGATE -1 det-prep-infmerke-adjbe)
+	(NEGATE -2 be-nøyt-det)
+        (NEGATE 0 adv OR n + def LINK 1 perf-part)
 ;
 # - Nå har de i løpet av den første uka skrevet<pp>
 # - vi har hoppet<pp>
@@ -25985,18 +26002,15 @@ SELECT:Vi-har-hoppet vblex + pp IF
 
 LIST er-som-har-verb = "komme" "foregå" "bli" "blive" ; # «er blitt» i tydinga «har blitt» – partisippet er her verb, ikkje adjektiv, og skal ikkje ha samsvar
 SELECT:sakene-er-nært-forbundet adj + pp IF
+	(*-1 %være/bli% BARRIER perf-part OR fv OR setn-gr LINK *-1 nom - expl BARRIER setn-gr)
         (NEGATE 0 er-som-har-verb)
-	(NOT 0 farlige-part)
-	(NOT -1 det-prep-infmerke-adjbe)
-	(NOT -2 be-nøyt-det)
-	(*-1 p-hj-verb BARRIER fv LINK 0 ("bli") OR ("være"))
-	(*-1 p-hj-verb BARRIER perf-part)
-	(*-1 p-hj-verb BARRIER setn-gr)
-	(*-1 nom BARRIER setn-gr)
-        (NEGATE 0 adv LINK 1 perf-part)
-        (NEGATE 0 n + def LINK 1 perf-part)
+	(NEGATE 0 farlige-part)
+	(NEGATE -1 det-prep-infmerke-adjbe)
+	(NEGATE -2 be-nøyt-det)
+        (NEGATE 0 adv OR n + def LINK 1 perf-part)
         ;
 # «En mann i 60-årene er i Sør-Trøndelag tingrett dømt til seks års fengsel.»
+
 
 #:2606
  SELECT:2606 pron-pers IF
