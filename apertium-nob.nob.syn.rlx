@@ -12408,10 +12408,12 @@ SELECT:781 (@tittel) IF
 ;
 #  " olympiamester og verdensmester Fred Børre Lundberg"))
 
+LIST er-som-har-verb = "komme" "foregå" "bli" "blive" ; # «er blitt» i tydinga «har blitt» – partisippet er her verb, ikkje adjektiv, og skal ikkje ha samsvar
 SELECT:vi-er-fornøyd (@s-pred) + adj IF
 	(-3C setn-gr)
 	(-2C @subj)
         (-1 %være/bli%-fin)
+        (NEGATE 0 er-som-har-verb)
         (NEGATE 1 n OR adj)
         ;
 # «Vi er fornøyd med hvordan fly, våpen og folk har fungert»
@@ -19729,9 +19731,8 @@ REMOVE:har-ankommet adj + pp IF
         ;
 # «Rundt 330 av det totale antallet kvoteflyktninger som har fått opphold så langt i år, har allerede ankommet Norge.»
 
-LIST w_komme_foregå_bli_blive = "komme" "foregå" "bli" "blive" ;
 REMOVE:er-kommet adj + pp IF
-        (0 w_komme_foregå_bli_blive)
+        (0 er-som-har-verb)
         (0 vblex + pp)
         (-*1 ("være") BARRIER setn-gr OR fv)
         ;
