@@ -6247,6 +6247,22 @@ SELECT:element-fra-fotball-og-volleyball (@←p-utfyll) IF
 ;
 # «Blant de siste er "sepak takraw", der elementer fra fotball og volleyball kombineres.»
 
+SELECT:av-DERES-egne (@det→) IF
+        (-2 qnt + @subj)
+        (-1 ("av"))
+        (0 pos)
+        (1 pl LINK 0 emph OR adj)
+        (NEGATE 2 n + pl)
+        ;
+SELECT:av-deres-EGNE (@←p-utfyll) IF
+        (-3 qnt + @subj)
+        (-2 ("av"))
+        (-1 pos)
+        (0 pl LINK 0 emph OR adj)
+        (NEGATE 1 n + pl)
+        ;
+# «Saken har vakt stor oppsikt, og britisk politi har uttrykt sjokk og sinne over at en av deres egne er pågrepet for drapet.»
+
 SELECT:er-blant-forfatterne-som-tildeles (@subj) IF
         (NEGATE *-1 @subj BARRIER @fv)
         (0 n)
