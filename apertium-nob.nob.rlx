@@ -32378,6 +32378,9 @@ REMOVE:å-stjele-showet pret OR pp IF
 CONSTRAINTS
 ## select domain heur
 
+"<anslag>" SELECT pl IF
+        (-1 ("tidligere") OR ("tidlig") + comp)
+        ;
 
 "<antenner>" SELECT:..ing-av-antenner n IF
         (-2 (".*ing"ri))
