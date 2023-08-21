@@ -1727,7 +1727,10 @@ REMOVE:unlikely ("type") + vblex + inf; # å type -> en type
 REMOVE:unlikely ("type") + vblex + pres; # å type -> en type
 REMOVE:unlikely ("<sen>"i) + n; # sene -> sein
 REMOVE:unlikely ("<snek>"i) + n; # snek -> sneik
-REMOVE:unlikely ("<overvann>") + vblex + pret; # overvann -> overvatn
+REMOVE:unlikely ("<overvann>"i) + vblex + pret; # overvann -> overvatn
+REMOVE:unlikely ("<ettertraktet>"i) + vblex; # ettertraktet -> ettertrakta
+REMOVE:unlikely ("<ettertrakta>"i) + vblex; # ettertrakta -> ettertrakta
+REMOVE:unlikely ("ettertrakte") + adj; # ettertrakta -> ettertrakta
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
