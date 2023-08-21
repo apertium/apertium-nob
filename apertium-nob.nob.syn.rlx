@@ -5249,6 +5249,7 @@ SELECT:der-rundt-100-er-evakuert @xubj IF
         (NOT -2 @xubj)          # den første personen<@xubj> i  Belgia<@p-utfyll>  som
         (*-1 pr BARRIER (*) - @det→ LINK -1 cnjsub LINK *-1 @subj)
         (1 kop + fv)
+        (NEGATE 0 date)         # «i 2004»
         ;
 # «Tyfonen fortsatte sin ville ferd mot Hongkong og det sørlige Kina der rundt 2,5 millioner mennesker er evakuert»
 
