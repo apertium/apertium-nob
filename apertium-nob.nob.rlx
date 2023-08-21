@@ -15981,7 +15981,7 @@ SELECT:noen-vakre-sommerfugler adj + pl IF
 	(NOT 1 perf-part)
 	(NOT 1 infmerke)
 	(NOT -1 det/adj/komma/konj)
-	(*-1O setn-gr LINK *1 nom-fl LINK *1 kop-fv LINK NOT *1 ikke-adv-adj)
+	(*-1O setn-gr LINK *1 nom-fl LINK *1 kop-fv LINK NOT *1 ikke-adv-adj LINK NOT 0 nom-ent)
 	(*-1O setn-gr LINK *1 fv LINK 0 kop)
 	(*-1O setn-gr LINK *1 nom-fl LINK NOT 0 subst-gen LINK NOT 0 prn + sg) # «Jeg er opptatt av nøysomhet»
 	(*-1O setn-gr LINK *1 subst/pron/%all% LINK 0 nom-fl)
