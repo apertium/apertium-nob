@@ -25960,7 +25960,7 @@ SELECT:Vi-har-hoppet vblex + pp IF
 	(NOT 0 farlige-part)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
-	(*-1 p-hj-verb BARRIER fv LINK NOT 0 ("bli"))
+	(*-1 p-hj-verb BARRIER fv LINK NOT 0 ("bli") OR ("være"))
 	(*-1 p-hj-verb BARRIER perf-part)
 	(*-1 p-hj-verb BARRIER setn-gr)
 	(*-1 nom BARRIER setn-gr)
@@ -25976,6 +25976,21 @@ SELECT:Vi-har-hoppet vblex + pp IF
 # se neste regel for de som har -2 BE-NØYT-DET
 # NOT SAMSET: partisipper fra samsmodulen er
 # oftest gale (eneinntekt!)"))
+
+LIST er-som-har-verb = "komme" "foregå" "bli" "blive" ; # «er blitt» i tydinga «har blitt» – partisippet er her verb, ikkje adjektiv, og skal ikkje ha samsvar
+SELECT:sakene-er-nært-forbundet adj + pp IF
+        (NEGATE 0 er-som-har-verb)
+	(NOT 0 farlige-part)
+	(NOT -1 det-prep-infmerke-adjbe)
+	(NOT -2 be-nøyt-det)
+	(*-1 p-hj-verb BARRIER fv LINK 0 ("bli") OR ("være"))
+	(*-1 p-hj-verb BARRIER perf-part)
+	(*-1 p-hj-verb BARRIER setn-gr)
+	(*-1 nom BARRIER setn-gr)
+        (NEGATE 0 adv LINK 1 perf-part)
+        (NEGATE 0 n + def LINK 1 perf-part)
+        ;
+# «En mann i 60-årene er i Sør-Trøndelag tingrett dømt til seks års fengsel.»
 
 #:2606
  SELECT:2606 pron-pers IF
