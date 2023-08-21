@@ -12408,7 +12408,7 @@ SELECT:781 (@tittel) IF
 ;
 #  " olympiamester og verdensmester Fred Børre Lundberg"))
 
-SELECT:vi-er-fornøyd (@s-pred) IF
+SELECT:vi-er-fornøyd (@s-pred) + adj IF
 	(-3C setn-gr)
 	(-2C @subj)
         (-1 %være/bli%-fin)
