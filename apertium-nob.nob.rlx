@@ -21615,6 +21615,12 @@ SELECT:det-skal-kun expl IF
         (3 ("få") OR ("liten") OR ("litt"))
         ;
 
+SELECT:håper-det-blir-tatt-en-avgjørelse expl IF
+        (-1 fv + t2)
+        (*1 %være/bli% LINK 1 pp LINK *1 nom BARRIER setn-gr)
+        ;
+# «Jeg trives i Frankrike og håper det blir tatt en rettferdig avgjørelse.»
+
 
 #:2607
 SELECT:jeg-så-den-cm-men pron-pers IF
