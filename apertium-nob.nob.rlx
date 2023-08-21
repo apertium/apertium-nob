@@ -12059,6 +12059,12 @@ REMOVE:høgd greiner;
 
 REMOVE:unlikely ("internasjonale") + n IF (0 adj);
 
+"<inntil>" REMOVE:inntil-alt-er-gjort pr IF
+        (*-1 fv BARRIER setn-gr)
+        (*1 nom BARRIER setn-gr LINK *1 fv BARRIER setn-gr)
+        ;
+
+
 "<inngiftet>" REMOVE n;         # when is this likely to be noun?
 
 
