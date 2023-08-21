@@ -38059,6 +38059,11 @@ SELECT:sitt-sosiale-og-økonomiske-liv n + sg IF
         ;
 # «Sarah mottok femti amerikanske dollar i støtte, et beløp som transitthuset vårt Dorcas gir til kvinner som ønsker å bygge opp igjen sitt sosiale og økonomiske liv.»
 
+SELECT:har-salget-falt pp IF
+        (*-2C ("ha") + fv BARRIER ikke-adv-adj-det)
+        (-1C n + def)
+        (0C pp OR pret)
+        ;
 
 SELECT:skjer-det-ting expl IF
         (-1 ("skje") + fv)
