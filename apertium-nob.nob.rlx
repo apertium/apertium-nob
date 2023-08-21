@@ -28123,9 +28123,17 @@ REMOVE:sjefenes-lønn-og-bonus-de-siste-årene clb + %og/eller% IF
 
 SELECT:x-kommer-og-y-holdes clb + %og/eller% IF
         (*-1C fv BARRIER clb)
-        (*1 fv BARRIER clb LINK 0C pasv OR fv)
+        (*1 fv BARRIER clb OR cnjsub LINK 0C pasv OR fv)
         ;
 # «Nye steinsprang i fjellpartiet Veslemannen i Rauma kom fredag morgen og det røde farevarslet opprettholdes, men bevegelsene i fjellet har avtatt noe.»
+
+REMOVE:utsette-behandling-og-inngåelse-av clb + %og/eller% IF
+        (-2C inf)
+        (-1C n + ind)
+        (1C n + ind)
+        (2C pr)
+        ;
+# «Partiet foreslo derfor å utsette behandling og inngåelse av klimaavtalen med EU «inntil alle konsekvenser knyttet til norsk skog- og jordbruk er klarlagt».»
 
 #:2205
 REMOVE:2205 clb IF
