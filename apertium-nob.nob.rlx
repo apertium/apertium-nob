@@ -35594,6 +35594,14 @@ SELECT:så-har-vi-laget-noen pp IF
 #CONSTRAINTS
 ## remove ndomain heur
 
+
+REMOVE:får-de-ikke-betalt adj + pp IF
+        (*-1 ("få") BARRIER setn-gr OR vblex)
+        (0 vblex + pp)
+        (1 pr)
+        ;
+# «Dermed får de ikke betalt for dette, sier Monica A.»
+
 REMOVE:X-vil-være-forsiktig adj + nt IF
         (*-1 pred-verb BARRIER ikke-adj-adv LINK *-1 cog BARRIER nt)
         (0C adj OR adv)
@@ -38244,6 +38252,14 @@ SELECT:har-X-falt vblex + pp IF
         (NEGATE *1 pp BARRIER setn-gr)
         ;
 # «– For å slå tilbake mot USAs feilslåtte handlinger, har Kina     besluttet     å innføre visumrestriksjoner mot amerikanske individer som har oppført seg dårlig i forbindelse med saker som omhandler Hongkong, sier talsperson Zhao Lijian i det kinesiske utenriksdepartementet.»
+
+REMOVE:er-X-falt pret IF
+        (-1C ukjent OR n OR np LINK *-1C hj-verb + fv BARRIER ikke-adj-det)
+        (0C pp OR pret)
+        (NEGATE *1 pp BARRIER setn-gr)
+        ;
+# «For én uke var tilstanden til 4,7 prosent av dem som lå på intensivavdeling, alvorlig eller kritisk, i dag er denne andelen falt til 4,1 prosent.»
+
 
 SELECT:subject-per-clause nominativ IF
         (-1 fv)
