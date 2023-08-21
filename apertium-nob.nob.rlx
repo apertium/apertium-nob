@@ -38239,10 +38239,11 @@ SELECT:sg-after-første sg IF
 
 SELECT:har-X-falt vblex + pp IF
         (-2C %ha%-pres/pret)
-        (-1 ukjent)
+        (-1 ukjent OR np)
         (0 pp OR pret)
-        (NEGATE *1 pp)
+        (NEGATE *1 pp BARRIER setn-gr)
         ;
+# «– For å slå tilbake mot USAs feilslåtte handlinger, har Kina     besluttet     å innføre visumrestriksjoner mot amerikanske individer som har oppført seg dårlig i forbindelse med saker som omhandler Hongkong, sier talsperson Zhao Lijian i det kinesiske utenriksdepartementet.»
 
 SELECT:subject-per-clause nominativ IF
         (-1 fv)
