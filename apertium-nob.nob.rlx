@@ -19436,7 +19436,7 @@ SELECT:finne-deres-X-og-Y-og-gi clb IF
 
 
 #:2782
- SELECT:2782 (det pl) IF
+SELECT:2782 (det pl) IF
 	(NOT 0 %hundre/tusen%)
 	(NOT 0 %andre%)
 	(NOT 0 det-ent)
@@ -35594,13 +35594,6 @@ SELECT:så-har-vi-laget-noen pp IF
 #CONSTRAINTS
 ## remove ndomain heur
 
-
-REMOVE:får-de-ikke-betalt adj + pp IF
-        (*-1 ("få") BARRIER setn-gr OR vblex)
-        (0 vblex + pp)
-        (1 pr)
-        ;
-# «Dermed får de ikke betalt for dette, sier Monica A.»
 
 REMOVE:X-vil-være-forsiktig adj + nt IF
         (*-1 pred-verb BARRIER ikke-adj-adv LINK *-1 cog BARRIER nt)

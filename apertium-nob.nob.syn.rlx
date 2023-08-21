@@ -9021,7 +9021,7 @@ SELECT:1036 (@s-pred) IF
 # NOT 0 %mange%: mange har jenta likt"))
 
 SELECT:markedet-holdes-stabilt (@s-pred) + &&ADJ_N_AGR IF
-        (*-1 kop/holdes BARRIER (*) - @adv→ LINK *-1C @subj + &&ADJ_N_AGR)
+        (*-1 kop/holdes BARRIER ikke-@adv-@adv→ LINK *-1C @subj + &&ADJ_N_AGR)
         (0 adj)
         ;
 
@@ -12468,6 +12468,15 @@ SELECT:ulykken-ikke-skyldtes-svikt @obj IF
 
 #CONSTRAINTS
 ## remove ndomain
+
+REMOVE:får-de-ikke-betalt adj + pp IF
+        (*-1 ("få") BARRIER setn-gr OR vblex OR @obj)
+        (0 vblex + pp)
+        (1 pr)
+        ;
+# «Dermed får de<@subj> ikke    betalt    for dette, sier Monica A.»
+# Men ikkje: «Det er ikke nok tid igjen til å få den<@obj>   vedtatt   i Parlamentet i London og i EU-parlamentet.
+
 
 REMOVE:at-det-skapes-jobber (@subj) IF
         (-3 cnjsub)
