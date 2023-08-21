@@ -36552,6 +36552,13 @@ REMOVE:og-noen-av neg OR sg IF
         (1 %av%)
         ;
 
+REMOVE:antall-reder sg IF
+        (-1 ("antall"))
+        (0C n LINK 0 pl)
+        ;
+# «Tidligere anslag var basert på å telle antall gorilla-reder.»
+# (sannsynlegvis ikkje ein båteigar som er glad i bananar)
+
 SELECT:som-noen-av-en-eller-annen-grunn <noen> + sg IF
         (-1 %som%)
         (1 %av%)
