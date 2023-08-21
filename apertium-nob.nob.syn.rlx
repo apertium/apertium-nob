@@ -5315,6 +5315,13 @@ SELECT:savnet-FISKER-funnet @xubj IF
 # Antar overskrift – forsiktig regel
 # «Savnet turfisker funnet i god form i Hjartdal.»
 
+SELECT:Mann-dømt-for @xubj IF
+        (-1 periode-beg OR guio)
+        (0C &&ADJ_N_AGR)
+        (1 &&ADJ_N_AGR)
+        (1C pp)
+        ;
+
 REMOVE:not-xubj @xubj;
 
 
