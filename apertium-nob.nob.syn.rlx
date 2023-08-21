@@ -200,7 +200,7 @@ LIST %virke% = "virke" ;
 LIST %vise% = "vise" ;
 LIST %være%-inf = ("være" inf) ;
 LIST %være/bli% = "være" "bli" ;
-LIST %være/bli%-fin = ("være" <auxp> pres) ("være" <auxp> pret) ("bli" pres) ("bli" pret) ;
+LIST %være/bli%-fin = ("være" pres) ("være" pret) ("bli" pres) ("bli" pret) ;
 LIST %øy% = "øy" ;
 LIST %øye% = "øye" ;
 LIST <adv> = <adv> "både" "enten" "hverken" "verken" ;
@@ -575,8 +575,8 @@ LIST s#%finne%-verb = ("finne" vblex) ;
 LIST s#%halv/kvart%-mask/fem = ("halv" adj mf ind sg) ("kvart" n mf ind sg) ;
 LIST s#%mye/lite% = "mye" "lite" ;
 LIST s#%seg% = "seg" ;
-LIST s#%være% = ("være" <auxp>) ;
-LIST s#%være/bli% = "bli" ("være" <auxp>) ;
+LIST s#%være% = ("være") ;
+LIST s#%være/bli% = "bli" ("være") ;
 LIST s#%noe% = ("noe" prn pers 3 sg nt) ;
 LIST s#adj = adj ;
 LIST s#ikke-prep = adj adv vblex prn cnjsub "å" n ij det cnjcoo <anf> cm sent lpar rpar guio ;
@@ -12407,6 +12407,14 @@ SELECT:781 (@tittel) IF
 	(*2C @tittel BARRIER ikke-premod-@kon/@nkon)
 ;
 #  " olympiamester og verdensmester Fred Børre Lundberg"))
+
+SELECT:vi-er-fornøyd (@s-pred) IF
+	(-3C setn-gr)
+	(-2C @subj)
+        (-1 %være/bli%-fin)
+        (NEGATE 1 n OR adj)
+        ;
+# «Vi er fornøyd med hvordan fly, våpen og folk har fungert»
 
 
 SELECT:nå-er-han-dømt (@s-pred) IF
