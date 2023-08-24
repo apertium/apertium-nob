@@ -26336,7 +26336,7 @@ REMOVE:forblir-fanget pret IF
 
 
 #:2329
- REMOVE:2329 (adj pp mf ind sg) IF
+ REMOVE:prefer-pst (adj pp mf ind sg) IF
 	(0 pos-ub-ent-mask/fem)
 ;
 # group: 51
@@ -37799,14 +37799,16 @@ SELECT:skipet-ble-angrepet pp IF
 # «det japanske tankskipet ble angrepet samtidig   som Japans statsminister var på besøk»
 
 
-SELECT:har-jeg-tatt vblex + pp IF
-        (-*1 nominativ BARRIER cnjsub LINK -1 %ha% LINK -1 cnjsub OR cm + clb)
+SELECT:Dessverre-har-jeg-tatt vblex + pp IF
+        (-*1 nominativ OR n + def BARRIER setn-gr LINK *-1 %ha% BARRIER ikke-adv-adj-det LINK *-1 >>> OR cnjsub OR cm + clb BARRIER ikke-adv)
         (0C pp OR pret)
         ;
+# «Dessverre har denne volden aldri   tatt   slutt.»
 # «Hva jeg gjør videre, har jeg ikke   tatt   stilling til, skriver Ingar Skiaker i en tekstmelding til NTB.»
 
 
 SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
+        (NEGATE *-1 %ha% BARRIER %være/bli%)
         (NOT -1 %som%)
         (0C pp OR pret)
         (1C n + ind)
