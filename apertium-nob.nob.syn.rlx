@@ -5203,6 +5203,11 @@ CONSTRAINTS
 #  det ikke finnes noe \"som\" med @S-PRED tidligere i setningen."))
 
 
+"<typen>" REMOVE:av-denne-typen (@subj)
+        (-2 ("av"))
+        (-1 ("denne"))
+        ;
+
 "<valget>" REMOVE @subj IF
         (NEGATE -1 pasv)
         (-1 ("vinne"))
@@ -12486,7 +12491,6 @@ REMOVE:får-de-ikke-betalt adj + pp IF
         ;
 # «Dermed får de<@subj> ikke    betalt    for dette, sier Monica A.»
 # Men ikkje: «Det er ikke nok tid igjen til å få den<@obj>   vedtatt   i Parlamentet i London og i EU-parlamentet.
-
 
 REMOVE:at-det-skapes-jobber (@subj) IF
         (-3 cnjsub)
