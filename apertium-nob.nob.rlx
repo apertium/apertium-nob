@@ -37793,6 +37793,14 @@ SELECT:skipet-ble-angrepet pp IF
         ;
 # «det japanske tankskipet ble angrepet samtidig   som Japans statsminister var på besøk»
 
+
+SELECT:har-jeg-tatt vblex + pp IF
+        (-*1 nominativ BARRIER cnjsub LINK -1 %ha% LINK -1 cnjsub OR cm + clb)
+        (0C pp OR pret)
+        ;
+# «Hva jeg gjør videre, har jeg ikke   tatt   stilling til, skriver Ingar Skiaker i en tekstmelding til NTB.»
+
+
 SELECT:rett-til-lønnet-foreldrepermisjon pp + ind IF
         (NOT -1 %som%)
         (0C pp OR pret)
