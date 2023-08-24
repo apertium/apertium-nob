@@ -8541,11 +8541,16 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 
 #:3195
-  "<tatt>"   SELECT:3195   (vblex pp) IF
+"<tatt>"   SELECT:3195   (vblex pp) IF
 	(-2 %det%)
 	(-3 %i%)
 ;
 #  "I det hele tatt er det slik"
+
+"<tatt>" SELECT:teke-stilling (vblex pp) IF
+        (1 sg + ind)
+        (1 ("stilling") OR ("kontakt"))
+        ;
 
 "<Tina>" SELECT:Tina ant;
 
