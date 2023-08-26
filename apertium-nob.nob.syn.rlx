@@ -19755,7 +19755,12 @@ SELECT:adj-pp-dis (adj pp sg @s-pred) IF
         (NEGATE 0* (@subj) BARRIER setn-gr)
         ;
 
-
+# If we got this far and still have a vblex.pp with no "ha" in the
+# clause, it's probably an adjective:
+SELECT:adj-pp-no-har adj IF
+        (0C adj OR vblex + pp)
+        (NEGATE *-1 ("ha") BARRIER setn-gr)
+        ;
 
 #7000
 #SETPARENT:7000 (@←p-utfyll) TO (*-1 (prep)) ;

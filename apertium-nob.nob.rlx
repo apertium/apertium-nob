@@ -26016,8 +26016,9 @@ SELECT:Vi-har-hoppet vblex + pp IF
 # oftest gale (eneinntekt!)"))
 
 LIST er-som-har-verb = "komme" "foregå" "bli" "blive" ; # «er blitt» i tydinga «har blitt» – partisippet er her verb, ikkje adjektiv, og skal ikkje ha samsvar
-SELECT:sakene-er-nært-forbundet adj + pp IF
-	(*-1 %være/bli% BARRIER perf-part OR fv OR setn-gr LINK *-1 nom - expl BARRIER setn-gr)
+SELECT:sakene-er-nært-forbundet adj IF
+	(*-1 %være/bli% BARRIER perf-part OR fv OR adj OR setn-gr LINK *-1 nom - expl BARRIER setn-gr)
+        (0 pp)                  # but allow choosing pst
         (NEGATE 0 er-som-har-verb)
 	(NEGATE 0 farlige-part)
 	(NEGATE -1 det-prep-infmerke-adjbe)
