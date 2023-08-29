@@ -2582,6 +2582,10 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 "<skjønt>"i SELECT:default vblex IF
         (-1 %ha%)
         ;
+
+"<beste>"i   SELECT:verdens-beste ("god") + adj + sup + def IF
+        (-1 ("<verdens>"i))
+        ;
         
 SELECT:default pl + ind IF
         (0 n)
@@ -3013,7 +3017,6 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
  "<beste>"   SELECT:det-aller-beste   (adj sup) IF
 	(-1C be-det OR %aller%)
 ;
-
 
 #:nn4957
  "<beste>"   SELECT:nn4957   (adj sup) IF
