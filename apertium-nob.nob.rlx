@@ -2587,11 +2587,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (-1 ("<verdens>"i))
         ;
         
-SELECT:default pl + ind IF
-        (0 n)
+SELECT:verdens-hav pl + ind IF
+        (0C n)
         (-1 ("<verdens>"i))
         ;
-        
+
 "<skjønnere>"i REMOVE:unlikely n
         ;
 
