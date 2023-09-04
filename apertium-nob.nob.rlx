@@ -1731,6 +1731,7 @@ REMOVE:unlikely ("<overvann>"i) + vblex + pret; # overvann -> overvatn
 REMOVE:unlikely ("<ettertraktet>"i) + vblex; # ettertraktet -> ettertrakta
 REMOVE:unlikely ("<ettertrakta>"i) + vblex; # ettertrakta -> ettertrakta
 REMOVE:unlikely ("ettertrakte") + adj; # ettertrakta -> ettertrakta
+REMOVE:unlikely ("<merker>"i) + n + m + sg ; # å merke, eit merke, ei mark
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -2585,6 +2586,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 
 "<beste>"i   SELECT:verdens-beste ("god") + adj + sup + def IF
         (-1 ("<verdens>"i))
+        ;
+
+"<beste>"i   SELECT:verdens-suverent-beste ("god") + adj + sup + def IF
+        (-1 ("<suverent>"i))
+        (-2 ("<verdens>"i))
         ;
         
 SELECT:verdens-hav pl + ind IF
