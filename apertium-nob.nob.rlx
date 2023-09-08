@@ -13868,6 +13868,13 @@ SELECT:så-flere-kvister n + pl IF
 # «Solberg har vært i den beryktede dødsleiren flere ganger, både sammen med skoleklasser og ved 70-årsmarkeringen for fem år siden.»
 
 
+SELECT:torsdag-13.aug n IF
+        (0 vekedag)
+        (1 ord OR adverbialsubst) # òg torsdag kveld
+        ;
+# Ikkje adverblesing av vekedagar som del av større dato/tidsfrase
+# (unngå flytting)
+
 SELECT:da-NORSKE-kampfly-ble-sendt adj + pl IF
         (-1C cnjsub OR adv)
         (0C adj)
