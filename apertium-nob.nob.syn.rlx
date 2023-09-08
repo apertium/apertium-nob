@@ -767,8 +767,12 @@ LIST vanlig-prep-tittel = "verdensmester" "student" "skribent" "prosjektleder" "
 LIST verb = vblex ;
 
 
+# nanowordnet:
 LIST etter-prop-ord = "kommune" "katedralskole" "skole" "rådhus" "by" ".*s(y|ju)kehus"r "lufthavn" "lufthamn" "stadion" "fort" "slott" "tingrett" "sentrum" "politidistrikt" "bispedømme" "bystyre" "domkirke" "politistasjon" "fengsel" ".*bibliotek"r ; # «Sarpsborg stadion»
 LIST siktede-ord = "siktede" "tiltalt" "domfelt" "medtiltalt" "tillitsvalgt" "medsammensvoren" "sakkyndig" "etterlatt" "sistnevnt" ;
+LIST substans-ord = "substans" ".*stoff"r ".*middel"r "kjemikalie" "kjemikalium";
+# /nanowordnet
+
 
 LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
 LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
@@ -3810,6 +3814,15 @@ MAP:6126 (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst�
 ;
 
 
+MAP:stoffet-xyzzy (@←subst @subj @xubj @obj @i-obj @s-pred @←p-utfyll @tittel @subst→ @app @laus-np @o-pred)   (n ind) OR (np) OR ukjent IF
+	(-1 subst)
+	(NOT -1 ikke-subst)
+	(-1 substans-ord + sg + def)
+	(NOT 0 ikke-subst)
+;
+# «Hennes & Mauritz mener stoffet nonylfenoletoxilat, som ble funnet i en bukse fra kleskjeden, ikke ble brukt med hensikt.»
+
+
 
 
 
@@ -5259,11 +5272,22 @@ SELECT:der-rundt-100-er-evakuert @xubj IF
 # «Tyfonen fortsatte sin ville ferd mot Hongkong og det sørlige Kina der rundt 2,5 millioner mennesker er evakuert»
 
 
+SELECT:mener-stoffet-xyzzy @xubj IF
+        (*-1 @subj)
+        (0 @obj OR @s-pred)
+        (0 substans-ord + sg + def)
+        (1 ukjent OR n + sg + ind)
+        (*2 cnjsub + @←sbu-rel BARRIER (*) - cm)
+        ;
+# «Hennes & Mauritz mener stoffet nonylfenoletoxilat, som ble funnet i en bukse fra kleskjeden, ikke ble brukt med hensikt.»
+
+
 SELECT:cm-som @xubj IF
         (*-1 @subj)
         (0 @obj OR @s-pred)
         (NEGATE 0 (".*-år"r) OR top LINK -2 @xubj)
         (*1 cnjsub + @←sbu-rel BARRIER (*) - cm)
+        (NEGATE -1 substans-ord)
         ;
 # «De har gått til angrep mot provinsen, som kontrolleres av noen.
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
@@ -6709,6 +6733,15 @@ SELECT:6123 (@←subst) IF
 ;
 
 #en flaske deilig vin
+
+
+SELECT:6123 (@←subst) IF
+	(-1 substans-ord + sg + def)
+	(NOT -1 ikke-subst)
+        (-1C n)
+        (0C n + sg + ind OR ukjent)
+;
+# «Hennes & Mauritz mener stoffet nonylfenoletoxilat, som ble funnet i en bukse fra kleskjeden, ikke ble brukt med hensikt.»
 
 
 #:6120
