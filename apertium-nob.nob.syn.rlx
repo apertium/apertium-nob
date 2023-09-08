@@ -14247,6 +14247,12 @@ REMOVE:613 (@obj) IF
 	(*-1C s#periode-beg/clb-konj BARRIER ditrans)
 ;
 
+REMOVE:fortsetter-søket (@subj) IF
+        (*-1C @fv BARRIER (*) - @adv LINK -1 @subj)
+        (0 @obj)
+        ;
+# Left subject more likely.
+# «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
 
 
 #:612
