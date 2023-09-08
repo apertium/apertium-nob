@@ -9345,6 +9345,7 @@ REMOVE:unlikely ("<yrket>") + pret;
 REMOVE:unlikely ("<løs>"i) + np;
 REMOVE:unlikely ("<løs>"i) + pasv;
 REMOVE:unlikely ("løs") + n;
+REMOVE:unlikely ("<hedres>") + n + gen;
 REMOVE:unlikely ("kass") IF (0 ("kasse"));
 REMOVE:unlikely ("lyte") OR ("ly") IF (0 ("lytte")); # «Lytt først til sangen.»
 REMOVE:unlikely ("sandel") IF (0 ("andel")); # kontrakt|sandel vs kontrakts|andel
