@@ -771,6 +771,7 @@ LIST verb = vblex ;
 LIST etter-prop-ord = "kommune" "katedralskole" "skole" "rådhus" "by" ".*s(y|ju)kehus"r "lufthavn" "lufthamn" "stadion" "fort" "slott" "tingrett" "sentrum" "politidistrikt" "bispedømme" "bystyre" "domkirke" "politistasjon" "fengsel" ".*bibliotek"r ; # «Sarpsborg stadion»
 LIST siktede-ord = "siktede" "tiltalt" "domfelt" "medtiltalt" "tillitsvalgt" "medsammensvoren" "sakkyndig" "etterlatt" "sistnevnt" ;
 LIST substans-ord = "substans" ".*stoff"r ".*middel"r "kjemikalie" "kjemikalium";
+LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
 # /nanowordnet
 
 
@@ -14281,7 +14282,7 @@ REMOVE:613 (@obj) IF
 ;
 
 REMOVE:fortsetter-søket (@subj) IF
-        (*-1C @fv BARRIER (*) - @adv - @adj→ LINK -1 @subj)
+        (*-1C @fv - sier-verb BARRIER (*) - @adv - @adj→ LINK -1 @subj)
         (0 @obj)
         ;
 # Left subject more likely.
