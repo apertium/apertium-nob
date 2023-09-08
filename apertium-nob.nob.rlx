@@ -39131,7 +39131,7 @@ MAP:helse-og-velferd (@nkon) %og/eller% IF
 MAP:Famile--og-kulturkomitéens-leder (@nkon) %og/eller% IF
         (-1C n + ind + cmp-split LINK NOT 0 gen)
         (NOT 0 clb)
-        (1C n + gen)
+        (1C n)
 ;
 
 MAP:bussenes-og-båtenes (@nkon) %og/eller% IF
