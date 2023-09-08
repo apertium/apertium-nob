@@ -5294,6 +5294,17 @@ SELECT:cm-som @xubj IF
 # «Tallet på hvor mange som friskmeldes forteller heller ikke alt.»
 # «Tallene på hvor mange som friskmeldes forteller heller ikke alt.»
 
+
+SELECT:avdekket-trusselen-som-ble-publisert @xubj IF
+        (-1 @fv)
+        (1 pr)
+        (2 @←p-utfyll)
+        (3 cnjsub + @←sbu-rel)
+        (*4 fv)
+        ;
+# «Nyopprettede Felles kontraterrorsenter avdekket terrortrusselen mot Norge som ble offentliggjort torsdag, ifølge Bergens Tidende.»
+
+
 SELECT:et-antall-av-krigerne @xubj + pl IF
         (*-1 mengdeord OR målsubst BARRIER (*) - ("av") - pos - adj-nøyt-ub LINK NEGATE *-1 pr BARRIER (*) - siffer)
         ;
