@@ -2363,6 +2363,12 @@ SELECT:restriktive-tiltak pl IF
         (-1 ("<kjent>"))
         ;
 
+"<at>" SELECT:krever-at-både clb IF
+        (-1 fv)
+        (1 cnjcoo)
+        ;
+
+
 "<laget>" REMOVE:fikk-laget pret IF
         (-1C fv)
         ;
