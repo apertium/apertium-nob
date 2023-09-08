@@ -606,6 +606,7 @@ LIST setn-slutt/fin-verb = <<< clb (vblex pres) (vblex pret) ;
 LIST setn/infkonstr-gr = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn/infkonstr-gr/verb = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< clb vblex ;
 LIST sitatverb = "utbryte" "understreke" "true" "tro" "tilføye" "tenke" "svare" "sukke" "smile" "skrive" "si" "rope" "replisere" "påpeke" "presisere" "presisere" "opplyse" "oppfordre" "mumle" "mene" "love" "le" "konkludere" "hyle" "hviske" "hevde" "glise" "gjenta" "gaule" "fremholde" "framholde" "fortsette" "fortelle" "forklare" "flire" "fastslå" "erkjenne" "bekjenne" "begynne" "be" "avslutte" "anta" "advare" ;
+LIST sitatverb-u/at = "mene" "si" "tenke" "anta" "hevde" ; # kan brukast utan «(om) at» før det underordna leddet, t.d. «han mener politiet bør»
 LIST slags/for-prep/%annet%/%mer% = "slags" ("for" pr) ("annen" nt) ("mye" comp) ;
 LIST slik-adv = ("slik" adv) ;
 LIST som-sbu = ("som" cnjsub) ;
@@ -771,7 +772,7 @@ LIST verb = vblex ;
 LIST etter-prop-ord = "kommune" "katedralskole" "skole" "rådhus" "by" ".*s(y|ju)kehus"r "lufthavn" "lufthamn" "stadion" "fort" "slott" "tingrett" "sentrum" "politidistrikt" "bispedømme" "bystyre" "domkirke" "politistasjon" "fengsel" ".*bibliotek"r ; # «Sarpsborg stadion»
 LIST siktede-ord = "siktede" "tiltalt" "domfelt" "medtiltalt" "tillitsvalgt" "medsammensvoren" "sakkyndig" "etterlatt" "sistnevnt" ;
 LIST substans-ord = "substans" ".*stoff"r ".*middel"r "kjemikalie" "kjemikalium";
-LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
+LIST observere-ord = "se" "observere" ;
 # /nanowordnet
 
 
@@ -5371,6 +5372,13 @@ SELECT:fram-til-salget-var-gjort @xubj IF
         (*2 setn-gr CBARRIER ikke-@s-pred)
         ;
 # «Den jobben tok elleve år fra flyene ble satt til lagring og fram til salget var gjort.»
+
+SELECT:de-så-mannen-bli-tatt @xubj IF
+        (-2 @subj)
+        (-1 @fv + observere-ord)
+        (1 @iv)
+        ;
+# «De har forklart til politiet at de så mannen bli tatt av skredet …»
 
 REMOVE:not-xubj @xubj;
 
@@ -14292,8 +14300,10 @@ REMOVE:613 (@obj) IF
 	(*-1C s#periode-beg/clb-konj BARRIER ditrans)
 ;
 
+
+
 REMOVE:fortsetter-søket (@subj) IF
-        (*-1C @fv - sier-verb BARRIER (*) - @adv - @adj→ LINK -1 @subj)
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ LINK -1 @subj)
         (0 @obj)
         ;
 # Left subject more likely.
