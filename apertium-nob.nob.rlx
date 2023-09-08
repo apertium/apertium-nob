@@ -12998,6 +12998,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # Vannet har rent (perf-part) ned
 # Bare ved \"ha\"?"
 
+"<rikes>" REMOVE:rikes pasv IF
+        (-1 det)
+        ;
+# «Lysbakken mener Solberg leder «de rikes regjering».»
+
 "<rotter>" SELECT:rotter n IF
         (NOT 1 %seg%)
         ;
@@ -13881,6 +13886,12 @@ SELECT:torsdag-13.aug n IF
         ;
 # Ikkje adverblesing av vekedagar som del av større dato/tidsfrase
 # (unngå flytting)
+
+# SELECT:holdes-tirsdag n IF
+#         (-1 pasv)
+#         (0 vekedag)
+#         ;
+# # a bit hacky, we don't want to move passive main verbs past these
 
 SELECT:da-NORSKE-kampfly-ble-sendt adj + pl IF
         (-1C cnjsub OR adv)
