@@ -34193,6 +34193,12 @@ REMOVE:hos-hanngris-og-purker clb + cnjcoo IF
         (2 setn-gr)
         ;
 
+REMOVE:ettermiddagen-og-kvelden clb + cnjcoo IF
+        (-1C n + adverbialsubst + $$DEFNES)
+        (1C n + adverbialsubst + $$DEFNES)
+        ;
+# «vår og høst», «timer og år»
+
 REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
         (*-4 fv)
         (-3C n)
