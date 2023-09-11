@@ -5065,6 +5065,12 @@ CONSTRAINTS
 #  "Velg @←SBU på \"at\" hvis vi har en \"vise seg\"-konstruksjon
 # det har i de senere år vist seg at @←SBU "))
 
+"<alt>" SELECT:i-alt (@←p-utfyll) IF
+        (-1 ("i"))
+        (NEGATE 1 det)
+        (NEGATE 1 ("fra"))
+        ;
+# «I alt omdisponeres 80 stillinger som skal bistå på ulike grenseovergangssteder»
 
 
 #:1264
