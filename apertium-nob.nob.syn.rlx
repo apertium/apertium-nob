@@ -606,7 +606,7 @@ LIST setn-slutt/fin-verb = <<< clb (vblex pres) (vblex pret) ;
 LIST setn/infkonstr-gr = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
 LIST setn/infkonstr-gr/verb = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< clb vblex ;
 LIST sitatverb = "utbryte" "understreke" "true" "tro" "tilføye" "tenke" "svare" "sukke" "smile" "skrive" "si" "rope" "replisere" "påpeke" "presisere" "presisere" "opplyse" "oppfordre" "mumle" "mene" "love" "le" "konkludere" "hyle" "hviske" "hevde" "glise" "gjenta" "gaule" "fremholde" "framholde" "fortsette" "fortelle" "forklare" "flire" "fastslå" "erkjenne" "bekjenne" "begynne" "be" "avslutte" "anta" "advare" ;
-LIST sitatverb-u/at = "mene" "si" "tenke" "anta" "hevde" ; # kan brukast utan «(om) at» før det underordna leddet, t.d. «han mener politiet bør»
+LIST sitatverb-u/at = "mene" "si" "tenke" "anta" "hevde" "tro" ; # kan brukast utan «(om) at» før det underordna leddet, t.d. «han mener politiet bør», «sjefen tror titusener kan bli permittert»
 LIST slags/for-prep/%annet%/%mer% = "slags" ("for" pr) ("annen" nt) ("mye" comp) ;
 LIST slik-adv = ("slik" adv) ;
 LIST som-sbu = ("som" cnjsub) ;
@@ -14310,13 +14310,14 @@ REMOVE:613 (@obj) IF
 
 
 REMOVE:fortsetter-søket (@subj) IF
-        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @subj)
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @subj - adverbialsubst)
         (0 @obj)
         ;
 # Left subject more likely.
 # «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Tilsynet har ingen indikasjoner på at det foregår ulovlig samarbeid i dag …»
 # «– Det foregår en stor utveksling av personell over Nordsjøen.»
+# Ikkje: «Nav-sjefen tror  titusener  kan bli permittert.»
 
 REMOVE:at-det-innføres-forbud (@subj) IF
         (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @xubj LINK -1 cnjsub)
