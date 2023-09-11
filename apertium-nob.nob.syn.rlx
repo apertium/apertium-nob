@@ -14311,6 +14311,14 @@ REMOVE:fortsetter-søket (@subj) IF
 # «Tilsynet har ingen indikasjoner på at det foregår ulovlig samarbeid i dag …»
 # «– Det foregår en stor utveksling av personell over Nordsjøen.»
 
+REMOVE:at-det-innføres-forbud (@subj) IF
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @xubj LINK -1 cnjsub)
+        (0 @obj)
+        ;
+# Left subject more likely.
+# «Seks av ti ønsker at det innføres forbud mot tigging, viser en fersk meningsmåling.»
+
+
 
 #:612
 REMOVE:612 (@s-pred) IF
