@@ -27541,7 +27541,11 @@ REMOVE:det-høyre-kneet pp IF
 ;
 
 
-
+REMOVE:ettermiddagen-og-kvelden clb + cnjcoo IF
+        (-1C n + adverbialsubst + $$DEFNES)
+        (1C n + adverbialsubst + $$DEFNES)
+        ;
+# «vår og høst», «timer og år»
 
 
 #:2216
@@ -32944,6 +32948,12 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 #CONSTRAINTS
 ## remove domain heur
 
+"<at>" REMOVE:vet-at-det-ventes adv IF
+        (-1 fv)
+        (*1 prn OR n OR np BARRIER setn-gr LINK *1 fv CBARRIER setn-gr)
+        ;
+
+
 "<Andre>" REMOVE:Andre-tilbys-penger np IF
         (-1 >>>)
         (1C fv)
@@ -34196,12 +34206,6 @@ REMOVE:hos-hanngris-og-purker clb + cnjcoo IF
         (1C n OR pres)
         (2 setn-gr)
         ;
-
-REMOVE:ettermiddagen-og-kvelden clb + cnjcoo IF
-        (-1C n + adverbialsubst + $$DEFNES)
-        (1C n + adverbialsubst + $$DEFNES)
-        ;
-# «vår og høst», «timer og år»
 
 REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
         (*-4 fv)
