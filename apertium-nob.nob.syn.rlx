@@ -11912,6 +11912,17 @@ SELECT:820 (@subst→) IF
 # 1.11.2002: NOT -1 trans-med-nom: I dag så Per Åsne."))
 
 
+SELECT:avisa-Kronen (@subst→) IF
+	(NEGATE *-1 trans-med-nom OR ditrans BARRIER setn-gr)
+        (0 n + def)
+        (1 np)
+        ;
+
+SELECT:ifølge-den-nye-x (@←p-utfyll) IF
+        (*-1 ("ifølge") CBARRIER (*) - subst/adj/det LINK -1 setn-gr)
+        ;
+# «Ifølge den østerrikske avisa Kronen Zeitung skal de to personene ha blitt skutt på en populær restaurant.»
+
 
 #:819
 SELECT:819 (@subst→) IF
