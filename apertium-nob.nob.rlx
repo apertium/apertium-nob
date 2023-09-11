@@ -9354,6 +9354,7 @@ REMOVE:unlikely SUB:* ("hel") IF (0/* ("helg")); # hel|geværet vs helge|været
 REMOVE:unlikely SUB:* ("veier");
 REMOVE:unlikely ("trom") + gen; # Troms
 REMOVE:unlikely ("ulne");
+REMOVE:unlikely ("forvenne" "<forvente>"i); # men «å bli forvent» kan kanskje skje?
 REMOVE:unlikely ("reis") IF (0 ("reise"));
 REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
