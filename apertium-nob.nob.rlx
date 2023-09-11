@@ -2368,6 +2368,13 @@ SELECT:restriktive-tiltak pl IF
         (1 cnjcoo)
         ;
 
+"<at>" SELECT:at-pasienter-som clb IF
+        (-1C fv)
+        (1C n)
+        (*2 cnjsub LINK *1 cm LINK *1 fv) # innskot
+        ;
+# «En ny studie viser at pasienter innlagt ved norske sykehus som har forsøkt å ta sitt eget liv med medisiner, får skrevet ut flere medisiner etter selvmordsforsøket.»
+
 
 "<laget>" REMOVE:fikk-laget pret IF
         (-1C fv)
