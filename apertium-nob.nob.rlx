@@ -11859,6 +11859,8 @@ REMOVE ("frø") IF
 # heller vann (nom) i flaska
 # (ser foreløpig bort fra (\"dagen heller.\")"))
 
+"<helst>" REMOVE:unlikely pp;   # bruker folk «helse» på bokmål?
+
 
 #:3544
   "<helt>"   REMOVE:3544   (n) IF
