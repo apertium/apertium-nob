@@ -14206,9 +14206,10 @@ REMOVE:624 (@obj) IF
 
 #:623
 REMOVE:623 (@obj) IF
-	(*-1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj LINK NOT 0 ikke-@obj LINK *1 @subj LINK NOT 0 s#%det%)
+	(*-1 ikke-mod-u-@kon/@nkon/perfpart-@←p-utfyll-@adv-@app LINK 0 verb LINK NOT 0 trans-u11 LINK *-1 s#setn/infkonstr-gr LINK 0 @obj - cnjsub LINK NOT 0 ikke-@obj LINK *1 @subj LINK NOT 0 s#%det%)
 ;
 # IKKE: "det forutsettes likevel at rovdyrene kan forekomme også andre steder @OBJ"
+# Ikkje: «Seks av ti ønsker at det innføres forbud mot tigging, viser en fersk meningsmåling.»
 
 
 
