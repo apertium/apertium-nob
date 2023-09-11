@@ -13021,6 +13021,10 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # «Det brenner med åpne flammer og røyk som går rett opp»
 # (unngå «flammar og røykar»)
 
+"<samlet>" REMOVE:samlet-sett pret IF
+        (1 ("<sett>"))
+        ;
+
 #:5018
   "<seksten>"   REMOVE:5018   (n m sg def) IF
 	(0 det)
