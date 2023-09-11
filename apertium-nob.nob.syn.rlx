@@ -14303,12 +14303,13 @@ REMOVE:613 (@obj) IF
 
 
 REMOVE:fortsetter-søket (@subj) IF
-        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ LINK -1 @subj)
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @subj)
         (0 @obj)
         ;
 # Left subject more likely.
 # «Politiet fortsetter tirsdag søket etter mannen i 50-årene som er antatt omkommet etter raset i Jølster.»
 # «Tilsynet har ingen indikasjoner på at det foregår ulovlig samarbeid i dag …»
+# «– Det foregår en stor utveksling av personell over Nordsjøen.»
 
 
 #:612
