@@ -26405,13 +26405,6 @@ REMOVE:forblir-fanget pret IF
 
 
 
-#:2328
- REMOVE:2328 (adj pp) IF
-	(0 <adv>)
-;
-#  "fort (<adv> og <perf-part> av fore)"
-#      :group 51
-
 SELECT:være-utseende-som adj iF
 		(-1 %være%)
 		(0 ("<utseende>"))
