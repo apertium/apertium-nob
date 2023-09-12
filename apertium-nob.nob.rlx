@@ -4683,6 +4683,12 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         ;
 # «Den fortsatte stengingen skjer til tross for at fritidsaktiviteter og idrett for barn opp til ungdomsskolealder, unntatt cuper og kamper, skulle åpne igjen onsdag.»
 
+"<fortsatte>" SELECT:GEN-fortsatte-N adj + def IF
+        (-1C gen)
+        (1C n + ind)
+        ;
+# «De kalte sabotasjen mot Saudi-Arabias oljeindustri «et svar på angripernes fortsatte folkemord» i Jemen.»
+
 "<fortsatte>"i REMOVE:fortsatte-unlikely-adj adj;
 
 
