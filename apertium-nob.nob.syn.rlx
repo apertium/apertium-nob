@@ -237,6 +237,7 @@ LIST @obj/@i-obj/@s-pred = @obj @i-obj @s-pred ;
 LIST @obj/@o-pred = @obj @o-pred ;
 LIST @premod = @det→ @adj→ @adv→ @subst→ @tittel @kon @nkon ;
 LIST @premod-u-@kon/@nkon = @det→ @adj→ @adv→ @subst→ @tittel ;
+LIST @premod/@adv-u-@kon/@nkon = @adv @det→ @adj→ @adv→ @subst→ @tittel ;
 LIST @premod-u-@kon/@nkon-@s-gr = @det→ @adj→ @adv→ @subst→ @tittel @s-gr ;
 LIST @s-gr = @s-gr ;
 LIST @s-pred = @s-pred ;
@@ -14319,9 +14320,8 @@ REMOVE:613 (@obj) IF
 ;
 
 
-
 REMOVE:fortsetter-søket (@subj) IF
-        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @subj - adverbialsubst)
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @premod/@adv-u-@kon/@nkon LINK -1 @subj - adverbialsubst)
         (0 @obj)
         ;
 # Left subject more likely.
@@ -14331,7 +14331,7 @@ REMOVE:fortsetter-søket (@subj) IF
 # Ikkje: «Nav-sjefen tror  titusener  kan bli permittert.»
 
 REMOVE:at-det-innføres-forbud (@subj) IF
-        (*-1C @fv - sitatverb-u/at BARRIER (*) - @adv - @adj→ - @det→ LINK -1 @xubj LINK -1 cnjsub)
+        (*-1C @fv - sitatverb-u/at BARRIER (*) - @premod/@adv-u-@kon/@nkon LINK -1 @xubj LINK -1 cnjsub)
         (0 @obj)
         ;
 # Left subject more likely.
