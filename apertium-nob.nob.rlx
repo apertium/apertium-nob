@@ -10000,7 +10000,9 @@ REMOVE:terrorstemplet ("stempel") IF
         (0* ("få" vblex))
         ;
 "<følger>"i REMOVE:unlikely ("følger") + n + m
-        ;
+
+"<fiskes>"i REMOVE:unlikely n;
+
 # sjeldan ub eint
 REMOVE:unlikely ("ufør") + adj + nt
         ;
