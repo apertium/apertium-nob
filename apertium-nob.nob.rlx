@@ -38582,6 +38582,7 @@ REMOVE:default ("avvik"r) + sg IF (0 pl) ; # vanlegvis fleire viss umarkert
 
 REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
 REMOVE:default ("gir") + n IF (0 pres) ;
+REMOVE:default ("prikk") + nt IF (0 m) ;
 
 
 # Corpus-based default rules:
