@@ -9893,6 +9893,11 @@ REMOVE:to-ansatte vblex IF
         (2 n OR np)
         ;
 # "Ruud hadde walkover i den første runden i Roma og møter nederlandske Botic van de Zandschulp"
+
+"<møtes>" REMOVE:møtes n IF
+        (NEGATE -1 det + sg) # «Som med nesten alle arbeidsprosjekter, er et møtes suksess avhengig av suksessen til lederkommunikasjon»
+        ;
+
 "<kastet>"i REMOVE:skjøt-og-kastet n IF
         (-2 vblex)
         (-1 ("og"))
@@ -9999,7 +10004,7 @@ REMOVE:terrorstemplet ("stempel") IF
 "<følger>"i SELECT:få-følger ("følge") IF
         (0* ("få" vblex))
         ;
-"<følger>"i REMOVE:unlikely ("følger") + n + m
+"<følger>"i REMOVE:unlikely ("følger") + n + m;
 
 "<fiskes>"i REMOVE:unlikely n;
 
