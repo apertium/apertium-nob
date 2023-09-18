@@ -9870,6 +9870,10 @@ REMOVE:to-ansatte vblex IF
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
+        
+"<møter>"i REMOVE:i-møter vblex IF
+        (-1 %i%)
+        ;
 # "Da hadde kursene hentet seg noe inn igjen etter en kraftigere kursnedgang"
 "<møter>"i REMOVE:to-møter vblex IF
         (-1 det + qnt)
