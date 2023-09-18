@@ -1846,6 +1846,10 @@ SELECT:inngått ("<inngått>"i) + vblex + pp IF
         (-1* %ha%)
         ;
 
+"<skrevet av>"i SELECT:er-skrevet-av adj + pp IF
+        (*-1 %være/bli% BARRIER setn-gr)
+        ;
+        # boken er skrevet av A.A. Milne
 
 "<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
 
@@ -9921,7 +9925,11 @@ REMOVE:Tyrkia-kjenner ("kjenne") IF
 "<siktet>" REMOVE:står-siktet n IF
         (-1 ("stå"))
         ;
-# "Kevin Spacey står siktet for å ha forgrepet seg på en rekke kvinner"
+# "Kevin Spacey står siktet for å ha forgrepet seg på en rekke kvinner"        
+"<trenere>" REMOVE:flere-trenere vblex IF
+        (NEGATE -1 ("å") OR modalverb)
+        ;
+# "flere trenere enn spillere"
 REMOVE:terrorstemplet ("stempel") IF
         (*-1 ("være"))
         (0 ("stemple"))
