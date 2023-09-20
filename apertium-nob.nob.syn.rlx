@@ -19839,6 +19839,12 @@ SELECT:adj-pp-dis (adj pp sg @s-pred) IF
         ;
 
 
+REMOVE:cog-not-top-as-subj top IF
+        (0C @subj)
+        (0 cog OR ant)
+        ;
+# «Tofte, som var første nestleder, trådte inn som fungerende styreleder, men ble torsdag i forrige uke valgt til vervet.»
+
 
 #7000
 #SETPARENT:7000 (@←p-utfyll) TO (*-1 (prep)) ;
