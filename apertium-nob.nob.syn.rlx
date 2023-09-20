@@ -5051,7 +5051,7 @@ MAP:6090 (@laus-np)   (acr) IF
 
 
 
-SECTION select-domain ;
+SECTION select-words ;
 
 "<anledninger>" SELECT:ved-flere-anledninger @←p-utfyll IF
         (-2 ("<ved>"))
@@ -5155,7 +5155,7 @@ SECTION select-domain ;
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
 
 
-#SECTION remove-domain ;
+#SECTION remove-words ;
 
 #:1262
 "<det>" REMOVE:1262 (@subj) IF
@@ -5389,7 +5389,7 @@ SELECT:de-så-mannen-bli-tatt @xubj IF
 REMOVE:not-xubj @xubj;
 
 
-SECTION select-ndomain ;
+SECTION select-classes ;
 
 #:6003
 SELECT:6003 (@det→) IF
@@ -12550,7 +12550,7 @@ SELECT:ulykken-ikke-skyldtes-svikt @obj IF
 # «Tekniske undersøkelser viser at ulykken ikke skyldtes teknisk   svikt  .»
 
 
-#SECTION remove-ndomain ;
+#SECTION remove-classes ;
 
 REMOVE:får-de-ikke-betalt adj + pp IF
         (*-1 ("få") BARRIER setn-gr OR vblex OR @obj)
@@ -15713,7 +15713,7 @@ REMOVE:6092 (@det→) IF
 ;
 
 
-SECTION remove-domain-heur1 ;
+SECTION remove-words-heur1 ;
 
 #:1279
 
@@ -15917,7 +15917,7 @@ SECTION remove-domain-heur1 ;
 ;
 
 
-#SECTION select-ndomain-heur1 ;
+#SECTION select-classes-heur1 ;
 
 #:500
 SELECT:500 (@←sbu-rel) IF
@@ -15993,7 +15993,7 @@ SELECT:overskrift @s-pred IF
         ;
 
 
-SECTION remove-ndomain-heur1 ;
+SECTION remove-classes-heur1 ;
 
 #:495
 REMOVE:495 (@laus-np) IF
@@ -16750,7 +16750,7 @@ REMOVE:innskot-h (@s-gr) IF
         (0 cm)
         ;
 
-#SECTION select-domain-heur1 ;
+#SECTION select-words-heur1 ;
 
 
 
@@ -19071,7 +19071,7 @@ SELECT:fortsetter-Ap-og-Sp (@nkon) IF
         (1C np + @obj)
         ;
 
-SECTION remove-ndomain-heur2 ;
+SECTION remove-classes-heur2 ;
 
 #:1257
 "<noe>" REMOVE:1257 (@app) IF
@@ -19103,7 +19103,7 @@ SECTION remove-ndomain-heur2 ;
 # «–Trenerinteressen har økt hos 43-åringen etter at hans onkel og trener, Roger Mayweather (59), døde i mars.»
 
 
-SECTION select-ndomain-heur2 ;
+SECTION select-classes-heur2 ;
 
 
 
@@ -19328,7 +19328,7 @@ SELECT:så-låser-det-seg (@fv) IF
 # «– Det er god dialog, men når vi ikke klarer å bli enige om ting, så  låser  det seg, sier han.»
 
 
-#SECTION remove-ndomain-heur2 ;
+#SECTION remove-classes-heur2 ;
 
 
 #6072

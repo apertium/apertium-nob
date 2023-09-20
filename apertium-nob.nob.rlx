@@ -1376,9 +1376,15 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
         (1 np + attr OR np + cog OR np + ant OR np + init)
         ;
 
-SECTION 1 ;
+SECTION 1-select-words ;
 
 REMOVE guess;
+
+
+########################################################
+# SECTION Early disambiguation of cgguess and/or names #
+########################################################
+
 
 REMOVE:titlecase-sentstart cgguess IF
         (-1 setn-start-med-strek/anf)
@@ -1537,6 +1543,7 @@ REMOVE:Brannmannskap-har cgguess IF
         (1C fv)
         ;
 
+
 SELECT:ringe-113 vblex IF
         (1 det + qnt)
         (0 ("<ringe>"i))         # Folk bes ringe 02800.
@@ -1564,6 +1571,7 @@ SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
 SELECT (vblex sep) IF (*1 (infmerke sep)) ;
+
 
 REMOVE:acronym-samecase ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
         (0 ("<([A-ZÆØÅ][A-ZÆØÅ]+)>"r "$1"v))
@@ -1602,13 +1610,12 @@ REMOVE:acronym-dash ("[A-ZÆØÅ]?[a-zæøå]+-.*"r) IF
         ;
 # «TV-kanalen» (remove "tv-kanalen")
 
-REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 
 
-########################################################
-##### Early removal of some unlikely / rare forms: #####
-########################################################
+###################################################
+# SECTION Early removal of unlikely / rare forms: #
+###################################################
 
 REMOVE:unlikely ("knytte") + n IF (0 fv);
 REMOVE:unlikely ("trall") + sg + def;
@@ -1961,6 +1968,13 @@ REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farg
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
 REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
 REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
+
+# END Early removal of unlikely / rare forms
+
+REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
+
+
+
 SELECT:det-preget-alle vblex IF
 		(0 ("<preget>"))
                 (1 prn OR n)
@@ -2255,7 +2269,7 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
 # TODO: do we ever want pl/nt/def in cmp-split when we can have ind.sg.mf?
 
 
-## select domain
+## select words
 
 "<antall>"i SELECT:Antall-solgte-billetter sg IF
         (NEGATE -1 pl LINK 0 det OR adj)
@@ -9160,7 +9174,7 @@ SELECT:språk-kolon språk + subst IF
         ;
 # «Språk: dansk»
 
-#SECTION remove-domain ;
+#SECTION remove-words ;
 
 LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" "sende# ut" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
@@ -13888,7 +13902,7 @@ SELECT:Den-siktede xgrau OR adj IF
 # «Den spiontiltalte nordmannen ber innstendig norske myndigheter om å ta ansvar.»
 
 
-SECTION 2-select-ndomain ;
+SECTION 2-select-classes ;
 
 SELECT:som-sår-som-ikke n IF
         (-1 ("som"))
@@ -26281,7 +26295,7 @@ SELECT:offentlig-ansatte def IF
         ;
 
 
-SECTION 4-remove-ndomain ;
+SECTION 4-remove-classes ;
 
 REMOVE:seg-som pres OR pl IF
         (*-3 fv BARRIER pr)     # not «har gener i seg som gjør den i stand til …»
@@ -32485,7 +32499,7 @@ REMOVE:å-stjele-showet pret OR pp IF
 # «Politiet kunne ha gjort mer for å følge opp  tipset  , mener visepolitimester Bjørn Vandvik.»
 # «Det å selge  landet  som reisemål, er motsatt av hva jeg tenker.»
 
-SECTION 3-select-domain-heur ;
+SECTION 3-select-words-heur ;
 
 "<anslag>" SELECT pl IF
         (-1 ("tidligere") OR ("tidlig") + comp)
@@ -32961,7 +32975,7 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 
 
 
-SECTION remove-domain-heur ;
+SECTION remove-words-heur ;
 
 "<at>" REMOVE:vet-at-det-ventes adv IF
         (-1 fv)
@@ -33855,7 +33869,7 @@ REMOVE:øye ("øye"i) IF
 # ...og fotball. --KBU
 # «Mål-thriller»
 
-# SECTION 4-select-ndomain-heur ;
+# SECTION 4-select-classes-heur ;
 
 
 SELECT:nest-høyeste-nivå n + sg IF
@@ -35667,7 +35681,7 @@ SELECT:så-har-vi-laget-noen pp IF
         ;
 # «Så har vi laget noen byvettregler som vi anmoder alle å følge, sier byrådsleder Raymond Johansen (Ap) til Dagbladet.»
 
-# SECTION remove-ndomain-heur ;
+# SECTION remove-classes-heur ;
 
 
 REMOVE:X-vil-være-forsiktig adj + nt IF
