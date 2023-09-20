@@ -39080,9 +39080,14 @@ REMOVE:default-profil ("profil" nt) ;
 "<skillet>"i REMOVE:default ("skill") ;
 "<vinder>" REMOVE:default ("vinde") ;
 "<Etter>" REMOVE:default np ;
-
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
+
+# If we got this far down the disambiguation without picking the name, it's probably not a name:
+LIST probably-not-name-at-sentence-start = "Grensen" "Sent" "Keeper" "Holder" "Ulven" "Rådet" "Foreningen" "Fagforeningen" "Høy" "Ba" ;
+REMOVE:not-name-at-sentence-start probably-not-name-at-sentence-start + np IF
+        (-1 setn-gr)
+        ;
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
