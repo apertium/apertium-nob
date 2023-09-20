@@ -28,6 +28,8 @@ SET ADJ_N_AGR = AGR_MF_SG OR AGR_NT_SG OR AGR_PL ;
 
 LIST ADJ_NUMGEN = pl (nt sg) (mf sg) ;
 
+LIST NP_TYPE = top cog ant org al init attr cgguess ;
+
 LIST <<< = <<< ;
 LIST >>> = >>> ;
 
@@ -1509,6 +1511,23 @@ SELECT:Erna-Sanner-og-Lae np IF
         (1 cnjcoo)
         (2 ukjent + storbokstav)
         ;
+
+SELECT:Fet-cm-Skedsmo-og np IF
+        (0 $$NP_TYPE)
+        (1 cm)
+        (2 $$NP_TYPE)
+        (3 cnjcoo)
+        (4 $$NP_TYPE)
+        ;
+# «Fet, Skedsmo og Sørum kommuner i Akershus blir fra nyttår Lillestrøm kommune, landets niende største.»
+
+SELECT:Eidsvoll-Skien np IF
+        (-2C $$NP_TYPE)
+        (-1 guio)
+        (0 $$NP_TYPE)
+        ;
+# «strekningene mellom Lillehammer – Drammen (R10), Eidsvoll – Skien (R11) og Halden – Oslo S (R20), som alle er på Østlandet.»
+
 
 SELECT:nestleder-Sanner np IF
         (-1 yrkestittel-ord)
