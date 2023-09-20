@@ -871,6 +871,8 @@ LIST sted = top ;
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
+LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
+LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 LIST forbokstavord =  ("<[\\p{Lu}\\p{Pd}\\p{Nd}]+>"r);
 LIST forbokstavord-genitiv = "<[\\p{Lu}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
 LIST forbokstavord-blanda =  ("<[\\p{L}\\p{Pd}\\p{Nd}]+>"r);
@@ -1443,8 +1445,6 @@ SELECT:mennenes-VM n IF
 		(1 ("<grønne>"))
 		;
 
-LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
-LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 SELECT:storbokstav-np np IF
         (0 storbokstav)
         (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
@@ -1611,6 +1611,16 @@ REMOVE:acronym-dash ("[A-ZÆØÅ]?[a-zæøå]+-.*"r) IF
 # «TV-kanalen» (remove "tv-kanalen")
 
 
+SELECT:name-seen-samecase-midsent np + ("(<\\p{Lu}.*>)"r) IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        # Same word form (with same casing) was seen elsewhere in the
+        # window (up to 2 sentences on either side by default) after
+        # an unambiguous name or lowercased word:
+        (**0WC np OR berre-litenbokstav LINK 1 (VSTR:"$1"))
+        ;
+# «Vold med VM-gull i maraton for U23. Amund Vold hadde det beste giret i avslutningen …»
+# «Kilde på annenplass i utfortreningen. Aleksander Aamodt Kilde kjørte knallsterkt …»
+# «Sammenlagtpremien er den gjeveste, sa Kilde til NTB. Kilde og Alexis Pinturault kjempet om totalseieren …»
 
 
 ###################################################
@@ -39097,11 +39107,27 @@ REMOVE:default-profil ("profil" nt) ;
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 
+
+
+#### Default/fallback rules for names:
+
 # If we got this far down the disambiguation without picking the name, it's probably not a name:
 LIST probably-not-name-at-sentence-start = "Grensen" "Sent" "Keeper" "Holder" "Ulven" "Rådet" "Foreningen" "Fagforeningen" "Høy" "Ba" ;
 REMOVE:not-name-at-sentence-start probably-not-name-at-sentence-start + np IF
         (-1 setn-gr)
         ;
+
+
+REMOVE:name-not-seen-samecase-midsent np + ("(<\\p{Lu}.*>)"r) IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        # No same word form (with same casing) seen elsewhere in the
+        # window (up to 2 sentences on either side by default) after
+        # an unambiguous name or lowercased word:
+        (NEGATE **0WC np OR berre-litenbokstav LINK 1 (VSTR:"$1"))
+        (NEGATE 1 fv) # Ofte namn før finitt verb, t.d. «Vold oppfordrer russen til å ta ansvar»
+        ;
+# Inverse of SELECT:name-seen-samecase-midsent
+
 
 
 #### Simple anaphora resolution. < means span window boundaries to the left
@@ -39250,6 +39276,7 @@ SELECT:IS-kriger SUB:1 np IF
         (0 ("<.*-.*>"r))
         ;
 # «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
+
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
