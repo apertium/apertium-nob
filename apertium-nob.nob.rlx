@@ -3641,7 +3641,7 @@ SELECT:den+prn ("den¹") IF
 		(-4 %siste%)
         ;
 
-"<sagt>" SELECT:mildt-sagt adj + nt IF
+"<sagt>" SELECT:mildt-sagt vblex + pp IF
 		(-1 adj + nt)
         ;
 
