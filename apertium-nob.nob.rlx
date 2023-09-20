@@ -9421,6 +9421,7 @@ REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 REMOVE:unlikely (".*hjelp"r) IF (0 (".*hjelper"r)); # ein hjelpar usannsynleg fleirtal
 REMOVE:unlikely SUB:* ("melke") + n IF (0/* ("melk")); # sannsynlegvis ikkje rogn
+REMOVE:unlikely ("<True>") + adj ;
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
@@ -33681,6 +33682,8 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
         (NEGATE *-1 p-hj-verb BARRIER fv)
         ;
 
+"<Sanner>" REMOVE:np pres ;
+
 "<sammenstøt>" REMOVE:samanstøytar sg IF
         (NOT -1 det + sg)
         ;
@@ -38643,6 +38646,7 @@ REMOVE:default ("avvik"r) + sg IF (0 pl) ; # vanlegvis fleire viss umarkert
 REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
 REMOVE:default ("gir") + n IF (0 pres) ;
 REMOVE:default ("prikk") + nt IF (0 m) ;
+REMOVE:default ("brenner") IF (0 ("brenne")) ;
 
 
 # Corpus-based default rules:
