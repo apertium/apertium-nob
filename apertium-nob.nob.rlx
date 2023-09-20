@@ -983,7 +983,7 @@ LIST default-sg-after-poss = "rike" "selskap" "språk" "spill" "band" "forhold" 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
-BEFORE-SECTIONS
+BEFORE-SECTIONS triple-and-cgguess ;
 
 
 #### BEGIN consonant tripling
@@ -1376,12 +1376,7 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
         (1 np + attr OR np + cog OR np + ant OR np + init)
         ;
 
-# sec 1
-CONSTRAINTS
-
-SELECT:herrenes-kamp ("herre") IF
-		(0 ("<herrenes>"))
-		;
+SECTION 1 ;
 
 REMOVE guess;
 
@@ -5082,6 +5077,10 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 ;
 #  "preposisjonen er så sjelden at vi ser bort
 # fra den (hvor er du henne/henne ved vinduet)"))
+
+SELECT:herrenes-kamp ("herre") IF
+		(0 ("<herrenes>"))
+		;
 
 LIST hest-ord = "ri" "ponni" "stelle" "ridning" "vogn" "kjerre" "føll" ;
 LIST hes-ord = "synge" "lyd" "stemme" "låte" "forkjølelse" "forkjøle" "hviske" "skrike"  "røst" "ru" "vokal" ;
@@ -9161,8 +9160,8 @@ SELECT:språk-kolon språk + subst IF
         ;
 # «Språk: dansk»
 
-#CONSTRAINTS
-## remove domain
+#SECTION remove-domain ;
+
 LIST allow-mwe-adj-after-bli = "be# om" "ta# .*"r "komme# inn" "unnta# .*" "sende# ut" ;
 REMOVE:mwe-verb-unlikely-adj mwe-verb + adj + pp IF
         (NEGATE 0 allow-mwe-adj-after-bli LINK *-1 %være/bli% BARRIER fv)
@@ -13889,9 +13888,7 @@ SELECT:Den-siktede xgrau OR adj IF
 # «Den spiontiltalte nordmannen ber innstendig norske myndigheter om å ta ansvar.»
 
 
-# sec 2
-CONSTRAINTS
-## select ndomain
+SECTION 2-select-ndomain ;
 
 SELECT:som-sår-som-ikke n IF
         (-1 ("som"))
@@ -26217,7 +26214,7 @@ SELECT:default (adj) IF
 # "årets signerte kontrakter"
 
 
-CONSTRAINTS
+SECTION
 
 
 "<sort>" SELECT:annen-sort n IF
@@ -26284,8 +26281,7 @@ SELECT:offentlig-ansatte def IF
         ;
 
 
-#CONSTRAINTS
-## remove ndomain
+SECTION 4-remove-ndomain ;
 
 REMOVE:seg-som pres OR pl IF
         (*-3 fv BARRIER pr)     # not «har gener i seg som gjør den i stand til …»
@@ -32489,9 +32485,7 @@ REMOVE:å-stjele-showet pret OR pp IF
 # «Politiet kunne ha gjort mer for å følge opp  tipset  , mener visepolitimester Bjørn Vandvik.»
 # «Det å selge  landet  som reisemål, er motsatt av hva jeg tenker.»
 
-# sec 3
-CONSTRAINTS
-## select domain heur
+SECTION 3-select-domain-heur ;
 
 "<anslag>" SELECT pl IF
         (-1 ("tidligere") OR ("tidlig") + comp)
@@ -32967,10 +32961,7 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 
 
 
-#Her stod 3137
-
-#CONSTRAINTS
-## remove domain heur
+SECTION remove-domain-heur ;
 
 "<at>" REMOVE:vet-at-det-ventes adv IF
         (-1 fv)
@@ -33864,9 +33855,7 @@ REMOVE:øye ("øye"i) IF
 # ...og fotball. --KBU
 # «Mål-thriller»
 
-# sec 4
-#CONSTRAINTS
-## select ndomain heur
+# SECTION 4-select-ndomain-heur ;
 
 
 SELECT:nest-høyeste-nivå n + sg IF
@@ -35678,8 +35667,7 @@ SELECT:så-har-vi-laget-noen pp IF
         ;
 # «Så har vi laget noen byvettregler som vi anmoder alle å følge, sier byrådsleder Raymond Johansen (Ap) til Dagbladet.»
 
-#CONSTRAINTS
-## remove ndomain heur
+# SECTION remove-ndomain-heur ;
 
 
 REMOVE:X-vil-være-forsiktig adj + nt IF

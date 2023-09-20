@@ -5051,8 +5051,7 @@ MAP:6090 (@laus-np)   (acr) IF
 
 
 
-CONSTRAINTS
-## select domain
+SECTION select-domain ;
 
 "<anledninger>" SELECT:ved-flere-anledninger @←p-utfyll IF
         (-2 ("<ved>"))
@@ -5156,8 +5155,8 @@ CONSTRAINTS
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
 
 
-#CONSTRAINTS
-## remove domain
+#SECTION remove-domain ;
+
 #:1262
 "<det>" REMOVE:1262 (@subj) IF
 	(0 pron)
@@ -5235,7 +5234,7 @@ CONSTRAINTS
         (-1 ("vinne"))
         ;
 
-#CONSTRAINTS
+#SECTION
 
 ##################################################
 # SELECT @XUBJ – RELATIVE AND SUBCLAUSE SUBJECTS #
@@ -5390,8 +5389,7 @@ SELECT:de-så-mannen-bli-tatt @xubj IF
 REMOVE:not-xubj @xubj;
 
 
-CONSTRAINTS
-## select ndomain
+SECTION select-ndomain ;
 
 #:6003
 SELECT:6003 (@det→) IF
@@ -12552,8 +12550,7 @@ SELECT:ulykken-ikke-skyldtes-svikt @obj IF
 # «Tekniske undersøkelser viser at ulykken ikke skyldtes teknisk   svikt  .»
 
 
-#CONSTRAINTS
-## remove ndomain
+#SECTION remove-ndomain ;
 
 REMOVE:får-de-ikke-betalt adj + pp IF
         (*-1 ("få") BARRIER setn-gr OR vblex OR @obj)
@@ -15716,8 +15713,8 @@ REMOVE:6092 (@det→) IF
 ;
 
 
-CONSTRAINTS
-## remove domain heur1
+SECTION remove-domain-heur1 ;
+
 #:1279
 
 
@@ -15920,8 +15917,8 @@ CONSTRAINTS
 ;
 
 
-#CONSTRAINTS
-## select ndomain heur1
+#SECTION select-ndomain-heur1 ;
+
 #:500
 SELECT:500 (@←sbu-rel) IF
 	(NOT 0 prep)
@@ -15996,8 +15993,8 @@ SELECT:overskrift @s-pred IF
         ;
 
 
-CONSTRAINTS
-## remove ndomain heur1
+SECTION remove-ndomain-heur1 ;
+
 #:495
 REMOVE:495 (@laus-np) IF
 	(NOT 0 politiske-partier)
@@ -16753,8 +16750,7 @@ REMOVE:innskot-h (@s-gr) IF
         (0 cm)
         ;
 
-#CONSTRAINTS
-## select domain heur1
+#SECTION select-domain-heur1 ;
 
 
 
@@ -19075,8 +19071,7 @@ SELECT:fortsetter-Ap-og-Sp (@nkon) IF
         (1C np + @obj)
         ;
 
-CONSTRAINTS
-## remove ndomain heur2
+SECTION remove-ndomain-heur2 ;
 
 #:1257
 "<noe>" REMOVE:1257 (@app) IF
@@ -19108,8 +19103,7 @@ CONSTRAINTS
 # «–Trenerinteressen har økt hos 43-åringen etter at hans onkel og trener, Roger Mayweather (59), døde i mars.»
 
 
-CONSTRAINTS
-## select ndomain heur2
+SECTION select-ndomain-heur2 ;
 
 
 
@@ -19334,8 +19328,7 @@ SELECT:så-låser-det-seg (@fv) IF
 # «– Det er god dialog, men når vi ikke klarer å bli enige om ting, så  låser  det seg, sier han.»
 
 
-#CONSTRAINTS
-## remove ndomain heur2
+#SECTION remove-ndomain-heur2 ;
 
 
 #6072
@@ -19809,7 +19802,7 @@ REMOVE:default ("bærer") IF (0 ("bære")) ;
 REMOVE:default ("vie")   IF (0 ("via")) ;
 
 
-CONSTRAINTS
+SECTION adj-pp-dis ;
 ########################################################
 ### adj pp-dis til bruk i predikativ samsvarsbøying: ###
 ########################################################
