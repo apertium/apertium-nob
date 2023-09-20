@@ -958,6 +958,8 @@ LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 
+LIST uteljeleg = ".*bær"r "øl" "melk" ; # needs filling out :)
+
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
 LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
@@ -13913,6 +13915,12 @@ SELECT:Den-siktede xgrau OR adj IF
 
 
 SECTION 2-select-classes ;
+
+SELECT:Gutten-cm-som np OR n + def OR ij OR ("<Andre>") OR ("<Enkelte>") OR uteljeleg OR pers IF
+        (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        (1 cm)
+        (2 %som%)
+        ;
 
 SELECT:som-sår-som-ikke n IF
         (-1 ("som"))
