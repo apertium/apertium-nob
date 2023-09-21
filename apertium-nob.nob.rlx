@@ -836,7 +836,7 @@ LIST prop = np ;
 LIST prop-det-ent = ("det" np) ("den" np) ;
 LIST prop-cog = (np cog) ;
 LIST rel-pron = "som"  ;
-LIST replikk = "$?" "?" "$;" "$:" ":" "$--" "--" "$-" "-" "$\"" "\"" >>> <<< ;
+LIST replikk = "$?" "?" "$;" "$:" ":" "$--" "--" "$-" "-" "$\"" "\"" "–" guio lquot >>> <<< ;
 LIST replikk-snever = "$:" ":" "$--" "--" "$-" "-" "$\"" "\""  ;
 LIST retning = "øst"  "vest"  "syd"  "nord"  "aust"  "sørøst"  "sørvest"  "nordøst"  "nordaust"  "nordvest"  ;
 LIST romertall = "M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})"r ;
@@ -33078,7 +33078,7 @@ SECTION remove-words-heur ;
 "<dere>" SELECT:frå-dykk. acc IF
         (-1 pr)
         (-1C pr OR adv)
-        (1 <<<)
+        (1 setn-gr/anf)
         ;
 
 "<dere>" SELECT:frå-dykk-er-det acc IF
