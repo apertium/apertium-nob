@@ -11478,6 +11478,11 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         (1 %første% OR %siste%)
         ;
 
+"<for>" REMOVE:for-dere n IF
+        (1C prn)
+        (1 acc)
+        ;
+
 "<forteller>" REMOVE:forteller-om n IF
         (1 %om% OR %at%)
         ;
@@ -32556,6 +32561,10 @@ REMOVE:å-stjele-showet pret OR pp IF
 
 SECTION 3-select-words-heur ;
 
+"<av>" SELECT:av-dere pr IF
+        (1 prn + acc)
+        ;
+
 "<anslag>" SELECT pl IF
         (-1 ("tidligere") OR ("tidlig") + comp)
         ;
@@ -32954,6 +32963,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 
 "<tanker>" SELECT:Våre-tanker ("tanke") IF
         (-1 poss OR ("varm")) # ca. aldri «våre (gass)tanker» i korpus
+        ;
+
+"<til>" SELECT:til-dere pr IF
+        (1 prn + acc)
         ;
 
 #:4058
