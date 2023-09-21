@@ -14829,6 +14829,11 @@ SELECT:6212 (adj) IF
 ;
 # KBU: «fargen blå» osb.
 
+SELECT:Vennligst imp IF
+        (-1 ("<Vennligst>"))
+        (NEGATE 0 adv)
+        ;
+
 #:5042
  SELECT:5042 (vblex imp) IF
 	(0 imp-i-førsteposisjon)
@@ -21907,7 +21912,7 @@ SELECT:en-av-kveldens-takketaler n + pl IF
  SELECT:2590 (prn nom) IF
 	(0 nom/akk-pron)
 	(NOT 0 gen)
-	(*-3O setn-gr LINK 1C prep LINK *1 fv LINK NOT *1 ikke-adv)
+	(*-3O setn-gr LINK 1C prep LINK *1 fv - imp LINK NOT *1 ikke-adv)
 ;
 #  "I løpet av den første uka skrev han (nom)
 # Når setningen begynner med prep, er det
@@ -21920,7 +21925,7 @@ SELECT:en-av-kveldens-takketaler n + pl IF
  SELECT:2591 (prn nom) IF
 	(0 nom/akk-pron)
 	(NOT 0 gen)
-	(*-2O setn-gr LINK 1 adverb/komp/ub-sup LINK 1 fv LINK NOT *1 ikke-adv)
+	(*-2O setn-gr LINK 1 adverb/komp/ub-sup LINK 1 fv - imp LINK NOT *1 ikke-adv)
 ;
 #  "I går skrev han (nom) ... "
 #      :group 36
