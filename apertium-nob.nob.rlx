@@ -699,6 +699,7 @@ LIST komma/setn-slutt = "$," "," <<< ;
 LIST komma/strek = "$," "," guio ;
 LIST komp = comp ;
 LIST konj = cnjcoo ;
+LIST konj/komma = cnjcoo clb ;
 LIST konj-<adv> = (cnjcoo <adv>) ;
 LIST konj/pron = cnjcoo (prn p1) (prn p2) (prn p3) ;
 LIST kop = "være"  "virke"  "synes"  "hete"  "bli"  ("kalle"  pasv) ;
@@ -1513,18 +1514,31 @@ SELECT:Erna-Sanner-og-Lae np IF
         ;
 
 SELECT:Fet-cm-Skedsmo-og np IF
-        (0 $$NP_TYPE)
-        (1 cm)
-        (2 $$NP_TYPE)
-        (3 cnjcoo)
-        (4 $$NP_TYPE)
+        (0 $$NP_TYPE LINK 1 konj/komma LINK 1 $$NP_TYPE LINK 1 konj/komma LINK 1 $$NP_TYPE)
         ;
 # «Fet, Skedsmo og Sørum kommuner i Akershus blir fra nyttår Lillestrøm kommune, landets niende største.»
+# «Hvaler, Vågan, Tønsberg, Færder og Risør åpner imidlertid for testing av sommergjestene.»
+
+SELECT:A-og-B-i-C $$NP_TYPE IF
+        (-1 setn-gr)
+        (0 $$NP_TYPE)
+        (1 cnjcoo)
+        (2 $$NP_TYPE)
+        (3 %i%)
+        (4 $$NP_TYPE)
+        ;
+# «Røst og Hattfjelldal i Nordland og Etnedal i Oppland.»
+
+
+SELECT:Skien-Eidsvoll np IF
+        (-1 setn-gr)
+        (0 $$NP_TYPE LINK 1 guio LINK 1 $$NP_TYPE)
+        ;
+# «Asker – Bryne»
 
 SELECT:Eidsvoll-Skien np IF
-        (-2C $$NP_TYPE)
-        (-1 guio)
-        (0 $$NP_TYPE)
+        (-2C np)
+        (-2 $$NP_TYPE LINK 1 guio LINK 1 $$NP_TYPE)
         ;
 # «strekningene mellom Lillehammer – Drammen (R10), Eidsvoll – Skien (R11) og Halden – Oslo S (R20), som alle er på Østlandet.»
 
@@ -4082,8 +4096,7 @@ SELECT:i-kok ("<kok>"i) + nt IF
 #  "den ene gutten - den ene etter den andre"
 
 "<ene>" SELECT:sitt-ene-barn qnt IF
-	(-1 ("sin") + $$NUMBER + $$GENDER)
-        (1 n + ind + $$NUMBER + $$GENDER)
+	(-1 ("sin") + $$NUMBER + $$GENDER LINK 2 n + ind + $$NUMBER + $$GENDER)
 ;
 # sitt ene barn
 
@@ -13730,8 +13743,7 @@ REMOVE:Vann  vblex OR adv IF
 
 
 "<ville>" SELECT:sin-ville-ferd adj IF
-	(-1 %sin% + $$GENDER)
-        (1 n + ind + $$GENDER)
+	(-1 %sin% + $$GENDER LINK 2 n + ind + $$GENDER)
 ;
 
 #:3133
@@ -27544,9 +27556,7 @@ REMOVE:og-vant-cupen farlige-adj IF
 #  "kh feb 2004: I opprydningen etter farens (ikke adj) begravelse:"))
 
 REMOVE:det-høyre-kneet pp IF
-        (-2C det + dem + $$GENDER)
-        (-1C adj + def)
-        (0 n + def + $$GENDER)
+        (-2C det + dem + $$GENDER LINK 1C adj + def LINK 1 n + def + $$GENDER)
         ;
 
 
