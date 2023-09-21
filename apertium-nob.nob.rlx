@@ -20889,7 +20889,7 @@ SELECT:er-hans-feil det + pos + sg + $$GENDER IF
 
 
 #:2669
- SELECT:2669 (imp) IF
+ SELECT:Skjerp-dere (imp) IF
 	(NOT 0 farlige-imp)
 	(NOT 0 prep)
 	(1 pron-pers)
@@ -21978,6 +21978,7 @@ SELECT:2594 (prn nom) IF
 	(0 nom/akk-pron)
 	(NOT 0 gen)
 	(1 pres/pret)
+        (NEGATE 1 farlige-verb LINK 0 ikke-verb) # kommer tilbake til dere<akk!> når jeg
 	(2 nom/akk-pron)
 ;
 #  "Jeg (nom) kalte han (akk) for Tusten"
