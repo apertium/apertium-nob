@@ -38752,7 +38752,6 @@ REMOVE:default ("brenner") IF (0 ("brenne")) ;
 "<dekket>" REMOVE:default-dekket ("dekke" n nt sg def) ;	# keep dekke<vblex><pp>→dekt dekke<adj><pp><nt><sg><ind>→dekt
 "<Deler>" REMOVE:default-Deler ("dele" vblex pres) ;	# keep Del<n><m><pl><ind>→Delar
 "<deler>" REMOVE:default-deler ("dele" vblex pres) ;	# keep del<n><m><pl><ind>→delar
-"<dere>" REMOVE:default-dykk ("dere" prn pers p2 un pl acc) ;	# keep dere<prn><pers><p2><un><pl><nom>→de
 "<Disse>" REMOVE:default-Disse ("disse" n f sg ind) ;	# keep Denne<det><dem><un><pl>→Desse Denne<prn><dem><un><pl><acc>→Desse Denne<prn><dem><un><pl><nom>→Desse
 "<Disse>" REMOVE:default-Disse ("disse" n m sg ind) ;	# keep Denne<det><dem><un><pl>→Desse Denne<prn><dem><un><pl><acc>→Desse Denne<prn><dem><un><pl><nom>→Desse
 "<Domen>" REMOVE:default-Domen ("Domen" np cgguess) ;	# keep Dom<n><m><sg><def>→Dommen

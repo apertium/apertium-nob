@@ -3692,24 +3692,21 @@ MAP:1406 (@subj @xubj @←p-utfyll)   (prn) IF
 
 
 
-#:1405
-MAP:1405 (@subj @xubj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn) IF
-	(*-1 periode-beg/clb-konj LINK *1 prep)
-;
-
 
 #:1404
-MAP:1404-nom (@subj @xubj @s-pred @app @laus-np)   pron-nom ;
+MAP:prn-nom (@subj @xubj @s-pred @app @laus-np)   pron-nom ;
 #  " den var der
 #  mannen fant den
 #  mannen ga den mat
 #  hva heter mannen?
 #  mannen vet ingenting
 #  hvilken er det?"))
-MAP:1404-akk (@obj @i-obj @s-pred @app @laus-np)   pron-akk ;
+MAP:prn-akk (@obj @i-obj @s-pred @app @laus-np)   pron-akk ;
 
 
- 
+MAP:prn (@subj @xubj @obj @i-obj @s-pred @app @laus-np @←p-utfyll)   (prn) IF
+	(*-1 periode-beg/clb-konj LINK *1 prep)
+;
 
 #:1399
 MAP:1399 (@subst→)   ("." sent clb remspc) IF
@@ -19339,6 +19336,14 @@ REMOVE:6072 (acc @subj) IF
 #noen pronomener i akkusativ blir mappet med subj. Må fjernes!
 
 
+REMOVE:gir-dere (@subj) IF
+	(-1C trans - pasv)
+        (0 @obj)
+        (0 prn)
+        (NEGATE *1 @obj OR @i-obj)
+;
+
+
 
 #:290
 REMOVE:290 (@app) IF
@@ -19800,6 +19805,9 @@ SELECT:default ("lenger") ;
 REMOVE:default ("rase")  IF (0 ("ras")) ;
 REMOVE:default ("bærer") IF (0 ("bære")) ;
 REMOVE:default ("vie")   IF (0 ("via")) ;
+
+"<Dere>" SELECT:default nom ;
+"<dere>" SELECT:default nom ;
 
 
 SECTION adj-pp-dis ;
