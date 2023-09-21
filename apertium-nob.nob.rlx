@@ -34668,6 +34668,12 @@ SELECT:fv-cm-fv (clb) IF
 ;
 #  "gå, og vis (imp) deg aldri her mer"))
 
+SELECT:Gjør-dere-klare imp IF
+        (NEGATE *-1 pron/subst/det)
+        (NEGATE *0 fv)
+        (0C fv)
+        (*1 utrop-t)
+        ;
 
 
 #:1735
