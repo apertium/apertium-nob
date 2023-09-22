@@ -5121,6 +5121,9 @@ SECTION select-words ;
 # finitt verbal + entydig subjekt
 
 
+"<seg selv>" SELECT pl IF
+        (*-1 n OR pers LINK 0C pl)
+        ;
 
 #:1250
 "<som>" SELECT:1250 (@adv) IF
@@ -19805,6 +19808,8 @@ SELECT:default ("lenger") ;
 REMOVE:default ("rase")  IF (0 ("ras")) ;
 REMOVE:default ("bærer") IF (0 ("bære")) ;
 REMOVE:default ("vie")   IF (0 ("via")) ;
+
+"<seg selv>" SELECT:default sg ;
 
 "<Dere>" SELECT:default nom ;
 "<dere>" SELECT:default nom ;
