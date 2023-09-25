@@ -2262,6 +2262,13 @@ REMOVE:unlikely ("plage") IF (0 ("lag")); # topplagene
 # Some unlikely nouns ambig with adj's in compounds:
 REMOVE:unlikely ("kram") IF (0 ("ramme")); # sjokkrammet
 
+REMOVE:unlikely ("sale") + adj + pp
+        ;
+REMOVE:unlikely ("sale") + vblex + pret IF
+        (NEGATE 1 ("hest") OR ("gamp") OR ("merr") OR ("muldyr") OR ("esel") OR %på%)
+        ;
+        # salte og strø
+
 # Prefer nouns in compounds, unless in exception-list:
 LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" ;
 REMOVE:prefer-ncmp adj IF
@@ -6749,8 +6756,12 @@ SELECT:stemme-gitaren ("stemme¹" vblex) IF
         (1* instruments)      # stemme gitaren
         ;
         
+SELECT:stemme-over ("stemme") + adj + pp IF
+        (1 %over% OR ("ned")  OR ("ned i") OR ("fram") OR ("frem") OR ("gjennom") BARRIER setn-gr)
+        ;
+        
 SELECT:stemme-over ("stemme" vblex) IF
-        (1 %over%)
+        (1* %over% OR ("<blankt>"i) OR ("ja") OR ("nei") OR ("for") OR ("mot") OR ("imot") OR ("ned") OR ("fram") OR ("frem") OR ("på") OR ("med") OR ("gjennom") BARRIER setn-gr)
         ;
       
 SELECT:det-stemmer ("stemme¹" vblex) IF
@@ -6759,7 +6770,7 @@ SELECT:det-stemmer ("stemme¹" vblex) IF
         ;
 
 SELECT:stemmer-godt-med ("stemme¹" vblex) IF
-        (1 %med%)
+        (1C %med%)
         ;
 
 SELECT:stemmer-godt-med ("stemme¹" vblex) IF
