@@ -1803,6 +1803,48 @@ REMOVE:unlikely ("sin") + adv ;
         ;
         # varme klær og tepper
 
+
+"<samarbeidet>"i SELECT:har-samarbeidet vblex + pp IF
+        (0 adj + pp)
+        (-1* %ha% BARRIER setn-gr)
+        ;
+        
+"<samarbeidet>"i REMOVE:mener-samarbeidet vblex IF
+        (-1* vblex BARRIER setn-gr)
+        ;
+
+"<samarbeidet>"i SELECT:samarbeidet-pret vblex + pret IF
+        (NEGATE -1* %ha% BARRIER setn-gr)
+        (1 adv)
+        ;
+
+"<samarbeidet>"i REMOVE:mener-samarbeidet vblex IF
+        (-1 vblex)
+        ;
+
+"<samarbeidet>"i REMOVE:samarbeidet-mellom vblex IF
+        (1 ("mellom"))
+        ;
+
+"<samarbeidet>"i REMOVE:samarbeidet-mellom adj + pp IF
+        (1 ("mellom"))
+        ;
+
+"<samarbeidet>"i REMOVE:er-samarbeidet vblex IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<samarbeidet>"i REMOVE:har-samarbeidet n IF
+        (-1* %ha% BARRIER setn-gr)
+        (1 ("tett") OR ("godt") OR %med% OR %om%)
+        ;
+
+"<samarbeidet>"i REMOVE:har-samarbeidet n IF
+        (-1* %ha% BARRIER setn-gr)
+        (NEGATE 1 vblex + pp)
+        ;
+
+
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
 
@@ -2015,6 +2057,7 @@ REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
 REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
+REMOVE:unlikely ("<samarbeidet>"i) + adj ;    # er/blir samarbeidet
 
 # END Early removal of unlikely / rare forms
 
