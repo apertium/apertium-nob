@@ -2013,6 +2013,7 @@ REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farg
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
 REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
 REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
+REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 
 # END Early removal of unlikely / rare forms
 
@@ -6740,6 +6741,10 @@ SELECT:regnet-i-dagens-pengeverdi regne_ut IF
 		(-2 modalverb)
        	(-1 prn)
         (1 pr LINK NOT 0 pr_etter_regnvann)
+        ;
+
+SELECT:stemme-gitaren ("stemme¹") IF
+        (1 ("gitar"))      # stemme gitaren
         ;
 
 SELECT:blåse-og-regne ("regne¹") + vblex IF
