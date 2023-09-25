@@ -2014,6 +2014,7 @@ REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all h
 REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
 REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
+REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 
 # END Early removal of unlikely / rare forms
 
@@ -6743,8 +6744,37 @@ SELECT:regnet-i-dagens-pengeverdi regne_ut IF
         (1 pr LINK NOT 0 pr_etter_regnvann)
         ;
 
-SELECT:stemme-gitaren ("stemme¹") IF
-        (1 ("gitar"))      # stemme gitaren
+LIST instruments = "instrument" "gitar" "elgitar" "bassgitar" "steelgitar" "lutt" "balalaika" "bouzouki" "banjo" "dobro" "mandola" "mandolin" "sitar" "ukulele" "piano" "klaver" "flygel" "klavikord" "spinett" "cembalo" "orgel" "kirkeorgel" "konsertorgel" "pipeorgel" "harpe" "langeleik" "fiolin" "fele" "bratsj" "gambe" "hardingfele" "cello" "bass" "kontrabass" ;
+SELECT:stemme-gitaren ("stemme¹" vblex) IF
+        (1* instruments)      # stemme gitaren
+        ;
+        
+SELECT:stemme-over ("stemme" vblex) IF
+        (1 %over%)
+        ;
+      
+SELECT:det-stemmer ("stemme¹" vblex) IF
+        (-1 ("<det>"i))
+        (NEGATE 0 inf + pasv)
+        ;
+
+SELECT:stemmer-godt-med ("stemme¹" vblex) IF
+        (1 %med%)
+        ;
+
+SELECT:stemmer-godt-med ("stemme¹" vblex) IF
+        (2 %med% OR ("<overens>"i))
+        ;
+
+SELECT:få-til-å-stemme ("stemme¹" vblex) IF
+        (-3* ("<det>"))
+        (-2 %til%)
+        (-1 ("å"))
+        ;
+
+SELECT:stemmer-du-Ap ("stemme" vblex) IF
+        (1 ("du") OR ("man"))
+        (2 np OR %på%)
         ;
 
 SELECT:blåse-og-regne ("regne¹") + vblex IF
