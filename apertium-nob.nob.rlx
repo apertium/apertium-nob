@@ -6537,6 +6537,13 @@ SELECT:sløvande-middel ("middel") + nt IF
 
 "<kjerne>"i SELECT:default n
         ;
+        
+"<stemmer>" SELECT:default pl IF
+        (0 n + sg)
+        (-2 ("<flest>"i))
+        (-1 ("<mulig>"i))
+        ;
+        # flest mulig stemmer (ikkje (instrument)
 
 LIST regne_ut = ("regne" vblex) ;
 LIST regne_vann = ("regne¹" vblex) ;
