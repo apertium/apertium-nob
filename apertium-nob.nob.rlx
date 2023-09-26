@@ -1804,13 +1804,51 @@ REMOVE:unlikely ("sin") + adv ;
         # varme klær og tepper
 
 
-"<samarbeidet>"i SELECT:har-samarbeidet vblex + pp IF
-        (0 adj + pp)
-        (-1* %ha% BARRIER setn-gr)
+"<samarbeidet>"i REMOVE:at-samarbeidet vblex IF
+        (-1 %at% OR cnjcoo OR cnjsub)
         ;
-        
+
+"<Samarbeidet>"i REMOVE:Samarbeidet-med vblex
+        ;
+        # Først i setning (titlar?)
+
+
+"<samarbeidet>"i SELECT:har-samarbeidet vblex + pp IF
+        (-2 prn)
+        (-1 %ha%)
+        ;
+
+"<samarbeidet>"i SELECT:samarbeidet-pret vblex + pp IF
+        (0  adj + pp)
+        (-1 %ha%)
+        (1 pr OR adj OR adv)
+        ;
+
 "<samarbeidet>"i REMOVE:mener-samarbeidet vblex IF
         (-1* vblex BARRIER setn-gr)
+        (NEGATE -1* %ha% BARRIER setn-gr)
+        ;
+        
+"<samarbeidet>"i REMOVE:ha-ødelagt-samarbeidet adj + pp IF
+        (-1* vblex BARRIER setn-gr)
+        (NEGATE -1* %ha% BARRIER setn-gr)
+        ;
+
+"<samarbeidet>"i REMOVE:mener-samarbeidet vblex IF
+        (-1 adj)
+        ;
+        
+"<samarbeidet>"i REMOVE:ha-ødelagt-samarbeidet adj + pp IF
+        (-1 adj)
+        ;
+
+"<samarbeidet>"i REMOVE:har-samarbeidet-vært pp IF
+        (-1* %ha% BARRIER setn-gr)
+        (1* pp BARRIER setn-gr)
+        ;
+
+"<samarbeidet>"i SELECT:har-samarbeidet vblex + pp IF
+        (-1* %ha% BARRIER setn-gr)
         ;
 
 "<samarbeidet>"i SELECT:samarbeidet-pret vblex + pret IF
