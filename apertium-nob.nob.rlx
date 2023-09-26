@@ -1806,6 +1806,7 @@ REMOVE:unlikely ("sin") + adv ;
 
 "<samarbeidet>"i REMOVE:at-samarbeidet vblex IF
         (-1 %at% OR cnjcoo OR cnjsub)
+        (NEGATE 1 prn + pers + nom)
         ;
 
 "<Samarbeidet>" REMOVE:Samarbeidet-med vblex
