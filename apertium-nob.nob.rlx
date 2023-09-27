@@ -1808,7 +1808,7 @@ REMOVE:unlikely ("sin") + adv ;
         (-1 %at% OR cnjcoo OR cnjsub)
         ;
 
-"<Samarbeidet>"i REMOVE:Samarbeidet-med vblex
+"<Samarbeidet>" REMOVE:Samarbeidet-med vblex
         ;
         # Først i setning (titlar?)
 
