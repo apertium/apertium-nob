@@ -5223,6 +5223,12 @@ SECTION select-words ;
 #  " Fjern @S-PRED på \"som\" hvis det står konjunksjon foran og 
 #  det ikke finnes noe \"som\" med @S-PRED tidligere i setningen."))
 
+"<steder>" REMOVE:at-det-mange-steder (@subj) IF
+        (*-2 @subj BARRIER setn-gr)
+        (-1 ("<mange>"))
+        ;
+# «Arkeologiske funn viser at det mange steder har vært drevet hvalfangst tilbake til forhistorisk tid.»
+
 
 "<typen>" REMOVE:av-denne-typen (@subj)
         (-2 ("av"))
