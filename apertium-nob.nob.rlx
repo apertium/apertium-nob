@@ -10683,6 +10683,9 @@ REMOVE:unlikely ("rukke") IF
 		(0 ("rukke") OR ("rekke"))
         ;
 # "fire runder ble rukket spilt"
+"<utleier>" REMOVE:unlikely ("utleie") IF
+		(0 ("utleie") OR ("utleier"))
+        ;
 SELECT:transnasjonal SUB:1 ("trans") IF
         (0/1 ("tran") OR ("trans"))
         ;
