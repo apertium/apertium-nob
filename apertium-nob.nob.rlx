@@ -6839,7 +6839,7 @@ SELECT:stemme-gitaren ("stemme¹" vblex) IF
         ;
         
 SELECT:stemme-over ("stemme") + adj + pp IF
-        (1 %over% OR ("ned")  OR ("ned i") OR ("fram") OR ("frem") OR ("gjennom") BARRIER setn-gr)
+        (1 %over% OR ("ned")  OR ("ned i") OR ("fram") OR ("frem") OR ("gjennom"))
         ;
         
 SELECT:stemme-over ("stemme" vblex) IF
