@@ -10686,6 +10686,10 @@ REMOVE:unlikely ("rukke") IF
 "<utleier>" REMOVE:unlikely ("utleie") IF
 		(0 ("utleie") OR ("utleier"))
         ;
+"<selger>" REMOVE:selger-av-ressurser vblex IF
+		(0 ("selge") OR ("selger"))
+		(1 ("av"))
+        ;
 SELECT:transnasjonal SUB:1 ("trans") IF
         (0/1 ("tran") OR ("trans"))
         ;
