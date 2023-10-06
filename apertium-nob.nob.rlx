@@ -2097,6 +2097,9 @@ REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 REMOVE:unlikely ("<samarbeidet>"i) + adj ;    # er/blir samarbeidet
+REMOVE:unlikely ("styr" "<styret>"ri);
+REMOVE:unlikely ("styr" "<styrer>"ri);
+REMOVE:unlikely ("styr" "<styrene>"ri);
 
 # END Early removal of unlikely / rare forms
 
@@ -14787,6 +14790,52 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         (NEGATE -1 def LINK -2 %av%) # «yngste av mennene»
         ;
 # «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
+
+"<enkelt>"i SELECT:hver-enkelt adj IF
+		(-1 ("hver"))
+		;
+                # samtykke fra hver enkelt medlem
+
+"<enkelt>"i SELECT:enkelt-kunne ("enkelt") + adv IF
+		(1 ("<valg>"i) OR ("<liv>"i) OR ("<grep>"i) OR ("<liv>"i) OR ("<bondeliv>"i) OR ("<regnestykke>"i) OR ("<svar>"i) OR ("<spørsmål>"i) OR ("<ønske>"i) OR ("<regelverk>"i) OR ("<system>"i) OR ("<måltid>"i) OR ("<krav>"i) OR ("<språk>"i) OR ("<uttrykk>"i) OR ("<utsagn>"i))
+		;
+                # einstaka: en enkelt utøver
+
+"<enkelt>"i SELECT:enkelt-kunne ("enkelt") + adj + mf IF
+		(1 n + m + sg + ind OR n + f + sg + ind)
+		;
+                # einstaka: en enkelt utøver
+
+"<enkelt>"i SELECT:enkelt-kunne ("enkelt") + adj + nt IF
+		(1 n + nt + sg + ind)
+		;
+                # einstaka: et enkelt tilfelle
+
+"<enkelt>"i SELECT:er-enkelt adv IF
+		(-1 vblex)
+		;
+                # det er enkelt
+
+"<enkelt>"i SELECT:er-det-enkelt adv IF
+		(-2 vblex)
+		;
+                # er det enkelt
+
+"<enkelt>"i SELECT:logisk-og-enkelt adv IF
+		(-2 adj OR adv)
+                (-1 %og/eller%)
+		;
+
+"<enkelt>"i SELECT:enkelt-og-greit adv IF
+		(2 adj OR adv)
+                (1 %og/eller%)
+		;
+
+"<enkelt>"i SELECT:enkelt-kunne adv IF
+		(NEGATE 1 n + sg + ind)
+		;
+                # slik at alle enkelt kan
+
 
 "<toget>" SELECT:gikk-av-toget n IF
 		(-2 ("gå"))
