@@ -33531,6 +33531,13 @@ SECTION remove-words-heur ;
         (-1 %opp%)
         ;
 
+"<Julen>" REMOVE:jula np IF
+        (-1 setn-gr)
+        (NEGATE 1 storbokstav)
+        # If Julen used as name elsewhere, earlier rules should have caught that.
+        ;
+# «– Julen er en forbruksdrevet og kapitalkrevende høytid.»
+
 #:3498
   "<komme>"   REMOVE:3498   (n) IF
 	(NOT -1 subst-gen)
