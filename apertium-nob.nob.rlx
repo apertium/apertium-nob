@@ -394,7 +394,7 @@ LIST %og/eller% = "og"  "eller"  ;
 LIST %og/men% = "og"  "men"  ;
 LIST %om% = "om"  ;
 LIST %om/enn/som/hvis% = "som"  "om"  "hvis"  "enn"  ;
-LIST %opp% = "opp"  ;
+LIST %opp% = "opp" "opp igjen"  ;
 LIST %over% = "over"  ;
 LIST %pga% = "pga" "pga." "på grunn av" ;
 LIST %pik% = "pik"  ;
@@ -32803,6 +32803,10 @@ SECTION 3-select-words-heur ;
 "<Bruker>" SELECT:Bruker-dere-uniform fv IF
         (NOT *0 fv)
         (*1 spørsmål-t)
+        ;
+
+"<blusset>" SELECT:blusset-opp vblex OR pp IF
+        (1 %opp%)
         ;
 
 #:3721
