@@ -1779,6 +1779,7 @@ REMOVE:unlikely ("<ettertraktet>"i) + vblex; # ettertraktet -> ettertrakta
 REMOVE:unlikely ("<ettertrakta>"i) + vblex; # ettertrakta -> ettertrakta
 REMOVE:unlikely ("ettertrakte") + adj; # ettertrakta -> ettertrakta
 REMOVE:unlikely ("<merker>"i) + n + m + sg ; # å merke, eit merke, ei mark
+REMOVE:unlikely ("skip") + n + m ; # curling unlikely unless unambiguous form
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
