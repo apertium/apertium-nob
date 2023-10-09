@@ -9505,6 +9505,10 @@ REMOVE:unlikely-tremilsslag ("slag") IF
         (0 ("lag"))
         (0/* cmp)
         ;
+REMOVE:hyperenkelt adj + ("enkelt") IF
+	(0/* cmp)
+	;
+        # aldri "hypereinskild"
 REMOVE:unlikely-snorklipper ("lippe");
 REMOVE:unlikely ("<strende>"i);
 REMOVE:unlikely ("rette") + n;  # rette og vrange
