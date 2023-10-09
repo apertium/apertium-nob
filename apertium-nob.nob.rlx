@@ -9950,10 +9950,18 @@ SELECT:default ("<annen>"i) + det ;
         ;
 # "Glimt fra historien."
 REMOVE:fatte-mot pr IF
-        (-1 ("fatte"))
-        (1 pr OR adv) ;
+        (-1* ("fatte") BARRIER setn-gr)
+        (NEGATE 0* ("vedtak") OR  ("avgjørelse") OR  ("beslutning") BARRIER setn-gr)
         ;
 # "Vi fattet mot"
+REMOVE:bli-fattet adj + pst IF
+        (-1 %være/bli%)
+        ;
+# "Vedtaket ble fattet"
+REMOVE:fattet-mistanke adj + pst IF
+        (1 ("mistanke"))
+        ;
+# "De fattet mistanke til mannen"
 REMOVE:vante-gang n IF
         (0 ("vant"))
         (1 ("gang"))
@@ -12265,6 +12273,10 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 "<hvilket>" REMOVE:15-kom-i-ligaen-hvilket-var-rekort det IF
         (-1 cm)
         (1C fv)
+        ;
+
+"<hvilket>" REMOVE:hvilket-vedtak cnjsub IF
+        (1 n)
         ;
 
 
