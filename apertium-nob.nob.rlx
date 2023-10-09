@@ -7058,6 +7058,13 @@ SELECT:NNs-forlovede n IF
 		(0 ("<forlovede>"))
 		;
 
+
+"<de>" REMOVE:de-mindre-varer det IF
+        (1 ("<mindre>") OR ("<færre>"))
+        (*2 n LINK NEGATE 0 def)
+        ;
+# «Når det går dårlig i Europa, så kjøper de mindre norske varer og tjenester.»
+
 # TODO: any exceptions?
 "<seg>" REMOVE fv IF
         (0* fv)
