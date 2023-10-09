@@ -8402,11 +8402,6 @@ SELECT:1087 (@s-pred) IF
 ;
 #  " så het de da Reim @S-PRED og Tir"))
 
-SELECT:kalles-delirium (@s-pred) IF
-        (-1 ("kalle") + pasv)
-        (0* (@subj))
-        ;
-
 
 #:1086
 SELECT:1086 (@s-pred) IF
@@ -14015,6 +14010,7 @@ WITH:kopula (@obj)
 	(*-1 verb LINK 0 kop-u-%være/bli% LINK *-1 @subj OR @xubj)
         ;
     # «Prosjektet kalles den kinesisk-pakistanske økonomiske korridor og er et av de …»
+    # Ikkje: «På grunn av dette kalles en total måneformørkelse også “blodmåne”.»
 };
 #  " IKKE: det er det hele @OBJ"))
 
