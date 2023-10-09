@@ -492,6 +492,7 @@ LIST adj-be = (adj def) (adj pprs) ;
 LIST adj-ent = (adj sg) (adj pprs) ;
 LIST adj-fem = (adj f) (adj mf) (adj pprs) (adj def) ;
 LIST adj-fl = (adj pl) (adj pprs) ;
+SET adj-be/adj-fl = adj-be OR adj-fl ;
 LIST adj-gen = (adj gen) ;
 LIST adj-komp = (adj comp) ;
 LIST adj-mask = (adj m) (adj mf) (adj pprs) (adj def) ;
@@ -38486,6 +38487,12 @@ SELECT:ble-det-favorittfall expl IF
         (-1 ("bli") + fv)
         (1 n + sg + ind)
         ;
+
+SELECT:sitt-grundige-arbeid n + &&ADJ_N_AGR IF
+        (*-1 det + poss + &&ADJ_N_AGR BARRIER (*) - adj-be/adj-fl)
+        (0C n)
+        ;
+# «Han har selv blitt fengslet og banket opp av politiet mens han var på jobb i Tyrkia, men fortsetter likevel sitt grundige journalistiske arbeid fra kriseområder, skriver Norsk PEN, som deler ut prisen, i sin begrunnelse.»
 
 
 REMOVE:høye-doser n + sg IF
