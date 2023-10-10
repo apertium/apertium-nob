@@ -11646,7 +11646,7 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
 # regelen ikke np-er på hver side"
 
 "<for>" REMOVE:for-første-gang vblex IF
-        (1 %første% OR %siste%)
+        (1 %første% OR %siste% OR ("enkelt")) # inkludert tasteleif «at det for enkelt fylker»
         ;
 
 "<for>" REMOVE:for-dere n IF
