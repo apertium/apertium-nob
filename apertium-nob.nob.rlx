@@ -12810,6 +12810,11 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "\"midt\" subst er mest brukt i \"midten\""
 
+"<mine>" REMOVE:en-av-mine (n) IF
+        (-2 det)
+        (-1 %av%)
+        ;
+
 
 #:3423
   "<mot>"   REMOVE:3423   (n nt pl ind) IF
