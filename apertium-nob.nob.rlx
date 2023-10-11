@@ -2751,6 +2751,12 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (-1 %ha%)
         ;
 
+"<spill>"i SELECT:spill-levende adv IF
+        (1 ("levende") OR ("våken"))
+        ;
+        # "spill levende"
+REMOVE:unlikely ("spill") + adv ;
+
 "<beste>"i   SELECT:verdens-beste ("god") + adj + sup + def IF
         (-1 ("<verdens>"i))
         ;
