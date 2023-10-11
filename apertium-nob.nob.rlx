@@ -2775,6 +2775,11 @@ SELECT:verdens-hav pl + ind IF
 "<skjønnere>"i REMOVE:unlikely n
         ;
 
+SELECT:hen-til pr IF
+        (-1* ("se") BARRIER setn-gr)
+        (1 %til%)
+        ;
+
 #:3783
   "<akter>"   SELECT:3783   (pr) IF
 	(NOT -1 fl-det)
