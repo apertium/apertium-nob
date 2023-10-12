@@ -2102,6 +2102,7 @@ REMOVE:unlikely ("<samarbeidet>"i) + adj ;    # er/blir samarbeidet
 REMOVE:unlikely ("styr" "<styret>"ri);
 REMOVE:unlikely ("styr" "<styrer>"ri);
 REMOVE:unlikely ("styr" "<styrene>"ri);
+REMOVE:flygedyktig+heten ("hete") IF (0 (".*ighet"r)) (0/* cmp) ;
 
 # END Early removal of unlikely / rare forms
 
