@@ -10715,7 +10715,11 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<Løy>"i SELECT:Løy-du ("lyve") IF
         (1 pron)
         ;
-
+"<besatt>" SELECT:kjørt-besatt ("besette") IF
+        (-2 ("kilometer"))
+        (-1 ("<kjørt>"))
+        ;
+# "kilometer kjørt besatt"
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
