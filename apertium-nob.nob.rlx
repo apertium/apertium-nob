@@ -10312,6 +10312,11 @@ REMOVE:Isnes-ansatt vblex IF
         (-1 ("<riktig>"))
         ;
 # "Det er ikke riktig øyeblikk ennå"
+"<øyeblikk>"i SELECT:til-siste-øyeblikk sg IF
+        (-2 prep)
+        (-1 ("<siste>"))
+        ;
+# "til siste øyeblikk"
 "<fart>"i SELECT:god-nok-fart ("fart") IF
         (-1 ("<nok>"))
         ;
