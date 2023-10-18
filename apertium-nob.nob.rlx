@@ -3372,6 +3372,11 @@ SELECT:den-var-herlig-den ("den¹") IF
 		(4 ("den¹"))
 		;
 
+"<den>" SELECT:den-eller-dei  ("den¹") IF
+        (1 ("eller"))
+        (2  ("de"))
+        ;
+
 SELECT:begge-årets-renn (n pl) IF
         (-2 ("begge") OR ("alle"))
         (-1 n + gen)
