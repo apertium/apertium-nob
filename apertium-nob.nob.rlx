@@ -3753,9 +3753,32 @@ SELECT:den+prn ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
-"<satt>" SELECT:satt-i-gang pp IF
+"<satt>"i SELECT:har-satt vblex + pp IF
+        (-1* %ha% BARRIER setn-gr)
+        ;
+
+"<satt>"i SELECT:satt-i-bestilling adj + pp IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<satt>"i SELECT:satt-sammen-med pret IF
+        (1 ("sammen med"))
+        ;
+        # "er sett saman med", men "dei sat saman med"
+
+"<satt>"i REMOVE:satt-på-spissen pret IF
+        (1 %på%)
+        (2 ("spiss"))
+        ;
+
+"<satt>"i SELECT:satt-i-gang pp IF
         (1 ("i gang"))
         ;
+
+"<satt>"i SELECT:satt-for pp IF
+        (NEGATE -1 ("folk") OR prn OR %som%)
+        ;
+        # folk satt for tett
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
 		(-1 %ha%)
