@@ -2294,8 +2294,9 @@ SELECT:bli-laget-lyder-mot ("<laget>"i) + vblex IF
 		(*-1 ("kvalifisering") OR ("nivå") OR ("kamp"))
 		;
 "<laget>" SELECT:laget-ånd n IF
-		(*1 ("ånd") OR ("tape" vblex) OR ("kvalifisering") OR ("kamp") OR ("tap"))
+		(*1 ("ånd") OR ("tape" vblex) OR ("kvalifisering") OR ("kamp") OR ("tap") LINK NEGATE 0 ("tape" n))
 		;
+# Ikkje: «– Videre, da jeg laget videotape av meg selv, var ansiktet mitt hovent etter et møte med en brennmanet.»
 SELECT:har-laget-statistikken ("<laget>"i) + vblex IF
 		(-2 n OR np)
 		(-1 %ha%)
