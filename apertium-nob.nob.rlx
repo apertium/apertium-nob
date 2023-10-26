@@ -3776,9 +3776,10 @@ SELECT:den+prn ("den¹") IF
         ;
 
 "<satt>"i SELECT:satt-for pp IF
-        (NEGATE -1 ("folk") OR prn OR %som%)
+        (NEGATE -1 ("folk") OR prn OR %som% OR adv)
         ;
-        # folk satt for tett
+# Ikkje: «folk satt for tett»
+# Ikkje: «Da satt jeg den»
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
 		(-1 %ha%)
