@@ -102,6 +102,7 @@ LIST cnjsub = cnjsub ;
 LIST cnjcoo = cnjcoo ;
 LIST date = date ;
 LIST ij = ij ;
+LIST part = part ;
 
 LIST %ett% = ("én" nt) ;
 LIST %én% = ("én" m) ;
@@ -2450,6 +2451,8 @@ REMOVE:prefer-sg-ind-cmp-split adj + cmp-split + def;
 REMOVE:disprefer-vblex-cmp vblex - allow-verb/adjcmp IF
         (0 n OR adj)
         (0/1 cmp)
+        # Except some safe contexts:
+        (NEGATE 0 inf LINK *-1 part BARRIER ikke-adv) # «å kanskje frihetsberøve»
         ;
 
 ## select words
