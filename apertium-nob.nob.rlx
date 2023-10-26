@@ -19867,6 +19867,13 @@ REMOVE:er-Soyjuz-de-eneste np + attr IF
 ;
 #  "- Men Oscar W var ..."
 
+SELECT:og-ønsker-derfor (clb) IF
+        (*-1 fv BARRIER setn-gr)
+        (1C pres OR n)
+        (2 ("derfor") OR ("således") OR ("dermed"))
+        (3 part OR n OR dem)
+        ;
+
 SELECT:finne-deres-X-og-Y-og-gi clb IF
         (*-4 fv CBARRIER clb)
         (-3 n)
