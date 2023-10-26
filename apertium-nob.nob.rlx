@@ -6046,6 +6046,16 @@ REMOVE:ulikely ("larv") + n IF
 # Ikke: De så like ut"
 
 
+"<lett>" SELECT:lett-til-moderat nt IF
+        (1 %til%)
+        (2 ("<moderat>") OR ("<laber>"))
+        ;
+
+"<moderat>" SELECT:lett-til-moderat nt IF
+        (-2 ("<lett>"))
+        (-1 %til%)
+        ;
+
 
 #:3475
   "<like>"   SELECT:3475   (adv) IF
