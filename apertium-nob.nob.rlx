@@ -27028,7 +27028,7 @@ REMOVE:2324 pprs IF
 
 
 #:2306
- REMOVE:2306 adj-def-sg-sp IF
+ REMOVE:2306 (adj def sg) IF
 	(1 komma/konj)
 	(-1 fl-det)
 	(NOT -1 det-ent)
@@ -27037,7 +27037,7 @@ REMOVE:2324 pprs IF
 
 
 #:2307
- REMOVE:2307 adj-def-sg-sp IF
+ REMOVE:2307 (adj def sg) IF
 	(-1 fl-det)
 	(NOT 1 komma/konj)
 	(NOT 1 adj-ent)
@@ -27047,7 +27047,7 @@ REMOVE:2324 pprs IF
 
 
 #:2308
- REMOVE:2308 adj-def-sg-sp IF
+ REMOVE:2308 (adj def sg) IF
 	(0 adj-fl)
 	(NOT 0 %siste%/ordenstall)
 	(NOT -1 adj-sup-be)
