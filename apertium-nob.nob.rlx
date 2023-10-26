@@ -9371,6 +9371,8 @@ SELECT:vende-det-døve-øret-til ("øre¹") IF
         ;
 SELECT:vaske-ørene ("øre¹") IF (-1 ("vaske"));
 SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
+REMOVE:Frp-ører ("øre") IF (0/1 cmp);
+REMOVE:kontroll+ører ("øre") OR ("øre¹") IF (0 ("kontrollør"));
 
 "<øst>" SELECT:øst-i-England pr IF
         (NOT 1 ("ut"))
