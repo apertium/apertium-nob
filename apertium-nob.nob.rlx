@@ -39158,6 +39158,7 @@ REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
 REMOVE:default ("gir") + n IF (0 pres) ;
 REMOVE:default ("prikk") + nt IF (0 m) ;
 REMOVE:default ("brenner") IF (0 ("brenne")) ;
+REMOVE:default ("lesse") IF (0 ("lese")) ;
 
 
 # Corpus-based default rules:
