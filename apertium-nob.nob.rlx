@@ -2017,6 +2017,7 @@ SELECT:unlikely n + ("pille") IF
 
 REMOVE:unlikely ("planlegger") IF
         (NOT -1 %en%)
+        (NOT 0/* cmp)           # «hovedplanlegger»
         (0 vblex)
         ;
 
@@ -14566,6 +14567,14 @@ SELECT:Rundt-1000-politifolk n + pl + ind IF
         (0C n + ind)
         ;
 
+SELECT:den-okkuperte-Vestbredden adj + def IF
+        (-1 dem)
+        (0C pret OR adj + pl OR adj + def)
+        (1 np + (".*en"r))
+        ;
+# «Vestbredden» blir np, så regex-match på lemma
+# «Ifølge regjeringsavtalen mellom Benjamin Netanyahu og Benny Gantz skal store deler av den israelskokkuperte Vestbredden annekteres, og prosessen skal begynne allerede 1.»
+
 
 ##########################################################################
 ### SECTION adj pp-dis til bruk i predikativ samsvarsbøying i nob→nno: ###
@@ -21917,6 +21926,7 @@ SELECT:natur-landet-har n + def IF
 #:2630
  SELECT:2630 (pret) IF
 	(NOT 0 farlige-verb)
+	(NEGATE 0 adj LINK 0/1 cmp)
 	(-1C pron/subst)
 	(NOT -1 pron-r)
 	(NOT -1 dato)
@@ -22058,12 +22068,13 @@ SELECT:folket-skal-anse-han acc IF
 
 
 #:2601
- SELECT:2601 pron-pers IF
+ SELECT:er-den-anlagt pron-pers IF
 	(0 %den/denne%)
 	(1 perf-part)
 	(-1C fv)
-	(NOT 1 subst-mask/fem)
-	(NOT 1 adverb)
+	(NEGATE 1 subst-mask/fem)
+	(NEGATE 1 adverb)
+        (NEGATE 1 def)
 ;
 #  ".. er den anlagt"
 #      :group 35
@@ -26841,6 +26852,12 @@ REMOVE:permisjonsvarsler ("varsler") IF
         (NEGATE -2 ("si") OR ("mene") OR ("fortelle") OR ("ifølge") )
         ;
 
+REMOVE:alle-lastebildrepte pret IF
+        (-1 det)
+        (0/1 cmp)
+        (0 adj)
+        ;
+
 #:4090
 REMOVE:4090 (vblex)
 	(0 %flekke%)
@@ -27258,7 +27275,7 @@ REMOVE:satte-ny-rekord adj-def-sg-sp IF
 
 
 #:2299
- REMOVE:2299 (adj pl) IF
+REMOVE:2299 (adj pl) IF
 	(NOT 0 gen)
 	(1C subst/adj)
 	(NOT 1 fl)
@@ -27939,11 +27956,12 @@ REMOVE:huset ("huse") IF
 
 
 #:2246
- REMOVE:2246 (adj) IF
+REMOVE:kjøpte-Leif (adj) IF
 	(0 <perf-part>)
 	(0 pres/pret)
 	(1 subst-prop)
 	(NOT -1 det)
+        (NEGATE 0 def LINK -1 >>> LINK *2 fv) # «Skadeforfulgte Monfils kaster …»
 ;
 #  "27.2.2003: For snart 16 år siden kjøpte (ikke adj)  Leif Heiberg Myrdam huset fra 1850-årene."))
 
@@ -31982,9 +32000,10 @@ REMOVE:før-det-legges-fram inf IF
         ;
 
 #:1892
- REMOVE:1892 pp IF
+REMOVE:ikke-objpred-fl pp IF
 	(NOT 0 %ta%)
 	(-1 pron-akk-mfn/fl)
+        (NEGATE -1 dem)
 	(**-1C setn-gr BARRIER objpred-pron-verb)
 	(**-1C setn-gr BARRIER p-hj-verb)
 	(**-1C setn-gr BARRIER m-hj-verb-pret)
