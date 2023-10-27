@@ -12562,6 +12562,12 @@ REMOVE:får-de-ikke-betalt adj + pp IF
 # «Dermed får de<@subj> ikke    betalt    for dette, sier Monica A.»
 # Men ikkje: «Det er ikke nok tid igjen til å få den<@obj>   vedtatt   i Parlamentet i London og i EU-parlamentet.
 
+REMOVE:cmp-split (@subj) IF
+	(0 cmp-split)
+	(1 cnjcoo)
+	;
+# «Disse tallene er ikke  sesong-  og influensajusterte, og de sammenlignes derfor med samme kvartal året før.»
+
 REMOVE:at-det-skapes-jobber (@subj) IF
         (-3 cnjsub)
         (-2 expl)
