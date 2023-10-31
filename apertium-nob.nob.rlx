@@ -410,7 +410,7 @@ LIST %samme/neste/ene/eneste/selve/forrige% = "selv"    "forrige" "samme" "neste
 LIST %uansett/samme/likegyldig% = "uansett" "samme" "likegyldig" ;
 LIST %se/høres/kjennes% = "se"  "kjennes"  "høres"  ;
 LIST %se%-pret = ("se"  pret) ;
-LIST %seg% = ("seg"  prn) ;
+LIST %seg% = ("seg" prn) ;
 LIST %selv% = "sjøl"  "sjæl"  "selv"  ;
 LIST %seng% = "seng"  ;
 LIST %sett% = ("se"  vblex pp) ;
@@ -744,6 +744,7 @@ LIST nom/akk-pron = "jeg" "hun" "hen" "han"  "du"  "dere"  ;
 LIST nom/at = ("at"  cnjsub) (n) (np) (adj) (prn) (det) ;
 LIST nom/prep = (pr) (n) (np) (adj) (prn) (det) ;
 LIST nominativ = nom ;
+LIST refl-prn = "<seg>"i "<meg>"i "<deg>"i "<oss>"i "<dere>"i ;
 LIST npu-verb = "trenge"  "orke"  "klare"  "gidde"  "behøve"  ;
 LIST nr2-det = "sånn"  "sådan"  "slik"  "samme"  "noe"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  (det qnt pl) ("ene"  det) ;
 LIST nr2-det-fem-be = ("noe"  f) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
@@ -10806,19 +10807,73 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<Løy>"i SELECT:Løy-du ("lyve") IF
         (1 pron)
         ;
-"<besatt>" SELECT:kjørt-besatt ("besette") IF
+
+"<besatt>" SELECT:å-bli-besatt-av ("besatt") IF
+        (-2 ("<å>"i))
+        (-1 %være/bli%)
+        (1 %av%)
+        ;
+        # Guardiola er kjend for å vere besett av detaljar på treningsfeltet.
+        # Teksten handlar om å bli besett av den klassiske forfattaren Edgar Allan Poe.
+
+"<besatt>" SELECT:om-å-være-besatt ("besatt") IF
+        (-3 %om%)
+        (-2 ("<å>"i))
+        (-1 %være/bli%)
+        ;
+        # Han understrekar at det ikkje handlar om å vere besett, men heller å tre inn i ei rolle
+
+"<besatt>" SELECT:han-er-besatt-av ("besatt") IF
+        (-2 prn)
+        (-1 %være/bli%)
+        (1 %av%)
+        ;
+        # Kelly fortalde korleis han vart besett av kontrollbehov.
+
+"<besatt>" SELECT:som-besatt ("besatt") IF
+        (-1 %som%)
+        ;
+
+"<besett>" SELECT:som-besett ("besett") IF
+        (-1 %som%)
+        ;
+
+LIST stilling-lm = ".*stilling.*"ri ".*jobb.*"ri ".*hjemmel"ri ".*verv"ri ".*rolle"ri ".*funksjon"ri ".*post"ri "årsverk" "søke" "ansatt" "ansette" "sete" "taburett";
+SELECT:besette-en-stilling ("besette²") IF
+        (0* stilling-lm)
+        ;
+
+LIST angrep-lm = ".*militær.*"ri ".*invasjon.*"ri ".*styrke"ri ".*skip"ri ".*flåte"ri ".*fly"ri ".*skvadron"ri ".*kjøretøy"ri "angripe" "pansret" "soldat" "bataljon" ;
+SELECT:angripe-okkupere ("besette³") IF
+        (0* angrep-lm)
+        ;
+
+LIST trollbinde-lm = ".*demon.*"ri ".*djevel.*"ri  ".*djevle.*"ri "satan" "spøkelse" "skrømt" "gjenferd" "ånd" "mare" "mareritt" ;
+SELECT:trollbinde ("besette") IF
+        (0* trollbinde-lm)
+        ;
+
+SELECT:trollbinde ("besette") IF
+        (1 refl-prn)
+        ;
+
+"<besatt>" SELECT:kjørt-besatt ("besatt") IF
         (-2 ("kilometer"))
         (-1 ("<kjørt>"))
         ;
 # "kilometer kjørt besatt"
+
 "<besatt>" REMOVE:besitte-besatt ("besitte") + pret
         ;
-"<besatt>" SELECT:som-besatt ("besatt") IF
-        (-1 %som%)
+"<besatt>" REMOVE:besette-besatt ("besette")
         ;
-"<besett>" SELECT:som-besett ("besett") IF
-        (-1 %som%)
+        
+SELECT:besette-med ("besette¹") IF
+        (1 %med%)
+        (NEGATE -1 %som%)
         ;
+        # dekorere med
+
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
