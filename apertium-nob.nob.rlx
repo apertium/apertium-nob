@@ -2518,6 +2518,17 @@ SELECT:restriktive-tiltak pl IF
         (-1 adj + pl)
         ;
 
+"<henført>"i SELECT:henført-til ("henføre") IF
+        (1 %til% OR %under%)
+        ;
+
+"henføre"i SELECT:henført-til ("henføre") IF
+        (1 %til% OR %under%)
+        ;
+
+"<henført>"i SELECT:henført-av ("henført") + adj
+        ;
+
 "<at>" SELECT:antas-at clb IF
 	(-1 %antas% OR ("skyldes") OR ("bekrefte") OR ("opplyse"))
 ;
@@ -10800,7 +10811,7 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 ("<kjørt>"))
         ;
 # "kilometer kjørt besatt"
-"<besatt>" REMOVE:besatt ("besitte") + pret
+"<besatt>" REMOVE:besitte-besatt ("besitte") + pret
         ;
 "<besatt>" SELECT:som-besatt ("besatt") IF
         (-1 %som%)
