@@ -10800,6 +10800,14 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 ("<kjørt>"))
         ;
 # "kilometer kjørt besatt"
+"<besatt>" REMOVE:besatt ("besitte") + pret
+        ;
+"<besatt>" SELECT:som-besatt ("besatt") IF
+        (-1 %som%)
+        ;
+"<besett>" SELECT:som-besett ("besett") IF
+        (-1 %som%)
+        ;
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
