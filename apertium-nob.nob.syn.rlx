@@ -312,7 +312,7 @@ LIST det/adj/adv/subst/infmerke = det adj adv n "å" ;
 LIST det/adj/tall-subst = "tusen" "trillion" "mrd." "million" "milliard" "mill." "kvadrillion" "hundre" "halvmillion" "billion" "billiard" det adj ;
 LIST ditrans-prep = "mellom" "imellom" ;
 
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" ;
 LIST tall-subst/målsubst/tidssubst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" ("gang" pl) ;
 
 LIST ent = sg ;
