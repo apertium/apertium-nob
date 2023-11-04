@@ -18553,7 +18553,7 @@ SELECT:2963 (adj nt ind sg) IF
         ;
 
 #:2921
- SELECT:2921 (adj mf ind sg) IF
+SELECT:flink-gutt (adj mf ind sg) IF
 	(NOT 0 orden)
 	(NOT 0 farlige-adj)
 	(NOT 0 perf-part)
@@ -39172,6 +39172,7 @@ REMOVE:default ("gir") + n IF (0 pres) ;
 REMOVE:default ("prikk") + nt IF (0 m) ;
 REMOVE:default ("brenner") IF (0 ("brenne")) ;
 REMOVE:default ("lesse") IF (0 ("lese")) ;
+REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 
 
 # Corpus-based default rules:
@@ -39832,6 +39833,8 @@ SELECT:IS-kriger SUB:1 np IF
         ;
 # «Ofrene omfatter IS-krigernes familiemedlemmer og slektninger.»
 
+
+AFTER-SECTIONS
 
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
