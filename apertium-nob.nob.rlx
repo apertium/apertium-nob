@@ -9365,8 +9365,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 "<Været>" REMOVE:Været vblex;
 
+# øre¹.nt is nno øyre; øre.nt/m is nno øre
 SELECT:kroner ("øre") + nt IF (*-1 ("krone"));
 SELECT:kroner ("øre") + nt IF (-1 siffer OR talord OR siffer-millioner);
+SELECT:50-ører ("øre") + nt IF (0/1 siffer OR talord OR siffer-millioner);
 SELECT:øre-til-øre ("øre¹") IF (-1 pr OR %høyre/venstre%);
 SELECT:låne-sitt-øre ("øre¹") IF
         (-2 ("låne"))
@@ -9381,8 +9383,12 @@ SELECT:vende-det-døve-øret-til ("øre¹") IF
         ;
 SELECT:vaske-ørene ("øre¹") IF (-1 ("vaske"));
 SELECT:indre-øre ("øre¹") IF (-1 ("indre"));
-REMOVE:Frp-ører ("øre") IF (0/1 cmp);
-REMOVE:kontroll+ører ("øre") OR ("øre¹") IF (0 ("kontrollør"));
+SELECT:Frp-ører ("øre¹") + nt IF (0/1 np); # «i mine Frp-ører»
+LIST øre-tvitydig-samansetjing = ".*(kontroll|promot)ør"r ;
+# Fjern først dei som får endra form på nno:
+REMOVE:kontroll+ører ("øre") + nt OR ("øre¹") IF (0 øre-tvitydig-samansetjing);
+# Fjern m viss det finst heilt andre lemma (radarkontroll+øre vs radar+kontrollør):
+REMOVE:kontroll+ører ("øre") + m IF (0 øre-tvitydig-samansetjing);
 
 "<øst>" SELECT:øst-i-England pr IF
         (NOT 1 ("ut"))
