@@ -34262,6 +34262,11 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
         (-1 be-subst)
         ;
 
+LIST høyt-og-lavt = "<høyt>" "<lavt>" ;
+"<skåret>" REMOVE ("skjære") IF
+        (*1 høyt-og-lavt BARRIER ikke-adv)
+        ;
+# «– VG har aldri skåret spesielt høyt på målinger som denne.»
 
 "<slaget>" REMOVE:av-det-flate-slaget vblex OR adj;
 # when is this ever a verb/pp?
