@@ -1784,6 +1784,7 @@ REMOVE:unlikely ("<ettertrakta>"i) + vblex; # ettertrakta -> ettertrakta
 REMOVE:unlikely ("ettertrakte") + adj; # ettertrakta -> ettertrakta
 REMOVE:unlikely ("<merker>"i) + n + m + sg ; # å merke, eit merke, ei mark
 REMOVE:unlikely ("skip") + n + m ; # curling unlikely unless unambiguous form
+REMOVE:unlikely ("strake") + n IF (0 ("strak")) ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -38748,6 +38749,13 @@ SELECT:sitt-grundige-arbeid n + &&ADJ_N_AGR IF
         ;
 # «Han har selv blitt fengslet og banket opp av politiet mens han var på jobb i Tyrkia, men fortsetter likevel sitt grundige journalistiske arbeid fra kriseområder, skriver Norsk PEN, som deler ut prisen, i sin begrunnelse.»
 
+SELECT:sjette-NM-gull n + sg IF
+        (*-1 adj + ord + def BARRIER (*) - adj)
+        (0C n)
+        (NOT 0 cmp-split)
+        (NOT 0 default-pl-after-poss)
+        ;
+# «Karsten Warholm stormet inn til karrierens sjette strake NM-gull på 400 meter hekk på Hamar fredag.»
 
 REMOVE:høye-doser n + sg IF
         (NOT -2 gen)            # «Politiets generelle inntrykk»
