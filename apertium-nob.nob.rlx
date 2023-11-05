@@ -39054,6 +39054,12 @@ SELECT:n_needs_det n + def + adjn IF
         ;
 # «Flere av de innsatte må trolig belage seg på …»
 
+# If this far down the file we're still unsure of vblex.pp vs adj.pp, pp after "ha" are most likely non-adj:
+SELECT:hadde-forhåndsbetalt vblex + pp IF
+        (-1 ("ha"))
+        (0C pp)
+        ;
+
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
 SELECT:default adj         IF (0 ("<hele>"i));
