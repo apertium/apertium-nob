@@ -2456,6 +2456,7 @@ REMOVE:disprefer-vblex-cmp vblex - allow-verb/adjcmp IF
         (0/1 cmp)
         # Except some safe contexts:
         (NEGATE 0 inf LINK *-1 part BARRIER ikke-adv) # «å kanskje frihetsberøve»
+        (NEGATE 0 pp LINK *-1 ("ha") BARRIER ikke-adv)
         ;
 
 ## select words
