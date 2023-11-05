@@ -39160,6 +39160,7 @@ REMOVE:default ("flor") IF (0 ("flora")) ;
 REMOVE:default ("mask") IF (0 ("maske")) ;
 REMOVE:default adv + ("ende") ;
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
+REMOVE:default ("stempel") IF (0 ("stemple")) ; # «terrorstempla», ikkje «terrorstempelet»
 
 # TODO: generalisera over dette?
 REMOVE:juniorbokser ("boks") IF (0 ("bokser")) (-1 det + sg) ;
