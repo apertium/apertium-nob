@@ -2116,6 +2116,11 @@ REMOVE:flygedyktig+heten ("hete") IF (0 (".*ighet"r)) (0/* cmp) ;
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
 
+SELECT:holde-stand vblex IF
+        (0 ("holde"))
+        (1 ("stand"))
+        ;
+
 
 SELECT:det-preget-alle vblex IF
 		(0 ("<preget>"))
@@ -33468,6 +33473,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 	(NOT -2 nøyt-det)
 ;
 #lakkert tre
+
+"<tynt>" SELECT ("tynn") + pst IF
+        (-2 ("<tykt>") OR ("<tjukt>"))
+        ;
 
 #:3151
   "<veit>"   SELECT:3151   (vblex pres) IF
