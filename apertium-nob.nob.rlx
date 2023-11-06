@@ -14009,6 +14009,10 @@ SELECT:skrev vblex IF
 	(NOT *-1 poss/gen)
 ;
 
+"<under>" REMOVE:under-adm pl IF
+        (*1 ("oppsyn") OR ("administrasjon") OR ("kontroll") OR ("etterforskning") OR ("behandling") OR ("trening") OR ("ledelse") OR ("opprulling") BARRIER ikke-adv-adj-det)
+        ;
+
 "<unge>" REMOVE:den-unge n IF
         (-1 dem OR gen OR pos)
         ;
