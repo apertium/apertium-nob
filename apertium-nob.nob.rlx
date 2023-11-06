@@ -2124,6 +2124,10 @@ SELECT:holde-stand vblex IF
         (1 ("stand"))
         ;
 
+SELECT:innrømme-svikt vblex IF
+        (0 ("innrømme"))
+        (1 ("svikt"))
+        ;
 
 SELECT:det-preget-alle vblex IF
 		(0 ("<preget>"))
@@ -12573,7 +12577,6 @@ REMOVE:unlikely ("internasjonale") + n IF (0 adj);
         (*-1 fv BARRIER setn-gr)
         (*1 nom BARRIER setn-gr LINK *1 fv BARRIER setn-gr)
         ;
-
 
 "<inngiftet>" REMOVE n;         # when is this likely to be noun?
 
@@ -28665,7 +28668,7 @@ REMOVE:sportsfiskere-og-elveeiere-er (clb) IF
 #
 
 #:2199
-REMOVE:2199 clb IF
+REMOVE:trist-og-lei clb IF
 	(0 konj)
 	(1 ub-ent-mask-adj)
 	(-1 ub-ent-mask-adj)
