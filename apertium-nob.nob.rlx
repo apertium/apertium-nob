@@ -3821,7 +3821,11 @@ SELECT:den+prn ("den¹") IF
 "<satt>"i SELECT:satt-i-gang pp IF
         (1 ("i gang"))
         ;
-
+"<satt>"i SELECT:de-satt-der ("sitte") IF
+        (-1 lo#animat OR ("katt") OR prn)
+        (1 ("her") OR ("der"))
+        ;
+# «Katten satt der»
 "<satt>"i SELECT:satt-for pp IF
         (NEGATE -1 ("folk") OR prn OR %som% OR adv)
         ;
