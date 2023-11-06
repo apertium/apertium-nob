@@ -33388,6 +33388,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (NOT *-1 %ha% BARRIER ikke-adv)
         ;
 
+"<pist>" SELECT:hist-og-pist adv IF
+        (*-1 ("hist"))
+        ;
+
 "<rammer>" SELECT:setter-rammer-for n IF
         (-1 ("sette"))
         ;
