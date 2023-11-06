@@ -34269,6 +34269,8 @@ LIST høyt-og-lavt = "<høyt>" "<lavt>" ;
         ;
 # «– VG har aldri skåret spesielt høyt på målinger som denne.»
 
+"<skåler>" REMOVE:skåler-fylt vblex IF (*1 ("fylle") BARRIER (*) - ("som") - kop) ;
+
 "<slaget>" REMOVE:av-det-flate-slaget vblex OR adj;
 # when is this ever a verb/pp?
 
