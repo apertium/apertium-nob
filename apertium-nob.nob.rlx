@@ -32008,7 +32008,7 @@ REMOVE:før-det-legges-fram inf IF
 
 
 #:1891
- REMOVE:1891 pp IF
+REMOVE:og-redusert-evne vblex + pp IF
 	(0 adj)
 	(1C subst)
 	(-1C komma/konj)
@@ -32064,7 +32064,7 @@ REMOVE:ikke-objpred-fl pp IF
 #  "tar tilfellene med CLB-komma"
 
 #:1894
- REMOVE:1894 pp IF
+REMOVE:1894 vblex + pp IF
 	(-1 clb/konj-konj)
 	(NOT -2 clb-komma)
 	(NOT -2 perf-part)
