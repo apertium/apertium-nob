@@ -3825,6 +3825,8 @@ SELECT:den+prn ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
+
+# sitte.intrans.pret vs sette.trans.pp vs sette.trans.pret:
 "<satt>"i SELECT:har-satt vblex + pp IF
         (-1* %ha% BARRIER setn-gr)
         ;
@@ -3843,14 +3845,28 @@ SELECT:den+prn ("den¹") IF
         (2 ("spiss"))
         ;
 
-"<satt>"i SELECT:satt-i-gang pp IF
-        (1 ("i gang"))
+"<satt>" SELECT:ble-satt-i ("sette") IF
+        (*-1 ("bli") BARRIER fv)
+        (1 %i%)
         ;
+
+"<satt>" SELECT:sitte-i ("sitte") IF
+        (1 ("klistre") OR ("klistret") OR ("fengslet") OR ("bra") OR ("god") OR ("igjen"))
+        ;
+# «Politiet satt igjen med millioner i ubrukte midler.»
+
+"<satt>"i SELECT:satt-i-gang ("sette") + pp IF
+        (1 ("i gang") OR qnt + pl)
+        ;
+# «Marta satt to VM-rekorder torsdag.»
+
 "<satt>"i SELECT:de-satt-der ("sitte") IF
         (-1 lo#animat OR ("katt") OR prn)
         (1 ("her") OR ("der"))
         ;
 # «Katten satt der»
+# «Jeg satt bra i feltet»
+
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
 		(-1 %ha%)
@@ -4123,10 +4139,6 @@ SELECT:satt-pris-på ("sette")  IF
 		(2 ("på"))
 		;
 		# setje pris på
-
-SELECT:satt-i-garderoben ("sitte"i) + vblex + pret IF
-		(NEGATE -1* %ha% OR %være/bli% OR ("få" vblex))
-		;
 
 SELECT:eier-bygget ("<bygget>"i) + n IF
 		(-1 ("<eier>"i))
@@ -8871,6 +8883,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (1 %under% LINK 1 ("fot"))
         ;
 "<skjelvet>" SELECT:merka-skjelvet-her n;
+
+"<skilt>" SELECT:bli-skilt pp IF
+        (-1 ("bli"))
+        ;
 
 
 #:3999
@@ -25607,6 +25623,7 @@ SELECT:har-antall-drepte-økt adj + pp IF
         (1 fv OR pp)
         ;
 
+
 #:2352
  SELECT:2352 (vblex pret) IF
 	(NOT 0 farlige-verb)
@@ -39233,6 +39250,7 @@ REMOVE:default ("prikk") + nt IF (0 m) ;
 REMOVE:default ("brenner") IF (0 ("brenne")) ;
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
+"<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
 
 
 # Corpus-based default rules:
@@ -39542,7 +39560,7 @@ REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.�
 "<samarbeidet>" REMOVE:default-samarbeidde ("samarbeide" vblex pret) ;	# keep samarbeid<n><nt><sg><def>→samarbeidet samarbeide<n><nt><sg><def>→samarbeidet
 "<hjelpearbeider>" REMOVE:default-hjelpearbeide ("hjelpearbeider" n nt pl ind) ;	# keep hjelpearbeider<n><m><sg><ind>→hjelpearbeider
 "<samtaler>" REMOVE:default-samtaler ("samtale" vblex pres) ;	# keep samtale<n><m><pl><ind>→samtalar
-"<satt>" REMOVE:default-sat ("sitte" vblex pret) ;	# keep sette<vblex><pp>→sett
+"<satt>" REMOVE:default-sat (vblex pret) ;	# keep sette<vblex><pp>→sett
 "<selger>" REMOVE:default-seljar ("selger" n m sg ind) ;	# keep selge<vblex><pres>→sel
 "<sen>" REMOVE:default-sener ("sen" n m pl ind) ;	# keep sen<adj><sint><pst><mf><sg><ind>→sein
 "<sender>" REMOVE:default-sendar ("sender" n m sg ind) ;	# keep sende<vblex><pres>→sender
