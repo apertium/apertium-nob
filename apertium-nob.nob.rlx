@@ -593,7 +593,7 @@ LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" "samene" ;
 LIST farlige-mask-subst = "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
-LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ;
+LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ("sette" adj pp) ;
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ("rolle" pres) ;
 LIST fem = f mf (adj def) ;
 LIST fem-be = (f def) ;
@@ -3829,7 +3829,7 @@ SELECT:den+prn ("den¹") IF
 
 # sitte.intrans.pret vs sette.trans.pp vs sette.trans.pret:
 "<satt>"i SELECT:har-satt vblex + pp IF
-        (-1* %ha% BARRIER setn-gr)
+        (-1* %ha% BARRIER setn-gr OR pp)
         ;
 
 "<satt>"i SELECT:satt-i-bestilling adj + pp IF
@@ -3862,9 +3862,21 @@ SELECT:den+prn ("den¹") IF
 # «Politiet satt igjen med millioner i ubrukte midler.»
 
 "<satt>"i SELECT:satt-i-gang ("sette") IF
-        (1 ("i gang") OR qnt + pl)
+        (1 ("i gang"))
+        ;
+
+"<satt>"i SELECT:satt-rekord ("sette") + pret IF
+        (NEGATE *-1 ("ha") BARRIER pp)
+        (*1 ("rekord") OR ("mål") BARRIER ikke-adv-adj-det-subst - acc - pr)
         ;
 # «Marta satt to VM-rekorder torsdag.»
+# «Vi har oppnådd tingene vi satt oss som mål da jeg skrev under.»
+
+"<satt>"i SELECT:som-satt ("sitte") IF
+        (-1 cnjsub)
+        (1 %i%)
+        ;
+
 "<satt>"i SELECT:satt-i-verk ("sette") IF
         (1 %i%)
         (2 ("verk"))
@@ -3880,6 +3892,16 @@ SELECT:den+prn ("den¹") IF
 "<satt>" SELECT:Valgdato-satt ("sette") + pp IF
         (-1 (".*dato"ri))
         ;
+
+"<satt>" SELECT:satt-under-press ("sette") IF
+        (*1 ("under") BARRIER ikke-adv-adj-det-subst LINK 1 ("press"))
+        ;
+
+"<satt>"i SELECT:Satt-på-spissen ("sette") + pp IF
+        (1 %på%)
+        (2 ("spiss") OR ("<vent>"))
+        ;
+
 
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
@@ -4873,11 +4895,13 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (-1C top)
         (1 setn-gr OR fv)
         ;
+
 "<fortsatt med>" SELECT (adv) IF
         (0 vblex + pp)
 	(-1 vblex)
 	(NEGATE -1* %ha/få% OR modalverb)
 ;
+
 "<fortsatt>" SELECT (vblex) IF
 	(-4 ("ha"))
         (-2 adj)
@@ -39055,6 +39079,7 @@ REMOVE:prefer-lexicalised-n xgrau IF
 		(-1 ("foreligge"))
 		(1 n + ind)
 		;
+SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt med<adv>
 
 "<møter>" SELECT:hatet-samfunnet-møter vblex IF
 		(-2 n)
