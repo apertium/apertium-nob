@@ -10534,6 +10534,7 @@ SELECT:sittet-varetektsfengslet pp IF
         (-1 n OR np)
         (1 n OR np)
         ;
+
 # "SV minner regjeringen om..."
 "<telt>"i SELECT:er-telt-opp adj IF
         (-1* %være/bli% BARRIER setn-gr)
@@ -10543,14 +10544,22 @@ SELECT:sittet-varetektsfengslet pp IF
         (1 %opp%)
         ;
 "<telt>"i SELECT:sette-opp-telt n IF
-        (-1 %opp%)
-        (-2* ("sette") OR ("slå") BARRIER setn-gr)
+        (*-1 ("sette") OR ("sette# opp") OR ("slå") OR ("slå# opp") BARRIER setn-gr - %opp% - adv)
         ;
+
 "<telt>"i SELECT:telt-og-mat n IF
-        (1 cnjcoo)
-        (2 n)
+        (1 cnjcoo OR cm)
+        (2C n)
         ;
 # "telt og mat"
+LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "campe" "sove" "bobil" "hytte" ;
+"<telt>" SELECT:telt-og-skur n IF
+        (*0 telt-subst-ord BARRIER (*) - cnjcoo - cm - %i%)
+        ;
+# «kommunikasjon, telt, lys og varme»
+# «De mange internt fordrevne bor nå i midlertidige skur og telt, og mange av dem har mistet viktige jordbruksområder.»
+
+
 "<tør>"i SELECT:tør-opp ("tø") IF
         (1 %opp%)
         ;
