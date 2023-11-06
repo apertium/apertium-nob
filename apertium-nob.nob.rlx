@@ -3846,9 +3846,14 @@ SELECT:den+prn ("den¹") IF
         (2 ("spiss"))
         ;
 
-"<satt>" SELECT:ble-satt-i ("sette") IF
+"<satt>" SELECT:ble-satt-i ("sette") + adj IF
         (*-1 ("bli") BARRIER fv)
         (1 %i%)
+        ;
+
+"<satt>" SELECT:satt-jeg-den ("sette") + pret IF
+        (1C pers)
+        (2C acc)
         ;
 
 "<satt>" SELECT:sitte-i ("sitte") IF
@@ -3856,10 +3861,14 @@ SELECT:den+prn ("den¹") IF
         ;
 # «Politiet satt igjen med millioner i ubrukte midler.»
 
-"<satt>"i SELECT:satt-i-gang ("sette") + pp IF
+"<satt>"i SELECT:satt-i-gang ("sette") IF
         (1 ("i gang") OR qnt + pl)
         ;
 # «Marta satt to VM-rekorder torsdag.»
+"<satt>"i SELECT:satt-i-verk ("sette") IF
+        (1 %i%)
+        (2 ("verk"))
+        ;
 
 "<satt>"i SELECT:de-satt-der ("sitte") IF
         (-1 lo#animat OR ("katt") OR prn)
@@ -3867,6 +3876,10 @@ SELECT:den+prn ("den¹") IF
         ;
 # «Katten satt der»
 # «Jeg satt bra i feltet»
+
+"<satt>" SELECT:Valgdato-satt ("sette") + pp IF
+        (-1 (".*dato"ri))
+        ;
 
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
