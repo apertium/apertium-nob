@@ -10979,6 +10979,10 @@ SELECT:besette-med ("besette¹") IF
         ;
         # dekorere med
 
+"<beleiret>" SELECT:sitte-beleiret adj IF
+        (-1* ("sitte") BARRIER setn-gr)
+        ;
+
 REMOVE:unlikely ("rukke") IF
 		(-1 %være/bli%)
 		(0 ("rukke") OR ("rekke"))
