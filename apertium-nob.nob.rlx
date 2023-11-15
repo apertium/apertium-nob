@@ -5328,6 +5328,14 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 #  "(Den store) mannen heller til at
 # mannen heller melka i glasset"
 
+  "<helt>"   REMOVE:har-helt-kaldt-vann-i-blodet-på adj IF
+  	(-1* ("ha"))
+	(1 ("kald"))
+	(2 ("vann"))
+	(3 %i%)
+	(4 ("blod"))
+;
+
 "<helt>" SELECT:helt-eller-delvis adv IF
         (1 %eller%)
         (NOT 2C n)              # «helt eller syndebukk»
@@ -6750,6 +6758,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 
 "<rakk>" SELECT:rakk-å pret IF
         (1 infmerke)
+        ;
+
+"<rede>" SELECT:rede-grunnen vblex IF
+        (1 ("<grunnen>"i))
         ;
 
 "<rede>" SELECT:er-rede-for adj IF
@@ -12353,6 +12365,12 @@ REMOVE ("frø") IF
 	(*-1O %et% LINK *1 ikke-adv-adj)
 ;
 
+  "<heller>"   REMOVE:heller-kaldt-vann-i-blodet-på adv IF
+	(1 ("kald"))
+	(2 ("vann"))
+	(3 %i%)
+	(4 ("blod"))
+;
 
 #:3553
   "<heller>"   REMOVE:3553   (n sg) IF
