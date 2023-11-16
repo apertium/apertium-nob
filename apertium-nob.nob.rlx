@@ -10334,6 +10334,13 @@ REMOVE:to-ansatte vblex IF
         (2 n)
         ;
 # barna får leker og gaver
+"<varen>" REMOVE:denne-varen ("var") IF
+        (-1 ("<denne>"i))
+        ;
+"<varen>" REMOVE:varen-koster ("var") IF
+        (1 ("koste"))
+        ;
+# Denne varen koster mye
 REMOVE:heksebålene ("båle") IF
         (0/1 cmp)
         (0 ("bål"))
