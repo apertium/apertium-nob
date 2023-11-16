@@ -10327,6 +10327,8 @@ REMOVE:to-ansatte vblex IF
         ;
 # "Er det tenkelig at dette kan bli stoppet?"
 "<blues>" REMOVE:unlikely vblex;
+"<høytider>" REMOVE:unlikely vblex;
+"<høgtider>" REMOVE:unlikely vblex;
 REMOVE:heksebålene ("båle") IF
         (0/1 cmp)
         (0 ("bål"))
