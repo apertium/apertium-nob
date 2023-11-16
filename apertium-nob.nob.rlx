@@ -968,7 +968,7 @@ LIST uteljeleg = ".*bær"r "øl" "melk" ; # needs filling out :)
 
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
-LIST lav-ord = "art" "mose" "blad" "sopp" "alge" ;
+LIST lav-ord = "art" "mose" "blad" "sopp" "alge" "plante";
 LIST fugl-ord = "egg" "svane" ".*fugl"r "gås" "høns" "høne" "and" "måke" "måse" "blåmeis" "meis" "kjøttmeis" "skjære" "trost" "due" ;
 LIST omtale-ord = "omtale" "behandle" "traktere" "bruke" ;
 LIST vann-ord = "øl" "vann" "melk" "vin" "rødvin" "hvitvin" "drikke" ;
@@ -6018,7 +6018,7 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<lav>"   SELECT   (adj) IF
-        (NOT *-2 lav-ord)
+        (NOT *-2 lav-ord OR ("rein"))
 ;
 
 "<drevet>" SELECT:drevet-halsende-hund pp IF
@@ -12603,6 +12603,8 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 #Hesten spiser høy. Spiser du høy? -> høy (n), ikkje høg (adj).
 "<høy>" SELECT (n) IF (-1 ("spise"));
 "<høy>" SELECT (n) IF (-2 ("spise"));
+# Høy i låven
+"<høy>" SELECT (n) IF (2 ("låve"));
 
 
 "<høy>" REMOVE:meter-høy n IF
