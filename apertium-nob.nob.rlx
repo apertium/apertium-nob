@@ -10374,6 +10374,8 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 adj OR det)
         ;
 # "med plass til 1.000 låter"
+"<mormoner>"i REMOVE:mormoner ("mormon") IF
+        ;
 "<Modi>" REMOVE:Modi n IF
         (-1 setn-gr)
         ;

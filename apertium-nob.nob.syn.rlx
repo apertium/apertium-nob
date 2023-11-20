@@ -19681,6 +19681,12 @@ REMOVE:Den-tildeles-utøvere @subj IF
         (0 @obj)
         ;
 # «Den tildeles utøvere som "gjennom flere år har vist fremragende dyktighet".»
+REMOVE:ord-i-hermeteikn @subj IF
+        (-2 n + def)
+        (-1 lquot)
+        (1 rquot)
+        ;
+# "Minn elevene på at ordet «mormoner» ikke lenger brukes i dag."
 
 REMOVE:vi-er-glade-for (@subj)
         (-2C @subj + &&ADJ_N_AGR)
