@@ -10447,6 +10447,8 @@ REMOVE:terrorstemplet ("stempel") IF
 
 "<fiskes>"i REMOVE:unlikely n;
 
+REMOVE:unlikely ("flyte") + adj + pp; # å flytte (ikkje vere flotne)
+
 # sjeldan ub eint
 REMOVE:unlikely ("ufør") + adj + nt
         ;
