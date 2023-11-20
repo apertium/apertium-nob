@@ -3147,6 +3147,10 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 	(1 %om%)
 ;
 
+"<anklager>"   SELECT:anklage ("anklage") ; 
+# skuldingar ELLER skuldar; NB: sjef(s)anklager -> hovudaktor
+# kan også nyttast om aktor, men sjeldan
+
 #:3744
   "<anstrengt>"   SELECT:3744   (vblex pp) IF
 	(1 pron-akk)
