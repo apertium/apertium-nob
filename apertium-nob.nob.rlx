@@ -3379,10 +3379,22 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 "<nytt>"i SELECT:på-nytt ("ny") IF
         (-1 %på%)
         ;
+        
 
 "<steg>"i SELECT:neste-steg n IF
         (-1 %neste%)
         (NEGATE -2 det + dem)
+        ;
+
+"<steg>"i SELECT:steg-fra-27 vblex IF
+        (1 %fra%)
+        (2 det + qnt)
+        ;
+
+"<steg>"i SELECT:steg-fra-rundt-tre vblex IF
+        (1 %fra%)
+        (2 adj OR adv)
+        (3 det + qnt)
         ;
 
 
@@ -10873,6 +10885,8 @@ REMOVE ("hvor") + cnjsub IF
 "<skottene>"i REMOVE:skottene-vant ("skott") IF
         (NEGATE -1 ("tett") OR ("tette") OR ("vanntett"))
         ;
+        # dei vasstette skotta i fregatten
+        # skottane må få valet mellom brexit og ei framtid som uavhengig europeisk nasjon
 
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
