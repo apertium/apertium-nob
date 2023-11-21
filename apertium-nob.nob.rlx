@@ -3087,7 +3087,9 @@ SELECT:hen-til pr IF
 #  "i andre, fjerne land
 # IKKE: i andre (ordenstall, ikke det dem) og siste halvår"))
 
-
+"<annens>" SELECT:en-annens-død mf IF
+        (-1C det + m)
+        ;
 
 "<annet>" REMOVE:noe-annet def IF
         (-1 qnt OR %og/eller% OR %ikke%)
@@ -40063,3 +40065,4 @@ REMOVE:issue37 SUB:1 detriple;
 REMOVE:issue37 SUB:2 detriple;
 REMOVE:issue37 SUB:3 detriple;
 REMOVE:issue37 SUB:* detriple;
+
