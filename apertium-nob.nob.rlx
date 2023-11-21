@@ -2115,6 +2115,13 @@ REMOVE:unlikely ("styr" "<styret>"ri);
 REMOVE:unlikely ("styr" "<styrer>"ri);
 REMOVE:unlikely ("styr" "<styrene>"ri);
 REMOVE:flygedyktig+heten ("hete") IF (0 (".*ighet"r)) (0/* cmp) ;
+REMOVE:unlikely ("anklager") + n IF 
+        (0/* cmp) 
+        (NEGATE -1 ("en") + det + qnt + m + sg)
+REMOVE:unlikely ("anklager") + n IF 
+        (0/* cmp) 
+        (NEGATE -2 ("en") + det + qnt + m + sg)
+; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
 
 # END Early removal of unlikely / rare forms
 
@@ -3149,9 +3156,11 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 	(1 %om%)
 ;
 
-"<anklager>"   SELECT:anklage ("anklage") ; 
+"<anklager>"   SELECT:anklage ("anklage") IF 
+        (NEGATE -1 det + qnt + sg)
+; 
 # skuldingar ELLER skuldar; NB: sjef(s)anklager -> hovudaktor
-# kan også nyttast om aktor, men sjeldan
+# kan også nyttast om aktor, men sjeldan i ubunden form
 
 #:3744
   "<anstrengt>"   SELECT:3744   (vblex pp) IF
