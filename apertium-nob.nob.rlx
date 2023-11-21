@@ -7874,6 +7874,10 @@ SELECT:NNs-forlovede n IF
 
 "<skipper>" SELECT:skipper ("skipper"); # ikkje skipp<pl>
 
+"<Skien>" SELECT:by-før-setnslutt np IF
+        (1 <<< OR sent OR storbokstav)
+        ;
+
 "<skipet>" SELECT:unlikely-verb n IF
         (NOT 1 %til% OR %ut% OR %inn%)
         ;
