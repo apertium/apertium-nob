@@ -2149,6 +2149,10 @@ SELECT:det-sterke-preget n IF
 		;
 REMOVE:unlikely ("<preget>"i) + n ;        # prega
 
+SELECT:det-antas %det%-pron IF
+		(1 ("anslå") + pres + pasv)
+		;
+
 SELECT:dyster-historie adj IF
 		(0 ("<dyster>"))
                 (1 n)
