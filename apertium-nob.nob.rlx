@@ -10856,19 +10856,16 @@ REMOVE ("hvor") + cnjsub IF
         ;
 # "det ble endelig bestemt"
 
-"<slipper>" REMOVE:slipper n + pl IF
-        (NEGATE -1 cmp)
-        ;
-"<Slipper>" REMOVE:slipper n + pl IF
+"<slipper>"i REMOVE:slipper n + pl IF
         (NEGATE -1 cmp)
         ;
         # lønnsslippar
 
-"<slipper>" REMOVE:slipper-til n IF
+"<slipper>"i REMOVE:slipper-til n IF
         (1 ("til"))
         ;
 
-"<slipper>" SELECT:slipper-ut vblex IF
+"<slipper>"i SELECT:slipper-ut vblex IF
         (1 ("ut"))
         (2 setn-gr)
         ;
