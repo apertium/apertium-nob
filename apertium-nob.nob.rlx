@@ -3098,6 +3098,12 @@ SELECT:hen-til pr IF
 #  "i andre, fjerne land
 # IKKE: i andre (ordenstall, ikke det dem) og siste halvår"))
 
+SELECT:andre-året-på-rad   (n sg) IF
+        (-1 adj + pst + ord OR det + dem + un + pl)
+        (1 %på%)
+        (2 ("rad"))
+;
+
 "<annens>" SELECT:en-annens-død mf IF
         (-1C det + m)
         ;
