@@ -11860,6 +11860,11 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         (1 %det%)
         ;
 
+"<finnes>" REMOVE:så-finnes-det inf IF
+        (NEGATE -1 ("å"))
+        (NEGATE -1* modalverb BARRIER setn-gr)
+        ;
+
 "<flesteparten>"i REMOVE:dei-fleste n ;
 
 "<flott>" REMOVE:Det-er-flott pl IF
