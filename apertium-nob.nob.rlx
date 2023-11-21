@@ -2843,6 +2843,13 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         # "spill levende"
 REMOVE:unlikely ("spill") + adv ;
 
+"<festspill>"i SELECT:årets-fespill-i-Bergen pl IF
+        (-1 gen)
+        (1 %i% OR %på%)
+        (2 np)
+        ;
+        # festpillene
+
 "<beste>"i   SELECT:verdens-beste ("god") + adj + sup + def IF
         (-1 ("<verdens>"i))
         ;
@@ -3071,9 +3078,6 @@ SELECT:hen-til pr IF
 	(-1 %det%)
 	(-2C %for%-prep)
 ;
-#  "for det andre (ordenstall, ikke det dem)"))
-
-
 
 #:3761
   "<andre>"   SELECT:3761   (det pl) IF
@@ -3380,7 +3384,6 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (-1 %på%)
         ;
         
-
 "<steg>"i SELECT:neste-steg n IF
         (-1 %neste%)
         (NEGATE -2 det + dem)
