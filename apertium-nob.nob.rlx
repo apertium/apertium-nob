@@ -10870,6 +10870,10 @@ REMOVE ("hvor") + cnjsub IF
         (2 setn-gr)
         ;
 
+"<skottene>"i REMOVE:skottene-vant ("skott") IF
+        (NEGATE -1 ("tett") OR ("tette") OR ("vanntett"))
+        ;
+
 "<ubetinget>" REMOVE:to-år-ubetinget adv IF
         (*-1 ("<hvorav>") BARRIER ikke-det-subst)
         (0 adj)
