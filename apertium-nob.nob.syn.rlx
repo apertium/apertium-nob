@@ -19846,6 +19846,17 @@ REMOVE:default ("vie")   IF (0 ("via")) ;
 "<Dere>" SELECT:default nom ;
 "<dere>" SELECT:default nom ;
 
+"<gissel>" SELECT:de-som-gissel pl IF
+	(*-2 @subj/@obj + pl BARRIER @subj/@obj + sg)
+	(-1 ("som"))
+	;
+"<gissel>" SELECT:ho-som-gissel sg IF
+	(*-2 @subj/@obj + sg BARRIER @subj/@obj + pl)
+	(-1 ("som"))
+	;
+
+# END ordspesifikke
+
 
 SECTION adj-pp-dis ;
 ########################################################
