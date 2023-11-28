@@ -3078,6 +3078,9 @@ SELECT:hen-til pr IF
 	(-1 %det%)
 	(-2C %for%-prep)
 ;
+#  "for det andre (ordenstall, ikke det dem)"))
+
+
 
 #:3761
   "<andre>"   SELECT:3761   (det pl) IF
@@ -3383,6 +3386,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 "<nytt>"i SELECT:på-nytt ("ny") IF
         (-1 %på%)
         ;
+
         
 "<steg>"i SELECT:neste-steg n IF
         (-1 %neste%)
@@ -10586,6 +10590,16 @@ REMOVE:Isnes-ansatt vblex IF
         (*-1 %være/bli% BARRIER setn-gr)
         ;
 # "Landskapet er veldig mykt"
+
+"<bestiller>"i REMOVE:bestilleren n IF
+        (1 n)
+        ;
+# "Folk bestiller turer"
+
+"<Bestiller>" REMOVE:bestilleren n IF
+        (1 prn)
+        ;
+# "Bestiller du en bukse"
 
 "<dopet>"i REMOVE:med-dopet-følger vblex IF
         (-1 pr)
