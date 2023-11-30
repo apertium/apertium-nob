@@ -2118,6 +2118,7 @@ REMOVE:flygedyktig+heten ("hete") IF (0 (".*ighet"r)) (0/* cmp) ;
 REMOVE:unlikely ("anklager") + n IF 
         (0/* cmp) 
         (NEGATE -1 ("en") + det + qnt + m + sg)
+        ;
 REMOVE:unlikely ("anklager") + n IF 
         (0/* cmp) 
         (NEGATE -2 ("en") + det + qnt + m + sg)
@@ -33628,6 +33629,11 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<snakkes>" SELECT:ikke-vi-snakkes ("snakke") + pasv IF
+        (NEGATE -1 ("de") OR ("vi"))
+        (0 pstv)
+        ;
+
 "<sykehjem>" SELECT:Kvaløysletta-sykehjem sg IF
         (-1C top OR org)
         ;
@@ -37334,7 +37340,7 @@ REMOVE:ikke-sanns-subst-ent-ub subst-appell-ub-ent IF
 # overskriftstagg :-/ -KBU
 
 #:4999
- REMOVE:4999 (vblex pasv) IF
+REMOVE:prioriter-s-verb (vblex pasv) IF
 	   (0 s-verb)
 ;
 # KBU: Om me har valet mellom identisk passiv og pstv, vel pstv
