@@ -1794,8 +1794,9 @@ SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøt
 SELECT:konsertposter ("poster") IF (0/* ("konsert") OR guio); # «Hasselhoff-poster»
 REMOVE:unlikely ("poster") IF (0 ("post")) (0/1 cmp);
 REMOVE:unlikely ("sin") + adv ;
+"<korrekturleser>"i REMOVE:unlikely vblex ;
 
-"<varetektsfengslet>" REMOVE:unlikely n IF
+"<varetektsfengslet>"i REMOVE:unlikely n IF
         (NEGATE -1 prep)
         ;
 
