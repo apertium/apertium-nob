@@ -7696,24 +7696,29 @@ SELECT:NNs-forlovede n IF
 
 
 #:3293
-  "<siktet>"   SELECT:3293   (vblex pp) IF
+"<siktet>" SELECT:ha-siktet-oss-inn (vblex pp) IF
 	(1 pron)
 	(2 %inn%)
 	(*-1O setn-gr LINK *1 p-hj-verb LINK NOT *1 perf-part)
 ;
 #  "vi har siktet oss inn på...
-# 17.3"
-
-
 
 #:3292
-  "<siktet>"   SELECT:3292   (vblex pret) IF
+"<siktet>" SELECT:siktet-oss-inn pret IF
 	(1 pron)
 	(*2 ikke-adv LINK 0 %inn%)
 	(*-1 setn-gr BARRIER p-hj-verb)
 ;
 #  "vi siktet oss ikke inn på..."
 
+"<siktet>" REMOVE:står-siktet n IF
+        (-1 ("stå"))
+        ;
+
+"<siktet>" REMOVE:siktet-for pret OR n IF
+        (1 ("for"))
+        ;
+# «Karoui presenterer seg som en kandidat for de fattige, men tilbrakte mesteparten av valgkampen i fengsel siktet for hvitvasking og skatteunndragelse.»
 
 
 
@@ -10402,9 +10407,7 @@ REMOVE:Tyrkia-kjenner ("kjenne") IF
         (0 ("kjenner"))
         ;
 # "... sier Tyrkia-kjenner Kåre Willoch"
-"<siktet>" REMOVE:står-siktet n IF
-        (-1 ("stå"))
-        ;
+
 # "Kevin Spacey står siktet for å ha forgrepet seg på en rekke kvinner"        
 "<trenere>" REMOVE:flere-trenere vblex IF
         (NEGATE -1 ("å") OR modalverb)
