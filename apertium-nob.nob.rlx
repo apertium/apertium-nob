@@ -13852,24 +13852,30 @@ SELECT:skrev vblex IF
 # «Han hadde bare laget seg en blogg og skrevet i vei.»
 # men desse reglane kan sikkert nyanserast litt... -KBU
 
+LIST skipsfartøy = ".*båt"ri ".*tråler"ri ".*skip"ri "supertanker" "fartøy" ;
+"<oppbrakt>"i SELECT:oppbrakt-over ("oppbringe") IF
+	(0* skipsfartøy)
+;
+"<oppbrakte>"i SELECT:oppbrakt-over ("oppbringe") IF
+	(0* skipsfartøy)
+;
 "<oppbrakt>"i SELECT:oppbrakt-over ("oppbrakt") IF
 	(1 %over%)
 ;
 "<oppbrakte>"i SELECT:oppbrakt-over ("oppbrakt") IF
 	(1 %over%)
 ;
+LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
+"<oppbrakt>"i SELECT:tydelig-oppbrakt ("oppbrakt") IF
+	(-1 forsterkende)
+;
 "<oppbrakt>"i SELECT:frustrert-og-oppbrakt ("oppbrakt") IF
 	(-2 adj)
+        (-1 %og%)
 ;
 "<oppbrakt>"i SELECT:oppbrakt-og-frustrert ("oppbrakt") IF
 	(2 adj)
-;
-LIST skipsfartøy = ".*båt"ri ".*tråler"ri ".*skip"ri "supertanker" "fartøy" 
-"<oppbrakt>"i SELECT:oppbrakt-over ("oppbringe") IF
-	(0* skipsfartøy)
-;
-"<oppbrakte>"i SELECT:oppbrakt-over ("oppbringe") IF
-	(0* skipsfartøy)
+        (1 %og%)
 ;
 
 #:3281
