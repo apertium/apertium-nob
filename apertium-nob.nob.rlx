@@ -3875,11 +3875,17 @@ SELECT:den+prn ("den¹") IF
 
 
 # sitte.intrans.pret vs sette.trans.pp vs sette.trans.pret:
-"<satt>"i SELECT:har-satt vblex + pp IF
+"<satt>" SELECT:har-satt vblex + pp IF
         (-1* %ha% BARRIER setn-gr OR pp)
         ;
 
-"<satt>"i SELECT:satt-i-bestilling adj + pp IF
+"<satt>" SELECT:Det-er-satt vblex + pp IF
+        (*-1 expl BARRIER setn-gr LINK *1 %være/bli% BARRIER ikke-adv)
+        ;
+# «Det ble satt fylkesvarmerekorder i Oppland,»
+# «Da kan det altså bli satt varmerekorder i november.»
+
+"<satt>" SELECT:satt-i-bestilling adj + pp IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
