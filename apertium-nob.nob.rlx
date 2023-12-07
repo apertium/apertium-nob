@@ -22451,7 +22451,7 @@ SELECT:håper-det-blir-tatt-en-avgjørelse expl IF
 
 
 #:2607
-SELECT:jeg-så-den-cm-men pron-pers IF
+SELECT:jeg-så-den-cm-men pron-pers OR expl IF
 	(NOT 0 poss-det)
 	(NOT 0 gen)
 	(NOT 0 %henne%)
@@ -22580,7 +22580,7 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 
 
 #:2618
- SELECT:2618 pron-pers IF
+ SELECT:2618 pron-pers OR expl IF
 	(NOT 0 gen)
 	(NOT 0 subst)
 	(1C fv)
@@ -22590,6 +22590,18 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 # Man (pronomen) er enig om (mest sannsynlig her)
 # NOT 0 SUBST: ..at et jeg (subst) ønsker"))
 
+SELECT:Det-brukes-noe expl IF
+        (1C pasv)
+        (2* n + ind BARRIER ikke-adv)
+        ;
+# «Det brukes i dag gjenbruksvann i landbruket.»
+
+REMOVE:Det-brukes. expl IF
+        (0 pron-pers)
+        (1C pasv)
+        (NEGATE 2* n + ind BARRIER ikke-adv)
+        ;
+# «Det brukes i dag.»
 
 
 #:2590
