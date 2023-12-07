@@ -7891,7 +7891,7 @@ SELECT:NNs-forlovede n IF
 
 
 #:3266
-  "<slik>"   SELECT:3266   (adv) IF
+  "<slik>"i   SELECT:slik-starter   (adv) IF
 	(NOT 1 ub-ent-fem-subst)
 	(NOT 1 ub-ent-mask-subst)
 	(NOT 1 mask-det)
