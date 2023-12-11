@@ -11000,6 +11000,18 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-2* ("ende") BARRIER setn-gr)
         (-1 ("og"))
         ;
+"<begrep>" REMOVE:som-begrep ("begripe") IF
+        (-1 ("som"))
+        ;
+# Inntekt som begrep
+"<begrepet>" REMOVE:at-begrep ("begripe") IF
+        (-1 ("at"))
+        ;
+# ... at begrepet "stridens kjerne" ...
+"<samenes>" REMOVE:ble-samenes ("samene") IF
+        (-1 ("bli") OR vblex)
+        ;
+# ... at begrepet "stridens kjerne" ...
 "<dekkene>"i SELECT:dekkene-er-skiftet ("dekk") IF
         (1 ("være"))
         (2 ("skifte") OR ("bytte"))
