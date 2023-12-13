@@ -3,7 +3,7 @@
 # https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
 
 SOFT-DELIMITERS = "<,>" cm ;
-DELIMITERS = "<.>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" sent ;
+DELIMITERS = "<.>" "<..>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" sent ;
 
 #PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
