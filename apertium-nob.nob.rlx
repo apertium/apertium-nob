@@ -6824,6 +6824,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 # «– Jeg vil se publikum tilbake på tribunene, og det blir når vi er rede for det, sa Trump»
 # «, men 27-åringen skal ikke være rede til å gjøre det.»
 
+SELECT:ta-tranen ("trane") IF
+        (0 pl)
+        ;
+
 #:3349
   "<redd>"   SELECT:3349   (vblex pp) IF
 	(*-1 p-hj-verb BARRIER setn-gr)
