@@ -11070,7 +11070,7 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 %som%)
         ;
 
-LIST stilling-lm = ".*stilling.*"ri ".*jobb.*"ri ".*hjemmel"ri ".*verv"ri ".*rolle"ri ".*funksjon"ri ".*post"ri "årsverk" "søke" "ansatt" "ansette" "sete" "taburett";
+LIST stilling-lm = ".*stilling.*"ri ".*jobb.*"ri ".*hjemmel"ri ".*verv"ri ".*rolle"ri ".*funksjon"ri ".*post"ri "årsverk" "søke" "ansatt" "ansette" "sete" "taburett" "utlyst" "hovedstyre"ri;
 SELECT:besette-en-stilling ("besette²") IF
         (0* stilling-lm)
         ;
@@ -11087,6 +11087,10 @@ SELECT:trollbinde ("besette") IF
 
 SELECT:trollbinde ("besette") IF
         (1 refl-prn)
+        ;
+
+SELECT:skal-besettes ("besette²") IF
+        (0 pasv LINK *-1 ("skulle") BARRIER vblex)
         ;
 
 "<besatt>" SELECT:kjørt-besatt ("besatt") IF
