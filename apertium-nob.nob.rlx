@@ -2104,6 +2104,7 @@ REMOVE:unlikely ("stykke" adj) IF (0* vblex); # de som har laget stykket, stykke
 REMOVE:unlikely ("<farger>"i "farger") + sg ; # nesten alltid fleirtal av farge
 REMOVE:unlikely ("farger") + sg IF (0/1 cmp) ; # nesten alltid fleirtal av -farge, aksentfargar
 REMOVE:unlikely ("rave") IF (0 ("krav")) ; # syn+krav vs synsk+rave
+REMOVE:unlikely ("tore") IF (0 ("stor")) ; # giga+store
 REMOVE:unlikely ("terne") IF (0 ("oppdretter")) ; # lakseoppdretterne, unngå lakseoppdretts|terne
 REMOVE:unlikely SUB:* ("sprog") IF (0/* ("program")) ; # mastergradsprogrammene, unngå mastergrad|språk|rammene
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
@@ -2393,7 +2394,7 @@ REMOVE:unlikely ("sale") + vblex + pret IF
         # salte og strø
 
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" ;
+LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" "stor" ;
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
