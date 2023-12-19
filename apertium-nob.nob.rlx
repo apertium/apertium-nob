@@ -6825,7 +6825,11 @@ SELECT:sløvande-middel ("middel") + nt IF
 # «– Jeg vil se publikum tilbake på tribunene, og det blir når vi er rede for det, sa Trump»
 # «, men 27-åringen skal ikke være rede til å gjøre det.»
 
-SELECT:ta-tranen ("trane") IF
+"<tranen>"i SELECT:tranen ("trane") + n IF
+        (0* ("komme") OR ("fly") OR ("hekke") OR ("leve") OR ("fly"))
+        ;
+
+SELECT:tranene ("trane") IF
         (0 pl)
         ;
 
@@ -13977,7 +13981,7 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 
 
 #:3241
-  "<steder>"   REMOVE:3241   (n pl) IF
+  "<steder>"i   SELECT:steder-til-hvile   (vblex pres) IF
 	(0 verb)
 	(1 pron/subst)
 	(2 %til%)
@@ -13987,7 +13991,7 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 ;
 #  "kh feb 2004: han steder henne til hvile"
 
-
+  "<steder>"i   REMOVE:unlikely-stede   (vblex pres) ;
 
 #:3237
   "<stolt>"   REMOVE:3237   (vblex) IF
