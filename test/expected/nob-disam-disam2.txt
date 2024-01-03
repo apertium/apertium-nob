@@ -20,15 +20,15 @@
 [/V2Q98fqD7K59]
 [YNO4C-1BaJf3#0] ^politikost/politi<n><m><sg><ind><cmp>+kost<n><m><sg><ind>$^./.<sent><clb>$
 [/YNO4C-1BaJf3]
-[jG1Z3CGbrr8r#0] ^gultrøyene/gult<n><nt><sp><cmp>+røy<n><m><pl><def>/gult<n><nt><sp><cmp>+røye<n><m><pl><def>$^./.<sent><clb>$
+[jG1Z3CGbrr8r#0] ^gultrøyene/gultrøye<n><m><pl><def>/gultrøye<n><f><pl><def>$^./.<sent><clb>$
 [/jG1Z3CGbrr8r]
 [k47z9mR_-tyw#0] ^toppoengmannen/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind><cmp>+mann<n><m><sg><def>$^./.<sent><clb>$
 [/k47z9mR_-tyw]
-[nE1o59h6v5IT#0] ^sjokkrammet/sjokk<n><nt><sg><ind><cmp>+ramme<adj><pp><nt><sg><ind>$^./.<sent><clb>$
+[nE1o59h6v5IT#0] ^sjokkrammet/sjokk<n><nt><sg><ind><cmp>+ramme<vblex><pret>$^./.<sent><clb>$
 [/nE1o59h6v5IT]
 [qB5wtWfYyg26#0] ^FyllingenBergen/*FyllingenBergen$^./.<sent><clb>$
 [/qB5wtWfYyg26]
-[sP-VF_P3Ig49#0] ^helårspoeng/hel<n><m><sg><ind><cmp>+år<n><nt><sg><ind><cmp>+poeng<n><nt><sg><ind>$^./.<sent><clb>$
+[sP-VF_P3Ig49#0] ^helårspoeng/helårs<adj><pst><mf><sg><ind><cmp>+poeng<n><nt><sg><ind>$^./.<sent><clb>$
 [/sP-VF_P3Ig49]
 [t8owrkuUOcoz#0] ^toppoeng/topp<n><m><sg><ind><cmp><detriple>+poeng<n><nt><sg><ind>$^./.<sent><clb>$
 [/t8owrkuUOcoz]
