@@ -103,3 +103,4 @@ test: all
 	    | grep -vE  'lm="(.*)(.*)".*/\2_(\\[^_]+|)_'                     \
 	    | sed 's%^%WARNING: lemma vs par/tail inconsistency in %'
 	apertium-regtest test
+	test -e apertium-lint && apertium-lint $(BASENAME).$(LANG1).dix
