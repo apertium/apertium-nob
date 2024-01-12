@@ -1181,6 +1181,13 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         (0C ukjent)
         ;
 
+SELECT:da-møter-de-Drafn prn IF
+        (-2 adv)
+        (-1 vblex)
+        (0 ("<de>"))
+        (1 np + storbokstav OR ukjent + storbokstav)
+        ;
+# "Da møter de Drafn"
 "<de>"i SELECT:de-Roquefort np + attr IF
         (1 np + storbokstav OR ukjent + storbokstav)
         (-1 np + storbokstav OR ukjent + storbokstav OR ("si" vblex) OR ("opplyse" vblex) OR ("uttale" vblex) OR n)
@@ -10912,7 +10919,14 @@ REMOVE ("antatt") + adv IF
 		(-2 %om/enn/som/hvis%)
 		(-1 ("tidligere"))
 		;
-
+"<Troner>" SELECT:Troner-øvst vblex IF
+        (1 ("øvre"))
+        ;
+# "Troner øvst ..."
+"<Høst>" SELECT:Høst-ukedag ("høst") IF
+        (1 ("mandag") OR ("tirsdag") OR ("onsdag") OR ("torsdag") OR ("fredag") OR ("lørdag") OR ("søndag"))
+        ;
+# "Høst lørdag ..."
 REMOVE ("hvor") + cnjsub IF
         (-1 ("bestemme"))
         ;
