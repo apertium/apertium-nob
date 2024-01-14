@@ -14068,6 +14068,10 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
         (NOT -1 ("helt"))
         ;
 
+"<styr>"i REMOVE:styr-unna n OR np IF
+        (1 ("unna"))
+        ;
+
 #:3235
   "<svart>"   REMOVE:3235   pp IF
 	(*-1 setn-gr BARRIER %ha/få%)
