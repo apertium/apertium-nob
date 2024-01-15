@@ -11738,6 +11738,11 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
         (-1 ("disse"))
         ;
 
+"<bordet>" REMOVE:går-til-bordet vblex IF
+        (-2 %gå%)
+        (-1 %til%)
+        ;
+
 "<deler>"i REMOVE:deler-av vblex IF
         (1 %av%)
         ;
