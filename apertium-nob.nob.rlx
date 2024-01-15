@@ -10899,6 +10899,11 @@ REMOVE:tiden-renner-ut n IF
         (-1 adj)
         ;
 # "en kort stund"
+"<sørget for>" REMOVE:X-sørget-for pp IF
+        (NEGATE -2 ("ha"))
+        (-1 np)
+        ;
+# "X sørget for ..."
 "<rent>" REMOVE:er-rent-inn adv IF
         (-1 ("være"))
         (1 ("inn"))
