@@ -1181,10 +1181,9 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         (0C ukjent)
         ;
 
-SELECT:da-møter-de-Drafn prn IF
+"<de>" SELECT:da-møter-de-Drafn prn IF
         (-2 adv)
         (-1 vblex)
-        (0 ("<de>"))
         (1 np + storbokstav OR ukjent + storbokstav)
         ;
 # "Da møter de Drafn"
@@ -14190,6 +14189,10 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
         (*-1 ("vitne") OR ("gi") BARRIER ikke-adv-adj-det-pron)
         ;
 # «Ifølge Fædrelandsvennen har politiet få vitner til selve ranet.»
+
+"<Tilsett>" REMOVE:Tilsett-imp ("tilse") IF
+        (-1 setn-gr)
+        ;
 
 "<teller>" REMOVE:tel ub-subst IF
         (NOT -1 %en%)
