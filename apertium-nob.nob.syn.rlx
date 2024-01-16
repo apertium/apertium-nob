@@ -19685,6 +19685,13 @@ REMOVE:ord-i-hermeteikn @subj IF
         (1 rquot)
         ;
 # "Minn elevene på at ordet «mormoner» ikke lenger brukes i dag."
+REMOVE:ord-i-parantes (@subj) IF
+		(*-2 np)
+        (*-1 lpar)
+		(0 det OR n OR np)
+        (*1 rpar)
+        ;
+# "Tre minutt senere ble Are Matcha (Hamne 2 G12) sendt i garderoben."
 
 REMOVE:vi-er-glade-for (@subj)
         (-2C @subj + &&ADJ_N_AGR)
