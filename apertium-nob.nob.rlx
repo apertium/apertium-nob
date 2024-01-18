@@ -1602,7 +1602,7 @@ REMOVE:VM-renn SUB:4 cgguess IF (0/1 (*) - cgguess) ;
 
 
 
-LIST namn-viss-mogleg = "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
+LIST namn-viss-mogleg = "Tangen" "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 
