@@ -2125,6 +2125,11 @@ MAP:1555 (@adj→)   (adj) IF
 #  "3.9.2003: Han vil ha flest mulig penger"))
 
 
+MAP:ferie-finansiert-med (@s-pred @o-pred @adv @app @laus-np)   (adj) + &&ADJ_N_AGR IF
+	(-1 n + ind + &&ADJ_N_AGR)
+	(1 pr)
+	;
+# «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie  finansiert  med lånte penger.»
 
 #:1554
 MAP:1554 (@s-pred @adv @app @laus-np)   (adj) IF
@@ -19884,6 +19889,14 @@ REMOVE:er-kommet adj + pp IF
         (0 vblex + pp)
         (-*1 ("være") BARRIER setn-gr OR fv)
         ;
+
+
+# Bruk @o-pred for relativledd med underforstått «som er»:
+SELECT:n-som-er-pp (adj pp @o-pred) + &&ADJ_N_AGR IF
+	(-1C n + ind + &&ADJ_N_AGR)
+	(1C pr)
+	;
+# «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie   finansiert   med lånte penger.»
 
 
 SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
