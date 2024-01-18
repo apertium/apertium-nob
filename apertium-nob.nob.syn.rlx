@@ -2127,6 +2127,7 @@ MAP:1555 (@adj→)   (adj) IF
 
 MAP:ferie-finansiert-med (@s-pred @o-pred @adv @app @laus-np)   (adj) + &&ADJ_N_AGR IF
 	(-1 n + ind + &&ADJ_N_AGR)
+	(NEGATE -1 mengdeord)
 	(1 pr)
 	;
 # «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie  finansiert  med lånte penger.»
