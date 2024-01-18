@@ -2274,6 +2274,12 @@ REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
 		;
         # ei diger gås
 
+REMOVE:skal-det-gås ("<gås>"i) + n  IF
+		(-2* modalverb BARRIER setn-gr)
+		(-1* ("<det>") BARRIER setn-gr)
+		;
+        # der skal det gåast
+
 SELECT:laget-av ("<laget>"i) + n IF
 		(1 %av%)
 		(-1C adj)
