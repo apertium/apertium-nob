@@ -2125,6 +2125,11 @@ MAP:1555 (@adj→)   (adj) IF
 #  "3.9.2003: Han vil ha flest mulig penger"))
 
 
+MAP:ferie-finansiert-med (@s-pred @o-pred @adv @app @laus-np)   (adj) + &&ADJ_N_AGR IF
+	(-1 n + ind + &&ADJ_N_AGR)
+	(1 pr)
+	;
+# «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie  finansiert  med lånte penger.»
 
 #:1554
 MAP:1554 (@s-pred @adv @app @laus-np)   (adj) IF
@@ -6363,12 +6368,12 @@ SELECT:1236 (@←p-utfyll) IF
 	(NOT 1 subst-prop)
 	(*-1C prep BARRIER s#setn-gr)
 	(*-1C prep LINK NOT 0 prep-intrans LINK NOT 1 tegnsetting/parentes/konj)
+	(*-1C prep LINK NEGATE 0 ("til") LINK 1 ("sammen"))
 	(*-1C prep BARRIER ikke-premod-@adv)
 ;
 #  " av meget (@ADV→) stor (@ADJ→) betydning (@←P-UTFYLL)
 # April 2002: NOT 1 subst-prop: Han så den krokete skikkelsen til bestemor Gælion."))
-
-
+# Ikkje: «I 2013 ble til sammen 5.934 personer uten lovlig opphold i Norge sendt ut av landet med tvang, noe som er ny rekord.»
 
 #:1235
 SELECT:1235 (@←p-utfyll) IF
@@ -19884,6 +19889,14 @@ REMOVE:er-kommet adj + pp IF
         (0 vblex + pp)
         (-*1 ("være") BARRIER setn-gr OR fv)
         ;
+
+
+# Bruk @o-pred for relativledd med underforstått «som er»:
+SELECT:n-som-er-pp (adj pp @o-pred) + &&ADJ_N_AGR IF
+	(-1C n + ind + &&ADJ_N_AGR)
+	(1C pr)
+	;
+# «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie   finansiert   med lånte penger.»
 
 
 SELECT:adj-pp-dis (adj pp @s-pred) + &&ADJ_N_AGR IF
