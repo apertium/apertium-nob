@@ -1601,8 +1601,8 @@ REMOVE:VM-renn SUB:3 cgguess IF (0/1 (*) - cgguess) ;
 REMOVE:VM-renn SUB:4 cgguess IF (0/1 (*) - cgguess) ;
 
 
-
-LIST namn-viss-mogleg = "Tangen" "Orten" "Pence" "Stjernen" "Medier" "Miller" "Strømmen" "Moser" "Møller" "Rødt" "Strøm" "Sport" "Trine" "Anders";
+# Alltid vel namn for desse når dei har stor bokstav:
+LIST namn-viss-mogleg = "Adresseavisen" "Agnete" "Akademikerne" "Aker" "Alger" "Alver" "Ander" "Anders" "Angrerettloven" "Arbeiderparti" "Arbeidsmiljøloven" "Arne" "Askeladden" "Asker" "Asp" "Backer" "Baker" "Bakker" "Ben" "Bent" "Bergene" "Bergensavisen" "Berger" "Berget" "Booker" "Borgen" "Bratten" "Brent" "Bunnpris" "Center" "Dagsavisen" "Dier" "Dokken" "Eden" "Egge" "Eggen" "Eid" "Eide" "Elvenes" "Engen" "Ester" "Evjen" "Festspillene" "Flaten" "Flyktninghjelpen" "Fore" "Fraser" "Følling" "Gang" "Ganges" "Glassverket" "Gloppen" "Gnist" "Haller" "Hammer" "Hamnes" "Hamre" "Hauger" "Haukenes" "Haver" "Helen" "Helene" "Het" "Hoen" "Holden" "Hole" "Holte" "Holter" "Horgen" "Hovedøya" "Hua" "Huber" "Hull" "Humlen" "Hurtigruten" "Hvaler" "Hønsi" "Iden" "Idrettshøgskolen" "Irene" "Isene" "Isner" "Kaia" "Kirkenes" "Kollen" "Krigsskolen" "Kurt" "Landsforeningen" "Las" "Lega" "Leier" "Leknes" "Letnes" "Lien" "Linden" "Linnes" "Loen" "Los" "Love" "Lucia" "Lunner" "Lykken" "Løkken" "Lånekassen" "Malene" "Maren" "Medier" "Meier" "Miller" "Modi" "Moser" "Moses" "Mykene" "Møller" "Naser" "Naturviterne" "Nese" "Ole" "Orten" "Parker" "Pence" "Pike" "Raknes" "Ranes" "Rangers" "Reid" "Reiten" "Rennes" "Resett" "Ridder" "Rue" "Rusten" "Ryste" "Rødt" "Røst" "Sagen" "Samset" "Sander" "Sanders" "Sanner" "Sikkerhetsloven" "Skien" "Skåra" "Sletnes" "Sletten" "Snoen" "Sogn" "Sport" "Sporveien" "Sten" "Stener" "Stjernen" "Strøm" "Strømmen" "Stålsett" "Sveen" "Sylla" "Sælen" "Søndre" "Tang" "Tangen" "Tell" "Tiller" "Times" "Tina" "Tinder" "Trier" "Trine" "Trøen" "Utlendingsloven" "Valnes" "Veidekke" "Verner" "Viken" "Vinger" "Våler" "Webber" "Weber" "Øyen" "Åke" ;
 SELECT:namn-viss-mogleg namn-viss-mogleg + np IF (0 storbokstav);
 
 
