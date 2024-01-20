@@ -14118,6 +14118,10 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 
 "<sto>" REMOVE:unlikely n;
 
+"<stopper>" REMOVE:stopper-deler n IF
+        (1 n)
+        ;
+
 "<stilt>" REMOVE:unlikely ("still") IF
         (NOT -1 ("helt"))
         ;
