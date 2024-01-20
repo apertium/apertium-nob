@@ -15253,16 +15253,19 @@ SELECT:ble-de-bedt-om pp + pl IF
 SELECT:ble-han-løslatt pp + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
-        (NOT 0 adv OR farlige-part)
+        (NEGATE 0 adv OR farlige-part)
         (0C vblexORpp)
+        (NEGATE 1 adj/adv)         # «helsemessig.nt! myndig.adj»
         ;
 
 SELECT:ble-han-uttatt adj + mf IF
 	(-2 %være/bli%)
 	(-1C m OR f)
-        (NOT 0 adv OR farlige-part)
+        (NEGATE 0 adv OR farlige-part)
         (0C vblexORpp OR adj + sg)
+        (NEGATE 1 adj/adv)         # «helsemessig.nt! myndig.adj»
         ;
+
 
 
 
