@@ -9081,6 +9081,9 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (NOT 0* fv BARRIER setn-start-med-strek/anf OR setn-gr)
         ;
 
+"<tidlig>" SELECT:tidlig-ute adv IF
+        (1 ("ute"))
+        ;
 
 #4000
   "<til>"   SELECT:4000   (pr) IF
