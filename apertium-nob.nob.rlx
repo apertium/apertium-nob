@@ -12160,6 +12160,10 @@ REMOVE:fiske ("fiske"i) + nøyt + fl;
         (1 %første% OR %siste% OR ("enkelt")) # inkludert tasteleif «at det for enkelt fylker»
         ;
 
+"<for>" REMOVE:for-alltid vblex IF
+        (1 ("alltid") LINK 1 setn-gr)
+        ;
+
 "<for>" REMOVE:for-dere n IF
         (1C prn)
         (1 acc)
