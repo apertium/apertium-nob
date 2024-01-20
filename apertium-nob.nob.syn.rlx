@@ -6280,6 +6280,7 @@ SELECT:1238 (@←p-utfyll) IF
 REMOVE:over-5000-arter (@←p-utfyll) IF
         (-2 %minst/over/iallfall%)
         (-1 qnt)
+	(NEGATE 0 adverbialsubst)
         ;
 
 REMOVE:over-5000-har (@←p-utfyll) IF
@@ -9516,8 +9517,9 @@ SELECT:1007 (@subj) IF
 
 
 #:1006
-SELECT:1006 (@subj) IF
+SELECT:Tyrkia-tapt (@subj) IF
 	(1C perf-part)
+	(NEGATE 0* fv)
 	(*2 overskrift)
 ;
 #  "Mars 2002: Tyrkia tapt"))
@@ -12517,6 +12519,16 @@ SELECT:nå-er-han-dømt (@s-pred) IF
 ;
 # «Mandag ble Mamic dømt i den høyeste rettsinstansen i Kroatia, opplyser Reuters som siterer den kroatiske TV-kanalen HRT.»
 
+SELECT:mandag-ble-han-funnet-død (@adj→) + &&ADJ_N_AGR IF
+	(-3C @adv)		  # mandag
+	(-2C @fv + hj-verb)	  # ble
+	(-1C @subj + &&ADJ_N_AGR) # han
+	                          # funnet
+	(1 adj + &&ADJ_N_AGR)	  # død
+	(NEGATE 2 n + &&ADJ_N_AGR)
+	;
+# «Mandag ble han funnet død, 31 år gammel.»
+
 #6001
 SELECT:nå-har-prisen-økt (@iv) IF
 	(*-2 hj-verb BARRIER ikke-adv-adj-det LINK 0 @fv LINK -1 @adv)
@@ -12527,10 +12539,9 @@ SELECT:nå-har-prisen-økt (@iv) IF
 
 #6002
 SELECT:6002 (@iv) IF
-	 (-1 pron)
-	 (-2 hj-verb) 
-	 (-2 @fv)
-	 (-3 @adv)
+	(-3 @adv)		# nå
+	(-2 @fv + hj-verb)	# har
+	(-1 pron)		# den
 ;
 #nå har den økt (@iv) 
 
