@@ -588,7 +588,7 @@ LIST ent-ub = (sg ind) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
 
 # Adjektiv (inkludert partisipp) som ofte blir brukt i nt.sg før andre adjektiv, t.d. «den klart beste filmen», «er registrert arbeidsledige»
-LIST adj-ofte-forsterkande = "hel" "svær" "veldig" "registrere" "relativ" "særlig" "sterk" "delvis" "alvorlig" "klar" "ekstra" "lite" "ekstrem" "spesiell" "lokal" "historisk" "kritisk" "intern" "internasjonal" "ganske" "virkelig" "utrolig" "politisk" "desidert" "ferdig" "fysisk" "potensiell" "tung" "uvanlig" "økonomisk" "innføre" "seksuell" "dårlig" "strategisk" "dyp" "midlertidig" "rask" "psykisk" "påføre" "offentlig" "kraftig" "generell" "samtidig" "uriktig" "ulovlig" "suveren" "tilstrekkelig" "nylig" "demokratisk" "skikkelig" "formell" "åpenbar" "åpen" "selvstendig" "faglig" "sette" "fullstendig" "rettspsykiatrisk" "opprinnelig" "etnisk" "trolig" "genetisk" "påvise" "endelig" "vente" "tilfeldig" "stabil" "eldre" "dagens" "sikker" "rimelig" "positiv" "kommunal" "unormal" "underlegge" "kunstig" "feilaktig" "ekstraordinær" "usedvanlig" "kronisk" "urettmessig" "tilnærmet" "mental" "masse" "juridisk" "fantastisk" "uskyldig" "teknisk" "ta" "ordentlig" "måle" "fort" "foreløpig" "egentlig" "neste" "unødvendig" "tildele" "pågående¹" "iføre" "fryktelig" "automatisk" "varig" "tilpasse" "sosial" "snar" "naturlig" "full" "diverse" "akutt" "stenge" "samfunnsøkonomisk" "religiøs" "digital" "bra" "allmenn" "stille" "normal" "medisinsk" "individuell" "forbeholde" "uhyre" "uforholdsmessig" "inkludere" "avdekke" "vitenskapelig" "urimelig" "stadig" "moderne" "gjennomføre" "enstemmig" "uventet" "utføre" "sikre" "rutinemessig" "rasistisk" "ikle" "grunne" "eksepsjonell" "dødelig" "brutal" "universell" "topp" "systematisk" "soleklar" "sannsynlig" "rettslig" "primær" "presse" "oppdage" "legge" "gjennomført" "desidere" "administrativ" "vanvittig" "unaturlig" "regelrett" "plutselig" "overlegen" "notorisk" "løs" "halv" "gratis" "gradvis" "genuin" "forårsake" "definitiv" "behandle" "vesentlig" "verdt" "tilknyttet" "tilføre" "synlig" "selge" "prinsipiell" "lovlig" "kontinuerlig" "kirkelig" "kalle" "heteroseksuell" "ufrivillig" "uforsvarlig" "tale" "statistisk" "skape" "riktig" "moralsk" "middels" "lansere" "korrekt" "knytte" "kategorisk" "hjertelig" "geografisk" "etablere" "elektrisk" "bokstavelig" "biologisk" "absolutt" "ærlig" "var" "unødig" "uakseptabel" "tynn" "travel" "tiltenke" "tilby" "si" "selvsagt" "rettskraftig" "redaksjonell" "passe" "oppstå" "oppriktig" "muntlig" "marginal" "kulturhistorisk" "klinisk" "jevn" "ideologisk" "frata" "forsiktig" "forferdelig" "faktisk" "ekte" "borgerlig" "vunnen" "vis" "vill" "vak" "uvant" "utarbeide" "udelt" "tyngst" "tvungen" "teoretisk" "syntetisk" "strafferettslig" "storme" "steke" "sportslig" "slags" "sjelden" "selvfølgelig" "rød" "resultatmessig" "overdreven" "oppgitt" "misse" "maksimal" "lage" "kulturell" "konsekvent" "komme" "knapp" "kaste" "innstendig" "innlede" "innhente" "igangsatt" "idømme" "følelsesmessig" "forhåpentlig" "forholdsmessig" "evangelisk" "etisk" "eksportere" "dannet" "bevislig" "avslutte" "arrangere" "alskens" "våt" "være" "vond" "virke" "vie" "utvikle" "utilstrekkelig" "utestenge" "urettferdig" "unnta" "unektelig" "underholde" "uforklarlig" "ufattelig" "uendret" "uendelig" "ubønnhørlig" "tørr" "tyne" "true" "trekke" "tilskrive" "tallmessig" "taktisk" "synge" "symbolsk" "syklig" "sprek" "spre" "spille" "snørrete" "smittevernfaglig" "slått" "skrive" "skjønne" "sensasjonell" "ryddig" "rar" "publisere" "psykologisk" "produsere" "problematisk" "presumptiv" "praktisk" "pinlig" "permanent" "passiv" "passere" "passelig" "partipolitisk" "overstadig" "overskride" "overlevere" "oppta" "oppheve" "omkomme" "obdusere" "nordvestlig" "nevne" "mystisk" "miljømessig" "merkantil" "markant" "mangelfull" "lovmessig" "love" "levne" "levere" "lagre" "kunstnerisk" "koptisk" "konstant" "knivstikke" "kirurgisk" "katastrofal" "innvilge" "innrapportere" "hylle" "homoseksuell" "hektisk" "grunn" "gledelig" "gjeld" "geologisk" "genmodifisere" "føre" "fundamental" "fraranet" "framlegge" "forvaltningsmessig" "fortelle" "forelegge" "fordele" "farmakologisk" "evig" "evakuere" "ens" "ellevill" "eksponentiell" "diametral" "bombe" "blytung" "blank" "bistå" "bevisst" "beskyttet" "beramme" "beordre" "behørig" ;
+LIST adj-ofte-forsterkande = "hel" "svær" "veldig" "registrere" "relativ" "særlig" "sterk" "delvis" "alvorlig" "klar" "ekstra" "lite" "ekstrem" "spesiell" "lokal" "historisk" "kritisk" "intern" "internasjonal" "ganske" "virkelig" "utrolig" "politisk" "desidert" "ferdig" "fysisk" "potensiell" "tung" "uvanlig" "økonomisk" "innføre" "seksuell" "dårlig" "strategisk" "dyp" "midlertidig" "rask" "psykisk" "påføre" "offentlig" "kraftig" "generell" "samtidig" "uriktig" "ulovlig" "suveren" "tilstrekkelig" "nylig" "demokratisk" "skikkelig" "formell" "åpenbar" "åpen" "selvstendig" "faglig" "sette" "fullstendig" "rettspsykiatrisk" "opprinnelig" "etnisk" "trolig" "genetisk" "påvise" "endelig" "vente" "tilfeldig" "stabil" "eldre" "dagens" "sikker" "rimelig" "positiv" "kommunal" "unormal" "underlegge" "kunstig" "feilaktig" "ekstraordinær" "usedvanlig" "kronisk" "urettmessig" "tilnærmet" "mental" "masse" "juridisk" "fantastisk" "uskyldig" "teknisk" "ta" "ordentlig" "måle" "fort" "foreløpig" "egentlig" "neste" "unødvendig" "tildele" "pågående¹" "iføre" "fryktelig" "automatisk" "varig" "tilpasse" "sosial" "snar" "naturlig" "full" "diverse" "akutt" "stenge" "samfunnsøkonomisk" "religiøs" "digital" "bra" "allmenn" "stille" "normal" "medisinsk" "individuell" "forbeholde" "uhyre" "uforholdsmessig" "inkludere" "avdekke" "vitenskapelig" "urimelig" "stadig" "moderne" "gjennomføre" "enstemmig" "uventet" "utføre" "sikre" "rutinemessig" "rasistisk" "ikle" "grunne" "eksepsjonell" "dødelig" "brutal" "universell" "topp" "systematisk" "soleklar" "sannsynlig" "rettslig" "primær" "presse" "oppdage" "legge" "gjennomført" "desidere" "administrativ" "vanvittig" "unaturlig" "regelrett" "plutselig" "overlegen" "notorisk" "løs" "halv" "gratis" "gradvis" "genuin" "forårsake" "definitiv" "behandle" "vesentlig" "verdt" "tilknyttet" "tilføre" "synlig" "selge" "prinsipiell" "lovlig" "kontinuerlig" "kirkelig" "kalle" "heteroseksuell" "ufrivillig" "uforsvarlig" "tale" "statistisk" "skape" "riktig" "moralsk" "middels" "lansere" "korrekt" "knytte" "kategorisk" "hjertelig" "geografisk" "etablere" "elektrisk" "bokstavelig" "biologisk" "absolutt" "ærlig" "var" "unødig" "uakseptabel" "tynn" "travel" "tiltenke" "tilby" "si" "selvsagt" "rettskraftig" "redaksjonell" "passe" "oppstå" "oppriktig" "muntlig" "marginal" "kulturhistorisk" "klinisk" "jevn" "ideologisk" "frata" "forsiktig" "forferdelig" "faktisk" "ekte" "borgerlig" "vunnen" "vis" "vill" "vak" "uvant" "utarbeide" "udelt" "tyngst" "tvungen" "teoretisk" "syntetisk" "strafferettslig" "storme" "steke" "sportslig" "slags" "sjelden" "selvfølgelig" "rød" "resultatmessig" "overdreven" "oppgitt" "misse" "maksimal" "lage" "kulturell" "konsekvent" "komme" "knapp" "kaste" "innstendig" "innlede" "innhente" "igangsatt" "idømme" "følelsesmessig" "forhåpentlig" "forholdsmessig" "evangelisk" "etisk" "eksportere" "dannet" "bevislig" "avslutte" "arrangere" "alskens" "våt" "være" "vond" "virke" "vie" "utvikle" "utilstrekkelig" "utestenge" "urettferdig" "unnta" "unektelig" "underholde" "uforklarlig" "ufattelig" "uendret" "uendelig" "ubønnhørlig" "tørr" "tyne" "true" "trekke" "tilskrive" "tallmessig" "taktisk" "synge" "symbolsk" "syklig" "sprek" "spre" "spille" "snørrete" "smittevernfaglig" "slått" "skrive" "skjønne" "sensasjonell" "ryddig" "rar" "publisere" "psykologisk" "produsere" "problematisk" "presumptiv" "praktisk" "pinlig" "permanent" "passiv" "passere" "passelig" "partipolitisk" "overstadig" "overskride" "overlevere" "oppta" "oppheve" "omkomme" "obdusere" "nordvestlig" "nevne" "mystisk" "miljømessig" "merkantil" "markant" "mangelfull" "lovmessig" "love" "levne" "levere" "lagre" "kunstnerisk" "koptisk" "konstant" "knivstikke" "kirurgisk" "katastrofal" "innvilge" "innrapportere" "hylle" "homoseksuell" "hektisk" "grunn" "gledelig" "gjeld" "geologisk" "genmodifisere" "føre" "fundamental" "fraranet" "framlegge" "forvaltningsmessig" "fortelle" "forelegge" "fordele" "farmakologisk" "evig" "evakuere" "ens" "ellevill" "eksponentiell" "diametral" "bombe" "blytung" "blank" "bistå" "bevisst" "beskyttet" "beramme" "beordre" "behørig" "anta" "overveiende" ;
 
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" "<jorda>"i "<bena>"i "<tanna>"i "holde" ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
@@ -3717,6 +3717,10 @@ SELECT:den+prn ("den¹") IF
         (1 def)
         ;
 
+"<død>" SELECT adj IF
+        (-1 ("finne"))
+        ;
+
 "<døde>" SELECT:hente-den-døde-ut adj IF
         (-2C vblex)
         (-1 %den%)
@@ -4555,6 +4559,10 @@ SELECT:default pl IF
         (3 ("<betydning>"i))
         ;
         # tiltak av stor betydning (ikkje: et (nytt) tiltak av stor betydning)
+
+"<fast>" SELECT:bundet-fast adv IF
+        (-1 ("binde"))
+        ;
 
 #:3670
   "<fast>"   SELECT:3670   (adj pl) IF
@@ -5943,6 +5951,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 n + ind)
         (-1 %uten%)
         ;
+
+"<betydelig>"i SELECT:betydelig-økt adv IF
+        (1 ("<økt>") OR ("<redusert>"))
+        ;
+
 
 "<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
 
@@ -39439,7 +39452,7 @@ REMOVE:vindus- gen IF
 
 REMOVE:no-possible-objects adj + pp IF
         (0 vblex)
-        (NEGATE 0* det OR n OR np)
+        (NEGATE 0* det OR n OR np OR prn)
         ;
 # «Aldri skjedd før.»
 
