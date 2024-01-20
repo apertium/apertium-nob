@@ -5427,7 +5427,7 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 # «Det viser en ny undersøkelse gjort av amerikanske Pew Research Center hvor 58 prosent av nordmennene sa seg  helt  eller hovedsakelig enig i utsagnet.»
 
 #:3546
-  "<helt>"   SELECT:3546   (adj nt) IF
+"<helt>" SELECT:helt-til-Blindern adv IF
 	(1C prep)
 ;
 #  "helt til Blindern
@@ -39474,6 +39474,15 @@ SELECT:hadde-forhåndsbetalt vblex + pp IF
         (-1 ("ha"))
         (0C pp)
         ;
+
+"<ut>" WITH:ut-fra-slike-kriterium pr
+        (1C ("fra"))
+        (2C adj)
+        (3C n)
+{
+        SELECT pr ;
+        WITH _C1_ { SELECT:ut-FRA-slike-kriterium pr ; };
+};
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
