@@ -586,6 +586,10 @@ LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
 LIST ent-subst = (n sg) (np sg) ;
 LIST ent-ub = (sg ind) ;
 LIST farger = "turkis"  "svart"  "rød"  "rosa"  "oransje"  "lilla"  "indigo"  "hvit" "hvitt"  "gul"  "grønn"  "grå"  "fiolett"  "blå"  "lyserød" ;
+
+# Adjektiv (inkludert partisipp) som ofte blir brukt i nt.sg før andre adjektiv, t.d. «den klart beste filmen», «er registrert arbeidsledige»
+LIST adj-ofte-forsterkande = "hel" "svær" "veldig" "registrere" "relativ" "særlig" "sterk" "delvis" "alvorlig" "klar" "ekstra" "lite" "ekstrem" "spesiell" "lokal" "historisk" "kritisk" "intern" "internasjonal" "ganske" "virkelig" "utrolig" "politisk" "desidert" "ferdig" "fysisk" "potensiell" "tung" "uvanlig" "økonomisk" "innføre" "seksuell" "dårlig" "strategisk" "dyp" "midlertidig" "rask" "psykisk" "påføre" "offentlig" "kraftig" "generell" "samtidig" "uriktig" "ulovlig" "suveren" "tilstrekkelig" "nylig" "demokratisk" "skikkelig" "formell" "åpenbar" "åpen" "selvstendig" "faglig" "sette" "fullstendig" "rettspsykiatrisk" "opprinnelig" "etnisk" "trolig" "genetisk" "påvise" "endelig" "vente" "tilfeldig" "stabil" "eldre" "dagens" "sikker" "rimelig" "positiv" "kommunal" "unormal" "underlegge" "kunstig" "feilaktig" "ekstraordinær" "usedvanlig" "kronisk" "urettmessig" "tilnærmet" "mental" "masse" "juridisk" "fantastisk" "uskyldig" "teknisk" "ta" "ordentlig" "måle" "fort" "foreløpig" "egentlig" "neste" "unødvendig" "tildele" "pågående¹" "iføre" "fryktelig" "automatisk" "varig" "tilpasse" "sosial" "snar" "naturlig" "full" "diverse" "akutt" "stenge" "samfunnsøkonomisk" "religiøs" "digital" "bra" "allmenn" "stille" "normal" "medisinsk" "individuell" "forbeholde" "uhyre" "uforholdsmessig" "inkludere" "avdekke" "vitenskapelig" "urimelig" "stadig" "moderne" "gjennomføre" "enstemmig" "uventet" "utføre" "sikre" "rutinemessig" "rasistisk" "ikle" "grunne" "eksepsjonell" "dødelig" "brutal" "universell" "topp" "systematisk" "soleklar" "sannsynlig" "rettslig" "primær" "presse" "oppdage" "legge" "gjennomført" "desidere" "administrativ" "vanvittig" "unaturlig" "regelrett" "plutselig" "overlegen" "notorisk" "løs" "halv" "gratis" "gradvis" "genuin" "forårsake" "definitiv" "behandle" "vesentlig" "verdt" "tilknyttet" "tilføre" "synlig" "selge" "prinsipiell" "lovlig" "kontinuerlig" "kirkelig" "kalle" "heteroseksuell" "ufrivillig" "uforsvarlig" "tale" "statistisk" "skape" "riktig" "moralsk" "middels" "lansere" "korrekt" "knytte" "kategorisk" "hjertelig" "geografisk" "etablere" "elektrisk" "bokstavelig" "biologisk" "absolutt" "ærlig" "var" "unødig" "uakseptabel" "tynn" "travel" "tiltenke" "tilby" "si" "selvsagt" "rettskraftig" "redaksjonell" "passe" "oppstå" "oppriktig" "muntlig" "marginal" "kulturhistorisk" "klinisk" "jevn" "ideologisk" "frata" "forsiktig" "forferdelig" "faktisk" "ekte" "borgerlig" "vunnen" "vis" "vill" "vak" "uvant" "utarbeide" "udelt" "tyngst" "tvungen" "teoretisk" "syntetisk" "strafferettslig" "storme" "steke" "sportslig" "slags" "sjelden" "selvfølgelig" "rød" "resultatmessig" "overdreven" "oppgitt" "misse" "maksimal" "lage" "kulturell" "konsekvent" "komme" "knapp" "kaste" "innstendig" "innlede" "innhente" "igangsatt" "idømme" "følelsesmessig" "forhåpentlig" "forholdsmessig" "evangelisk" "etisk" "eksportere" "dannet" "bevislig" "avslutte" "arrangere" "alskens" "våt" "være" "vond" "virke" "vie" "utvikle" "utilstrekkelig" "utestenge" "urettferdig" "unnta" "unektelig" "underholde" "uforklarlig" "ufattelig" "uendret" "uendelig" "ubønnhørlig" "tørr" "tyne" "true" "trekke" "tilskrive" "tallmessig" "taktisk" "synge" "symbolsk" "syklig" "sprek" "spre" "spille" "snørrete" "smittevernfaglig" "slått" "skrive" "skjønne" "sensasjonell" "ryddig" "rar" "publisere" "psykologisk" "produsere" "problematisk" "presumptiv" "praktisk" "pinlig" "permanent" "passiv" "passere" "passelig" "partipolitisk" "overstadig" "overskride" "overlevere" "oppta" "oppheve" "omkomme" "obdusere" "nordvestlig" "nevne" "mystisk" "miljømessig" "merkantil" "markant" "mangelfull" "lovmessig" "love" "levne" "levere" "lagre" "kunstnerisk" "koptisk" "konstant" "knivstikke" "kirurgisk" "katastrofal" "innvilge" "innrapportere" "hylle" "homoseksuell" "hektisk" "grunn" "gledelig" "gjeld" "geologisk" "genmodifisere" "føre" "fundamental" "fraranet" "framlegge" "forvaltningsmessig" "fortelle" "forelegge" "fordele" "farmakologisk" "evig" "evakuere" "ens" "ellevill" "eksponentiell" "diametral" "bombe" "blytung" "blank" "bistå" "bevisst" "beskyttet" "beramme" "beordre" "behørig" ;
+
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" "<jorda>"i "<bena>"i "<tanna>"i "holde" ;
 LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind) ;
@@ -17392,15 +17396,22 @@ SELECT:2963 (adj nt ind sg) IF
 ;
 #  "den virkelig (adv) store boka"))
 
+SELECT:en-ukjent-51-årig-diplomat (adj mf ind sg) IF
+        (NEGATE 0 adj-ofte-forsterkande)
+	(-1C mask-det)
+        (1C adj LINK 0 mf)
+	(2C n + mORf)
+        ;
+# «Araujo er en ukjent 51-årig diplomat som har svært lite politisk erfaring.»
 
 
 #:2978
- SELECT:2978 (adj nt ind sg) IF
-	(NOT 0 adv)
-	(NOT 0 orden)
-	(NOT 0 <perf-part>)
-	(1C adj)
+ SELECT:virkelig-store (adj nt ind sg) IF
 	(-1C mask-det)
+	(NEGATE 0 adv)
+	(NEGATE 0 orden)
+	(NEGATE 0 <perf-part>)
+	(1C adj)
 ;
 #  "den virkelig (adv) store boken"))
 
@@ -39514,13 +39525,14 @@ SELECT:default ("blø") + vblex ;  # unngå «blødd» (er det nokon gong rett?)
 SELECT:default ("<bena>" "ben") ;
 SELECT:default ("<lukt>" "lukt") ;
 SELECT:default ("<tanna>" "tann") ;
+
+
+# REMOVE:default rules:
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
 REMOVE:default ("tiltak") + sg IF (0 pl) ;
 REMOVE:default ("betenkelighet") + f ;	# keep betenkelighet<n><m>
 REMOVE:default ("<lunt>"i) + pp ; # eit lunt inntrykk
-
-# REMOVE:default rules:
 REMOVE:default ("områ") + vblex;
 REMOVE:default ("skylde") IF (0 ("skyldes"));
 REMOVE:default ("unge") + n;
