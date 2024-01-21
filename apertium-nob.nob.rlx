@@ -2631,9 +2631,16 @@ SELECT:restriktive-tiltak pl IF
 "<at>" SELECT:at-pasienter-som clb IF
         (-1C fv)
         (1C n)
-        (*2 cnjsub LINK *1 cm LINK *1 fv) # innskot
+        (*2 cnjsub LINK *1 cm LINK *1 fv) # innskot ein eller annan plass der framme
         ;
 # «En ny studie viser at pasienter innlagt ved norske sykehus som har forsøkt å ta sitt eget liv med medisiner, får skrevet ut flere medisiner etter selvmordsforsøket.»
+
+"<at>" SELECT:at-bare-den-litteraturen-som clb IF
+        (*-1C fv BARRIER ikke-adv)
+        (*1C n BARRIER ikke-adv-adj-det LINK 1 cnjsub LINK *1 cm LINK *1 fv) # innskot like etter subst
+        ;
+# «I litteraturen er det mange kritikere som sier rett ut at bare den litteraturen som tar for seg det mørkeste, er god.»
+
 
 
 "<laget>" REMOVE:fikk-laget pret IF
@@ -8998,11 +9005,12 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 
 #:3199
-  "<særlig>"   SELECT:3199   (nt) IF
+"<særlig>" SELECT:særlig-med-sikte-på adv IF
 	(NOT 1 subst-mask/fem-ent-ub)
 ;
 #  "..., særlig med sikte på ungdommene
 # 4.3"
+# «skader er særlig et problem blant turister.»
 
 "<hjelper>" SELECT:hjelper-det pres IF
         (1 %det% OR prn OR n)
