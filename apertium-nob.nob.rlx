@@ -3762,7 +3762,7 @@ SELECT:den+prn ("den¹") IF
 # Oftare rett enn feil iallfall
 
 "<døde>" SELECT:er-døde adj IF
-        (-1 vblex)
+        (-1C vblex)
         ;
 
 "<døde>" SELECT:han-døde-da vblex + pret IF
@@ -3780,6 +3780,12 @@ SELECT:den+prn ("den¹") IF
 # Ikkje: «I 2018 døde over 3.700 mennesker i slike hendelser.»
 # Tvetydig (overskrift eller ei?): «Over 150 døde etter å ha drukket giftig hjemmebrent i India»
 
+"<døde>" SELECT:å-finne-døde adj IF
+        (*-1 infmerke BARRIER n OR prn)
+        (1 setn-gr)
+        ;
+# «Det var ikke tid eller krefter til å finne og bringe ut døde.»
+
 "<drepte>" SELECT:27-drepte adj IF
         (-1 talord-par-siffer)
         ;
@@ -3790,7 +3796,7 @@ SELECT:den+prn ("den¹") IF
 
 "<drepte>" SELECT:drepte-den-tre-år-gamle-sønnen vblex IF
         (1 det + dem)
-		(2 adj)
+        (2 adj)
         ;
 
 "<drepte>" SELECT:drepte-per adj IF
