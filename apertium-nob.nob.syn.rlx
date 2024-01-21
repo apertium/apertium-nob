@@ -532,7 +532,7 @@ LIST parentes-beg/strek = lpar guio ;
 LIST parentes-slutt/strek = rpar guio ;
 LIST pass = (vblex pasv) ;
 LIST passiv = pasv ;
-LIST perf-part = (vblex vblex pp) ;
+LIST perf-part = pp ;
 LIST periode-beg = >>> ;
 LIST periode-beg/clb = >>> clb ;
 LIST periode-beg/clb-konj = >>> (cnjcoo clb) ;
@@ -928,8 +928,14 @@ MAP:1663 (@s-pred)   (adj pprs) IF
 #  "Mars 2002: Han er døende."))
 
 
+MAP:bli-rapportert-dobbelt (@s-pred @o-pred @adv @adj→ @adv→) (adj pp) IF
+	(*-1 %være/bli% BARRIER ikke-adv)
+	(1C adj)
+	(2 setn-gr)
+	;
+# «Målet er å hindre at klimakutt blir rapportert dobbelt.»
 
-#:1663
+
 
 
 
@@ -1120,6 +1126,7 @@ MAP:1647 (@adj→)   (adj m ind sg) IF
 	(*1 ub-ent-mf-adj/komp-adj BARRIER ikke-adv-adj-u-konj)
 ;
 # group: 74
+
 
 
 
@@ -1403,6 +1410,7 @@ MAP:1621 (@adj→)   (adj f ind sg) IF
 
 
 #:1621
+
 
 
 
