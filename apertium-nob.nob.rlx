@@ -7211,6 +7211,11 @@ REMOVE:unlikely ("<skjente>"i "skjene");
         ;
 
 
+"<rett>" SELECT:rett-ut adv IF
+        (*0 fv BARRIER setn-gr) # dette er ikkje imperativen
+        (1 %ut%)
+        ;
+
 #:3343
   "<rett>"   SELECT:3343 adv IF
 	(1 %til%)
@@ -9373,6 +9378,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 	(1 %imot%)
 ;
 #  "tvert imot"
+
+"<ut>" SELECT:rett-ut adv IF
+        (-1 ("rett"))
+        ;
 
 "<vant>" SELECT pret IF
         (NOT *-1 kop-fv)
