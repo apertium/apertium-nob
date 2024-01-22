@@ -11374,13 +11374,11 @@ REMOVE ("pote") IF
 # 1 pota - oppskrift
 
 "<.*lovens?>"r SELECT:loven-paragraf np IF
-        (1 ("paragraf") OR ("§"))
-        (2 ("[0-9]+"r))
+        (1 ("paragraf"))
+        (2 ("<[0-9]+.*>"r))
         ;
 "<.*lovens?>"r SELECT:loven-paragraf-1 np IF
-        (1 ("§"))
-        (2 ("§"))
-        (3 ("[0-9]+"r))
+        (1 ("<§.*>"r))
         ;
 # Utlendingsloven paragraf/§/§§ 121
 "<.*lovens?>"r REMOVE:loven-paragraf-2 np IF
