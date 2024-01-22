@@ -6119,6 +6119,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (3 np)
         ;
 
+"<langt>" SELECT:langt-bak adv IF
+        (1C pr OR adv)
+        ;
+
 "<lav>"   SELECT   (adj) IF
         (NOT *-2 lav-ord OR ("rein"))
 ;
