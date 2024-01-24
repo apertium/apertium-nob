@@ -11380,11 +11380,26 @@ REMOVE ("pote") IF
 "<.*lovens?>"r SELECT:loven-paragraf-1 np IF
         (1 ("<§.*>"r))
         ;
-# Utlendingsloven paragraf/§/§§ 121
+# utlendingsloven paragraf/§/§§ 121
 "<.*lovens?>"r REMOVE:loven-paragraf-2 np IF
         ;
-# Utlendingslovens bestemmelser
+# Nav-loven paragraf/§/§§ 121
+"<.*-lovens?>"ir SELECT:loven-paragraf-3 n IF
+        ;
+        # TODO: prevented by 1468?
+        # Nav-loven paragraf/§/§§ 121
 # Use the noun version of "lov"-names in most cases except the exceptions above
+
+"<.*konvensjonens?>"r SELECT:konvensjonen-paragraf np IF
+        (1 ("paragraf"))
+        (2 ("<[0-9]+.*>"r))
+        ;
+"<.*konvensjonens?>"r SELECT:konvensjonen-paragraf-1 np IF
+        (1 ("<§.*>"r))
+        ;
+        # barnebortføringskonvensjonen paragraf/§/§§ 121
+"<.*konvensjonens?>"r REMOVE:konvensjonen-paragraf-2 np IF
+        ;
 
 #:3782
   "<alene>"   REMOVE:3782   (n) IF
