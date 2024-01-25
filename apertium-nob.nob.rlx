@@ -10902,6 +10902,12 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         ;
 # å ha landet
 
+"<begrep>"i SELECT:sentrale-begrep n IF
+        (-1 adj)
+        (1 setn-gr)
+        ;
+# Sentrale begrep
+
 "<løvene>"i SELECT:dyret ("løve");
         # lauva mindre frekvent og sjeldan nytta i fleirtal (jf. "løvet/løvene faller av")
         # i Nynorskkorpuset gir "løvene" 87 treff, "lauva" (s.) 4 treff
