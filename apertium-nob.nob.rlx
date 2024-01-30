@@ -11386,15 +11386,27 @@ REMOVE ("pote") IF
 "<.*lovens?>"r SELECT:loven-paragraf-1 np IF
         (1 ("<§.*>"r))
         ;
-# utlendingsloven paragraf/§/§§ 121
-"<.*lovens?>"r REMOVE:loven-paragraf-2 np IF
+
+"<.*loven>"ir SELECT:loven np IF
+        (-1 lpar)
+        (1 rpar)
         ;
+        # i banklovgivinga (sentralbankloven)
+
 # Nav-loven paragraf/§/§§ 121
-"<.*-lovens?>"ir SELECT:loven-paragraf-3 n IF
+".*-loven"r SELECT:loven-paragraf-3 np IF
+        (1 ("<§.*>"r))
         ;
         # TODO: prevented by 1468:storbokstav-np?
         # Nav-loven paragraf/§/§§ 121
+".*-loven"r REMOVE:loven-paragraf-2 (np) ;
+
+# utlendingsloven paragraf/§/§§ 121
+"<.*lovens?>"r REMOVE:loven-paragraf-2 np IF
+        ;
+
 # Use the noun version of "lov"-names in most cases except the exceptions above
+
 
 "<.*konvensjonens?>"r SELECT:konvensjonen-paragraf np IF
         (1 ("paragraf"))
@@ -11405,6 +11417,13 @@ REMOVE ("pote") IF
         ;
         # barnebortføringskonvensjonen paragraf/§/§§ 121
 "<.*konvensjonens?>"r REMOVE:konvensjonen-paragraf-2 np IF
+        ;
+
+"<lov om .*>"ri SELECT:lov-om np IF
+        (-1 prep OR lpar OR ("jamfør") OR ("jf"))
+        ;
+        ".*fengsle"ri
+"<lov om .*>"ri REMOVE:lov-om np
         ;
 
 #:3782
