@@ -10297,6 +10297,14 @@ REMOVE:fatte-mot pr IF
         ;
 # "De fattet mistanke til mannen"
 
+
+#########################################
+# "gang¹" → nno gang; "gang" → nno gong #
+#########################################
+
+SELECT:gang- ("gang¹") + cmp-split;
+# «Også flere gang- og sykkelstier inne i Frognerparken måtte stenges.»
+
 REMOVE:vante-gang n IF
         (0 ("vant"))
         (1 ("gang"))
@@ -10334,10 +10342,13 @@ SELECT:mørke-ganger ("gang¹") IF
         (-1 adj OR ("<samme>"i))
         (NEGATE -1 ("fler") OR ("flerfoldig") OR ("mange") OR ("få") OR ("første" adj) OR ("andre") OR ("annen") OR ("sist") OR ("neste") OR ("forrige") OR ("enkelt") OR ("gjenta" pp) OR ("utallig") OR talord-par-siffer OR rekkjetal OR ("halv") OR ("kvart"))
         ;
+
 # dei mange skjulte gangane
 REMOVE:default ("gang¹")
         ;
-# elles: gong
+# fallback: gong
+
+
 SELECT:på-nære-nippet ("nipp") IF
         (-1 ("nær") or ("på"))
         ;
