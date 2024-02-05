@@ -1026,6 +1026,13 @@ MAP:1656 (@adj→)   (adj mf ind sg) IF
 ;
 # group: 74
 
+MAP:god-nok (@adj→)   (adj mf ind sg) IF
+	(1 ("nok"))
+	(2 ub-ent-mask-subst/tall-subst/målsubst/tidssubst/gen-subst)
+	(NOT 2 m#ikke-subst)
+        (NOT 2 tidsadvsubst-nr1)
+;
+
 
 
 #:1655
