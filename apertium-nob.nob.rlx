@@ -2745,6 +2745,7 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 "<presset>"i SELECT:vil-presset-mot n IF
         (-1 prep OR vblex OR cnjcoo OR cnjsub OR adj)
         (1 ("mot"))
+        (NEGATE 1 ("<slutten>") OR ("<gjerdet>") OR ("<veggen>"))
         ;
 
 "<presset>"i SELECT:øker-presset n IF
