@@ -1033,6 +1033,12 @@ MAP:god-nok (@adj→)   (adj mf ind sg) IF
         (NOT 2 tidsadvsubst-nr1)
 ;
 
+MAP:stor-eller-ganske-stor (@adj→)  (adj ind) + $$ADJ_NUMGEN IF
+	(1 ("eller"))
+	(2 ("ganske") OR ("<svært>") OR ("<meget>"))
+	(3 @adj→ + $$ADJ_NUMGEN)
+;
+
 
 
 #:1655
@@ -8422,6 +8428,15 @@ SELECT:1088 (@obj) IF
 ;
 #  " "))
 
+
+SELECT:synes-jobben-hun-gjør-er (@s-pred) IF
+	(-1 ("synes"))
+	(0 n + def OR prn + pers OR expl)
+        (*1 @fv LINK *1 @fv)    # to finitte verb til høgre
+        (*1 @fv LINK *1 kop)    # kopula etter innskotet
+	;
+# Manglar "at"
+# «38 prosent av de spurte syns jobben Solberg gjør er god.»
 
 
 #:1087
