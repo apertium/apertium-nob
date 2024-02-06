@@ -353,7 +353,7 @@ LIST %klokke% = "klokke"  ;
 LIST %klokke/kl% = ("klokke"  n) ("kl." n acr) ;
 LIST %kort/lang/på% = "på"  "lang"  "kort"  ;
 LIST %la% = "la"  ;
-LIST %langt% = ("lang"  adj pst nt) ;
+LIST %langt% = "langt" ("lang"  adj pst nt) ;
 LIST %leder% = ("leder"  n m sg ind) ;
 LIST %lenge% = ("lenge"  adj) ;
 LIST %ligge% = "ligge"  ;
@@ -26166,7 +26166,6 @@ SELECT:har-antall-drepte-økt adj + pp IF
 ;
 #  "Da jeg kom hjem, insisterte hun på ..."
 #      :group 47
-
 
 
 #:2362
