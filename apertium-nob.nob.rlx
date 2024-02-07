@@ -1799,6 +1799,7 @@ REMOVE:unlikely ("skip") + n + m ; # curling unlikely unless unambiguous form
 REMOVE:unlikely ("strake") + n IF (0 ("strak")) ;
 REMOVE:unlikely ("steile") IF (-1 ("stå")) (0 ("steil")) ; # «stått steilt»
 REMOVE:unlikely (".+sette"r "<.+satt>"ri) + pret  ; # Folk skriv «satt» i pret, men sjeldan «bosatt»
+REMOVE:unlikely ("<sult>"i) + pp ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -10106,6 +10107,12 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-2 ("dag"))
         (-1 ("og"))
         ;
+        # dagane og nettene
+"<nettene>"i REMOVE:nettene ("nett") IF
+        (2 ("dag"))
+        (1 ("og"))
+        ;
+        # nettene og dagane
 "<fløy>"i REMOVE:venstre-fløy vblex IF
         (-1 ("venstre") OR ("høyre") OR ("politisk"))
         (0 ("fly") OR ("fløy"))
@@ -38765,10 +38772,14 @@ REMOVE:unlikely ("blei") + sg + def ;
 
 
 # LEX: nettene vs. netta
-LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" ;
+LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" "foregående" "sist" ;
 
 SELECT:dei-lange-nettene ("natt") + pl + def IF
 		(-1 natt-adj)
+		;
+
+SELECT:dei-siste-to-nettene ("natt") + pl + def IF
+		(-1 talord)
 		;
 
 SELECT:nettene-er-lange ("natt") + pl + def IF
