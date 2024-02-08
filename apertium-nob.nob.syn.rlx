@@ -12603,6 +12603,15 @@ SELECT:men-mannen-INSK-er @subj IF
         ;
 # «Vi har ingen opplysninger om relasjoner mellom de tre eller detaljer rundt hva som har skjedd, men den ene mannen, en 44-åring, er pågrepet.»
 
+SELECT:og-de-andre @subj IF
+	(-4C @subj)
+	(-3 cnjcoo - clb)
+	(-2 ("den") + &&ADJ_N_AGR)
+	(-1 ("annen") + &&ADJ_N_AGR)
+	(0C n + def + &&ADJ_N_AGR)
+	;
+# «Nobelkomiteen ber om at Suu Kyi og de andre politikerne slippes fri omgående.»
+
 SELECT:ulykken-ikke-skyldtes-svikt @obj IF
         (*-1C @fv + pstv BARRIER (*) - @adj→ LINK *-1C @subj BARRIER (*) - @adv)
         ;
