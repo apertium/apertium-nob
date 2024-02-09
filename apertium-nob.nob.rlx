@@ -3503,6 +3503,12 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
 
+"<drepte>"i SELECT:den-drepte-og adj IF
+        (-1 ("den¹"))
+        (1 %og%)
+        (NEGATE 2 vblex)
+        ;
+
 SELECT:den-som ("den¹") IF
         (1 %som%)
         ;
