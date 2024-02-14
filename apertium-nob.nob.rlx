@@ -1805,6 +1805,7 @@ REMOVE:unlikely ("strake") + n IF (0 ("strak")) ;
 REMOVE:unlikely ("steile") IF (-1 ("stå")) (0 ("steil")) ; # «stått steilt»
 REMOVE:unlikely (".+sette"r "<.+satt>"ri) + pret  ; # Folk skriv «satt» i pret, men sjeldan «bosatt»
 REMOVE:unlikely ("<sult>"i) + pp ;
+REMOVE:unlikely ("<politi>"i) + m ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -9670,6 +9671,19 @@ SELECT:det-nest-største ("<nest>") + adv IF
         (1 adj + sup)
         ;
 # det nest største
+
+"<bør>"i SELECT:landets-fattige-bør vblex IF
+        (-1 adj)
+        (-2 gen)
+        ;
+# dei fattige i landet bør
+
+
+SELECT:mest-respekterte adj IF
+        (0 vblex + pret)
+        (-1 ("mest") OR ("minst"))
+        ;
+# landets mest respekterte intellektuelle
 
 SELECT:glatte-veier ("<veier>"i) + n IF
         (-1 adj + pl + ind)
@@ -23933,6 +23947,12 @@ SELECT:singel-album ("singel" m) IF
 "<land>" SELECT:verdens-rike-land n + pl IF
 		(-2 ("verden") + gen)
 		(-1 adj + pst)
+		;
+SELECT:landets-nest-største-sykehus n + sg IF
+                (0 n + nt + pl)
+		(-3 ("land") + sg + gen)
+		(-2 adj OR adv)
+		(-1 adj)
 		;
 
 "<leser>" SELECT:leser-opp vblex IF
