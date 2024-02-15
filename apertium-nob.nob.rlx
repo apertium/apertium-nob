@@ -9672,6 +9672,46 @@ SELECT:det-nest-største ("<nest>") + adv IF
         ;
 # det nest største
 
+SELECT:et-av-landets-viktigste-reisemål pl IF
+        (0 n + nt + sg + ind)
+        (-1 adj + sup)
+        (-2 gen)
+        (-3 %av%)
+        (-4 det + qnt + nt)
+        ;
+# et av landets viktigste turistmål 
+
+SELECT:et-av-landets-aller-viktigste-reisemål pl IF
+        (0 n + nt + sg + ind)
+        (-1 adv)
+        (-2 adj + sup)
+        (-3 gen)
+        (-4 %av%)
+        (-5 det + qnt + nt)
+        ;
+# et av landets viktigste turistmål 
+
+SELECT:et-av-landets-mest-populære-reisemål pl IF
+        (0 n + nt + sg + ind)
+        (-1 adj OR adv)
+        (-2 adj)
+        (-3 gen)
+        (-4 %av%)
+        (-5 det + qnt + nt)
+        ;
+# et av landets mest populære turistmål 
+
+SELECT:et-av-landets-aller-mest-populære-reisemål pl IF
+        (0 n + nt + sg + ind)
+        (-1 adv)
+        (-2 adj OR adv)
+        (-3 adj)
+        (-4 gen)
+        (-5 %av%)
+        (-6 det + qnt + nt)
+        ;
+# et av landets mest populære turistmål 
+
 "<bør>"i SELECT:landets-fattige-bør vblex IF
         (-1 adj)
         (-2 gen)
