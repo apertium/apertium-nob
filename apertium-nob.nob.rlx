@@ -9719,11 +9719,13 @@ SELECT:et-av-landets-aller-mest-populære-reisemål pl IF
 # dei fattige i landet bør
 
 
-SELECT:mest-respekterte adj IF
-        (0 vblex + pret)
+REMOVE:mest-respekterte pret IF
         (-1 ("mest") OR ("minst"))
+        (0 adj + &&ADJ_N_AGR)
+        (1 &&ADJ_N_AGR)
         ;
-# landets mest respekterte intellektuelle
+# «landets mest respekterte intellektuelle»
+# Men ikkje adj ved «minst åtte skudd»
 
 SELECT:glatte-veier ("<veier>"i) + n IF
         (-1 adj + pl + ind)
