@@ -13764,6 +13764,15 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "...og som han hadde båret med seg"
 
+"<mest>"   REMOVE:mest-solgte adv IF
+	(1 adj)
+;
+# landets mest solgte bok
+
+"<minst>"   REMOVE:minst-solgte adv IF
+	(1 adj)
+;
+# det minst respekterte
 
 
 #:5030
