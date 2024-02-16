@@ -13775,9 +13775,13 @@ REMOVE:tilbakekaller-leker ("lek") IF
 # det minst respekterte
 
 REMOVE:landets-styrkjer vblex IF
-	(-1 gen)
+	(-1C gen + def)
+        (NEGATE -1 ("<skjerpings>"))
 ;
 # landets styrker --> styrkane til landet
+# Ikkje: «Janis levde i øyeblikket.» (tvitydig gen)
+# Ikkje: «operasjoner til lands bør …» (ubestemt form, adverbialt), også: «to ukers venting»
+
 
 #:5030
  "<ol>"   REMOVE:5030   (vblex pret)
