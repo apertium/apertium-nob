@@ -24473,7 +24473,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2480
  SELECT:2480 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C subst-prop)
 	(NOT -1 subst-gen)
 	(-2C setn-gr)
@@ -24488,7 +24488,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2440
  SELECT:2440 (vblex pres) IF
 	(NOT 0 imp)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 >>>)
 	(**1CO setn-gr LINK 0 spørsmål-t LINK NOT *-1 fv)
 ;
@@ -24496,7 +24496,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 #:2441
  SELECT:2441 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-forledd-verb)
 	(1 infmerke)
 	(-1C adj)
@@ -24583,7 +24583,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 #:2442
  SELECT:2442 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1C pron-pers)
 	(**-2C setn-gr BARRIER fv)
@@ -24594,7 +24594,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 #:2443
  SELECT:2443 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(NOT -1 adj)
 	(NOT -1 det)
@@ -24628,7 +24628,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2445
  SELECT:2445 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C adverb)
 	(NOT 1 pres/pret)
 	(-2 subst)
@@ -24644,7 +24644,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2446
  SELECT:2446 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C adverb)
 	(-2 subst)
 	(NOT -2 ikke-subst)
@@ -24658,7 +24658,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2447
  SELECT:2447 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C adverb)
 	(-2C adverb)
 	(-3 subst)
@@ -24673,7 +24673,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2448
  SELECT:2448 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C adverb)
 	(-2C adverb)
 	(-3C pron)
@@ -24687,7 +24687,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #:2449
  SELECT:2449 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C adverb)
 	(-2C pron)
 	(-3C sbu)
@@ -24699,7 +24699,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 #:2450
  SELECT:2450 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1C adverb)
 	(-2 %som%)
@@ -24711,7 +24711,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 #:2451
 SELECT:Den-som-gråter (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(1 pres/pret)
 	(-1 %som%)
@@ -24724,7 +24724,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 
 #:2452
  SELECT:2452 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1 %som%)
 	(NOT 1 pres/pret)
@@ -24738,7 +24738,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2453
  SELECT:2453 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3 >>> BARRIER ikke-adv-adj-subst-pron-konj-det-sbu2)
 	(*-3O >>> LINK *1 %som% LINK **1C fv)
@@ -24751,7 +24751,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2454
  SELECT:2454 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 subst LINK 1 %som% LINK **1C fv)
 ;
@@ -24762,7 +24762,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2455
  SELECT:2455 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 pron LINK 1 %som% LINK **1C fv)
 ;
@@ -24773,7 +24773,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2456
  SELECT:2456 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 sbu LINK *1 sbu LINK *1 fv LINK *1 fv)
 ;
@@ -24785,7 +24785,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2457
  SELECT:2457 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 sbu LINK *1 fv LINK *1 sbu LINK *1 fv)
 ;
@@ -24797,7 +24797,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2458
  SELECT:2458 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 prep-intrans/adv LINK 1 sbu LINK **1C fv LINK NOT *1 setn-gr-u-komma)
 ;
@@ -24809,7 +24809,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2459
  SELECT:2459 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 replikk LINK 1 sbu LINK **1C pres LINK NOT *1 pres)
 ;
@@ -24821,7 +24821,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2460
  SELECT:2460 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 konj LINK 1 sbu LINK **1C pres LINK NOT *1 pres)
 ;
@@ -24833,7 +24833,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2461
  SELECT:2461 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 clb-komma)
 	(*-3O >>> LINK 1 sbu LINK **1C pres LINK NOT *1 pres)
 ;
@@ -24882,7 +24882,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2462
  SELECT:2462 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C subst)
 	(NOT 1 pres/pret)
 	(NOT -1 gen)
@@ -24898,7 +24898,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2463
  SELECT:2463 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C poss-det)
 	(NOT 1 pres/pret)
 	(-2C subst)
@@ -24911,7 +24911,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2465
  SELECT:2465 (vblex pres) IF
 	(NOT 0 farlige-forledd-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C subst)
 	(NOT -1 gen)
 	(-2 adj)
@@ -24925,7 +24925,7 @@ SELECT:Den-som-gråter (vblex pres) IF
 #:2466
 SELECT:Mannen-gir-adgang pres IF
 	(NOT 0 farlige-forledd-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C subst)
 	(NOT -1 gen)
 	(-2C setn-gr)
@@ -24989,7 +24989,7 @@ SELECT:Mannen-gir-adgang pres IF
 #:2467
  SELECT:2467 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1 pron)
 	(-2C setn-gr)
 	(*1 setn-gr BARRIER pres/pret)
@@ -25002,7 +25002,7 @@ SELECT:Mannen-gir-adgang pres IF
 #:2468
  SELECT:2468 (vblex pres) IF
 	(NOT 0 farlige-forledd-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C pron)
 	(-2C setn-gr)
 ;
@@ -25014,7 +25014,7 @@ SELECT:Mannen-gir-adgang pres IF
 #:2469
  SELECT:2469 (vblex pres) IF
 	(NOT 0 farlige-forledd-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(-1C pron/subst)
 	(NOT -1 %noen%)
 	(NOT -1 gen)
@@ -25027,7 +25027,7 @@ SELECT:Mannen-gir-adgang pres IF
 
 #:2470
  SELECT:2470 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 subst-gen)
 	(NOT 0 farlige-forledd-verb)
 	(-1 pron/subst)
@@ -25046,7 +25046,7 @@ SELECT:Mannen-gir-adgang pres IF
 
 #:2471
 SELECT:Dit-går-de pres IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-forledd-verb)
 	(-1C prep-intrans)
 	(-2C setn-gr)
@@ -25072,6 +25072,7 @@ SELECT:må-tørkes-kokes inf IF
 SELECT:LØYET-narret-og-bedratt $$TEMPUS IF
         (NEGATE -1 cm OR %og/eller% LINK -1 vblex)
         (NEGATE 0 n LINK 2 n)   # armer, ben og bryst
+        (NEGATE 0 pasv)
         (1 cm)
         (2 $$TEMPUS)
         (3 cm OR %og/eller%)
@@ -25079,6 +25080,7 @@ SELECT:LØYET-narret-og-bedratt $$TEMPUS IF
         ;
 
 SELECT:løyet-NARRET-og-bedratt $$TEMPUS IF
+        (NEGATE 0 pasv)
         (-2 $$TEMPUS)
         (-1 cm)
         (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
@@ -25087,6 +25089,7 @@ SELECT:løyet-NARRET-og-bedratt $$TEMPUS IF
         ;
 
 SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
+        (NEGATE 0 pasv)
         (-4 $$TEMPUS)
         (-3 cm)
         (-2 $$TEMPUS)
@@ -25098,7 +25101,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2472
  SELECT:2472 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-forledd-verb)
 	(-1C adverb)
 	(NOT -1 %ikke/også%)
@@ -25114,7 +25117,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2473
  SELECT:2473 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1 clb-komma)
 	(*-2O clb-komma LINK 1 pres LINK NOT 0 sier-verb)
@@ -25126,7 +25129,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2474
  SELECT:2474 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1 clb-komma)
 	(*1 clb-komma LINK 1 pres)
@@ -25179,7 +25182,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2477
  SELECT:2477 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(NOT 1 pres/pret)
 	(**-1C setn-gr BARRIER pres/pret)
@@ -25194,7 +25197,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2478
  SELECT:2478 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(NOT 1 pres/pret)
 	(**-1C setn-gr BARRIER pres/pret)
@@ -25210,7 +25213,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2479
  SELECT:2479 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(*1 setn-gr BARRIER pres/pret)
@@ -25221,7 +25224,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:6208
  SELECT:6208 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(1* pron/subst BARRIER pres/pret)
@@ -25251,7 +25254,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
  SELECT:2482 (vblex pres) IF
 	(NOT 0 sbu)
 	(NOT 0 adv)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(1C adv)
 	(**-2CO setn-gr LINK *1 ikke-adv-adj-det LINK 0 nom LINK NOT *1 alt)
 ;
@@ -25262,7 +25265,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2483
  SELECT:dansen-han-aldri-danser (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 setn-gr)
 	(-1C setningsadv)
 	(NOT -1 %nok%)
@@ -25276,7 +25279,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2484
  SELECT:2484 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 imp)
 	(NOT 0 setn-gr)
 	(-1 %ikke%)
@@ -25291,7 +25294,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2485
  SELECT:2485 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 setn-gr)
 	(-1C setningsadv)
 	(NOT *1 overskrift)
@@ -25307,7 +25310,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2486
  SELECT:2486 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(*-1O setn-gr LINK 0 spørreadv LINK *1 ikke-adv-adj-det LINK 0 nom LINK *1 ikke-poss-det LINK 0 %enn%)
 ;
 #  "hvor høyt en enn setter krillmengden
@@ -25318,7 +25321,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2487
  SELECT:2487 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 imp)
 	(NOT 0 prep)
 	(NOT *1 fv)
@@ -25333,7 +25336,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2488
  SELECT:2488 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(1 subst-prop)
 	(-1 %både%)
 	(2 subst-prop)
@@ -25346,7 +25349,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2489
  SELECT:2489 (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(1 subst-prop)
 	(-1 %både%)
 	(2 %og%)
@@ -27043,13 +27046,43 @@ SELECT:dette-var-det-vi-håpet-på pret IF
 
 SELECT:skal-X-fremstilles inf + pasv IF
         (0C pasv)
-        (*-1C fv + modalverb BARRIER clb OR vblex OR cnjsub)
+        (*-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
         ;
 # «Torsdag skal de fem framstilles for varetektsfengsling.»
 # Ikkje: «skal<modal> den dobbeltemballeres med ny tøysekk før<cnjsub> den bringes<pres!> ut til urent lager.»
 # Men ikkje: «Det kan være bare timer fra en sikkerhetsoppdatering slippes»
 # (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
+# TODO: Unntak for konstruksjonar med bli og adjektiv: 
+# "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
 
+SELECT:fremstilles-og-siktes inf + pasv IF
+        (0 pasv + pres)
+        (-1 cnjcoo)
+        (-2 pasv + inf)
+        ;
+        # skal framstillast og siktast
+
+SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 pasv + inf)
+        ;
+        # nå skal vannet drikkes og maten spises
+
+SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 prep)
+        (-4 pasv + inf)
+        ;
+        # nå skal vannet drikkes og maten spises
+
+SELECT:forvaltes-og-høstes pres + pasv IF
+        (0 pasv + inf)
+        (-1 cnjcoo)
+        (-2 pasv + pres)
+        ;
+        # ressursane blir forvalta og (blir) hausta
 
 
 SELECT:Det-har-vært-trist adj + nt IF
@@ -30007,7 +30040,7 @@ REMOVE:2135 (det) IF
 
 #:2108
  REMOVE:2108 (imp) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(1 fv)
 	(-1 setn-gr)
 	(NOT 1 %en%)
@@ -32034,6 +32067,7 @@ REMOVE:1943 vblex + pres IF
 
 #:1955
  REMOVE:1955 (vblex pres) IF
+        (NOT 0 pasv)
 	(-1 %at%)
 	(NOT 1 nom)
 ;
@@ -36495,7 +36529,7 @@ SELECT:frikjente adj IF
 #:1731
  SELECT:1731 (vblex pres) IF
 	(NOT 0 farlige-verb)
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 subst-gen)
 	(-1 clb-komma/konj)
 	(NOT 1 kolon)
@@ -36572,7 +36606,7 @@ SELECT:overhodet-for ("overhode" n) IF
 
 #:1732
 SELECT:generell-pres (vblex pres) IF
-	(NOT 0 pret)
+	(NOT 0 pret OR pasv)
 	(NOT 0 farlige-verb)
 	(NOT 0 subst-gen)
 	(NOT 1 kolon)
@@ -37411,7 +37445,7 @@ REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 	(NOT 0 m-hj-verb)
 	(*-1 setn-gr LINK 0 %og/men%)
 	(*1 pres/pret BARRIER setn-gr)
-	(*-1O >>> LINK NOT 1 sbu LINK *1 fv LINK NOT 0 pret LINK NOT 0 m-hj-verb)
+	(*-1O >>> LINK NOT 1 sbu LINK *1 fv LINK NOT 0 pret  LINK NOT 0 m-hj-verb)
 ;
 
 
