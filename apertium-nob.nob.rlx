@@ -39776,7 +39776,7 @@ REMOVE:default ("unge") + n;
 REMOVE:default ("gange") IF (0 ("gang"));
 REMOVE:default ("<høy>"i) + n;
 REMOVE:default ("<spiser>"i) + n;
-REMOVE:default inf + pasv IF (0 pres + pasv);
+REMOVE:default inf + pasv IF (0 pres + pasv) (NEGATE *-1 modalverb BARRIER clb OR vblex + inf OR cnjsub);
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
 REMOVE:default adv   IF (0 ("<det>"i));
