@@ -22422,7 +22422,7 @@ SELECT:natur-landet-har n + def IF
 
 #:2638
  SELECT:2638 (pres) IF
-	(NOT 0 farlige-verb)
+	(NOT 0 farlige-verb OR pasv)
 	(-1C pron/subst)
 	(NOT -1 pron-r)
 	(NOT -1 dato)
@@ -25515,7 +25515,7 @@ SELECT:føle-seg-beæret adj + pp IF
 
 #:2429
 SELECT:det-kan-vel-hende inf IF
-	(NOT 0 farlige-inf)
+	(NOT 0 farlige-inf OR pasv)
 	(NOT -1 ikke-adv-subst-pron-konj LINK NOT 0 det-kvant)
 	(*-1 m-hj-verb BARRIER setn-gr)
 	(*-1 m-hj-verb BARRIER inf)
@@ -27077,7 +27077,15 @@ SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
         ;
         # nå skal vannet drikkes og maten spises
 
-SELECT:forvaltes-og-høstes pres + pasv IF
+SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 adv OR adj)
+        (-4 pasv + inf)
+        ;
+        # då må vassmengdene aukast mykje og vatnet fordelast
+
+SELECT:forvaltes-og-høstes pasv + pres IF
         (0 pasv + inf)
         (-1 cnjcoo)
         (-2 pasv + pres)
@@ -39276,6 +39284,7 @@ SELECT:derfor-vil-samene-regnes vblex + inf + pasv IF
 
 SELECT:Ukjendord-utelukkes-ikke. fv IF
         (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
+        (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub)
         (0C vblex)
         (1 adv)
         ;
@@ -39776,7 +39785,7 @@ REMOVE:default ("unge") + n;
 REMOVE:default ("gange") IF (0 ("gang"));
 REMOVE:default ("<høy>"i) + n;
 REMOVE:default ("<spiser>"i) + n;
-REMOVE:default inf + pasv IF (0 pres + pasv) (NEGATE *-1 modalverb BARRIER clb OR vblex + inf OR cnjsub);
+REMOVE:default inf + pasv IF (0 pres + pasv) (NEGATE *-1 modalverb BARRIER vblex + inf);
 REMOVE:default ("den¹");
 "<den>" REMOVE:default ("den" prn) IF (0 ("den" det)); # avoid den→han if unsure
 REMOVE:default adv   IF (0 ("<det>"i));
