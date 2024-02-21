@@ -24482,39 +24482,51 @@ SELECT:skal-X-fremstilles inf + pasv IF
 # "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
 
 SELECT:fremstilles-og-siktes inf + pasv IF
-        (0 pasv + pres)
+        (-2C pasv + inf)
         (-1 %og/eller%)
-        (-2 pasv + inf)
         ;
         # skal framstillast og siktast
 
 SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
-        (0 pasv + pres)
+        (-3C pasv + inf)
         (-2 %og/eller%)
-        (-3 pasv + inf)
         ;
         # nå skal vannet drikkes og maten spises
 
 SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
-        (0 pasv + pres)
-        (-2 %og/eller%)
+        (-4C pasv + inf)
         (-3 prep)
-        (-4 pasv + inf)
+        (-2 %og/eller%)
         ;
         # nå skal vannet drikkes og maten spises
 
 SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
-        (0 pasv + pres)
-        (-2 %og/eller%)
+        (-4C pasv + inf)
         (-3 adv OR adj)
-        (-4 pasv + inf)
+        (-2 %og/eller%)
         ;
         # då må vassmengdene aukast mykje og vatnet fordelast
 
+SELECT:skal-som-tidligere-kalles pasv + inf IF
+        (-1 n LINK *-1 ("som") BARRIER ikke-adj-det LINK -1 modalverb)
+        ;
+# «– Jonas Gahr Støre skal som tidligere utenriksminister kalles inn.»
+
+SELECT:bør-rel-cm-prioriteres pasv + inf IF
+        (-1 cm LINK -1 n LINK *-1 pres BARRIER fv LINK -1 ("som") LINK *-1 modalverb BARRIER ikke-adv-adj-subst-pron-det)
+        ;
+# «På videregående bør yrkesfaglige studieprogrammer som er avhengig av verkstedundervisning og praktisk opplæring, prioriteres, heter det i høringsinnspillet.»
+
+SELECT:bør-rel-rel-cm-prioriteres pasv + inf IF
+        (-1 cm LINK -1 fv LINK -1 ("som") LINK -1 n LINK *-1 pres BARRIER fv LINK -1 ("som") LINK *-1 modalverb BARRIER ikke-adv-adj-subst-pron-det)
+        ;
+# «Onsdag startet myndighetene en vaksinasjonskampanje i byen, og i første omgang skal alle som har vært i kontakt med mannen som døde, vaksineres.»
+
+
 SELECT:forvaltes-og-høstes pasv + pres IF
-        (0 pasv + inf)
+        (-2C pasv + pres)
         (-1 %og/eller%)
-        (-2 pasv + pres)
+        (0 pasv + inf)
         ;
         # ressursane blir forvalta og (blir) hausta
 
@@ -25176,11 +25188,19 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 
 #:2474
- SELECT:2474 (vblex pres) IF
+ SELECT:2474-pasv (vblex pres) + pasv IF
 	(NOT 0 pret)
 	(NOT 0 farlige-verb)
 	(-1 clb-komma)
-	(*1 clb-komma LINK 1 pres)
+	(*1 clb-komma LINK 1 pres + pasv)
+;
+#  "krangles, sukkes og skrikes"
+
+ SELECT:2474-actv (vblex pres) - pasv IF
+	(NOT 0 pret)
+	(NOT 0 farlige-verb)
+	(-1 clb-komma)
+	(*1 clb-komma LINK 1 pres - pasv)
 ;
 #  "krangler, sukker og skriker"
 
@@ -36533,7 +36553,7 @@ SELECT:frikjente adj IF
 
 
 #:1731
- SELECT:1731 (vblex pres) IF
+SELECT:1731 (vblex pres) IF
 	(NOT 0 farlige-verb)
 	(NOT 0 pret)
 	(NOT 0 subst-gen)
@@ -36543,6 +36563,7 @@ SELECT:frikjente adj IF
 	(**-1C setn-gr BARRIER fv)
 	(**1C setn-gr BARRIER fv)
 	(NEGATE 0 subst LINK 1 %som%-sbu LINK 1 fv)
+        (NEGATE 0 inf LINK *-1 modalverb BARRIER inf)
 ;
 
 #:6202
