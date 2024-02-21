@@ -24470,6 +24470,57 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 
 
 
+SELECT:skal-X-fremstilles inf + pasv IF
+        (0C pasv)
+        (*-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
+        ;
+# «Torsdag skal de fem framstilles for varetektsfengsling.»
+# Ikkje: «skal<modal> den dobbeltemballeres med ny tøysekk før<cnjsub> den bringes<pres!> ut til urent lager.»
+# Men ikkje: «Det kan være bare timer fra en sikkerhetsoppdatering slippes»
+# (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
+# TODO: Unntak for konstruksjonar med bli og adjektiv: 
+# "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
+
+SELECT:fremstilles-og-siktes inf + pasv IF
+        (0 pasv + pres)
+        (-1 cnjcoo)
+        (-2 pasv + inf)
+        ;
+        # skal framstillast og siktast
+
+SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 pasv + inf)
+        ;
+        # nå skal vannet drikkes og maten spises
+
+SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 prep)
+        (-4 pasv + inf)
+        ;
+        # nå skal vannet drikkes og maten spises
+
+SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
+        (0 pasv + pres)
+        (-2 cnjcoo)
+        (-3 adv OR adj)
+        (-4 pasv + inf)
+        ;
+        # då må vassmengdene aukast mykje og vatnet fordelast
+
+SELECT:forvaltes-og-høstes pasv + pres IF
+        (0 pasv + inf)
+        (-1 cnjcoo)
+        (-2 pasv + pres)
+        ;
+        # ressursane blir forvalta og (blir) hausta
+
+
+
+
 #:2480
  SELECT:2480 (vblex pres) IF
 	(NOT 0 farlige-verb)
@@ -27043,60 +27094,6 @@ SELECT:dette-var-det-vi-håpet-på pret IF
         (-2C prn)
         ;
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
-
-SELECT:det-brukes pres + pasv IF
-        (0C pasv)
-        (NEGATE *-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
-        ;
-
-SELECT:skal-X-fremstilles inf + pasv IF
-        (0C pasv)
-        (*-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
-        ;
-# «Torsdag skal de fem framstilles for varetektsfengsling.»
-# Ikkje: «skal<modal> den dobbeltemballeres med ny tøysekk før<cnjsub> den bringes<pres!> ut til urent lager.»
-# Men ikkje: «Det kan være bare timer fra en sikkerhetsoppdatering slippes»
-# (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
-# TODO: Unntak for konstruksjonar med bli og adjektiv: 
-# "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
-
-SELECT:fremstilles-og-siktes inf + pasv IF
-        (0 pasv + pres)
-        (-1 cnjcoo)
-        (-2 pasv + inf)
-        ;
-        # skal framstillast og siktast
-
-SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
-        (0 pasv + pres)
-        (-2 cnjcoo)
-        (-3 pasv + inf)
-        ;
-        # nå skal vannet drikkes og maten spises
-
-SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
-        (0 pasv + pres)
-        (-2 cnjcoo)
-        (-3 prep)
-        (-4 pasv + inf)
-        ;
-        # nå skal vannet drikkes og maten spises
-
-SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
-        (0 pasv + pres)
-        (-2 cnjcoo)
-        (-3 adv OR adj)
-        (-4 pasv + inf)
-        ;
-        # då må vassmengdene aukast mykje og vatnet fordelast
-
-SELECT:forvaltes-og-høstes pasv + pres IF
-        (0 pasv + inf)
-        (-1 cnjcoo)
-        (-2 pasv + pres)
-        ;
-        # ressursane blir forvalta og (blir) hausta
-
 
 SELECT:Det-har-vært-trist adj + nt IF
 	(NOT 0 farlige-part)
