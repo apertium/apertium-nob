@@ -14144,6 +14144,15 @@ SELECT:skrev vblex IF
 # «Han hadde bare laget seg en blogg og skrevet i vei.»
 # men desse reglane kan sikkert nyanserast litt... -KBU
 
+
+"<forskrevet>"i REMOVE:forskrevet ("forskreve") IF
+	(0 adj/perf-part)
+        (NEGATE 1 %seg%)
+;
+"<forskrev>"i SELECT:forskrev ("forskrive") IF
+	(0 pret)
+        (NEGATE 1 %seg%)
+
 LIST skipsfartøy = ".*båt"ri ".*tråler"ri ".*skip"ri "supertanker" "fartøy" ;
 "<oppbrakt>"i SELECT:oppbrakt-over ("oppbringe") IF
 	(0* skipsfartøy)
