@@ -12964,6 +12964,9 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
         (1 n)
         ;
 
+"<hylles>" REMOVE gen IF
+        (NEGATE -1 ("en"))      # when is this ever genitive
+        ;
 
 #:4084
  "<hør>"   REMOVE:4084   (n) IF
@@ -13837,6 +13840,9 @@ REMOVE:landets-styrkjer vblex IF
         (2 infmerke)
         ;
 
+"<øremerkes>" SELECT:øremerkes-unlikely-gen pasv IF
+        (NEGATE -1 ("en"))      # when is this ever genitive
+        ;
 
 #:3361
 "<opptatt>" REMOVE:NOT-opptatt-ved vblex + pp IF
