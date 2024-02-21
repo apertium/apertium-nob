@@ -19888,6 +19888,15 @@ SELECT:båten-Andhøy-kjøpte fv IF
         ;
 # «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
 
+REMOVE:ingen-modal inf + pasv IF
+	(0 pres)
+	(NEGATE *-1 m-hj-verb)
+	;
+
+REMOVE:modal-til-venstre pres + pasv IF
+	(0 inf)
+	(*-1 m-hj-verb)
+	;
 
 SELECT:konsekvent-overholdt @adv IF
         (1C vblex + pp)

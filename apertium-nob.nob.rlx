@@ -23146,8 +23146,8 @@ SELECT:2594 (prn nom) IF
  SELECT:2585 expl IF
 	(0 %det/dette%)
 	(-1 fv)
-	(NOT 1 adj-sup-be)
-	(NOT *1 subst-nøyt BARRIER setn-gr)
+	(NEGATE 1 adj-sup-be)
+	(NEGATE *1 subst-nøyt BARRIER setn-gr)
 	(*-1O setn-gr LINK 1 adverb/komp/ub-sup)
 ;
 #  "Kanskje er det bedre at ..."
@@ -25312,6 +25312,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(*1 setn-gr BARRIER pres/pret)
+        (NEGATE 0 inf + pasv LINK *-1 modalverb)
 ;
 #  "Jeg hater fortsatt serberne og ønsker hevn"
 
@@ -25323,6 +25324,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(1* pron/subst BARRIER pres/pret)
+        (NEGATE 0 inf + pasv LINK *-1 modalverb)
 ;
 # KBU: «men sier<vblex, ikkje n> de vil avvente»
 
@@ -25456,6 +25458,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2490
  SELECT:2490 (vblex pres) IF
+        (NEGATE 0 pasv + inf LINK *-1 modalverb)
 	(NOT 0 subst-prop)
 	(NOT 0 farlige-verb)
 	(-1C pron/subst)
@@ -39331,7 +39334,7 @@ SELECT:derfor-vil-samene-regnes vblex + inf + pasv IF
 
 SELECT:Ukjendord-utelukkes-ikke. fv IF
         (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
-        (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub)
+        (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub - ("som"))
         (0C vblex)
         (1 adv)
         ;
