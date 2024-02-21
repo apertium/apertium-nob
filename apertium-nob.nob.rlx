@@ -27044,6 +27044,11 @@ SELECT:dette-var-det-vi-håpet-på pret IF
         ;
 # «– Flere var overkvalifiserte, hadde høyere og annen utdannelse enn det vi  trengte,  sier Eide»
 
+SELECT:det-brukes pres + pasv IF
+        (0C pasv)
+        (NEGATE *-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
+        ;
+
 SELECT:skal-X-fremstilles inf + pasv IF
         (0C pasv)
         (*-1C modalverb BARRIER clb OR vblex + inf OR cnjsub)
