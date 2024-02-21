@@ -37800,9 +37800,11 @@ REMOVE:ikke-sanns-subst-ent-ub subst-appell-ub-ent IF
 #:4999
 REMOVE:prioriter-s-verb (vblex pasv) IF
 	   (0 s-verb)
+           (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub)
 ;
 # KBU: Om me har valet mellom identisk passiv og pstv, vel pstv
 # (for å unngå t.d. finnes=>blir funne). Svært heuristisk...
+# Med modalt hjelpeverb -> infinitiv: "skal finnast" ("det kjennest"/"det kan kjennast")
 
 REMOVE:at-Ukjend-bevares inf IF
         (-2 %at%)
