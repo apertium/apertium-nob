@@ -595,7 +595,7 @@ LIST farlige-adj-subst = "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "s
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" ;
-LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre"  ("slette"  pasv) "røde"  "myke" "samene" ;
+LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre" "røde"  "myke" "samene" ;
 LIST farlige-mask-subst = "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
 LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ("sette" adj pp) ;
@@ -7968,6 +7968,9 @@ SELECT:NNs-forlovede n IF
 ;
 #  "slettes (adv) ikke"))
 
+"<slettes>" REMOVE adv IF
+        (NEGATE 1 %ikke/ingen%)
+        ;
 
 
 #:3266
@@ -23152,8 +23155,8 @@ SELECT:2594 (prn nom) IF
  SELECT:2585 expl IF
 	(0 %det/dette%)
 	(-1 fv)
-	(NOT 1 adj-sup-be)
-	(NOT *1 subst-nøyt BARRIER setn-gr)
+	(NEGATE 1 adj-sup-be)
+	(NEGATE *1 subst-nøyt BARRIER setn-gr)
 	(*-1O setn-gr LINK 1 adverb/komp/ub-sup)
 ;
 #  "Kanskje er det bedre at ..."
@@ -25318,6 +25321,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(*1 setn-gr BARRIER pres/pret)
+        (NEGATE 0 inf + pasv LINK *-1 modalverb)
 ;
 #  "Jeg hater fortsatt serberne og ønsker hevn"
 
@@ -25329,6 +25333,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 	(NOT 0 farlige-verb)
 	(-1C clb-konj)
 	(1* pron/subst BARRIER pres/pret)
+        (NEGATE 0 inf + pasv LINK *-1 modalverb)
 ;
 # KBU: «men sier<vblex, ikkje n> de vil avvente»
 
@@ -25462,6 +25467,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 #:2490
  SELECT:2490 (vblex pres) IF
+        (NEGATE 0 pasv + inf LINK *-1 modalverb)
 	(NOT 0 subst-prop)
 	(NOT 0 farlige-verb)
 	(-1C pron/subst)
@@ -39339,7 +39345,7 @@ SELECT:derfor-vil-samene-regnes vblex + inf + pasv IF
 
 SELECT:Ukjendord-utelukkes-ikke. fv IF
         (NEGATE 0 pp LINK *-1 %være/bli% BARRIER pp)
-        (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub)
+        (NEGATE *-1 modalverb BARRIER vblex + inf OR cnjsub - ("som"))
         (0C vblex)
         (1 adv)
         ;
