@@ -32087,7 +32087,7 @@ REMOVE:1943 vblex + pres IF
 #:1953
  REMOVE:1953 (vblex pres) IF
 	(NOT 0 pass)
-	(NOT -1 pron/subst)
+	(NOT -1 pron/subst OR expl)
 	(NOT -1 adv)
 	(NOT -1 parentes)
 	(*-1O setn-gr LINK **1C fv LINK NOT 0 trans2 LINK NOT *-1 pron LINK NOT *-1 subst)
@@ -32104,6 +32104,7 @@ REMOVE:1943 vblex + pres IF
 # salat vi var redd ville (fv) ta rotta på"))
 # «Båten jeg maler<fv> lekker<fv>»: ikkje fjern fv om verbet til
 # venstre har subst, så pron, føre seg -KBU
+# Ikkje: «Flere håper det bærer bud om et nytt kapittel for institusjonen.»
 
 
 
