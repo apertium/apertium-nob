@@ -24483,21 +24483,21 @@ SELECT:skal-X-fremstilles inf + pasv IF
 
 SELECT:fremstilles-og-siktes inf + pasv IF
         (0 pasv + pres)
-        (-1 cnjcoo)
+        (-1 %og/eller%)
         (-2 pasv + inf)
         ;
         # skal framstillast og siktast
 
 SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
         (0 pasv + pres)
-        (-2 cnjcoo)
+        (-2 %og/eller%)
         (-3 pasv + inf)
         ;
         # nå skal vannet drikkes og maten spises
 
 SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
         (0 pasv + pres)
-        (-2 cnjcoo)
+        (-2 %og/eller%)
         (-3 prep)
         (-4 pasv + inf)
         ;
@@ -24505,7 +24505,7 @@ SELECT:vannet-drikkes-og-maten-spises inf + pasv IF
 
 SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
         (0 pasv + pres)
-        (-2 cnjcoo)
+        (-2 %og/eller%)
         (-3 adv OR adj)
         (-4 pasv + inf)
         ;
@@ -24513,7 +24513,7 @@ SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
 
 SELECT:forvaltes-og-høstes pasv + pres IF
         (0 pasv + inf)
-        (-1 cnjcoo)
+        (-1 %og/eller%)
         (-2 pasv + pres)
         ;
         # ressursane blir forvalta og (blir) hausta
