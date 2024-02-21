@@ -23128,7 +23128,7 @@ SELECT:2594 (prn nom) IF
 
 
 #:2584
- SELECT:2584 (prn) IF
+ SELECT:2584 expl IF
 	(0 %det/dette%)
 	(-1 fv)
 	(*-1O setn-gr LINK 1 adverb/komp/ub-sup)
@@ -23140,7 +23140,7 @@ SELECT:2594 (prn nom) IF
 
 
 #:2585
- SELECT:2585 (prn) IF
+ SELECT:2585 expl IF
 	(0 %det/dette%)
 	(-1 fv)
 	(NOT 1 adj-sup-be)
@@ -24512,6 +24512,24 @@ SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
         (-2 %og/eller%)
         ;
         # då må vassmengdene aukast mykje og vatnet fordelast
+
+SELECT:skal-umiddelbart-bringes inf + pasv IF
+        (-2C modalverb)
+        (-1C adv)
+        (0C pasv OR gen)
+        (NEGATE 1 n + ind)
+        (NEGATE 1 adj LINK 2 n + ind)
+        ;
+# «De skal umiddelbart bringes videre til andre europeiske land.»
+
+SELECT:skal-det-hoppes inf + pasv IF
+        (-2C modalverb)
+        (-1 expl)
+        (0C pasv OR gen)
+        (NEGATE 1 n + ind)
+        (NEGATE 1 adj LINK 2 n + ind)
+        ;
+# «De skal umiddelbart bringes videre til andre europeiske land.»
 
 SELECT:skal-som-tidligere-kalles pasv + inf IF
         (-1 n LINK *-1 ("som") BARRIER ikke-adj-det LINK -1 modalverb)
