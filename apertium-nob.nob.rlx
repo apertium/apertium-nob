@@ -15709,6 +15709,18 @@ SELECT:default top IF
 		(0 ("Japan") OR ("Spania") OR ("Jemen") OR ("Island"))
 		;
 
+SELECT:krever-dem-løslatt adj + pl IF
+        (NEGATE *-1 ("ha") BARRIER vblex)
+        (*-3 nom)
+        (-2C vblex)
+        (-1 prn + p3 + pl + acc)
+        (NEGATE -1 ref)
+	(NEGATE 0 adv)		# «han forakter dem faktisk<adv>»
+	(NEGATE 1 adj)		# helt.sg uinteressante.pl
+        ;
+# «Flere land krever ham løslatt.»
+# «Vi holdt oss rolige.»
+
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
         (NEGATE *-1 %være/bli% CBARRIER n OR vblex OR ukjent) # vblex-pp: «Det kan ha skjedd endringer» vs adj-pp-pl «De kan bli redusert til …»

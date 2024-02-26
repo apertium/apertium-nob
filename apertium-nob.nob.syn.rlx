@@ -5436,7 +5436,7 @@ SELECT:de-så-mannen-bli-tatt @xubj IF
 # «De har forklart til politiet at de så mannen bli tatt av skredet …»
 
 WITH:krever-ham-løslatt @xubj + &&ADJ_N_AGR
-        (1 adj + &&ADJ_N_AGR OR adj + nt + sg + ind) # _C1_
+        (1 adj + &&ADJ_N_AGR)	# _C1_
         (*-2 @subj)
 	(-1 vblex)
 	# (-1 ("kreve") OR ("gjøre") OR ("holde"))
@@ -5446,8 +5446,8 @@ WITH:krever-ham-løslatt @xubj + &&ADJ_N_AGR
 	(NEGATE 1 adv)		# «han forakter dem faktisk<adv>»
 	(NEGATE 2 adj)		# helt.sg uinteressante.pl
 {
-	SELECT @xubj;
-	WITH _C1_ { SELECT @s-pred; };
+	SELECT:ham @xubj;
+	WITH:krever-ham _C1_ { SELECT:løslatt @s-pred; };
 };
 # «Flere land krever ham løslatt.»
 # «Vi holdt oss rolige.»
