@@ -8721,8 +8721,8 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 #:3228
 "<så>"   SELECT:å-være-så-stor adv IF
-	(1C adj)
 	(-1C inf)
+	(1C adj)
 ;
 #  "å være så stor"
 
@@ -8737,7 +8737,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 #:3230
 "<så>"   SELECT:svært-så-offisiell adv IF
-	(-1 adverb)
+	(-1 adverb OR %som%)
 	(1 adj)
 ;
 #  "svært så offisiell"
@@ -19707,7 +19707,7 @@ REMOVE:forventes-også-at adv IF
 
 
 #:2862
- SELECT:2862 (adv) IF
+SELECT:heller-ikke (adv) IF
 	(NOT 0 %så/og/selv%)
 	(NOT 0 det)
 	(NOT 0 sbu)
@@ -19715,6 +19715,7 @@ REMOVE:forventes-også-at adv IF
 	(NOT 0 prep)
 	(NOT 0 verb)
 	(-1C adv)
+        (NEGATE 0 adj LINK -1 %så% OR %like%)
 ;
 #  "heller ikke
 # NOT 0 VERB: nå, så"
@@ -27547,6 +27548,13 @@ REMOVE:har-indeksen-trolig-økt n IF
         (*-1 n)
 	(0C n OR pp OR adj)
 	(-1 trolig-ord)
+        ;
+
+
+REMOVE:så-stort adv IF
+        (-1 %så% OR %like%)
+        (0 adj + nt + sg + ind)
+        (1 setn-gr OR pr)
         ;
 
 REMOVE:mot-angivelig-russisk-støtte adv IF
@@ -39574,6 +39582,12 @@ SELECT:De-eldre-drikker-oftere fv IF
         (1C adv OR cnjsub)
         ;
 # «De fagorganiserte streiker for at»
+
+SELECT:kan-heller-ikke-minnes inf IF
+        (*-1 m-hj-verb BARRIER ikke-adv LINK -1 nom)
+        (0C pres OR inf OR gen)
+        ;
+# «For jeg kan heller ikke minnes noen mannlige soloartister som har skrevet all tekst og musikk, spiller de fleste instrumentene og har produsert et album som har blitt nominert til Spellemannspris heller!»
 
 SELECT:Prest-knivstukket adj IF
         (-2 >>>)
