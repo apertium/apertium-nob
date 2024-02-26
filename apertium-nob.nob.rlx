@@ -8751,8 +8751,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<så>"   SELECT:svært-så-offisiell adv IF
 	(-1 adverb OR %som%)
 	(1 adj)
+        (NEGATE *2 %ut%)        # «som så mest målfarlige ut»
 ;
 #  "svært så offisiell"
+# «Når en kommer fra Norge, så oppleves ikke dette som så stort.»
 
 
 
@@ -27574,6 +27576,7 @@ REMOVE:så-stort adv IF
         (-1 %så% OR %like%)
         (0 adj + nt + sg + ind)
         (1 setn-gr OR pr)
+        (NEGATE 0 ("langt"))
         ;
 
 REMOVE:mot-angivelig-russisk-støtte adv IF
