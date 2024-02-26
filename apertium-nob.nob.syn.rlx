@@ -5435,7 +5435,7 @@ SELECT:de-så-mannen-bli-tatt @xubj IF
         ;
 # «De har forklart til politiet at de så mannen bli tatt av skredet …»
 
-WITH:krever-ham-løslatt @xubj
+WITH:krever-ham-løslatt @xubj + &&ADJ_N_AGR
         (1 adj + &&ADJ_N_AGR OR adj + nt + sg + ind) # _C1_
         (*-2 @subj)
 	(-1 vblex)
