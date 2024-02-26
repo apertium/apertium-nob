@@ -3573,6 +3573,11 @@ MAP:1417 (@obj @i-obj @s-pred @app @←p-utfyll)   (prn acc) IF
 #  preposisjon foran"))
 
 
+MAP:krever-ham-løslatt (@obj @i-obj @s-pred @xubj @app)   (prn acc) + &&ADJ_N_AGR IF
+	(-1 verb)
+	(1 adj + &&ADJ_N_AGR OR adj + nt + sg + ind)
+	;
+
 
 #:1416
 MAP:1416 (@obj @i-obj @s-pred @app)   (prn acc) IF
@@ -5429,6 +5434,23 @@ SELECT:de-så-mannen-bli-tatt @xubj IF
         (1 @iv)
         ;
 # «De har forklart til politiet at de så mannen bli tatt av skredet …»
+
+WITH:krever-ham-løslatt @xubj
+        (1 adj + &&ADJ_N_AGR OR adj + nt + sg + ind) # _C1_
+        (*-2 @subj)
+	(-1 vblex)
+	# (-1 ("kreve") OR ("gjøre") OR ("holde"))
+        (0 p3 + acc)
+        (0C &&ADJ_N_AGR)
+        (NEGATE 0 ref)
+	(NEGATE 1 adv)		# «han forakter dem faktisk<adv>»
+	(NEGATE 2 adj)		# helt.sg uinteressante.pl
+{
+	SELECT @xubj;
+	WITH _C1_ { SELECT @s-pred; };
+};
+# «Flere land krever ham løslatt.»
+# «Vi holdt oss rolige.»
 
 REMOVE:not-xubj @xubj;
 
