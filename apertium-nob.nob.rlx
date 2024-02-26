@@ -29145,16 +29145,18 @@ REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
 
 
 #:2185
- REMOVE:2185 (clb) IF
+REMOVE:si-et-nytt-ord-eller (clb) IF
 	(0 konj)
 	(1 inf)
 	(NOT 1 farlige-inf)
 	(NOT 1 pret)
 	(**-1C inf CBARRIER setn-gr)
+        (NEGATE 1 pres LINK *-1 pres BARRIER inf)
 ;
 #  "si et nytt ord eller (ikke clb)
 # (forts) miste (inf) sin første tann
 # ikke PRET fordi feks kunne og skulle kan være det"
+# Ikkje: «– Trusselen kan stagges ved at hun overvåkes og fotfølges i framtiden.»
 
 
 
@@ -31957,7 +31959,7 @@ REMOVE:slo-seg-og-landet n + nt + def IF
 
 
 #:1938
- REMOVE:1938 (vblex pres) IF
+REMOVE:Nei-hvisker (vblex pres) IF
 	(-1 komma/konj)
 	(NOT -1 konj-<adv>)
 	(NOT -1 clb)
