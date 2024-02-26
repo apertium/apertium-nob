@@ -39943,6 +39943,8 @@ REMOVE:kakaobokser ("bokser") IF (0 ("boks")) ;
 REMOVE:breiflabbtråler ("stråler") IF (0 ("tråler")) (-1 det + sg) ;
 REMOVE:partikkelstråler ("tråler") IF (0 ("stråler")) ;
 
+REMOVE:default ("syne") IF (0 ("synes"));
+
 REMOVE:default ("hjem") + pl IF (0 sg); # unngå heimar
 REMOVE:default (".+hjem"r) + sg IF (0 pl) ; # men vanlegvis «fosterheimar»
 REMOVE:default (".*bygg"r) + sg IF (0 pl) ; # vanlegvis «næringsbygninger»
