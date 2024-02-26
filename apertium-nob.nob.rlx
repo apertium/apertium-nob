@@ -8088,6 +8088,17 @@ SELECT:NNs-forlovede n IF
 #  "Ei jente som (prep) meg"))
 
 
+"<som>" SELECT:som-X-og-ikke pr IF
+	(1C nom)
+        (2 %og/eller%)
+        (3 %ikke%)
+;
+# «Våre rettigheter må bli respektert som rettigheter og ikke behandles som forbruksvarer eller forretninger.»
+# «en klasseperson, som spiller og ikke minst som menneske.»
+# «de skal behandles som ansatte og ikke være selvstendig næringsdrivende.»
+
+
+
 
 #:3246
   "<som>"   SELECT:3246   (cnjsub) IF
