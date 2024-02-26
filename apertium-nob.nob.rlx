@@ -39620,6 +39620,12 @@ SELECT:Prest-knivstukket adj IF
         ;
 # «Prest knivstukket i kirke i Canada.»
 
+SELECT:det-hoppes pasv IF
+        (-1 %det%)
+        (0C pasv OR gen)
+        ;
+# «Der skal det hoppes to nye individuelle renn samt lagkonkurranse.»
+
 
 #### Number-guessing on (typically nt) sg/pl-ambiguous nouns after possessives:
 SELECT:alle-kommunens-idrettslag pl IF
