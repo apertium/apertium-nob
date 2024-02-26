@@ -14155,6 +14155,7 @@ SELECT:skrev vblex IF
 "<forskrev>"i SELECT:forskrev ("forskrive") IF
 	(0 pret)
         (NEGATE 1 %seg%)
+        ;
 
 LIST skipsfartøy = ".*båt"ri ".*tråler"ri ".*skip"ri "supertanker" "fartøy" ;
 "<oppbrakt>"i SELECT:oppbrakt-over ("oppbringe") IF
@@ -24523,7 +24524,14 @@ SELECT:prisen-økes-mye-og-varene-selges inf + pasv IF
         (-3 adv OR adj)
         (-2 %og/eller%)
         ;
-        # då må vassmengdene aukast mykje og vatnet fordelast
+# då må vassmengdene aukast mykje og vatnet fordelast
+
+SELECT:skal-bli-større-og-FLYTTES inf IF
+        (*-1C %og/eller% - clb BARRIER setn-gr OR fv LINK *-1C inf BARRIER setn-gr OR fv LINK *-1C m-hj-verb BARRIER setn-gr OR fv)
+        (0C inf OR pres)
+        ;
+# «Alt skal bli større og helst flyttes inn til de store byene.»
+
 
 SELECT:skal-umiddelbart-bringes inf + pasv IF
         (-2C modalverb)
@@ -24557,6 +24565,7 @@ SELECT:bør-rel-rel-cm-prioriteres pasv + inf IF
         (-1 cm LINK -1 fv LINK -1 ("som") LINK -1 n LINK *-1 pres BARRIER fv LINK -1 ("som") LINK *-1 modalverb BARRIER ikke-adv-adj-subst-pron-det)
         ;
 # «Onsdag startet myndighetene en vaksinasjonskampanje i byen, og i første omgang skal alle som har vært i kontakt med mannen som døde, vaksineres.»
+
 
 
 SELECT:forvaltes-og-høstes pasv + pres IF
@@ -25196,7 +25205,7 @@ SELECT:løyet-narret-og-BEDRATT $$TEMPUS IF
 
 
 #:2472
- SELECT:2472 (vblex pres) IF
+SELECT:derfor-gjelder-det (vblex pres) IF
 	(NOT 0 pret)
 	(NOT 0 farlige-forledd-verb)
 	(-1C adverb)
@@ -29411,6 +29420,13 @@ REMOVE:sjefenes-lønn-og-bonus-de-siste-årene clb + %og/eller% IF
         (1C n + ind + $$NUMBER)
         (2C dem)
         ;
+
+REMOVE:skal-bli-større-OG-flyttes clb + %og/eller% IF
+        (NEGATE -1 cm)
+        (*-1C inf BARRIER clb OR fv LINK *-1 m-hj-verb BARRIER clb OR fv)
+        (*1 inf BARRIER clb OR cnjsub OR fv LINK 0 pres) # inf/pres tvitydig, typisk pasv/s-verb
+        ;
+# «Alt skal bli større og helst flyttes inn til de store byene.»
 
 SELECT:x-kommer-og-y-holdes clb + %og/eller% IF
         (*-1C fv BARRIER clb)
