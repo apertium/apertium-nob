@@ -1717,6 +1717,7 @@ REMOVE:unlikely ("<litt>"i "lite");
 REMOVE:unlikely ("trase"); # trasé
 REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
+REMOVE:unlikely ("trive") IF (0 ("trives"));
 REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
 REMOVE:unlikely ("sult") + n + pl;
