@@ -23162,7 +23162,7 @@ SELECT:2594 (prn nom) IF
 
 
 #:2584
- SELECT:2584 expl IF
+ SELECT:2584 (prn) IF
 	(0 %det/dette%)
 	(-1 fv)
 	(*-1O setn-gr LINK 1 adverb/komp/ub-sup)
@@ -23174,7 +23174,7 @@ SELECT:2594 (prn nom) IF
 
 
 #:2585
- SELECT:2585 expl IF
+ SELECT:2585 (prn) IF
 	(0 %det/dette%)
 	(-1 fv)
 	(NEGATE 1 adj-sup-be)
