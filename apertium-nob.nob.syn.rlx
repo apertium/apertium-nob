@@ -2549,13 +2549,13 @@ MAP:1513 (@det→)   (det dem f sg) IF
 
 
 #:1512
-MAP:1512 (@det→)   (det dem nt sg) IF
+MAP:1512 (@det→)   (det dem nt sg) - expl IF
 	(1 ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst)
 ;
 
 
 #:1511
-MAP:1511 (@det→)   (det dem nt sg) IF
+MAP:1511 (@det→)   (det dem nt sg) - expl IF
 	(NOT 1 prop)
 	(*1 ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst BARRIER ikke-adv-adj-nr2det)
@@ -2563,7 +2563,7 @@ MAP:1511 (@det→)   (det dem nt sg) IF
 
 
 #:1510
-MAP:1510 (@det→)   (det dem nt sg) IF
+MAP:1510 (@det→)   (det dem nt sg) - expl IF
 	(1 subst)
 	(NOT 1 prop)
 	(NOT 1 m#mask)
@@ -2573,14 +2573,14 @@ MAP:1510 (@det→)   (det dem nt sg) IF
 
 
 #:1509
-MAP:1509 (@det→)   (det dem nt sg) IF
+MAP:1509 (@det→)   (det dem nt sg) - expl IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst LINK NOT 0 prop LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 fl LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
 
 
 #:1508
-MAP:1508 (@det→)   (det dem nt sg) IF
+MAP:1508 (@det→)   (det dem nt sg) - expl IF
 	(*1 be-ent-adj/be-det/komp-be-sup-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 be-ent-adj/be-det/komp-be-sup-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
 ;
@@ -2646,7 +2646,7 @@ MAP:6097 (@det→)   (det dem m sg) IF
 
 
 #:6096
-MAP:6096 (@det→)   (det dem nt sg) IF
+MAP:6096 (@det→)   (det dem nt sg) - expl IF
 	(NOT 1 m#komma)
 	(*1 fl-adj-nr2det/komp-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 fl-adj-nr2det/komp-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
