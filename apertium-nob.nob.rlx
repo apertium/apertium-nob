@@ -10559,6 +10559,11 @@ REMOVE:to-ansatte vblex IF
         ;
 # "Etter måneder med stor uro i klubben, ønsket det nye klubbstyret å bryte"
 
+"<ønsket>"i REMOVE:det-ønsket. vblex OR adj IF
+        (-1 %det%)
+        (1C sent OR fv OR cm)
+        ;
+
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
