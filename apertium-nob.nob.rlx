@@ -19875,16 +19875,17 @@ SELECT:heller-ikke (adv) IF
 
 
 #:2800
- SELECT:2800 (clb cnjcoo) IF
+SELECT:synger-og-spiller (clb cnjcoo) IF
 	(0 clb/konj-konj)
 	(1 pres)
 	(-1 pres)
 	(NOT 1 s-verb)
 	(NOT 1 farlige-verb)
+        (NEGATE 1 inf LINK *-1 inf CBARRIER pres)
 ;
 #  "synger og spiller
 # Ikke: må organiseres og skoleres"
-
+# Ikkje: «Mens 42 prosent mener det bør bli slutt på lekser og innføres heldagsskole, mener like mange at dagens timeplan og ordning med lekser bør fortsette.»
 
 
 
@@ -24543,6 +24544,7 @@ SELECT:skal-bli-større-og-FLYTTES inf IF
         (0C inf OR pres)
         ;
 # «Alt skal bli større og helst flyttes inn til de store byene.»
+
 
 
 SELECT:skal-umiddelbart-bringes inf + pasv IF
