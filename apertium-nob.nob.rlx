@@ -15713,6 +15713,13 @@ SELECT:default top IF
 		(0 ("Japan") OR ("Spania") OR ("Jemen") OR ("Island"))
 		;
 
+SELECT:det-kunne-de-gjort vblex + pp IF
+        (-3 %det/dette%)
+        (-2C m-hj-verb)
+        (-1 prn + nominativ)
+        ;
+# «Det kunne de gjort ved å bruke de sparte pengene på en ekstra satsing på skolene, påpeker hun.»
+
 SELECT:krever-dem-løslatt adj + pl IF
         (NEGATE *-1 ("ha") BARRIER vblex)
         (*-3 nom)
@@ -27147,6 +27154,8 @@ SELECT:observert-løpende pprs OR adv IF
         (NEGATE 1 adj + ind LINK 1 n + ind)
         ;
 
+
+
 SELECT:tilknyttet-de-tiltalte pp + pl IF
         (-2 fv LINK NOT 0 farlige-verb)
         (NOT 0 farlige-part)
@@ -27156,6 +27165,7 @@ SELECT:tilknyttet-de-tiltalte pp + pl IF
 
 SELECT:tilknyttet-de-tiltalte %de%-det IF
         (-1 fv LINK NOT 0 farlige-verb)
+        (NEGATE -1 m-hj-verb)
         (NOT 1 farlige-part)
         (1C pp OR pret)
         (1 pl)
