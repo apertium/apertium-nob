@@ -7150,6 +7150,10 @@ SELECT:regnet-i-dagens-pengeverdi regne_ut IF
        	(-1 prn)
         (1 pr LINK NOT 0 pr_etter_regnvann)
         ;
+"<regn>" SELECT:regn-og-vind n IF
+       	(1 %og%)
+        (2 n)
+        ;
 
 LIST instruments = "instrument" "gitar" "elgitar" "bassgitar" "steelgitar" "lutt" "balalaika" "bouzouki" "banjo" "dobro" "mandola" "mandolin" "sitar" "ukulele" "piano" "klaver" "flygel" "klavikord" "spinett" "cembalo" "orgel" "kirkeorgel" "konsertorgel" "pipeorgel" "harpe" "langeleik" "fiolin" "fele" "bratsj" "gambe" "hardingfele" "cello" "bass" "kontrabass" ;
 SELECT:stemme-gitaren ("stemme¹" vblex) IF
