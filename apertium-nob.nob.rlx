@@ -1807,6 +1807,7 @@ REMOVE:unlikely ("steile") IF (-1 ("stå")) (0 ("steil")) ; # «stått steilt»
 REMOVE:unlikely (".+sette"r "<.+satt>"ri) + pret  ; # Folk skriv «satt» i pret, men sjeldan «bosatt»
 REMOVE:unlikely ("<sult>"i) + pp ;
 REMOVE:unlikely ("<politi>"i) + m ;
+REMOVE:unlikely ("<kjenner>"i) + nt + pl ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
