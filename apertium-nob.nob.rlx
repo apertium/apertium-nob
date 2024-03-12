@@ -9532,6 +9532,10 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (1 %under% OR %over%)
         ;
 
+"<drømmer>"i SELECT:ha-drømmer ("drøm") IF
+        (-1 vblex)
+        ;
+
 "<drømmer>"i SELECT:selskapets-drømmer ("drøm") IF
         (-1 gen OR det + pos + pl)
         (1 %om%)
@@ -10040,6 +10044,7 @@ REMOVE:unlikely ("<True>") + adj ;
 REMOVE:unlikely ("sau") + n IF (0 ("saus")) (0/* cmp) ;
 REMOVE:unlikely ("<nesten>"i) + n ;
 REMOVE:unlikely ("<evne>"i) + vblex IF (1 pr) ;	# ha vilje og evne til
+REMOVE:unlikely ("båre") + pp ;	# båret inn
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -11457,6 +11462,7 @@ REMOVE:rentehopp ("hoppe") IF
 "<båret>" REMOVE:båret-vekk ("båre") IF
         (1 ("vekk"))
         ;
+
 # de ble båret vekk
 "<toer>" REMOVE:toer-med-seire ("toe") IF
         (*1 ("seier"))
