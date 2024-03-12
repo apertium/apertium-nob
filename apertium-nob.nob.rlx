@@ -1808,6 +1808,9 @@ REMOVE:unlikely (".+sette"r "<.+satt>"ri) + pret  ; # Folk skriv «satt» i pret
 REMOVE:unlikely ("<sult>"i) + pp ;
 REMOVE:unlikely ("<politi>"i) + m ;
 REMOVE:unlikely ("<kjenner>"i) + nt + pl ;
+REMOVE:unlikely ("<drømmer>"i) + n + sg IF (NEGATE -1 ("en")); # en drømmer / flere drømmer
+REMOVE:unlikely ("drømmer"i) + n + sg + ind IF (0/* cmp) (NEGATE -1 ("en"));
+REMOVE:unlikely ("<dagdrømmer>"i) + n + sg IF (NEGATE -1 ("en") OR adj + sg); # en dagdrømmer / flere dagdrømmer
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -9529,6 +9532,19 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (1 %under% OR %over%)
         ;
 
+"<drømmer>"i SELECT:våte-drømmer ("drøm") IF
+        (-1C adj + sp OR adj + pl)
+        ;
+
+"<drømmer>"i SELECT:drømmer-du-om ("drømme") IF
+        (1C pron)
+        (2C %om%)
+        ;
+
+"<drømmer>"i SELECT:drømmer-om ("drømme") IF
+        (1C %om%)
+        (NEGATE -1 adj + sp OR adj + pl)
+        ;
 
 #:3147
   "<vel>"   SELECT:3147   (adv) IF
