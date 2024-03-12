@@ -10044,7 +10044,7 @@ REMOVE:unlikely ("<True>") + adj ;
 REMOVE:unlikely ("sau") + n IF (0 ("saus")) (0/* cmp) ;
 REMOVE:unlikely ("<nesten>"i) + n ;
 REMOVE:unlikely ("<evne>"i) + vblex IF (1 pr) ;	# ha vilje og evne til
-REMOVE:unlikely ("båre") + pp ;	# båret inn
+REMOVE:unlikely ("båre"i) + pp ;	# båret inn (bære)
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
