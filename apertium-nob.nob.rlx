@@ -9532,14 +9532,26 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
         (1 %under% OR %over%)
         ;
 
+"<drømmer>"i SELECT:selskapets-drømmer ("drøm") IF
+        (-1 gen OR det + pos + pl)
+        (1 %om%)
+        ;
+        # oppfylle sine drømmer
+
+"<drømmer>"i SELECT:mange-drømmer-om ("drømme") IF
+        (-1* ("mange") BARRIER setn-gr)
+        (1 %om%)
+        ;
+
 "<drømmer>"i SELECT:våte-drømmer ("drøm") IF
         (-1C adj + sp OR adj + pl)
         ;
 
 "<drømmer>"i SELECT:drømmer-du-om ("drømme") IF
-        (1C pron)
+        (1C pron OR adv)
         (2C %om%)
         ;
+        # mange drømmer jo om å ta gull
 
 "<drømmer>"i SELECT:drømmer-om ("drømme") IF
         (1C %om%)
