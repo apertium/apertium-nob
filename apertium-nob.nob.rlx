@@ -1593,6 +1593,9 @@ REMOVE:Brannmannskap-har cgguess IF
         (1C fv)
         ;
 
+"<Nettavisen>" SELECT:Nettavisen-The-Insider n IF
+        (1 np + storbokstav)
+        ;
 
 SELECT:ringe-113 vblex IF
         (1 det + qnt)
@@ -2396,6 +2399,13 @@ REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 
 REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
 REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
+
+"<skrittet>"i SELECT ("skritt¹") + n IF
+        (-1 prep)
+        ;
+        # skrev: foran skrittet, i skrittet
+
+REMOVE:skrittet ("skritt"¹) ;
 
 "<oljerike>" SELECT:den-oljerike-provinsen adj IF
 		(-1 ("den"))
@@ -9516,6 +9526,16 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 		(-2 ("<tallet>"))
 		(-1 ("på"))
 		;
+"<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
+		(1 np)
+		;
+"<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
+		(1 %i%)
+                (2 ("NVE") OR ("Norges vassdrags og energidirektorat") OR ("Varsom.no" OR "Meteorologisk institutt"))
+		;
+"<snøskredvarsler>" SELECT:oppdaterte-snøskredvarsler ("snøskredvarsel") IF
+		(-1 adj + def)
+		;
 
 "<veier>" SELECT:begge-veier n IF
         (-1 ("begge"))
@@ -14641,8 +14661,18 @@ REMOVE:Vann  vblex OR adv IF
 ;
 #  "lite vanlig bøying i bm"
 
+"<rask>"i SELECT:vær-rask adj IF
+        (-1 ("<vær>"i))
+        ;
 
+"<snar>"i SELECT:vær-snar adj IF
+        (-1 ("<vær>"i))
+        ;
 
+"<vær>"i SELECT:vær-snill ("være") + imp IF
+        (1 adj)
+        ;
+        # Ver snill, ver varsam, ver snar
 
 #:3156
   "<var>"   REMOVE:3156   (adj pst mf) IF
