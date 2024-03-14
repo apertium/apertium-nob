@@ -8629,6 +8629,7 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<så>" SELECT:komma-så-reis cnjsub IF
         (-1 komma)
         (1 vblex + imp)
+        (NOT 1 ("<vi>"))
         ;
 
 "<så>" SELECT:komma-så-jeg cnjsub IF
