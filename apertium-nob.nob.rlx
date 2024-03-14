@@ -2407,6 +2407,24 @@ REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
 
 REMOVE:skrittet ("skritt"¹) ;
 
+SELECT ("gate¹") IF
+        (0 sg)
+        (-1 %ved%)
+        ;
+        # utgang på flyplass
+SELECT ("gate¹") IF
+        (0 sg)
+        (1 %på%)
+        ;
+SELECT ("gate¹") IF
+        (0 sg)
+        (-1 %til%)
+        (-2 ("gå"))
+        ;
+        # gå til gaten
+
+REMOVE:gaten ("gate"¹) ;
+
 "<oljerike>" SELECT:den-oljerike-provinsen adj IF
 		(-1 ("den"))
 		(1* n)
