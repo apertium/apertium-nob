@@ -5301,7 +5301,13 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         (1 %til%)
         ;
 
-"<grenser>" SELECT:mellom-frihet-og-grenser n IF
+"<grenser>"i SELECT:grenser-til vblex IF
+        (1 %til%)
+        (NEGATE -1 adj)
+        ;
+        # Värmland grensar til Noreg
+
+"<grenser>"i SELECT:mellom-frihet-og-grenser n IF
         (-1 %og%)
         (1 setn-gr OR rquot)
         ;
