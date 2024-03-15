@@ -394,6 +394,8 @@ LIST %også% = "også" "også¹" "også²" ;
 SET %ikke/også% = %også% OR ("ikke") ;
 LIST %og/eller% = "og"  "eller"  ;
 LIST %og/men% = "og"  "men"  ;
+LIST %å% = "å" ;
+LIST %at% = "at" ;
 LIST %om% = "om"  ;
 LIST %om/enn/som/hvis% = "som"  "om"  "hvis"  "enn"  ;
 LIST %opp% = "opp" "opp igjen"  ;
@@ -1814,6 +1816,8 @@ REMOVE:unlikely ("<kjenner>"i) + nt + pl ;
 REMOVE:unlikely ("<drømmer>"i) + n + sg IF (NEGATE -1 ("en")); # en drømmer / flere drømmer
 REMOVE:unlikely ("drømmer"i) + n + sg + ind IF (0/* cmp) (NEGATE -1 ("en"));
 REMOVE:unlikely ("<dagdrømmer>"i) + n + sg IF (NEGATE -1 ("en") OR adj + sg); # en dagdrømmer / flere dagdrømmer
+REMOVE:unlikely ("<rennene>"i) + n + m IF (0 storbokstav) ;
+REMOVE:unlikely ("<rennene>"i) + n + f IF (0 storbokstav) ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -6045,6 +6049,35 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
         # ikkje fleirtal av jordet
 
+"<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
+        (1 vekedag)
+        (2 ("i") OR ("på"))
+        (3 np)
+        ;
+
+"<landet>"i SELECT:ha-landet-på vblex IF
+        (-1 ("ha"))
+        (1 %på%)
+        ;
+        # barna har landa på Arlanda
+
+"<landet>"i SELECT:ha-landet-på vblex IF
+        (-2 ("ha"))
+        (-1 adv OR np OR prn)
+        (1 %på%)
+        ;
+        # SV har ikkje landa på noko konkret beløp
+        # Etter å ha gått nokon rundar både med meg sjølv og familien, har eg landa på at dette er noko eg verkeleg ønskjer
+
+"<landet>"i SELECT:ha-landet-på vblex IF
+        (-3 ("ha") + fv)
+        (-2 adv OR adj OR np OR prn)
+        (-1 adv OR adj)
+        (1 %på%)
+        ;
+        # Vi har ikkje heilt landa på kor lenge vi skal halde på
+        # No har Høgsterett einstemmig landa på at det var feil
+
 "<landet>" SELECT:landet-i-Norge vblex IF
 	(NOT -1 ("på"))
         (1 ("i"))
@@ -6164,12 +6197,6 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 det + qnt)
         (2 ("meter"))
         (3 ("fra") OR ("unna"))
-        ;
-
-"<landet>" SELECT:landet-lørdag-i-Oslo vblex IF
-        (1 vekedag)
-        (2 ("i") OR ("på"))
-        (3 np)
         ;
 
 "<langt>" SELECT:langt-bak adv IF
@@ -11103,6 +11130,12 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
 "<løvene>"i SELECT:dyret ("løve");
         # lauva mindre frekvent og sjeldan nytta i fleirtal (jf. "løvet/løvene faller av")
         # i Nynorskkorpuset gir "løvene" 87 treff, "lauva" (s.) 4 treff
+
+"<ønsker>"i SELECT:mål-og-ønsker n IF
+        (-2 ("mål") OR ("håp"))
+        (-1 %og%)
+        (NEGATE 1 %å% OR %at%)
+        ;
 
 SELECT:default ("rom") + n + nt IF
         (0/1 cmp)
