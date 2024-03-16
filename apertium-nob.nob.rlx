@@ -27107,7 +27107,7 @@ SELECT:2335 (vblex) IF
 	;
 
 #:2849
- SELECT:2849 (adv) IF
+ SELECT:er-vel-forskjell (adv) IF
 	(NOT 0 %blikk%)
 	(NOT 0 %så%)
 	(NOT 0 %alt%)
@@ -27116,7 +27116,7 @@ SELECT:2335 (vblex) IF
 	(NOT 0 sbu)
 	(NOT 0 %så/og/selv%)
         (NOT 0 %det%)
-	(1 nom)
+	(1 nom OR ("nærme"))
 	(-1 fv)
 ;
 #  "Det er vel (adv) forskjell
