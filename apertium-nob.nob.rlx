@@ -9581,9 +9581,11 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
 		(1 np)
 		;
+
+LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteorologisk institutt" ;
 "<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
 		(1 %i%)
-                (2 ("NVE") OR ("Norges vassdrags og energidirektorat") OR ("Varsom.no" OR "Meteorologisk institutt"))
+                (2 org-nve)
 		;
 "<snøskredvarsler>" SELECT:oppdaterte-snøskredvarsler ("snøskredvarsel") IF
 		(-1 adj + def)
