@@ -9882,6 +9882,52 @@ SELECT:alle-var-skrivne-ut adj + pl IF
         ;
 # «En av de tre er  fløyet  til Oslo for behandling »
 
+"<leger>" SELECT:leger-og-helsesykepleiere n IF
+		(1 ("og"))
+		(2 n)
+		;
+# I utgangspunktet er det kun leger og helsesykepleiere ...
+
+"<leger>" SELECT:å-lære-leger-kirurgi n IF
+		(-2 ("å"))
+		(-1 vblex + inf)
+		(1 n)
+		;
+# ... å lære leger krigskirurgi.
+
+"<leger>" SELECT:gir-ikke-leger n IF
+		(-2 vblex + pres)
+		(-1 adv)
+		;
+# Sykehus gir ikke leger fast jobb.
+
+"<leger>" SELECT:var-det-leger-ved-hospitalet n IF
+		(-2 vblex)
+                (1 pr)
+                (1 n OR np)
+		;
+# Her i Skandinavia var det leger ved Rikshospitalet
+
+"<leger>" SELECT:utdanningen-leger-må-gjennom n IF
+		(-1 n)
+                (1 vblex)
+		;
+# Utdanningen leger må gjennom er på fem år
+
+"<lege>" SELECT:jordmor-lege-eller-begge-deler n IF
+		(-2 n)
+                (-1 clb-komma)
+                (1 cnjcoo)
+		;
+# ... kvinner skal kunne få velge om de vil gå til jordmor, lege eller begge deler.
+
+"<lege>" SELECT:jordmor-lege-eller-begge-deler n IF
+		(-2 n)
+                (-1 clb-komma)
+                (1 cnjcoo)
+		;
+# Partene er enige blant annet enige om å etablere en egen samhandlingstakst mellom fastlege og lege i spesialisthelsetjenesten.
+
 "<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
 		(-4 prn)
 		(-3 ("ha"))
