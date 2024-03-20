@@ -3484,6 +3484,13 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 "<Den>" REMOVE:setnstart np IF (-1 >>>);
 
+"hin"   SELECT:dette-og-hint det IF
+	(-2 ("<denne>") OR ("<dette>"))
+        (-1 %og/eller%)
+;
+
+"<hint>"   REMOVE:hint det ;
+
 ##############################################
 # "den¹" er påpeikande, blir «den» på nno òg #
 # "den" blir «han/ho»                        #
