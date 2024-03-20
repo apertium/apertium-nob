@@ -9588,9 +9588,11 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 "<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
 		(1 np)
 		;
+
+LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteorologisk institutt" ;
 "<snøskredvarsler>" SELECT:snøskredvarsler-NN ("snøskredvarsler") IF
 		(1 %i%)
-                (2 ("NVE") OR ("Norges vassdrags og energidirektorat") OR ("Varsom.no" OR "Meteorologisk institutt"))
+                (2 org-nve)
 		;
 "<snøskredvarsler>" SELECT:oppdaterte-snøskredvarsler ("snøskredvarsel") IF
 		(-1 adj + def)
@@ -9886,6 +9888,57 @@ SELECT:alle-var-skrivne-ut adj + pl IF
         (-1 %være/bli%)
         ;
 # «En av de tre er  fløyet  til Oslo for behandling »
+
+"<leger>" SELECT:leger-og-helsesykepleiere n IF
+		(1 ("og"))
+		(2 n)
+		;
+# I utgangspunktet er det kun leger og helsesykepleiere ...
+
+"<leger>" SELECT:å-lære-leger-kirurgi n IF
+		(-2 ("å"))
+		(-1 vblex + inf)
+		(1 n)
+		;
+# ... å lære leger krigskirurgi.
+
+"<leger>" SELECT:gir-ikke-leger n IF
+		(-2 vblex + pres)
+		(-1 adv)
+		;
+# Sykehus gir ikke leger fast jobb.
+
+"<leger>" SELECT:var-det-leger-ved-hospitalet n IF
+		(-2 vblex)
+                (1 pr)
+                (1 n OR np)
+		;
+# Her i Skandinavia var det leger ved Rikshospitalet
+
+"<leger>" SELECT:utdanningen-leger-må-gjennom n IF
+		(-1 n)
+                (1 vblex)
+		;
+# Utdanningen leger må gjennom er på fem år
+
+"<lege>" SELECT:jordmor-lege-eller-begge-deler n IF
+		(-2 n)
+                (-1 clb-komma)
+                (1 cnjcoo)
+		;
+# ... kvinner skal kunne få velge om de vil gå til jordmor, lege eller begge deler.
+
+"<lege>" SELECT:fastlege-og-lege n IF
+		(-2 n)
+                (-1 ("og"))
+		;
+# Partene er enige blant annet enige om å etablere en egen samhandlingstakst mellom fastlege og lege i spesialisthelsetjenesten.
+
+"<lege>" SELECT:bør-lege-gjøre n IF
+		(-1 modalverb)
+                (1 vblex + inf)
+		;
+# ... bør lege gjøre en medisinsk vurdering av om vaksinasjon kan utsettes, skriver FHI.
 
 "<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
 		(-4 prn)
@@ -27112,7 +27165,7 @@ SELECT:2335 (vblex) IF
 	;
 
 #:2849
- SELECT:2849 (adv) IF
+ SELECT:er-vel-forskjell (adv) IF
 	(NOT 0 %blikk%)
 	(NOT 0 %så%)
 	(NOT 0 %alt%)
@@ -27121,7 +27174,7 @@ SELECT:2335 (vblex) IF
 	(NOT 0 sbu)
 	(NOT 0 %så/og/selv%)
         (NOT 0 %det%)
-	(1 nom)
+	(1 nom OR ("nærme"))
 	(-1 fv)
 ;
 #  "Det er vel (adv) forskjell
