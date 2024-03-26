@@ -10676,13 +10676,14 @@ SELECT:913 (@subj) IF
 
 
 #:912
-SELECT:912 (@subj) IF
+SELECT:Sevland-svarte (@subj) IF
 	(*1 periode-slutt/clb-konj LINK *-1C @fv LINK NOT *-1 @fv)
 	(*1C @fv BARRIER ikke-@adv)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 	(*-1 s#periode-beg/clb-konj BARRIER ikke-premod)
 ;
 #  " Leif Johan Sevland @SUBJ (h) svarte nokså svevende"))
+
 
 
 
@@ -11407,6 +11408,7 @@ SELECT:860 (@subj) IF
 	(NOT 0 @fv)
 	(NOT 0 @det→)
 	(*-1 s#setn-gr LINK *1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
+	(NEGATE 0 adj LINK *-1 kop BARRIER setn-gr LINK *-1 @subj BARRIER setn-gr)
 	(*1 @iv BARRIER @subj)
 	(*1 @iv BARRIER clb)
 	(*1 @iv LINK *-1 @fv - pasv LINK NOT *-1 %som%-sbu)
