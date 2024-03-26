@@ -2153,6 +2153,18 @@ MAP:ferie-finansiert-med (@s-pred @o-pred @adv @app @laus-np)   (adj) + &&ADJ_N_
 	;
 # «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie  finansiert  med lånte penger.»
 
+
+
+MAP:inntekter-tilknyttet-avlysningen (@s-pred @o-pred @adv @app @laus-np)   (adj) IF
+	(-1 n + ind + &&ADJ_N_AGR)
+	(NEGATE -1 mengdeord)
+	(0 ub-ent-nøyt/komp/ub-sup)
+	(NOT 0 %mulig%-nøyt)
+	(1 n OR np)
+;
+# «Det omfatter bortfall av inntekter tilknyttet avlysningen.»
+# «Tiltalte bodde i en bolig tilknyttet asylmottaket.»
+
 #:1554
 MAP:1554 (@s-pred @adv @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp/ub-sup)
@@ -5187,6 +5199,7 @@ SECTION select-words ;
 ;
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
 
+"<tilknyttet>" SELECT (@o-pred) ;
 
 #SECTION remove-words ;
 
