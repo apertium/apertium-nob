@@ -10184,6 +10184,7 @@ REMOVE:unlikely ("<evne>"i) + vblex IF (1 pr) ;	# ha vilje og evne til
 REMOVE:unlikely ("båre"i) + pp ;	# båret inn (bære)
 REMOVE:unlikely ("<snakket>"i) + n IF (1* ("sammen") OR %med% BARRIER setn-gr);	# snakka saman, snakka med
 REMOVE:unlikely ("<snakket>"i) + n IF (NEGATE -1 pr);	# stille seg tvilande til snakket, få slutt på snakket
+REMOVE:unlikely ("øye") + vblex ; # få auge på (verbet nyn: auge ein tømmerstokk)
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
