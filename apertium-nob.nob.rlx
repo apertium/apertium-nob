@@ -13596,7 +13596,19 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "7.11.2002: \"liten\" er adjektiv bortsett fra \"i siste liten\""
 
+  "<bitte lille>"   REMOVE:bitte-lille (adj) IF
+	(0 adj + def)
+        ;
+        # det ørvesle mexicanske håpet forsvann
 
+  "<bitte, bitte lille>"   REMOVE:bitte-bitte-lille (adj) IF
+	(0 adj + def)
+        ;
+        # den ørvesle kneika
+
+  "<bittelille>"   REMOVE:bitte-lille (adj) IF
+	(0 adj + def)
+        ;
 
 #:3454
   "<livet>"   REMOVE:3454   (vblex) IF
