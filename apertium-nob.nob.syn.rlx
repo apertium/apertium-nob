@@ -2153,6 +2153,18 @@ MAP:ferie-finansiert-med (@s-pred @o-pred @adv @app @laus-np)   (adj) + &&ADJ_N_
 	;
 # «Budskapet fra forbrukerøkonomen er tydelig til alle som velger en ferie  finansiert  med lånte penger.»
 
+
+
+MAP:inntekter-tilknyttet-avlysningen (@s-pred @o-pred @adv @app @laus-np)   (adj) IF
+	(-1 n + ind + &&ADJ_N_AGR)
+	(NEGATE -1 mengdeord)
+	(0 ub-ent-nøyt/komp/ub-sup)
+	(NOT 0 %mulig%-nøyt)
+	(1 n OR np)
+;
+# «Det omfatter bortfall av inntekter tilknyttet avlysningen.»
+# «Tiltalte bodde i en bolig tilknyttet asylmottaket.»
+
 #:1554
 MAP:1554 (@s-pred @adv @app @laus-np)   (adj) IF
 	(0 ub-ent-nøyt/komp/ub-sup)
@@ -5187,6 +5199,7 @@ SECTION select-words ;
 ;
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
 
+"<tilknyttet>" SELECT (@o-pred) ;
 
 #SECTION remove-words ;
 
@@ -10663,13 +10676,14 @@ SELECT:913 (@subj) IF
 
 
 #:912
-SELECT:912 (@subj) IF
+SELECT:Sevland-svarte (@subj) IF
 	(*1 periode-slutt/clb-konj LINK *-1C @fv LINK NOT *-1 @fv)
 	(*1C @fv BARRIER ikke-@adv)
 	(*1 periode-slutt/clb-konj BARRIER @subj)
 	(*-1 s#periode-beg/clb-konj BARRIER ikke-premod)
 ;
 #  " Leif Johan Sevland @SUBJ (h) svarte nokså svevende"))
+
 
 
 
@@ -11394,6 +11408,7 @@ SELECT:860 (@subj) IF
 	(NOT 0 @fv)
 	(NOT 0 @det→)
 	(*-1 s#setn-gr LINK *1 ikke-mod-u-perfpart-@←p-utfyll-@adv LINK NOT 1 prep)
+	(NEGATE 0 adj LINK *-1 kop BARRIER setn-gr LINK *-1 @subj BARRIER setn-gr)
 	(*1 @iv BARRIER @subj)
 	(*1 @iv BARRIER clb)
 	(*1 @iv LINK *-1 @fv - pasv LINK NOT *-1 %som%-sbu)
