@@ -2182,6 +2182,11 @@ SELECT:det-sterke-preget n IF
 		;
 REMOVE:unlikely ("<preget>"i) + n ;        # prega
 
+SELECT:snakket-går ("<snakket>"i) + n IF
+                (1* ("gå") BARRIER setn-gr)
+                ;	
+                # snakket går
+
 SELECT:det-antas %det%-pron IF
 		(1 ("anslå") + pres + pasv)
 		;
@@ -10177,6 +10182,8 @@ REMOVE:unlikely ("sau") + n IF (0 ("saus")) (0/* cmp) ;
 REMOVE:unlikely ("<nesten>"i) + n ;
 REMOVE:unlikely ("<evne>"i) + vblex IF (1 pr) ;	# ha vilje og evne til
 REMOVE:unlikely ("båre"i) + pp ;	# båret inn (bære)
+REMOVE:unlikely ("<snakket>"i) + n IF (1* ("sammen") OR %med% BARRIER setn-gr);	# snakka saman, snakka med
+REMOVE:unlikely ("<snakket>"i) + n IF (NEGATE -1 pr);	# stille seg tvilande til snakket, få slutt på snakket
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -10567,6 +10574,10 @@ REMOVE:fatte-mot pr IF
 
 SELECT:gang- ("gang¹") + cmp-split;
 # «Også flere gang- og sykkelstier inne i Frognerparken måtte stenges.»
+
+REMOVE:målgang-pilegrimsgang ("gang") + n IF
+        (0/1 cmp)
+        ;
 
 REMOVE:vante-gang n IF
         (0 ("vant"))
