@@ -1818,6 +1818,10 @@ REMOVE:unlikely ("drømmer"i) + n + sg + ind IF (0/* cmp) (NEGATE -1 ("en"));
 REMOVE:unlikely ("<dagdrømmer>"i) + n + sg IF (NEGATE -1 ("en") OR adj + sg); # en dagdrømmer / flere dagdrømmer
 REMOVE:unlikely ("<rennene>"i) + n + m IF (0 storbokstav) ;
 REMOVE:unlikely ("<rennene>"i) + n + f IF (0 storbokstav) ;
+REMOVE:unlikely ("<makt>"i) + vblex ; # jf. å make (seg)
+REMOVE:unlikely ("<makt>"i) + adj ; # jf. å make (seg)
+REMOVE:unlikely ("<makte>"i) + pret ; # jf. å make (seg)
+REMOVE:unlikely ("<makte>"i) + adj ; # jf. å make (seg)
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
