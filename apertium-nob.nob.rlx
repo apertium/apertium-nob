@@ -996,7 +996,7 @@ LIST pågående-ord = ".*aksjon"ri ".*angrep"ri ".*arbeid"ri ".*brann"ri ".*brud
 
 
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" "kår" ;
-LIST default-sg-after-poss = "rike" "samfunn" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r ;
+LIST default-sg-after-poss = "rike" "samfunn" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r "jerngrep" ;
 
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
