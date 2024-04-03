@@ -10187,6 +10187,7 @@ REMOVE:unlikely ("<snakket>"i) + n IF (NEGATE -1 pr);	# stille seg tvilande til 
 REMOVE:unlikely ("øye") + vblex ; # få auge på (verbet nyn: auge ein tømmerstokk)
 REMOVE:unlikely ("bande") + vblex ; # bande ei tønne
 REMOVE:unlikely ("bande") + adj ; # bande ei tønne
+REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "legen har helt bruddet" / "et helt brudd"?
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
