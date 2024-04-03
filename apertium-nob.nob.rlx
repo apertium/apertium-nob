@@ -10185,6 +10185,8 @@ REMOVE:unlikely ("båre"i) + pp ;	# båret inn (bære)
 REMOVE:unlikely ("<snakket>"i) + n IF (1* ("sammen") OR %med% BARRIER setn-gr);	# snakka saman, snakka med
 REMOVE:unlikely ("<snakket>"i) + n IF (NEGATE -1 pr);	# stille seg tvilande til snakket, få slutt på snakket
 REMOVE:unlikely ("øye") + vblex ; # få auge på (verbet nyn: auge ein tømmerstokk)
+REMOVE:unlikely ("bande") + vblex ; # bande ei tønne
+REMOVE:unlikely ("bande") + adj ; # bande ei tønne
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -10647,6 +10649,11 @@ SELECT:i-adj-hevd ("hevd") IF
         (1 adj + ind)
         (2 n)
         ;
+
+"<bandene>"i REMOVE:bandene (nt) IF
+        (0* ("kriminell") OR ("brutal") OR ("regjere") OR ("likvidere") OR ("bortføre") OR ("kidnappe") OR ("offer") OR ("bortføring") OR ("kidnapping") OR ("utpressing"))
+        ; 
+        # bånd/band -et, band -et (musikkgruppe), jf. bande -n
 
 # "Disse blå lysene..."
 "<asken>" REMOVE:asken-etter ("ask") IF
