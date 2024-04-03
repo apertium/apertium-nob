@@ -15451,6 +15451,11 @@ REMOVE:har-kartlagt-norske adj + pp IF
         ;
 # «Har kartlagt norske kommuners oppfølging.»
 
+"<tilknyttet>" REMOVE:n-tilknyttet-n pst OR vblex IF
+        (-1 n OR np)
+        (*1 n OR np BARRIER ikke-adj-det)
+        ;
+
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
         (0 ("<.*(ete|et)>"r))
