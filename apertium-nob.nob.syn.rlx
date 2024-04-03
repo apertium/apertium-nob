@@ -5199,7 +5199,10 @@ SECTION select-words ;
 ;
 #  " som den pedant han var, glemte han aldri å låse skuffen (NRG)"))
 
-"<tilknyttet>" SELECT (@o-pred) ;
+"<tilknyttet>" SELECT:er-selskapet-tilknyttet (@s-pred) IF
+	(*-1 @subj BARRIER @s-pred OR setn-gr LINK *-1 kop BARRIER @subj OR setn-gr)
+	;
+"<tilknyttet>" SELECT:eier-selskap-tilknyttet (@o-pred) ;
 
 #SECTION remove-words ;
 
