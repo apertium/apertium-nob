@@ -9949,6 +9949,11 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		;
 # ... bør lege gjøre en medisinsk vurdering av om vaksinasjon kan utsettes, skriver FHI.
 
+"<herpes>" SELECT:genital-herpes n IF
+		(-1 ("genital"))
+		;
+# Genital herpes
+
 "<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
 		(-4 prn)
 		(-3 ("ha"))
