@@ -1167,6 +1167,12 @@ APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}
         (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
 
+APPEND:np-guess-mwe-dash ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+-[A-ZÆØÅ][a-zæøå]{3,})>"r) IF
+        (0 storbokstav)
+        (NOT 0 not-np-guess)
+        ;
+# «Israel-Premier» (unngå «premiar»), «avisa Brisbane Courier-Mail» (unngå «Courier-e-post»)
+
 APPEND:np-guess-mwe-cmp ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (0 storbokstav)
         (1 storbokstav)
