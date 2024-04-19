@@ -1565,6 +1565,16 @@ SELECT:Eidsvoll-Skien np IF
         ;
 # «strekningene mellom Lillehammer – Drammen (R10), Eidsvoll – Skien (R11) og Halden – Oslo S (R20), som alle er på Østlandet.»
 
+SELECT:VGs-Knut-Li np + ant IF
+        (-1 np + gen)
+        (1 np + cog)
+        ;
+
+SELECT:VGs-Knut-Are-Li np + ant IF
+        (-1 np + gen)
+        (1 np + ant)
+        (2 np + cog)
+        ;
 
 SELECT:nestleder-Sanner np IF
         (-1 yrkestittel-ord)
