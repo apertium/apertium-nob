@@ -8547,6 +8547,8 @@ REMOVE:unlikely ("leire") + pl ;
 
 REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna døme der «fellen» utvetydig må vera "fell"
 
+REMOVE:unlikely ("<vekt>"i) + adj ;
+
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
 	(NOT -1 det-prep-infmerke-adjbe)
@@ -35202,6 +35204,10 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
 
 "<sammenstøt>" REMOVE:samanstøytar sg IF
         (NOT -1 det + sg)
+        ;
+
+"<oppstøt>" SELECT:sure-oppstøytar pl IF
+        (-1 adj + pl)
         ;
 
 #:3336
