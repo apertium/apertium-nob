@@ -7029,8 +7029,65 @@ SELECT:tranene ("trane") IF
         (1 np OR storbokstav)
         ;
 
-"<røyk>" SELECT:giftig-røyk n IF
+"<røyk>"i SELECT:tauet-røyk vblex IF
+        (-1 n + def)
+        (NEGATE -1 ("mengde"))
+        ;
+
+"<røyk>"i SELECT:røyk-ut-i-kvartfinalen vblex IF
+        (1 %ut%)
+        (2 %i%)
+        (3 ("kvartfinale") OR ("semifinale"))
+        ;
+
+"<røyk>"i SELECT:giftig-røyk n IF
         (-1 adj + sg + ind)
+        ;
+
+"<røyk>"i SELECT:viser-røyk n IF
+        (-1 vblex)
+        ;
+
+"<røyk>"i SELECT:røyk-som n IF
+        (1 %som%)
+        ;
+
+"<røyk>"i SELECT:alkohol-og-røyk n IF
+        (0* ("alkohol") OR ("øl") OR ("rusmiddel") OR ("snus") OR ("narkotika") OR ("tobakk") OR ("tåke") OR ("framme") OR ("brann"))
+        ;
+
+"<røyk>"i SELECT:røyk sg IF
+        (0 n + pl + ind)
+        ;
+        # Fleirtal "røykar" er mogleg, men svært uvanleg
+
+"<løse>"i SELECT:løse-utfordringer vblex IF
+        (1* ("problem") OR ("utfordring") OR ("oppgave"))
+        ;
+
+"<løse>"i SELECT:hvordan-løse vblex IF
+        (-1 ("hvordan"))
+        ;
+        # Korleis løyse daglegdagse utfordringar
+
+"<lokale>"i SELECT:din-lokale adj IF
+        (-1 det + m + sg)
+        ;
+
+"<behandler>"i SELECT:din-lokale-behandler n IF
+        (-1 adj + sg)
+        ;
+
+"<beholder>"i SELECT:full-beholder n IF
+        (1 vblex)
+        ;
+
+"<beholder>"i SELECT:full-beholder n IF
+        (-2 vblex)
+        ;
+
+"<beholder>"i SELECT:beholder-med n IF
+        (1 %med%)
         ;
 
 "<klipp>"i SELECT:default nt IF
@@ -9412,6 +9469,14 @@ REMOVE:unlikely ("<vekt>"i) + adj ;
         (NOT 1 ("inn") OR ("til"))
         (NOT *1 ("kraft"))
         (NOT *1 ("i kraft"))
+        ;
+
+"<trygge>" SELECT:å-trygge vblex IF
+        (-1 %å%)
+        ;
+
+"<trygge>" SELECT:få-trygge-rammer adj IF
+        (-1* vblex BARRIER setn-gr)
         ;
 
 "<trygge>" SELECT:gode-og-trygge adj IF
