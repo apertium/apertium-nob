@@ -9247,6 +9247,10 @@ REMOVE:unlikely ("<vekt>"i) + adj ;
 # «Vi kan ikke la det skje»
 # «så kan alt skje»
 
+"<skje>" SELECT:gjerne-skje inf IF
+        (-1 adv)
+        ;
+
 "<skjelvet>" SELECT:skjelvet-i-buksa pp IF
         (1 %i% LINK 1 ("bukse"))
         ;
@@ -11503,6 +11507,12 @@ REMOVE:rekke-ut-handa ("rake") IF
         ;
 "<skje>" REMOVE:vil-måtte-skje n IF
         (-1 ("ville# måtte"))
+        ;
+"<skje>" REMOVE:vil-måtte-skje n IF
+        (-2 ("ville# måtte"))
+        ;
+"<skje>" REMOVE:vil-måtte-skje n IF
+        (-3 ("ville# måtte"))
         ;
 "<løyet>" SELECT:vinden-hadde-løyet ("løye") IF
         (-2* ("vind") BARRIER setn-gr)
