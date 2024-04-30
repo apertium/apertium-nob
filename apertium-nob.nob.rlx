@@ -3516,6 +3516,10 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 "<hint>"   REMOVE:hint det ;
 
+"<gang>"i SELECT:krigens-gang ("gang¹") IF
+        (-1 gen)
+        ;
+
 ##############################################
 # "den¹" er påpeikande, blir «den» på nno òg #
 # "den" blir «han/ho»                        #
