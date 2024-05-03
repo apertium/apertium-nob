@@ -10040,10 +10040,10 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		;
 # ... bør lege gjøre en medisinsk vurdering av om vaksinasjon kan utsettes, skriver FHI.
 
-"<herpes>" SELECT:genital-herpes n IF
-		(-1 ("genital"))
-		;
-# Genital herpes
+"<herpes>"i SELECT:genital-herpes n ;
+# «Genital herpes»
+# «Samleie bør også unngås hvis partneren har blemmer eller herpes nedentil.»
+# (I korpus er det aldri passiv; kanskje det finst trygge unntak, men generelt tryggare å halda seg til substantivet her …)
 
 "<misbrukt>" SELECT:hun-har-blitt-misbrukt adj + sg IF
 		(-4 prn)
