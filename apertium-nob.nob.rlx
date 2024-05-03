@@ -1488,6 +1488,12 @@ SELECT:Halvor-Egner-Granerud np IF
         ;
 
 
+SELECT:GRO-M.-Eide-default np + ant IF
+        (0 storbokstav)
+        (1 np + init)
+        (2 np + cog)
+        ;
+
 SELECT:GRO-Eide-default np + ant IF
         (0 storbokstav)
         (1 np + cog)
@@ -1495,6 +1501,12 @@ SELECT:GRO-Eide-default np + ant IF
 
 SELECT:Gro-EIDE-default np + cog IF
         (-1 np + ant)
+        (0 storbokstav)
+        ;
+
+SELECT:Gro-EIDE-default np + cog IF
+        (-2 np + ant)
+        (-1 np + init)
         (0 storbokstav)
         ;
 
