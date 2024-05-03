@@ -6852,6 +6852,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "De tør nærme seg hverandre."
 
+  "<nære>"   SELECT:nære-forbindelser (adj) IF
+	(1 n + pl)
+;
+
 "<nær>" SELECT:utstasjonert-nær pr IF
         (-1C pp)
         (1 top)
