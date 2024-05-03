@@ -7079,20 +7079,23 @@ SELECT:tranene ("trane") IF
         # Korleis løyse daglegdagse utfordringar
 
 "<lokale>"i SELECT:din-lokale adj IF
-        (-1 det + m + sg)
+        (-1C det + m + sg)
         ;
 
 "<behandler>"i SELECT:din-lokale-behandler n IF
-        (-1 adj + sg)
+        (-1C adj + sg)
         ;
 
 "<beholder>"i SELECT:full-beholder n IF
-        (1 vblex)
+        (1C vblex)
         ;
 
 "<beholder>"i SELECT:full-beholder n IF
-        (-2 vblex)
+        (-2C vblex)
+        (-1 adj)
         ;
+# Ikkje: «Fersk finansminister Jan Tore Sanner (H) gir Siv Jensen gode skussmål, men håper hun beholder «litt av finansministerhatten» også i opposisjon.»
+
 
 "<beholder>"i SELECT:beholder-med n IF
         (1 %med%)
