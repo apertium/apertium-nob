@@ -34123,6 +34123,10 @@ REMOVE:å-stjele-showet pret OR pp IF
 
 SECTION 3-select-words-heur ;
 
+"<Aps>" REMOVE:Aps ("Aps") IF
+        (1 n OR np OR adj)
+        ;
+
 "<av>" SELECT:av-dere pr IF
         (1 prn + acc)
         ;
@@ -40829,6 +40833,7 @@ REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.�
 "<øyeblikkelig>" REMOVE:default-umiddelbar ("øyeblikkelig" adj pst mf sg ind) ;	# keep øyeblikkelig<adj><pst><nt><sg><ind>→umiddelbart
 REMOVE:default-fondene ("fond" m) ;
 REMOVE:default-profil ("profil" nt) ;
+REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 
 "<skillet>"i REMOVE:default ("skill") ;
 "<vinder>" REMOVE:default ("vinde") ;
