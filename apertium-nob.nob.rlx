@@ -13884,6 +13884,18 @@ REMOVE:tilbakekaller-leker ("lek") IF
         ;
 
 
+"<nedsatt>" SELECT pp IF
+        (0 adj)
+        (-1 %være/bli%)
+        ;        
+        # Utvalet vart sett ned
+        ### Eigentleg adj: pp gir ikkje fleirtalsbøying, men fleirtal sjeldan aktuelt
+
+"<nedsatt>" REMOVE vblex IF
+        (0 adj OR pp)
+        (1 n)
+        ;
+
 #:3415
   "<navnet>"   REMOVE:3415   (vblex) IF
 	(*1 setn-gr LINK NOT *1 klær)
