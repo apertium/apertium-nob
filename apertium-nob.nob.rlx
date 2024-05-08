@@ -10962,6 +10962,30 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 np)
         ;
 # "Tidligere bryter Stig Berge"
+
+"<låter>"i REMOVE:låter-som vblex IF
+        (1 %som%)
+        (2 lquot)
+        ;
+        # Med låtar som "Optimist"
+
+"<låter>"i SELECT:det-låter-som vblex IF
+        (-1 prn + pers + nom OR ("den") + det + dem)
+        (1 %som%)
+        ;
+        # ho læt som mange av dei klassiske soulsongarane som inspirerte oss
+
+"<låter>"i REMOVE:låter-som vblex IF
+        (-1 vblex)
+        (1 %som%)
+        ;
+
+"<låter>"i REMOVE:-synge-låter-som vblex IF
+        (-2 vblex)
+        (1 %som%)
+        ;
+        # I fjor slapp hun låter som «Brightsider»
+
 "<låter>"i REMOVE:tusen-låter vblex IF
         (-1 adj OR det)
         ;
