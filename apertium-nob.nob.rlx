@@ -11603,27 +11603,9 @@ REMOVE:rekke-ut-handa ("rake") IF
         (0 ("besette²"))
         ;
         # Trump var besett av å bli verande i stillinga som president
-
-"<besatt>" SELECT:å-bli-besatt-av ("besatt") IF
-        (-2 ("<å>"i))
-        (-1 %være/bli%)
-        (1 %av%)
-        ;
         # Guardiola er kjend for å vere besett av detaljar på treningsfeltet.
         # Teksten handlar om å bli besett av den klassiske forfattaren Edgar Allan Poe.
-
-"<besatt>" SELECT:om-å-være-besatt ("besatt") IF
-        (-3 %om%)
-        (-2 ("<å>"i))
-        (-1 %være/bli%)
-        ;
         # Han understrekar at det ikkje handlar om å vere besett, men heller å tre inn i ei rolle
-
-"<besatt>" SELECT:han-er-besatt-av ("besatt") IF
-        (-2 prn)
-        (-1 %være/bli%)
-        (1 %av%)
-        ;
         # Kelly fortalde korleis han vart besett av kontrollbehov.
 
 "<besatt>" SELECT:som-besatt ("besatt") IF
