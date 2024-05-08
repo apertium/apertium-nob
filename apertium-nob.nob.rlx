@@ -4304,7 +4304,7 @@ SELECT:bilens-dekk ("<dekk>"i) + n + pl IF
         (-1 gen)
         ;
         # bildekka
-
+"<profiler>" REMOVE:default-profil ("profil" n nt pl ind) ;	# keep profil<n><m><pl><ind>→profilar
 SELECT:prosjektets-tre-ledere det IF
         (-1 gen)
         (0 ("tre"))
@@ -11594,6 +11594,11 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<Løy>"i SELECT:Løy-du ("lyve") IF
         (1 pron)
         ;
+        
+"<besatt>"i SELECT:være-besatt-av ("besatt") IF
+        (0 ("besette²"))
+        ;
+        # Trump var besett av å bli verande i stillinga som president
 
 "<besatt>" SELECT:å-bli-besatt-av ("besatt") IF
         (-2 ("<å>"i))
