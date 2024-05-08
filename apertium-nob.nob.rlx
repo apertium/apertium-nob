@@ -10535,6 +10535,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (1 n OR fork/ukjent-ord)
         (2 kop-fv)
         ;
+"<begravet>"i SELECT:-der-ligger-hunden-begravet adj IF
+        (-1* ("ligge") BARRIER setn-gr)
+        ;
 "<fattet>"i SELECT:beslutningen-om-dette-fattet-av pp + mf IF
         (-3 n + m OR n + f)
         (-2 ("om"))
@@ -11596,6 +11599,7 @@ REMOVE:rekke-ut-handa ("rake") IF
         ;
         
 "<besatt>"i SELECT:være-besatt-av ("besatt") IF
+        (-1 %være/bli%)
         (0 ("besette²"))
         ;
         # Trump var besett av å bli verande i stillinga som president
