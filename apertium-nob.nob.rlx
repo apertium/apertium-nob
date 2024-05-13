@@ -10338,6 +10338,14 @@ REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
         (0 adj)
         ;
 
+"<gjengene>"i REMOVE:unlikely-gjenge nt + pl + def ;
+
+"<lek>"i SELECT:lek-og-lærd adj IF
+        (2 ("lærd")) ;
+
+"<lek>"i REMOVE:unlikely-adj adj ;
+        # lekbasert
+
 "<Viken>" SELECT:typically-np-if-caps np;
 "<Jeg>"   REMOVE:not-n-if-caps n IF
         (-1 >>>)
