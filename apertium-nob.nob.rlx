@@ -2051,6 +2051,11 @@ SELECT:inngått ("<inngått>"i) + vblex + pp IF
         ;
         # boken er skrevet av A.A. Milne
 
+"<gjenfunnet>"i SELECT:er-gjenfunnet adj + pp IF
+        (*-1 %være/bli% BARRIER setn-gr)
+        ;
+        # boka er funnen att (ei attfunnen bok)
+
 "<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
 
 "<Bent>" SELECT:Bent-Høie np IF
