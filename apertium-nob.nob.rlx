@@ -1850,6 +1850,7 @@ REMOVE:unlikely ("<makt>"i) + vblex ; # jf. å make (seg)
 REMOVE:unlikely ("<makt>"i) + adj ; # jf. å make (seg)
 REMOVE:unlikely ("<makte>"i) + pret ; # jf. å make (seg)
 REMOVE:unlikely ("<makte>"i) + adj ; # jf. å make (seg)
+REMOVE:unlikely ("statsråd"i) + nt + pl ; # Statsrådene mener
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -12105,6 +12106,11 @@ REMOVE ("pote") IF
 "<angrepet>" REMOVE:deltatt-i-angrepet pp IF
         (-2 ("delta"))
         (-1 %i%)
+;
+
+"<angrepet>" REMOVE:var-angrepet pp IF
+        (-1 ("<var>"))
+        (NEGATE 1 %av%)
 ;
 
 "<angrep>" REMOVE:blodig-angrep pret IF
