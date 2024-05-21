@@ -12113,6 +12113,16 @@ REMOVE ("pote") IF
         (NEGATE 1 %av%)
 ;
 
+"<angrepet>" REMOVE:ble-også-hun-angrepet n IF
+        (-3 %være/bli%)
+        (-1 prn OR np)
+;
+
+SELECT:angrepet-og-påført adj + sg IF
+        (-2 adj + sg)
+        (-1 ("og"))
+;
+
 "<angrep>" REMOVE:blodig-angrep pret IF
         (-1C adj + pst OR adj + sup OR adj + nt + ind OR det + qnt)
 ;
