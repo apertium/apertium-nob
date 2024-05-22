@@ -12115,11 +12115,12 @@ REMOVE ("pote") IF
 
 "<angrepet>" REMOVE:ble-også-hun-angrepet n IF
         (-3 %være/bli%)
-        (-1 prn OR np)
+        (-1C prn OR np)
 ;
 
-SELECT:angrepet-og-påført adj + sg IF
-        (-2 adj + sg)
+"<angrepet>" SELECT:angrepet-og-påført adj + sg IF
+        (NEGATE *-3 %ha% BARRIER setn-gr)
+        (-2C adj + sg)
         (-1 ("og"))
 ;
 
