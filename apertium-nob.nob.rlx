@@ -1877,6 +1877,19 @@ REMOVE:unlikely ("sin") + adv ;
         # varme klær og tepper
 
 
+REMOVE:bite-på-kroken ("bitt") + n IF
+        (1C %på%)
+        (2C ("krok"))
+;
+REMOVE:bite-på-kroken n IF
+        (1C %på%)
+        (2C ("krok"))
+;
+REMOVE:bite-seg n IF
+        (1C refl-prn)
+;
+# bite seg merke i
+
 "<samarbeidet>"i REMOVE:at-samarbeidet vblex IF
         (-1 %at% OR cnjcoo OR cnjsub)
         (NEGATE 1 prn + pers + nom)
@@ -12235,6 +12248,19 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
 # Heile «basert på» fungerer her som ein preposisjon (som introduserer eit adverbial):
 # «Foretakene skal beregne kundens evne til å betjene lånet  basert  på kundens inntekt»
 
+"<bitt>"i REMOVE:ble-hun-bitt-av n IF
+        (-1C* %være/bli% BARRIER setn-gr)
+;
+
+"<bitt>"i REMOVE:bitt-som-fører pp IF
+        (1 %som%)
+        (2 pres OR pret)
+;
+# av desse får rundt 2 prosent bit som fører til sjukdom
+
+"<biter>"i REMOVE:biter-av-mozarella vblex IF
+        (1 %av%)
+;
 
 "<blinkene>" REMOVE:blinkane nt IF
         (NEGATE -1 adj + def)
