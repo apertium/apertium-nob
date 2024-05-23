@@ -1877,18 +1877,16 @@ REMOVE:unlikely ("sin") + adv ;
         # varme klær og tepper
 
 
-REMOVE:bite-på-kroken ("bitt") + n IF
+SELECT:bite-på-kroken ("bite") + vblex IF
         (1C %på%)
         (2C ("krok"))
 ;
-REMOVE:bite-på-kroken n IF
-        (1C %på%)
-        (2C ("krok"))
-;
-REMOVE:bite-seg n IF
+# Ikkje: «fikk en fisk på kroken»
+SELECT:bite-seg ("bite") + vblex IF
         (1C refl-prn)
 ;
 # bite seg merke i
+# Ikkje: «… styrket forbruket seg igjen»
 
 "<samarbeidet>"i REMOVE:at-samarbeidet vblex IF
         (-1 %at% OR cnjcoo OR cnjsub)
