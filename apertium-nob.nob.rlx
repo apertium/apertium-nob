@@ -11293,7 +11293,30 @@ SELECT:sittet-varetektsfengslet pp IF
         (1 n OR np)
         ;
 
+"<Minnet>" SELECT:minnet-om n IF
+        (1 %om%)
+        ;
+"<minnet>"i SELECT:at-minnet-om n IF
+        (-1 %at%)
+        (1 %om%)
+        ;
+"<minnet>"i SELECT:som-minnet-om pret IF
+        (-1 %som%)
+        (1 %om%)
+        ;
 # "SV minner regjeringen om..."
+"<minnet>"i REMOVE:angrepet-minnet-om n IF
+        (-1 n OR np OR prn)
+        (1 %om%)
+        ;
+"<minnet>"i SELECT:angrepet-minnet-om pret IF
+        (1 %om%)
+        (NEGATE -1C* ("ha" vblex) OR ("få" vblex))
+        ;
+"<minnet>"i SELECT:ha-minnet-om pp IF
+        (-1* ("ha" vblex))
+        (1 %om%)
+        ;
 "<telt>"i SELECT:er-telt-opp adj IF
         (-1* %være/bli% BARRIER setn-gr)
         (1 %opp%)
