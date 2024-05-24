@@ -9737,6 +9737,25 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 "<veier>" SELECT:begge-veier n IF
         (-1 ("begge"))
         ;
+        
+"<veier>" SELECT:blokkerte-veier n IF
+        (-1C* vblex BARRIER setn-gr)
+        ;
+        
+"<veier>" SELECT:veier-på-bygda n IF
+        (1C prep)
+        (NEGATE 2 talord)
+        ;
+        # på vegar over heile landet
+        
+"<veier>" SELECT:stenging-av-veier n IF
+        (-1C %av%)
+        ;
+        
+"<veier>" SELECT:veier-som n IF
+        (1C %som%)
+        ;
+
 
 #:3152
   "<veit>"   SELECT:3152   (n) IF
