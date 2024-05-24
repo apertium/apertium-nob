@@ -8646,6 +8646,15 @@ REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna dø
 
 REMOVE:unlikely ("<vekt>"i) + adj ;
 
+REMOVE:unlikely ("<utløp>"i) + imp ;
+SELECT:utløp-fredag ("<utløp>"i) + pret IF
+        (1C* vekedag)
+        ;
+        # Fristen ... gjekk ut tysdag
+REMOVE:unlikely ("<utløp>"i) + pret IF
+        (0C* ("innløp") OR ("inntak") OR ("elv") OR ("bekk") OR ("vann") OR ("sund") OR ("fjord"))
+        ;
+
 #:3236
   "<svart>"   SELECT:3236   (vblex pp) IF
 	(NOT -1 det-prep-infmerke-adjbe)
