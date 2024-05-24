@@ -33231,6 +33231,13 @@ REMOVE:og-redusert-evne vblex + pp IF
 # NOT 1 PREP: , skapt (perf-part) for"))
 
 
+"<fryste>" SELECT:fryste-midler adj IF
+	(1 n + ind)
+	;
+"<fryste>" SELECT:fryste-russiske-midler adj IF
+        (1 adj)
+	(2 n + ind)
+	;
 "<fryste>" SELECT:de-fryste-midlene adj IF
 	(-1 prn)
 	(1 n)
