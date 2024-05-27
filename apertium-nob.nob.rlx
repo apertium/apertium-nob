@@ -2508,6 +2508,21 @@ REMOVE:unlikely ("sale") + vblex + pret IF
         ;
         # salte og strø
 
+"<midler>"i REMOVE:unlikely-en-midler m + sg + ind
+        ;
+
+"<midler>"i SELECT:fellesskapets-midler m IF
+        (-1 ("fellesskap") + gen)
+        ;
+
+"<føler>"i SELECT:føler-seg vblex IF
+        (1 prn + acc)
+        ;
+
+"<føler>"i REMOVE:unlikely-føler n + m + sg + ind IF
+        (NEGATE -1 ("<en>"))
+        ;
+
 # Prefer nouns in compounds, unless in exception-list:
 LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" "stor" ;
 REMOVE:prefer-ncmp adj IF
