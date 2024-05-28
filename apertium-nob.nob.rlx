@@ -13327,6 +13327,30 @@ REMOVE ("frø") IF
 ;
 #  "Sjelden: ei hit = skinnsekk"
 
+"<hjem>" SELECT:hjem-til-jul pr IF
+		(1C %til%)
+                (2C n OR np OR prn)
+		;
+
+"<hjem>" SELECT:flere-hjem n + pl IF
+		(-1 comp)
+		(NEGATE -2 ("<et>i") OR %og%)
+		;
+
+"<hjem>" SELECT:sende-alle-hjem pr IF
+		(-1C n OR np OR prn OR ("<alle>"i))
+		;
+
+"<hjem>" SELECT:kjøre-smittede-hjem pr IF
+		(-1C n OR np OR prn OR adj)
+		(-2C vblex)
+		;
+
+"<hjem>" SELECT:sitt-plyndrede-hjem n + sg IF
+		(-1 adj)
+		(-2 ("sin") + sg)
+		;
+
 "<hjem>" SELECT:flere-tusen-hjem n + pl IF
 		(-2 ("<flere>") OR ("<mange>") OR ("<noen>"))
 		(-1 talord)
@@ -37577,7 +37601,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
-	(NOT 0 %tiltalte%)
+	(NOT 0 %tiltalte% OR ("<fordrevne>"))
 	(*1O pron/subst LINK *-1 ikke-adv-adj-det)
 	(*-1O ikke-adv-adj-det-pron LINK NOT 0 det-ent/pron-ent LINK NOT 1 det-ent/pron-ent)
 ;
