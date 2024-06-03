@@ -1663,6 +1663,14 @@ REMOVE:acronym-samecase ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
 # same, remove lower-case readings.
 # E.g.: AU is an acronym, not adv
 
+REMOVE:acronym-differentcase ("[A-ZÆØÅ]?[a-zæøå]+"r) IF
+        (0 ("<([A-ZÆØÅ][a-zæøå][A-ZÆØÅ]+)>"r "$1"v))
+        ;
+# If we have an upper-lower-upper wordform and a reading that's exactly the
+# same, remove lower-case readings.
+# E.g.: AiR is an acronym, not noun
+
+
 REMOVE:acronym-samecase-num ("[0-9][0-9\-]*[a-zæøå]+"r) IF
         (0 ("<([0-9][0-9\-]*[A-ZÆØÅ]+)>"r "$1"v))
         ;
