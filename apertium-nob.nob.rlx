@@ -11247,6 +11247,11 @@ REMOVE:Isnes-ansatt vblex IF
         ;
 # «Da ble målvakten dopet ned og svindlet.»
 
+"<egget>"i SELECT n
+        (-2C ("høne"))
+        ;
+        # høna og/eller egget
+
 "<skutt>"i SELECT:skutt-fart vblex + pp IF
 	(*-1 %ha% BARRIER setn-gr)
         (1 ("fart"))
@@ -24594,8 +24599,8 @@ SELECT:landets-nest-største-sykehus n + sg IF
 		(-1 adj)
 		;
 
-"<leser>" SELECT:leser-opp vblex IF
-		(1 ("opp"))
+"<leser>"i SELECT:leser-opp vblex IF
+		(1 n OR ("opp") OR %for% OR %inn% OR %om% OR adv OR adj OR ("man"))
 		;
 
 "<lite>" SELECT:et-lite-øyeblikk ("liten") IF
