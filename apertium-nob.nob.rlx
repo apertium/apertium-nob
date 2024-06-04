@@ -1599,7 +1599,22 @@ SELECT:Zuccas-Rangers np IF
         (0C n OR np)
         ;
 
-SELECT:den-røde-leir ("leir") + n + m IF
+REMOVE:unlikely-leire-pl ("leire") + pl ;
+
+REMOVE:unlikely-leire-vblex ("leire") + vblex IF
+        (NEGATE 1 ("<seg>"i))
+        ;
+        # leire seg
+
+"<leire>"i REMOVE:unlikely-leire ("leire") + sg + ind IF
+        (0*C ("internere") OR ("fordrive") OR ("drive") OR ("krig") OR ("konflikt") OR ("flyktning") OR ("immigrant") OR ("krigsfange") OR ("befolkning") OR ("folk") OR ("barn") OR ("familie") OR ("dø") OR ("død") OR ("foreldre") OR ("mor") OR ("far") OR ("politisk") OR ("forvaring") OR ("FN") OR ("WHO") OR ("organisasjon") OR ("nødhjelp"))
+        ;
+
+"<leire>"i REMOVE:unlikely-leirar ("leir") + pl + ind IF
+        (0*C ("grave") OR ("ligge") OR ("gli") OR ("skli") OR ("bevare") OR ("rase") OR ("forme") OR ("dreie") OR ("krukke") OR ("ras") OR ("skred") OR ("bevegelse") OR ("jord") OR ("sand") OR ("stein") OR ("sandstein") OR ("jordlag") OR ("trekull") OR ("brenne") + adj)
+        ;
+
+SELECT:den-røde-leir ("leir") + n + m + ind IF
         (-1 adj)
         ;
         # den raude leiren
@@ -2217,7 +2232,6 @@ REMOVE:unlikely ("anklager") + n IF
 # END Early removal of unlikely / rare forms
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
-
 
 SELECT:holde-stand vblex IF
         (0 ("holde"))
@@ -8664,8 +8678,6 @@ SELECT:utspilte-nesebor ("utspilt") + adj IF
 
 REMOVE:unlikely ("<utspilt>"i) + adj ;
 
-REMOVE:unlikely ("leire") + pl ;
-
 REMOVE:unlikely SUB:* ("fell") IF (0 ("felle")) ; # har ikkje klart å finna døme der «fellen» utvetydig må vera "fell"
 
 REMOVE:unlikely ("<vekt>"i) + adj ;
@@ -10414,6 +10426,12 @@ REMOVE:unlikely-agent-noun-vs-adj n + pl + ind + unlikely-agent-noun IF
 
 "<lek>"i REMOVE:unlikely-adj adj ;
         # lekbasert
+
+REMOVE:unlikely-imp imp IF
+        (-1C prep OR vblex)
+        ;
+        # i tett leire
+        # liggje tett
 
 "<Viken>" SELECT:typically-np-if-caps np;
 "<Jeg>"   REMOVE:not-n-if-caps n IF
