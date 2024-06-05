@@ -7781,6 +7781,21 @@ SELECT:NNs-forlovede n IF
 #  "Ytre sett er det slik at ..."
 
 
+"<sett>"i   SELECT:ikke-sett-opp-for-mye-imp   (vblex imp) IF
+	(-1 %ikke%)
+        (1 %opp%)
+        (2 %for% OR comp)
+        (3 ("<mange>"i) OR ("<mye>"i) OR ("<få>"i) OR ("<lite>"i) OR ("<enn>"i))
+;
+# "ikke sett opp for mange økter"
+# "ikke sett opp mer enn tre punkter"
+# "se opp for: jeg fikk ikke sett opp for å se "
+
+"<sett>"i   SELECT:sett-opp-en-imp   (vblex imp) IF
+        (1 %opp%)
+        (2 %en/ei/et%)
+;
+# "sett opp en likning"
 
 #:3312
   "<sett>"   SELECT:3312   (vblex pp) IF
