@@ -2092,6 +2092,10 @@ SELECT:inngått ("<inngått>"i) + vblex + pp IF
         ;
         # boka er funnen att (ei attfunnen bok)
 
+"<oversendt>"i REMOVE:er-oversendt vblex IF
+        (-1* %være/bli% OR ("få" vblex) BARRIER setn-gr)
+        ;
+
 "<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
 
 "<Bent>" SELECT:Bent-Høie np IF
@@ -4427,13 +4431,34 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
 		(-1 ("<eier>"i))
 		;
 
-"<eier>"i SELECT:han-som-eier-skipet vblex IF
-        (-1 %som%)
-        (1 n OR np)
-        ;
+ SELECT:som-både-eier-og-leier-fly vblex IF
+        (-2 %som%)
+	(-1 %både% OR ("enten"))
+        (1 %og/eller%)
+; SELECT:som-både-eier-og-leier-fly vblex IF
+        (-4 %som%)
+	(-3 %både% OR ("enten"))
+        (-2 vblex)
+        (-1 %og/eller%)
+;
+#  "som både eier og leier fly";
+
+
+ SELECT:både-kjøper-og-selger vblex IF
+        (NEGATE -2 vblex)
+	(-1 %både% OR ("enten"))
+        (1 %og/eller%)
+	(2 vblex)
+;
+#  "som både selger og kjøper på FINN"
 
 "<eier>"i SELECT:som-eier-er n IF
         (1 vblex + pres OR vblex + pret)
+        ;
+
+"<eier>"i SELECT:han-som-eier-skipet vblex IF
+        (-1 %som%)
+        (1 n OR np)
         ;
 
 SELECT:eier-av ("<eier>"i) + n IF
@@ -4466,6 +4491,10 @@ SELECT:som-eier-med ("<eier>"i) + n IF
 "<eier>"i SELECT:som-eier-en-slik-hytte vblex IF
         (-1 %som%)
         (3 n)
+        ;
+
+"<leier>"i SELECT:leier-ut pres IF
+        (1C %ut%)
         ;
 
 
@@ -24890,10 +24919,8 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 #      :group 40
 
 
-
 #:2509
  SELECT:2509 subst IF
-	(NOT 0 ikke-subst-verb)
 	(1 %og%)
 	(-1 %både%)
 	(2 subst)
