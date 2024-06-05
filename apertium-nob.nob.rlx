@@ -9823,14 +9823,19 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 		(-1 adj + def)
 		;
 
+"<veier>" SELECT:veier-til-sammen vblex IF
+        (1 ("til"))
+        (2 ("sammen"))
+        ;
+
 "<veier>" SELECT:begge-veier n IF
         (-1 ("begge"))
         ;
-        
+
 "<veier>" SELECT:blokkerte-veier n IF
         (-1C* vblex BARRIER setn-gr)
         ;
-        
+
 "<veier>" SELECT:veier-på-bygda n IF
         (1C prep)
         (NEGATE 2 talord)
