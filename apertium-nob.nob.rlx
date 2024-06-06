@@ -6870,7 +6870,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "kh feb 2004: Bare i samme/neste nu."
 
-
+"<nå>"   SELECT:se-nå adv IF
+	(-1 vblex)
+;
+# Det ser nå ut til at
 
 #:3392
   "<nå>"   SELECT:3392   (vblex inf) IF
