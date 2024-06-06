@@ -11331,6 +11331,35 @@ REMOVE:Isnes-ansatt vblex IF
         ;
         # høna og/eller egget
 
+"<heiser>"i SELECT vblex
+        (1C n OR adj OR ("<flagget>"i))
+        ;
+        # heiser flagget
+
+"<flagget>"i SELECT vblex + pp
+        (1 %ut%)
+        ;
+        # mange skipsredere har flagget ut
+
+"<flagget>"i SELECT adj + pp
+        (-1* %være/bli% BARRIER setn-gr)
+        (NEGATE 1* adj + pp OR vblex + pp BARRIER setn-gr)
+        (NEGATE -1* adj + pp OR vblex + pp BARRIER setn-gr)
+        ;
+        # da ble flagget heist
+
+"<flagget>"i SELECT vblex + pp
+        (-1 %ha%)
+        (1 n)
+        ;
+        # han har flagga motstand mot
+
+"<flagget>"i SELECT n
+        (-1 vblex)
+        ;
+        # Venstre heiser flagget til topps for Vestre!
+        # Fredag hang flagget over Forbundsdagen
+
 "<skutt>"i SELECT:skutt-fart vblex + pp IF
 	(*-1 %ha% BARRIER setn-gr)
         (1 ("fart"))
