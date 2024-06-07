@@ -32850,6 +32850,14 @@ REMOVE:1943 vblex + pres IF
 
 #090908 1C
 
+ REMOVE:start-leddsetning (vblex) IF
+	(-1 %at%)
+        (1 vblex)
+;
+# at lærer (n) forteller (vblex) og går gjennom
+# motsett: at er (vblex) lærer (n)
+# det tenkjer eg at går fint
+
 
 #:1955
  REMOVE:1955 (vblex pres) IF
