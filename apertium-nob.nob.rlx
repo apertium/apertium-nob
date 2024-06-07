@@ -2384,6 +2384,12 @@ REMOVE:skal-det-gås ("<gås>"i) + n  IF
 		;
         # der skal det gåast
 
+REMOVE:vil-det-bo ("<bo>"i) + n  IF
+		(-2* modalverb BARRIER setn-gr)
+		(-1* ("<det>") BARRIER setn-gr)
+		;
+        # vil det (da) bo
+
 SELECT:laget-av ("<laget>"i) + n IF
 		(1 %av%)
 		(-1C adj)
@@ -3130,6 +3136,14 @@ SELECT:hen-til pr IF
 	(-1 %tross%)
 ;
 #  "tross alt"
+
+
+#:3777
+  "<av>"   SELECT:3777   (pr) IF
+	(-2 %på%)
+        (-1 %tross%)
+;
+#  "på tross av"
 
 
 
