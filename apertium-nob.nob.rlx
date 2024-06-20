@@ -1833,6 +1833,7 @@ REMOVE:unlikely ("<mynter>"i f);
 REMOVE:unlikely ("<sine>" vblex);
 REMOVE:unlikely ("<virker>"i) + pl;
 REMOVE:unlikely ("kak");
+REMOVE:unlikely ("trikk") + nt;
 REMOVE:unlikely ("børse");
 REMOVE:unlikely ("ap") IF (0 ("ape"));
 REMOVE:unlikely ("katte") IF (0 ("katt"));
