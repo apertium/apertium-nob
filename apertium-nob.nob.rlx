@@ -1155,6 +1155,7 @@ LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse
 
 "<A-å.>"i SELECT:initial np IF (1 np);
 
+
 APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
         (0 storbokstav)
         (NOT 0 not-np-guess)
@@ -1191,6 +1192,16 @@ APPEND:np-guess-forbokstavnamn-gen ("$1"v np org cgguess gen) TARGET ("<(\\p{Lu}
 # Forbokstavord + små bokstavar: "ZDNet", "CMore", "UNFCCC", "(pave Benedict) XVI"
 APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[\\p{L}\\p{Nd}]+)>"r) IF
         (0C ukjent)
+        ;
+
+# Forkortingar a la "UiA" blir tolka som berre store bokstavar av
+# seinare Apertium-steg pga. dei startar og sluttar med stor bokstav,
+# men me vil beholda dei små i midten for desse (ved å legga det til
+# som lemma):
+APPEND:np-guess-BookendcasE ("$1"v np cgguess) TARGET ("<([A-ZÆØÅ].*[a-zæøå].*[A-ZÆØÅ])>"r) IF
+        (NEGATE 0 ("$1"v)) # viss den allereie har dette lemmaet så er det ingen vits i å legga til på nytt
+        (NEGATE 0 not-np-guess)
+        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
 
 "<de>" SELECT:da-møter-de-Drafn prn IF
