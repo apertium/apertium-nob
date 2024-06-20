@@ -3936,6 +3936,11 @@ SELECT:den+prn ("den¹") IF
 # «Vi har 32 døde på grunn av terrorister»
 # «Ifølge myndighetene er det nå bekreftet 107 døde etter eksplosjonen»
 
+"<døde>" SELECT:flere-funnet-døde adj IF
+        (-1C ("<funnet>") OR ("<bekreftet>"))
+        ;
+# Turister funnet døde i hetebølge
+
 "<døde>" SELECT:tre-døde-i vblex + pret IF
         (-1 talord-par-siffer)
         (1 prep )
@@ -11989,6 +11994,13 @@ REMOVE:rentehopp ("hoppe") IF
         (1 pp)
         ;
 # har vannet begynt å stige
+
+"<apoteker>"i REMOVE:landets-apoteker ("apoteker") IF
+        (-2 %av%)
+        (-1 gen)
+        ;
+# en tredel av landets apoteker
+
 "<båret>" REMOVE:båret-vekk ("båre") IF
         (1 ("vekk"))
         ;
