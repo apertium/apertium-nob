@@ -1875,6 +1875,8 @@ REMOVE:unlikely ("<makte>"i) + pret ; # jf. å make (seg)
 REMOVE:unlikely ("<makte>"i) + adj ; # jf. å make (seg)
 REMOVE:unlikely ("statsråd"i) + nt + pl ; # Statsrådene mener
 REMOVE:unlikely ("rek"i) + nt; # ei reke / eit rek (det å drive); Rekene er dyre i år
+REMOVE:unlikely ("gene"i) + pl ; # være til gêne (bry, plage)
+REMOVE:unlikely ("gêne"i) + pl ; # være til gêne (bry, plage)
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
