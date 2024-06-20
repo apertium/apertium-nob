@@ -2285,6 +2285,13 @@ SELECT:harde-dyster n IF
                 # harde dystar
 REMOVE:unlikely ("<dyster>"i) + n ;        # dyster tone
 
+
+SELECT:uren-hud adj IF
+		(0 ("<uren>"))
+                (1 n)
+		;
+                # uren(t) brensel
+
 SELECT:det-sterke-preget n IF
 		(-2 ("<det>"i))
                 (-1 adj)
@@ -6205,7 +6212,8 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<landet>"i SELECT:ha-landet-på vblex IF
         (-1 ("ha"))
-        (1 %på%)
+        (1 %på% OR %i%)
+        (2 np + top)
         ;
         # barna har landa på Arlanda
 
@@ -10184,10 +10192,10 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		;
 # Her i Skandinavia var det leger ved Rikshospitalet
 
-"<leger>" SELECT:utdanningen-leger-må-gjennom n IF
-		(-1 n)
-                (1 vblex)
+"<leger>"i SELECT:leger-er n IF
+                (1C vblex)
 		;
+# Legar må gå gjennom reseptan
 # Utdanningen leger må gjennom er på fem år
 
 "<lege>" SELECT:jordmor-lege-eller-begge-deler n IF
@@ -10728,6 +10736,7 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 ("ha"))
         (1 pr)
         ;
+
 "<eier>"i REMOVE:innehaver-og-eier vblex IF
         (-2 ("innehaver"))
         (-1 cnjcoo)
