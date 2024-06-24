@@ -4109,6 +4109,47 @@ SELECT:den+prn ("den¹") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
+"<satt>" SELECT:satt-i-scene vblex + pp IF
+        (1C %i%)
+        (2C ("scene"))
+        ;
+        # satt i scene av USA
+
+"<satt>"i SELECT:satt-i-Bjorli vblex + pp IF
+        (-1C cm)
+        (1C %i%)
+        (3C sent)
+        ;
+        # rekorden, satt i Bjorli.
+
+"<satt>"i SELECT:satt-i-1975 vblex + pp IF
+        (-1 cm)
+        (1 %i%)
+        (2 date OR qnt OR sent OR månad)
+        (NEGATE 2 ("en"i))
+        (NEGATE 3 n + pl + ind)
+        ;
+        # , satt i 1975
+
+"<satt>"i SELECT:satt-i-Tyskland-i vblex + pp IF
+        (-1C cm)
+        (1C %i%)
+        (2C np)
+        (3C %i%)
+        (4C date)
+        ;
+        # den gamle rekorden på 5,80, satt i Tyskland i 2019
+
+"<satt>"i SELECT:satt-i-drift vblex + pp IF
+        (1C %i%)
+        (2C ("<drift>"i))
+        ;
+
+"<satt>"i SELECT:satt-i vblex + pret IF
+        (1C %i%)
+        (NEGATE -1C* %ha% OR %være/bli% BARRIER setn-gr)
+        ;
+        # partiet satt i regjering
 
 # sitte.intrans.pret vs sette.trans.pp vs sette.trans.pret:
 "<satt>" SELECT:har-satt vblex + pp IF
