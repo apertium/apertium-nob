@@ -4375,6 +4375,29 @@ SELECT:løpet-kjørt ("<løpet>"i) + n IF
         (1 ("<kjørt>"))
         ;
 
+SELECT:løp-hun ("<løp>"i) + pret IF
+		(1C prn OR cog OR ant OR n + def)
+		;
+
+SELECT:løp-som-en ("<løp>"i) + pret IF
+		(1C %som%)
+                (2C ("en") OR prep)
+		;
+
+SELECT:som-løp-foran ("<løp>"i) + pret IF
+		(-1C %som%)
+                (1C ("en") OR prep)
+		;
+                
+SELECT:løp-etter ("<løp>"i) + pret IF
+		(1C prep OR adv)
+                (NEGATE -1 prep OR ("en"))
+		;
+
+SELECT:løp-vekk-fra ("<løp>"i) + pret IF
+		(2C prep)
+		;
+
 SELECT:eit-løp ("<løp>"i) + n + sg + ind IF
 		(-1 det OR adj)
 		;
