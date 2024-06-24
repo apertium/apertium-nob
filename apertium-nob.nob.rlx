@@ -1642,6 +1642,15 @@ REMOVE:Brannmannskap-har cgguess IF
         (1 np + storbokstav)
         ;
 
+"<Nettavisen>" SELECT:Nettavisen-felt-i-PFU np IF
+        (1 ("felle" vblex) OR ("Pluss"))
+        ;
+
+"<Nettavisen>" SELECT:Nettavisen-og-VG np IF
+        (1 %og%)
+        (2 np)
+        ;
+
 SELECT:ringe-113 vblex IF
         (1 det + qnt)
         (0 ("<ringe>"i))         # Folk bes ringe 02800.
