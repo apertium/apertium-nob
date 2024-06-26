@@ -4232,7 +4232,10 @@ SELECT:den+prn ("den¹") IF
         (2 ("spiss") OR ("<vent>"))
         ;
 
-
+"<satt>" SELECT:satt-ned-i vblex + pp IF
+        (1C ("ned i"))
+        ;
+        # Urenen ble satt ned i Larvik
 
 "<sagt>" SELECT:ha-sagt vblex + pp IF
 		(-1 %ha%)
