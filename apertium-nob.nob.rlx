@@ -8684,6 +8684,18 @@ SELECT:startet-fredag-arbeidet ("<arbeidet>"i) + n IF
 		(1 ("med"))
 		(2 ("å"))
 		;
+               
+"<arbeidet>"i SELECT:å-ha-arbeidet-med vblex IF
+	(-1 ("ha") + inf)
+	(1 %med%)
+        ;
+      
+"<arbeidet>"i SELECT:startet-arbeidet-med-å n IF
+	(-1C* vblex + pp BARRIER setn-gr)
+	(1 %med%)
+        (1 %å%)
+        ;
+
 SELECT:i-Brussel-har-arbeidet ("<arbeidet>"i) + n IF
 		(NOT -4 n)
 		(-3 pr)
@@ -8775,6 +8787,13 @@ SELECT:har-regjeringen-arbeidet ("<arbeidet>"i) + vblex + pp IF
 		(-2 ("ha"))
 		(-1 n)
 		;
+                
+"<arbeidet>"i SELECT:jeg-har-arbeidet-med vblex IF
+	(-2 prn OR np OR %som% OR lo#animat)
+	(-1 %ha%)
+	(1 %med%)
+        ;
+
 "<arbeidet>"i SELECT:har-arbeidet-med n IF
 	(-1 %ha%)
 	(1 ("med"))
@@ -9147,6 +9166,19 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 ;
 #  "er så stor"
 
+"<så>"   SELECT:så-stor-som-så adv IF
+        (-3C ("så" adv))
+	(-2C* adj)
+	(-1C %som%)
+;
+#     treet var så høyt som så"
+
+"<så>"   SELECT:tenke-som-så adv IF
+	(-2C* ("tenke") BARRIER setn-gr)
+	(-1C %som%)
+;
+#  "da tenker jeg som så"
+
 #:3230
 "<så>"   SELECT:svært-så-offisiell adv IF
 	(-1 adverb OR %som%)
@@ -9173,8 +9205,6 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 	(2 %si%-inf)
 ;
 #  "så å si"
-
-
 
 "<så>" SELECT:Det-så-lenge-ut pret IF
         (NEGATE *-1 ("se"))
@@ -11474,6 +11504,7 @@ REMOVE:Isnes-ansatt vblex IF
 	(*-1 %ha% BARRIER setn-gr)
         (1 ("fart"))
         ;
+
 # ", har arbeidet med å skaffe til veie vaksiner og medisiner skutt fart."
 "<rådet>"i REMOVE:lede-rådet vblex IF
         (-2 modalverb)
@@ -40516,7 +40547,6 @@ SELECT:clb-fv-n fv IF
         (NOT *1 fv)
         ;
 # «Siden tirsdag er 93 mennesker blitt drept i uroen i Bagdad og andre byer sør i landet,   opplyste   nasjonalforsamlingens menneskerettighetskommisjon lørdag formiddag.»
-
 
 REMOVE:prefer-lexicalised-n xgrau IF
         (0 n + gen - xgrau)
