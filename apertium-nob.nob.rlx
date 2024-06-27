@@ -5520,6 +5520,16 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 "<gyllen>" REMOVE:unlikely n;
 
+"<mest>" REMOVE:unlikely adv IF
+        (1C n)
+        ;
+        # ventes det mest nedbør
+        
+"<minst>" REMOVE:unlikely adv IF
+        (1C n)
+        ;
+        # ventes det minst nedbør
+
 "<særlig>" SELECT:ventes-det-særlig adv IF
         (-2 ("<ventes>"))
         (-1 ("<det>"))
