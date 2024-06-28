@@ -39338,6 +39338,20 @@ REMOVE:møtes pstv + pp IF
         ;
 # Har den for eksempel navnet på en merkevare i seg, som parajumperstilbud.com eller raybansalg.net, kan det være grunn til mistanke.
 
+"<den>" SELECT:hvor-vilkårlig-den-treffer nominativ IF
+        (-2 ("hvor"))
+        (-1 adj)
+        (1C fv)
+        ;
+# «Når vi ser hvor vilkårlig den treffer, er det riktig å reversere den, sier stortingsrepresentant Sveinung Stensland (H).»
+
+"<den>" SELECT:lavere-enn-den-var nominativ IF
+        (-2 comp)
+        (-1 %enn%)
+        (1C fv)
+        ;
+# «Ledigheten er fortsatt lavere enn den var for ett år siden.»
+
 "<det>" SELECT:de-gjorde-med-det-veldig-gode-løp prn IF
         (-2 fv)
         (-1 %med%)
