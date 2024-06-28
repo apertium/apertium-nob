@@ -39352,6 +39352,13 @@ REMOVE:møtes pstv + pp IF
         ;
 # «Ledigheten er fortsatt lavere enn den var for ett år siden.»
 
+"<den>" SELECT:slik-den-var nominativ IF
+        (-1 ("slik"))
+        (1C fv)
+        ;
+# «En fjerning av avgiften slik den ble innført for 2018 er blitt fremholdt som et viktig tiltak for å sikre norske arbeidsplasser.»
+
+
 "<det>" SELECT:de-gjorde-med-det-veldig-gode-løp prn IF
         (-2 fv)
         (-1 %med%)
