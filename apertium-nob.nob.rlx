@@ -5384,8 +5384,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 # «Den fortsatte stengingen skjer til tross for at fritidsaktiviteter og idrett for barn opp til ungdomsskolealder, unntatt cuper og kamper, skulle åpne igjen onsdag.»
 
 "<fortsatte>" SELECT:fortsatte-leveranser adj + pl IF
+        (*-1 fv BARRIER setn-gr)
         (1 n + pl + ind)
         ;
+# Ikkje: «I dagslys fortsatte redningsarbeidere mandag med å lete etter de 17 savnede»
 
 "<fortsatte>" SELECT:GEN-fortsatte-N adj + def IF
         (-1C gen)
