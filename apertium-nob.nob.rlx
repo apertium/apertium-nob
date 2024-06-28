@@ -8019,6 +8019,12 @@ SELECT:NNs-forlovede n IF
 ;
 #  "så å si"
 
+"<si>"i   SELECT:si-nøyaktig-hvor   (inf) IF
+	(1C adj)
+	(2C ("hva") OR ("hvor") OR ("når") OR ("hvem") OR ("hvilken") OR ("hvorfor") OR ("hvordan"))
+        ;
+        # Droneflygingen skjedde våren 2023, men politiet ønsker ikke si nøyaktig hvor.
+        # Men vi kan ikke si eksakt hvilke farlige stoffer det er snakk om
 
 "<siden>"   SELECT:sikre-siden   n IF
         (-1 ("<sikre>"))
