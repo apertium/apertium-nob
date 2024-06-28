@@ -5384,8 +5384,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 # «Den fortsatte stengingen skjer til tross for at fritidsaktiviteter og idrett for barn opp til ungdomsskolealder, unntatt cuper og kamper, skulle åpne igjen onsdag.»
 
 "<fortsatte>" SELECT:fortsatte-leveranser adj + pl IF
+        (*-1 fv BARRIER setn-gr)
         (1 n + pl + ind)
         ;
+# Ikkje: «I dagslys fortsatte redningsarbeidere mandag med å lete etter de 17 savnede»
 
 "<fortsatte>" SELECT:GEN-fortsatte-N adj + def IF
         (-1C gen)
@@ -8448,10 +8450,11 @@ SELECT:NNs-forlovede n IF
 
 
 #:3256
-  "<som>"   SELECT:3256   (pr) IF
+"<som>" SELECT:at-rollen-som-mor   (pr) IF
 	(**-2C sbu-ren BARRIER fv)
 	(**1CO <<< LINK *-1 fv LINK NOT *-1 fv)
-	(NOT -1 fv)
+	(NEGATE -1 fv)
+	(NEGATE -1 cm)
 ;
 #  "at rollen som (prep) aleneforsørger er uoverkommelig"))
 
@@ -8588,7 +8591,7 @@ SELECT:NNs-forlovede n IF
 
 
 #:3254
-  "<som>"   SELECT:3254   (cnjsub) IF
+"<som>" SELECT:Morse-som-kom (cnjsub) IF
 	(1C prep)
 	(**2C pres/pret LINK 1 adverb/komp/ub-sup/pres-part LINK *1 ikke-adv-komp-ub-sup LINK NOT 0 nom)
 ;
@@ -13659,6 +13662,18 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 ;
 #  "Dette er ikke noe hjem (ikke prep)!"))
 
+"<hjem>" REMOVE:som-hjem-for pr IF
+	(-1 %som%)
+        ;
+# «Hallen tjente som hjem for kongen av marken»
+
+"<hjem>" REMOVE:hvilket-som-helst-hjem pr IF
+        (-4 %et%)
+        (-3 %hvilken%)
+        (-2 %som%)
+        (-1 %helst%)
+        ;
+
 "<hjem>" REMOVE:hvilket-som-helst-hjem pr IF
         (-4 %et%)
         (-3 %hvilken%)
@@ -13675,7 +13690,7 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 #  "han leverte også tøyet (subst/adj-NØYT) hjem"))
 
 #:3536
-"<hjem>"   REMOVE:3536   n IF
+"<hjem>" REMOVE:hjem n IF
 	(NOT -1 nøyt-adj-det)
 	(NOT -1 fl-adj/fl-det)
 	(NOT -1 subst-gen)
@@ -34990,6 +35005,11 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         (1 n + pl OR n + def OR adj OR det + qnt)
         ;
 
+"<som>" SELECT:som-han-ble-kalt cnjsub IF
+	(-1C cm - clb-konj)
+        (*1C nom BARRIER setn-gr LINK *1C fv BARRIER setn-gr LINK *1C cm BARRIER setn-gr OR fv)
+        ;
+
 "<snakkes>" SELECT:ikke-vi-snakkes ("snakke") + pasv IF
         (NEGATE -1 ("de") OR ("vi"))
         (0 pstv)
@@ -37278,7 +37298,7 @@ SELECT:å-studere-der-de-selv-vil cnjsub IF
 
 
 #:1768
- SELECT:1768 (cnjsub) IF
+ SELECT:som-vi-ikke-seinere-makter (cnjsub) IF
 	(NOT 0 %bare%)
 	(NOT 1 pres/pret)
 	(NOT -1 clb-konj)
@@ -40671,6 +40691,7 @@ SELECT:hadde-forhåndsbetalt vblex + pp IF
 
 # If still ambiguous, go by frequency.
 # SELECT:default rules:
+SELECT:default adv         IF (0 ("<senere>"i));
 SELECT:default adj         IF (0 ("<hele>"i));
 SELECT:default ("regel")   IF (0 ("<regler>"i));
 SELECT:default ("stemme")  IF (0 ("<stemmer>"i));
