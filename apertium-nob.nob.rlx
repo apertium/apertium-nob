@@ -8219,10 +8219,14 @@ SELECT:NNs-forlovede n IF
         ;
 # «Karoui presenterer seg som en kandidat for de fattige, men tilbrakte mesteparten av valgkampen i fengsel siktet for hvitvasking og skatteunndragelse.»
 
+"<anker>"i SELECT:anker-dommen pres IF
+        (1C ("dom"))
+        ;
 
-
-
-
+"<anker>"i SELECT:ekteparets-anker n + m IF
+        (-1C gen)
+        (0* ("Høyesterett") OR ("lagmannsrett") OR ("rett") OR ("dom") BARRIER setn-gr)
+        ;
 
 #:3284
   "<sjøl>"   SELECT:3284   (det) IF
