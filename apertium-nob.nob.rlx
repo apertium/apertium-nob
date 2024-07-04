@@ -753,6 +753,7 @@ LIST nom/at = ("at"  cnjsub) (n) (np) (adj) (prn) (det) ;
 LIST nom/prep = (pr) (n) (np) (adj) (prn) (det) ;
 LIST nominativ = nom ;
 LIST refl-prn = "<seg>"i "<meg>"i "<deg>"i "<oss>"i "<dere>"i ;
+LIST refl-prn-obj = "<seg>"i "<meg>"i "<deg>"i "<oss>"i "<dere>"i "<ham>"i "<henne>"i "<dem>"i;
 LIST npu-verb = "trenge"  "orke"  "klare"  "gidde"  "behøve"  ;
 LIST nr2-det = "sånn"  "sådan"  "slik"  "samme"  "noe"  "neste"  "hver"  "halvannen"  "forrige"  "eneste"  "eigen"  "egen"  "annen"  (det qnt pl) ("ene"  det) ;
 LIST nr2-det-fem-be = ("noe"  f) ("ene"  def) ("eneste") ("samme"  def) ("forrige"  def) ("neste"  def) ("annen"  def) ("egen"  def) ("eigen"  def) ;
@@ -7349,38 +7350,45 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 
 REMOVE:regne¹-imp regne_vann + imp ; # IF NOT "hyadene" OR "Frøy"
 
-"<regnet>" SELECT:har-det-regnet regn_vann IF
-        (-1C* %ha% BARRIER setn-gr)
-        (NEGATE -1C* vblex + pp BARRIER %ha%)
+SELECT:regne-seg-som regne_ut IF
+        (1C refl-prn-obj)
+        (2C* %som% BARRIER setn-gr)
+        ;
+        # Han regnet seg dessuten ikke lenger som kristen
+
+"<regnet>"i SELECT:har-det-regnet regn_vann IF
+        (-2C* %ha% BARRIER setn-gr)
+        (-1C ("den"))
+        (NEGATE -2C* vblex + pp BARRIER %ha%)
         ;
 
-"<regnet>" SELECT:kommer-regnet regn_vann IF
+"<regnet>"i SELECT:kommer-regnet regn_vann IF
         (-1 regn-verb)
         (-1C vblex)
         ;
-"<regnet>" SELECT:kommer-dette-regnet regn_vann IF
+"<regnet>"i SELECT:kommer-dette-regnet regn_vann IF
         (-2 regn-verb)
         (-2C vblex)
         (-1 ("<dette>"))
         ;
 
-"<regnet>" SELECT:grovt-regnet regne_ut IF
-        (-1 ("<grovt>") OR ("<rundt>") OR ("<enkelt>"))
+"<regnet>"i SELECT:grovt-regnet regne_ut IF
+        (-1 ("<grovt>"i) OR ("<rundt>"i) OR ("<enkelt>"i))
         ;
 
-"<regnet>" SELECT:arten-var-regnet-som-utryddet regne_ut IF
+"<regnet>"i SELECT:arten-var-regnet-som-utryddet regne_ut IF
         (1 %som%)
         (NOT 2 regn-verb OR hj-verb OR ("<verst>") OR prn)
         ;
-"<regne>" SELECT:arten-var-å-regne-som-utryddet regne_ut IF
+"<regne>"i SELECT:arten-var-å-regne-som-utryddet regne_ut IF
         (1 %som%)
         (NOT 2 regn-verb OR hj-verb OR ("<verst>"))
         ;
 
-"<regnet>" SELECT:5.4-prosent-regnet regne_ut IF
+"<regnet>"i SELECT:5.4-prosent-regnet regne_ut IF
         (-1C målsubst)
         ;
-"<regnet>" SELECT:regnet-som-kommer regn_vann IF
+"<regnet>"i SELECT:regnet-som-kommer regn_vann IF
 		(NOT *-1 n)
 		(1 %som%)
 		(*2 regn-verb)
@@ -7390,25 +7398,25 @@ REMOVE:regne¹-imp regne_vann + imp ; # IF NOT "hyadene" OR "Frøy"
 		(1 %som%)
 		(*2 regn-verb)
 		;
-"<regnet>" SELECT:regnet-fra-datoen regne_ut IF
+"<regnet>"i SELECT:regnet-fra-datoen regne_ut IF
 		(1 ("fra"))
 		(2* ("dag") OR ("dato") OR ("år") OR ("måned") OR ("øyeblikk"))
 		;
-"<regnes>" SELECT:regnes-som regne_ut
+"<regnes>"i SELECT:regnes-som regne_ut
 		;
 
-"<regnet>" SELECT:vinden-og-regnet regn_vann IF
+"<regnet>"i SELECT:vinden-og-regnet regn_vann IF
 		(-2 ("vind") OR ("storm") OR ("kulde"))
 		(-1 %og/eller%)
 		;
-"<regnet>" SELECT:regnet-bombene regne_vann IF
+"<regnet>"i SELECT:regnet-bombene regne_vann IF
 		(1 ("bombe") OR ("missil"))
 		;
-"<regnet>" SELECT:regnet-og-vinden regn_vann IF
+"<regnet>"i SELECT:regnet-og-vinden regn_vann IF
 		(1 %og/eller%)
 		(2 ("vind") OR ("storm") OR ("kulde"))
 		;
-"regne" SELECT:regnet-til regne_ut IF
+"regne"i SELECT:regnet-til regne_ut IF
 		(1 %til% OR %på%)
 		(NOT 2 np)
 		;
