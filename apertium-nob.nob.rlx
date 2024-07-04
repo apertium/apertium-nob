@@ -7738,6 +7738,10 @@ REMOVE:unlikely ("<ris>") + pasv;
 
 #ta rotta på
 
+ "<rot>"   SELECT:siste-dagers-rot  nt IF
+        (-2 ("<siste>"i adj))
+	(-1C gen)
+;
 
 #:3339
 "<rundt>" REMOVE adj IF
