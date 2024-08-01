@@ -4149,6 +4149,7 @@ SELECT:den+prn ("den¹") IF
 "<satt>"i SELECT:satt-i vblex + pret IF
         (1C %i%)
         (NEGATE -1C* %ha% OR %være/bli% BARRIER setn-gr)
+        (NEGATE *1 %og/eller% BARRIER setn-gr LINK 1C pp) # «ble skilt fra foreldre, satt i bur eller sendt»
         ;
         # partiet satt i regjering
 
