@@ -1247,6 +1247,12 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 # Ikkje: Utmalingsgraden er hvor stor  del  av<np> kornet som er blitt til mel
 "<del>"i REMOVE:unlikely np;
 
+"<Barna>"i REMOVE:Barna np IF
+        (NEGATE -1 np)
+        (NEGATE 1 np)
+        ;
+# Unntak: Petr Barna, Barna Buza, …
+
 "<della>"i SELECT:del-Toro np + attr IF (1 np OR ukjent + storbokstav); #safe
 "<della>"i REMOVE:unlikely np;
 
