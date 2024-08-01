@@ -5527,15 +5527,17 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 
 "<gyllen>" REMOVE:unlikely n;
 
-"<mest>" REMOVE:unlikely adv IF
+"<mest>" REMOVE:mest-nedbør adv IF
         (1C n)
         ;
         # ventes det mest nedbør
 
-"<minst>" REMOVE:unlikely adv IF
+"<minst>" REMOVE:minst-nedbør adv IF
+        (NEGATE -1 %ikke%)
         (1C n)
         ;
-        # ventes det minst nedbør
+# ventes det minst nedbør
+# Ikkje: «– Utfallet skyldes ikke minst oppmerksomheten saken fikk.»
 
 "<særlig>" SELECT:ventes-det-særlig adv IF
         (-2 ("<ventes>"))
