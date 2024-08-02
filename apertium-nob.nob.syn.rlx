@@ -5154,6 +5154,12 @@ SECTION select-words ;
 ;
 #  " ... og lurer på om @←P-UTFYLL han skal spise dem"))
 
+"<mindre>" SELECT @adv IF
+	(-1 ("desto"))
+	;
+"<mer>" SELECT @adv IF
+	(-1 ("desto"))
+	;
 
 
 #:1253
