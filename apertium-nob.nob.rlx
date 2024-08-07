@@ -15786,6 +15786,8 @@ SELECT:Siktede-ikke-avhørt n + def IF
         ;
 # «Siktede ikke avhørt.»
 
+"<kjentes>" REMOVE:default-kjennes ("kjent" n xpst) ;	# keep kjennes<vblex><pret/perf.part.>→kjentes
+
 SELECT:Den-siktede xgrau OR adj IF
         (-1 ("den"))
         (0 adjn)
