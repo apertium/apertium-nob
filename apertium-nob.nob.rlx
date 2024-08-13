@@ -1917,6 +1917,12 @@ REMOVE:unlikely ("sin") + adv ;
         (NEGATE -1 prep)
         ;
 
+"<kjøper>" REMOVE:unlikely n IF
+        (-1C pron)
+        ;
+        #«du kjøper», ikkje «du kjøpar»
+
+
 "<tepper>" REMOVE:unlikely vblex
         ;
         # varme klær og tepper
