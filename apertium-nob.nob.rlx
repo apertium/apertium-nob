@@ -10680,6 +10680,8 @@ REMOVE:unlikely ("øye") + vblex ; # få auge på (verbet nyn: auge ein tømmers
 REMOVE:unlikely ("bande") + vblex ; # bande ei tønne
 REMOVE:unlikely ("bande") + adj ; # bande ei tønne
 REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "legen har helt bruddet" / "et helt brudd"?
+REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
+
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
