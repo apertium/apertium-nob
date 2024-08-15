@@ -1253,6 +1253,14 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         ;
 # Unntak: Petr Barna, Barna Buza, …
 
+"<Masse>"i SELECT:Kylie np IF
+        (*1> ("Kylie"))
+        ;
+"<Masse>"i REMOVE:Masse np IF
+        (NEGATE -1 np)
+        (NEGATE 1 np)
+        ;
+
 "<della>"i SELECT:del-Toro np + attr IF (1 np OR ukjent + storbokstav); #safe
 "<della>"i REMOVE:unlikely np;
 
