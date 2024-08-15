@@ -20480,7 +20480,7 @@ SELECT:handler-utelukkende-med adv IF
 	(NOT 0 subst)
 	(-1C verb)
 	(NOT 1 anf)
-	(NOT 1 pron/subst/det)
+	(NEGATE 1 pron/subst/det OR %mye/lite/litt% OR %mange%)
 	(NOT 1 ukjent)          # god sjanse for subst
         (NEGATE 1 adj LINK 1 subst) # «som knyttes til<not adv> voldelig ekstremisme»
  	(NOT -1 kop)
@@ -20493,6 +20493,8 @@ SELECT:handler-utelukkende-med adv IF
 # KBU (NOT 1 nom) er for strengt, (NOT 1 pron/subst/det) i staden:
 # «at han ikke visste hvor<adv> høy farten var.»
 # NOT 1 infmerke: «de lures til å klikke»
+# NEGATE mye: «Silseth beklaget den store tidsbruken, men framholdt    at    mye av den skyldes en lang rekke begjæringer fra de domfelte selv»
+
 
 #:2851
  SELECT:2851 (adv) IF
