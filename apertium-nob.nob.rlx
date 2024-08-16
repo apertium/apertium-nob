@@ -41942,6 +41942,9 @@ REMOVE:default ("andre") + adj IF (0 pl) ; # «Andre har opplevd liknende»
 REMOVE:default ("gir") + n IF (0 pres) ;
 REMOVE:default ("prikk") + nt IF (0 m) ;
 REMOVE:default ("brenner") IF (0 ("brenne")) ;
+REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
+REMOVE:default ("besøker") IF (0 ("besøke")) ;
+REMOVE:default ("tross") IF (0 ("trosse")) ;
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
