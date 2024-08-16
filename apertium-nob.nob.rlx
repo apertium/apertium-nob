@@ -41818,7 +41818,7 @@ SELECT:default nt          IF (0 ("<verk>"i));
 SELECT:default ("være")    IF (0 ("<var>"i));
 SELECT:default ("passasjer") IF (0 ("<passasjer>"i));
 SELECT:default ("tørre")   IF (0 ("<turt>"i));
-SELECT:default ("anklage") IF (0 ("<anklager>"i));
+SELECT:default pres        IF (0 ("<anklager>"i));
 SELECT:default ("øre¹")    IF (0 ("<ører>"i)); # people write «kroner og øre», not kroner og ører (toører is used, but that's lexicalised)
 SELECT:default ("skrive")  IF (0 ("skrev"));
 SELECT:default ("form")    IF (0 ("former")); # also match compounds
