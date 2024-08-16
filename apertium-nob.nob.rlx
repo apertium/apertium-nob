@@ -2201,6 +2201,8 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
         ; # Styreformann Jan du Plessis
 "<du>"i REMOVE:unlikely np;
 
+"<Hus>"i REMOVE:unlikely ("Hu");
+
 "<des>"i SELECT:Des-Voeux np + attr IF (1 np OR ukjent + storbokstav); # sykkelrittet Tour des Fjords, Haus des Rundfunks
 "<des>"i REMOVE:unlikely np;
 
