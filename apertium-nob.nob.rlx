@@ -2130,17 +2130,19 @@ LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse
 
 "<A-å.>"i SELECT:initial np IF (1 np);
 
-APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) IF
-        (0 storbokstav)
-        (NOT 0 not-np-guess)
-        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
-        ;
+WITH storbokstav IF
+        (NEGATE 0 not-np-guess)
+        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 setn-start-med-strek/anf) # ikkje t.d. overskrift «Takker Traaseth»
+        (NEGATE 0 not-np-guess-f_lc>f_uc - n LINK -1 berre-litenbokstav LINK 2 berre-litenbokstav) # ikkje t.d. «snø Østafjells torsdag»
+{
+  APPEND:np-guess-gen ("$1"v np cgguess gen) TARGET ("<([A-ZÆØÅ][a-zæøå]{3,})s>"r) ;
 
-APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
-        (0 storbokstav)
+  APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (NEGATE 0 not-np-guess - (np cgguess gen))
-        (NEGATE 0 not-np-guess-f_lc>f_uc LINK -1 berre-litenbokstav OR setn-start-med-strek/anf)
         ;
+};
+# NB. we do allow cgguess on not-np-guess-f_lc>f_uc if they're *nouns* between lowercase words, e.g. «fagbladet Dagligvarehandelen skriver»
+# but other parts of speech are more often wrong, in particular where we are missing punctuation after headings.
 
 APPEND:np-guess-mwe-dash ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+-[A-ZÆØÅ][a-zæøå]{3,})>"r) IF
         (0 storbokstav)
