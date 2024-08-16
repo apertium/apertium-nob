@@ -4385,16 +4385,25 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 #  "i andre periode
 # NOT LR0 %SIDE%: på andre (det) siden var det..."))
 
+WITH:anklager ("<anklager>"i) {
+  SELECT:anklager-om pl IF (1 %om%) ;
 
-"<anklager>"   SELECT:anklager-om pl IF
-	(1 %om%)
-;
+  SELECT:anklage ("anklage") IF (NEGATE -1 det + qnt + sg) ;
+  # skuldingar ELLER skuldar; NB: sjef(s)anklager -> hovudaktor
+  # kan også nyttast om aktor, men sjeldan i ubunden form
 
-"<anklager>"   SELECT:anklage ("anklage") IF 
-        (NEGATE -1 det + qnt + sg)
-; 
-# skuldingar ELLER skuldar; NB: sjef(s)anklager -> hovudaktor
-# kan også nyttast om aktor, men sjeldan i ubunden form
+  SELECT:avviste-anklager pl IF (-1C fv OR adj) (NEGATE *1 %for% BARRIER setn-gr);
+  # «Avviste anklager.»
+
+  SELECT:anklager-som pl IF (NEGATE -1 det) (1 %som%) (*2 fv) ;
+  # «Ukraina og landets vestlige allierte anklager Russland for å sende mannskap og våpen inn i Øst-Ukraina – anklager som blir avvist av Moskva.»
+
+  SELECT:anklager-han-kalte pl IF (1 nominativ OR n + def OR np) (2C fv) ;
+  # «Med flere partimedlemmer ved sin side anklaget han politiet og påtalemyndigheten for å sammensverge seg mot ham og dikte opp anklager, anklager han kalte overdrevne.»
+
+  SELECT:anklager. n IF (*-1 fv) (1C punktum/ellipse OR <<<) ;
+};
+
 
 #:3744
   "<anstrengt>"   SELECT:3744   (vblex pp) IF
