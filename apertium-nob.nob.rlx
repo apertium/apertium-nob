@@ -2431,19 +2431,22 @@ REMOVE:prefer-sameaccent (".*[èàòìùỳǹ].*"ri) IF
 REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
         (0 ("<(.*[èàòìùỳǹ].*)>"ri "$1"v));
 
-SELECT:titlecase-midsent cgguess IF
-        (NOT -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
+# Words that we leave to below rules since they're ambiguous even mid-sentence, e.g.
+# «Dette er en del av Skolen (åndsverk).»
+LIST ambig-titlecase-midsent = "<Skolen>" ;
+SELECT:titlecase-midsent cgguess - ambig-titlecase-midsent IF
+        (NEGATE -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
         ;
 
 SELECT:titlecase-paren1word cgguess IF
-        (NOT -2 rquot)          # «English» (Norsk)
+        (NEGATE -2 rquot)          # «English» (Norsk)
         (-1 lpar)
         (1 rpar)
         ;
 
 REMOVE:np-guess-safe cgguess IF
-        (NOT -1 storbokstav)    # allow: Ding Liren<cgguess>
-        (NOT 1 storbokstav)
+        (NEGATE -1 storbokstav)    # allow: Ding Liren<cgguess>
+        (NEGATE 1 storbokstav)
         (NEGATE 1 %og% LINK 1 storbokstav) # allow: «Letnes<cgguess> og Sandberg er i Iran»
         (NEGATE -1 %og% LINK -1 storbokstav)
         (NEGATE 0C np OR n + sg + def LINK -1 ("i"))
@@ -2455,7 +2458,7 @@ REMOVE:Prestens-forsvarer cgguess IF
         (-1 >>>)
         (0 n + def + gen)
         (1C n + ind)
-        (NOT 1 storbokstav)
+        (NEGATE 1 storbokstav)
         ;
 SELECT:mennenes-VM n IF
 		(-1 gen)
@@ -41957,7 +41960,7 @@ REMOVE:default ("prikk") + nt IF (0 m) ;
 REMOVE:default ("brenner") IF (0 ("brenne")) ;
 REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
 REMOVE:default ("besøker") IF (0 ("besøke")) ;
-REMOVE:default ("tross") IF (0 ("trosse")) ;
+SELECT:default ("trosse") + vblex ;
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
