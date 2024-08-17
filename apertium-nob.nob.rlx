@@ -7731,7 +7731,7 @@ SELECT ("lyve") IF
 
 
 #:3448
-  "<meget>"   SELECT:3448   (n) IF
+  "<meget>"i   SELECT:karakter   (n) IF
 	(1 abj#%av/i%)
 	(*-1O %få% LINK 0 verb LINK NOT *1 ikke-adv-adj-det)
 ;
