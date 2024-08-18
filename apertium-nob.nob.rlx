@@ -872,7 +872,7 @@ SET setn-gr/verb         = setn-gr OR vblex ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
 LIST setn-start-med-strek/anf = lquot rquot lquot guio >>> ;
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også" "også¹" "også²"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
-LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare"  ;
+LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare" "uttrykke"  ;
 LIST sikre-navn = "Svein"  "Rune"  "Helle"  "Dag" "Arne"  (np m) (np f) "Aker" ;
 LIST skipsmengde = "trosse"  "tofte"  "skip"  "seil"  "ror"  "rekke"  "ombord"  "matros"  "lugar"  "livbåt"  "lekter"  "forut"  "forut"  "bøye"  "båt"  "baug"  "babord"  ;
 LIST slik-adv = ("slik"  adv) ;
@@ -36647,6 +36647,12 @@ SECTION remove-words-heur ;
 	  (0 prep)
 ;
 
+"<Leder>" REMOVE:Leder-Gaute-i-NU pres IF
+        (-1 >>> OR sier-verb)
+        (0 n)
+        (*1 %i% BARRIER (*) - ant - cog - top - cgguess LINK 1 org OR cgguess)
+        ;
+# «Leder Gaute Eiterjord i Natur og Ungdom.»
 
 "<leder>" REMOVE:Paulsen-cm-leder-i pres IF
         (-2 np OR storbokstav)
@@ -41805,6 +41811,24 @@ SELECT:hadde-forhåndsbetalt vblex + pp IF
         (-1 ("ha"))
         (0C pp)
         ;
+
+SELECT:Forsvarer-kolon n IF
+        (-1 >>>)
+        (0C n OR pres)
+        (NEGATE 0 pasv)         # «Trives:»
+        (1 kolon)
+        ;
+# Tek litt sjansar; oftare n enn pres ved eitt ord før kolon:
+# «Forsvarer:»
+# «Aviser:»
+# «Redigerer:»
+
+SELECT:Kjører-Arctic-Race pres IF
+        (-1 >>>)
+        (0C n OR pres)
+        (*1 <<< CBARRIER (*) - np - pr)
+        ;
+# «Kjører Arctic Race.»
 
 "<ut>" WITH:ut-fra-slike-kriterium pr
         (1C ("fra"))
