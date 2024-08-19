@@ -11695,6 +11695,7 @@ REMOVE:unlikely ("bande") + vblex ; # bande ei tønne
 REMOVE:unlikely ("bande") + adj ; # bande ei tønne
 REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "legen har helt bruddet" / "et helt brudd"?
 REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
+REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: telefonsvarar
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
@@ -16254,6 +16255,10 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 #  "og så hakke (inf) på disse feila"))
 
 
+"<så>"   SELECT:så-splid   (vblex inf) IF
+        (1 ("splid") OR ("splittelse") OR ("hat") OR ("tvil"))
+        ;
+
 
 #:3202
   "<så>"   REMOVE:3202   (vblex inf) IF
@@ -16278,6 +16283,11 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 # nominalt ledd etter eller prep (se etter/over/på
 # osv) NOT -2 SUBST: Bordet (subst) jeg så (pret)
 # kh jan 2004: not -2 at/om: Gutten mente jeg at Per så (verb)."))
+
+"<så>"i SELECT:så-inderlig-ønsker adv IF
+        (1 adj OR adv)
+        (2* vblex + pres BARRIER setn-gr)
+        ;
 
 "<syns>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
 # «Dette er noe Norge syns er en god idé.»
