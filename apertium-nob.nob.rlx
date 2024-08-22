@@ -9976,6 +9976,14 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 ;
 #bare adv ved "sørpe full"
 
+"<så>" SELECT:nesten-så adv IF
+        (-1 ("nesten"))
+        (NEGATE 1 acc - nominativ)
+        ;
+# «Nesten så jeg så fram til de daglige samtalene.»
+# «nesten så tydelig at jeg ble overrasket over at Erna Solberg valgte ham»
+
+
 "<så>" SELECT:så-langt adv IF
         (1 %langt%)
         ;
