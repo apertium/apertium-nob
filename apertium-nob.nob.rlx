@@ -9985,6 +9985,14 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         ;
         # så raskt som mogleg
 
+"<så>"i SELECT:så-inderlig-ønsker-å adv IF
+        (1 adj OR adv)
+        (2 pres OR pret)
+        (3 ("å") OR ("at"))
+        ;
+# "Når du så inderleg ønskjer å bli klar til å konkurrere, gjer du det som må til."
+# jf. kvister.vblex.pres
+
 "<så>"   SELECT:men-vi-såg pret IF
         (-2 %og% OR %men% OR %da% OR %når% OR ("fordi"))
         (-1 prn + nom)
@@ -16297,12 +16305,6 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 # nominalt ledd etter eller prep (se etter/over/på
 # osv) NOT -2 SUBST: Bordet (subst) jeg så (pret)
 # kh jan 2004: not -2 at/om: Gutten mente jeg at Per så (verb)."))
-
-"<så>"i SELECT:så-inderlig-ønsker adv IF
-        (1 adj OR adv)
-        (2C* pres BARRIER setn-gr)
-        ;
-# C på verbet pga. «De så flere kvister der.» (kvister.vblex.pres)
 
 
 "<syns>" REMOVE pp IF (NEGATE -1 %ha%-pres/pret) ;
@@ -41043,7 +41045,7 @@ REMOVE:unlikely ("blei") + sg + def ;
 
 
 # LEX: nettene vs. netta
-LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" "foregående" "sist" ;
+LIST natt-adj = "lang" "kort" "mørk" "lys" "kald" "varm" "sen" "sein" "vill" "rolig" "stille" "foregående" "sist" "kommende" ;
 
 SELECT:dei-lange-nettene ("natt") + pl + def IF
 		(-1 natt-adj)
