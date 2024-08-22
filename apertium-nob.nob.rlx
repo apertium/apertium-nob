@@ -8654,9 +8654,16 @@ REMOVE:unlikely ("<skjente>"i "skjene");
 	(1 ("flertall"))
         ;
 # rent flertall
+
+
+"<rent>"i SELECT:ha-rent-ut  (vblex pp) IF
+        (1 prep)
+	(*-1 %ha% BARRIER setn-gr)
+        ;
+
 #:3346
   "<rent>"   SELECT:3346   (vblex pp) IF
-	(NOT 1 %for%)
+	(NEGATE 1 %for% OR adj)
 	(NOT -1 det-prep-infmerke-adjbe)
 	(NOT -2 be-nøyt-det)
 	(*-1 %ha% BARRIER fv)
@@ -17110,6 +17117,13 @@ SELECT:ethvert-gitt-sted pl IF  # one of the few exceptions where we allow «git
         (-1 ("<ethvert>"))
         (0 ("<gitt>"))
         ;
+
+SELECT:gitt-uttrykk-for vblex IF 
+        (1C ("<uttrykk>"i))
+        (2C ("<for>"i))
+        (0 ("<gitt>"i))
+        ;
+        # har dei siste to åra gitt uttrykk for
 
 # We need to keep these in .dix because they're right in attributive, e.g. «veloppdratte barn», but not *«barna er veloppdratte»
 LIST no-pred-samsvar = "bli" "innrømme" "ha" "inngå" ".*dra"ri ".*gi"ri "se" "avse" "uglese" "utse" "tilgodese" "tilse" "innse" "forse" "bortse" "påse" "etterse" "use" ".*gå"ri ".*slå"ri ".*få"ri "fare" "skje" "tilbringe" ;
