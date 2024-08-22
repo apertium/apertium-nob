@@ -17694,6 +17694,10 @@ SELECT:det-kunne-de-gjort vblex + pp IF
         ;
 # «Det kunne de gjort ved å bruke de sparte pengene på en ekstra satsing på skolene, påpeker hun.»
 
+"<år gamle>" SELECT def IF
+        (1 n + sg + def)
+        ;
+
 SELECT:krever-dem-løslatt adj + pl IF
         (NEGATE *-1 ("ha") BARRIER vblex)
         (*-3 nom)
