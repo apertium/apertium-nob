@@ -10341,6 +10341,11 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 # (denne vil feile på «først så han til Venezuela, og så så han til USA»? ...ugh...)
 
 
+"<så>" SELECT:så-fort adv IF
+        (NEGATE -1C nominativ)   # «Vi så fort at …»
+	(1 ("fort"))
+;
+# «Å skaffe visum kan være en omstendelig prosess, så bestill det så fort du har reiseruten klar.»
 
 #:3217
   "<så>"   SELECT:cm-så-hun-gledet cnjcoo IF
