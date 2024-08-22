@@ -6311,6 +6311,13 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(NEGATE -1* %ha/få% OR modalverb)
 ;
 
+"<fortsatt>" SELECT:viktigheten-av-fortsatt-leting adj IF
+        (-1 pr)
+        (-1C pr OR adv)
+        (1C n + ind)
+        ;
+# «Den illustrerer viktigheten av  fortsatt  leting.»
+
 "<fortsatt>" SELECT (vblex) IF
 	(-4 ("ha"))
         (-2 adj)
