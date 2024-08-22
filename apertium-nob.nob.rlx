@@ -1336,7 +1336,7 @@ LIST not-np-guess-f_lc>f_uc =
  "<Samtaler>" "<Saksøkerne>" "<Røyking>" "<Rødgrønn>" "<Restaurant>" "<Representantene>" "<Ren>" "<Reiserådet>" "<Reiselivsnæringen>"
  "<Regnværet>" "<Raketter>" "<Punktligheten>" "<Programleder>" "<Politidistriktet>" "<Passasjeren>" "<Opptellingen>" "<Oppstart>" "<Opposisjonens>"
  "<Oppgavene>" "<Oljefondets>" "<Netthandel>" "<Nedtur>" "<Målforskjellen>" "<Mødre>" "<Mulighetene>" "<Mistenkt>" "<Mistenkelig>" "<Minister>"
- "<Milliarder>" "<Militære>" "<Militante>" "<Mexicanske>" "<Meglerhuset>" "<Massetesting>" "<Markert>" "<Mangeårig>" "<Majoriteten>"
+ "<Milliarder>" "<Militære>" "<Militante>" "<Mexicanske>" "<Meglerne>" "<Meglerhuset>" "<Massetesting>" "<Markert>" "<Mangeårig>" "<Majoriteten>"
  "<Lønn>" "<Læreren>" "<Luftambulansen>" "<Lettere>" "<Lettelsene>" "<Lett>" "<Leiligheten>" "<Landslagstreneren>" "<Laks>" "<Lagkaptein>"
  "<Kunstløp>" "<Konkursen>" "<Kongens>" "<Knappe>" "<Kjøperen>" "<Kildene>" "<Kandidatene>" "<Justiskomiteen>" "<Julen>" "<Januar>"
  "<Investorer>" "<Investeringen>" "<Interne>" "<Imens>" "<Identiteten>" "<Høyrebacken>" "<Hytta>" "<Husholdninger>" "<Hovedsakelig>"
@@ -42053,6 +42053,7 @@ REMOVE:default ("brenner") IF (0 ("brenne")) ;
 REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
 REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
+SELECT:default ("Bjella") + np ;
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
