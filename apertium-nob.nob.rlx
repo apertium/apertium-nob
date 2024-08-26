@@ -3941,7 +3941,12 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (-1 det + qnt + sg)
         ;
 
+"<presset>"i SELECT:at-presset-øker n IF
+		(-1 cnjsub OR %at%)
+        ;
+
 "<presset>"i SELECT:en-presset-økonomisk-situasjon adj + pp IF
+		(-1 det + qnt + m + sg)
 		(1 adj)
         ;
 
@@ -3985,6 +3990,7 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 
 "<presset>"i SELECT:hardt-presset adj + pp IF
         (-1 adv OR n)
+        (NEGATE -1 %at%)
         ;
 "<hardt>"i SELECT:hardt-presset adv IF
         (1 ("<presset>"))
@@ -4031,6 +4037,20 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 "<presset>"i SELECT:dempe-presset n IF
         (-1* vblex BARRIER setn-gr)
 		(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
+        ;
+
+"<Presset>" SELECT:Presset-miljøet-har-opplevd n
+        (1C n + def)
+        ;
+
+"<Presset>" SELECT:Presset-mot n
+        (1 prep OR vblex)
+        (NEGATE 1 %før% OR %etter%)
+        ;
+
+"<Presset>" SELECT:Presset-ikke-lettet n
+        (1 adv)
+        (2 pret OR adj OR adv)
         ;
 
 "<presset>"i SELECT:default pret
@@ -17597,6 +17617,10 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         ;
 # «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
 
+"<samtykket>"i SELECT:mannen-samtykket-til vblex IF
+		(1 %til%)
+		;
+
 "<enkelt>"i SELECT:hver-enkelt adj IF
 		(-1 ("hver"))
 		;
@@ -25951,6 +25975,12 @@ SELECT:singel-album ("singel" m) IF
 
 
 
+"<kåret>"i SELECT:bli-kåra-til vblex IF
+		(1 ("til"))
+		;
+                # "kåret til noen" (levekåra) er mogleg, men lite sannsynleg (svært uvanleg i nynorsk òg)
+
+
 #:2494
  SELECT:2494 subst IF
 	(NOT 0 farlige-mask-subst)
@@ -26069,11 +26099,6 @@ SELECT:landets-nest-største-sykehus n + sg IF
 "<lite>" SELECT:et-lite-øyeblikk ("liten") IF
         (1C n + nt + sg)
         ;
-
-"<kåret>"i SELECT:bli-kåra-til vblex IF
-		(-1 %være/bli%)
-		(1 ("til"))
-		;
 
 #:2496
 SELECT:fra-naturens-side subst + $$GENDER IF
