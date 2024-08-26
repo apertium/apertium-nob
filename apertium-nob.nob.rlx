@@ -22844,23 +22844,23 @@ SELECT:disse-fine-bilene det + pl IF
 
 
 #:2748
- SELECT:2748 (det m) IF
+ SELECT:den-nesten-3-år-gamle (det m) IF
 	(0 %en/den/denne%)
 	(1 adverb)
 	(2 tall)
 	(NOT 2 ikke-tall)
-	(*3O fl-subst LINK NOT 0 ikke-adj-subst LINK NOT *-1 ikke-adv-adj-kvant)
+	(*3O fl-subst OR ("år gammel") LINK NOT 0 ikke-adj-subst LINK NOT *-1 ikke-adv-adj-kvant)
 ;
 #  "den nesten tre milliarder år gamle steinen"
 
 
 
 #:2749
- SELECT:2749 (det m) IF
+ SELECT:den-3-år-gamle (det m) IF
 	(0 %en/den/denne%)
 	(1 tall)
 	(NOT 1 ikke-tall)
-	(*2O fl-subst LINK NOT 0 ikke-adj-subst LINK NOT *-1 ikke-adv-adj-kvant)
+	(*2O fl-subst OR ("år gammel") LINK NOT 0 ikke-adj-subst LINK NOT *-1 ikke-adv-adj-kvant)
 ;
 #  "den tre milliarder år gamle steinen
 # IKKE-TALL er kvantorer som ikke er grunntall"
