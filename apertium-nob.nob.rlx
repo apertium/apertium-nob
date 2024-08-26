@@ -31482,7 +31482,7 @@ REMOVE:skal-bli-større-OG-flyttes clb + %og/eller% IF
 # «Alt skal bli større og helst flyttes inn til de store byene.»
 
 SELECT:x-kommer-og-y-holdes clb + %og/eller% IF
-        (*-1C fv BARRIER clb)
+        (*-1C fv BARRIER clb OR cnjsub)
         (*1 fv BARRIER clb OR cnjsub LINK 0C pasv OR fv)
         ;
 # «Nye steinsprang i fjellpartiet Veslemannen i Rauma kom fredag morgen og det røde farevarslet opprettholdes, men bevegelsene i fjellet har avtatt noe.»
@@ -37600,6 +37600,12 @@ REMOVE:råner-i-brunst-og-purker-med-unger clb + cnjcoo IF
         (3 n)
         (4 setn-gr)
         ;
+
+REMOVE:at-hennes-og clb + cnjcoo IF
+        (-2 cnjsub)
+        (NEGATE -1 fv)
+        ;
+# «Men her forleden kom en dame og sa at hennes og mannens store glede var å reise rundt i verden for å gå på symfrockkonserter.»
 
 #:1812
  SELECT:1812 (clb cnjcoo) IF
