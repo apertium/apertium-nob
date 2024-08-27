@@ -3945,7 +3945,8 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         ;
 
 "<presset>"i SELECT:at-presset-øker n IF
-		(-1 cnjsub OR %at%)
+        (NEGATE -1 %så%)
+        (-1 cnjsub OR %at%)
         ;
 
 "<presset>"i SELECT:en-presset-økonomisk-situasjon adj + pp IF
