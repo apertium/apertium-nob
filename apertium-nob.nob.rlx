@@ -12907,6 +12907,11 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (NEGATE 1 %å% OR %at%)
         ;
 
+SELECT:default-pl ("rom") + n + nt IF
+        (0 pl)
+        ;
+        # fleire flasker med rom på romma
+
 SELECT:default ("rom") + n + nt IF
         (0/1 cmp)
         ;
@@ -22891,6 +22896,9 @@ SELECT:disse-fine-bilene det + pl IF
 #  "den tre milliarder år gamle steinen
 # IKKE-TALL er kvantorer som ikke er grunntall"
 
+ "<ti>"i SELECT:sin-ti-år-gamle det + qnt IF
+	(1 ("år gammel"))
+;
 
 
 #:2750
