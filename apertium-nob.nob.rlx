@@ -8257,7 +8257,6 @@ SELECT:sløvande-middel ("middel") + nt IF
 # Jer er opptatt ved universitetet"
 
 
-
 #:3357
   "<overhodet>"   SELECT:3357   (adv) IF
 	(1 %ikke/ingen%)
@@ -8385,6 +8384,14 @@ SELECT:tranene ("trane") IF
         (-1 adj)
         ;
 # Ikkje: «Fersk finansminister Jan Tore Sanner (H) gir Siv Jensen gode skussmål, men håper hun beholder «litt av finansministerhatten» også i opposisjon.»
+
+
+"<bøy>"i SELECT:bøy-hodet ("bøye") IF
+        (1 n)
+        ;
+        # og bøy hodet
+        # Ikkje: og bøyg hodet
+
 
 
 "<beholder>"i SELECT:beholder-med n IF
@@ -10354,7 +10361,6 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 ;
 #  "så lenge han er her
 # 4.2"
-
 
 
 #:3234
