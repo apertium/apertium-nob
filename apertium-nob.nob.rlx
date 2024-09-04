@@ -10179,10 +10179,17 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (NEGATE 1* vblex)
         ;
 
-"<så>" SELECT:komma-så-jeg pret IF
+"<så>" SELECT:komma-så-jeg-at pret IF
         (-1 komma)
         (1 pron OR np OR vblex OR pr OR det + qnt OR ("<å>"))
         (2 %at%)
+        ;
+
+"<så>" SELECT:komma-så-jeg-imidlertid-at pret IF
+        (-1 komma)
+        (1 pron OR np OR vblex OR pr OR det + qnt OR ("<å>"))
+        (2C adv)
+        (3 %at%)
         ;
 
 "<så>" SELECT:så-for-meg adv IF
