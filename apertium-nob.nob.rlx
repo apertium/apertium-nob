@@ -36123,11 +36123,11 @@ SECTION 3-select-words-heur ;
 ;
 #sannsynlig at det er lo
 
-"<lov>" SELECT:norsk-lov sg IF
+"<lov>"i SELECT:norsk-lov sg IF
         (NOT -1 ("om"))         # be om lov
         ;
 
-"<lovs>" SELECT:norsk-lovs-historie sg IF
+"<lovs>"i SELECT:norsk-lovs-historie sg IF
         (NOT -1 ("om"))         # be om lov
         ;
 
