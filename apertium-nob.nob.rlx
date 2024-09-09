@@ -17759,7 +17759,7 @@ SELECT:det-kunne-de-gjort vblex + pp IF
         (1 n + sg + def)
         ;
 
-SELECT:krever-dem-løslatt adj + pl IF
+SELECT:krever-dem-løslatt adj + pl OR adj + sp IF
         (NEGATE *-1 ("ha") BARRIER vblex)
         (*-3 nom)
         (-2C vblex)
