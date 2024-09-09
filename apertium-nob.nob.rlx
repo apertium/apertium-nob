@@ -41792,6 +41792,17 @@ SELECT:det-ingen-flaggermus pl IF
         (0C subst)
         ;
 
+
+SELECT:anser-X-for-pl pl IF
+        (*-1 ("anse") OR pasvpp_tar_%som%pr BARRIER setn-gr OR verb)
+        (0C sg OR pl)
+        (0C n)
+        (1 %for% OR %som%)
+        (2C adj + pl LINK 0 ("<.*e>"r)) # unambiguously plural adjective
+        ;
+# «Tallene er ikke bekreftet på annet hold, men FN anser de palestinske helsemyndighetenes   tall   for pålitelige.»
+
+
 SELECT:default-pl-after-poss pl + default-pl-after-poss IF
         (-1 poss-det + pl OR gen + pl)
         (0C subst)
