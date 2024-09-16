@@ -12731,6 +12731,11 @@ REMOVE:Isnes-ansatt vblex IF
         (1 ("sted"))
         ;
 # "en høring i saken hans finner sted"
+"<finner>"i REMOVE:finner-du-det n IF
+        (1 prn)
+        (2 n)
+        ;
+# "I knappen under finner du beskjeden."
 "<transporteres>"i SELECT:skal-alle-transporteres vblex + inf + pasv IF
         (-2 modalverb)
         (-1 det OR n OR pron)
