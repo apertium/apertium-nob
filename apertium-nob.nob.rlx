@@ -12409,7 +12409,15 @@ REMOVE:to-ansatte vblex IF
         (2 n OR np)
         ;
 # "Ruud hadde walkover i den første runden i Roma og møter nederlandske Botic van de Zandschulp"
-
+"<Flytte>"i REMOVE:flytte-konto ("flyte") IF
+        (1 ("<.*konto>"ri) OR ("konto"))
+        ;
+# "Flytte konto."
+"<Fordeler>" REMOVE:Fordeler-med-X vblex IF
+        (1 ("med"))
+        (2 np)
+        ;
+# "Fordeler med BankID."
 "<kastet>"i REMOVE:skjøt-og-kastet n IF
         (-2 vblex)
         (-1 ("og"))
