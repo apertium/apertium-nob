@@ -7158,6 +7158,15 @@ SELECT:lurer-på-hvor adv IF
         (2 ("komme"))
         (3 ("fra"))
         ;
+
+"<hvor>" SELECT:hus-hvor-barn-som cnjsub IF
+        (-1C n)
+        (1C n)
+        (2 %som%)
+        (*3 fv)
+        ;
+# «Ett av tiltakene som skal utredes, er Nasjonale Trygghetshus, som et bo- og rehabiliteringstilbud hvor barn som har begått alvorlig kriminalitet, kan få klarere rammer»
+
 # "Napoleon, hvor han kom fra."
 "<hvor>" SELECT:hvor-det-kom-fra adv IF
         (2 ("komme"))
