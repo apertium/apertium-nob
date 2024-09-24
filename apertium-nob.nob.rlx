@@ -12740,6 +12740,14 @@ REMOVE:Isnes-ansatt vblex IF
         (-1 ("lede"))
         ;
 # skal lede rådet"
+"<rådet>"i REMOVE:det-rådet-usikkerhet n IF
+        (-1 ("<det>"i))
+        (1 n OR det + qnt)
+        ;
+"<rådet>"i SELECT:det-rådet. n IF
+        (-1 ("<det>"i))
+        (1 clb)
+        ;
 "<hakket>"i REMOVE:hakket-under vblex IF
         (1 ("under"))
         ;
