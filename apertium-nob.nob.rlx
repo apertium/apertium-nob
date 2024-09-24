@@ -13191,10 +13191,30 @@ REMOVE:rekke-ut-handa ("rake") IF
         (2 ("å"))
         (3 ("møtes"))
         ;
+"<revet>"i SELECT:revet-heter ("rev") IF
+        (1C fv)
+        ;
 "<revet>"i SELECT:revet-ost ("rive") IF
-        (1 ("ost") OR ("parmesan") OR ("mozzrella"i) OR  %opp% OR %ned% OR ("vekk") OR ("bort"))
+        (1 n OR ("ost") OR ("parmesan") OR ("mozzrella"i) OR  %opp% OR %ned% OR ("vekk") OR ("bort") OR %med% OR %av%)
         ;
         #riven ost, riven opp, riven vekk
+"<revet>"i SELECT:ble-muren-revet ("rive") IF
+        (-1 n OR np) 
+        ;
+"<revet>"i SELECT:revet-i-filler ("rive") IF
+        (1 %i% OR %over%)
+        (2 ("<stykker>"i) OR ("<filler>"i) OR ("<fillebiter>"i) OR ("ende"))
+        ;
+"<revet>"i SELECT:bli-revet ("rive") IF
+        (-1*C %være/bli%)
+        (1 clb)
+        ;
+"<revet>"i SELECT:revet-god-ost ("revet" adj) IF
+        (1 adj + m OR adj + f OR adj + mf OR adj + pl)
+        ;
+"<revet>"i SELECT:tilbake-fra-revet ("rev") IF
+        (-1 prep)
+        ;
 "<henger>"i SELECT:på-veggen-henger ("henge") IF
         (-2 ("på"))
         (-1 ("vegg"))
