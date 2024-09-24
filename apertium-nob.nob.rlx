@@ -5416,6 +5416,11 @@ SELECT:greip-makta ("<grep>"i) + vblex IF
 		;
 		# ..., som grep makten i 1973
 
+
+SELECT:henge-på-greip ("<greip>"i) + sg IF
+		(-1 %på%)
+		;
+
 SELECT:ta/gjøre-noen-grep ("grep") + n + ind IF
 		(-1* ("ta" vblex) OR ("gjøre" vblex) BARRIER setn-gr)
 		;
