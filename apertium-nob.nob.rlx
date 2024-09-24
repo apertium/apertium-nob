@@ -3267,6 +3267,10 @@ REMOVE:unlikely ("anklager") + n IF
 
 REMOVE:style ("sukk") + m; # NPK seems to prefer sukk<nt>
 
+SELECT:på-jordene ("<jordene>"i "jorde") IF
+        (-1 %på%)
+        ;
+
 SELECT:holde-stand vblex IF
         (0 ("holde"))
         (1 ("stand"))
@@ -3338,6 +3342,10 @@ SELECT:er-oversvømt adj IF
 
 REMOVE:unlikely ("<notene>"i "not") IF
         (NEGATE 0* ("fisk"))
+        ;
+
+REMOVE:på-jordene ("<jordene>"i "jorde") IF
+        (-1C %på%)
         ;
 
 SELECT:unlikely ("<super>"i) + adj IF
