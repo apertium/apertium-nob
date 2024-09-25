@@ -40262,6 +40262,14 @@ SELECT:noen-p   <noen> + prn + neg IF
 ;
 # «Jeg hadde ikke noen gode poeng i min.»
 
+SELECT:ikke-er-noen-land <noen> + det + neg + fl IF
+        (-2C %ikke%)
+        (-1C fv)
+        (1 n + pl)
+        (1C n)
+        ;
+# «Eide sier at det ikke er noen land i alliansen som tar til orde for å nekte andre å tillate slik bruk.»
+
 SELECT:noen-konklusjon   <noen> + det + neg IF
 	(*1 ("konklusjon") BARRIER ikke-adv-adj)
 ;
