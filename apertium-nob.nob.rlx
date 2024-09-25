@@ -17523,6 +17523,10 @@ SELECT:ble-antent adj + pst IF
 		(*-2 ("da"))
 		(NOT *-1 ("ha"))
 		;
+"<trykket>" SELECT:holde-trykket-oppe n IF
+		(*-1C ("holde") BARRIER setn-gr)
+		(1C prep)
+		;
 
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
