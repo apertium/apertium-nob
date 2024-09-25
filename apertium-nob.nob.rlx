@@ -5377,6 +5377,18 @@ SELECT:den+prn ("den¹") IF
 		(-1* ("stå" vblex) BARRIER setn-gr)
         ;
 
+"<skjerpet>"i SELECT:skjerpet-konkurranse adj IF
+		(1C n)
+        ;
+
+"<skjerpet>"i SELECT:skjerpet-inn adj IF
+		(1C %inn%)
+        ;
+
+"<skjerpet>"i SELECT:mindre-skjerpet adj IF
+		(-1 comp)
+        ;
+
 "<samtidig>" SELECT:samtidig-som adv IF
         (1 %som%)
         ;
