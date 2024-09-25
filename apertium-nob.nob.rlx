@@ -40265,10 +40265,15 @@ SELECT:noen-p   <noen> + prn + neg IF
 SELECT:ikke-er-noen-land <noen> + det + neg + fl IF
         (-2C %ikke%)
         (-1C fv)
-        (1 n + pl)
-        (1C n)
+        (*1C n BARRIER ikke-adj LINK 0 pl)
         ;
 # «Eide sier at det ikke er noen land i alliansen som tar til orde for å nekte andre å tillate slik bruk.»
+
+SELECT:hverken-noen <noen> + det + neg + fl IF
+        (*-1 fv BARRIER fv OR setn-gr LINK *-1 ("verken") OR ("hverken") BARRIER setn-gr OR fv)
+        (*1C n BARRIER ikke-adj)
+        ;
+# «Hverken den grundige politietterforskningen eller de senere private undersøkelsene i saken har frambrakt noen klare bevis for hvem som utførte drapene.»
 
 SELECT:noen-konklusjon   <noen> + det + neg IF
 	(*1 ("konklusjon") BARRIER ikke-adv-adj)
