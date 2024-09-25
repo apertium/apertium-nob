@@ -17546,6 +17546,10 @@ SELECT:ble-antent adj + pst IF
                 (2 ("<stikken>"))
 		;
 
+"<etterlatt>"i SELECT:etterlatt-seg vblex IF
+		(1 %seg%)
+		;
+
 "<lemmet>" SELECT:lem n
         (NEGATE 0* husdyr-ord)
         ;
