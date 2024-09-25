@@ -7491,6 +7491,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-1 prn + pers OR np + cog)
         ;
 # Det lover jeg lande
+
+"<landet>"i SELECT:i-det-landet n IF
+        (-2 %i%)
+        (-1 det + dem + nt)
+        ;
 "<landet>" SELECT:hun-landet pret IF
         (-1 prn + pers OR np + cog)
         ;
@@ -26789,7 +26794,7 @@ SELECT:forvaltes-og-høstes pasv + pres IF
 		;
 
 "<vitner>" SELECT:vitner-om vblex IF
-		(NOT -1 %fra% OR ("mange"))
+		(NOT -1 %fra% OR ("mange") OR vblex)
 		(1 %om%)
 		;
 
@@ -26859,6 +26864,29 @@ SELECT:forvaltes-og-høstes pasv + pres IF
 		(-2 ("status") OR ("signere"))
 		(-1 %som%)
 		;
+
+"<tenker>"i SELECT:en-selvstendig-tenker n IF
+		(-1 adj)
+                (-2 det + qnt + m)
+		;
+
+"<tenker>"i SELECT:tenker-at pres IF
+		(1 %at%)
+		;
+
+"<tenker>"i SELECT:tenker-på-at pres IF
+                (1 %på%)
+		(2 %at%)
+		;
+
+"<tenker>"i SELECT:vi-tenker pres IF
+                (-1 prn)
+		;
+
+"<tenker>"i SELECT:tenker-du pres IF
+                (1 prn)
+		;
+                # Tenkjer du på det, trur eg du blir hemma.
 
 #:2442
  SELECT:2442 (vblex pres) IF
