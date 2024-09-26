@@ -2752,6 +2752,18 @@ SELECT:name-seen-samecase-midsent np + ("(<\\p{Lu}.*>)"r) IF
 # «Sammenlagtpremien er den gjeveste, sa Kilde til NTB. Kilde og Alexis Pinturault kjempet om totalseieren …»
 
 
+
+# Fot-teiknet er berre fot etter tal, elles er det skrivemaskinsapostrof:
+SELECT:fot-fot ("'") IF
+        (-1 siffer)
+        ;
+SELECT:fot-tomme ("'") IF
+        (-2 siffer)
+        (-1 ("'"))              # TODO: kanskje '' som eige oppslag?
+        ;
+REMOVE:fot-apos ("'");
+
+
 ###################################################
 # SECTION Early removal of unlikely / rare forms: #
 ###################################################
