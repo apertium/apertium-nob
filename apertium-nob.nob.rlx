@@ -26310,6 +26310,18 @@ SELECT:varslet-både vblex IF
 		(1 ("både"))
 		;
 
+
+"<rammer>"i SELECT:dette-rammer vblex IF
+        (-1 dem + nt)
+        ;
+        # Dette rammer både den og den
+
+"<rammer>"i SELECT:som-rammer vblex IF
+        (-1 %som%)
+        ;
+        # som rammer både den og den
+
+
 #:2501
  SELECT:2501 subst IF
 	(1 konj)
