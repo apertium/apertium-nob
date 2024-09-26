@@ -3084,6 +3084,10 @@ REMOVE:unlikely-skjøt ("skjøt") IF
         (NOT -1 %en%)
         ;
 
+"<hevd>"i SELECT:ha-hevd-på ("hevd" n) IF
+        (1 %på%)
+        ;
+        # ha hevd på
 
 REMOVE:unlikely ("stenge") + n ;
 REMOVE:unlikely-tenger-in-cmp ("tang") IF (0 ("stang")) ;
