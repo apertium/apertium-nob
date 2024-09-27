@@ -7398,6 +7398,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 ("<økt>") OR ("<redusert>"))
         ;
 
+"<smelte>"i SELECT ("smelte") IF
+        (-1C* modalverb BARRIER setn-gr)
+        ;
+# da kan de smelte og ta fyr
 
 "<LA>" SELECT:LA-Clippers np IF (1 ukjent OR np);
 
@@ -10425,6 +10429,25 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 #  "så lenge han er her
 # 4.2"
 
+
+"<så>"  SELECT:så-ut-som pret IF
+	(1 %ut%)
+	(2 %som%)
+        ;
+
+"<så>"  SELECT:og-så-ut-igjen adv IF
+        (-1 %og%)
+	(1 prep)
+	(2 ("igjen"))
+        ;
+
+"<så>"  SELECT:så-ut-på-høring adv IF
+	(1 %ut%)
+        (2 %på%)
+	(3 n + sg + ind)
+        ;
+        # Først litt mat og så ut på tur
+        # (jf.) hvordan man så ut på håret
 
 #:3234
   "<så>"   SELECT:3234   (adv) IF
