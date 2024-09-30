@@ -12604,6 +12604,9 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 n)
         ;
 # "nå er det laget en plan for behandling"
+"<Bruker>" SELECT:bruker-du vblex IF
+        (1 prn + pers)
+# "Bruker du ikke den løsningen?"
 "<helt>"i SELECT:helt-siden adv IF
         (-1 ("ha"))
         (1 ("siden"))
