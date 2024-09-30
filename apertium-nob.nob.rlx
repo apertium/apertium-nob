@@ -10451,9 +10451,10 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 	(1 %ut%)
         (2 %på%)
 	(3 n + sg + ind)
+        (NEGATE 3 (".*dag"ri))  # «slik de så ut på dommedag»
         ;
-        # Først litt mat og så ut på tur
-        # (jf.) hvordan man så ut på håret
+# «Først litt mat og så ut på tur»
+# Ikkje: «hvordan man så ut på håret<def>»
 
 #:3234
   "<så>"   SELECT:3234   (adv) IF
