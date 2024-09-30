@@ -7106,6 +7106,12 @@ SELECT:lurer-på-hvor adv IF
         ;
 # «Jeg håper vi kan bygge en ny verdensorden som respekterer folkeretten, og hvor FN kan spille en fredsbevarende rolle.»
 
+"<hvor>" SELECT:hvor-eldre cnjsub IF
+        (1 komp OR ("eldre") OR ("<ansatte>"i) OR ("<frivillige>"i) OR ("<etterlatte>"i) OR ("<tiltalte>"i) OR ("<innsatte>"i) OR ("<domfelte>"i) )
+;
+# Tysdag melde politiet at dei har fått melding om sju tilfelle der eldre menneske har vorte svindla.
+# ein kan snike seg inn stader der større vogner og bilar ikkje når fram
+
 # If it's really a cnjsub, it's typically handled by earlier rules:
 # (though by nno-frequency we also select cnjsub for this word as the end-of-file default)
 "<hvor>" SELECT:hvor-pene-de-er adv IF
