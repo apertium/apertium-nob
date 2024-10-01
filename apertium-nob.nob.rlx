@@ -28849,9 +28849,10 @@ SELECT:Den-mistenkte adj + sg + def IF
 
 SELECT:vel-anvendte-midler adj IF
 	(-1 ("<vel>"))
-	(0 ("<anvendte>"))
-	(1 ("<midler>") OR ("<penger>"))
+	(0 ("anvende"))
+	(1 n)
 	;
+        # vel anvend tid, vel andvende midlar
 
 
 #:2375
