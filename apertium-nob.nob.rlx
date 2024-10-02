@@ -2404,7 +2404,7 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
 
 SECTION 1-select-words ;
 
-REMOVE guess;
+REMOVE:guess SUB:* guess;
 
 
 ########################################################
@@ -2912,6 +2912,7 @@ REMOVE:unlikely ("<etterslenger>"i) + n + pl; # jf. ettersleng
 REMOVE:unlikely ("<foursomes>"i) + n + gen; # fleirtal
 REMOVE:unlikely ("<sikres>"i) + n + gen IF (NEGATE -1 dem);
 REMOVE:unlikely ("<kjennes>"i) + n + gen; # det kjennes sant
+REMOVE:unlikely ("harry") + n + gen ;     # np
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -12613,20 +12614,25 @@ REMOVE:terrorstemplet ("stempel") IF
 # "nå er det laget en plan for behandling"
 "<Bruker>" SELECT:bruker-du vblex IF
         (1 prn + pers)
+        ;
 # "Bruker du ikke den løsningen?"
+
 "<helt>"i SELECT:helt-siden adv IF
         (-1 ("ha"))
         (1 ("siden"))
         ;
 # "Pakistan har helt siden slutten av april..."
+
 "<håpet>"i SELECT:håpet-lever n IF
         (1 ("<lever>"))
         ;
+
 # "seieren over Southampton tirsdag gjør at håpet lever for de rødkledde"
 "<intervjuet>"i REMOVE:som-er-intervjuet n IF
         (-2 ("som"))
         (-1 %være/bli%)
         ;
+
 # "flere sivile som er intervjuet forteller om store lidelser"
 "<bøtter>"i REMOVE:mat-og-bøtter vblex IF
         (-2 n)
@@ -26014,7 +26020,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2532
- SELECT:2532 (np gen) IF
+SELECT:Wildes-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1C subst)
@@ -26025,7 +26031,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2533
- SELECT:2533 (np gen) IF
+ SELECT:Wildes-gen-lille-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 nr2-det)
@@ -26037,7 +26043,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2534
- SELECT:2534 (np gen) IF
+SELECT:Wildes-gen-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 nr2-det)
@@ -26048,7 +26054,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2535
- SELECT:2535 (np gen) IF
+SELECT:Wildes-beste-bøker gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 fl)
@@ -26061,7 +26067,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2536
- SELECT:2536 (np gen) IF
+SELECT:Wildes-beste-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 adj-be)
@@ -26071,6 +26077,18 @@ SELECT:singel-album ("singel" m) IF
 #  "Wildes beste bok
 # 29.5.2001: At Monica Hås (ikke gen) leverte våpnene. not 1 pres/pret"))
 
+SELECT:org+org (np org) IF
+        (0C n OR np)
+        (0 org)
+        (1C n OR np)
+        (1 org)
+        ;
+
+SELECT:org+guess (np org) IF
+        (0C n OR np)
+        (0 org)
+        (1C cgguess)
+        ;
 
 
 #:2530
@@ -26136,11 +26154,12 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2493
- SELECT:2493 subst IF
+ SELECT:til-stykket-cm subst IF
 	(NOT 0 farlige-adj-subst)
 	(NOT 0 ikke-adj-subst)
 	(1 komma/konj)
 	(-1C prep)
+        (NEGATE -1 %fra% LINK -1 %langt%) # adv
 	(NOT 2 subst/adj)
 ;
 #  "til stykket (subst, ikke adj), tror jeg
@@ -30591,6 +30610,7 @@ REMOVE:at-paret (adj pp) IF
 	(NOT 0 bare-adj)
 	(1 komma/konj)
 	(-1C prep)
+        (NEGATE -1 %fra% LINK -1 %langt%) # adv
 	(NOT -1 %som%)
 	(NOT -1 %nærpå%)
 	(NOT -1 %enn%)
@@ -42327,6 +42347,7 @@ REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
 REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
 SELECT:default ("Bjella") + np ;
+SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
@@ -42820,6 +42841,13 @@ REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 "<Etter>" REMOVE:default np ;
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
+# Usannsynleg fellesnamn:
+SELECT:default-np-not-n ("Folkehelseinstituttet" np) ;
+SELECT:default-np-not-n ("Arbeiderpartiet" np) ;
+SELECT:default-np-not-n ("Justisdepartementets" np) ;
+SELECT:default-np-not-n ("Stortinget" np) ;
+SELECT:default-np-not-n ("Senatet" np) ;
+SELECT:default-np-not-n ("Hagen" np) ;
 
 
 
