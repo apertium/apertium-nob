@@ -2912,6 +2912,7 @@ REMOVE:unlikely ("<etterslenger>"i) + n + pl; # jf. ettersleng
 REMOVE:unlikely ("<foursomes>"i) + n + gen; # fleirtal
 REMOVE:unlikely ("<sikres>"i) + n + gen IF (NEGATE -1 dem);
 REMOVE:unlikely ("<kjennes>"i) + n + gen; # det kjennes sant
+REMOVE:unlikely ("harry") + n + gen ;     # np
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -42828,6 +42829,13 @@ REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 "<Etter>" REMOVE:default np ;
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
+# Usannsynleg fellesnamn:
+SELECT:default-np-not-n ("Folkehelseinstituttet" np) ;
+SELECT:default-np-not-n ("Arbeiderpartiet" np) ;
+SELECT:default-np-not-n ("Justisdepartementets" np) ;
+SELECT:default-np-not-n ("Stortinget" np) ;
+SELECT:default-np-not-n ("Senatet" np) ;
+SELECT:default-np-not-n ("Hagen" np) ;
 
 
 
