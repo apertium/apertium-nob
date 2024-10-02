@@ -2404,7 +2404,7 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
 
 SECTION 1-select-words ;
 
-REMOVE guess;
+REMOVE:guess SUB:* guess;
 
 
 ########################################################
