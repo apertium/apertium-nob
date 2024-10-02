@@ -26020,7 +26020,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2532
- SELECT:2532 (np gen) IF
+SELECT:Wildes-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1C subst)
@@ -26031,7 +26031,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2533
- SELECT:2533 (np gen) IF
+ SELECT:Wildes-gen-lille-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 nr2-det)
@@ -26043,7 +26043,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2534
- SELECT:2534 (np gen) IF
+SELECT:Wildes-gen-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 nr2-det)
@@ -26054,7 +26054,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2535
- SELECT:2535 (np gen) IF
+SELECT:Wildes-beste-bøker gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 fl)
@@ -26067,7 +26067,7 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2536
- SELECT:2536 (np gen) IF
+SELECT:Wildes-beste-bok gen IF
 	(0 subst-prop)
 	(NOT 0 %jesu/kristi/pauli%)
 	(1 adj-be)
