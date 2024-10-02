@@ -26077,6 +26077,18 @@ SELECT:singel-album ("singel" m) IF
 #  "Wildes beste bok
 # 29.5.2001: At Monica Hås (ikke gen) leverte våpnene. not 1 pres/pret"))
 
+SELECT:org+org (np org) IF
+        (0C n OR np)
+        (0 org)
+        (1C n OR np)
+        (1 org)
+        ;
+
+SELECT:org+guess (np org) IF
+        (0C n OR np)
+        (0 org)
+        (1C cgguess)
+        ;
 
 
 #:2530
