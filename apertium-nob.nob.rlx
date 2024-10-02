@@ -26141,11 +26141,12 @@ SELECT:singel-album ("singel" m) IF
 
 
 #:2493
- SELECT:2493 subst IF
+ SELECT:til-stykket-cm subst IF
 	(NOT 0 farlige-adj-subst)
 	(NOT 0 ikke-adj-subst)
 	(1 komma/konj)
 	(-1C prep)
+        (NEGATE -1 %fra% LINK -1 %langt%) # adv
 	(NOT 2 subst/adj)
 ;
 #  "til stykket (subst, ikke adj), tror jeg
@@ -30596,6 +30597,7 @@ REMOVE:at-paret (adj pp) IF
 	(NOT 0 bare-adj)
 	(1 komma/konj)
 	(-1C prep)
+        (NEGATE -1 %fra% LINK -1 %langt%) # adv
 	(NOT -1 %som%)
 	(NOT -1 %nærpå%)
 	(NOT -1 %enn%)
@@ -42332,6 +42334,7 @@ REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
 REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
 SELECT:default ("Bjella") + np ;
+SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
