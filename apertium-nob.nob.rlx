@@ -42842,12 +42842,8 @@ REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 # Usannsynleg fellesnamn:
-SELECT:default-np-not-n ("Folkehelseinstituttet" np) ;
-SELECT:default-np-not-n ("Arbeiderpartiet" np) ;
-SELECT:default-np-not-n ("Justisdepartementets" np) ;
-SELECT:default-np-not-n ("Stortinget" np) ;
-SELECT:default-np-not-n ("Senatet" np) ;
-SELECT:default-np-not-n ("Hagen" np) ;
+LIST likely-proper = "Folkehelseinstituttet" "Arbeiderpartiet" ".*departementet"r "Stortinget" "Senatet" "Hagen" "Forsvaret" ;
+SELECT:default-np-not-n np + likely-proper ;
 
 
 
