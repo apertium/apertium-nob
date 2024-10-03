@@ -9317,6 +9317,13 @@ SELECT:NNs-forlovede n IF
         (1 %til%)
 	;
 
+
+"<siden>"i SELECT:på/se-siden-om n IF
+        (-1 ("på") OR ("se"))
+        (1 ("om"))
+        ;
+
+
 "<siden>" SELECT:over-på-siden n IF
         (-2 %over%)
 	(-1 %på%)
