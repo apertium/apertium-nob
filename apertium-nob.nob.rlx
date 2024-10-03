@@ -42842,8 +42842,9 @@ REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 "<lengde>" REMOVE:default-lengd ("lengde" mf sp) ;
 
 # Usannsynleg fellesnamn:
-LIST likely-proper = "Folkehelseinstituttet" "Arbeiderpartiet" ".*departementet"r "Stortinget" "Senatet" "Hagen" "Forsvaret" ;
-SELECT:default-np-not-n np + likely-proper ;
+LIST likely-proper = "Folkehelseinstituttet" "Arbeiderpartiet" ".*departementet"r "Stortinget" "Senatet" "Hagen" "Forsvaret" "Polen" "Elevorganisasjonen" "Riksdagen" "Underhuset" "Fagforbundet" "Riksrevisjonen" ;
+
+REMOVE:default-np-not-n n IF (0 np + likely-proper) ;
 
 
 
