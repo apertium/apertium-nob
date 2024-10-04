@@ -42851,7 +42851,7 @@ REMOVE:default-ap ("ap") IF (0 ("Ap")) ;
 "<Kongens>" REMOVE:Kongens n ;  # unngå «til kongen» med liten k
 
 # Usannsynleg fellesnamn:
-LIST likely-proper = "Arbeiderpartiet" "Birkebeiner" "Bondelaget" "Dagbladet" ".*departementet"r ".*direktoratet"r "Drammen" "Elden" "Elevorganisasjonen" "Eliteserien" "Europarådet" "Fagforbundet" "Flytoget" "Folkehelseinstituttet" "Folketrygdfondet" "Forsvaret" "Hagen" "Hippe" "Klassekampen" "Operaen" "Panama" "Polen" "Posten" "Riksdagen" "Riksrevisjonen" "Senatet" "Signe" "Spekter" "Språkrådet" "Stortinget" "Trump" "Underhuset" "Vinmonopolet" ;
+LIST likely-proper = "Agenda" "Arbeiderpartiet" "Birkebeiner" "Bondelaget" "Dagbladet" ".*departementet"r ".*direktoratet"r "Drammen" "Elden" "Elevorganisasjonen" "Eliteserien" "Europarådet" "Fagforbundet" "Flytoget" "Folkehelseinstituttet" "Folketrygdfondet" "Forsvaret" "Hagen" "Hippe" "Klassekampen" "Kleven" "Norden" "Operaen" "Panama" "Polen" "Posten" "Riksdagen" "Riksrevisjonen" "Senatet" "Signe" "Spekter" "Språkrådet" "Stortinget" "Trump" "Underhuset" "Vinmonopolet" ;
 
 REMOVE:default-np-not-n n IF (0 np + likely-proper) ;
 
