@@ -13190,6 +13190,23 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("gjøre") + pasv)
         ;
 # blir gjort vilkårslaus
+"<frister>" SELECT:datoer-og-frister n IF
+        (-2 ("dato"))
+        (-1 ("og"))
+        ;
+# datoer og frister
+"<selger>" SELECT:så-lenge-selger-lever n IF
+        (-2 ("så"))
+        (-1 ("lenge"))
+        (1  ("<lever>"))
+        ;
+# så lenge selger lever
+"<lever>" SELECT:så-lenge-selger-lever-2 vblex IF
+        (-3 ("så"))
+        (-2 ("lenge"))
+        (-1  ("<selger>"))
+        ;
+# så lenge selger lever
 
 "<bøter>" REMOVE:bøter-ilegges vblex IF
         (1 ("ilegge") + pasv)
@@ -26762,6 +26779,15 @@ SELECT:skal-X-fremstilles inf + pasv IF
 # (difor `BARRIER vblex` inkludert inf – den mellomliggande inf-en ‘bruker opp’ modalverbet.)
 # TODO: Unntak for konstruksjonar med bli og adjektiv: 
 # "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
+
+SELECT:skal-X-eller-Y-fremstilles inf + pasv IF
+        (-4C modalverb BARRIER clb OR vblex + inf OR cnjsub)
+        (-3 n)
+        (-2 cnjcoo)
+        (-1 n)
+        (0C pasv)
+        ;
+# «Da skal gevinsten eller tapet føres i næringsspesifikasjonen.»
 
 SELECT:fremstilles-og-siktes inf + pasv IF
         (-2C pasv + inf)
