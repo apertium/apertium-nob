@@ -16571,6 +16571,12 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
         (NEGATE -1 %en%)
         ;
 
+"<dritt>"i REMOVE adj + pp
+        ;
+        
+"<dritt>"i REMOVE vblex IF
+        (-1 vblex)
+        ;
 
 #:3194
   "<tenkte>"   REMOVE:3194   (adj) IF
