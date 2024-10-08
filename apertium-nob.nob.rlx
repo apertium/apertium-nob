@@ -17034,6 +17034,7 @@ REMOVE:drøye ("<drøye>"i) + adv
 REMOVE:drøyt ("<drøyt>"i) + adv
 		;
 
+
 SELECT:fra-tidligere ("tidligere"i) + adv IF
 		(-2* ("kjenne") OR ("kjennskap") OR ("kjent") BARRIER setn-gr)
 		(-1 %fra%)
@@ -26872,6 +26873,9 @@ SELECT:forvaltes-og-høstes pasv + pres IF
         # ressursane blir forvalta og (blir) hausta
 
 
+"<lette>"i SELECT:lette-symptom adj IF
+    (1 ("symptom"))
+    ;
 
 
 #:2480
@@ -35574,6 +35578,7 @@ SELECT:men-de-grønnkledde-holdt-stand pret IF
 ;
 #  "I risikostudier vil ulike problem
 # lett bli kamuflerte (ikke pret)"))
+
 
 
 
