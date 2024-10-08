@@ -16416,6 +16416,11 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
         ;
 
 
+"<Sorter>" SELECT:sorter-etter vblex IF
+        (1 ("etter"))
+        ;
+
+
 #:3244
   "<spent>"   REMOVE:3244   pp IF
 	(NOT 1 %fra/for/ut%)
