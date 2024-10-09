@@ -13194,6 +13194,12 @@ REMOVE ("hvor") + cnjsub IF
         (-2 ("dato"))
         (-1 ("og"))
         ;
+"<frister>" SELECT:frister-fra n IF
+        (1 prep OR ("framover"))
+        ;
+# det er korte fristar i desember
+# viktige fristar frå regjeringa
+# vi har nokre fristar framover
 # datoer og frister
 "<selger>" SELECT:så-lenge-selger-lever n IF
         (-2 ("så"))
