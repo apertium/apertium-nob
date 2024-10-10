@@ -5192,6 +5192,10 @@ SELECT:den+prn ("den¹") IF
 "<drept>" SELECT:default adj + m IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
+"<dødd>" SELECT:ha-dødd vblex + pp IF
+		(-1C* %ha% BARRIER setn-gr)
+		(NEGATE -1* %være/bli% BARRIER setn-gr)
+        ;
 
 "<satt>" SELECT:satt-i-scene vblex + pp IF
         (1C %i%)
