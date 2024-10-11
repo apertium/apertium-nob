@@ -5662,6 +5662,14 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
 	(2 vblex)
 ;
 #  "som både selger og kjøper på FINN"
+"<selger>" SELECT:for-verken-kjøper-eller-selger n IF
+        (-4 ("for"))
+        (-3 adv-konj)
+        (-2 ("kjøper"))
+	(-1 %og% OR %eller%)
+        ;
+#  "Da har det ingen prismessig virkning for verken kjøper eller selger."
+
 
 "<eier>"i SELECT:som-eier-er n IF
         (1 vblex + pres OR vblex + pret)
