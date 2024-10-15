@@ -11885,6 +11885,7 @@ REMOVE:unlikely ("bande") + adj ; # bande ei tønne
 REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "legen har helt bruddet" / "et helt brudd"?
 REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
 REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: telefonsvarar
+REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
