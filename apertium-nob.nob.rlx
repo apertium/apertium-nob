@@ -12296,6 +12296,12 @@ REMOVE:fatte-mot pr IF
         (1 ("mistanke"))
         ;
 # "De fattet mistanke til mannen"
+"<brukt>" REMOVE:X-er-brukt-vesentlig adj + pp IF
+        (-2 n)
+        (-1 %være%)
+        (1 adj)
+        ;
+# "Kjøretøyet er brukt mye."
 
 "<kasjmirer>"i REMOVE:kasjmirer ("kasjmir") + pl IF
         ;
