@@ -5662,6 +5662,10 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
 	(2 vblex)
 ;
 #  "som både selger og kjøper på FINN"
+"<selger>" SELECT:til-selger n IF
+	(-1 ("til"))
+;
+#  "... mellomlegget til selger."
 "<selger>" SELECT:for-verken-kjøper-eller-selger n IF
         (-4 ("for"))
         (-3 adv-konj)
