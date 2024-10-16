@@ -4888,6 +4888,16 @@ SELECT:den+prn ("den¹") IF
 # «Du er den du er.»
 
 
+LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|om|uten)"r ;
+"<den>" REMOVE:pr+den¹ ("den") + prn IF
+        (0 ("den¹"))
+        (-1 den-påpeikande-etter)
+        ;
+# Fjernar berre ikkje-påpeikande pronomen (han/ho/henne); andre reglar
+# kan framleis velja determinativ (slik at «til den kinesiske stat»
+# ikkje får pronomen-lesing med den¹)
+
+
 
 #:3722
 "<der>"   SELECT:3722   pr IF
