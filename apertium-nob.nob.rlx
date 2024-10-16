@@ -203,7 +203,7 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" ;
 SET n-adjn = n OR adjn ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
@@ -37542,6 +37542,13 @@ REMOVE:øye ("øye"i) IF
 # «Mål-thriller»
 
 # SECTION 4-select-classes-heur ;
+
+SELECT:antallet-dreptE adj IF
+        (-1 ("antall"))
+        (0C n OR adj)
+        (0 adjn)
+        ;
+# slik at me får «antall drept» → «talet på drepne»
 
 
 SELECT:nest-høyeste-nivå n + sg IF
