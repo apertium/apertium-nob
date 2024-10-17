@@ -4887,6 +4887,15 @@ SELECT:den+prn ("den¹") IF
 # «I neste situasjon kan det være deg eller den du er glad i som ikke får den hjelpen de trenger.»
 # «Du er den du er.»
 
+"<den>" REMOVE:den-fint-i det IF
+        (-1C vblex)
+        (1C adv OR adj + nt OR ("<bare>"))
+        (2C pr OR qnt - siffer) # det.qnt: «ble den raskt en bestselger»
+        ;
+# «tre minutter senere vant Sofia Mendelin-Norebø ballen høyt på banen og vippet den lekkert i mål fra høyre hjørne av 16-meteren.»
+# «– Når sentrale Ap folk endelig tar initiativ til den viktigste miljødebatten, diskusjonen om norsk oljeutvinning, avlyses den umiddelbart av Jonas Gahr Støre.»
+# «Da hun endelig fikk utgitt sin første bok, «Arven», ble den raskt en bestselger.»
+
 
 LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|om|uten)"r ;
 "<den>" REMOVE:pr+den¹ ("den") + prn IF
