@@ -40376,20 +40376,27 @@ SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
 # berre nokre få
 
 
-"<Noen>" REMOVE:Noen-av neg OR sg IF
-        (0 <noen>)
+LIST nektingsverb = "avvise" "nekte" "avfeie" "avkrefte" "utelukke" "benekte" "bestri" "bestride" ;
+SELECT:avviser-at-noen-av <noen> + neg IF
+        (*-1 nektingsverb BARRIER fv)
+;
+
+SELECT:uten-at-noen <noen> + neg IF
+        (-2 %uten%)
+        (-1 %at%)
+;
+
+"<Noen>" SELECT:Noen-av <noen> + pl - neg IF
         (1 %av%)
         ;
 
-REMOVE:men-noen-av neg OR sg IF
+SELECT:men-noen-av <noen> + pl - neg IF
         (-1 %men%)
-        (0 <noen>)
         (1 %av%)
         ;
 
-REMOVE:og-noen-av neg OR sg IF
-        (-1C clb)
-        (0 <noen>)
+SELECT:og-noen-av <noen> + pl - neg IF
+        (-1C clb OR %at%)
         (1 %av%)
         ;
 
@@ -40421,6 +40428,8 @@ REMOVE:fordi-noen-av-dem neg OR sg IF
         ;
 # «For noen av dem leder bruken til problemer, enten i perioder eller over lengre tid.»
 # «Sykler har solgt ekstremt bra, så bra at noen av forhandlerne har hatt utfordringer»
+
+
 
 REMOVE:for-noen-er-det neg OR sg IF
         (-1 ("for"))
