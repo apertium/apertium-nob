@@ -19889,6 +19889,16 @@ REMOVE:Samtidig-holder-han n IF
 # «Samtidig holder han fast ved at han vil ta Storbritannia ut av EU 31.»»
 # «– Hvordan rangerer du denne kampen rent følelsesmessig sammenlignet med dine andre 34 proffkamper?»
 
+REMOVE:fortsetter-sin-kamp @subj IF
+        (*-3 @subj)
+        (-2 @fv)
+	(-1 ("sin") + @det→)
+	(0 n + ind)
+        (0 @obj OR @i-obj)
+        ;
+# «Han støtter soldatene som under ekstremt vanskelige forhold fortsetter sin kamp for å beskytte befolkningen.»
+
+
 REMOVE:det-spilles-kamper @subj IF
         (-2C @subj/@xubj)
         (-1C pasv + @fv)
