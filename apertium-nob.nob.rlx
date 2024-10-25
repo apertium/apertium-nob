@@ -299,6 +299,7 @@ LIST %først% = "først" ;
 LIST %første% = ("første"  adj) ;
 LIST %gang% = "gang"  ;
 LIST %ganger% = ("gange"  pres) ;
+LIST %gjennom% = "gjennom"  ;
 LIST %gjøre% = "gjøre"  ;
 LIST %gode% = ("gode"  n) ;
 LIST %grad% = ("grad"  n sg) ;
@@ -6436,7 +6437,11 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-4 ("ha"))
         (-2 adj)
 	(-1 n + def)
+        (1 infmerke OR %med% OR %gjennom% OR setn-gr)
 ;
+# «har den globale oppvarmingen fortsatt»
+# Men ikkje: «Dermed har de spanske storklubbene fortsatt 14 dager på seg til å sikre seg en avtale med Neymar.»
+
 "<fortsatt>" SELECT (adv) IF
 	(1 ("til"))
 	(2 ("gode"))
