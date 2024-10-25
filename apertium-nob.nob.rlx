@@ -36900,6 +36900,13 @@ SECTION remove-words-heur ;
 
 
 
+"<hva>" SELECT:hva-å-være-god-betyr prn IF
+        (1 infmerke)
+        (*2C fv)
+        ;
+# Men ikkje t.d. «Jeg vet hva å forvente.»
+
+
 #:3514
   "<hvis>"   REMOVE:3514   (prn itg) IF
 	(0 sbu)
