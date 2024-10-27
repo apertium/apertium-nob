@@ -5109,6 +5109,20 @@ MAP:6090 (@laus-np)   (acr) IF
 
 SECTION select-words ;
 
+"<antall>" REMOVE:antall-på-100 @subj IF
+	(-1 ("<et>"i))
+	(1 ("<på>"))
+	(2 qnt + @subj)
+	;
+REMOVE:antall-på-100 @←p-utfyll IF
+	(-3 ("<et>"i))
+	(-2 ("<antall>"))
+	(-1 ("<på>"))
+	(0 qnt + @subj)
+	;
+# «Når et antall på 100 gis mulighet til å begjære ny vurdering, er det sånn.»
+# (100 er subjektet)
+
 "<anledninger>" SELECT:ved-flere-anledninger @←p-utfyll IF
         (-2 ("<ved>"))
         (-1 ("<flere>"))
@@ -6412,6 +6426,14 @@ SELECT:element-fra-fotball-og-volleyball (@←p-utfyll) IF
 	(NOT 1 subst-prop)
 ;
 # «Blant de siste er "sepak takraw", der elementer fra fotball og volleyball kombineres.»
+
+SELECT:2014-til-2016 (@←p-utfyll) IF
+	(-2C @←det)
+	(-2 siffer OR tall)
+	(-1 ("til"))
+	(0 siffer OR tall)
+	;
+# «Ressurssituasjonen på avdelingen for organisert kriminalitet var i perioden 2014 til 2016 svært anstrengt både på grunn av et høyt antall personer i varetekt.»
 
 SELECT:På-A--og-B-lag (@←p-utfyll) IF
 	(-2 cmp-split)
