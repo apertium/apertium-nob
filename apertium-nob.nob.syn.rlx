@@ -2212,6 +2212,20 @@ MAP:de-grunnleggende-ferdighetene (@adj→) (adj sp def) IF
 ;
 # «kvalitetsarbeidet med en av de grunnleggende ferdighetene i skolen»
 
+MAP:svenske-Telia (@obj @s-pred @o-pred @←p-utfyll @app @laus-np @adj→)   (adj) IF
+	(NEGATE 0 %mulig%-nøyt)
+	(NEGATE 0 ("hete"))	# «blir hetende»
+	(1C np)
+;
+# «i svenske Telia»
+# «Trump om opprørt Thunberg: – Hun virker lykkelig.
+# «Allerede har europeiske Uefa sagt klart nei.»
+# «Det var 28-årige Daisy Mai Tran som ble funnet død.»
+# «Det var snakk om en sølvgrå Volvo.»
+# «41-åringen er i dag trener for qatarske Al Sadd.»
+# «Nybø har bedt om et møte med delvis statseide DNB.»
+# «Der kan man se en smilende van Dijk trene,»
+
 
 #:1550
 MAP:1550 (@subj @xubj @obj @s-pred @o-pred @←p-utfyll @app @laus-np)   (adj) IF
@@ -6406,6 +6420,15 @@ SELECT:På-A--og-B-lag (@←p-utfyll) IF
 	(0 (".*-.*"r))
 	;
 # «Innen ingeniør- og IKT-fag fortsatte ledigheten å øke.»
+
+SELECT:i-svenske-Telia (@←p-utfyll) IF
+	(-2C pr)
+	(-1 @adj→)
+	(0C np)
+	(1 @fv)
+	(*2 @subj)
+	;
+
 SELECT:av-DERES-egne (@det→) IF
         (-2 qnt + @subj)
         (-1 ("av"))
