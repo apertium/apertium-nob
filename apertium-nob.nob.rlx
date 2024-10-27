@@ -26887,7 +26887,7 @@ SELECT:skal-X-fremstilles inf + pasv IF
 # "Alt skal bli større og helst blir flytta inn til dei store byane. -> Alt skal bli større og flyttast inn til dei store byane"
 
 SELECT:skal-X-eller-Y-fremstilles inf + pasv IF
-        (-4C modalverb BARRIER clb OR vblex + inf OR cnjsub)
+        (*-4C modalverb BARRIER clb OR vblex + inf OR cnjsub)
         (-3 n)
         (-2 cnjcoo)
         (-1 n)
