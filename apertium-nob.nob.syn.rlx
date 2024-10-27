@@ -6399,6 +6399,13 @@ SELECT:element-fra-fotball-og-volleyball (@←p-utfyll) IF
 ;
 # «Blant de siste er "sepak takraw", der elementer fra fotball og volleyball kombineres.»
 
+SELECT:På-A--og-B-lag (@←p-utfyll) IF
+	(-2 cmp-split)
+	(-2C @←p-utfyll)
+	(-1 cnjcoo)
+	(0 (".*-.*"r))
+	;
+# «Innen ingeniør- og IKT-fag fortsatte ledigheten å øke.»
 SELECT:av-DERES-egne (@det→) IF
         (-2 qnt + @subj)
         (-1 ("av"))
