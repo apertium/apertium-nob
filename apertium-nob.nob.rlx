@@ -16349,6 +16349,12 @@ REMOVE:landets-styrkjer vblex IF
 # om det er \"den ene siden\"
 # går glipp av skogen siden (subst) av huset vendte mot"))
 
+"<siden>" SELECT:fortsatte-siden-å adv IF
+        (-1C fv)
+	(1 infmerke)
+;
+# «Hun fortsatte siden å opptre både i USA og Europa gjennom sin 75 år lange karriere.»
+
 
 "<side>" REMOVE:en-bedre-side adj + pl IF
         (NOT -1 det + dem + pl)
@@ -24651,24 +24657,25 @@ SELECT:til-andre-lands-forsvar-komma (pr) IF
 # Helt fram til landsbyen der (sbu) familien har .."))
 
 #:2653
-SELECT:ingen-fv-før-setn-gr pr IF
-	(0 sbu)
+REMOVE:ingen-fv-før-setn-gr sbu IF
+	(0 pr)
 	(NOT 0 adj OR n)
 	(NOT 1 perf-part)
 	(**1C setn-gr BARRIER pres/pret)
 ;
 #  "velger prep, ikke sbu når det ikke finnes noe FV før neste SETN-GR til høyre
-# det stilles spørsmål om (prep) vår virksomhet.
+# «det stilles spørsmål om (prep) vår virksomhet.»
 # NOT 1 PERF-PART: som (sbu) kjent (perf-part)"))
 
 
 
 #:2654
- SELECT:2654 (pr) IF
+SELECT:pr+å pr IF
 	(NOT 0 fv)
 	(NOT 0 %henne%)
 	(1 infmerke)
 ;
+
 
 
 #:2655
