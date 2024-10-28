@@ -5748,6 +5748,10 @@ SELECT:i-kok ("<kok>"i) + nt IF
 		# sette sinnene i kok (lsx)
 
 
+SELECT:blir-opptjent ("<opptjene>"i) + adj + pst IF
+		(-1* %være/bli% BARRIER setn-gr)
+		;
+
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
@@ -12149,6 +12153,40 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (-1 det + qnt)
         ;
 
+"<søker>"i REMOVE:søker-hjelp n IF
+        (1 ("hjelp") + ind)
+        ;
+        # mange søkjer hjelp hos frivillige organisasjonar
+        
+SELECT:snitt-per-søker n + ind IF
+        (0 vblex + pres)
+        (-1 ("per"))
+        (-2 ("snitt") OR ("gjennomsnitt"))
+        ;
+        # med eit snitt per søkjar på 142.000 kroner
+"<søker>"i REMOVE:søker-seg n IF
+        (1 prn + ref)
+        ;
+"<søker>"i REMOVE:som-søker-til-jobben vblex IF
+        (-1 %som%)
+        (1 %til%)
+        (2 n + def)
+        ;
+"<søker>"i REMOVE:eneste-søker-til vblex IF
+        (-1 ("<eneste>"i))
+        (1 %til% OR %på%)
+        ;
+"<søker>"i REMOVE:søker-om n IF
+        (1 prep)
+        (NEGATE -1 det + qnt OR adj)
+        (NEGATE 1 ("til" prep))
+        ;
+
+REMOVE:meningsmålingssnittene n + m IF
+        (0/1 cmp)
+        ;
+        # meiningsmålingssnitta
+
 "<begrepet>" REMOVE:høre-om-begrepet ("begripe") IF
         (-1 %om%)
         ;
@@ -14123,7 +14161,14 @@ REMOVE:data-not-datum ("datum");
         (NOT -1 det + pl OR adj + pl OR %flere%)
         ;
 
+"<dukken>"i REMOVE:gå-dukken ("dukke") + n + sg + def IF
+        (-1* ("gå") BARRIER setn-gr)
+        ;
+        # de går likevel ikkje dukken
 
+"<dukken>"i REMOVE:gå-dukken ("dukk") + n + sg + def IF
+        ;
+        # Ho seier dokka er ein barndomsdraum
 
 #:3713
   "<egen>"   REMOVE:3713   (adj mf) IF
@@ -29272,7 +29317,13 @@ SELECT:2335 (vblex) IF
 #  "å få felt (verb) tømmeret
 # får felt (verb) tømmeret"))
 
+"<Tømmer>" SELECT:Tømmer nt
+	;
 
+"<tømmer>"i SELECT:stramme-tømmer m + pl IF
+        (-1 ("<stramme>"i adj))
+	;
+        # Zlatan Ibrahimovic vart halden i ganske stramme taumar av City-forsvaret
 
 
 
