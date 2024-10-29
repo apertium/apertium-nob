@@ -19508,6 +19508,7 @@ SELECT:så-låser-det-seg (@fv) IF
 SELECT:følges-strenge-tiltak (@subj) IF
         (*-1C pasv - ditrans BARRIER (*) - @adj→ - @det→ - @adv LINK *-1 @adv BARRIER setn-gr OR @subj LINK NEGATE *-1 @subj BARRIER setn-gr)
 	(NEGATE *-1 expl OR ("den") + nt OR spørreadv)
+	(NEGATE 0 tidsadvsubst-nr1)
         ;
 # «For å unngå ytterligere smitte i regjeringsapparatet følges strenge tiltak.»
 # Ikkje: «Vi vet at det i dag brukes bil.»
