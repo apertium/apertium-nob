@@ -266,7 +266,7 @@ LIST adj/adv = adj adv ;
 LIST adj/det = adj det ;
 LIST adj/perf-part = adj vblex pp ;
 LIST adv = adv <adv> "både" "enten" "hverken" "verken" ;
-LIST adv-anslag = "omtrent" "min." "maks." "cirka" "ca." "ca" ;
+LIST adv-anslag = "omtrent" "min." "maks." "cirka" "ca." "ca" "drøyt" "rundt" ;
 LIST adv-mod = "tvert" "trill" "tjokkende" "søkkende" "særdeles" "såre" "såpass" "så pass" "så" "synderlig" "svinaktig" "stummende" "stikk" "steinsens" "splitter" "splinter" "spill" "spikende" "spenna" "sabla" "ruskende" "pukka" "pal" "overvettes" "overmåte" "nokså" "mukk" "midt" "meget" "luta" "likså" "like" "lagom" "kul" "knasende" "knapt" "kanon" "iltrende" "høyst" "hoppende" "hakkende" "gørr" "gullende" "ganske" "forholdsvis" "for" "fly" "flunkende" "enda" "dørgende" "dønn" "dorgende" "dess" "delvis" "dels" "bom" "blikk" "bitte" "bistrende" "bekende" "altfor" "aller" "aldeles" ;
 LIST adv/<adv> = adv <adv> "både" "enten" "hverken" "verken" ;
 LIST adv/<adv>/prep = adv <adv> "både" "enten" "hverken" "verken" pr ;
@@ -19946,7 +19946,7 @@ REMOVE:over-den-egyptiske-grensen adv IF
 REMOVE:etterpå-smalt pr IF
         (0 adv)
         (0 @adv)
-        (NEGATE 1 n OR adj OR np OR det OR ("både"))
+        (NEGATE 1 n OR adj OR np OR det OR ("både") OR adv-anslag)
         ;
 # «Rett etterpå smalt ballen i stolpen.»
 

@@ -520,6 +520,7 @@ LIST adj/nr2det-udetfl = "sånn"  "sådan"  "slik"  "samme"  "neste"  "hver"  "h
 LIST adj/perf-part = adj (vblex pp) ;
 LIST adj/subst = adj n np ;
 LIST adv = adv <adv> ;
+LIST adv-anslag = "omtrent" "min." "maks." "cirka" "ca." "ca" "drøyt" "rundt" ;
 LIST adv-konj = "verken"  "hverken"  "enten"  "både"  (cnjcoo <adv>) ;
 LIST adv/adj-nøyt = adv (adj nt) (adj def) (adj pprs) ;
 LIST adv/fv = adv (vblex pres) (vblex pret) (vblex imp) ;
@@ -6467,7 +6468,7 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 "<fortsatt>" SELECT (vblex) IF
 	(-1 ("ha"))
 	(1 ("å") OR pr OR adv OR n + def)
-	(NOT 1 ("ikke") OR ("rundt") OR ("omtrent") OR ("ca") OR ("rekord") OR ("verdensrekord") OR ("sjanse") OR ("bil") OR ("sak") OR det + qnt OR adj OR n + gen OR ("om"))
+	(NOT 1 ("ikke") OR adv-anslag OR ("rekord") OR ("verdensrekord") OR ("sjanse") OR ("bil") OR ("sak") OR det + qnt OR adj OR n + gen OR ("om"))
 ;
 "<fortsatt>" SELECT (vblex) IF
 	(-3 ("ha"))
@@ -10977,6 +10978,12 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 	(1C acc)
 ;
 #  "Hun snakket truende til ham"
+
+"<til>" SELECT:til-omtrent-30 pr IF
+	(1 adv-anslag)
+        (2 qnt)
+;
+# «den er solgt til drøyt 30 land.»
 
 
 #:3178
