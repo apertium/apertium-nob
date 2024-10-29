@@ -10872,14 +10872,20 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (NOT 0* fv BARRIER setn-start-med-strek/anf OR setn-gr)
         ;
 
-"<tidlig>" SELECT:tidlig-ute adv IF
+"<tidlig>"i SELECT:tidlig-ute adv IF
         (1 ("ute"))
         ;
 
 #4000
-  "<til>"   SELECT:4000   (pr) IF
+"<til>" SELECT:ligge-til-grunn pr IF
 	 (-1 %ligge%)
 	 (1 %grunn%)
+;
+
+
+"<til>"i SELECT:til-tross-for pr IF
+	 (1 %tross%)
+	 (2 %for%)
 ;
 
 
