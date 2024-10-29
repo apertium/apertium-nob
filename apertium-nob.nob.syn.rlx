@@ -731,23 +731,23 @@ LIST ub = ind ;
 LIST ub-adj/<adv> = (adj ind) (adj pprs) <adv> "både" "enten" "hverken" "verken" ;
 LIST ub-det = ("en" det) ("noen" det) ("ingen" det) ;
 LIST ub-ent = (ind sg) (sg ind) ;
-LIST ub-ent-fem-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj f ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt f sg) ("neste" det) ("annen" dem f ind sg) ("slik" dem f sg) ("sånn" dem f sg) ("sådan" dem f sg) ("egen" emph f ind sg) ("eigen" emph f ind sg) ("halvannen" qnt f) (adj comp) ;
+LIST ub-ent-fem-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj f ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt f sg) ("neste" det) ("annen" dem f ind sg) ("slik" dem f sg) ("sånn" dem f sg) ("sådan" dem f sg) ("egen" emph f sg) ("eigen" emph f sg) ("halvannen" qnt f) (adj comp) ;
 LIST ub-ent-fem-adj/komp-adj = (adj f ind sg) (adj mf ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-fem-subst = (n f sg ind) ;
 LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f sp) ("gang" pl) ;
 LIST ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n f sg ind) (n f sp) ("gang" pl) np ;
-LIST ub-ent-mask-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj m ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m ind sg) ("eigen" emph m ind sg) ("halvannen" qnt m) (adj comp) ;
+LIST ub-ent-mask-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj m ind sg) (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m sg) ("eigen" emph m sg) ("halvannen" qnt m) (adj comp) ;
 LIST ub-ent-mask-adj/komp-adj = (adj m ind sg) (adj mf ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-mask-subst = (n m sg ind) ;
 LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m sp) ("gang" pl) ;
 LIST ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst = "år" "uke" "tusen" "trillion" "tonnkilometer" "time" "tiendelssekund" "tidelssekund" "snes" "sjømil" "sekundmeter" "sekund" "prosent" "nanosekund" "nanometer" "måned" "mrd." "minutt" "millisekund" "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundredelssekund" "hundre" "hektoliter" "hektogram" "halvår" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "døgn" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "dag" "centimeter" "centiliter" "centigram" "billion" "billiard" (n gen) (n m sg ind) (n m sp) ("gang" pl) np ;
 LIST ub-ent-mask/fem-adj = (adj m ind sg) (adj f ind sg) (adj mf ind sg) (adj pprs) ;
 LIST ub-ent-mf-adj = (adj mf ind sg) (adj pprs) ;
-LIST ub-ent-mf-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m ind sg) ("eigen" emph m ind sg) ("halvannen" qnt m) (adj comp) ;
+LIST ub-ent-mf-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj mf ind sg) (adj pprs) ("hver" det qnt m sg) ("neste" det) ("annen" dem m ind sg) ("slik" dem m sg) ("sånn" dem m sg) ("sådan" dem m sg) ("egen" emph m sg) ("eigen" emph m sg) ("halvannen" qnt m) (adj comp) ;
 LIST ub-ent-mf-adj/komp-adj = (adj mf ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-nøyt = (nt ind sg) ;
 LIST ub-ent-nøyt-adj = (adj nt ind sg) (adj pprs) ;
-LIST ub-ent-nøyt-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj nt ind sg) (adj pprs) ("hver" det qnt nt sg) ("neste" det) ("annen" dem nt ind sg) ("slik" dem nt sg) ("sånn" dem nt sg) ("sådan" dem nt sg) ("egen" emph nt ind sg) ("eigen" emph nt ind sg) ("halvannen" qnt nt) (adj comp) ;
+LIST ub-ent-nøyt-adj-nr2det/komp-adj/ordenstall = "samme" "eneste" ord (adj nt ind sg) (adj pprs) ("hver" det qnt nt sg) ("neste" det) ("annen" dem nt ind sg) ("slik" dem nt sg) ("sånn" dem nt sg) ("sådan" dem nt sg) ("egen" emph nt sg) ("eigen" emph nt sg) ("halvannen" qnt nt) (adj comp) ;
 LIST ub-ent-nøyt-adj/komp = (adj nt ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-nøyt-adj/komp-adj = (adj nt ind sg) (adj comp) (adj pprs) ;
 LIST ub-ent-nøyt-subst = (n nt sg ind) ;
@@ -2698,7 +2698,7 @@ MAP:6101 (@det→)   (det qnt pl) IF
 
 
 #:1502
-MAP:1502 (@det→)   (det emph m ind sg) IF
+MAP:1502 (@det→)   (det emph m sg) IF
 	(1 ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst)
 ;
 #  " \"egen\"/\"eigen\""))
@@ -2706,7 +2706,7 @@ MAP:1502 (@det→)   (det emph m ind sg) IF
 
 
 #:1501
-MAP:1501 (@det→)   (det emph m ind sg) IF
+MAP:1501 (@det→)   (det emph m sg) IF
 	(*1 ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-mask-subst/tall-subst/målsubst/tidssubst/prop/gen-subst BARRIER ikke-adv-adj-nr2det)
 ;
@@ -2715,7 +2715,7 @@ MAP:1501 (@det→)   (det emph m ind sg) IF
 
 
 #:1500
-MAP:1500 (@det→)   (det emph m ind sg) IF
+MAP:1500 (@det→)   (det emph m sg) IF
 	(1 subst)
 	(NOT 1 m#fem)
 	(NOT 1 nøyt)
@@ -2725,7 +2725,7 @@ MAP:1500 (@det→)   (det emph m ind sg) IF
 
 
 #:1499
-MAP:1499 (@det→)   (det emph m ind sg) IF
+MAP:1499 (@det→)   (det emph m sg) IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst LINK NOT 0 m#fem LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
@@ -2734,7 +2734,7 @@ MAP:1499 (@det→)   (det emph m ind sg) IF
 
 
 #:1498
-MAP:1498 (@det→)   (det emph m ind sg) IF
+MAP:1498 (@det→)   (det emph m sg) IF
 	(NOT 1 m#komma)
 	(*1 ub-ent-mf-adj-nr2det/komp-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-mf-adj-nr2det/komp-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
@@ -2742,7 +2742,7 @@ MAP:1498 (@det→)   (det emph m ind sg) IF
 
 
 #:1497
-MAP:1497 (@det→)   (det emph m ind sg) IF
+MAP:1497 (@det→)   (det emph m sg) IF
 	(NOT 1 m#komma)
 	(*1 ub-ent-mask-adj-nr2det/komp-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-mask-adj-nr2det/komp-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
@@ -2752,20 +2752,20 @@ MAP:1497 (@det→)   (det emph m ind sg) IF
 
 
 #:1496
-MAP:1496 (@det→)   (det emph f ind sg) IF
+MAP:1496 (@det→)   (det emph f sg) IF
 	(1 ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst)
 ;
 
 
 #:1495
-MAP:1495 (@det→)   (det emph f ind sg) IF
+MAP:1495 (@det→)   (det emph f sg) IF
 	(*1 ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-fem-subst/tall-subst/målsubst/tidssubst/prop/gen-subst BARRIER ikke-adv-adj-nr2det)
 ;
 
 
 #:1494
-MAP:1494 (@det→)   (det emph f ind sg) IF
+MAP:1494 (@det→)   (det emph f sg) IF
 	(1 subst)
 	(NOT 1 m#mask)
 	(NOT 1 nøyt)
@@ -2775,14 +2775,14 @@ MAP:1494 (@det→)   (det emph f ind sg) IF
 
 
 #:1493
-MAP:1493 (@det→)   (det emph f ind sg) IF
+MAP:1493 (@det→)   (det emph f sg) IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst LINK NOT 0 m#mask LINK NOT 0 nøyt LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
 
 
 #:1492
-MAP:1492 (@det→)   (det emph f ind sg) IF
+MAP:1492 (@det→)   (det emph f sg) IF
 	(NOT 1 m#komma)
 	(*1 ub-ent-fem-adj-nr2det/komp-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-fem-adj-nr2det/komp-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
@@ -2790,20 +2790,20 @@ MAP:1492 (@det→)   (det emph f ind sg) IF
 
 
 #:1491
-MAP:1491 (@det→)   (det emph nt ind sg) IF
+MAP:1491 (@det→)   (det emph nt sg) IF
 	(1 ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst)
 ;
 
 
 #:1490
-MAP:1490 (@det→)   (det emph nt ind sg) IF
+MAP:1490 (@det→)   (det emph nt sg) IF
 	(*1 ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-nøyt-subst/tall-subst/målsubst/tidssubst/prop/gen-subst BARRIER ikke-adv-adj-nr2det)
 ;
 
 
 #:1489
-MAP:1489 (@det→)   (det emph nt ind sg) IF
+MAP:1489 (@det→)   (det emph nt sg) IF
 	(1 subst)
 	(NOT 1 m#mask)
 	(NOT 1 m#fem)
@@ -2813,14 +2813,14 @@ MAP:1489 (@det→)   (det emph nt ind sg) IF
 
 
 #:1488
-MAP:1488 (@det→)   (det emph nt ind sg) IF
+MAP:1488 (@det→)   (det emph nt sg) IF
 	(*1 subst LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 subst LINK NOT 0 m#mask LINK NOT 0 m#fem LINK NOT 0 be LINK NOT 0 fl LINK NOT *-1 ikke-adv-adj-nr2det)
 ;
 
 
 #:1487
-MAP:1487 (@det→)   (det emph nt ind sg) IF
+MAP:1487 (@det→)   (det emph nt sg) IF
 	(NOT 1 m#komma)
 	(*1 ub-ent-nøyt-adj-nr2det/komp-adj/ordenstall LINK NOT -1 komma/ellipse/kolon/semi/konj/adv)
 	(*1 ub-ent-nøyt-adj-nr2det/komp-adj/ordenstall BARRIER ikke-adv-adj-nr2det)
@@ -2828,7 +2828,7 @@ MAP:1487 (@det→)   (det emph nt ind sg) IF
 
 
 #:1486
-MAP:1486 (@det→)   (det emph nt ind sg) IF
+MAP:1486 (@det→)   (det emph nt sg) IF
 	(1 %beste%)
 ;
 #  " sitt eget @DET→ beste"))
