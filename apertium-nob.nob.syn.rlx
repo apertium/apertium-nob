@@ -19812,6 +19812,15 @@ REMOVE:det-ventes-en-vekst @subj IF
         ;
 # «Konklusjonen er at det ventes en vekst på 1 prosent.»
 
+REMOVE:cm-fortsetter-subj-obj @subj IF
+	(-3 cm OR @adv)
+	(-2C @fv)
+	(-1 @subj + def)
+	(0 @obj)
+	;
+# «Ettersom smittespredningen tilsynelatende bremser opp, fortsetter myndighetene gjenåpningen av samfunnet.»
+# (prefer left subj)
+
 
 #:265
 REMOVE:no-fv (@subj) IF
