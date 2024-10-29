@@ -19506,12 +19506,14 @@ SELECT:så-låser-det-seg (@fv) IF
 # «– Det er god dialog, men når vi ikke klarer å bli enige om ting, så  låser  det seg, sier han.»
 
 SELECT:følges-strenge-tiltak (@subj) IF
-        (*-1C pasv - ditrans BARRIER (*) - @adj→ - @det→ - @adv LINK *-1 @adv BARRIER setn-gr OR @subj)
+        (*-1C pasv - ditrans BARRIER (*) - @adj→ - @det→ - @adv LINK *-1 @adv BARRIER setn-gr OR @subj LINK NEGATE *-1 @subj BARRIER setn-gr)
 	(NEGATE *-1 expl OR ("den") + nt OR spørreadv)
         ;
 # «For å unngå ytterligere smitte i regjeringsapparatet følges strenge tiltak.»
 # Ikkje: «Vi vet at det i dag brukes bil.»
 # Ikkje: «Hvilken stilretning innenfor malerkunsten regnes Claude Monet som en representant for?»
+# Ikkje: «Rettssak etter angrepet mot Charlie Hebdo holdes neste år.»
+
 
 #SECTION remove-classes-heur2 ;
 
