@@ -16869,6 +16869,12 @@ REMOVE:447 (@subj) IF
 	(*1C @adv LINK 0 s#sbu LINK NOT 0 ikke-sbu LINK NOT *-1 ikke-mod-@app)
 ;
 
+REMOVE:den-19-år-gamle (@subj) IF
+	(0 qnt)
+	(1 ("år gammel"))
+	(*2 @subj/@xubj BARRIER ikke-premod)
+	;
+# «Med Johansen på plass leies den 19 år gamle keeperen Markus Olsen Pettersen ut til Nest-Sotra.»
 
 
 
@@ -19485,6 +19491,7 @@ SELECT:Siktedes-bror-siktet (@subj) IF
         (-1 gen)
         (0C n + ind)
         ;
+
 
 #:6094
 #SELECT:6094 (@subj) IF
