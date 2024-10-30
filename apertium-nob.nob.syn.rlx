@@ -16878,9 +16878,11 @@ REMOVE:447 (@subj) IF
 REMOVE:den-19-år-gamle (@subj) IF
 	(0 qnt)
 	(1 ("år gammel"))
-	(*2 @subj/@xubj BARRIER ikke-premod)
+	(*2 @subj/@xubj)
 	;
 # «Med Johansen på plass leies den 19 år gamle keeperen Markus Olsen Pettersen ut til Nest-Sotra.»
+# «80 år gammel er hun klar til nok en omfattende turné sammen med Riksteatret.»
+
 
 
 
