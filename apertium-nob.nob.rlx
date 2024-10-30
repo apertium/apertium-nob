@@ -12190,10 +12190,10 @@ SELECT:snitt-per-søker n + ind IF
         (NEGATE 1 ("til" prep))
         ;
 
-REMOVE:meningsmålingssnittene n + m IF
+SELECT:meningsmålingssnittene ("snitt") + nt IF
         (0/1 cmp)
         ;
-        # meiningsmålingssnitta
+# meiningsmålingssnitta
 
 "<begrepet>" REMOVE:høre-om-begrepet ("begripe") IF
         (-1 %om%)
