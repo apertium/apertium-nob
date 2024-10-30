@@ -5314,9 +5314,15 @@ REMOVE:antall-på-100 @←p-utfyll IF
 
 "<steder>" REMOVE:at-det-mange-steder (@subj) IF
         (*-2 @subj BARRIER setn-gr)
-        (-1 ("<mange>"))
+        (-1 ("<mange>") OR ("<enkelte>"))
         ;
 # «Arkeologiske funn viser at det mange steder har vært drevet hvalfangst tilbake til forhistorisk tid.»
+
+"<steder>" REMOVE:enkelte-steder-fortsetter-brannen (@subj) IF
+        (-1 ("<mange>") OR ("<enkelte>"))
+        (*1 @subj BARRIER setn-gr)
+        ;
+# «– Situasjonen er bedre, men enkelte steder fortsetter brannen å blusse opp, sier en talsperson for brannvesenet til statskanalen.»
 
 
 "<typen>" REMOVE:av-denne-typen (@subj)
