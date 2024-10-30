@@ -2685,6 +2685,17 @@ SELECT:namn-cmp-namn np IF
         ;
 # «Jan-Morten» er ikkje "mort".n.def
 
+SELECT:name-age ant OR cog IF
+        (-1 >>>)
+        (NEGATE 0 lo#animat - cog - ant)    # «Moren (32) ble …»
+        (1 lpar)
+        (2 siffer)
+        (3 rpar)
+        ;
+# «Berg (64) ble i april dømt til 14 års fengsel for spionasje etter å ha blitt pågrepet.»
+# Ikkje: «Mann (42) nekter straffskyld.»
+
+
 SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
