@@ -5747,11 +5747,6 @@ SELECT:i-kok ("<kok>"i) + nt IF
 		;
 		# sette sinnene i kok (lsx)
 
-
-SELECT:blir-opptjent ("<opptjene>"i) + adj + pst IF
-		(-1* %være/bli% BARRIER setn-gr)
-		;
-
 "<Eggen>" SELECT:Nils-Arne np;
 
 #:3711
