@@ -29332,13 +29332,12 @@ SELECT:2335 (vblex) IF
 #  "å få felt (verb) tømmeret
 # får felt (verb) tømmeret"))
 
-"<Tømmer>" SELECT:Tømmer nt
-	;
+"<Tømmer>" REMOVE:Tømmer m;
 
 "<tømmer>"i SELECT:stramme-tømmer m + pl IF
         (-1 ("<stramme>"i adj))
-	;
-        # Zlatan Ibrahimovic vart halden i ganske stramme taumar av City-forsvaret
+;
+# «Zlatan Ibrahimovic vart halden i ganske stramme taumar av City-forsvaret»
 
 
 
