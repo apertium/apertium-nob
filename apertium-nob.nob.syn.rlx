@@ -5268,6 +5268,12 @@ REMOVE:antall-på-100 @←p-utfyll IF
 ;
 #  " IKKE: han mener noen ganger det @SUBJ"))
 
+"<fengsel>" REMOVE:års-fengsel @subj/@xubj IF
+	(-1 ("år"))
+	;
+"<fengsel>" REMOVE:fengsel-for @subj/@xubj IF
+	(1 ("for"))
+	;
 
 
 #:1259
