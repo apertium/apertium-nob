@@ -42478,6 +42478,7 @@ SELECT:default ("<tanna>" "tann") ;
 
 
 # REMOVE:default rules:
+REMOVE:default ("dukk") IF (0 ("dukke")) ;
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
 REMOVE:default ("tiltak") + sg IF (0 pl) ;
