@@ -12340,6 +12340,29 @@ REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
+"<Lærer>" SELECT:lærer-bruker ("lærer") IF
+        (1 vblex)
+        ;
+# "Lærer bruker noen helt enkle begrep ..."
+"<eggene>"i SELECT:eggene-klekker nt IF
+        (1 ("klekke"))
+        ;
+# "... eggene klekker"
+"<eggene>"i SELECT:klekker-eggene nt IF
+        (-1 ("klekke"))
+        ;
+# "... klekker egg ..."
+"<løst>"i SELECT:løst-og-ledig ("løs") IF
+        (1 ("og"))
+        (2 ("ledig"))
+        ;
+# "... løst og ledig ... "
+"<Agnes>" REMOVE:unlikely-agnes vblex;
+# Agnes
+"<salt>" REMOVE pp IF
+		(-1 ("så mange"))    
+        ; 
+	# dobbelt så mye salt
 REMOVE:mange-fotografier m IF
         (0/1 ("familie"))
         (0 ("fotografi"))
@@ -37539,7 +37562,16 @@ LIST høyt-og-lavt = "<høyt>" "<lavt>" ;
 		(2 n)
         ;
 		# salt og lakris
+"<salt>" SELECT n IF
+		(-1 ("mengde"))    
+        ; 
+	# en mengde salt
 
+"<salt>" REMOVE pp IF
+		(-2 n)    
+		(-1 cm)    
+        ; 
+	# sukker, salt og annet
 
 #:3180
   "<tom>"   REMOVE:3180   (n sg) IF
