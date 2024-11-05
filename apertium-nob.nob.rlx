@@ -12376,6 +12376,23 @@ REMOVE:kapret-istedenfor adj IF
         (3 vblex)
         ;
 # "Det er snakk om kombinasjonen lærer og lekser."
+"<løst>" SELECT:spille-ballen-løst ("løs") IF
+        (-2 vblex)
+        (-1 ("ball"))
+        ;
+# "De spiller ballen løst bakover."
+"<løst>" SELECT:løst-inventar ("løs") IF
+        (1 ("inventar") OR ("anslag") OR ("forslag") OR ("skudd"))
+        ;
+# "løst inventar"
+# "løst anslag"
+# "løst forslag"
+# "løst skudd"
+"<løst>" SELECT:løst-kan-oversettes ("løs") IF
+        (1 modalverb)
+        (2 vblex + pasv)
+        ;
+# "Et ord som løst kan oversettes til gresk."
 "<eggene>"i SELECT:eggene-klekker nt IF
         (1 ("klekke"))
         ;
