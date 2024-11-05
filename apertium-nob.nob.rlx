@@ -12359,10 +12359,15 @@ REMOVE:kapret-istedenfor adj IF
 # "... løst og ledig ... "
 "<Agnes>" REMOVE:unlikely-agnes vblex;
 # Agnes
-"<salt>" REMOVE pp IF
+"<salt>" REMOVE:så-mye-salt pp IF
 		(-1 ("så mange"))    
         ; 
 	# dobbelt så mye salt
+"<flis>" REMOVE:å-få-flis vblex IF
+		(-2 ("å"))    
+		(-1 ("<få>"))    
+        ; 
+	# å få flis
 REMOVE:mange-fotografier m IF
         (0/1 ("familie"))
         (0 ("fotografi"))
@@ -41464,7 +41469,6 @@ SELECT:med-kurvene-laget-han ("kurve" n) IF
 		(1 ("lage"))
 		(2 prn)
 		;
-
 SELECT:adj-korg ("kurv") IF
 		(-1 adj OR prep)
 		; 					#den tomme korga; oppi korga; hunden skjønte ikkje noko av korga
