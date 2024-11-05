@@ -12344,6 +12344,38 @@ REMOVE:kapret-istedenfor adj IF
         (1 vblex)
         ;
 # "Lærer bruker noen helt enkle begrep ..."
+"<lærer>" SELECT:elevene-lærer-at ("lære") IF
+        (-1 n OR ("unge"))
+        (1 ("at") OR ("om"))
+        ;
+# "Elevene lærer at de er mulig."
+"<lærer>" SELECT:som-lærer ("lærer") IF
+        (-2 ("bakgrunn") OR pp OR vblex + inf)
+        (-1 ("som"))
+        ;
+# "Hen har bakgrunn som lærer."
+# "Hen har slutta som lærer."
+# # "... jobbe som lærer i skolevesenet."
+"<lærer>" SELECT:kvalifisert-lærer ("lærer") IF
+        (-1 adj + pp)
+        ;
+# "Hen er en kvalifisert lærer."
+"<lærer>" SELECT:kompetent-lærer ("lærer") IF
+        (-1 adj)
+        (1 setn-gr)
+        ;
+# "En kompetent lærer."
+"<lærer>" SELECT:lærer-med-spesialistkompetanse ("lærer") IF
+        (1 ("med"))
+        (2* ("kompetanse") BARRIER setn-gr)
+        ;
+# "Hen er lærer med spesialistkompetanse."
+"<lærer>" SELECT:lærer-og-lekser ("lærer") IF
+        (1 cnjcoo)
+        (2 n + ind)
+        (3 vblex)
+        ;
+# "Det er snakk om kombinasjonen lærer og lekser."
 "<eggene>"i SELECT:eggene-klekker nt IF
         (1 ("klekke"))
         ;
