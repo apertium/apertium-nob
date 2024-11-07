@@ -10169,6 +10169,13 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 # "Når du så inderleg ønskjer å bli klar til å konkurrere, gjer du det som må til."
 # jf. kvister.vblex.pres
 
+"<så>"   SELECT:men-ingen-så-kontroversielle adv IF
+        (-2 %men%)
+        (-1 ("ingen"))
+        (1 adj)
+        ;
+#  "... men ingen så kontroversielle som denne."
+
 "<så>"   SELECT:men-vi-såg pret IF
         (-2 %og% OR %men% OR %da% OR %når% OR ("fordi"))
         (-1 prn + nom)
@@ -41034,7 +41041,24 @@ REMOVE:møtes pstv + pp IF
         (-2 >>>)
         (-1 nominativ)
         ;
-
+"<så>" SELECT:for-så adv IF
+        (-2 komma)
+        (-1 ("for"))
+        ;
+# ... , for så i neste øyeblikk hente seg inn.
+"<så>" SELECT:først-flom-så-tørke adv IF
+        (-3 ("først"))
+        (-2 n)
+        (-1 komma)
+        (1 n)
+        ;
+# ... først flom, så tørke.
+"<så>" SELECT:og-så-utkastelse adv IF
+        (-2 komma)
+        (-1 cnjcoo)
+        (1 n)
+        ;
+# ... , og så utkastelse ett år senere.
 "<så>" SELECT:så-i-været pret IF
         (1 pr)
         (NEGATE 1 %der% OR cnjsub LINK *1 fv)
