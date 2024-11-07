@@ -10185,6 +10185,13 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (1 adj)
         ;
 #  "... men ingen så kontroversielle som denne."
+"<så>"   SELECT:men-en-så-viktig-debatt adv IF
+        (-2 %men%)
+        (-1 ("<en>") + det)
+        (1 adj)
+        (*2 n)
+        ;
+#  "Men en så viktig, prinsippiell  debatt ..."
 
 "<så>"   SELECT:men-vi-såg pret IF
         (-2 %og% OR %men% OR %da% OR %når% OR ("fordi"))
@@ -41069,6 +41076,32 @@ REMOVE:møtes pstv + pp IF
         (1 n)
         ;
 # ... , og så utkastelse ett år senere.
+"<så>" SELECT:så-vel-som adv IF
+        (1 ("vel"))
+        (*2 %som% BARRIER setn-gr)
+        ;
+# og så vel som arbeidsgiverene.
+"<så>" SELECT:så-lange-og-så-tunge adv IF
+        (-3 ("så"))
+        (-2 adj)
+        (-1 cnjcoo)
+        (1 adj)
+        ;
+# og så vel som arbeidsgiverene.
+"<så>" SELECT:og-så-av-X adv IF
+        (-1 cnjcoo)
+        (1 %av%)
+        ;
+# og så av ministerens kontor.
+"<så>" SELECT:så-stort adv IF
+        (1 ("<stort>"))
+        (NOT 2 adv OR prep)
+        ;
+# det er så stort.
+"<så>" SELECT:så-massiv adv IF
+        (1 ("<massiv>"))
+        ;
+# det er så stort.
 "<så>" SELECT:så-i-været pret IF
         (1 pr)
         (NEGATE 1 %der% OR cnjsub LINK *1 fv)
