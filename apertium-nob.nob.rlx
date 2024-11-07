@@ -2927,6 +2927,7 @@ REMOVE:unlikely ("<sikres>"i) + n + gen IF (NEGATE -1 dem);
 REMOVE:unlikely ("<kjennes>"i) + n + gen; # det kjennes sant
 REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
+REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -3567,6 +3568,15 @@ REMOVE:ringene ("<ringene>"i) + n + nt + pl + def
 
 REMOVE:måsepausar SUB:1 ("måke") IF (0/* ("måke¹"));
 REMOVE:måsearbeidspause SUB:2 ("måke") IF (0/* ("måke¹"));
+
+REMOVE:så-tape ("<tape>"i) + n IF
+                (-1 %så% OR %å%)
+		;
+
+REMOVE:tape-mot ("<tape>"i) + n IF
+                (1 %mot% OR %på% OR %i% OR ("i løpet av") OR n)
+		;
+
 
 "<skrittet>"i SELECT ("skritt¹") + n IF
         (-1 prep)
