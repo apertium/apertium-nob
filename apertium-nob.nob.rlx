@@ -8490,7 +8490,10 @@ SELECT:tranene ("trane") IF
 "<løse>"i SELECT:løse-utfordringer vblex IF
         (1* ("problem") OR ("utfordring") OR ("oppgave"))
         ;
-
+"<løs>"i SELECT:løs-oppgavene vblex IF
+        (1 ("problem") OR ("utfordring") OR ("oppgave"))
+        ;
+# Løs oppgavene
 "<løse>"i SELECT:hvordan-løse vblex IF
         (-1 ("hvordan"))
         ;
