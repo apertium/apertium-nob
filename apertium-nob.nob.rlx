@@ -12403,6 +12403,10 @@ REMOVE:kapret-istedenfor adj IF
         (3 vblex)
         ;
 # "Det er snakk om kombinasjonen lærer og lekser."
+"<faste>" SELECT:faste-medisiner adj + pl IF
+        (1 ("medisin") + pl)
+        ;
+# "Det er barnets faste medisiner."
 "<løst>" SELECT:spille-ballen-løst ("løs") IF
         (-2 vblex)
         (-1 ("ball"))
