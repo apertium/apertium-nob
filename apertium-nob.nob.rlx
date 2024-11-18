@@ -12407,6 +12407,22 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("medisin") + pl)
         ;
 # "Det er barnets faste medisiner."
+"<par>" SELECT:de-par-første n + sg IF
+        (-1 ("den") + pl)
+        (1 adj + pl OR n + pl)
+        ;
+# "De par første dagene er vanskeligst"
+"<ringer>" SELECT:smykker-og-ringer ("ring") IF
+        (-2 ("smykke") + n)
+        (-1 cnjcoo OR cm)
+        ;
+# "Det er snakk om smykker, ringer og piercienger"
+"<siden>" SELECT:siden-på-nettet n + def IF
+        (-1 cnjsub)
+        (1 pr)
+        (2 n)
+        ;
+# ", slik at siden på nettet fungerer."
 "<løst>" SELECT:spille-ballen-løst ("løs") IF
         (-2 vblex)
         (-1 ("ball"))
