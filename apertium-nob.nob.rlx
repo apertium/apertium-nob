@@ -12316,6 +12316,17 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
         (-1 modalverb)
         (1 ("bli"))
         ;
+"<føre>" SELECT:føre-til vblex IF
+        (*-1 modalverb)
+        (1 ("til"))
+        ;
+# For noen kan dette føre til et allergisk sjokk.
+"<lekker>" SELECT:brister-og-lekker vblex IF
+        (-3 ("briste"))
+        (-2 adj)
+        (-1 ("og"))
+        ;
+# De brister lett og lekker mye.
 "<reist>"i REMOVE:n-pr-n-ble-reist pl IF
         (-4 n)
         (-3 pr)
