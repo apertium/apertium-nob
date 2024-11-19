@@ -12417,6 +12417,17 @@ REMOVE:kapret-istedenfor adj IF
         (-1 cnjcoo OR cm)
         ;
 # "Det er snakk om smykker, ringer og piercienger"
+"<tørst>" SELECT:veldig-tørst adj IF
+        (-1 ("veldig"))
+        ;
+# "Er du veldig tørst?"
+"<laget>" SELECT:blir-det-laget vblex IF
+        (-2 ("bli"))
+        (-1 ("den") + nt + sg)
+        (1 det + qnt)
+        (2 n)
+        ;
+# "Blir det laget et hull?"
 "<siden>" SELECT:siden-på-nettet n + def IF
         (-1 cnjsub)
         (1 pr)
