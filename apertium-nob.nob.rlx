@@ -4438,7 +4438,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 "<annet>" REMOVE:annet-kvartal ind IF
         (1C n + ind + nt)
-        (NOT 1 ("vis"))
+        (NOT 1 ("vis") OR ("helsepersonell"))
         ;
 # «annet kvartal»
 
@@ -12312,6 +12312,10 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
         (0 ("verken"))
         (1 n OR det OR adj OR prn)
         ;
+"<trykket>" SELECT:kan-trykket-bli-stort n IF
+        (-1 modalverb)
+        (1 ("bli"))
+        ;
 "<reist>"i REMOVE:n-pr-n-ble-reist pl IF
         (-4 n)
         (-3 pr)
@@ -12421,6 +12425,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("veldig"))
         ;
 # "Er du veldig tørst?"
+"<smerter>" SELECT:oppleve-smerter n IF
+        (*-1 ("oppleve"))
+        ;
+# "De kan oppleve smerter alene, smerter om natten og andre smerter"
 "<laget>" SELECT:blir-det-laget vblex IF
         (-2 ("bli"))
         (-1 ("den") + nt + sg)
