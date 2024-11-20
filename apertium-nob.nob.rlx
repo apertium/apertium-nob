@@ -3971,6 +3971,10 @@ SELECT:uansett-hvordan ("hvordan") + adv IF
 		;
 		# uansett hvordan
 
+SELECT:flertall-knyttet-til ("<knyttet>"i) + adj + pp + pl IF
+                (-1 n + pl)
+		(1 %til%)
+		;
 SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
@@ -4438,7 +4442,7 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
 
 "<annet>" REMOVE:annet-kvartal ind IF
         (1C n + ind + nt)
-        (NOT 1 ("vis"))
+        (NOT 1 ("vis") OR ("helsepersonell"))
         ;
 # «annet kvartal»
 
@@ -12312,6 +12316,21 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
         (0 ("verken"))
         (1 n OR det OR adj OR prn)
         ;
+"<trykket>" SELECT:kan-trykket-bli-stort n IF
+        (-1 modalverb)
+        (1 ("bli"))
+        ;
+"<føre>" SELECT:føre-til vblex IF
+        (*-1 modalverb)
+        (1 ("til"))
+        ;
+# For noen kan dette føre til et allergisk sjokk.
+"<lekker>" SELECT:brister-og-lekker vblex IF
+        (-3 ("briste"))
+        (-2 adj)
+        (-1 ("og"))
+        ;
+# De brister lett og lekker mye.
 "<reist>"i REMOVE:n-pr-n-ble-reist pl IF
         (-4 n)
         (-3 pr)
@@ -12421,6 +12440,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("veldig"))
         ;
 # "Er du veldig tørst?"
+"<smerter>" SELECT:oppleve-smerter n IF
+        (*-1 ("oppleve"))
+        ;
+# "De kan oppleve smerter alene, smerter om natten og andre smerter"
 "<laget>" SELECT:blir-det-laget vblex IF
         (-2 ("bli"))
         (-1 ("den") + nt + sg)
