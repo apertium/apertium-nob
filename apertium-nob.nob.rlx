@@ -3971,6 +3971,10 @@ SELECT:uansett-hvordan ("hvordan") + adv IF
 		;
 		# uansett hvordan
 
+SELECT:flertall-knyttet-til ("<knyttet>"i) + adj + pp + pl IF
+                (-1 n + pl)
+		(1 %til%)
+		;
 SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
