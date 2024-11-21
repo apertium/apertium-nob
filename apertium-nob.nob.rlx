@@ -10190,6 +10190,7 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (-2 %men%)
         (-1 ("ingen"))
         (1 adj)
+        (NEGATE *2 ("ut") BARRIER vblex OR setn-gr) # «Men ingen så deprimerte ut»
         ;
 #  "... men ingen så kontroversielle som denne."
 "<så>"   SELECT:men-en-så-viktig-debatt adv IF
