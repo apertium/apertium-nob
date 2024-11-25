@@ -11969,6 +11969,7 @@ REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "
 REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
 REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: telefonsvarar
 REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
+REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
