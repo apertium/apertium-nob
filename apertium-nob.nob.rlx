@@ -4934,6 +4934,13 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 # kan framleis velja determinativ (slik at «til den kinesiske stat»
 # ikkje får pronomen-lesing med den¹)
 
+"<den>" REMOVE:cm+den¹ ("den") + prn IF
+        (*-2 n OR np)
+        (NEGATE *-2 fv BARRIER setn-gr)
+        (-1 cm)
+        (1C fv)
+        ;
+# «Helbredelsesprosessen for landet Israel, den starter her.»
 
 
 #:3722
