@@ -5136,54 +5136,55 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 "<drepte>" SELECT:drepte-per adj IF
         (1 ("per"))
         ;
-		# drepte per tusen innbyggere
+# «drepte per tusen innbyggere»
 
 "<drepte>" SELECT:skjøt-og-drepte vblex IF
         (-2 ("skyte" vblex) OR ("angripe" vblex) OR ("lemleste" vblex))
-		(-1 %og%)
+        (-1 %og%)
         ;
 "<drepte>" SELECT:angriperne-som-drepte-noen vblex IF
         (-1 ("som"))
         (1* n BARRIER setn-gr)
         ;
-# De to angriperne som drepte de to politifolkene, ble selv skutt og drept
-"<drepte>" SELECT:hun-spilte-drepte-B adj IF
-        (0* vblex BARRIER setn-gr)
+# «De to angriperne som drepte de to politifolkene, ble selv skutt og drept»
+
+"<drepte>" REMOVE:hun-spilte-drepte-B fv IF
+        (0* fv BARRIER setn-gr)
         ;
 
 "<drepte>" SELECT:de-drepte-B adj IF
         (-1 prn + pers + pl + nom OR det + pos + un + pl )
-		(NEGATE 1 n OR np OR prn OR talord OR siffer )
+        (NEGATE 1 n OR np OR prn OR talord OR siffer )
         ;
 "<drepte>" SELECT:meldt-om-drepte adj IF
         (-2 ("melde"))
         (-1 ("om"))
         ;
 "<drept>" SELECT:ha-drept vblex + pp IF
-		(-1* %ha% BARRIER setn-gr)
-		(NEGATE -1* %være/bli% BARRIER setn-gr)
+        (-1* %ha% BARRIER setn-gr)
+        (NEGATE -1* %være/bli% BARRIER setn-gr)
         ;
 
 "<drept>" SELECT:27-er-drept adj + pl IF
         (-1* %være/bli% BARRIER setn-gr)
-		(-2* siffer OR talord-pl BARRIER setn-gr)
+        (-2* siffer OR talord-pl BARRIER setn-gr)
 		;
 
 "<drept>" SELECT:er-27-drept adj + pl IF
-		(-1* siffer OR talord-pl BARRIER setn-gr)
+        (-1* siffer OR talord-pl BARRIER setn-gr)
         (-2* %være/bli% BARRIER setn-gr)
-		;
-
-"<drept>" SELECT:de-som-er-drept adj + mf IF
-		(-3 m OR f)
-        (-2 ("som"))
-		(-1 %være/bli%)
         ;
 
 "<drept>" SELECT:de-som-er-drept adj + mf IF
-		(-3 nt)
+        (-3 m OR f)
         (-2 ("som"))
-		(-1 %være/bli%)
+        (-1 %være/bli%)
+        ;
+
+"<drept>" SELECT:de-som-er-drept adj + mf IF
+        (-3 nt)
+        (-2 ("som"))
+        (-1 %være/bli%)
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + pl IF
@@ -7210,6 +7211,7 @@ SELECT:lurer-på-hvor adv IF
 # Ikkje: «SSBs definisjon av tettsted er steder hvor det bor minst 200 mennesker, og hvor det ikke er lenger avstand mellom husene enn 50 meter.»
 
 "<hvor>" SELECT:viser-bl.a.-hvor-veien-er-smalest adv IF
+        (NEGATE -1 n)         # «et system hvor folke trygden er flat»
         (1C pers OR np OR n)
         (NOT 1 prn + nt)     # «tilfeller hvor det er store differanser» (should be det.expl?)
         (2 %være/bli%)
@@ -17398,6 +17400,13 @@ SELECT:Siktede-ikke-avhørt n + def IF
 # «Siktede ikke avhørt.»
 
 "<kjentes>" REMOVE:default-kjennes ("kjent" n xpst) ;	# keep kjennes<vblex><pret/perf.part.>→kjentes
+
+REMOVE:de-drepte-barn adj IF
+        (-1 ("den"))
+        (0 adjn + n)
+        (1C n + ind)
+        ;
+# «Ifølge helsemyndighetene i Gaza er over 40 prosent av de drepte barn.»
 
 SELECT:Den-siktede xgrau OR adj IF
         (-1 ("den"))
