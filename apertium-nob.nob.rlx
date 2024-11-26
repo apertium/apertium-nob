@@ -5149,7 +5149,7 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 # «De to angriperne som drepte de to politifolkene, ble selv skutt og drept»
 
 "<drepte>" REMOVE:hun-spilte-drepte-B fv IF
-        (0* fv BARRIER setn-gr)
+        (0C* fv BARRIER setn-gr)
         ;
 
 "<drepte>" SELECT:de-drepte-B adj IF
