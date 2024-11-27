@@ -42279,6 +42279,7 @@ SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
 
 SELECT:er-det-viktige-innspill expl IF
         (-1 kop-fv OR ("bety") + fv)
+        (NEGATE 1 sup OR ord) # «er det laveste nivå siden», superlativ typisk del av subst-frase
         (1 adj + def)
         (2 n + ind)
         (NEGATE 2 def)
