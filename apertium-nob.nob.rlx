@@ -974,6 +974,7 @@ LIST veldig-farlige-part = "nære"  "nyte"  "mige"  "make"  "lite"  "hele"  "gal
 LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"  pres) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("grade"  vblex pres) ;
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
+LIST n-ofte-enkelbestemt = "folk" "stat" "minutt" "kirke" "samfunn" "tidspunkt" "halvkule" "antall" "rom" "århundre" "plan" "liv" "hoff" "regjering" "tid" "publikum" "kontor" "brorskap" "komité" "nivå" "kontinent" "revolusjon" "hav" "senter" "prinsipp" "halvøy" "makt" ;
 
 LIST uteljeleg = ".*bær"r "øl" "melk" ; # needs filling out :)
 
@@ -2928,6 +2929,7 @@ REMOVE:unlikely ("<kjennes>"i) + n + gen; # det kjennes sant
 REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
 REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
+REMOVE:unlikely ("norske") + vblex;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -8455,11 +8457,12 @@ SELECT:tranene ("trane") IF
 "<redde>"   SELECT:å-redde inf IF
 	(-1 infmerke)
         ;
-"<redde>"   SELECT:redde-for ("redd") IF
+
+"<redde>" REMOVE:redde-for ("re") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
-"<Redde>"   SELECT:redde-for ("redd") IF
+"<Redde>" REMOVE:redde-for ("re") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
@@ -15354,10 +15357,11 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 
 #:3536
 "<hjem>" REMOVE:hjem n IF
-	(NOT -1 nøyt-adj-det)
-	(NOT -1 fl-adj/fl-det)
-	(NOT -1 subst-gen)
-	(NOT -1 %og%)
+	(NEGATE -1 nøyt-adj-det)
+	(NEGATE -1 fl-adj/fl-det)
+	(NEGATE -1 subst-gen)
+	(NEGATE -1 %og%)
+        (NEGATE -1 ("redde") OR ("bygge") OR ("kjøpe"))
 ;
 #  "ikke subst dersom det ikke er et hjem osv
 # eller feks \"hus og hjem\""
@@ -28339,6 +28343,16 @@ SELECT:å-ikke-vise (vblex inf) IF
 ;
 #  "8.10.2003: Drikke gjorde hun aldri.
 # NOT 0 pron: Dette gjør hun aldri."
+
+
+SELECT:kan-med-det-redde-hjem inf if
+        (-3 m-hj-verb)
+        (-2 ("<med>"))
+        (-1 ("<det>"))
+        (0C inf OR adj)
+        (1 n + ind)
+        (NEGATE 1 n-ofte-enkelbestemt)
+        ;
 
 SELECT:å-spille-og-score inf IF
         (-3C infmerke)
