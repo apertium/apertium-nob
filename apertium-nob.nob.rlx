@@ -42277,6 +42277,14 @@ SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
         ;
 # «For det norske TV-publikum er han kjent for sin rolle i ‘Koselig med peis’, som skaffet ham en høythengende Emmy-nominasjon.»
 
+SELECT:er-det-viktige-innspill expl IF
+        (-1 kop-fv OR ("bety") + fv)
+        (1 adj + def)
+        (2 n + ind)
+        (NEGATE 2 def)
+        ;
+# «For politiet er  det  viktige innspill, heter det i pressemeldingen.»
+
 SELECT:det-norske-publikum dem + $$GENDER + $$NUMBER - expl IF
         (1 adj + def)
         (2 n + $$GENDER + $$NUMBER)
