@@ -4679,6 +4679,10 @@ WITH:anklager ("<anklager>"i) {
         (NEGATE -2 ("ut") LINK 1 ("av"))
         ;
 
+"<buet>"i SELECT:bli-buet-ut vblex IF
+        (1 %ut% OR %mot%)
+        ;
+
 "<nytt>"i SELECT:mye-nytt ("ny") IF
         (-1 ("<mye>"i) OR ("<intet>"i) OR ("så mange"i det qnt un pl unc))
         ;
@@ -5530,6 +5534,11 @@ SELECT:trives ("<trives>"i) + vblex + pres IF
 SELECT:løpet-kjørt ("<løpet>"i) + n IF
         (1 ("<kjørt>"))
         ;
+
+SELECT:dødt-løp ("<løp>"i) + n + sg + ind IF
+		(-1C ("<dødt>"i))
+		;
+                # dødt løp
 
 SELECT:løp-hun ("<løp>"i) + pret IF
 		(1C prn OR cog OR ant OR n + def)
@@ -13816,6 +13825,12 @@ REMOVE:rentehopp ("hoppe") IF
         (-1 vblex)
         ;
 # å knekke beinet
+
+"<beinet>" REMOVE:om-beinet vblex IF
+        (-1 %om%)
+        ;
+# mange om beinet
+
 "<knekker>" REMOVE:knekke-sammen n IF
 		(1 ("sammen"))
         ;
@@ -15000,7 +15015,9 @@ REMOVE ("frø") IF
 ;
 #  "gode (adj) kaker"))
 
-
+"<godt>"i   REMOVE:utmerket-godt   (adj + sint + nt) IF
+	(-1 ("<utmerket>"))
+;
 
 #:3585
   "<godt>"   REMOVE:3585   (n) IF
@@ -15243,6 +15260,17 @@ REMOVE ("frø") IF
 ;
 #  "bare ved her og hisset!! ?"
 
+"<utmerket>"i   REMOVE:utmerket-seg   (adj + pst) IF
+	(*1C refl-prn BARRIER setn-gr)
+;
+
+"<utmerket>"i   REMOVE:utmerket-at   (vblex) IF
+	(1C %at%)
+;
+
+"<utmerket>"i   REMOVE:helt-utmerket   (vblex) IF
+	(-1C ("<helt>"i adj))
+;
 
 
 #:3539
@@ -26255,6 +26283,12 @@ SELECT:singel-album ("singel" m) IF
 #      :group 38
 
 
+"<sporet>" SELECT:sporet-av vblex IF
+		(1 %av%)
+                (NEGATE -1 %på%)
+		;
+                # "på sporet av ein narkobande"
+                # "Godstog spora av på Bergensbanen"
 
 #:2545
  SELECT:2545 ent-nøyt-subst IF
@@ -42575,9 +42609,6 @@ SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt
 		(-1 ("rekke"))
 		;
 
-"<sporet>" SELECT:sporet-av vblex IF
-		(1 ("av"))
-		;
 "<sporet>" SELECT:i-sporet n IF
 		(-1 ("i") OR ("på"))
 		;
