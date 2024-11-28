@@ -203,7 +203,7 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" ;
 SET n-adjn = n OR adjn ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
@@ -600,7 +600,7 @@ LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("le
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" ;
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre" "røde"  "myke" "samene" ;
-LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ;
+LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
 LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ("sette" adj pp) "forbundet";
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ("rolle" pres) ("lege" pres) ;
@@ -974,6 +974,7 @@ LIST veldig-farlige-part = "nære"  "nyte"  "mige"  "make"  "lite"  "hele"  "gal
 LIST veldig-farlige-verb = ("penne"  pres) ("stede"  pres) ("dy"  pres) ("grade"  pres) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("grade"  vblex pres) ;
 LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
+LIST n-ofte-enkelbestemt = "folk" "stat" "minutt" "kirke" "samfunn" "tidspunkt" "halvkule" "antall" "rom" "århundre" "plan" "liv" "hoff" "regjering" "tid" "publikum" "kontor" "brorskap" "komité" "nivå" "kontinent" "revolusjon" "hav" "senter" "prinsipp" "halvøy" "makt" ;
 
 LIST uteljeleg = ".*bær"r "øl" "melk" ; # needs filling out :)
 
@@ -2928,6 +2929,7 @@ REMOVE:unlikely ("<kjennes>"i) + n + gen; # det kjennes sant
 REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
 REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
+REMOVE:unlikely ("norske") + vblex;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -4938,6 +4940,13 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 # kan framleis velja determinativ (slik at «til den kinesiske stat»
 # ikkje får pronomen-lesing med den¹)
 
+"<den>" REMOVE:cm+den¹ ("den") + prn IF
+        (*-2 n OR np)
+        (NEGATE *-2 fv BARRIER setn-gr)
+        (-1 cm)
+        (1C fv)
+        ;
+# «Helbredelsesprosessen for landet Israel, den starter her.»
 
 
 #:3722
@@ -5133,54 +5142,55 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 "<drepte>" SELECT:drepte-per adj IF
         (1 ("per"))
         ;
-		# drepte per tusen innbyggere
+# «drepte per tusen innbyggere»
 
 "<drepte>" SELECT:skjøt-og-drepte vblex IF
         (-2 ("skyte" vblex) OR ("angripe" vblex) OR ("lemleste" vblex))
-		(-1 %og%)
+        (-1 %og%)
         ;
 "<drepte>" SELECT:angriperne-som-drepte-noen vblex IF
         (-1 ("som"))
         (1* n BARRIER setn-gr)
         ;
-# De to angriperne som drepte de to politifolkene, ble selv skutt og drept
-"<drepte>" SELECT:hun-spilte-drepte-B adj IF
-        (0* vblex BARRIER setn-gr)
+# «De to angriperne som drepte de to politifolkene, ble selv skutt og drept»
+
+"<drepte>" REMOVE:hun-spilte-drepte-B fv IF
+        (0C* fv BARRIER setn-gr)
         ;
 
 "<drepte>" SELECT:de-drepte-B adj IF
         (-1 prn + pers + pl + nom OR det + pos + un + pl )
-		(NEGATE 1 n OR np OR prn OR talord OR siffer )
+        (NEGATE 1 n OR np OR prn OR talord OR siffer )
         ;
 "<drepte>" SELECT:meldt-om-drepte adj IF
         (-2 ("melde"))
         (-1 ("om"))
         ;
 "<drept>" SELECT:ha-drept vblex + pp IF
-		(-1* %ha% BARRIER setn-gr)
-		(NEGATE -1* %være/bli% BARRIER setn-gr)
+        (-1* %ha% BARRIER setn-gr)
+        (NEGATE -1* %være/bli% BARRIER setn-gr)
         ;
 
 "<drept>" SELECT:27-er-drept adj + pl IF
         (-1* %være/bli% BARRIER setn-gr)
-		(-2* siffer OR talord-pl BARRIER setn-gr)
+        (-2* siffer OR talord-pl BARRIER setn-gr)
 		;
 
 "<drept>" SELECT:er-27-drept adj + pl IF
-		(-1* siffer OR talord-pl BARRIER setn-gr)
+        (-1* siffer OR talord-pl BARRIER setn-gr)
         (-2* %være/bli% BARRIER setn-gr)
-		;
-
-"<drept>" SELECT:de-som-er-drept adj + mf IF
-		(-3 m OR f)
-        (-2 ("som"))
-		(-1 %være/bli%)
         ;
 
 "<drept>" SELECT:de-som-er-drept adj + mf IF
-		(-3 nt)
+        (-3 m OR f)
         (-2 ("som"))
-		(-1 %være/bli%)
+        (-1 %være/bli%)
+        ;
+
+"<drept>" SELECT:de-som-er-drept adj + mf IF
+        (-3 nt)
+        (-2 ("som"))
+        (-1 %være/bli%)
         ;
 
 "<drept>" SELECT:skutt-og-drept adj + pl IF
@@ -7212,6 +7222,7 @@ SELECT:lurer-på-hvor adv IF
 # Ikkje: «SSBs definisjon av tettsted er steder hvor det bor minst 200 mennesker, og hvor det ikke er lenger avstand mellom husene enn 50 meter.»
 
 "<hvor>" SELECT:viser-bl.a.-hvor-veien-er-smalest adv IF
+        (NEGATE -1 n)         # «et system hvor folke trygden er flat»
         (1C pers OR np OR n)
         (NOT 1 prn + nt)     # «tilfeller hvor det er store differanser» (should be det.expl?)
         (2 %være/bli%)
@@ -8455,11 +8466,12 @@ SELECT:tranene ("trane") IF
 "<redde>"   SELECT:å-redde inf IF
 	(-1 infmerke)
         ;
-"<redde>"   SELECT:redde-for ("redd") IF
+
+"<redde>" REMOVE:redde-for ("re") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
-"<Redde>"   SELECT:redde-for ("redd") IF
+"<Redde>" REMOVE:redde-for ("re") IF
 	(NOT 1 %opp%)
 	(NEGATE *1 %seng% BARRIER setn-gr)
         ;
@@ -13486,6 +13498,11 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("gjøre") + pasv)
         ;
 # blir gjort vilkårslaus
+"<behandler>" SELECT:din-lokale-behandler n IF
+        (-2 ("din"))
+        (-1 ("<lokale>"))
+        ;
+# Snakk med din lokale behandler dersom ... 
 "<frister>" SELECT:datoer-og-frister n IF
         (-2 ("dato"))
         (-1 ("og"))
@@ -15368,10 +15385,11 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 
 #:3536
 "<hjem>" REMOVE:hjem n IF
-	(NOT -1 nøyt-adj-det)
-	(NOT -1 fl-adj/fl-det)
-	(NOT -1 subst-gen)
-	(NOT -1 %og%)
+	(NEGATE -1 nøyt-adj-det)
+	(NEGATE -1 fl-adj/fl-det)
+	(NEGATE -1 subst-gen)
+	(NEGATE -1 %og%)
+        (NEGATE -1 ("redde") OR ("bygge") OR ("kjøpe"))
 ;
 #  "ikke subst dersom det ikke er et hjem osv
 # eller feks \"hus og hjem\""
@@ -17414,6 +17432,13 @@ SELECT:Siktede-ikke-avhørt n + def IF
 # «Siktede ikke avhørt.»
 
 "<kjentes>" REMOVE:default-kjennes ("kjent" n xpst) ;	# keep kjennes<vblex><pret/perf.part.>→kjentes
+
+REMOVE:de-drepte-barn adj IF
+        (-1 ("den"))
+        (0 adjn + n)
+        (1C n + ind)
+        ;
+# «Ifølge helsemyndighetene i Gaza er over 40 prosent av de drepte barn.»
 
 SELECT:Den-siktede xgrau OR adj IF
         (-1 ("den"))
@@ -28352,6 +28377,16 @@ SELECT:å-ikke-vise (vblex inf) IF
 ;
 #  "8.10.2003: Drikke gjorde hun aldri.
 # NOT 0 pron: Dette gjør hun aldri."
+
+
+SELECT:kan-med-det-redde-hjem inf if
+        (-3 m-hj-verb)
+        (-2 ("<med>"))
+        (-1 ("<det>"))
+        (0C inf OR adj)
+        (1 n + ind)
+        (NEGATE 1 n-ofte-enkelbestemt)
+        ;
 
 SELECT:å-spille-og-score inf IF
         (-3C infmerke)
@@ -42275,6 +42310,15 @@ SELECT:det-norske-publikum n + $$GENDER + $$NUMBER IF
         (-1 adj + def)
         ;
 # «For det norske TV-publikum er han kjent for sin rolle i ‘Koselig med peis’, som skaffet ham en høythengende Emmy-nominasjon.»
+
+SELECT:er-det-viktige-innspill expl IF
+        (-1 kop-fv OR ("bety") + fv)
+        (NEGATE 1 sup OR ord) # «er det laveste nivå siden», superlativ typisk del av subst-frase
+        (1 adj + def)
+        (2 n + ind)
+        (NEGATE 2 def)
+        ;
+# «For politiet er  det  viktige innspill, heter det i pressemeldingen.»
 
 SELECT:det-norske-publikum dem + $$GENDER + $$NUMBER - expl IF
         (1 adj + def)
