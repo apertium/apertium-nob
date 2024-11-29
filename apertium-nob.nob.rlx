@@ -2930,6 +2930,7 @@ REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
 REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
 REMOVE:unlikely ("norske") + vblex;
+REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -8524,6 +8525,10 @@ SELECT:tranene ("trane") IF
         ;
         # Korleis løyse daglegdagse utfordringar
 
+"<løse>"i SELECT:løse-gjenstander adj IF
+        (1C ("gjenstand") + pl + ind)
+        ;
+
 "<lokale>"i SELECT:din-lokale adj IF
         (-1C det + m + sg)
         ;
@@ -13514,6 +13519,13 @@ REMOVE ("hvor") + cnjsub IF
 # viktige fristar frå regjeringa
 # vi har nokre fristar framover
 # datoer og frister
+
+REMOVE:leveringsfrister sg IF
+        (0 ("frister"))
+        (0/1 cmp)
+        ;
+        # saksbehandlingsfristar
+
 "<selger>" SELECT:så-lenge-selger-lever n IF
         (-2 ("så"))
         (-1 ("lenge"))
