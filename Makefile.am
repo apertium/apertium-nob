@@ -103,4 +103,4 @@ test: all
 	    | grep -vE  'lm="(.*)(.*)".*/\2_(\\[^_]+|)_'                     \
 	    | sed 's%^%WARNING: lemma vs par/tail inconsistency in %'
 	apertium-regtest test
-	@if test -e apertium-lint; then apertium-lint $(BASENAME).$(LANG1).dix; else echo "apertium-lint not found -- not linting" >&2;fi
+	@if command -V apertium-lint >/dev/null 2>/dev/null; then apertium-lint $(BASENAME).$(LANG1).dix; else echo "apertium-lint not found -- not linting" >&2;fi
