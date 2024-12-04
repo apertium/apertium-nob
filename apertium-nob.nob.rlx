@@ -15044,7 +15044,7 @@ REMOVE ("frø") IF
 ;
 #  "gode (adj) kaker"))
 
-"<godt>"i   REMOVE:utmerket-godt   (adj + sint + nt) IF
+"<godt>"i REMOVE:utmerket-godt (adj sint nt) IF
 	(-1 ("<utmerket>"))
 ;
 
