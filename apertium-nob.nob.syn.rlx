@@ -5,7 +5,7 @@
 SOFT-DELIMITERS = "<,>" ;
 DELIMITERS = "<.>" "<..>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>";
 
-#PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
+#PARENTHESES = ("<$(>" "<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
 
 LIST GENDER = m f nt mf ;
 LIST NUMBER = sg pl sp ;
@@ -389,9 +389,9 @@ LIST ikke-adj-adv = vblex pr prn cnjsub "å" n ij det (clb cnjcoo) rquot lquot s
 LIST ikke-adj-mask-ub-ent = (adj pst nt ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adj-nøyt-ub-ent = (adj pst mf ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
 LIST ikke-adj-fem-ub-ent = (adj pst nt ind sg) (adj pst m ind sg) (adj pl) (adj def) (adj comp) (adj sup) (adj pprs);
-LIST ikke-adv = "siden" "$," vblex pr prn cnjsub cnjcoo "å" ij n det sent (adj m) (adj f) (adj mf) (adj pl) (adj comp) (adj sup) (adj pprs) (adj def) ;
-LIST ikke-adv-adj = "siden" "$:" vblex pr prn cnjsub "å" n ij det sent (clb cnjcoo) (clb cm) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
-LIST ikke-adv-adj-det = "siden" "$:" vblex pr prn cnjsub "å" n ij sent (clb cnjcoo) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
+LIST ikke-adv = "siden" "," vblex pr prn cnjsub cnjcoo "å" ij n det sent (adj m) (adj f) (adj mf) (adj pl) (adj comp) (adj sup) (adj pprs) (adj def) ;
+LIST ikke-adv-adj = "siden" ":" vblex pr prn cnjsub "å" n ij det sent (clb cnjcoo) (clb cm) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
+LIST ikke-adv-adj-det = "siden" ":" vblex pr prn cnjsub "å" n ij sent (clb cnjcoo) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
 LIST ikke-adv-adj-nr2det = vblex pr prn cnjsub "å" n ij sent ("hin" det) ("denne" det) ("dette" det) ("den" det) ("det" det) ("en" det) ("noen" det m) ("noen" det f) ("noen" det pl) ("ingen" det) (cnjcoo clb) (cm clb) ;
 LIST ikke-adv-adj-nr2det-be-det = vblex pr prn cnjsub "å" n ij sent ("en" det) ("noen" det) ("ingen" det) (cnjcoo clb) (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
 LIST ikke-adv-adj-u-konj = vblex pr prn cnjsub "å" n ij det cnjcoo sent (cm clb) (cnjcoo <adv>) (cnjcoo "både") (cnjcoo "enten") (cnjcoo "hverken") (cnjcoo "verken") ;
@@ -434,8 +434,8 @@ LIST ikke-premod-u-@kon/@nkon-@s-gr = @fv @iv @subj @xubj @obj @i-obj @s-pred @o
 LIST ikke-prep = cnjsub adv adj vblex prn "å" n ij det (clb cnjcoo) <anf> sent ;
 LIST ikke-sanns-ditrans = "skrive" "kjøpe" ;
 LIST ikke-sbu = det pr prn cnjcoo "å" n ij adj adv vblex ;
-LIST ikke-subst = "siden" "$-" "$," vblex pr prn cnjsub cnjcoo "å" det ij adj adv ;
-LIST ikke-subst-prop = "siden" "$-" "$," vblex pr prn cnjsub cnjcoo "å" det ij adj adv (n appell) ;
+LIST ikke-subst = "siden" "-" "," vblex pr prn cnjsub cnjcoo "å" det ij adj adv ;
+LIST ikke-subst-prop = "siden" "-" "," vblex pr prn cnjsub cnjcoo "å" det ij adj adv (n appell) ;
 LIST ikke-tall = "somme" "samtlige" "noen" "ingen" "hver" "enhver" "begge" "all" ;
 LIST ikke-verb-adj-adv = det pr prn cnjsub cnjcoo "å" n ij ;
 LIST imp = imp ;
@@ -454,10 +454,10 @@ LIST kh#pron-refl = (prn ref) ;
 LIST kh#subst-fem-prop = (np f) ;
 LIST kh#subst-mask-prop = (np m) ;
 LIST klokkeslett = "1" (det qnt pl) ("én" det qnt nt) ("." sent clb remspc) ;
-LIST kolon = ("$:" clb) ;
-LIST komma = "$," ;
+LIST kolon = (":" clb) ;
+LIST komma = "," ;
 LIST komma/ellipse/kolon/semi/konj/adv = cm sent cnjcoo adv <adv> "både" "enten" "hverken" "verken" ;
-LIST komma/konj = "$," cnjcoo ;
+LIST komma/konj = "," cnjcoo ;
 LIST komma/konj/anf = cm cnjcoo <anf> ;
 LIST komma/strek/parentes-beg = cm guio lpar ;
 LIST komp = comp ;
@@ -505,7 +505,7 @@ LIST m#komma = cm ;
 LIST m#komma/konj = cm cnjcoo ;
 LIST m#mask = m ;
 LIST m#sbu = cnjsub ;
-LIST m#setn-gr = "hvorfor" "hvordan" "hvor" "hva" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
+LIST m#setn-gr = "hvorfor" "hvordan" "hvor" "hva" cnjsub >>> <<< ("-" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST m-hj-verb-m/inf = "ville" "skulle" "måtte" "kunne" "burde" ;
 LIST mange-få-pos-komp/enkelt-fl = ("mange" pos) ("mange" comp) ("få" pos) ("få" comp) ("enkelt" pl) ;
 LIST mange/få/lang/lenge = "mange" "lenge" "lang" "få" ;
@@ -582,7 +582,7 @@ LIST s#%være/bli% = "bli" ("være") ;
 LIST s#%noe% = ("noe" prn pers 3 sg nt) ;
 LIST s#adj = adj ;
 LIST s#ikke-prep = adj adv vblex prn cnjsub "å" n np ij det cnjcoo <anf> cm sent lpar rpar guio ;
-LIST s#ikke-subst = "$-" "$," vblex pr prn cnjsub cnjcoo "å" det ij adj adv ;
+LIST s#ikke-subst = "-" "," vblex pr prn cnjsub cnjcoo "å" det ij adj adv ;
 LIST s#ikke-verb = pr adj adv prn cnjsub "å" n np ij det cnjcoo ;
 LIST s#komma = cm ;
 LIST s#komma/konj = cm cnjcoo ;
@@ -601,11 +601,11 @@ LIST sbu/sp = "hvorfor" "hvordan" "hvor" cnjsub ;
 LIST selv = "sjøl" "sjæl" "selv" ;
 LIST selv-adv = ("selv" adv) ("sjøl" adv) ("sjæl" adv) ;
 LIST setn-gr = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" cnjsub @sbu >>> <<< clb ;
-LIST setn-gr/parentes-beg = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" lpar cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
-LIST setn-gr/verb = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" vblex cnjsub @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
-LIST setn-gr/verb/subj = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "$--" "$-" @subj @xubj vblex ("at" cnjsub) @sbu >>> <<< ("$:" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
+LIST setn-gr/parentes-beg = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" lpar cnjsub @sbu >>> <<< (":" clb) (";" clb) (clb cnjcoo) (clb cm) ;
+LIST setn-gr/verb = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" vblex cnjsub @sbu >>> <<< (":" clb) (";" clb) (clb cnjcoo) (clb cm) ;
+LIST setn-gr/verb/subj = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" "--" "-" @subj @xubj vblex ("at" cnjsub) @sbu >>> <<< (":" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST setn-slutt/fin-verb = <<< clb (vblex pres) (vblex pret) ;
-LIST setn/infkonstr-gr = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< ("$-" clb) ("$;" clb) (clb cnjcoo) (clb cm) ;
+LIST setn/infkonstr-gr = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< ("-" clb) (";" clb) (clb cnjcoo) (clb cm) ;
 LIST setn/infkonstr-gr/verb = "hvorfor" "hvordan" "hvor" "hva" "å" cnjsub >>> <<< clb vblex ;
 LIST sitatverb = "utbryte" "understreke" "true" "tro" "tilføye" "tenke" "svare" "sukke" "smile" "skrive" "si" "rope" "replisere" "påpeke" "presisere" "presisere" "opplyse" "oppfordre" "mumle" "mene" "love" "le" "konkludere" "hyle" "hviske" "hevde" "glise" "gjenta" "gaule" "fremholde" "framholde" "fortsette" "fortelle" "forklare" "flire" "fastslå" "erkjenne" "bekjenne" "begynne" "be" "avslutte" "anta" "advare" ;
 LIST sitatverb-u/at = "mene" "si" "tenke" "anta" "hevde" "tro" ; # kan brukast utan «(om) at» før det underordna leddet, t.d. «han mener politiet bør», «sjefen tror titusener kan bli permittert»
@@ -613,7 +613,7 @@ LIST slags/for-prep/%annet%/%mer% = "slags" ("for" pr) ("annen" nt) ("mye" comp)
 LIST slik-adv = ("slik" adv) ;
 LIST som-sbu = ("som" cnjsub) ;
 LIST spørreadv = "hvorledes" "hvorfor" "hvordan" "hvor" "hva" ;
-LIST spørsmål-t = "$?" ;
+LIST spørsmål-t = "?" ;
 LIST strek = guio ;
 LIST subst = n ;
 LIST subst-nøyt-ent = (n nt sg) ;
@@ -5448,6 +5448,14 @@ SELECT:største-boten-noensinne-utstedt @xubj IF
         (2 pp)
         ;
 # «Amerikanske myndigheter vurderer å gi Facebook den største boten noensinne utstedt for manglende beskyttelse av brukeres data, skriver Washington Post.»
+
+"<enheter>" SELECT @xubj IF
+       (1 komma)
+       (2 ("<fordelt>"))
+       (3 ("på"))
+        ;
+# «Boligprosjektet inkluderer både treroms og fireroms enheter, fordelt på en kombinasjon av firemannsboliger og tomannsboliger.»
+
 
 WITH:at-De-x-er-y-er-z @det→ + &&ADJ_N_AGR IF
         (-1 ("at") + @subj)	# _C1_

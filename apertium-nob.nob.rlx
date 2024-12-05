@@ -3982,6 +3982,12 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
 
+"<fordelt>" SELECT:flertall-fordelt-på adj IF
+   		(-2 n + pl)
+		(-1 komma)
+		(1 %på%)
+		;
+
 "<presset>"i SELECT:vil-presset-mot n IF
         (-1 prep OR vblex OR cnjcoo OR cnjsub OR adj)
         (1 ("mot"))
@@ -36829,6 +36835,17 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 "<rammer>" SELECT:setter-rammer-for n IF
         (-1 ("sette"))
         ;
+
+
+"<rammer>" SELECT:adj-rammer-for n IF
+        (-1 (adj))
+        (1 %for%)
+        ;
+
+"<godt>" SELECT:godt-i-rute adv IF
+		(1 ("i"))
+		(2 ("rute"))
+		;
 
 "<rede>" SELECT:holder-ikke-rede-på adv IF
         (*-1 ("holde") BARRIER vblex OR setn-gr OR ("seg"))
