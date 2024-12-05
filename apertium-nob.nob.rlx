@@ -5546,6 +5546,12 @@ SELECT:løpet-kjørt ("<løpet>"i) + n IF
         (1 ("<kjørt>"))
         ;
 
+SELECT:beste-løp ("<løp>"i) + n IF
+		(-1C adj + sup)
+		;
+                # sitt beste løp
+
+
 SELECT:dødt-løp ("<løp>"i) + n + sg + ind IF
 		(-1C ("<dødt>"i))
 		;
