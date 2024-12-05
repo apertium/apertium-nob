@@ -12277,15 +12277,21 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
         ;
 # meiningsmålingssnitta
 
+"<begrepet>" REMOVE:ingen-hj-v ("begripe") IF
+        (NEGATE *-1 hj-verb)
+        ;
+# "begrepet" som partisipp er såpass sjeldan at det bør vera ha/få/…
+# for at me skal velja det.
+
 "<begrepet>" REMOVE:høre-om-begrepet ("begripe") IF
         (-1 %om%)
         ;
+
+LIST begrepet-verb = "benytte" "bruke" "oppfinne" "finne# opp" ;
 "<begrepet>"i REMOVE:benytte-begrepet ("begripe") IF
-        (-1 ("benytte"))
+        (-1 begrepet-verb)
         ;
-"<begrepet>"i REMOVE:oppfant-begrepet ("begripe") IF
-        (-1 ("oppfinne"))
-        ;
+
 "<begrepet>" REMOVE:med-begrepet-XY ("begripe") IF
         (-1 %med%)
         (1 akronym/ukjent OR punktum/ellipse)
@@ -15301,7 +15307,7 @@ REMOVE ("frø") IF
 ;
 #  "bare ved her og hisset!! ?"
 
-"<utmerket>"i   REMOVE:utmerket-seg   (adj + pst) IF
+"<utmerket>"i   REMOVE:utmerket-seg   (adj pst) IF
 	(*1C refl-prn BARRIER setn-gr)
 ;
 
