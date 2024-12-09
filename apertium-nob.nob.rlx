@@ -12432,6 +12432,15 @@ REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
+"<svelget>" SELECT:del-av-svelget n IF
+        (-2 ("del"))
+        (-1 ("av"))
+        ;
+# "en del av svelget"
+"<lekker>" SELECT:det-lekker ("lekke") IF
+        (-1 ("bryst"))
+        ;
+# "Bruk ammeinnlegg om brystet lekker og skift så ofte du trenger."
 "<Lærer>" SELECT:lærer-bruker ("lærer") IF
         (1 vblex)
         ;
