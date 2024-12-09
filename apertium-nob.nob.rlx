@@ -12437,6 +12437,16 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("av"))
         ;
 # "en del av svelget"
+"<sprekker>" SELECT:sår-og-sprekker n IF
+        (-2 ("sår"))
+        (-1 cnjcoo)
+        ;
+# "Sår og sprekker bør ikke forekomme"
+"<skorper>" SELECT:slim-og-skorper n IF
+        (-2 n)
+        (-1 cnjcoo)
+        ;
+# "slim og skorper"
 "<lekker>" SELECT:det-lekker ("lekke") IF
         (-1 ("bryst"))
         ;
