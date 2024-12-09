@@ -12447,6 +12447,11 @@ REMOVE:kapret-istedenfor adj IF
         (-1 cnjcoo)
         ;
 # "slim og skorper"
+"<slimet>" SELECT:klem-bort-slimet n IF
+        (-2 ("klemme"))
+        (-1 adv)
+        ;
+# "klem bort slimet"
 "<lekker>" SELECT:det-lekker ("lekke") IF
         (-1 ("bryst"))
         ;
