@@ -12452,6 +12452,11 @@ REMOVE:kapret-istedenfor adj IF
         (-1 adv)
         ;
 # "klem bort slimet"
+"<skyldes>" SELECT:kan-det-skyldes inf IF
+        (-2 ("kunne"))
+        (-1 ("den"))
+        ;
+# "Kan det skyldes helt andre faktorer?"
 "<lekker>" SELECT:det-lekker ("lekke") IF
         (-1 ("bryst"))
         ;
