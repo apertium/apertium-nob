@@ -12432,6 +12432,35 @@ REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
 # "...og kapret istedenfor ambulansen"
+"<svelget>" SELECT:del-av-svelget n IF
+        (-2 ("del"))
+        (-1 ("av"))
+        ;
+# "en del av svelget"
+"<sprekker>" SELECT:sår-og-sprekker n IF
+        (-2 ("sår"))
+        (-1 cnjcoo)
+        ;
+# "Sår og sprekker bør ikke forekomme"
+"<skorper>" SELECT:slim-og-skorper n IF
+        (-2 n)
+        (-1 cnjcoo)
+        ;
+# "slim og skorper"
+"<slimet>" SELECT:klem-bort-slimet n IF
+        (-2 ("klemme"))
+        (-1 adv)
+        ;
+# "klem bort slimet"
+"<skyldes>" SELECT:kan-det-skyldes inf IF
+        (-2 ("kunne"))
+        (-1 ("den"))
+        ;
+# "Kan det skyldes helt andre faktorer?"
+"<lekker>" SELECT:det-lekker ("lekke") IF
+        (-1 ("bryst"))
+        ;
+# "Bruk ammeinnlegg om brystet lekker og skift så ofte du trenger."
 "<Lærer>" SELECT:lærer-bruker ("lærer") IF
         (1 vblex)
         ;
