@@ -9020,6 +9020,11 @@ REMOVE:unlikely ("<ris>") + pasv;
 # «Nå har hun krykker, slik at hun kan gå rundt selv.»
 
 
+"<runde>" SELECT:tredje-runde n IF
+        (-1 ord)
+        ;
+# «De siste 71 representantene utpekes i valgets andre runde 27. oktober,»
+
 
 #:3338
   "<råd>"   SELECT:3338   (n ubøy) IF
