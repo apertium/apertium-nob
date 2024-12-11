@@ -8604,11 +8604,12 @@ SELECT:regne-seg-som regne_ut IF
         ;
         # Han regnet seg dessuten ikke lenger som kristen
 
-"<regnet>"i SELECT:har-det-regnet regn_vann IF
+"<regnet>"i SELECT:har-det-regnet regne_vann IF
         (-2C* %ha% BARRIER setn-gr)
         (-1C ("den"))
         (NEGATE -2C* vblex + pp BARRIER %ha%)
         ;
+        # i høst har det regnet mye på Østlandet
 
 "<regnet>"i SELECT:kommer-regnet regn_vann IF
         (-1 regn-verb)
@@ -43163,6 +43164,7 @@ REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.�
 "<leie>" REMOVE:default-leige ("leie" n m sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
 "<leiren>" REMOVE:default-leira ("leire" n m sg def) ;	# keep leir<n><m><sg><def>→leiren
 "<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
+"<leir>" REMOVE:default-leiren ("leir" n nt sg ind) ;	# keep leir<n><m><sg><ind>→leir(en)
 "<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<leke>" REMOVE:default-leike ("leke" n m sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
 "<lekte>" REMOVE:default-lak ("lekke" vblex pret) ;	# keep leke<vblex><pret>→leika
