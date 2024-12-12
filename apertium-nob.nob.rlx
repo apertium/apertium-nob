@@ -11738,7 +11738,16 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		;
 # Legar må gå gjennom reseptan
 # Utdanningen leger må gjennom er på fem år
-
+"<leger>"i SELECT:flere-leger n IF
+                (-1 ("mange") OR ("gruppe"))
+		;
+# en eller flere leger
+# en gruppe leger
+"<lege>"i SELECT:gammel-lege n IF
+                (-1 ("gammel") OR ("år gammel"))
+		;
+# en gammel lege
+# en 33 år gammel lege
 "<lege>" SELECT:jordmor-lege-eller-begge-deler n IF
 		(-2 n)
                 (-1 clb-komma)
