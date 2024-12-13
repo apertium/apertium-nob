@@ -5522,6 +5522,18 @@ WITH:krever-ham-løslatt @xubj + &&ADJ_N_AGR
 # «Flere land krever ham løslatt.»
 # «Vi holdt oss rolige.»
 
+
+# Vanskeleg, manglande "som er":
+SELECT:knyttet-til @xubj + &&ADJ_N_AGR IF
+	(1 adj + pp + &&ADJ_N_AGR LINK 0 ("knytte") OR ("relatere") OR ("kjenne") OR ("sitere") OR ("utføre"))
+	(2 pr)
+	(NEGATE 0 adverbialsubst) # ble onsdag kveld kjent som
+	(NEGATE 0 @←p-utfyll LINK 0 (".*(grunn|årsak|periode|tilfelle)"r)) # i flere tilfeller / av helsegrunner kjent som
+	;
+# «Staten frikjent for nesten alle  erstatningssøksmål  knyttet til støy»
+# «og begge byene er nesten tomme, ifølge den opposisjonelle  sivilforsvarsgruppa  kjent som Hvite hjelmer.»
+
+
 REMOVE:not-xubj @xubj;
 
 
