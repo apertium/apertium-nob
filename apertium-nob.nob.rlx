@@ -4342,6 +4342,14 @@ SELECT:hen-til pr IF
 #  "på andre (det) siden"))
 
 
+"<bruker>" SELECT:personen-er-bruker-av-tjenesten subst IF
+	(-2 n)
+	(-1 %være/bli%)
+	(1 %av%)
+	(2 n)
+	;
+
+
 
 #:3763
 "<andre>" SELECT:i-andre-land det + pl IF
