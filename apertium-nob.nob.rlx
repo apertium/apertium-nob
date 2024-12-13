@@ -38108,7 +38108,11 @@ SELECT:dagens-taper n + sg IF
 ;
 #  "..., og (clb) de eneste tingene som er oppnådd, er..."))
 
-
+SELECT:styrker-vår-kampkraft-og-bygger-forsvaret (vblex pres) IF
+	(-4 pres)
+	(-1 cnjcoo)
+	(0C n OR vblex)
+	(1 n)
 
 
 #:1797
