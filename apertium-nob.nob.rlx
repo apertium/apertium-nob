@@ -11774,6 +11774,11 @@ SELECT:alle-var-skrivne-ut adj + pl IF
                 (1 vblex + inf)
 		;
 # ... bør lege gjøre en medisinsk vurdering av om vaksinasjon kan utsettes, skriver FHI.
+"<lege>" SELECT:lege-eller-sykepleier n IF
+                (1 cnjcoo)
+                (2 n + ind)
+		;
+# Det er lurt å snakke med lege eller sykepleier.
 
 "<herpes>"i SELECT:genital-herpes n ;
 # «Genital herpes»
