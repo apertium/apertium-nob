@@ -2132,6 +2132,8 @@ SET not-np-guess = np OR ukjent OR adverbialsubst OR setningsadv OR not-np-guess
 # «Kommunenes<not np> utfordring i forhold til Kommunenes<np> Hus på torsdag.»
 LIST not-np-guess-at-sentstart = "kommune" "verden" "gruppe"  "selskap" "ledelse" "tall" "myndighet" "gruppe" "mor" ;
 
+"<bleiene>"i REMOVE:unlikely ("blei");
+
 "<A-å.>"i SELECT:initial np IF (1 np);
 
 WITH storbokstav IF
@@ -2352,6 +2354,9 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 
 "<Er>"i REMOVE:unlikely np;
 "<Hele>"i REMOVE:unlikely np;
+
+"<bleier>"i REMOVE:unlikely ("blei");
+"<Bleiene>"i REMOVE:unlikely np;
 
 "<Elven>" REMOVE np IF (1 top OR ukjent);
 
