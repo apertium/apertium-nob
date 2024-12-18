@@ -11779,6 +11779,10 @@ SELECT:alle-var-skrivne-ut adj + pl IF
                 (2 n + ind)
 		;
 # Det er lurt å snakke med lege eller sykepleier.
+"<lege>" SELECT:din-lege n IF
+                (-1 ("din"))
+		;
+# Du må sammen med din lege finne frem.
 
 "<herpes>"i SELECT:genital-herpes n ;
 # «Genital herpes»
