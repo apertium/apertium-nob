@@ -12474,6 +12474,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("av"))
         ;
 # "en del av svelget"
+"<Lette>" SELECT:lette-bivirkninger ("lett") IF
+        (1 n + pl)
+        ;
+# "en del av svelget"
 "<sprekker>" SELECT:sår-og-sprekker n IF
         (-2 ("sår"))
         (-1 cnjcoo)
