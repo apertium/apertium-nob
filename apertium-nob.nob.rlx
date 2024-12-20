@@ -12552,6 +12552,11 @@ REMOVE:kapret-istedenfor adj IF
         (-1 cnjcoo OR cm)
         ;
 # "Det er snakk om smykker, ringer og piercienger"
+"<ringer>" SELECT:ringer-og-smykker ("ring") IF
+        (1 cnjcoo OR cm)
+        (2 ("smykke") + n)
+        ;
+# "Det er snakk om ringer og smykker"
 "<tørst>" SELECT:veldig-tørst adj IF
         (-1 ("veldig"))
         ;
