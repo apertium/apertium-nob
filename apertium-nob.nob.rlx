@@ -12992,6 +12992,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("om"))
         ;
 # "Kinesiske myndigheter hevder det dreier seg om sentre der folk får arbeidstrening"
+"<sentre>"i SELECT:distrikspsykiatriske-senter ("senter") IF
+        (-1 ("psykiatrisk"))
+        ;
+# Det er snakk om distrikspsykiatriske senter
 "<holdt>"i REMOVE:holdt-unna n IF
         (1 ("unna"))
         ;
