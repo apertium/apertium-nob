@@ -12682,6 +12682,11 @@ REMOVE:målgang-pilegrimsgang ("gang") + n IF
         (0/1 cmp)
         ;
 
+SELECT:målgangen-pilegrimsgangen ("gang¹") + n IF
+        (0/1 cmp)
+        (0 sg + def)
+        ;
+
 REMOVE:vante-gang n IF
         (0 ("vant"))
         (1 ("gang"))
