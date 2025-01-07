@@ -4825,21 +4825,21 @@ SELECT:den-av-statsrådene ("den¹") IF
         (2 n + pl OR prn + pers + pl)
         ;
 
-SELECT:også-den ("den¹") IF
-		(-1 %også%)
-		;
+REMOVE:også-den ("den") + prn IF
+        (-1 %også%)
+        ;
 
 SELECT:cm-den ("den¹") IF
-		(-1 cm)
-		(1 sent)
-		;
+        (-1 cm)
+        (1 sent)
+        ;
 
-SELECT:den-var-herlig-den ("den¹") IF
-		(1 %være%)
-		(2 adj)
-		(3 cm)
-		(4 ("den¹"))
-		;
+REMOVE:den-var-herlig-den ("den") + prn IF
+        (1 %være%)
+        (2 adj)
+        (3 cm)
+        (4 ("den¹"))
+        ;
 
 "<den>" SELECT:den-eller-dei  ("den¹") IF
         (1 ("eller"))
