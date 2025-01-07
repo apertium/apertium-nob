@@ -423,7 +423,7 @@ LIST %sette/ta% = ("sette" vblex) ("ta" vblex) ;
 LIST %si% = ("sin"  det pos f sg) ;
 LIST %si%-inf = ("si"  inf) ;
 LIST %side% = "side"  ;
-LIST %side%-be = ("side"  def) ;
+LIST %side%-be = ("side" def) ;
 LIST %siden% = "siden"  ;
 LIST %sin% = ("sin"  det pos m sg) ;
 LIST %sine% = ("sin"  det pos pl) ;
@@ -600,7 +600,7 @@ LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("le
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" ;
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre" "røde"  "myke" "samene" ;
-LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) ;
+LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("side¹"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
 LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ("sette" adj pp) "forbundet";
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ("rolle" pres) ("lege" pres) ;
@@ -3271,7 +3271,7 @@ REMOVE:unlikely ("våk") + def;   # more likely adj
 REMOVE:unlikely ("<ordet>"i "orde"); # more likely noun
 REMOVE:unlikely ("eden") IF (NOT -1 ("et")) ;
 REMOVE:unlikely ("<lysene>"i "lyse"); # more likely lys
-REMOVE:unlikely ("id") IF (0 ("side")); # eiersiden
+REMOVE:unlikely ("id") IF (0 ("side") OR ("side¹")); # eiersiden
 REMOVE:unlikely ("<stykka>"i vblex) IF (NEGATE 1 %opp% OR %ut%); # fordele stykka / stykka opp
 REMOVE:unlikely ("<stykka>"i adj) IF (NEGATE 1 %opp% OR %ut%);
 REMOVE:unlikely ("<stykke>"i n) IF (-1 ("å"));
@@ -16729,6 +16729,14 @@ REMOVE:landets-styrkjer vblex IF
 	(1 infmerke)
 ;
 # «Hun fortsatte siden å opptre både i USA og Europa gjennom sin 75 år lange karriere.»
+
+
+"<sider>" REMOVE:på-deres-sider ("side") IF
+        (-2 %på%)
+        (-1 poss OR gen)
+        ;
+# «en kunde som hadde spilt på nettkasinoet «KongKasino» på deres sider.»
+# (want side¹ here)
 
 
 "<side>" REMOVE:en-bedre-side adj + pl IF
@@ -42958,7 +42966,7 @@ REMOVE:default pl IF (0 ("ved bevissthet") OR ("ved full bevissthet"));
 REMOVE:default nt IF (0 ("<tingene>"i));
 REMOVE:default pl IF (0 ("<forslag>"i)) ;
 REMOVE:default sg IF (0 ("<levekår>"i)) ;
-REMOVE:default ("sider") IF (0 ("side")) ;
+REMOVE:default ("sider") IF (0 ("side") OR ("side¹")) ;
 REMOVE:default ("<blander>"i) + n ;
 REMOVE:default ("<beta>"i) + n + f + def ;
 REMOVE:default ("<Pårørende>") + sg ;
@@ -43006,6 +43014,7 @@ REMOVE:default ("saksøker") IF (0 ("saksøke")) ;
 REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
 SELECT:default ("Bjella") + np ;
+REMOVE:default ("side¹") ;
 SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
