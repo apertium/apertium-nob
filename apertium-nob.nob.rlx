@@ -41016,6 +41016,12 @@ SELECT:noen-få-cent <noen> + pl - neg IF
 ;
 # «Prisen lå noen få cent over den viktige grensen.»
 
+"<Noen>" SELECT:Noen-forebyggende-medisiner <noen> + pl - neg IF
+        (1 adj)
+        (2 n + pl)
+        ;
+# «Noen forebyggende medisiner er bedre enn andre.»
+
 # Default:
 SELECT:noen-default <noen> + neg ;
 # Viss me har kome så langt, tek me «nokon»
