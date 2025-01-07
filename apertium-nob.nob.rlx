@@ -12483,6 +12483,11 @@ REMOVE:kapret-istedenfor adj IF
         (-1 cnjcoo)
         ;
 # "Sår og sprekker bør ikke forekomme"
+"<såre>" SELECT:forblir-såre adj IF
+        (-2 vblex)
+        (-1 n + pl)
+        ;
+# "Hos noen forblir neglebåndene såre"
 "<skorper>" SELECT:slim-og-skorper n IF
         (-2 n)
         (-1 cnjcoo)
