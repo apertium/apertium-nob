@@ -14529,6 +14529,13 @@ REMOVE:613 (@obj) IF
 ;
 
 
+REMOVE:ved-å-bytte-stilling (@subj) IF
+	(-3 ("ved"))
+	(-2 ("å"))
+	(-1 inf)
+	(*1 @subj)
+	;
+
 REMOVE:fortsetter-søket (@subj) IF
         (*-1C @fv - sitatverb-u/at BARRIER (*) - @premod/@adv-u-@kon/@nkon LINK -1 @subj - adverbialsubst)
         (0 @obj)
