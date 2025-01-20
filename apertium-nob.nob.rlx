@@ -13452,6 +13452,10 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (NEGATE 1 %å% OR %at%)
         ;
 
+"<arbeidsforhold>"i SELECT pl IF
+        (-1C pl + gen)
+        ;
+
 SELECT:default-pl ("rom") + n + nt IF
         (0 pl)
         ;
