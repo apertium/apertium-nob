@@ -3338,6 +3338,17 @@ SELECT:snakket-går ("<snakket>"i) + n IF
                 ;	
                 # snakket går
 
+SELECT:Snakket-om ("<Snakket>") + n IF
+                (1 ("om"))
+                ;	
+                # Snakket om at ... (Dei snakka om at ...)
+
+
+SELECT:Anløp-i ("<Anløp>") + n IF
+                (1 ("i"))
+                ;	
+                # Anløp i Trondheim og Kristiansund
+
 SELECT:det-antas %det%-pron IF
 		(1 ("anslå") + pres + pasv)
 		;
@@ -12709,7 +12720,7 @@ SELECT:en-i-gangen ("gang") + sg + def IF
         (-2 ("en"))
         ;
 SELECT:på-gangen ("gang¹") + def IF
-        (-1 %på% OR %i%)
+        (-1 %på% OR %i% OR ("ned i"i))
         ;
 SELECT:gangen-og-spillet ("gang¹") + def IF
         (1 ("<og>"))
@@ -13660,10 +13671,15 @@ REMOVE:leveringsfrister sg IF
         ;
 # bøter ilegges
 
-"<trengt>" REMOVE:ha-trengt adj IF
+"<trengt>"i REMOVE:ha-trengt adj IF
         (-1 ("ha"))
         ;
 # har trengt
+
+"<trengt>"i REMOVE:trengt-opp ("trenge"i) + adj IF
+        (1 ("opp"))
+        ;
+        # bli trengd opp i eit hjørne
 
 "<trengs>" REMOVE:det-trengs pp IF
         (NEGATE *-1 ("ha"))
@@ -17245,8 +17261,24 @@ SELECT ("vekke") IF
         (1 ("oppsikt"))
         ;
 
-"<vakt>" REMOVE adj OR ("vake") IF
+"<vakt>"i REMOVE adj OR ("vake") IF
         (-1 ("ha") + pres)
+        ;
+
+"<vakt>"i REMOVE adj OR ("vakt") OR ("vake") IF
+        (-1 ("ha"))
+        (1 adj OR adv OR cnjcoo)
+        ;
+        # det har vakt sterke reaksjoner
+
+"<passet>"i REMOVE n IF
+        (-1C ("<det>"))
+        (NEGATE 1 vblex)
+        ;
+        # det passet (meg/veldig bra) å slutte
+
+"<passet>"i REMOVE n IF
+        (1C ("å"))
         ;
 
 #:3161
@@ -34779,6 +34811,23 @@ REMOVE:slo-seg-og-landet n + nt + def IF
 
 
 
+"<velger>"i SELECT vblex IF
+        (1 infmerke)
+        ;
+
+"<velger>"i SELECT vblex IF
+        (2 infmerke)
+        ;
+
+"<velger>"i REMOVE n IF
+        (NEGATE 1 vblex)
+        (NEGATE -1 ("<en>") OR adj)
+        ;
+
+"<velger>"i REMOVE n IF
+        (-1 ("mange") OR ("få") OR ("samtidig") OR adv)
+        ;
+
 #:1937
  REMOVE:1937 (vblex pres) IF
 	(0 subst)
@@ -42800,10 +42849,6 @@ SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt
 		(-1 det + sg)
 		;
 # «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
-
-"<velger>" SELECT vblex IF
-        (1 infmerke)
-        ;
 
 "<anklager>" SELECT:en-rekke-anklager n IF
 		(-2 ("en"))
