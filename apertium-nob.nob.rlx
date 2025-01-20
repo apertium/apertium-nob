@@ -12057,6 +12057,7 @@ REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
 REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: telefonsvarar
 REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
 REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
+REMOVE:unlikely ("<miner>"i) + vblex; # bomber, miner og granater
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
@@ -12968,6 +12969,21 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 np)
         ;
 # "Tidligere bryter Stig Berge"
+
+"<bomber>"i SELECT:de-bomber-et-område vblex IF
+        (NEGATE 0* vblex BARRIER setn-gr)
+        ;
+"<bomber>"i REMOVE:produsere-bomber vblex IF
+        (-1 vblex)
+        ;
+"<bomber>"i REMOVE:bomber-og-granater vblex IF
+        (1 %og/eller% OR cm)
+        (2 n)
+        ;
+"<bomber>"i REMOVE:granater-og-bomber vblex IF
+        (-1 %og/eller%)
+        (-2 n)
+        ;
 
 "<låter>"i REMOVE:låter-som vblex IF
         (1 %som%)
