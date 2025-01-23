@@ -3340,6 +3340,8 @@ SELECT:snakket-går ("<snakket>"i) + n IF
 
 SELECT:Snakket-om ("<Snakket>") + n IF
                 (1 ("om"))
+                (2* fv)
+                (NEGATE 0* overskrift)
                 ;	
                 # Snakket om at ... (Dei snakka om at ...)
 
