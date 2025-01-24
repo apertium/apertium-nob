@@ -7612,6 +7612,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 %på% OR %i%)
         ;
 
+"<landet>" SELECT:Totalt-landet vblex IF
+        (-1 ("<Totalt>"))
+        ;
+        # Totalt landet fiskerne 3 tonn
+
 "<landet>" SELECT:i-landet n IF
         (-1 pr OR adj)
         ;
@@ -12979,7 +12984,7 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 vblex)
         ;
 "<bomber>"i REMOVE:bomber-og-granater vblex IF
-        (1 %og/eller% OR cm)
+        (1 %og/eller%)
         (2 n)
         ;
 "<bomber>"i REMOVE:granater-og-bomber vblex IF
@@ -13371,6 +13376,11 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
 # «kommunikasjon, telt, lys og varme»
 # «De mange internt fordrevne bor nå i midlertidige skur og telt, og mange av dem har mistet viktige jordbruksområder.»
 
+"<telt>"i SELECT:sykkel-og-telt n IF
+        (-1 cnjcoo OR cm)
+        (-2C n)
+        ;
+# Det er ting som kajakk, tursko, sykkel og telt.
 
 "<tør>"i SELECT:tør-opp ("tø") IF
         (1 %opp%)
