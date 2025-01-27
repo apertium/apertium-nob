@@ -2935,7 +2935,9 @@ REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
 REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
 REMOVE:unlikely ("norske") + vblex;
-REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et
+REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et 
+REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
+
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -12632,6 +12634,13 @@ REMOVE:kapret-istedenfor adj IF
         (2 ("ledig"))
         ;
 # "... løst og ledig ... "
+
+"<løst>" SELECT:sitte-løst ("løs") IF
+        (-*1 ("sitte") BARRIER setn-gr)
+        ;
+        # Der sit kritikken laust
+        # Pengane sit omtrent like laust hos menn og kvinner
+
 "<Agnes>" REMOVE:unlikely-agnes vblex;
 # Agnes
 "<salt>" REMOVE:så-mye-salt pp IF
@@ -28836,6 +28845,17 @@ SELECT:å-glemme-tapet-mot be-subst IF
 #  "han har ventet (perf-part) på det siden 40-talet
 #
 
+"<forventet>" SELECT:ha-forventet-levealder (adj pp) IF
+	(-1C %ha%)
+	(1 n)
+;
+#  "ha forventet levetid på 50 år
+
+
+"<forventet>" SELECT:forventet-langsiktig-trend (adj pp) IF
+	(1C adj)
+;
+#  "en forventet langsiktig investering
 
 
 #:2415
