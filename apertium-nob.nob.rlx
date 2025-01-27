@@ -18215,6 +18215,9 @@ SELECT:ble-antent adj + pst IF
                 (2 ("<stikken>"))
 		;
 
+"<toget>" SELECT:toget-ut n IF
+		(NEGATE 1* ("inn") OR ("ut") OR ("gjennom") BARRIER setn-gr)
+		;
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
@@ -18437,28 +18440,6 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
 		;
                 # slik at alle enkelt kan
 
-
-"<toget>" SELECT:gikk-av-toget n IF
-		(-2 ("gå"))
-		(-1 ("av"))
-		;
-"<toget>" SELECT:toget-stopper n IF
-		(1 ("stoppe"))
-		;
-"<toget>" SELECT:velger-toget n IF
-		(-1 ("velge"))
-		;
-"<toget>" SELECT:da-toget-mot n IF
-		(-1 ("da"))
-		(1 ("mot") OR ("til") OR ("fra"))
-		;
-"<toget>" SELECT:toget-i-rute n IF
-		(1 ("i"))
-		(2 ("rute"))
-		;
-"<toget>" SELECT:toget-ut vblex IF
-		(1 ("ut"))
-		;
 
 SELECT:fire-menn-pågrepet adj + pp + pl IF
 		(-4 %være/bli%)
@@ -37116,6 +37097,11 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 "<til>" SELECT:til-dere pr IF
         (1 prn + acc)
         ;
+
+ "<tre>"   SELECT:de-tre   (det qnt un pl) IF
+        (-1 ("den" det dem un pl))
+;
+# Toget kjørte på de tre
 
 #:4058
  "<tre>"   SELECT:4058   (n nt sg) IF
