@@ -41068,10 +41068,22 @@ REMOVE:noen-hundre neg OR sg IF
 REMOVE:noen-mil neg OR sg IF
 	(1 målsubst)
 ;
+
+REMOVE:før-om-noen-fl <noen> + det + neg IF
+        (-2 %før%)
+        (-1 %om%)
+        (0 fl)
+        (1 fl)
+        ;
+# «Jeg trenger skirenn og kommer nok ikke til å være på mitt beste før om noen uker.»
+
+
 SELECT:noen-d   <noen> + det + neg IF
 	(0C det-kvant + fl)
 	(*-1 %ikke% BARRIER setn-gr)
 ;
+# ikke … før
+
 SELECT:noen-p   <noen> + prn + neg IF
 	(0C pron + fl)
 	(*-1 %ikke% BARRIER setn-gr)
