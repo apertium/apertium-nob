@@ -4868,7 +4868,7 @@ SELECT:begge-årets-renn (n pl) IF
         ;
 # "alle bondens dyr"
 
-SELECT:Og-den-mener-han-er ("den¹") IF
+SELECT:Og-den-mener-han-er ("den¹") + acc IF
         (-1 setn-gr)
         (1 fv)
         (2 nominativ)
@@ -4955,6 +4955,17 @@ SELECT:den+prn ("den¹") IF
 # «Det skal jo være lov å kunne være med den man vil uten å høre at det er noe feil med deg.»
 # «I neste situasjon kan det være deg eller den du er glad i som ikke får den hjelpen de trenger.»
 # «Du er den du er.»
+
+"<den>" SELECT:cm-og-den-er ("den¹") IF
+        (*-1 n + mask/fem/mf)   # referent
+        (-2 cm)
+        (-1 %og%)
+        (0 nominativ)
+        (1C fv)
+        ;
+# Omset til «den» heller enn han/ho når det er snakk om «gjentaking»
+# «Vi har redusert inntektsskatten, og den er cirka 11 milliarder kroner lavere nå.»
+# «– Den prosessen har vi startet, og den kommer vi til å fortsette med .»
 
 "<den>" REMOVE:den-fint-i det IF
         (-1C vblex)
