@@ -13657,6 +13657,11 @@ REMOVE ("hvor") + cnjsub IF
         (2 n)
         ;
 
+"<null>" REMOVE:lik-null nt IF
+        (-1C adj + mf)
+        ;
+# «faren for at de blir trukket til ansvar er nærmest lik null.»
+
 # "...tilbringe nesten en måned"
 "<ytterst>" REMOVE:ytterst-knepen-margin adj IF
         (1 ("knepen"))
