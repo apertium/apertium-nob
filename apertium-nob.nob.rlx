@@ -11653,6 +11653,24 @@ REMOVE:kontroll+ører ("øre") + m IF (0 øre-tvitydig-samansetjing);
 #  "For å unngå:.  Å (interj) plutselig komme"))
 
 
+"<gråt>"i SELECT:gråt-av-glede vblex IF
+        (1 %i% OR %av%)
+	;
+        # gret i ein månad, gret i telefonen
+        # gret av lykke
+
+
+"<gråt>"i SELECT:gråt n IF
+        (1C ("blant"))
+	;
+        # skuffelse og gråt blant mange
+
+"<smalt>"i SELECT:smalt-og-bredt adj IF
+        (1C %og/eller%)
+        (2C ("<bredt>"i adj))
+        ;
+        # både smalt og breitt
+                
 SELECT:det-nest-største ("<nest>") + adv IF
         (1 adj + sup)
         ;
