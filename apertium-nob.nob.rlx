@@ -4967,6 +4967,13 @@ SELECT:den+prn ("den¹") IF
 # «Vi har redusert inntektsskatten, og den er cirka 11 milliarder kroner lavere nå.»
 # «– Den prosessen har vi startet, og den kommer vi til å fortsette med .»
 
+
+"<den>" SELECT:Jeg-tar-den ("den¹") IF
+        (NEGATE -5 (*))
+        (1 cm OR sent)
+        ;
+# «Hun (Kristine) er en ener, og i dag var jeg en god nummer to. Jeg tar den, sa hun til NRK.»
+
 "<den>" REMOVE:den-fint-i det IF
         (-1C vblex)
         (1C adv OR adj + nt OR ("<bare>"))
