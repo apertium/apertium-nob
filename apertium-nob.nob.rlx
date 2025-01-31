@@ -12062,7 +12062,7 @@ REMOVE:unlikely ("eland")   IF (0 ("land")) (0/1 cmp);   # avoid «kriselandane�
 REMOVE:unlikely ("pote") + vblex ; # avoid «pota» for potet
 REMOVE:unlikely ("pote") + adj ;   # avoid «pota» for potet
 REMOVE:unlikely ("van") IF (0 ("vane")) ;
-REMOVE:unlikely ("flott") + nt ;
+REMOVE:unlikely ("flott") + n + nt ;
 REMOVE:unlikely ("balle") IF (0 ("ball")) ;
 REMOVE:unlikely ("men") + n IF (0 ("mene")) ; # «Mener Solberg er inhabil»
 REMOVE:unlikely ("men") + cnjcoo IF (-1 ("varig")) ; # «varige men»
