@@ -3104,7 +3104,6 @@ SELECT:det-blir-nok-ei-råd ("råd") + sp IF
         (-1 %en/ei%)
         ;
 # «da blir det nok en råd med griseplagen også»
-REMOVE:unlikely ("råd") + mORf;
 
 REMOVE:unlikely ("regle") IF
         (0 ("regel"))
@@ -37931,6 +37930,9 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
 #  "kh jan 2004: Lite sannsynlig at \"rom\" er adj når adj-regler og spesialregler har virket.
 # "
 
+"<råd>" REMOVE:god-råd nt IF
+        (-1 ("<(god|dårlig|ei|en)>"ri))
+        ;
 
 "<rådet>" REMOVE:rådet-regjeringen pp IF
         (NEGATE *-1 p-hj-verb BARRIER fv)
@@ -43166,6 +43168,7 @@ SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
+REMOVE:default ("råd") + mORf;
 
 
 # Corpus-based default rules:
