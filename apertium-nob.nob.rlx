@@ -976,7 +976,8 @@ LIST verb = vblex ;
 LIST verb-u-imp = (vblex pres) (vblex pret) (vblex pp) (vblex inf) ;
 LIST n-ofte-enkelbestemt = "folk" "stat" "minutt" "kirke" "samfunn" "tidspunkt" "halvkule" "antall" "rom" "århundre" "plan" "liv" "hoff" "regjering" "tid" "publikum" "kontor" "brorskap" "komité" "nivå" "kontinent" "revolusjon" "hav" "senter" "prinsipp" "halvøy" "makt" ;
 
-LIST uteljeleg = ".*bær"r "øl" "melk" ; # needs filling out :)
+LIST uteljeleg = ".*bær"r "øl" ".*melk"r ".*stoff"r ".*vann"r "mat" ".*sukker"r ".*energi"r "informasjon" "sand" ".*gass"r ".*bensin"r ".*olje"r "kjemikalie" ".*luft"r "teknologi" ".*grøt"r ".*ris"r "data" "krem" ".*kaffe"r ".*kjøtt"r ".*fett"r "mel" ".*kull"r "jern" "lys" ".*avfall"r ".*salt"r "aske"  "gull" ; # needs filling out :)
+
 
 # nanowordnet:
 LIST dom-ord = "dom" "kjennelse" "avgjørelse" "rettsavgjørelse" "vurdering" "bedømmelse" "beslutning" "vedtak" "bestemmelse" ;
@@ -18267,6 +18268,14 @@ SELECT:ble-antent adj + pst IF
 "<toget>" SELECT:toget-ut n IF
 		(NEGATE 1* ("inn") OR ("ut") OR ("gjennom") BARRIER setn-gr)
 		;
+
+SELECT:liter-var-avansert-biodrivstoff adj + nt + ind IF
+        (-1C kop-fv)
+        (1C n + nt + ind)
+        (1 uteljeleg)
+        ;
+# «Det ble omsatt 496 millioner liter biodrivstoff i 2018, hvorav 196 millioner liter var avansert biodrivstoff.»
+
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
