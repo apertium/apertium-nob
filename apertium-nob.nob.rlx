@@ -8107,6 +8107,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "Ledelsen er i mot"
 
+#:3427
+  "<mot>"   SELECT:3427   (pr) IF
+	(1 n OR np)
+;
 
 
 
