@@ -257,7 +257,7 @@ LIST %ei% = ("en"  f) ;
 LIST %eksempel% = "eksempel"  ;
 LIST %eksklusiv/e% = "eksklusive"  "eksklusiv"  ;
 LIST %ektefelle/hustru/mann/kone% = "mann"  "kone"  "hustru"  "ektefelle" "ektemann"  ;
-LIST %eller% = "eller"  ;
+LIST %eller% = "eller" ("/" cnjcoo)  ;
 LIST %en% = ("en"  m) ;
 LIST %en%-pron = ("en"  prn) ;
 LIST %en/den/denne% = "en"  "denne"  "<den>"i  ;
@@ -393,7 +393,7 @@ LIST %oftest% = ("ofte"  adj sup) ;
 LIST %og% = "og"  ;
 LIST %også% = "også" "også¹" "også²" ;
 SET %ikke/også% = %også% OR ("ikke") ;
-LIST %og/eller% = "og"  "eller"  ;
+LIST %og/eller% = "og"  "eller" ("/" cnjcoo) ;
 LIST %og/men% = "og"  "men"  ;
 LIST %å% = "å" ;
 LIST %at% = "at" ;
@@ -557,7 +557,7 @@ LIST be-subst = (n def) (np def) ;
 LIST clb-komma = (clb cm) ;
 LIST clb-komma/konj = (clb cm) (clb cnjcoo) ;
 LIST clb-konj = (clb cnjcoo) ;
-LIST clb/konj-konj = ("og"  cnjcoo) ("eller"  cnjcoo) ("men"  cnjcoo) ;
+LIST clb/konj-konj = ("og"  cnjcoo) ("eller"  cnjcoo) ("/" cnjcoo) ("men"  cnjcoo) ;
 LIST dato = <dato> ;
 LIST dem/poss/gen = dem pos gen ;
 LIST det-dem = (det dem) ;
@@ -4857,7 +4857,7 @@ REMOVE:den-var-herlig-den ("den") + prn IF
         ;
 
 "<den>" SELECT:den-eller-dei  ("den¹") IF
-        (1 ("eller"))
+        (1 %eller%)
         (2  ("de"))
         ;
 
@@ -17453,7 +17453,7 @@ REMOVE:Vann  vblex OR adv IF
 
 "<verken>" REMOVE:verken-var-X-eller n IF
 		(1 vblex)
-		(*2 ("eller"))
+		(*2 %eller%)
 		;
 #:3139
   "<verken>"   REMOVE:3139   (n sg ind) IF
@@ -43182,6 +43182,7 @@ REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
 REMOVE:default ("råd") + mORf;
+REMOVE:default ("/") + cm;
 
 
 # Corpus-based default rules:
