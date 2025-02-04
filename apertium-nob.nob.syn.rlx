@@ -122,7 +122,7 @@ LIST %de% = ("de" det) ;
 LIST %de%-det = ("de" det) ;
 LIST %den/det/de%-det = ("den" det) ("det" det) ("de" det) ;
 LIST %det%-pron = ("det" prn) ;
-LIST %eller% = "eller" ;
+LIST %eller% = "eller" "og/eller" "/" ;
 LIST %en%-det = ("en" det) ;
 LIST %enn% = "enn" ;
 LIST %enn%-prep = ("enn" pr) ;
@@ -464,7 +464,7 @@ LIST komp = comp ;
 LIST komp/%så% = comp ("så" adv) ;
 LIST konj = cnjcoo ;
 LIST konj/%bare% = "bare" cnjcoo ;
-LIST koord-konj = ("men" cnjcoo) ("og" cnjcoo) ("samt" cnjcoo) ("eller" cnjcoo) ;
+LIST koord-konj = ("men" cnjcoo) ("og" cnjcoo) ("samt" cnjcoo) ("eller" cnjcoo) ("og/eller" cnjcoo) ("/" cnjcoo) ;
 LIST kop = "være" "virke" "synes" "hete" "bli" ("kalle" pasv) ;
 SET kop/holdes = kop OR ("holde" pasv) ;
 SET kop-fin = kop + pres OR kop + pret ;
@@ -485,7 +485,7 @@ LIST lo#reverse-verb = "vettskremme" "vedrøre" "vedkomme" "vedgå" "urø" "tyng
 LIST lo#top-setn-gr = clb <<< >>> ("at" cnjsub) guio ;
 LIST m#%andre% = ("annen" det pl) ;
 LIST m#%det% = "det" ;
-LIST m#%eller% = ("eller" cnjcoo) ;
+LIST m#%eller% = ("eller" cnjcoo) ("og/eller" cnjcoo) ("/" cnjcoo) ;
 LIST m#%et% = ("en" det qnt nt sg) ;
 LIST m#%mye/lite% = "mye" "lite" ;
 LIST m#%noe% = ("noen" nt) ;
@@ -572,7 +572,6 @@ LIST res/akk = res acc ;
 LIST s#%bare% = "bare" ;
 LIST s#%det% = "det" ;
 LIST s#%det/dette% = "dette" "det" ;
-LIST s#%eller% = ("eller" cnjcoo) ;
 LIST s#%finne%-verb = ("finne" vblex) ;
 LIST s#%halv/kvart%-mask/fem = ("halv" adj mf ind sg) ("kvart" n mf ind sg) ;
 LIST s#%mye/lite% = "mye" "lite" ;
@@ -1034,7 +1033,7 @@ MAP:god-nok (@adj→)   (adj mf ind sg) IF
 ;
 
 MAP:stor-eller-ganske-stor (@adj→)  (adj ind) + $$ADJ_NUMGEN IF
-	(1 ("eller"))
+	(1 %eller%)
 	(2 ("ganske") OR ("<svært>") OR ("<meget>"))
 	(3 @adj→ + $$ADJ_NUMGEN)
 ;
@@ -19773,7 +19772,7 @@ REMOVE:274 (@app) IF
 
 #:273
 REMOVE:273 (@app) IF
-	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
+	(*-1 ikke-premod-u-@kon/@nkon LINK NOT 0 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK NOT 0 m#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
 ;
 #  " IKKE: i dialog med myndighetene om regelverk og 
 #  
@@ -19783,7 +19782,7 @@ REMOVE:273 (@app) IF
 
 #:272
 REMOVE:272 (@app) IF
-	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK 0 s#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
+	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK 0 m#%eller% LINK NOT 0 clb LINK *-1 ikke-mod-@←p-utfyll-@adv LINK NOT 0 @app)
 	(*-1 @kon/@nkon LINK NOT -1 tegnsetting/parentes)
 ;
 #  " IKKE: i dialog med myndighetene om regelverk 
