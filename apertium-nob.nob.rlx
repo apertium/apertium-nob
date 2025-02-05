@@ -743,6 +743,7 @@ LIST mest-sanns-adj-istf-subst = "visse"  "ville"  "venstre"  "velkommen"  "stil
 LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skygg"  def) ("folke"  adj pp) ("live"  adj pp) ("kute"  adj pp) ("leg"  adj pl) ("leg"  adj def) ;
 LIST mest-sanns-verb-istf-subst = "temmer"  "tapper"  "suger"  "strever"  "strekker"  "stiller"  "stikker"  "slukker"  "koker"  "hogger"  "binder"  ;
 LIST modalverb = ("skulle"  vblex) ("kunne"  vblex) ("ville"  vblex) ("ville# kunne"  vblex)  ("ville# måtte"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
+LIST modalverb-utan-ville = ("skulle"  vblex) ("kunne"  vblex) ("ville# kunne"  vblex)  ("ville# måtte"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
 LIST målsubst = "tonnkilometer"  "snes"  "sjømil"  "sekundmeter"  "prosent"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo"  "hektoliter"  "hektogram"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  ("gang"  pl) ;
 LIST nom = (n) (np) (adj) (prn) (det) ;
 LIST nom-ent = (n sg) (np sg) ("all"  sg) (nom sg) ;
@@ -6233,10 +6234,74 @@ SELECT:default pl IF
 ;
 #  "Berre ved: til felles"
 
+LIST felles-ord = "innsats" "mål" "tiltak" "interesse" "ansvar" "retningslinje" "regel" "regelverk" "prosjekt" "verdi" "krav";
+"<felles>"   SELECT:felles-mål adj IF
+        (1 felles-ord)
+        ;
+
+"<felles>"   SELECT:kan-felles vblex + inf + pasv IF
+        (-1 modalverb-utan-ville)
+        (NEGATE 1* pasv OR inf BARRIER setn-gr)
+        ;
+        # 83 gauper kan fellast.
+
+"<felles>"   SELECT:kan-han-felles-for vblex + inf + pasv IF
+        (-2* modalverb BARRIER setn-gr)
+        (-1 n + def OR np OR prn)
+        (1 prep)
+        ;
+        # Neste veke kan president Donald Trump fellast i riksrett for å ha eggja til opprør.
+
+"<felles>"   SELECT:kan-det-felles vblex + inf + pasv IF
+        (-2 modalverb-utan-ville)
+        (-1 %det%)
+        (NEGATE 1* pasv OR inf BARRIER setn-gr)
+        (NEGATE 1 n)
+        ;
+        # På kvart løyve kan det felles to dyr
+
+"<felles>"   SELECT:at-det-felles vblex + pres + pasv IF
+        (-2 cnjsub)
+        (-1 %det%)
+        (NEGATE 1* fv BARRIER setn-gr)
+        (NEGATE 1 n + def)
+        ;
+        # at det blir felt inntil åtte ulvar
+
+"<felles>"   SELECT:felles-det vblex + pres + pasv IF
+        (1 %det%)
+        ;
+        # Årleg blir det no felt over 100 000 villsvin
+
+"<felles>"   SELECT:felles-for-alle adv IF
+        (1 ("for"))
+        (2 n OR ("de" pl) OR ("all" pl) OR ("mange"))
+        ;
+        # Men felles for året og månaden er at fyllingsgrada gjekk markant ned
+
+"<felles>"   SELECT:ingen-felles-for vblex + pres + pasv IF
+        (1 prep)
+        (NEGATE 0* fv BARRIER setn-gr)
+        ;
+        # Ingen blir felte for å ikkje oppfylle samfunnsoppdraget
+        # Elles har vi ingen felles på kavalkadelista
+
+
+"<felles>"   SELECT:at-det-felles vblex + pres + pasv IF
+        (-2 cnjsub)
+        (-1 %det%)
+        (NEGATE 1* fv BARRIER setn-gr)
+        (NEGATE 1 n + def)
+        ;
+
+"<felles>"   SELECT:ingen-felles adj IF
+        (1 n OR adj)
+        ;
+        # Ingen felles raudgrøn valkamp
+
 "<felles>"   SELECT:felles-mistro adv IF
         (1 ukjent)
         ;
-
 
 #:5046
  "<fly>"   SELECT:5046   (adv)
