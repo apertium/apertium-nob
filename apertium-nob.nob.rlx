@@ -18439,6 +18439,14 @@ SELECT:mannen-som-ble-skadd pp + mf
         ;
 # «Ola Nordmann, som ble drept …»
 
+REMOVE:en-av-mennene-som-ble-skadd pp + pl
+        (-5 n + sg)                # substantiv 
+        (-4 ("av"))                # av
+        (-3 n + pl )               # mennene
+        (-2 %som%)                 # som
+        (-1 ("bli"))
+        ;
+
 SELECT:mennene-som-ble-skadd pp + pl
         (*-1 kop-fv                     # er
          BARRIER ikke-adv-adj-det - kop # blitt mye
