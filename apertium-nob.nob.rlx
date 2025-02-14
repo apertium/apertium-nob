@@ -6917,6 +6917,10 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
         (-1 ("feste"))
         ;
 
+"<grepet>" SELECT:grepet-av adj IF
+        (1 %av%)
+        ;
+
 #:3581
   "<grunn>"   SELECT:3581   (n) IF
 	(NOT 0 %for/altfor%)
