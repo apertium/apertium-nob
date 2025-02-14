@@ -12634,6 +12634,12 @@ REMOVE:kapret-istedenfor adj IF
         (1C n)
         ;
 # "Hvis en planlegger å gjøre noe slikt, kan mye rart skje.
+"<vev>" SELECT:kroppens-vev nt IF
+        (-1* ("kropp") OR ("menneskelig") BARRIER setn-gr)
+        ;
+"<vev>" SELECT:eget-vev nt IF
+        (-1 ("<eget>"))
+        ;
 "<skyldes>" SELECT:kan-det-skyldes inf IF
         (-2 ("kunne"))
         (-1 ("den"))
