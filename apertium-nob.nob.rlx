@@ -12624,6 +12624,12 @@ REMOVE:kapret-istedenfor adj IF
         (-1 adv)
         ;
 # "klem bort slimet"
+"<planlegger>" SELECT:hvis-en-planlegger-det vblex IF
+        (-2 cnjsub)
+        (-1 ("en"))
+        (1C n)
+        ;
+# "Hvis en planlegger å gjøre noe slikt, kan mye rart skje.
 "<skyldes>" SELECT:kan-det-skyldes inf IF
         (-2 ("kunne"))
         (-1 ("den"))
