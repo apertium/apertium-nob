@@ -5523,8 +5523,9 @@ WITH:krever-ham-løslatt @xubj + &&ADJ_N_AGR
 
 
 # Vanskeleg, manglande "som er":
+LIST knytte-til-verb = "knytte" "relatere" "kjenne" "sitere" "utføre" "skrive" ;
 SELECT:knyttet-til @xubj + &&ADJ_N_AGR IF
-	(1 adj + pp + &&ADJ_N_AGR LINK 0 ("knytte") OR ("relatere") OR ("kjenne") OR ("sitere") OR ("utføre"))
+	(1 adj + pp + &&ADJ_N_AGR LINK 0 knytte-til-verb)
 	(2 pr)
 	(NEGATE 0 adverbialsubst) # ble onsdag kveld kjent som
 	(NEGATE 0 @←p-utfyll LINK 0 (".*(grunn|årsak|periode|tilfelle)"r)) # i flere tilfeller / av helsegrunner kjent som
