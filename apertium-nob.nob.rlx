@@ -43273,6 +43273,8 @@ REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.�
 REMOVE:default ("råd") + mORf;
 REMOVE:default ("/") + cm;
 
+REMOVE:default ("skreve") IF (0 ("skrive"));
+
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
@@ -43618,7 +43620,7 @@ REMOVE:default ("/") + cm;
 "<skoler>" REMOVE:default-skuler ("skole" vblex pres) ;	# keep skole<n><m><pl><ind>→skular
 "<skoles>" REMOVE:default-skules ("skole" vblex pasv) ;
 "<skrev>" REMOVE:default-skrev ("skreve" vblex imp) ;	# keep skrive<vblex><pret>→skreiv
-"<skrevet>" REMOVE:default-skriven ("skrive" adj pp mf sg ind) ;	# keep skrive<vblex><pp>→skrive skrive<adj><pp><nt><sg><ind>→skrive
+"<skrevet>" REMOVE:default-skriven ("skrive" adj pp) ;	# keep skrive<vblex><pp>→skrive
 "<skriver>" REMOVE:default-skrivar ("skriver" n m sg ind) ;	# keep skrive<vblex><pres>→skriv
 "<skøyter>" REMOVE:default-skøytar ("skøyte" vblex pres) ;	# keep skøyte<n><f><pl><ind>→skøyter skøyte<n><m><pl><ind>→skøyter
 "<slaget>" REMOVE:default-slaga ("slage" pp) ;	# keep slag<n><nt><sg><def>→slaget
