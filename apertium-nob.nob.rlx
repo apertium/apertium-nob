@@ -6914,7 +6914,7 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 # «Som svar på USAs stadig sterkere økonomiske grep rundt Iran, uttalte Irans president Hassan Rouhani 8.»
 
 "<grepet>" SELECT:feste-grepet n IF
-        (-1 ("feste"))
+        (-1 ("feste") OR ("<Det>"))
         ;
 
 "<grepet>" SELECT:grepet-av adj IF
