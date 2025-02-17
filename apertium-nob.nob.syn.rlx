@@ -14535,6 +14535,12 @@ REMOVE:ved-å-bytte-stilling (@subj) IF
 	(*1 @subj)
 	;
 
+REMOVE:etter-A-flyttes-S @subj IF
+	(*-1 pr BARRIER ikke-@←p-utfyll LINK -1 >>>)
+	(1 pasv)
+	(2 n + def + @subj)
+	;
+
 REMOVE:fortsetter-søket (@subj) IF
         (*-1C @fv - sitatverb-u/at BARRIER (*) - @premod/@adv-u-@kon/@nkon LINK -1 @subj - adverbialsubst)
         (0 @obj)
