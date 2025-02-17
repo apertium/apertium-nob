@@ -20118,6 +20118,10 @@ REMOVE:default ("vie")   IF (0 ("via")) ;
 	(-1 ("som"))
 	;
 
+"<verden>" REMOVE @subj IF
+	(1 ("<over>"))
+	;
+
 # END ordspesifikke
 
 
