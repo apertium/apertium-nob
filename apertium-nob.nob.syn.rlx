@@ -14541,6 +14541,14 @@ REMOVE:etter-A-flyttes-S @subj IF
 	(2 n + def + @subj)
 	;
 
+
+SELECT:Har-du-O-anbefales-S (@subj) IF
+	(**-2 @subj BARRIER clb OR fv LINK -1 pres LINK -1 >>>)
+	(-1C pasv)
+;
+# «Har du sure oppstøt anbefales   behandling   for dette.»
+
+
 REMOVE:fortsetter-søket (@subj) IF
         (*-1C @fv - sitatverb-u/at BARRIER (*) - @premod/@adv-u-@kon/@nkon LINK -1 @subj - adverbialsubst)
         (0 @obj)
@@ -14942,6 +14950,12 @@ REMOVE:580 (@subj) IF
 # de norske, sier Jørgensen"))
 
 
+
+REMOVE:Har-du-O-anbefales-S (@subj) IF
+	(*-1C @subj BARRIER clb OR fv LINK -1 pres LINK -1 >>>)
+	(1C pasv)
+;
+# «Har du sure   oppstøt   anbefales behandling for dette.»
 
 #:579
 REMOVE:579 (@subj) IF
