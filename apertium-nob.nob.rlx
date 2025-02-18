@@ -43226,6 +43226,7 @@ REMOVE:default ("bredde") + pl ;
 REMOVE:default ("<Lær>") + n ;
 REMOVE:default ("<Vær>") + n ;
 REMOVE:default ("slått") + n ;
+REMOVE:default ("fattet") + pst ;
 REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
 REMOVE:default ("ingen") + prn + sg ; # ingen er permittertE
