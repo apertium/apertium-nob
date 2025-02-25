@@ -3306,6 +3306,8 @@ REMOVE:unlikely ("anklager") + n IF
         (0/* cmp) 
         (NEGATE -2 ("en") + det + qnt + m + sg)
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
+REMOVE:unlikely ("nyre") + n + nt;
+REMOVE:unlikely ("trofé") + n + m;
 
 # END Early removal of unlikely / rare forms
 
@@ -8014,6 +8016,11 @@ SELECT ("lyve") IF
         (0 ("<løyet>"i))
         (1 ("om") OR ("til") OR ("for"))
         ;
+
+  "<løper>"i   SELECT:aktiv-løper (n) IF
+	(-1 adj)
+;
+#  "sin siste dag som aktiv løper"
 
 #:3451
   "<man>"   SELECT:3451   (prn) IF
