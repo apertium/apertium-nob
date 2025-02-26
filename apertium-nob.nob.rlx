@@ -3170,6 +3170,11 @@ SELECT:inngått ("<inngått>"i) + vblex + pp IF
         (-1* %være/bli% OR ("få" vblex) BARRIER setn-gr)
         ;
 
+"<foreholdt>"i REMOVE:bli-foreholdt vblex IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+        # Hun er blitt foreholdt disse opplysningene
+
 "<OL>" SELECT:not-ALTE nt;               # very unlikely «alte»
 
 "<Bent>" SELECT:Bent-Høie np IF
