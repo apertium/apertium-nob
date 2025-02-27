@@ -2939,6 +2939,7 @@ REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
 REMOVE:unlikely ("norske") + vblex;
 REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et 
 REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
+REMOVE:unlikely ("<oppretter>"i) + n ; # oppretter et fond
 
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
@@ -5987,6 +5988,10 @@ SELECT:i-kok ("<kok>"i) + nt IF
 ;
 # sitt ene barn
 
+"<enes>"i SELECT:den-enes prn IF
+	(-1 ("den"))
+;
+# den enes barn
 
 
 #:3684
