@@ -3086,6 +3086,13 @@ REMOVE:parkfester ("feste") + n IF
         (0/* cmp)
         (NOT 0/1 ("anker"))
         ;
+
+SELECT:larveeggene ("egg") + nt IF
+        (0 pl)
+        (0/* cmp)
+        (NOT 0/1 ("fjell") OR ("kniv") OR ("øks"))
+        ;
+
 "<festet>"i REMOVE:er-festet-til n IF
         (-1 %være/bli%)
         (1 ("til"))
