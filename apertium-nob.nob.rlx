@@ -37393,9 +37393,16 @@ SECTION remove-words-heur ;
         (*-1 hj-verb BARRIER setn-gr)
         (1 %av%)
         ;
+        
 
-"<bygget>" REMOVE n IF
+"<bygget>"i REMOVE n IF
         (1 %på%)
+        ;
+        # bygget på huset
+
+
+"<bygget>"i REMOVE vblex IF
+        (-1 prep)
         ;
 
 
