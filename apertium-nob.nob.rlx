@@ -5363,6 +5363,11 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         (2C ("<drift>"i))
         ;
 
+"<satt>"i SELECT:satt-sammen-av adj + pp IF
+        (1C ("sammen"))
+        (2C %av%)
+        ;
+
 "<satt>"i SELECT:satt-i vblex + pret IF
         (1C %i%)
         (NEGATE -1C* %ha% OR %være/bli% BARRIER setn-gr)
@@ -10996,6 +11001,10 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (*0 ("gro"))
         ;
 
+
+"<berørte>"i SELECT:berørte-parter adj + pp IF
+        (1 n + pl + ind)
+;
 
 #:3199
 "<særlig>" SELECT:særlig-med-sikte-på adv IF
