@@ -2119,7 +2119,7 @@ LIST not-np-guess-f_lc>f_uc =
  "<Lavkarbo>" "<Lava>" "<Latvieren>" "<Lasten>" "<Lastebilsjåfører>" "<Lastebilsjåførene>" "<Lansering>" "<Lanserer>" "<Langtidsplanen>"
  "<Langrennsyndlingen>" "<Langrennsveteranen>" "<Langrennstrener>" "<Langrennsjentene>" "<Langrennsfolket>" "<Langrennsesset>" "<Langrennseliten>"
  "<Langrennsdronningen>" "<Langrennet>" "<Langet>" "<Langdistanseløperen>" "<Landsstyremøtet>" "<Landsomfattende>" "<Landsmøtene>" "<Landslagssjefene>"
- "<Landskampene>" "<Landskampen>" "<Lakseoppdrettere>" "<Lagsprint>" "<Laboratoriet>" "<Laber>"
+ "<Landskampene>" "<Landskampen>" "<Lakseoppdrettere>" "<Lagsprint>" "<Laboratoriet>" "<Laber>"  "<Tente>"
         # But we also need the ones that were removed, e.g. "<Brødrene>" – should redo this patch to only *add* words
         # (and remove words like "<Verdens>" where we do want cgguess)
    ;
