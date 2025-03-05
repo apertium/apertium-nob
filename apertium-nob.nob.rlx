@@ -2940,6 +2940,7 @@ REMOVE:unlikely ("norske") + vblex;
 REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et 
 REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
 REMOVE:unlikely ("<oppretter>"i) + n ; # oppretter et fond
+REMOVE:unlikely ("<kaller>"i) + n ; # som de kaller torturlignende
 
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
