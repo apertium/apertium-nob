@@ -10370,6 +10370,12 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (1 %langt%)
         ;
 
+
+"<så>" SELECT:så-etter-mus pret IF
+        (1 %etter%)
+        (2 n)
+        ;
+
 "<så>" SELECT:så-raskt-som adv IF
         (1 ("<raskt>"))
         (2 %som%)
@@ -10746,6 +10752,32 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 # «Først litt mat og så ut på tur»
 # Ikkje: «hvordan man så ut på håret<def>»
 
+  "<så>"   SELECT:sto-og-så   pret IF
+        (-2 pret)
+	(-1 %og%)
+        ;
+# No la han seg på ryggen, slo ut armane og låg og såg til himmels
+
+  "<så>"   SELECT:og-så-til-at   pret IF
+	(-1 %og%)
+        (1 %til%)
+        (2 %at% OR %å% OR prn OR n + def)
+        ;
+# og såg til at bankar og butikkar heldt stengt
+
+  "<så>"   SELECT:og-så-til   (adv) IF
+	(-1 %og%)
+        (1 %til%)
+        (NEGATE 2 %at%)
+        ;
+# smitteoverføringa kan ha skjedd frå eitt dyr til eit anna og så til menneske
+
+  "<så>"   SELECT:og-så-ganske-frisk-ut   (pret) IF
+	(-1 %og%)
+        (2* %ut% BARRIER setn-gr)
+        ;
+# Ho hadde farge i kinna og såg ganske frisk ut
+
 #:3234
   "<så>"   SELECT:3234   (adv) IF
 	(1 adv/adj-nøyt)
@@ -10763,6 +10795,31 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 # «først til Venezuela, og så til USA» --KBU
 # (denne vil feile på «først så han til Venezuela, og så så han til USA»? ...ugh...)
 
+  "<så>"   SELECT:komma-og-så   (adv) IF
+	(-2 cm OR guio + clb)
+	(-1 %og%)
+        ;
+# eg tør å seie det eg ser og meiner, og så får folk vere usamd med meg om dei er det
+
+  "<så>"   SELECT:og-så-gikk   (adv) IF
+	(-1 %og%)
+        (1C vblex OR pp)
+        ;
+# Han hadde rygga inn i ein trestubbe og så køyrt ned porten til barnehagen
+
+  "<så>"   SELECT:og-så-gradvis-senke   (adv) IF
+	(-1 %og%)
+        (1 adv)
+        (2C vblex)
+        ;
+# starte lett og så gradvis senke eigendelane
+
+  "<så>"   SELECT:og-så-3-prosent   (adv) IF
+	(-1 %og%)
+        (1 det + qnt + pl)
+        (2* målsubst)
+        ;
+# Planen er å redusere lånebehovet til 4,5 prosent neste år, 3,5 prosent året etter og så 2,9 og 2,8 prosent i dei følgjande åra.
 
 "<så>" SELECT:så-fort adv IF
         (NEGATE -1C nominativ)   # «Vi så fort at …»
