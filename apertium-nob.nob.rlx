@@ -11928,6 +11928,10 @@ SELECT:være-lei-av ("<lei>"i) + adj IF
         ;
 # vere lei av
 
+SELECT:gå-lei ("<lei>"i) + adj IF
+        (-1* ("gå") BARRIER setn-gr)
+        ;
+
 SELECT:strenge ("<strenge>"i) + adj IF
         (NEGATE 1 ("opp"))
         ;
@@ -12099,6 +12103,18 @@ REMOVE:spille_spile ("spile") + verb IF
 "<leder>"i SELECT:Nord-Koreas-leder n IF
 	(-1 (top gen))
 ;
+
+"<ballet>" SELECT:ballet-på-seg ("balle" vblex) IF
+        (1 %på%)
+        (2 %seg%)
+        ;
+# Det har berre balla på seg
+
+"<ballet>" SELECT:ballet-på-seg ("balle" vblex) IF
+        (2 %på%)
+        (3 %seg%)
+        ;
+# Så kjøpte vi ein bil til, og så balla det på seg
 
 REMOVE:unlikely ("<ledes>" "ledes");
 REMOVE:unlikely ("<liker>") + n;
