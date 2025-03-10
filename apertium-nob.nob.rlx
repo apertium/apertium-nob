@@ -2773,6 +2773,10 @@ SELECT:name-seen-samecase-midsent np + ("(<\\p{Lu}.*>)"r) IF
 # «Sammenlagtpremien er den gjeveste, sa Kilde til NTB. Kilde og Alexis Pinturault kjempet om totalseieren …»
 
 
+SELECT:name-weirdcase SUB:1 np + ("<(.*\\p{Ll}\\p{Lu}.*)-.*>"r "$1"v);
+# A compound part lemma with lower followed by upper which is cased the same in the form
+# «BeIN-reporteren»
+
 
 # Fot-teiknet er berre fot etter tal, elles er det skrivemaskinsapostrof:
 SELECT:fot-fot ("'") IF
