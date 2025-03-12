@@ -4517,6 +4517,15 @@ LIST annet-utellelig = "småvilt" "arbeid" "vilt" "innhold" "kjøtt" "næringsli
         (-2 ("fjorår") + gen)
         ;
 
+"<fang>"i SELECT:fang-og-slipp ("fange") + vblex + imp IF
+	(1 %og%)
+        (2 ("<slipp>"i))
+	;
+"<slipp>"i SELECT:fang-og-slipp ("slippe") + vblex + imp IF
+	(-1 %og%)
+        (-2 ("<fang>"i))
+	;
+
 #:3764
   "<andre>"   SELECT:3764   (adj) IF
 	(-1C setn-gr/prep)
