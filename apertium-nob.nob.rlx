@@ -2945,7 +2945,7 @@ REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et
 REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
 REMOVE:unlikely ("<oppretter>"i) + n ; # oppretter et fond
 REMOVE:unlikely ("<kaller>"i) + n ; # som de kaller torturlignende
-
+REMOVE:unlikely ("<yrker>"i) + vblex + pres ;	# keep yrke<n><nt><pl><ind>→yrke
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
