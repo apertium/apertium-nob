@@ -17,6 +17,11 @@ LIST def = def ;
 LIST cmp = cmp ;
 LIST det-kvant = (det qnt) ;
 
+LIST lpar = lpar ;
+LIST rpar = rpar ;
+LIST lpar/rpar = lpar rpar ;
+LIST siffer = "[0-9]+([., ][0-9]+)*"r ;
+
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
@@ -61,3 +66,6 @@ SELECT:over_30._Men clb IF
         (T:nextWordCrossSent LINK 0 storbokstav)
 ;
 
+ADD (1par.tmp) (*) IF (1 lpar/rpar) ;
+ADD (-1par.tmp) (*) IF (-1 lpar/rpar) ;
+# ADD (1par-digit.tmp) (*) IF (1 lpar) (2 siffer) ;

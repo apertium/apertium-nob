@@ -1,6 +1,6 @@
 # -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d ../apertium-nno-nob nob-nno_e-capstag|cg-conv -a 2>/dev/null"; cg-output-always-highlight: (("^[^;\n]*@.ubj" . outline-1)) -*-
 # GPL-2, more info at:
-# https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
+# https://github.com/apertium/apertium-nno-nob/blob/master/dev/current-OBT
 
 SOFT-DELIMITERS = "<,>" ;
 DELIMITERS = "<.>" "<..>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>";

@@ -1,11 +1,18 @@
-# -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d . nob-segment | cg-conv a" -*-
+# -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d ../apertium-nno-nob nob-nno-seg | cg-conv a" -*-
+# "apertium-destxt | apertium -f none -d . nob-segment | cg-conv a"
 # GPL-2, more info at:
-# https://svn.code.sf.net/p/apertium/svn/trunk/apertium-nno-nob/dev/current-OBT
+# https://github.com/apertium/apertium-nno-nob/blob/master/dev/current-OBT
 
 SOFT-DELIMITERS = "<,>" cm ;
 DELIMITERS = "<.>" "<..>" "<:>" "<!>" "<?>" "<|>" "<$.>" "<$:>" "<$!>" "<$?>" "<$|>" sent ;
 
-#PARENTHESES = ("<$(>" "$<)>") ("<$[>" "<$]>") ("<${>" "<$}>") ;
+PARENTHESES = ("<(>" "<)>") ("<[>" "<]>") ("<{>" "<}>") ;
+# See https://edu.visl.dk/cg3/chunked/parentheses.html
+# and https://edu.visl.dk/cg3/chunked/rules.html#rule-options-encl-final
+# seg.rlx adds the tag 1par.tmp to words that would have matched (1 parentes)
+# so that we can still explicitly look for parenthesis start before running the
+# final enclosure. Similarly -1par.tmp is added to words that would have matched
+# (-1 parentes)
 
 LIST GENDER = m f nt mf ;
 LIST NUMBER = sg pl sp ;
@@ -98,6 +105,8 @@ LIST detriple = detriple ;
 LIST apos = apos ;
 LIST lpar = lpar ;
 LIST rpar = rpar ;
+LIST 1par = 1par.tmp ;   # added by seg.rlx, see PARENTHESES comment above
+LIST -1par = -1par.tmp ; # added by seg.rlx, see PARENTHESES comment above
 LIST cnjsub = cnjsub ;
 LIST cnjcoo = cnjcoo ;
 LIST date = date ;
@@ -889,7 +898,7 @@ LIST sted = top ;
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
-LIST storbokstav-ok-etter = >>> guio lquot rquot lpar "[0-9]{4,4}"r sent ;
+LIST storbokstav-ok-etter = >>> guio lquot rquot lpar 1par.tmp "[0-9]{4,4}"r sent ;
 LIST storbokstav-ok-etter-mellom = guio rpar ("[0-9.]+"r) ; # t.d. punktliste: «9. Kampen ble dømt av …»
 LIST forbokstavord =  ("<[\\p{Lu}\\p{Pd}\\p{Nd}]+>"r);
 LIST forbokstavord-genitiv = "<[\\p{Lu}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
@@ -2412,6 +2421,12 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
         (1 np + attr OR np + cog OR np + ant OR np + init)
         ;
 
+
+# Copy over the tags that were added by seg.rlx (see PARENTHESES comment above):
+ADD  1par (cgguess) - ukjent IF (0  1par) ;
+ADD -1par (cgguess) - ukjent IF (0 -1par) ;
+# TODO: the "minus ukjent" shouldn't be necessary, CG bug?
+
 SECTION 1-select-words ;
 
 REMOVE:guess SUB:* guess;
@@ -2449,12 +2464,13 @@ REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
 LIST ambig-titlecase-midsent = "<Skolen>" ;
 SELECT:titlecase-midsent cgguess - ambig-titlecase-midsent IF
         (NEGATE -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
+        (NEGATE 0 -1par)
         ;
 
 SELECT:titlecase-paren1word cgguess IF
         (NEGATE -2 rquot)          # «English» (Norsk)
-        (-1 lpar)
-        (1 rpar)
+        (0 -1par)
+        (0 1par)
         ;
 
 REMOVE:np-guess-safe cgguess IF
@@ -2703,7 +2719,6 @@ SELECT:name-age ant OR cog IF
 # «Berg (64) ble i april dømt til 14 års fengsel for spionasje etter å ha blitt pågrepet.»
 # Ikkje: «Mann (42) nekter straffskyld.»
 
-
 SELECT:Aker-ASA np IF (1 ("ASA"));
 
 SELECT (infmerke sep) IF (*-1 (vblex sep)) ;
@@ -2766,7 +2781,9 @@ SELECT:name-seen-samecase-midsent np + ("(<\\p{Lu}.*>)"r) IF
         # Same word form (with same casing) was seen elsewhere in the
         # window (up to 2 sentences on either side by default) after
         # an unambiguous name or lowercased word:
-        (**0WC np OR berre-litenbokstav LINK 1 (VSTR:"$1"))
+        (**0WC np OR berre-litenbokstav LINK 1 (VSTR:"$1")
+          # but the word we found should not be *this* word:
+          LINK NEGATE 0 (_TARGET_))
         ;
 # «Vold med VM-gull i maraton for U23. Amund Vold hadde det beste giret i avslutningen …»
 # «Kilde på annenplass i utfortreningen. Aleksander Aamodt Kilde kjørte knallsterkt …»
@@ -5248,7 +5265,17 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 "<drept>" SELECT:27-er-drept adj + pl IF
         (-1* %være/bli% BARRIER setn-gr)
         (-2* siffer OR talord-pl BARRIER setn-gr)
-		;
+        ;
+
+"<drept>" SELECT:X-og-Y-ble-drept adj + pp + pl IF
+        (*-1 %være/bli% BARRIER (*) - pp
+        LINK -1 lo#animat
+        LINK *-1 %og% BARRIER setn-gr/verb
+        LINK *-1 lo#animat BARRIER setn-gr/verb)
+        ;
+# «avhørt som vitne etter at Jakob Hassan (14) og Tone Ilebekk (48) ble drept dagen før i Kristiansand.»
+# «nær stedet der Maren Ueland (28) fra Bryne i Rogaland og Louisa Vesterager Jespersen (24) ble funnet drept mandag 17.»
+
 
 "<drept>" SELECT:er-27-drept adj + pl IF
         (-1* siffer OR talord-pl BARRIER setn-gr)
@@ -18865,6 +18892,7 @@ SELECT:Monsen-ble-i-2009-tildelt vblex + pp
         (0C pp)
         (NOT 0 adv OR farlige-part)
         ;
+# TODO burde ikkje matcha «Andry Rajoelina (44) er tatt i ed som Madagaskars nye president.»
 
 
 SELECT:nå-påklager-etterlatte-beslutningen n + def IF
@@ -25079,6 +25107,7 @@ SELECT:er-hans-feil det + pos + sg + $$GENDER IF
 	(-1 >>>)
 	(NOT 0 pres/pret)
 	(1 fork/ukjent-ord OR be-subst OR pron-nom)
+        (NOT 0 1par)
 	(NOT *1C pres/pret BARRIER setn-gr)
 ;
 # «Kopier<imp> skjermbildekopien til utklippstavlen slik at det kan limes inn senere»
@@ -43391,6 +43420,7 @@ REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.�
 "<satt>" REMOVE:default ("sette") + pret ; # common typo, correct form is «satte»
 REMOVE:default ("råd") + mORf;
 REMOVE:default ("/") + cm;
+REMOVE:default ("manne") + imp;
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
 
@@ -44077,60 +44107,63 @@ AFTER-SECTIONS
 # Workarounds for https://github.com/apertium/apertium/issues/37 – try
 # to remove ambiguity as much as possible when there are subreadings,
 # doesn't matter so much what we pick at this point:
-SELECT:issue37 n IF (0/1 cmp) ;
-SELECT:issue37 sg IF (0/1 cmp) ;
-SELECT:issue37 m IF (0/1 cmp) ;
-SELECT:issue37 f IF (0/1 cmp) ;
-SELECT:issue37 nt IF (0/1 cmp) ;
-SELECT:issue37 org IF (0/1 cmp) ;
-SELECT:issue37 al IF (0/1 cmp) ;
-SELECT:issue37 top IF (0/1 cmp) ;
-SELECT:issue37 np IF (0/1 cmp) ;
-SELECT:issue37 adj IF (0/1 cmp) ;
-SELECT:issue37 vblex IF (0/1 cmp) ;
-SELECT:issue37 pp IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL n IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL sg IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL m IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL f IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL nt IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL org IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL al IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL top IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL np IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL adj IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL vblex IF (0/1 cmp) ;
+SELECT:issue37 ENCL_FINAL pp IF (0/1 cmp) ;
 
-SELECT:issue37 SUB:1 n ;
-SELECT:issue37 SUB:1 sg ;
-SELECT:issue37 SUB:1 m ;
-SELECT:issue37 SUB:1 f ;
-SELECT:issue37 SUB:1 mf ;
-SELECT:issue37 SUB:1 nt ;
-SELECT:issue37 SUB:1 org ;
-SELECT:issue37 SUB:1 al ;
-SELECT:issue37 SUB:1 top ;
-SELECT:issue37 SUB:1 np ;
-SELECT:issue37 SUB:1 adj ;
-SELECT:issue37 SUB:1 vblex ;
+SELECT:issue37 ENCL_FINAL SUB:1 n ;
+SELECT:issue37 ENCL_FINAL SUB:1 sg ;
+SELECT:issue37 ENCL_FINAL SUB:1 m ;
+SELECT:issue37 ENCL_FINAL SUB:1 f ;
+SELECT:issue37 ENCL_FINAL SUB:1 mf ;
+SELECT:issue37 ENCL_FINAL SUB:1 nt ;
+SELECT:issue37 ENCL_FINAL SUB:1 org ;
+SELECT:issue37 ENCL_FINAL SUB:1 al ;
+SELECT:issue37 ENCL_FINAL SUB:1 top ;
+SELECT:issue37 ENCL_FINAL SUB:1 np ;
+SELECT:issue37 ENCL_FINAL SUB:1 adj ;
+SELECT:issue37 ENCL_FINAL SUB:1 vblex ;
 
-SELECT:issue37 SUB:2 n ;
-SELECT:issue37 SUB:2 sg ;
-SELECT:issue37 SUB:2 m ;
-SELECT:issue37 SUB:2 f ;
-SELECT:issue37 SUB:2 mf ;
-SELECT:issue37 SUB:2 nt ;
-SELECT:issue37 SUB:2 org ;
-SELECT:issue37 SUB:2 al ;
-SELECT:issue37 SUB:2 top ;
-SELECT:issue37 SUB:2 np ;
-SELECT:issue37 SUB:2 adj ;
-SELECT:issue37 SUB:2 vblex ;
+SELECT:issue37 ENCL_FINAL SUB:2 n ;
+SELECT:issue37 ENCL_FINAL SUB:2 sg ;
+SELECT:issue37 ENCL_FINAL SUB:2 m ;
+SELECT:issue37 ENCL_FINAL SUB:2 f ;
+SELECT:issue37 ENCL_FINAL SUB:2 mf ;
+SELECT:issue37 ENCL_FINAL SUB:2 nt ;
+SELECT:issue37 ENCL_FINAL SUB:2 org ;
+SELECT:issue37 ENCL_FINAL SUB:2 al ;
+SELECT:issue37 ENCL_FINAL SUB:2 top ;
+SELECT:issue37 ENCL_FINAL SUB:2 np ;
+SELECT:issue37 ENCL_FINAL SUB:2 adj ;
+SELECT:issue37 ENCL_FINAL SUB:2 vblex ;
 
-SELECT:issue37 SUB:3 n ;
-SELECT:issue37 SUB:3 sg ;
-SELECT:issue37 SUB:3 m ;
-SELECT:issue37 SUB:3 f ;
-SELECT:issue37 SUB:3 mf ;
-SELECT:issue37 SUB:3 nt ;
-SELECT:issue37 SUB:3 org ;
-SELECT:issue37 SUB:3 al ;
-SELECT:issue37 SUB:3 top ;
-SELECT:issue37 SUB:3 np ;
-SELECT:issue37 SUB:3 adj ;
-SELECT:issue37 SUB:3 vblex ;
+SELECT:issue37 ENCL_FINAL SUB:3 n ;
+SELECT:issue37 ENCL_FINAL SUB:3 sg ;
+SELECT:issue37 ENCL_FINAL SUB:3 m ;
+SELECT:issue37 ENCL_FINAL SUB:3 f ;
+SELECT:issue37 ENCL_FINAL SUB:3 mf ;
+SELECT:issue37 ENCL_FINAL SUB:3 nt ;
+SELECT:issue37 ENCL_FINAL SUB:3 org ;
+SELECT:issue37 ENCL_FINAL SUB:3 al ;
+SELECT:issue37 ENCL_FINAL SUB:3 top ;
+SELECT:issue37 ENCL_FINAL SUB:3 np ;
+SELECT:issue37 ENCL_FINAL SUB:3 adj ;
+SELECT:issue37 ENCL_FINAL SUB:3 vblex ;
 
-REMOVE:issue37 SUB:1 detriple;
-REMOVE:issue37 SUB:2 detriple;
-REMOVE:issue37 SUB:3 detriple;
-REMOVE:issue37 SUB:* detriple;
+REMOVE:issue37 ENCL_FINAL SUB:1 detriple;
+REMOVE:issue37 ENCL_FINAL SUB:2 detriple;
+REMOVE:issue37 ENCL_FINAL SUB:3 detriple;
+REMOVE:issue37 ENCL_FINAL SUB:* detriple;
 
+# Remove .tmp tags:
+SUBSTITUTE:1par.tmp  ENCL_FINAL ( 1par.tmp) (*) (*) ;
+SUBSTITUTE:-1par.tmp ENCL_FINAL (-1par.tmp) (*) (*) ;
