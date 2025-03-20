@@ -16735,6 +16735,17 @@ REMOVE:tilbakekaller-leker ("lek") IF
 ;
 #  "...og som han hadde båret med seg"
 
+WITH ("<og>") IF
+        (-3C cog OR ant OR ukjent + storbokstav) # _C1_
+        (-2C cm)                                 # _C2_
+        (-1C cog OR ant OR ukjent + storbokstav) # _C3_
+        ( 1C cog OR ant OR ukjent + storbokstav) # _C4_
+{
+	REMOVE:np-cm-np-OG-np clb;
+	WITH _C2_ { REMOVE:np-CM-np-og-np clb ; }; # kommaet er heller ikkje clb
+};
+# «Etter det NRK kjenner til, skal de tre søsknene Yasin (22), Taibeh (20) og Ehsan (16) flys fra Tyrkia til Norge tirsdag.»
+
 "<mest>"   REMOVE:mest-solgte adv IF
 	(1 adj)
 ;
