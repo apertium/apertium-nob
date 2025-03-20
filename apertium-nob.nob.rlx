@@ -18887,12 +18887,12 @@ SELECT:Han-så-nesten-litt-lettet-ut adj + sg + mf IF
         ;
 
 SET pr-adv-årstal = pr OR sanns-årstal OR adv ;
-SELECT:Monsen-ble-i-2009-tildelt vblex + pp
+SELECT:Monsen-ble-i-2009-tildelt pp
         (*-1 kop-fv BARRIER (*) - pr-adv-årstal LINK -1C cog OR org OR al OR top LINK NOT *-1 GENDER)
         (0C pp)
         (NOT 0 adv OR farlige-part)
         ;
-# TODO burde ikkje matcha «Andry Rajoelina (44) er tatt i ed som Madagaskars nye president.»
+# «Andry Rajoelina (44) er tatt i ed som Madagaskars nye president.»
 
 
 SELECT:nå-påklager-etterlatte-beslutningen n + def IF
