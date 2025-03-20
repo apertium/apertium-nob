@@ -13744,6 +13744,10 @@ SELECT:default ("rom") + n + nt IF
         ;
         # datarommet, bønneromma
 
+REMOVE:moskégjenger ("gjenger") + n IF
+        (NEGATE 0/* cmp)
+        ;
+
 "<holder>"i REMOVE:holder-den n IF
         (1 ("den"))
         (2 adj OR n)
