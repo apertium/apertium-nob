@@ -2421,6 +2421,12 @@ APPEND:np-guess-fornamn ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\
         (1 np + attr OR np + cog OR np + ant OR np + init)
         ;
 
+APPEND:np-guess-alder ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\\p{Lu}\\p{Ll}+)?)>"r) IF
+        (0C ukjent)
+        (1 lpar)
+        (2 siffer)
+        (3 rpar)
+        ;
 
 # Copy over the tags that were added by seg.rlx (see PARENTHESES comment above):
 ADD  1par (cgguess) - ukjent IF (0  1par) ;
