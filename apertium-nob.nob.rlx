@@ -2429,8 +2429,8 @@ APPEND:np-guess-alder ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\\p
         ;
 
 # Copy over the tags that were added by seg.rlx (see PARENTHESES comment above):
-ADD  1par (cgguess) - ukjent IF (0  1par) ;
-ADD -1par (cgguess) - ukjent IF (0 -1par) ;
+ADD  1par (cgguess) IF (0  1par) ;
+ADD -1par (cgguess) IF (0 -1par) ;
 # TODO: the "minus ukjent" shouldn't be necessary, CG bug?
 
 SECTION 1-select-words ;
