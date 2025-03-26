@@ -13754,6 +13754,10 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (NEGATE 1 %å% OR %at%)
         ;
 
+"<ønsker>"i SELECT:ønsker-å vblex IF
+        (*1 %å% OR %at% BARRIER ikke-adv)
+        ;
+
 "<arbeidsforhold>"i SELECT pl IF
         (-1C pl + gen)
         ;
