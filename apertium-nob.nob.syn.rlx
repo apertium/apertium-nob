@@ -6416,6 +6416,7 @@ REMOVE:over-5000-har (@←p-utfyll) IF
 
 SELECT:fra-en-oppdatering-slippes-til @subj IF
         (*-1 ("fra") BARRIER ikke-premod)
+	(NEGATE 0 top LINK *-1 @subj) # mann<@subj!> fra Trøndelag
         (1C @fv)
         (**2 ("til") LINK *1 @subj/@xubj LINK *1 @fv BARRIER clb)
         ;
