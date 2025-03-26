@@ -1,5 +1,5 @@
 # -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d ../apertium-nno-nob nob-nno-seg | cg-conv a" -*-
-# "apertium-destxt | apertium -f none -d . nob-segment | cg-conv a"
+#       eventuelt: "apertium-destxt | apertium -f none -d . nob-segment | cg-conv a"
 # GPL-2, more info at:
 # https://github.com/apertium/apertium-nno-nob/blob/master/dev/current-OBT
 
@@ -5270,7 +5270,7 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 
 "<drept>" SELECT:27-er-drept adj + pl IF
         (-1* %være/bli% BARRIER setn-gr)
-        (-2* siffer OR talord-pl BARRIER setn-gr)
+        (-2* siffer OR talord-pl BARRIER setn-gr OR ("år gammel"))
         ;
 
 "<drept>" SELECT:X-og-Y-ble-drept adj + pp + pl IF
@@ -5284,7 +5284,7 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 
 
 "<drept>" SELECT:er-27-drept adj + pl IF
-        (-1* siffer OR talord-pl BARRIER setn-gr)
+        (-1* siffer OR talord-pl BARRIER setn-gr OR ("år gammel"))
         (-2* %være/bli% BARRIER setn-gr)
         ;
 
