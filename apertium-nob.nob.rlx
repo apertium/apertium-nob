@@ -2128,7 +2128,7 @@ LIST not-np-guess-f_lc>f_uc =
  "<Lavkarbo>" "<Lava>" "<Latvieren>" "<Lasten>" "<Lastebilsjåfører>" "<Lastebilsjåførene>" "<Lansering>" "<Lanserer>" "<Langtidsplanen>"
  "<Langrennsyndlingen>" "<Langrennsveteranen>" "<Langrennstrener>" "<Langrennsjentene>" "<Langrennsfolket>" "<Langrennsesset>" "<Langrennseliten>"
  "<Langrennsdronningen>" "<Langrennet>" "<Langet>" "<Langdistanseløperen>" "<Landsstyremøtet>" "<Landsomfattende>" "<Landsmøtene>" "<Landslagssjefene>"
- "<Landskampene>" "<Landskampen>" "<Lakseoppdrettere>" "<Lagsprint>" "<Laboratoriet>" "<Laber>"  "<Tente>"
+ "<Landskampene>" "<Landskampen>" "<Lakseoppdrettere>" "<Lagsprint>" "<Laboratoriet>" "<Laber>"  "<Tente>" "<Stjernespilleren>" "<Stjernespillerne>"
         # But we also need the ones that were removed, e.g. "<Brødrene>" – should redo this patch to only *add* words
         # (and remove words like "<Verdens>" where we do want cgguess)
    ;
@@ -13239,6 +13239,18 @@ REMOVE:to-ansatte vblex IF
         (2 n OR np)
         ;
 # "Ruud hadde walkover i den første runden i Roma og møter nederlandske Botic van de Zandschulp"
+
+"<møter>"i REMOVE:møter-med n IF
+        (-2 %som%)
+        (1 %med%)
+        ;
+# som vi møter med
+
+"<møter>"i REMOVE:møter-med vblex IF
+        (1 %med%)
+        ;
+# Etter møte med utelivsbransjen
+
 "<Flytte?>"ri REMOVE:flytte-konto ("flyte") IF
         (1 ("<.*konto>"ri) OR ("konto"))
         ;
