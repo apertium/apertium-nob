@@ -12332,6 +12332,7 @@ REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
 REMOVE:unlikely ("<miner>"i) + vblex; # bomber, miner og granater
 REMOVE:unlikely ("kute") + vblex + pret; # å redusere og kutte
 REMOVE:unlikely ("kute") + adj + pp; # kutte
+REMOVE:unlikely ("<folk>"i) + imp; # ikkje folke (seg)
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
@@ -12850,16 +12851,52 @@ REMOVE:kapret-istedenfor adj IF
         (1 adj + pl OR n + pl)
         ;
 # "De par første dagene er vanskeligst"
+"<ringer>"i SELECT:ringer-og-ringer ("ringe") + vblex IF
+        (1 %og%)
+        (2 ("<ringer>"i) OR ("<lurer>"i))
+        ;
+"<ringer>"i SELECT:ringer-av ("ring") + n IF
+        (1 %av%)
+        ;
+"<ringer>"i SELECT:ringer-på ("ringe") + vblex IF
+        (1 %på% OR %om% OR %for%)
+        ;
+"<ringer>"i SELECT:du-ringer ("ringe") + vblex IF
+        (-1 prn)
+        ;
 "<ringer>" SELECT:smykker-og-ringer ("ring") IF
-        (-2 ("smykke") + n)
+        (-2 n + pl + ind)
         (-1 cnjcoo OR cm)
         ;
 # "Det er snakk om smykker, ringer og piercienger"
 "<ringer>" SELECT:ringer-og-smykker ("ring") IF
         (1 cnjcoo OR cm)
-        (2 ("smykke") + n)
+        (2 n + pl + ind)
         ;
 # "Det er snakk om ringer og smykker"
+
+"<ringer>"i SELECT:ringer-meg ("ringe") + vblex IF
+        (1 prn + acc)
+        ;
+# Det er ikkje ofte han ringjer meg
+
+"<ringer>"i SELECT:mange-ringer ("ringe") + vblex IF
+        (-1 ("<mange>"i) OR ("få" adj))
+        ;
+
+"<ringer>"i SELECT:ringer-mange ("ringe") + vblex IF
+        (1 ("<mange>"i) OR ("få" adj))
+        ;
+        
+"<ringer>"i SELECT:ringer-veldig-mange ("ringe") + vblex IF
+        (1 adj OR adv)
+        (2 ("<mange>"i) OR ("få" adj))
+        ;
+
+"<ringer>"i SELECT:og-ringer ("ringe") + vblex IF
+        (-1 %og%)
+        ;
+
 "<tørst>" SELECT:veldig-tørst adj IF
         (-1 ("veldig"))
         ;
