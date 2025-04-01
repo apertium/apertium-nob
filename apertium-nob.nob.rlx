@@ -2969,6 +2969,7 @@ REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
 REMOVE:unlikely ("<oppretter>"i) + n ; # oppretter et fond
 REMOVE:unlikely ("<kaller>"i) + n ; # som de kaller torturlignende
 REMOVE:unlikely ("<yrker>"i) + vblex + pres ;	# keep yrke<n><nt><pl><ind>→yrke
+REMOVE:unlikely ("<banket>"i n nt sg def) IF (-1 %være/bli%) ;	# bli banka opp
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -12329,6 +12330,8 @@ REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: tele
 REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
 REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
 REMOVE:unlikely ("<miner>"i) + vblex; # bomber, miner og granater
+REMOVE:unlikely ("kute") + vblex + pret; # å redusere og kutte
+REMOVE:unlikely ("kute") + adj + pp; # kutte
 
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
@@ -13370,6 +13373,12 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 pr)
         ;
 # "Nicolaidis/Carracher tok kommandoen og rykket ifra"
+
+"<følge>"i SELECT:få-følge-for ("følge") + n + m IF
+        (-1* ("få" vblex))
+        (1 ("for"))
+        ;
+
 "<følger>"i SELECT:få-følger ("følge") + n + m IF
         (0* ("få" vblex))
         ;
@@ -13384,6 +13393,20 @@ REMOVE:terrorstemplet ("stempel") IF
         (0* ("få" vblex))
         ;
 "<følger>"i REMOVE:unlikely ("følger") + n + m;
+
+"<følge>"i SELECT:få-følge-med-på ("følge" inf) IF
+	(-1 ("få" vblex))
+	(1 %med%)
+	(2 %på%)
+	;
+
+"<følge>"i SELECT:få-følge-av ("følge" n) IF
+	(-1 ("få" vblex))
+	(1 %av% OR %på% OR %med%)
+	;
+# Ho får følgje av USAs nasjonale tryggingsrådgivar Mike Walz
+# Etter kvart har ho nemleg også fått følgje på tur
+# Dersom målinga hadde vore valresultatet, ville Sps førstekandidat Jan Bøhler fått følgje med andrekandidat og Oslo Sp-leiar Bjørg Sandkjær
 
 "<fiskes>"i REMOVE:unlikely n;
 
@@ -43484,7 +43507,7 @@ REMOVE:default ("skreve") IF (0 ("skrive"));
 "<Avganger>" REMOVE:default-Avganger ("Avganger" np cgguess) ;	# keep Avgang<n><m><pl><ind>→Avgangar
 "<avholdt>" REMOVE:default-halden ("avholde" adj pp mf sg ind) ;	# keep avholde<vblex><pp>→halde avholde<adj><pp><nt><sg><ind>→halde
 "<avtaler>" REMOVE:default-avtaler ("avtale" vblex pres) ;	# keep avtale<n><m><pl><ind>→avtalar
-"<banket>" REMOVE:default-banket ("bank" n nt sg def) ;	# keep banke<adj><pp><nt><sg><ind>→banka banke<vblex><pret>→banka banke<adj><pp><mf><sg><ind>→banka banke<vblex><pp>→banka
+"<banket>"i REMOVE:default-banket ("bank" n nt sg def) ;	# keep banke<adj><pp><nt><sg><ind>→banka banke<vblex><pret>→banka banke<adj><pp><mf><sg><ind>→banka banke<vblex><pp>→banka
 "<bar>" REMOVE:default-barar ("bar" n m pl ind) ;	# keep bære<vblex><pret>→bar bar<n><nt><pl><ind>→bar
 "<basert>" REMOVE:default-baserte ("basere" adj pp pl) ;	# keep basere<vblex><pp>→basert basere<adj><pp><nt><sg><ind>→basert
 "<bedt>" REMOVE:default-bede ("bede" pp) ;	# keep be<vblex><pp>→bedt
