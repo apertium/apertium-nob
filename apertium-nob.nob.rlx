@@ -4847,11 +4847,24 @@ WITH:anklager ("<anklager>"i) {
         ;
 # «ungdommer som søker trygghet i en annen del av verden enn den de kommer fra»
 
+"<den>" SELECT:kommer-den-som ("den") IF
+        (-1 ("komme"))
+        (1 %som%)
+        ;
+# No kjem han som stasjonsvogn (bilmodellen)
+
 "<den>" SELECT:er-den-som ("den¹") IF
         (-1 kop-fv)
         (1 %som%)
         ;
 # «Det er den<det> som best ivaretar»
+
+SELECT:den-som-leder vblex + pres IF
+        (-2 ("den¹"))
+        (-1 %som%)
+        (0 n)
+        ;
+# Statsministeren er den som leier landet (ikkje adv, "nå")
 
 
 "<den>" SELECT:slik-den-er prn + pers IF
@@ -12662,6 +12675,9 @@ LIST begrepet-verb = "benytte" "bruke" "oppfinne" "finne# opp" ;
 "<vinner>"i REMOVE:vinner-av vblex IF
         (1 ("av"))
         ;
+"<vinner>"i   SELECT:intet-vinner   (pres) IF
+	(-1 ("<intet>"i))
+;
 "<hjem>"i SELECT:tusenvis-av-hjem n + pl IF
         (-2 ("tusenvis") OR ("hundrevis"))
         (-1 ("av"))
@@ -37338,6 +37354,10 @@ SECTION 3-select-words-heur ;
         ;
 # Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
 
+"<landet>" SELECT:besøke-landet n IF
+        (*-1C fv BARRIER setn-gr)
+        ;
+
 "<landet>" SELECT:er-Spania-landet n IF
         (-2 fv)
         (-1 np + top)
@@ -37352,6 +37372,12 @@ SECTION 3-select-words-heur ;
         (-1 det + dem + nt)
         (NEGATE -2 cnjsub OR %før% OR %etter%)
         ;
+
+"<landet>" SELECT:komma-landet-og n IF
+        (-1 cm)
+        (1 %og%)
+        ;
+# Dette prosjektet er viktig både for selskapet, landet og for Europa.
 
 "<landet>" SELECT:og-landet-helt-perfekt pret IF
         (NEGATE 0* fv BARRIER setn-gr)
