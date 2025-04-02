@@ -37355,8 +37355,10 @@ SECTION 3-select-words-heur ;
 # Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
 
 "<landet>" SELECT:besøke-landet n IF
-        (*-1C fv BARRIER setn-gr)
+        (*-1C fv - hj-verb BARRIER setn-gr)
         ;
+# Ikkje: «Et redningshelikopter fra Rygge flyplass har landet på ulykkesstedet.»
+
 
 "<landet>" SELECT:er-Spania-landet n IF
         (-2 fv)
