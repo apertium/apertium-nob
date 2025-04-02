@@ -13401,6 +13401,13 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 ("<lever>"))
         ;
 
+"<håpet>"i SELECT:håpet-å pret IF
+        (1 %å%)
+        (NEGATE -1 %være/bli%)
+        ;
+# Valet blir dermed ein stor skuffelse for Gandhi, som hadde håpa å gå i fotspora til faren, Rajiv Gandhi
+# Her er håpet å sikre opptak av konsertane
+
 # "seieren over Southampton tirsdag gjør at håpet lever for de rødkledde"
 "<intervjuet>"i REMOVE:som-er-intervjuet n IF
         (-2 ("som"))
@@ -15956,6 +15963,11 @@ SELECT:private-heimar ("<hjem>"i) + n + pl + ind IF
 ;
 #  "kh mai 2003: bare ved: han var en holder av ..."
 
+
+"<holder>"i REMOVE:holder n IF
+        (NEGATE 0/1 cmp)
+        ;
+# Held pusten
 
 
 #:3527
