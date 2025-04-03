@@ -13461,6 +13461,12 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 ("unna"))
         ;
 # "Boston Celtics holdt unna mot Miami Heats"
+"<holdt>"i SELECT:det-holdt-til pret IF
+        (-1 ("den") + nt)
+        (1 %til%)
+        (NEGATE *-1 ("ha") + vblex BARRIER setn-gr)
+        ;
+# det heldt til topp-fem-plassering
 "<buer>"i SELECT:hytter-og-buer ("bu") IF
         (-2 ("hytte"))
         (-1 ("og"))
