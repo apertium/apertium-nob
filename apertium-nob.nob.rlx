@@ -38660,7 +38660,7 @@ REMOVE:øye ("øye"i) IF
 
 # SECTION 4-select-classes-heur ;
 
-LIST nasjonalitetsadj = "svensk" "norsk" "dansk" "finsk" "færøysk" "islandsk" ;
+LIST nasjonalitetsadj = "svensk" "norsk" "dansk" "finsk" "færøysk" "islandsk" "tyrkisk" "britisk" "irsk" "fransk" "tysk" "spansk" "nederlandsk" "polsk" "tsjekkisk" "slovakisk" "serbisk" "bosnisk" "albansk" "slovensk" "gresk" "israelsk" "palestinsk" "amerikansk" "kinesisk" "indisk" "australsk";
 SELECT:svenske-Telia nasjonalitetsadj + adj IF
         (1C n OR np) ;
 # sannsynlegvis ikkje «ein svenske» eller «eit svensk»
