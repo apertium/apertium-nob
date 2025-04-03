@@ -7791,6 +7791,52 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
         # Totalt landet fiskerne 3 tonn
 
+"<landet>" SELECT:de-landet-på vblex IF
+        (-1 ("<de>") + prn + pers)
+        (1 %på% OR %i%)
+        ;
+
+"<landet>" SELECT:de-første-landet-i vblex IF
+        (-2 ("<de>"i) + prn + pers)
+        (1 %på% OR %i%)
+        ;
+
+"<landet>" SELECT:de-har-landet vblex IF
+        (-2 ("<de>"i) + prn + pers)
+        (-1 ("ha") + pres)
+        ;
+
+"<landet>" SELECT:landet-som-er n IF
+        (1 %som%)
+        (2 vblex)
+        ;
+# Storbritannia er det landet som har brukt mest AstraZeneca
+
+"<landet>"i SELECT:har-landet-vært n IF
+        (-1 ("ha"))
+        (1 pp)
+        ;
+
+"<landet>"i SELECT:har-landet-også-vært n IF
+        (-1 ("ha"))
+        (1 adv)
+        (2 pp)
+        ;
+
+"<landet>"i SELECT:har-landet-nominasjon vblex IF
+        (-1 ("ha"))
+        (1 ("nominasjon"))
+        ;
+
+"<landet>" SELECT:det-landet-som n IF
+        (-1 ("den") + nt)
+        (1 %som% OR ("der") OR ("hvor") OR prn + pers OR np)
+        ;
+# Sverige er det landet som det blir utbetalt mest pengar til
+# Nederland er det landet vi soningsoverførte flest fangar til i fjor.
+# endeleg kunne representere det landet eg har følgt med
+# det landet Noreg importerte mest frå
+
 "<landet>" SELECT:i-landet n IF
         (-1 pr OR adj)
         ;
@@ -7890,6 +7936,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 det + qnt)
         (2 ("meter"))
         (3 ("fra") OR ("unna"))
+        ;
+
+"<landet>"i REMOVE:besøke-landet vblex IF
+        (*-1C ("besøke") BARRIER setn-gr)
         ;
 
 "<langt>" SELECT:langt-bak adv IF
@@ -10174,6 +10224,10 @@ LIST stige-måte = "<svakt>" "dramatisk" "kraftig" "raskere" "stadig" "igjen" "m
 SELECT:Uefa-styret ("styre") IF
         (0 ("styr"))
         (0/1 org)
+        ;
+
+"<styrer>"i SELECT:styre-landet pres IF
+        (1 ("<landet>"i))
         ;
 
 "<besteget>" REMOVE:besteget vblex + pp IF
@@ -37371,10 +37425,6 @@ SECTION 3-select-words-heur ;
         ;
 # Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
 
-"<landet>" SELECT:besøke-landet n IF
-        (*-1C fv - hj-verb BARRIER setn-gr)
-        ;
-# Ikkje: «Et redningshelikopter fra Rygge flyplass har landet på ulykkesstedet.»
 
 
 "<landet>" SELECT:er-Spania-landet n IF
