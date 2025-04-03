@@ -9022,6 +9022,36 @@ LIST instruments = "instrument" "gitar" "elgitar" "bassgitar" "steelgitar" "lutt
 SELECT:stemme-gitaren ("stemme¹" vblex) IF
         (1* instruments)      # stemme gitaren
         ;
+      
+SELECT:landets-stemmer ("stemme" n) IF
+        (-1 gen OR talord-par-siffer OR ("andel") OR ("prosent"))
+        ;
+      
+SELECT:flere-stemmer-enn ("stemme" n) IF
+        (1 ("enn"))
+        ;
+# å løfte fram fleire og yngre røyster enn dei som vanlegvis kjem til orde
+      
+SELECT:det-stemmer ("stemme¹" vblex) IF
+        (-1 ("<det>"i))
+        (NEGATE 0 inf + pasv)
+        ;
+      
+SELECT:stemmer-det ("stemme¹" vblex) IF
+        (1 ("<det>"i))
+        (NEGATE 0 inf + pasv)
+        (NEGATE 2 adj OR n)
+        ;
+# Andre gonger stemmer det ikkje.
+# I fjor røysta det italienske senatet for
+
+SELECT:stemmer-godt-med ("stemme¹" vblex) IF
+        (1 %med% OR ("<overens>"i) OR %at%)
+        ;
+
+SELECT:stemmer-godt-med ("stemme¹" vblex) IF
+        (2 %med% OR ("<overens>"i))
+        ;
         
 SELECT:stemme-over ("stemme") + adj + pp IF
         (1 %over% OR ("ned")  OR ("ned i") OR ("fram") OR ("frem") OR ("gjennom"))
@@ -9029,19 +9059,6 @@ SELECT:stemme-over ("stemme") + adj + pp IF
         
 SELECT:stemme-over ("stemme" vblex) IF
         (1* %over% OR ("<blankt>"i) OR ("ja") OR ("nei") OR ("for") OR ("mot") OR ("imot") OR ("ned") OR ("fram") OR ("frem") OR ("på") OR ("med") OR ("gjennom") BARRIER setn-gr)
-        ;
-      
-SELECT:det-stemmer ("stemme¹" vblex) IF
-        (-1 ("<det>"i))
-        (NEGATE 0 inf + pasv)
-        ;
-
-SELECT:stemmer-godt-med ("stemme¹" vblex) IF
-        (1C %med%)
-        ;
-
-SELECT:stemmer-godt-med ("stemme¹" vblex) IF
-        (2 %med% OR ("<overens>"i))
         ;
 
 SELECT:få-til-å-stemme ("stemme¹" vblex) IF
