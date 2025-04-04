@@ -5639,6 +5639,10 @@ REMOVE:vant-til-å ("<vant>") + vblex IF
         ;
 # "vant til å"
 
+"<umiddelbart>"i SELECT:umiddelbart-fradrag adj IF
+        (1 ("fradrag"))
+        ;
+
 "<umiddelbart>"i SELECT:umiddelbart-få adv IF
         (1 vblex OR pp OR %å% OR prep)
         ;
