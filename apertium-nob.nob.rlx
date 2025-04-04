@@ -13420,6 +13420,21 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 np)
         ;
 # "Tidligere bryter Stig Berge"
+"<bryter>"i REMOVE:bryter-default n IF
+        (*0 fv - hj-verb BARRIER setn-gr)
+        ;
+"<bryter>"i REMOVE:kommunen-bryter n IF
+        (-1 n)
+        ;
+"<bryter>"i REMOVE:bryter-kommunen n IF
+        (1 n)
+        ;
+"<Bryter>"i REMOVE:Bryter-default n IF
+        (1 prn + pers OR %med%)
+        ;
+"<bryter>"i REMOVE:bryter-reglene n IF
+        (1 ("regel") OR ("lov") OR ("retningslinje") OR ("frist") OR ("tidsfrist") OR ("reiseråd"))
+        ;
 
 "<bomber>"i SELECT:de-bomber-et-område vblex IF
         (NEGATE 0* vblex BARRIER setn-gr)
@@ -14797,6 +14812,9 @@ REMOVE ("pote") IF
         (-1 ("at"))
 ;
 # at angrepet også fikk titusener av russere til å forlate Krim
+"<angrepet>" REMOVE:angrepet-av n IF
+        (1 %av%)
+;
 "<angrepet>" REMOVE:det-verste-angrepet pp IF
         (-1 sup)
 ;
