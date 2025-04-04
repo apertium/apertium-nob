@@ -5639,6 +5639,19 @@ REMOVE:vant-til-å ("<vant>") + vblex IF
         ;
 # "vant til å"
 
+"<umiddelbart>"i SELECT:umiddelbart-få adv IF
+        (1 vblex OR pp OR %å% OR prep)
+        ;
+
+"<umiddelbart>"i SELECT:få-umiddelbart adv IF
+        (-1 vblex OR %å% OR adv OR ("<det>"i) OR prn + pers)
+        ;
+
+"<.*ordre>"ri SELECT:en-rekke-ordre n + pl IF
+        (-2 ("<en>"i))
+        (-1 ("<rekke>"i))
+        ;
+
 REMOVE:gripe-rattet ("<rattet>"i) + vblex IF
 		(-1* ("ta" vblex) OR ("gripe") OR ("holde" vblex) BARRIER setn-gr)
 		;
@@ -10499,6 +10512,11 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 
 "<så>" SELECT:så-langt adv IF
         (1 %langt%)
+        ;
+
+"<så>"i SELECT:så-umiddelbart-ut pret IF
+        (1 ("<umiddelbart>"i))
+        (2 prep)
         ;
 
 
