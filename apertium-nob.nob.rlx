@@ -43463,9 +43463,12 @@ SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt
 
 "<verden>" SELECT:en-mer-rettferdig-verden n + ind IF
 		(-3 det + sg)
-		(-2 adj)
-		(-1 adj)
+		(-2 adj OR adv)
+		(-1 adj OR det + dem)
 		;
+# Vi lever i en veldig usikker verden
+# det er en helt annen verden (ein -> ei?)
+                
 "<verden>" SELECT:en-annen-verden n + ind IF
 		(-2 det + sg)
 		(-1 det + sg)
