@@ -5638,7 +5638,6 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 
 REMOVE:være-vant-til ("<vant>") + vblex IF
         (-1 %være/bli%)
-        (1 %til%)
         ;
 # "være vant til"
 
