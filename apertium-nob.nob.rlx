@@ -4747,11 +4747,20 @@ WITH:anklager ("<anklager>"i) {
 ;
 #  skal en forsker bry seg
 
+"<bryter>" SELECT:en-bryter n IF
+        (-1C ("en") + det + qnt + m)
+        ;
+# feil ved en bryter for inn- og utkobling
+
 "<bryter>" SELECT:bryter-med vblex IF
         (NEGATE -1 %samme/neste/ene/eneste/forrige% OR %en%)
         (1 %med%)
         ;
 # Ikkje: «Yordanov er eneste bryter med ti VM-medaljer i premieskapet.»
+
+"<bryter>" SELECT:bryter-den vblex IF
+        (1 ("<den>"i))
+        ;
 
 "<brystet>" SELECT:tungt-for n IF
         (-2 ("<tungt>"))
@@ -13421,7 +13430,7 @@ REMOVE:terrorstemplet ("stempel") IF
         ;
 # "Tidligere bryter Stig Berge"
 "<bryter>"i REMOVE:bryter-default n IF
-        (*0 fv - hj-verb BARRIER setn-gr)
+        (*0C fv - hj-verb BARRIER setn-gr)
         ;
 "<bryter>"i REMOVE:kommunen-bryter n IF
         (-1 n)
@@ -13429,11 +13438,21 @@ REMOVE:terrorstemplet ("stempel") IF
 "<bryter>"i REMOVE:bryter-kommunen n IF
         (1 n)
         ;
-"<Bryter>"i REMOVE:Bryter-default n IF
-        (1 prn + pers OR %med%)
+"<bryter>"i REMOVE:bryter-grunnleggende-rettigheter n IF
+        (1 adj)
+        (2 n)
         ;
+# bryter grunnleggende forbrukervernregler
+"<Bryter>"i REMOVE:Bryter-default n IF
+        (1 prn + pers OR prn + ref OR %med% OR ("en") + det + qnt + sg)
+        ;
+# byter han seg inn, bryter seg inn, det bryter med alt, bryter en avtale
 "<bryter>"i REMOVE:bryter-reglene n IF
         (1 ("regel") OR ("lov") OR ("retningslinje") OR ("frist") OR ("tidsfrist") OR ("reiseråd"))
+        ;
+
+"<bryter>"i REMOVE:i-så-fall-bryter n IF
+        (-1C cnjsub OR adv)
         ;
 
 "<bomber>"i SELECT:de-bomber-et-område vblex IF
@@ -15217,6 +15236,9 @@ REMOVE:data-not-datum ("datum");
 # «Med økt optimisme skulle en kanskje tro at spareviljen falt.»
 # «Før 3-månedersalderen bør en kunne oppnå god øyekontakt og smil.»
 
+"<en>" SELECT:en-skader-seg ("man") IF
+        (2 prn + ref)
+        ;
 
 #:3689
 "<en>"   REMOVE:default   adv OR ("man") ;
