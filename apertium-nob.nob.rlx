@@ -14449,6 +14449,18 @@ REMOVE:unlikely ("reke") IF
 		(0 ("reke") OR ("rekke¹"))
         ;
 # "teppet ble rekt opp igjen"
+"<permanent>"i SELECT:ta-permanent n IF
+		(-1 ("ta"))
+                (NEGATE 1 n)
+        ;
+"<permanent>"i SELECT:tok-jeg-permanent n IF
+		(-2 ("ta"))
+                (-1 prn + pers OR cog OR ant)
+                (NEGATE 1 n)
+        ;
+"<permanent>"i REMOVE:unlikely n
+        ;
+# I juni skal det tas en endelig beslutning om etterlysningen av Watson skal fjernes permanent.
 REMOVE:seg-hinsides adj IF
         (-1 ("seg"))
         (0 ("hinsides"))
