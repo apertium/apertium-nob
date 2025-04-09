@@ -14461,6 +14461,10 @@ REMOVE:unlikely ("reke") IF
 "<permanent>"i REMOVE:unlikely n
         ;
 # I juni skal det tas en endelig beslutning om etterlysningen av Watson skal fjernes permanent.
+"<svint>"i SELECT:fortere-enn-svint adv IF
+        (-1 ("enn") OR ("som"))
+        ;
+# Etter det har det blitt lagt ut flere billetter til det fotballsultne publikummet som også har blitt solgt fort som svint
 REMOVE:seg-hinsides adj IF
         (-1 ("seg"))
         (0 ("hinsides"))
