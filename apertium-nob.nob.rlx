@@ -44366,11 +44366,24 @@ MAP:dedikert-og-helt-nyhetsdrevet-lokalavis (@nkon) %og/eller% IF
 
 MAP:norske-torg-og-møteplasser (@nkon) %og/eller% IF
         (-2C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
-        (-1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (-1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR LINK 0 $$DEFNES)
         (NOT 0 clb)
-        (1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR LINK 0 $$DEFNES)
 ;
 # «De neste ukene fylles norske torg og møteplasser opp med lokalpolitikere på velgerjakt»
+# Ikkje: «Han deltar på 10-kilometeren i fri teknikk og femmila på Hovden»
+# (derfor krav om lik $$DEFNES)
+
+MAP:hans-gamle-far-og-sønnen (@nkon) %og/eller% IF
+        (-3C pos)
+        (-2C adj OR pp LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (-1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR)
+        (NOT 0 clb)
+        (1C n LINK NOT 0 gen LINK 0 &&ADJ_N_AGR + def)
+;
+# Possessiv gjer første nomenfrasen bunden, så då kan den andre vera bunden
+# «Nære, varme sanger fra svunne tider, der både hans gamle far og sønnen var å høre på platen.»
+
 
 MAP:defineres-habilitering (@nkon) %og/eller% IF
         (-2C pasv)
