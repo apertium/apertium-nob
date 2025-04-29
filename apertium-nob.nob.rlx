@@ -13566,11 +13566,19 @@ REMOVE:terrorstemplet ("stempel") IF
         ;
 
 # "flere sivile som er intervjuet forteller om store lidelser"
+"<bøtter>"i REMOVE:bøtter-inn n IF
+        (1 %inn%)
+        ;
+# "Hegerberg bøtter inn mål for Lyon"
 "<bøtter>"i REMOVE:mat-og-bøtter vblex IF
         (-2 n)
         (-1 ("og"))
         ;
 # "mat og bøtter"
+"<bøtter>"i REMOVE:bøtter-med vblex IF
+        (1 %med%)
+        ;
+# "bøtter med poteter"
 "<rykket>"i REMOVE:rykket-fra n IF
         (1 pr)
         ;
@@ -14313,6 +14321,9 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 ("som"))
         ;
 # Inntekt som begrep
+
+"<Begrepet>" REMOVE:begrepet-deepfake ("begripe") ;
+
 "<begrepet>" REMOVE:at-begrep ("begripe") IF
         (-1 ("at"))
         ;
