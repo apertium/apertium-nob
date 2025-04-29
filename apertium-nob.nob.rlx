@@ -12911,6 +12911,11 @@ REMOVE:kapret-istedenfor adj IF
         (1C n)
         ;
 # "Hvis en planlegger å gjøre noe slikt, kan mye rart skje.
+"<Hvilket>" SELECT:Hvilket-yrke-de-har ("hvilken") IF
+        (0 ("hvilket") OR ("hvilken"))
+        (1 subst)
+        ;
+# Hvilket yrke vedkommende har og eventuell utdannelse, er relevant informasjon.
 "<vev>" SELECT:kroppens-vev nt IF
         (-1* ("kropp") OR ("menneskelig") BARRIER setn-gr)
         ;
