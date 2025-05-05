@@ -12113,6 +12113,11 @@ SELECT:alle-var-skrivne-ut adj + pl IF
 		(2 n)
 		;
 # I utgangspunktet er det kun leger og helsesykepleiere ...
+"<lege>" SELECT:leger-komme-sykepleiere n IF
+		(1 cm)
+		(2 n + ind)
+		;
+# For eksempel lege, sykepleier, psykolog eller andre fra helsevesenet.
 
 "<leger>" SELECT:å-lære-leger-kirurgi n IF
 		(-2 ("å"))
