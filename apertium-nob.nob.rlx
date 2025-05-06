@@ -27208,9 +27208,10 @@ SELECT:singel-album ("singel" m) IF
 #:2532
 SELECT:Wildes-bok gen IF
 	(0 subst-prop)
-	(NOT 0 %jesu/kristi/pauli%)
+        (NEGATE 0 pos)          # «Hans niese»
+	(NEGATE 0 %jesu/kristi/pauli%)
 	(1C subst)
-	(NOT 1 subst-prop)
+	(NEGATE 1 subst-prop)
 ;
 #  "Wildes bok"
 
