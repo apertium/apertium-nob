@@ -12181,6 +12181,11 @@ SELECT:alle-var-skrivne-ut adj + pl IF
                 (-1 ("din"))
 		;
 # Du må sammen med din lege finne frem.
+"<skruer>" SELECT:og-skruer n IF
+                (-2 n)
+                (-1 cnjcoo)
+		;
+# Det er plater og skruer.
 
 "<herpes>"i SELECT:genital-herpes n ;
 # «Genital herpes»
