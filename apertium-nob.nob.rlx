@@ -10581,6 +10581,12 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (1 adj)
         ;
 
+"<så>"   SELECT:vi-såg-i pret IF
+        (-1 prn + nom)
+        (1 prep OR ("i fjor") OR ("i dag"))
+        (NEGATE -2 fv)
+        ;
+
 "<så>"   SELECT:som-vi-såg pret IF
         (-2 %som% OR %at%)
         (-1 prn + nom)
@@ -13520,6 +13526,9 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 setn-gr)
         ;
 # "Modi taler til Europa"
+"<sentre>"i SELECT:senter ("sentre") + vblex IF
+        (-1 ("å"))
+        ;
 "<sentre>"i SELECT:dreie-seg-om-sentre ("senter") IF
         (-3 vblex)
         (-2 ("seg"))
@@ -13530,6 +13539,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (-1 ("psykiatrisk"))
         ;
 # Det er snakk om distrikspsykiatriske senter
+"<sentre>"i SELECT:senter ("senter") IF
+        (0 n)
+        ;
+
 "<holdt>"i REMOVE:holdt-unna n IF
         (1 ("unna"))
         ;
