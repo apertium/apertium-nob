@@ -34,7 +34,7 @@ $(LANG1).autogen.bin: .deps/$(LANG1).autogen.bin .deps/proper-$(LANG1).autogen.b
 .deps/withproper-$(LANG1).automorf.bin: .deps/$(LANG1).automorf.bin .deps/proper-$(LANG1).automorf.bin
 	lt-append $^ $@
 
-.deps/$(LANG1).detriple.bin: $(BASENAME).detriple.dix
+.deps/$(LANG1).detriple.bin: $(BASENAME).detriple.dix .deps/.d
 	lt-comp lr $< $@
 
 $(LANG1).automorf.bin: .deps/withproper-$(LANG1).automorf.bin .deps/$(LANG1).detriple.bin
