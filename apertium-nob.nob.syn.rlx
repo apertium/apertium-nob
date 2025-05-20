@@ -5172,6 +5172,16 @@ REMOVE:antall-på-100 @←p-utfyll IF
 #  "\"hvor\": @ADV→, ikke @ADV, foran ikke-subjekt
 
 
+"<hele>" SELECT @←p-utfyll IF
+	(-1 pr)
+	(-1C pr OR adv)
+	;
+
+"<deler>" SELECT @←p-utfyll IF
+	(-2C @←p-utfyll)
+	(-1 %eller%)
+	;
+
 
 #:1254
 "<om>" SELECT:1254 (@←p-utfyll) IF
@@ -10153,7 +10163,6 @@ SELECT:964 (@subj) IF
 	(*-1 ikke-premod-u-@kon/@nkon LINK 0 @kon/@nkon LINK -1 @subj LINK NOT 0 ikke-@subj LINK NOT *1 clb)
 ;
 #  " både vi og andre konserner @SUBJ søker ..."))
-
 
 
 #:963
