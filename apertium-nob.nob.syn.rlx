@@ -5543,6 +5543,11 @@ SELECT:knyttet-til @xubj + &&ADJ_N_AGR IF
 # «Staten frikjent for nesten alle  erstatningssøksmål  knyttet til støy»
 # «og begge byene er nesten tomme, ifølge den opposisjonelle  sivilforsvarsgruppa  kjent som Hvite hjelmer.»
 
+SELECT:med-røykdykkere-klare @xubj + &&ADJ_N_AGR IF
+	(-1 ("med"))
+	(1C adj + &&ADJ_N_AGR)
+	;
+
 
 REMOVE:not-xubj @xubj;
 
