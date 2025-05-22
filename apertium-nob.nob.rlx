@@ -9162,7 +9162,7 @@ SELECT:glimre-med ("glimre" vblex) IF
         (1 %med%)
         ;
         # "glimre med sitt fråvær"
-
+        
 SELECT:skjene-ut ("skjene" vblex) IF
         (1 %ut% OR %til% OR %over% OR ("unna") OR %av% OR %mot% OR ("av gårde"))
         ;
@@ -9599,6 +9599,17 @@ SELECT:NNs-forlovede n IF
 ;
 #  "så og si"
 
+  "<si>"   SELECT:Aldri-si-aldri   (inf) IF
+	(-1 ("Aldri"))
+	(1 ("aldri"i))
+;
+# "Aldri sei aldri, seier dei."
+
+  "<si>"   SELECT:aldri-si-aldri   (int) IF
+	(-1 ("aldri"i))
+	(1 ("aldri"i))
+;
+#  "Du skal aldri seia aldri."
 
 
 #:3308
@@ -16494,10 +16505,13 @@ REMOVE:tilbakekaller-leker ("lek") IF
         (0 ("leke"))
         ;
 
+"<legger>"i   REMOVE:legger (n m sg ind) IF
+        (NEGATE -1 cmp)
+        ; 
 #:3485
-  "<legger>"   REMOVE:3485   (n m sg ind) IF
-	(*-1 ikke-adv-adj LINK NOT 0 mask-det)
-;
+#  "<legger>"   REMOVE:3485   (n m sg ind) IF
+#	(*-1 ikke-adv-adj LINK NOT 0 mask-det)
+#;
 #  "kh jan 2004: bare i sammensetninger som flislegger osv"
 
 
