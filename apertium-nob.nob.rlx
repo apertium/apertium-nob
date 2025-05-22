@@ -17112,6 +17112,15 @@ REMOVE:landets-styrkjer vblex IF
 #  "om (ikke prep) jeg lever en gang ...
 # Ikke: om (prep) hun/de som var ..."))
 
+"<om>" REMOVE:finne-ut-om pr IF
+        (-2 ("finne"))
+        (-1 ("ut"))
+        (*1 fv)
+        ;
+"<om>" REMOVE:finne-ut-om pr IF
+        (-1 ("finne# ut"))
+        (*1 fv)
+        ;
 
 
 "<område>" SELECT:ikkje-områr subst;
