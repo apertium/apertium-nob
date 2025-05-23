@@ -6943,6 +6943,19 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
         ;
 # da fører dette til
 
+"<fører>"i SELECT:fører-en vblex IF
+	(1 det + qnt)
+        ;
+# de fører en russiskvennlig politikk
+# I VM fører to gule kort i ulike kampar til at spelaren må stå over neste gong
+
+"<legger>"i SELECT:legger vblex IF
+	(1 det + qnt OR n OR np OR prn OR pr OR adv OR ("både"))
+        ;
+# Samtidig legger Von der Leyen vekt på beredskapsspørsmålet.
+# Førstesideoppslaget i Daily Mail som samanlikna den britiske statsministeren Theresa May og Skottlands førsteminister Nicola Sturgeons legger, blir også trekt fram som eit lågmål
+# I staden for stavane skulle ein stola på sine eigne musklar i legger og lår
+
 #:3594
   "<galt>"   SELECT:3594   (n) IF
 	(NOT 1 subst/adj)
