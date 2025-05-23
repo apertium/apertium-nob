@@ -3094,7 +3094,15 @@ SELECT:bite-seg ("bite") + vblex IF
         (-1* %ha% BARRIER setn-gr)
         (NEGATE 1 vblex + pp)
         ;
+        
+"<tårnet>"i SELECT:tårnet-seg vblex IF
+        (1 %seg% OR %opp%)
+        ;
+"<tårnet>"i SELECT:tårnet-det-seg vblex IF
+        (2 %seg%)
+        ;
 
+"<tårnet>"i REMOVE:tårnet vblex ;
 
 LIST feste-ord = "søm" "tilhenger" "sikre" "sikring" "henge" "utforme" "ryke" "løsne" "rive" "slite" "lime" "søm" "sele" "fortøye" "fortøying" "skaft" "handtak" "krok" "spiker" "skrue" "bolt" "anker" "klo" "vind" "storm" "orkan" "uvær" "bil" "båt" "havn" "naturhavn" "sykkel" "bygsel" "bygsle" "bygsling" "arv" "eiendom" "tomt" "hytte" "hyttegrend" "grunneier" "fester" "bygsler" "beløp" "betale" "betaling" "avgift" "verdi" "festeavgift" "tomtefeste" "tomteverdi" "festetomt" ;
 LIST fest-ord = "selskap" "moro" "feire" "feiring" "jubileum" "bryllup" "bankett" "bursdag" "fødselsdag" "gjest" "festdeltaker" "alkohol" "øl" "vin" "drikke" "drikking" "servering" "musikk" "konsert" "ordensforstyrrelse" "politi" ;
