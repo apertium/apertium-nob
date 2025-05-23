@@ -6802,6 +6802,10 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 %som%)
 	(2 ("før"))
 ;
+"<fortsatt>" SELECT (vblex) IF
+	(-2 ("ha"))
+	(-1 ("siden"))
+;
 
 # Siden da har pilene fortsatt å peke oppover
 "<fortsatt>"i SELECT adv IF
@@ -7417,7 +7421,7 @@ SELECT:lurer-på-hvor adv IF
         ;
 
 "<hvor>" SELECT:komma-hvor cnjsub IF
-        (-1 komma)
+        (-1 komma OR n)
         (NEGATE *0 spørreadv OR %når%)
         ;
 
@@ -13350,6 +13354,12 @@ REMOVE:to-ansatte vblex IF
         ;
         # "Rundtom er leiar for ..."; elles "rundt om"
 
+"<ønske>"i SELECT inf IF
+        (1 ("å"))
+        (-1C* modalverb)
+        ;
+# Hvorfor skulle ikke regimene i Iran og Syria, Somalia og Sudan ønske å gjøre nøyaktig det samme?
+
 "<ønsket>"i REMOVE:ønsket-om vblex OR adj IF
         (1 ("om"))
         ;
@@ -17941,6 +17951,18 @@ SELECT ("vekke") IF
         (1 adj OR adv OR cnjcoo)
         ;
         # det har vakt sterke reaksjoner
+
+  "<vakter>"i   SELECT:væpna-vakter n IF
+	(-1 ("<væpna>"i) OR ("<væpnede>"i) OR ("<væpnete>"i) OR ("<bevæpna>"i) OR ("<bevæpnede>"i) OR ("<bevæpnete>"i))
+        ;
+
+  "<væpna>"i   SELECT:væpna-vakter pp IF
+	(1 ("<vakter>"i))
+        ;
+
+  "<bevæpna>"i   SELECT:væpna-vakter pp IF
+	(1 ("<vakter>"i))
+        ;
 
 "<passet>"i REMOVE n IF
         (-1C ("<det>"))
