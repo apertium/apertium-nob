@@ -9174,6 +9174,23 @@ SELECT:få-til-å-stemme ("stemme¹" vblex) IF
         (-1 ("å"))
         ;
 
+SELECT:ikke-stemmer-ved-valg ("stemme" pres) IF
+        (-1 %ikke%)
+        (1 pr)
+        (2 ("valg") OR ("stortingsvalg") OR ("kommunevalg"))
+        ;
+        # dei som ikkje røystar i stortingsval
+
+SELECT:ikke-stemmer ("stemme¹" pres) IF
+        (-1 %ikke%)
+        ;
+
+#SELECT:disse-tallene-ikke-stemmer ("stemme¹" vblex) IF
+#        (-3* det + dem)
+#        (-2 n)
+#        (-1 adv)
+#        ;
+
 SELECT:stemmer-du-Ap ("stemme" vblex) IF
         (1 ("du") OR ("man"))
         (2 np OR %på%)
