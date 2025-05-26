@@ -5831,6 +5831,10 @@ SELECT:partiets-fylkeslag n + nt + pl IF
         ;
         # eitt av fylkeslaga i partiet; alle fylkeslaga i partiet: IKKJE: medlem av
 
+SELECT:det-smerter-meg ("<smerter>"i) + pres  IF
+		(1 prn + acc)
+		;
+
 SELECT:pådra-seg-smerter ("<smerter>"i) + n  IF
 		(0* vblex BARRIER setn-gr)
 		;
@@ -18308,6 +18312,23 @@ REMOVE:de-drepte-barn adj IF
         (1C n + ind)
         ;
 # «Ifølge helsemyndighetene i Gaza er over 40 prosent av de drepte barn.»
+
+"<ansatte>" SELECT:sine-ansatte n IF
+        (-1 %sine% OR ("den") + det + dem)
+        ;
+
+SELECT:ansattes-vilkår pl IF
+        (-1 n + gen)
+        (0 ("vilkår") OR ("lønnsvilkår") OR ("arbeidsvilkår"))
+        ;
+SELECT:ansattes-vilkår pl IF
+        (-2 n + gen)
+        (0 ("vilkår") OR ("lønnsvilkår") OR ("arbeidsvilkår"))
+        ;
+SELECT:ansattes-vilkår pl IF
+        (-3 n + gen)
+        (0 ("vilkår") OR ("lønnsvilkår") OR ("arbeidsvilkår"))
+        ;
 
 SELECT:Den-siktede xgrau OR adj IF
         (-1 ("den"))
