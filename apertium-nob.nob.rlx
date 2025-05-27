@@ -9645,17 +9645,12 @@ SELECT:NNs-forlovede n IF
 ;
 #  "så og si"
 
-  "<si>"   SELECT:Aldri-si-aldri   (inf) IF
-	(-1 ("Aldri"))
-	(1 ("aldri"i))
+"<si>" SELECT:aldri-si-aldri (inf) IF
+	(-1 ("aldri"))
+	(1 ("aldri"))
 ;
-# "Aldri sei aldri, seier dei."
-
-  "<si>"   SELECT:aldri-si-aldri   (int) IF
-	(-1 ("aldri"i))
-	(1 ("aldri"i))
-;
-#  "Du skal aldri seia aldri."
+# «Du skal aldri si aldri.»
+# «Aldri si aldri, sier de.»
 
 
 #:3308
