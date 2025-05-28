@@ -7433,9 +7433,10 @@ SELECT:lurer-på-hvor adv IF
         ;
 
 "<hvor>" SELECT:komma-hvor cnjsub IF
-        (-1 komma OR n)
+        (-1C komma OR n)
         (NEGATE *0 spørreadv OR %når%)
         ;
+# «En rekke sketsjer hvor de parodierte ulike autoriteter.»
 
 "<hvor>" SELECT:saker-hvor-domfelte-er cnjsub IF
         (*-2C fv BARRIER cnjsub OR clb)
@@ -9645,17 +9646,12 @@ SELECT:NNs-forlovede n IF
 ;
 #  "så og si"
 
-  "<si>"   SELECT:Aldri-si-aldri   (inf) IF
-	(-1 ("Aldri"))
-	(1 ("aldri"i))
+"<si>" SELECT:aldri-si-aldri (inf) IF
+	(-1 ("aldri"))
+	(1 ("aldri"))
 ;
-# "Aldri sei aldri, seier dei."
-
-  "<si>"   SELECT:aldri-si-aldri   (int) IF
-	(-1 ("aldri"i))
-	(1 ("aldri"i))
-;
-#  "Du skal aldri seia aldri."
+# «Du skal aldri si aldri.»
+# «Aldri si aldri, sier de.»
 
 
 #:3308
