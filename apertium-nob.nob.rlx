@@ -7433,9 +7433,10 @@ SELECT:lurer-på-hvor adv IF
         ;
 
 "<hvor>" SELECT:komma-hvor cnjsub IF
-        (-1 komma OR n)
+        (-1C komma OR n)
         (NEGATE *0 spørreadv OR %når%)
         ;
+# «En rekke sketsjer hvor de parodierte ulike autoriteter.»
 
 "<hvor>" SELECT:saker-hvor-domfelte-er cnjsub IF
         (*-2C fv BARRIER cnjsub OR clb)
