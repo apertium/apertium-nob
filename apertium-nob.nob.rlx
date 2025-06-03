@@ -3361,6 +3361,8 @@ REMOVE:unlikely ("anklager") + n IF
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
 REMOVE:unlikely ("nyre") + n + nt;
 REMOVE:unlikely ("trofé") + n + m;
+REMOVE:unlikely ("gniste") + vblex + pres; 
+REMOVE:unlikely ("gnist") + n + m; # jf. ein gneiste
 
 # END Early removal of unlikely / rare forms
 
