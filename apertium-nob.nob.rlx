@@ -24534,11 +24534,11 @@ SELECT:disse-fine-bilene det + pl IF
 
 
 #:2766
- SELECT:2766 (det m) IF
-	(NOT 0 poss-det)
-	(NOT 0 %noe%)
+SELECT:denne-Turner (det m "denne") IF
+	(NEGATE 0 poss-det)
+	(NEGATE 0 %noe%)
 	(1 subst-prop)
-	(NOT 1 fem)
+	(NEGATE 1 fem)
 ;
 #  "denne Turner
 # Ikke det poss: Hans"
