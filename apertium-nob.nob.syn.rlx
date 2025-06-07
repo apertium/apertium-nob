@@ -20088,6 +20088,13 @@ SELECT:Samatta-trengte-bare fv IF
         ;
 # «Liverpools sjansesløseri skulle vise seg å bli kostbart før pause, for gjestenes Mbwana Samatta trengte kun én sjanse på å utligne.»
 
+"<den>" REMOVE:Brukes-den-cm-forringes-den acc IF
+	(*-3 @fv + $$TEMPUS LINK 0 storbokstav LINK -1 storbokstav-ok-etter LINK 2 ("den"))
+	(-2 cm + clb)
+	(-1 @fv + $$TEMPUS)
+	(0 nom)
+	;
+
 SELECT:båten-Andhøy-kjøpte fv IF
         (-2C n + def)
         (-1 @subj)
