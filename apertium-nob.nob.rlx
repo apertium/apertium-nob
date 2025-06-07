@@ -3912,7 +3912,7 @@ SELECT:restriktive-tiltak pl IF
         (-1 %til%)
 ;
 
-"<at>" SELECT:etter-at clb IF
+"<at>" SELECT:etter-at cnjsub + clb IF
         (-1 %etter%)
         (1 nominativ OR expl)
 ;
@@ -43623,7 +43623,7 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (1 pr)
         ;
 
-"<den>" SELECT:mens-den prn + pers + ("den¹") IF
+"<den>" SELECT:mens-den prn + pers + nominativ + ("den") IF
         (-1 cnjsub)
         (1 pr)
         ;
