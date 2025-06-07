@@ -43617,6 +43617,11 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (1 pr)
         ;
 
+"<den>" SELECT:mens-den prn + pers + ("den¹") IF
+        (-1 cnjsub)
+        (1 pr)
+        ;
+
 "<den>" SELECT:gjorde-den-rød prn + pers IF
         (-1 pr3)
         (1C adj + mf + ind)
