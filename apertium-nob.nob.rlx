@@ -43611,6 +43611,12 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (NEGATE 1 adj-ofte-forsterkande LINK 1 adj)  # Ikkje: «den klart beste (rangerte)»
         ;
 
+
+"<den>" SELECT:som-den prn + pers + ("den¹") IF
+        (-1 %som% OR (".* som"r))
+        (1 pr)
+        ;
+
 "<den>" SELECT:gjorde-den-rød prn + pers IF
         (-1 pr3)
         (1C adj + mf + ind)
