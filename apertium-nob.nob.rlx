@@ -43596,6 +43596,13 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (0 n + gen - xgrau)
         ;
 
+
+"<den>" SELECT:skaut-han prn + pers + ("den") IF
+        (-1C vblex)
+        (NEGATE 1 n + gen LINK 1 n)                  # Ikkje: «fulgte den 13-trinns oppskriften»
+        (NEGATE 1 adj-ofte-forsterkande LINK 1 adj)  # Ikkje: «den klart beste (rangerte)»
+        ;
+
 "<den>" SELECT:gjorde-den-rød prn + pers IF
         (-1 pr3)
         (1C adj + mf + ind)
