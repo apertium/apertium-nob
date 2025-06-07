@@ -19112,6 +19112,14 @@ SELECT:er-andre-muslimske-minoriteter-plassert adj + pp + pl IF
         ;
 # «Ifølge FN er minst 1 million uigurer og andre muslimske minoriteter plassert i slike leirer.»
 
+SELECT:få-den-vedtatt adj + pp + $$GENDER IF
+        (-2C pasvpp_tar_pp)
+        (-1C ("den") + $$GENDER)
+        (0C pp)
+        ;
+# «Det er ikke nok tid igjen til å få den vedtatt i Parlamentet i London og i EU-parlamentet.»
+
+
 "<samtykket>"i SELECT:mannen-samtykket-til vblex IF
 		(1 %til%)
 		;
