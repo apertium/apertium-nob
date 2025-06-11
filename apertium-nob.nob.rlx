@@ -4745,6 +4745,9 @@ WITH:anklager ("<anklager>"i) {
 	(*-1 %ha% BARRIER setn-gr)
 ;
 
+  "<bredt>"i   REMOVE:bredt-flertall   (pp) IF
+	(1 ("flertall"))
+;
 
 #:5012
   "<bry>"   SELECT:5012   (inf) IF
@@ -10042,6 +10045,10 @@ SELECT:NNs-forlovede n IF
 
 "<slettes>" REMOVE adv IF
         (NEGATE 1 %ikke/ingen%)
+        ;
+
+"<møttes>" SELECT:ha-møttes vblex + pp IF
+        (-1* %ha% BARRIER setn-gr)
         ;
 
 
