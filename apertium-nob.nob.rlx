@@ -3365,6 +3365,7 @@ REMOVE:unlikely ("nyre") + n + nt;
 REMOVE:unlikely ("trofé") + n + m;
 REMOVE:unlikely ("gniste") + vblex + pres; 
 REMOVE:unlikely ("gnist") + n + m; # jf. ein gneiste
+REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
 
 # END Early removal of unlikely / rare forms
 
