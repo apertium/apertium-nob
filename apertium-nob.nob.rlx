@@ -7971,6 +7971,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (4 vblex + pp)
         ;
 
+"<landet>" SELECT:og-landet-svarte n IF
+        (1 vblex)
+        (-1 %og%)
+        ;
+
 "<landet>" SELECT:at-et-fly-tirsdag-landet-på pret IF
         (0* ("fly" n) or ("fly" vblex) OR ("oppskyting") OR ("rakett") OR ("fallskjermhopper") OR ("paraglider") OR ("hangglider") OR ("helikopter") OR ("fartøy") OR ("hopp") OR ("hoppkant") OR ("bakke") OR ("passasjerfly"))
         ;
@@ -10959,6 +10964,12 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 	(2 %si%-inf)
 ;
 #  "så å si"
+
+"<så>"   SELECT:fullt-så adv IF
+        (-1 ("fullt"i))
+	(1 adj OR adv)
+;
+# Fullt så ille var det ikke
 
 "<så>" SELECT:Det-så-lenge-ut pret IF
         (NEGATE *-1 ("se"))
@@ -14300,6 +14311,14 @@ REMOVE ("hvor") + cnjsub IF
         (-1 ("<lokale>"))
         ;
 # Snakk med din lokale behandler dersom ... 
+
+        ;
+REMOVE:unlikely ("<frister>"i) + n + sg IF
+        (NEGATE -1 adj + sg)
+        ;
+"<frister>" SELECT:frister-som n + pl IF
+        (1 ("som"))
+        ;
 "<frister>" SELECT:datoer-og-frister n IF
         (-2 ("dato"))
         (-1 ("og"))
@@ -17728,6 +17747,10 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 	(*-1 setn-gr BARRIER %ha/få%)
 ;
 
+  "<svarte>"i   REMOVE:landet-svarte   adj IF
+	(NEGATE 1 n + pl OR %og%)
+;
+
 "<svant>" REMOVE ("svane") ;
 
 #:3203
@@ -18875,10 +18898,9 @@ SELECT:ble-antent adj + pst IF
 		(1 ("på"))
 		(2 n)
 		;
-"<trykket>" SELECT:trykket-i-nitrogenflaska n IF
-		(-1 %være%)
+"<trykket>"i SELECT:trykket-i-nitrogenflaska n IF
 		(1 ("i"))
-		(2 ("flaske") OR ("tank"))
+		(2 ("flaske") OR ("tank") OR ("kabin"))
 		;
 "<trykket>" SELECT:er-trykket-stort n IF
 		(-1 %være%)
