@@ -14248,6 +14248,10 @@ REMOVE ("hvor") + cnjsub IF
         ;
 # "...bestemme hvor den skulle gå"
 
+"<forhåndslagre>"i REMOVE:etablere-forhåndslagre vblex IF
+        (-1 fv)
+        (NEGATE -1 p-hj-verb OR modalverb)
+        ;
 
 "<neste>" REMOVE:den-neste n IF
         (-1 %den%)
