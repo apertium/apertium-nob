@@ -216,6 +216,9 @@ LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare"
 LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" ;
 SET n-adjn = n OR adjn ;
 
+# For dei tilfella der me vil matcha def/pl-formen, uavhengig av om den er tagga adj.pst/adj.pp/n:
+LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i ;
+
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
 
 LIST pres-part = (adj pprs) ;
@@ -2974,6 +2977,7 @@ REMOVE:unlikely ("<banket>"i n nt sg def) IF (-1 %være/bli%) ;	# bli banka opp
 REMOVE:unlikely ("<anga>"i pret) ; # han anga partneren til politiet
 REMOVE:unlikely ("<glattstrikket>"i n) ; # en glattstrikket jersey
 REMOVE:unlikely ("<trikket>"i adj) IF (-1 cmp); # en håndstrikket jersey
+REMOVE:unlikely ("<våre>"i inf) IF (NEGATE -1 infmerke);
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -7477,7 +7481,7 @@ SELECT:lurer-på-hvor adv IF
 # «Jeg håper vi kan bygge en ny verdensorden som respekterer folkeretten, og hvor FN kan spille en fredsbevarende rolle.»
 
 "<hvor>" SELECT:hvor-eldre cnjsub IF
-        (1 komp OR ("eldre") OR ("<ansatte>"i) OR ("<frivillige>"i) OR ("<etterlatte>"i) OR ("<tiltalte>"i) OR ("<innsatte>"i) OR ("<domfelte>"i) )
+        (1 komp OR adjn-form-def)
 ;
 # Tysdag melde politiet at dei har fått melding om sju tilfelle der eldre menneske har vorte svindla.
 # ein kan snike seg inn stader der større vogner og bilar ikkje når fram
@@ -43624,6 +43628,7 @@ REMOVE:prefer-lexicalised-n xgrau IF
         (-1C vblex)
         (NEGATE 1 n + gen LINK 1 n)                  # Ikkje: «fulgte den 13-trinns oppskriften»
         (NEGATE 1 adj-ofte-forsterkande LINK 1 adj)  # Ikkje: «den klart beste (rangerte)»
+        (NEGATE 1 adjn OR adjn-form-def)             # Ikkje: «sa den tiltalte»
         ;
 
 
