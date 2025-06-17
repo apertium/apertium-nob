@@ -4755,6 +4755,14 @@ WITH:anklager ("<anklager>"i) {
 	(1 ("flertall"))
 ;
 
+"<brent>" SELECT:være-brent-ned adj + pp IF
+	(-1* %være/bli% BARRIER vblex)
+;
+
+"<brent>" SELECT:ha-brent-ned vblex + pp IF
+	(-1* %ha% BARRIER vblex)
+;
+
 #:5012
   "<bry>"   SELECT:5012   (inf) IF
 	(1 %seg%)
@@ -13864,6 +13872,12 @@ REMOVE:Isnes-ansatt vblex IF
         (-2C ("høne"))
         ;
         # høna og/eller egget
+
+"<skygge>"i SELECT n
+        (-1 %og/eller% OR cm)
+        (-2 n)
+        ;
+        # sol og skygge; vann, skygge og frisk luft
 
 "<heiser>"i SELECT vblex
         (1C n OR adj OR ("<flagget>"i))
