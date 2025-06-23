@@ -13014,6 +13014,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 adv)
         ;
 # "klem bort slimet"
+"<Moster>" SELECT:Moster-ikke-most np IF
+        (-1 setn-gr)
+        ;
+# "Moster slo Hauger 2-0"
 "<planlegger>" SELECT:hvis-en-planlegger-det vblex IF
         (-2 cnjsub)
         (-1 ("en"))
