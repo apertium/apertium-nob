@@ -44206,6 +44206,7 @@ REMOVE:default ("skreve") IF (0 ("skrive"));
 "<Meteorologene>" REMOVE:default-Meteorologene ("Meteorologene" np org) ;	# keep Meteorolog<n><m><pl><def>→Meteorologane
 "<midlene>" REMOVE:default-midla ("middel" n m) ;
 "<midler>" REMOVE:default-midlar ("middel" n m) ;
+"<mint>" REMOVE:default-mint (adj pp) ;     # keep mint<n><m><sg><ind>→mint
 "<mister>" REMOVE:default-mister ("mister" n m sg ind) ;	# keep miste<vblex><pres>→mistar
 "<måler>" REMOVE:default-målar ("måler" n m sg ind) ;	# keep måle<vblex><pres>→måler
 "<møter>" REMOVE:default-møter ("møte" vblex pres) ;	# keep møte<n><nt><pl><ind>→møte
