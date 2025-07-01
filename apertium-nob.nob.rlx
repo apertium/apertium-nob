@@ -17797,9 +17797,13 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 	(*-1 setn-gr BARRIER %ha/få%)
 ;
 
-  "<svarte>"i   REMOVE:landet-svarte   adj IF
-	(NEGATE 1 n + pl OR %og%)
+"<svarte>"i REMOVE:landet-svarte adj IF
+	(NEGATE 1 %og%)
+	(NEGATE 1 n + pl)
+	(NEGATE 1 n + def)      # «såkalte svarte boksen»
+        (NEGATE *-1 %den% BARRIER ikke-adj LINK 1x n + sg) # «den første svarte kvinne»
 ;
+# TODO: kva med «boksene er svarte»?
 
 "<svant>" REMOVE ("svane") ;
 
