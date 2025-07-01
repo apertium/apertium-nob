@@ -10393,17 +10393,9 @@ SELECT:Uefa-styret ("styre") IF
         (1 n)
         ;
 
-SELECT:svenskene ("svenske" n) IF
-        (0 pl)
-        ;
-
-SELECT:finnene ("finne" n) IF
-        (0 pl)
-        ;
-
-SELECT:irene ("ire" n) IF
-        (0 pl)
-        ;
+SELECT:svenskene ("svenske") + be-fl-subst ;
+SELECT:finnene ("finne") + be-fl-subst ;
+SELECT:irene ("ire") + be-fl-subst ;
 
 "<arbeidet>"i SELECT:i-arbeidet n IF
         (-1 prep)
