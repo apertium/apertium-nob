@@ -2133,6 +2133,7 @@ LIST not-np-guess-f_lc>f_uc =
  "<Langrennsyndlingen>" "<Langrennsveteranen>" "<Langrennstrener>" "<Langrennsjentene>" "<Langrennsfolket>" "<Langrennsesset>" "<Langrennseliten>"
  "<Langrennsdronningen>" "<Langrennet>" "<Langet>" "<Langdistanseløperen>" "<Landsstyremøtet>" "<Landsomfattende>" "<Landsmøtene>" "<Landslagssjefene>"
  "<Landskampene>" "<Landskampen>" "<Lakseoppdrettere>" "<Lagsprint>" "<Laboratoriet>" "<Laber>"  "<Tente>" "<Stjernespilleren>" "<Stjernespillerne>"
+ "<Havner>"
         # But we also need the ones that were removed, e.g. "<Brødrene>" – should redo this patch to only *add* words
         # (and remove words like "<Verdens>" where we do want cgguess)
    ;
@@ -3171,6 +3172,10 @@ REMOVE:unlikely-ros ("ro")   IF
         (NOT -1 ("båt") OR ("fartøy"))
         ;
 
+REMOVE:unlikely-ros ("ros") IF
+        (0 pl)
+        ;
+
 REMOVE:unlikely-skjøt ("skjøt") IF
         (0 ("skyte"))
         (NOT -1 %en%)
@@ -3843,6 +3848,13 @@ REMOVE:disprefer-vblex-cmp vblex - allow-verb/adjcmp IF
         (-1 >>>)
         ;
 # (kven er denne «Branner»-personen?)
+
+"<Havner>" SELECT:Havner-du vblex IF
+        (1 prn OR n OR np OR det)
+        ;
+# Hamnar du i roughen blir det vanskeleg
+# Hamnar to av dei under, vil ...
+# Men: Hamner og flyplassar
 
 "<masse>" SELECT:en-masse n IF
         (-1 det + qnt + m)
@@ -10375,6 +10387,22 @@ SELECT:Uefa-styret ("styre") IF
 
 "<støtte>" REMOVE:skal-støtte-arbeidet n IF
         (1 ("<arbeidet>"))
+        ;
+
+"<svenske>"i SELECT:svensk-bil adj IF
+        (1 n)
+        ;
+
+SELECT:svenskene ("svenske" n) IF
+        (0 pl)
+        ;
+
+SELECT:finnene ("finne" n) IF
+        (0 pl)
+        ;
+
+SELECT:irene ("ire" n) IF
+        (0 pl)
         ;
 
 "<arbeidet>"i SELECT:i-arbeidet n IF
