@@ -12187,6 +12187,16 @@ SELECT:et-av-landets-aller-mest-populære-reisemål pl IF
         ;
 # dei fattige i landet bør
 
+"<trives>"i SELECT:trives-pres pres IF
+        (*-2 vblex + pres)
+        (-1 ("og"))
+        ;
+# Det har bestilt en bil å reise i og trives med dette valget.
+
+"<dyttet>"i SELECT:det-var-dyttet n IF
+        (-1 ("være") + pret)
+        ;
+# Det var dyttet fra de andre deltakerne som avgjorde valget.
 
 REMOVE:mest-respekterte pret IF
         (-1 ("mest") OR ("minst"))
