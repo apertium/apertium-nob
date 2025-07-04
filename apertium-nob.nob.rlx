@@ -8050,6 +8050,106 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (NOT *-2 lav-ord OR ("rein"))
 ;
 
+
+
+"merke"i SELECT:merke-seg vblex IF
+        (1 refl-prn)
+        ;
+"merke"i SELECT:merker-de-seg vblex IF
+        (1 prn + pers)
+        (2 refl-prn)
+        ;
+"<merker>"i SELECT:merke-seg vblex IF
+        (1 refl-prn)
+        ;
+"<merker>"i SELECT:merker-de-seg vblex IF
+        (1 prn + pers)
+        (2 refl-prn)
+        ;
+"<merket>"i SELECT:merke-seg vblex IF
+        (1 refl-prn)
+        ;
+"<merket>"i SELECT:merker-de-seg vblex IF
+        (1 prn + pers)
+        (2 refl-prn)
+        ;
+"<merke>"i SELECT:merke-dem-med inf IF
+        (2 %med%)
+        ;
+
+"<merket>"i REMOVE:av-merket-Prima vblex IF
+        (-1 %av%)
+        (1 np)
+        ;
+"<merket>"i REMOVE:merket-feil n IF
+        (1 n)
+        ;
+        # merket feil
+"<merket>"i SELECT:være-merket adj + pp IF
+        (-1* %være/bli% BARRIER setn-gr)
+        ;
+"<merket>"i SELECT:ha-merket vblex + pp IF
+        (-1* %ha% BARRIER setn-gr)
+        ;
+"<sti>"i SELECT:merket-sti n + m IF
+        (-1 ("merke" vblex))
+        ;
+"<merket>" SELECT:vi-merket vblex + pret IF
+        (-1 prn + pers)
+        ;
+"<merket>" SELECT:da-merket-vi vblex + pret IF
+        (1 prn + pers)
+        ;
+"<merket>" SELECT:noen-merket-det vblex + pret IF
+        (1 ("<det>"i))
+        ;
+"<merket>"i REMOVE:og-merket-seg n IF
+        (-1 %og%)
+        (NEGATE 1 fv)
+        ;
+"<merket>"i SELECT:merket-er n IF
+        (1 fv OR np)
+        ;
+        # det langt over det merket har hatt tidlegare
+"<merket>"i SELECT:merket-sti adj + pp IF
+        (1 ("sti" n))
+        (NEGATE -1* %ha% BARRIER setn-gr)
+        ;
+
+
+"<merker>"i SELECT:som-merker pres IF
+        (-1 %som%)
+        ;
+"<merker>"i SELECT:vi-merker pres IF
+        (-1 prn + pers + nom)
+        ;
+"<merker>"i SELECT:tre-merker n IF
+        (-1 det + qnt)
+        (NEGATE 1 %at% OR n)
+        ;
+        # Mange merkar at
+        # Mange merkar konsekvensane
+"<merker>"i SELECT:merker-det pres IF
+        (1 ("<det>"i) OR %at% OR refl-prn)
+        ;
+"<merker>"i SELECT:merker-også-at pres IF
+        (2 %at% OR refl-prn)
+        ;
+"<merket>"i SELECT:merket-det vblex IF
+        (1 ("<det>"i) OR %at% OR refl-prn)
+        ;
+"<merket>"i SELECT:merket-også-at vblex IF
+        (2 %at% OR refl-prn)
+        ;
+        
+"<merkes>"i SELECT:det-merkes vblex + pasv + inf IF
+        (-1 ("<det>"i))
+        (-2 modalverb)
+        ;
+"<merkes>"i SELECT:det-merkes vblex + pasv + pres IF
+        (-1 ("<det>"i))
+        ;
+
 "<drevet>" SELECT:drevet-halsende-hund pp IF
         (1 ("<halsende>"))
         (2 ("hund") + ind)
@@ -9128,6 +9228,10 @@ SELECT:regne-70-millimeter regne_vann IF
 		;
 SELECT:regnet-i-dagens-pengeverdi regne_ut IF
         (1* ("pengeverdi") OR ("verdi") OR ("barnetrygd"))
+        ;
+
+"<regnet>"i SELECT:merke-regnet regn_vann IF
+        (-1 ("merke" vblex))
         ;
 
 "<regnet>" SELECT:regnet-forskerne regne_ut IF
@@ -12736,6 +12840,9 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<smug>"i REMOVE:i-smug nt IF
         (-1 ("i"))
         ;
+"<savnet>"i SELECT:merke-savnet n IF
+        (-1 ("merke" vblex) OR ("kjenne" vblex) OR ("føle" vblex))
+        ;
 #«Han ble meldt savnet
 "<savnet>"i REMOVE:meldt-savnet n IF
         (-1 vblex)
@@ -12938,6 +13045,9 @@ LIST begrepet-verb = "benytte" "bruke" "oppfinne" "finne# opp" ;
 "<trykket>" SELECT:kan-trykket-bli-stort n IF
         (-1 modalverb)
         (1 ("bli"))
+        ;
+"<trykket>"i SELECT:merke-trykket n IF
+        (-1 ("merke" vblex) OR ("kjenne" vblex) OR ("føle" vblex))
         ;
 "<føre>" SELECT:føre-til vblex IF
         (*-1 modalverb)
