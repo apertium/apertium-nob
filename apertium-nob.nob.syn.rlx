@@ -5182,12 +5182,22 @@ REMOVE:antall-på-100 @←p-utfyll IF
 
 SELECT @s-pred IF
 	(-4 cm)
-	(-3 vblex)
+	(-3 %være/bli%-fin)
 	(-2 @subj)
 	(-1 adj)
-	(0C adj)
+	(0C adj + pst)
 	;
 # ..., er vi helt avhengig av denne prosedyren. -> avhengige
+
+SELECT @s-pred IF
+	(-4 setn-gr)
+	(-3 @subj)
+	(-2 %være/bli%-fin)
+	(-1 adv)
+	(0C adj + pst)
+	(1 pr)
+	;
+# Vi er også avhengig av at folk stoler på produktet. -> avhengige
 
 #:1254
 "<om>" SELECT:1254 (@←p-utfyll) IF
