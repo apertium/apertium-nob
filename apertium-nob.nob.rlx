@@ -9400,6 +9400,12 @@ REMOVE:unlikely ("<skjente>"i "skjene");
 #  "Vannet har rent (perf-part) ned i avløpet
 # Gutten har rent (perf-part) på ski"))
 
+"<rent>"i SELECT:rent-og-ryddig adj IF
+        (1 %og%)
+        ;
+        # reint og kaldt vatn
+        # eit produkt dei trudde var reint og merkt som EU-godkjent
+
 "<rente>" SELECT:uendret-rente n IF
         (NOT 1 %ned% OR %ut% OR ("<begeret>") OR %det% OR ("<mer>"))
         ;
