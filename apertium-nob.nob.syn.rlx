@@ -916,8 +916,6 @@ MAP:1665 (@subj @xubj @obj @s-pred @o-pred @adv @←p-utfyll @app @laus-np)   (a
 
 
 
-
-
 #:1663
 MAP:1663 (@s-pred)   (adj pprs) IF
 	(*-1 verb BARRIER m#ikke-adv)
@@ -5182,6 +5180,14 @@ REMOVE:antall-på-100 @←p-utfyll IF
 	(-1 %eller%)
 	;
 
+SELECT @s-pred IF
+	(-4 cm)
+	(-3 vblex)
+	(-2 @subj)
+	(-1 adj)
+	(0C adj)
+	;
+# ..., er vi helt avhengig av denne prosedyren. -> avhengige
 
 #:1254
 "<om>" SELECT:1254 (@←p-utfyll) IF
