@@ -8150,6 +8150,19 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-1 ("<det>"i))
         ;
 
+"<brennmerker>"i SELECT:brennmerker-på n IF
+        (1 %på%)
+        ;
+"<brennemerker>"i SELECT:brennemerker-på n IF
+        (1 %på%)
+        ;
+"<brennmerker>"i SELECT:er-brennmerker n IF
+        (-1 %være%)
+        ;
+"<brennemerker>"i SELECT:er-brennemerker n IF
+        (-1 %være%)
+        ;
+
 "<drevet>" SELECT:drevet-halsende-hund pp IF
         (1 ("<halsende>"))
         (2 ("hund") + ind)
