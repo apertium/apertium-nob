@@ -8163,6 +8163,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (-1 %være%)
         ;
 
+"<anmerket>"i REMOVE:anmerket-gjeld pret IF
+        (1 n)
+       ;
+       # anmerket gjeld
+
 "<drevet>" SELECT:drevet-halsende-hund pp IF
         (1 ("<halsende>"))
         (2 ("hund") + ind)
