@@ -17763,6 +17763,12 @@ SELECT:skrev vblex IF
         (NEGATE 1 %seg%)
         ;
 
+"<spørsmål>"i SELECT:spørsmål-av pl IF
+                (1 %av%)
+                (NEGATE -1 ("<et>i") OR ("<ett>"i))
+                (NEGATE -2 ("<et>i") OR ("<ett>"i))
+		;
+
 LIST skipsfartøy = ".*båt"ri ".*tråler"ri ".*skip"ri "supertanker" "fartøy" ;
 "<oppbrakt>"i SELECT:oppbrakt-over ("oppbringe") IF
 	(0* skipsfartøy)
