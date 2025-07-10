@@ -15404,6 +15404,16 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
         (-1 ("disse"))
         ;
 
+"<bor>"i REMOVE:det-bor n IF
+        (-1 ("<det>"i))
+        ;
+        # i snitt bur det 2,13 personar i eit hushald
+
+"<bor>" REMOVE:bor-det n IF
+        (1 ("<det>"i))
+        ;
+        # i kommunane rundt bur det mange; ikkje imp: "Bor det ..."
+
 "<bordet>" REMOVE:går-til-bordet vblex IF
         (-2 %gå%)
         (-1 %til%)
