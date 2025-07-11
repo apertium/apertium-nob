@@ -263,7 +263,7 @@ LIST %den/det/de% = "<det>"i  "<den>"i  "<de>"i ;
 LIST %der% = "der"  ;
 LIST %det% = "<det>"i;
 LIST %det%-pron = ("den" prn nt) ;
-LIST %det/dette% = "<det>"i "<dette>"i ;
+LIST %det/dette% = "<det>"i "<dét>"i "<dette>"i ;
 LIST %det/dette%-pron = ("den" prn nt) ("denne"  prn nt) ;
 LIST %dømme% = "dømme"  ;
 LIST %ei% = ("en"  f) ;
@@ -27473,6 +27473,17 @@ SELECT:singel-album ("singel" m) IF
 		;
                 # "på sporet av ein narkobande"
                 # "Godstog spora av på Bergensbanen"
+
+"<virket>" SELECT:virket-rart vblex IF
+        (1 adj)
+        ; 
+        # det verka tiltalande
+
+"<virket>" SELECT:det-virket vblex IF
+        (-1 %det%)
+        (1 %som% OR %ikke% OR %med% OR %mot%)
+        ; 
+        # det verka som om
 
 #:2545
  SELECT:2545 ent-nøyt-subst IF
