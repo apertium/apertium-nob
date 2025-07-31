@@ -44152,6 +44152,7 @@ REMOVE:default ("/") + cm;
 REMOVE:default ("manne") + imp;
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
+REMOVE:default ("dytt") + n IF (0 ("dytte"));
 
 
 # Corpus-based default rules:
