@@ -3737,7 +3737,7 @@ REMOVE:unlikely ("sale") + vblex + pret IF
         ;
 
 # Prefer nouns in compounds, unless in exception-list:
-LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" "stor" ;
+LIST allow-verb/adjcmp = "klippe" "stemple" "ramme" "lytte" "stor" "dytte" ;
 REMOVE:prefer-ncmp adj IF
         (0 n)
         (0/1 cmp)
