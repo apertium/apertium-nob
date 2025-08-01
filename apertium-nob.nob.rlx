@@ -4247,14 +4247,6 @@ REMOVE:unlikely ("spill") + adv ;
         ;
         # festpillene
 
-"<beste>"i   SELECT:verdens-beste ("god") + adj + sup + def IF
-        (-1 ("<verdens>"i))
-        ;
-
-"<beste>"i   SELECT:verdens-suverent-beste ("god") + adj + sup + def IF
-        (-1 ("<suverent>"i))
-        (-2 ("<verdens>"i))
-        ;
 
 SELECT:verdens-hav pl + ind IF
         (0C n)
@@ -4736,13 +4728,18 @@ WITH:anklager ("<anklager>"i) {
 # ikke er \"et best\""
 # Merk: Best<np> blir aldri valt...
 
-#:nn4956
- "<beste>"   SELECT:det-aller-beste   (adj sup) IF
-	(-1C be-det OR %aller%)
+
+"<beste>" SELECT:n n IF
+        (-1 pos OR det + nt)
+        (NEGATE 1 n)
+        ;
+"<beste>" SELECT:not-n adj;
+
+ "<beste>"   SELECT:det-aller-beste (adj sup) IF
+	(*-1C be-det OR %aller% OR gen CBARRIER (*) - adj-nøyt-ub)
 ;
 
-#:nn4957
- "<beste>"   SELECT:nn4957   (adj sup) IF
+"<beste>"   SELECT:nn4957   (adj sup) IF
 	(1 subst)
 ;
 
