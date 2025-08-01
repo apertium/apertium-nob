@@ -13582,6 +13582,16 @@ REMOVE:to-ansatte vblex IF
         ;
 # "Jeg så en av de fremste utenrikspolitiske ekspertene si at..."
 
+"<Roser>" REMOVE:Roser-plakaten n IF
+        (*1C n BARRIER vblex OR pp)
+        ;
+# «Roser plakaten.»
+
+"<Bar>" REMOVE:Bar-babyer n IF
+        (*1C n BARRIER vblex OR pp)
+        ;
+# «Bar ut babyer.»
+
 "<Rundtom>" REMOVE:Rundtom-er prep IF
         (NEGATE 1 prep)
         ;
