@@ -4729,8 +4729,8 @@ WITH:anklager ("<anklager>"i) {
 # Merk: Best<np> blir aldri valt...
 
 
-"<beste>" SELECT:n n IF
-        (-1 pos OR det + nt)
+"<beste>" SELECT:sitt-beste n IF
+        (-1 pos)
         (NEGATE 1 n)
         ;
 "<beste>" SELECT:not-n adj;
