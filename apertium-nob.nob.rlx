@@ -5437,6 +5437,14 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 "<drept>" SELECT:default adj + m IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
+
+"<drept>" SELECT:92-drept-i adj + pl IF
+        (-2 >>>)
+        (-1 fl-det + kvant)
+        (0 adj)
+        (1 ("i"))
+        ;
+
 "<dødd>" SELECT:ha-dødd vblex + pp IF
 		(-1C* %ha% BARRIER setn-gr)
 		(NEGATE -1* %være/bli% BARRIER setn-gr)
