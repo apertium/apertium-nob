@@ -14250,6 +14250,13 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (-1 ("den"))
         ;
 # "lar det skinne"
+
+"<skisser>" REMOVE:seks-skisser vblex IF
+        (-1 det + qnt + pl OR cnjcoo OR cm)
+        (NEGATE -1C clb)
+        (0* fv)
+        ;
+
 "<landet>"i REMOVE:Ukraina-er-langet vblex IF
         (-2 np)
         (-1 ("være"))
@@ -44166,6 +44173,7 @@ REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
 SELECT:default ("Bjella") + np ;
 REMOVE:default ("side¹") ;
+REMOVE:default ("skryt") + pl ;
 SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
 REMOVE:default ("leite") OR ("lete") IF (0 ("lett" "<lett>"i)) ; # «Lett mål.», keep input-form
