@@ -12724,6 +12724,7 @@ REMOVE:unlikely ("bande") + adj ; # bande ei tønne
 REMOVE:unlikely ("<helt>"i "hele") ; # Do people ever say "bruddet har helt" / "legen har helt bruddet" / "et helt brudd"?
 REMOVE:unlikely ("verk") + n + m + pl ; # et verk: verker, verkene
 REMOVE:unlikely ("svarer") + n + m + sg IF (NEGATE -1 cmp); # presens, sms: telefonsvarar
+REMOVE:unlikely ("steam") IF (0 ("team")) (0/1 cmp); # «målvakts+team», avoid «målvakt+stim»
 REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
 REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
 REMOVE:unlikely ("<miner>"i) + vblex; # bomber, miner og granater
