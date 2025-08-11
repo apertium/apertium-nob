@@ -4940,6 +4940,14 @@ SELECT:den-som-leder vblex + pres IF
         ;
 # «Lysbakken peker på Solberg-regjeringens skattekutt når han omtaler den som de ”rikes regjering”»
 
+"<den>" SELECT:den-somdrop ("den¹") + prn + acc IF
+        (1 adj-ub-ent LINK 1C n + sg + ind LINK 1 fv + trans - imp)
+        # «den» utan «som», med transitivt verb etter relativsubjektet
+        (NEGATE 1 adj + def) # *ikkje* ved «den amerikanske etterretning»
+        ;
+# «Taktikken skal være lik den amerikansk etterretning mener ble brukt .»
+
+
 "<drepte>"i SELECT:den-drepte-og adj IF
         (-1 ("den¹"))
         (1 %og%)
