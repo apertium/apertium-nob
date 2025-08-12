@@ -19960,6 +19960,11 @@ SELECT:den-eneste adj-def-sg-sp IF
 #  "disamb adjektiv etter subst gen
 # verens totale fangst"
 
+SELECT:første-selvkjørende-teleskopiske adj-def-sg-sp IF
+        (-1C adj-def-sg-sp)
+        (0C adj)
+        (1C adj-def-sg-sp)
+        ;
 
 
 #:3075
