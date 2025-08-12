@@ -7339,6 +7339,12 @@ LIST hes-ord = "synge" "lyd" "stemme" "låte" "forkjølelse" "forkjøle" "hviske
 "<hilsen>" SELECT:hilsen-meg ij IF (1 storbokstav) ;
 
 
+"<hjelper>"i SELECT:hjelper-ikke-hjelpar vblex IF
+        (-1 setn-gr)
+        ;
+# "Hjelper oss med å tilby forbedret funksjonalitet og tilpassing"
+
+
 #:3530
   "<hos>"   SELECT:3530   (pr) IF
 	(0 prep)
