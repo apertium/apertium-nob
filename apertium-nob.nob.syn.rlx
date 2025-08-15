@@ -5360,6 +5360,13 @@ SELECT @s-pred IF
         (-1 ("vinne"))
         ;
 
+REMOVE:44-år-gammel-mann @subj IF
+	(0 qnt)
+	(1 ("år gammel"))
+	(2 n + @subj)
+	;
+# «Mennene er siktet for drap eller medvirkning til drap etter at en 44 år gammel mann ble funnet drept mandag.»
+
 #SECTION
 
 ##################################################
