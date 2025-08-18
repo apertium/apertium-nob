@@ -5135,6 +5135,14 @@ SELECT:den+prn ("den¹") IF
         ;
 # «Hun (Kristine) er en ener, og i dag var jeg en god nummer to. Jeg tar den, sa hun til NRK.»
 
+"<den>" SELECT:gir-den-spesiell-oppmerksomhet prn IF
+        (-2 clb)
+        (-1C fv + trans)
+        (1C adj + ind)
+        (2C n + ind)
+        ;
+# «Selv om strategien handler om psykisk helse gjennom hele livet, gir den spesiell oppmerksomhet til barn og unge.»
+
 "<den>" REMOVE:den-fint-i det IF
         (-1C vblex)
         (1C adv OR adj + nt OR ("<bare>"))
