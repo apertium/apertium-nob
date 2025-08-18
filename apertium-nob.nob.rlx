@@ -28995,6 +28995,9 @@ SELECT:Mannen-gir-adgang pres IF
 		(-1 ("allerede") OR ("<alt>") OR ("fortsatt"))
 		(1 pr)
 		;
+"<styrker>" SELECT:det-styrker vblex IF
+		(-1 ("<det>"i))
+		;
 
 "<rykket>" SELECT:har-de-siste-dagene-rykket pp IF
 		(-4 ("ha"))
