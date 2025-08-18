@@ -44009,6 +44009,11 @@ SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt
 		;
 # «Kjennes ut som jeg lever i en annen verden enn dem hjemme.»
 
+"<verden>" SELECT:en-stadig-mer-ustabil-verden n + ind IF
+		(*-1 %en% BARRIER def OR (*) - adj)
+		;
+# «Lavrov mener USA har skylden for en stadig mer ustabil verden.»
+
 "<anklager>" SELECT:en-rekke-anklager n IF
 		(-2 ("en"))
 		(-1 ("rekke"))
