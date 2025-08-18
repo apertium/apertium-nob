@@ -19271,7 +19271,7 @@ SELECT:liter-var-avansert-biodrivstoff adj + nt + ind IF
         ;
 # «Det ble omsatt 496 millioner liter biodrivstoff i 2018, hvorav 196 millioner liter var avansert biodrivstoff.»
 
-SELECT:at-mange-opplevde fv + trans IF
+SELECT:at-mange-opplevde fv + trans - imp IF
         (*-1 subst/pron/%all%/%mang%/%mange% LINK -1 cnjsub - pr)
         (0C vblex OR adj)
         (*1 n BARRIER pr OR clb)
