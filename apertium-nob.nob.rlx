@@ -4971,11 +4971,19 @@ SELECT:den-som-leder vblex + pres IF
 "<den>" SELECT:dreide-den-plutselig-kurs ("den¹") + prn + acc IF
         (*-2 cnjsub OR pr OR adv)
         (-1C fv - imp)
-        (1 adj-ub-ent)
+        (1 adv)
         (NEGATE 1 adj + def) # *ikkje* ved «den amerikanske etterretning»
-        (2C n + sg + ind)
+        (2C n + ind)
         ;
 # «– Idet den passerer ei grunne som vi kaller Midtfjordsstolpen, dreide den plutselig kurs og kom mot land.»
+
+
+"<den>" SELECT:gitt-den-ny-vri ("den¹") + prn + acc IF
+        (1 ("ny"))
+        (2 n + sg + ind)
+        ;
+# «Har gravd opp «Pet Sematary» – og gitt den ny vri.»
+
 
 "<drepte>"i SELECT:den-drepte-og adj IF
         (-1 ("den¹"))
@@ -17627,6 +17635,10 @@ REMOVE:landets-styrkjer vblex IF
 ;
 #  "alle Romsdalskommunene pluss Eide og Gjemnes"
 
+"<plutselig>" REMOVE:plutselig adj IF
+        (NEGATE 1 n + ind OR adj + ind)
+        (NEGATE 1 cm - clb LINK 1 n + ind OR adj + ind)
+        ;
 
 #:3351
   "<post>"   REMOVE:3351   (pr) IF
@@ -19264,6 +19276,12 @@ SELECT:liter-var-avansert-biodrivstoff adj + nt + ind IF
         ;
 # «Det ble omsatt 496 millioner liter biodrivstoff i 2018, hvorav 196 millioner liter var avansert biodrivstoff.»
 
+SELECT:at-mange-opplevde fv + trans - imp IF
+        (*-1 subst/pron/%all%/%mang%/%mange% LINK -1 cnjsub - pr)
+        (0C vblex OR adj)
+        (*1 n BARRIER pr OR clb)
+        ;
+# «KrFs helsepolitiske talskvinne Laila Dåvøy slo fast at mange opplevde regjeringens utspill fra i sommer som en garanti.»
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
@@ -31686,6 +31704,13 @@ REMOVE:2324 pprs IF
 ;
 # group: 51
 
+
+REMOVE:den-plutselig-kurs adj IF
+        (-1 %den%)
+        (0 adv)
+        (1C n + ind)
+        ;
+# «– Idet den passerer ei grunne som vi kaller Midtfjordsstolpen, dreide den plutselig kurs og kom mot land.»
 
 
 #:2322
