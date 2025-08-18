@@ -19259,6 +19259,12 @@ SELECT:liter-var-avansert-biodrivstoff adj + nt + ind IF
         ;
 # «Det ble omsatt 496 millioner liter biodrivstoff i 2018, hvorav 196 millioner liter var avansert biodrivstoff.»
 
+SELECT:at-mange-opplevde fv + trans IF
+        (*-1 subst/pron/%all%/%mang%/%mange% LINK -1 cnjsub - pr)
+        (0C vblex OR adj)
+        (*1 n BARRIER pr OR clb)
+        ;
+# «KrFs helsepolitiske talskvinne Laila Dåvøy slo fast at mange opplevde regjeringens utspill fra i sommer som en garanti.»
 
 SELECT:han-har-vært-sykmeldt pp + mf IF
 	(-3 storbokstav OR prop-cog OR nominativ OR subst-mask + sg)
