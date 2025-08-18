@@ -24231,6 +24231,12 @@ SELECT:synger-og-spiller (clb cnjcoo) IF
 ;
 #  "Dra på informasjonsmøtene, les i forelesningskatalogen!"
 
+SELECT:kraftig-cm-hele (clb) IF
+        (*-2C fv BARRIER clb)
+        (-1C adj + ind)
+        (1C adj + def)
+        (*2C fv BARRIER clb)
+        ;
 
 
 #:2790
@@ -32929,16 +32935,17 @@ REMOVE:mer-nedbør-og-skyer clb + cnjcoo IF
 
 
 #:2169
- REMOVE:2169 (clb) IF
+REMOVE:våt-cm-bar-veg (clb) IF
 	(0 komma)
-	(1 adj-mask/fem)
-	(-1 adj-mask/fem)
-	(NOT -1 pres/pret)
+	(NEGATE -1 pres/pret)
+        (-1 adj-mask/fem + $$DEFNES)
+        (1 adj-mask/fem + $$DEFNES)
 	(2 subst-mask/fem)
-	(NOT 2 subst-prop)
-	(NOT 2 farlige-mask-subst)
+	(NEGATE 2 subst-prop)
+	(NEGATE 2 farlige-mask-subst)
 ;
 #  "på våt, (ikke CLB) bar veg"))
+# Ikkje: «kraftig, hele bygningen» (ulik defnes)
 
 
 
