@@ -4971,9 +4971,9 @@ SELECT:den-som-leder vblex + pres IF
 "<den>" SELECT:dreide-den-plutselig-kurs ("den¹") + prn + acc IF
         (*-2 cnjsub OR pr OR adv)
         (-1C fv - imp)
-        (1 adj-ub-ent)
+        (1 adv)
         (NEGATE 1 adj + def) # *ikkje* ved «den amerikanske etterretning»
-        (2C n + sg + ind)
+        (2C n + ind)
         ;
 # «– Idet den passerer ei grunne som vi kaller Midtfjordsstolpen, dreide den plutselig kurs og kom mot land.»
 
@@ -17622,6 +17622,10 @@ REMOVE:landets-styrkjer vblex IF
 ;
 #  "alle Romsdalskommunene pluss Eide og Gjemnes"
 
+"<plutselig>" REMOVE:plutselig adj IF
+        (NEGATE 1 n + ind OR adj + ind)
+        (NEGATE 1 cm - clb LINK 1 n + ind OR adj + ind)
+        ;
 
 #:3351
   "<post>"   REMOVE:3351   (pr) IF
@@ -31687,6 +31691,13 @@ REMOVE:2324 pprs IF
 ;
 # group: 51
 
+
+REMOVE:den-plutselig-kurs adj IF
+        (-1 %den%)
+        (0 adv)
+        (1C n + ind)
+        ;
+# «– Idet den passerer ei grunne som vi kaller Midtfjordsstolpen, dreide den plutselig kurs og kom mot land.»
 
 
 #:2322
