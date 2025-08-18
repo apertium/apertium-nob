@@ -3480,6 +3480,11 @@ SELECT:unlikely ("<super>"i) + adj IF
 "<Tina>" SELECT:unlikely np;
 "<Gros>" SELECT:unlikely np;
 
+REMOVE:unlikely ("<ny>"i) + n IF
+        (NEGATE -1 %i%)
+        (NEGATE 0* ("måne"))
+        ;
+
 REMOVE:unlikely ("sykepleie") + pl ; # sykepleier
 REMOVE:unlikely ("hu") + gen ; # hus
 REMOVE:unlikely ("skjele") IF (0 ("skjelle")) ; # avoid «skjela ut»
@@ -13882,6 +13887,13 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 ("siden"))
         ;
 # "Pakistan har helt siden slutten av april..."
+
+"<helt>"i SELECT:fjerne-helt adv IF
+        (-1 ("fjerne"))
+        (NEGATE -1 n + nt + ind) # «Fjerner helt årskull»
+        (NEGATE -1 adj)
+        ;
+# «Anundsen vil fjerne helt muligheten for at personer kan sone varetektstid ved såkalt hjemmesoning.»
 
 "<håpet>"i SELECT:håpet-lever n IF
         (1 ("<lever>"))
@@ -31694,6 +31706,12 @@ REMOVE:2324 pprs IF
 ;
 # group: 53
 
+REMOVE:gule-kort-kvarteret (adj ind) IF
+        (-1 adj)
+        (0 n + ind)
+        (1C n + def)
+        ;
+# «Frenkie de Jong fikk sitt andre gule kort kvarteret før slutt.»
 
 
 
