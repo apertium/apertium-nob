@@ -3728,6 +3728,20 @@ REMOVE:unlikely ("sale") + vblex + pret IF
         (-1 ("fellesskap") + gen)
         ;
 
+"<midler>"i SELECT:alle-nødvendige-midler nt IF
+        (-2 ("<alle>"i))
+        (-1 adj)
+        ;
+        # alle nødvendige middel
+        
+"<midler>"i SELECT:alle-politiske-og-diplomatiske-midler nt IF
+        (-4 ("<alle>"i))
+        (-3 adj)
+        (-2 cnjcoo)
+        (-1 adj)
+        ;
+        # alle politiske og diplomatiske middel
+
 "<føler>"i SELECT:føler-seg vblex IF
         (1 prn + acc)
         ;
@@ -12748,6 +12762,7 @@ REMOVE:unlikely ("kute") + vblex + pret; # å redusere og kutte
 REMOVE:unlikely ("kute") + adj + pp; # kutte
 REMOVE:unlikely ("<folk>"i) + imp; # ikkje folke (seg)
 REMOVE:unlikely ("<følgene>"i) + nt; # følgjene av, nt i fleirtal svært sjeldan
+REMOVE:unlikely ("felt"i) + m + pl; # ute på feltene, ulike felter
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -13291,7 +13306,7 @@ REMOVE:kapret-istedenfor adj IF
         (1 %av%)
         ;
 "<ringer>"i SELECT:ringer-på ("ringe") + vblex IF
-        (1 %på% OR %om% OR %for%)
+        (1 %på% OR %om% OR %for% OR %fra%)
         ;
 "<ringer>"i SELECT:du-ringer ("ringe") + vblex IF
         (-1 prn)
@@ -15727,7 +15742,7 @@ REMOVE:data-not-datum ("datum");
         (NOT -1C det + sg)
 	(*-1O periode-beg/konj-clb LINK *1 hj-verb)
 ;
-#  "den er den største som er felt (ikke subst)"))
+#  "den er den største som er felt (ikke subst)"
 
 
 # Only really nøyt if "et fiske" or "fisket"
