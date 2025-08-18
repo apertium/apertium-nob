@@ -14096,7 +14096,7 @@ REMOVE:Isnes-ansatt vblex IF
 # "Landskapet er veldig mykt"
 
 "<bestiller>"i REMOVE:bestilleren n IF
-        (1 n)
+        (*1 n BARRIER (*) - adj)
         ;
 # "Folk bestiller turer"
 
