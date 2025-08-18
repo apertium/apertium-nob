@@ -4977,6 +4977,14 @@ SELECT:den-som-leder vblex + pres IF
         ;
 # «– Idet den passerer ei grunne som vi kaller Midtfjordsstolpen, dreide den plutselig kurs og kom mot land.»
 
+
+"<den>" SELECT:gitt-den-ny-vri ("den¹") + prn + acc IF
+        (1 ("ny"))
+        (2 n + sg + ind)
+        ;
+# «Har gravd opp «Pet Sematary» – og gitt den ny vri.»
+
+
 "<drepte>"i SELECT:den-drepte-og adj IF
         (-1 ("den¹"))
         (1 %og%)
