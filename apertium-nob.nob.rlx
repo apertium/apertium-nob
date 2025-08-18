@@ -10093,6 +10093,11 @@ SELECT:NNs-forlovede n IF
         (0* ("Høyesterett") OR ("lagmannsrett") OR ("rett") OR ("dom") BARRIER setn-gr)
         ;
 
+"<anker>"i SELECT:for-anker nt IF
+        (-1C ("<for>"))
+        ;
+        # Tankskipet Eagle S, registrert på Cookøyene, for anker nær Kilpilahti-havnen i Porvoo
+
 #:3284
   "<sjøl>"   SELECT:3284   (det) IF
 	(1C fv)
