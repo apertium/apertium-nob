@@ -38369,7 +38369,7 @@ SECTION remove-words-heur ;
 
 
 "<bygget>"i REMOVE vblex IF
-        (-1 prep)
+        (-1 prep OR ("reise") + vblex)
         ;
 
 
