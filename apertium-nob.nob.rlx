@@ -3375,7 +3375,7 @@ REMOVE:unlikely ("nyre") + n + nt;
 REMOVE:unlikely ("trofé") + n + m;
 REMOVE:unlikely ("gniste") + vblex + pres; 
 REMOVE:unlikely ("gnist") + n + m; # jf. ein gneiste
-REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
+REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke 
 
 # END Early removal of unlikely / rare forms
 
@@ -12843,6 +12843,10 @@ REMOVE:unlikely-imp imp IF
 
 SELECT ("<Rana>") + np IF
         (1 ("kommune"))
+        ;
+
+"<lira>"i REMOVE:30-lira pp IF
+        (-1 adj OR talord OR det)
         ;
 
 
