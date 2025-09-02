@@ -17221,7 +17221,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
         ;
 
 #:3415
-  "<navnet>"   REMOVE:3415   (vblex) IF
+"<navnet>"   REMOVE:3415   vblex OR adj IF
 	(*1 setn-gr LINK NOT *1 klær)
 	(**-1CO setn-gr LINK 1 prep/adv)
 ;
@@ -17230,7 +17230,7 @@ REMOVE:tilbakekaller-leker ("lek") IF
 
 
 #:3416
-  "<navnet>"   REMOVE:3416   (vblex) IF
+"<navnet>"   REMOVE:3416   vblex OR adj IF
 	(*1 ikke-adv LINK NOT 0 klær)
 	(**-1CO setn-gr LINK NOT 1 prep/adv)
 ;
@@ -38989,7 +38989,7 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
 ;
 
 #:3414
-  "<navnet>"   REMOVE:3414   (adj) IF
+"<navnet>"   REMOVE:3414 vblex OR adj IF
 	(0 subst)
 ;
 #  "kh jan 2004"
