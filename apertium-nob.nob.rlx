@@ -7357,6 +7357,12 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 "<helte>" SELECT ("helle");
 # Unngå "hele" (å «heile vatnet»)
 
+SELECT:helle-mot-å ("helle" vblex) IF
+	(1 %mot%)
+        (2 %å% OR %at%)
+;
+#  "flertallet heller mot å støtte innstillingen"
+
 
 "<helst>" SELECT:hvilken-som-helst adv IF
         (-2 %hvilken% OR %noen/noe%)
