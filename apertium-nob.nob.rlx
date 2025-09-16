@@ -44737,7 +44737,8 @@ REMOVE:default ("dytt") + n IF (0 ("dytte"));
 "<skøyter>" REMOVE:default-skøytar ("skøyte" vblex pres) ;	# keep skøyte<n><f><pl><ind>→skøyter skøyte<n><m><pl><ind>→skøyter
 "<slaget>" REMOVE:default-slaga ("slage" pp) ;	# keep slag<n><nt><sg><def>→slaget
 "<sluppet>" REMOVE:default-sloppen ("sleppe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
-"<sluppet>" REMOVE:default-sloppen ("slippe" adj pp mf sg ind) ;	# keep sleppe<adj><pp><nt><sg><ind>→sloppe slippe<vblex><pp>→sloppe slippe<adj><pp><nt><sg><ind>→sloppe sleppe<vblex><pp>→sloppe
+"<smell>" REMOVE:default-smell ("smell" n m pl ind) ;	# keep høye smell → høge smell
+"<snittet>" REMOVE:default-snitta ("snitte" vblex) ;	# keep snitt<n><nt><sg><def>→snittet
 "<snakket>" REMOVE:default-snakket ("snakk" n nt sg def) ;	# keep snakke<vblex><pp>→snakka snakke<vblex><pret>→snakka snakke<adj><pp><mf><sg><ind>→snakka
 "<snittet>" REMOVE:default-snitta ("snitte" vblex) ;	# keep snitt<n><nt><sg><def>→snittet
 "<solgt>" REMOVE:default-seld ("selge" adj pp mf sg ind) ;	# keep selge<vblex><pp>→selt selge<adj><pp><nt><sg><ind>→selt
