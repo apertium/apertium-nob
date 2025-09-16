@@ -9915,6 +9915,12 @@ SELECT:NNs-forlovede n IF
 ;
 #  "så å si"
 
+"<si>"i   SELECT:si-det   (inf) IF
+	(1C ("<det>"i))
+;
+# Alle får lov til å ha si meining og seia det dei vil.
+# Då må dei seia det uttrykkjeleg.
+
 "<si>"i   SELECT:si-nøyaktig-hvor   (inf) IF
 	(1C adj)
 	(2C ("hva") OR ("hvor") OR ("når") OR ("hvem") OR ("hvilken") OR ("hvorfor") OR ("hvordan"))
@@ -18192,6 +18198,27 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 "<teller>"i REMOVE n IF
         (NEGATE -1 %en%)
         ;
+
+"<tenker>"i SELECT:en-tenker ("tenker" n) IF
+        (-1 ("<en>"i))
+        (NEGATE 1 %på% OR %over% OR %gjennom% OR %at% OR %å% OR %seg% OR det + dem)
+        ;
+# Eg er ein tenkjar av natur
+# Lenin var ein tenkjar av verdshistorisk betydning
+# Når ein tenkjer på støyen
+# Det gjer at ein tenkjer dette stammar frå kriminell verksemd
+
+"<tenker>"i SELECT:en-stor-tenker ("tenker" n) IF
+        (-2 ("<en>"i))
+        (-1 adj)
+        (NEGATE 1 %på% OR %over% OR %gjennom% OR %at% OR %å% OR %seg% OR det + dem)
+        ;
+# Han er kjend som ein sjølvstendig tenkjar
+# Viss ein sjølvstendig tenkjer gjennom tinga
+
+"<tenker>"i REMOVE:unlikely-tenker ("tenker" n) IF
+        ;
+# Tenkjer ikkje målforskjell
 
 "<dritt>"i REMOVE adj + pp
         ;
@@ -38884,9 +38911,13 @@ SECTION remove-words-heur ;
         (1 ("stemning"))
         ;
 
-"<lover>" REMOVE:lover-og-regler pres IF
+"<lover>"i REMOVE:lover-og-regler pres IF
         (1 cnjcoo)
         (2 ("regel") + pl)
+        ;
+
+"<lover>"i REMOVE:overholde-lokale-lover pres IF
+        (-2 ("overholde") OR ("følge") OR ("etterleve") OR ("håndheve") OR ("vedta"))
         ;
 
 #5005
