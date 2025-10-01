@@ -12816,6 +12816,7 @@ REMOVE:unlikely ("<folk>"i) + imp; # ikkje folke (seg)
 REMOVE:unlikely ("<følgene>"i) + nt; # følgjene av, nt i fleirtal svært sjeldan
 REMOVE:unlikely ("felt"i) + m + pl; # ute på feltene, ulike felter
 "<tilbaketrukken>" REMOVE:unlikely pp;
+"<Boken>" REMOVE:unlikely np;
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
