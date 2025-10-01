@@ -44393,6 +44393,12 @@ REMOVE:default ("manne") + imp;
 REMOVE:default ("skreve") IF (0 ("skrive"));
 REMOVE:default ("dytt") + n IF (0 ("dytte"));
 
+# Keep "besette" or "besatt":
+REMOVE:default ("besette¹") ;
+REMOVE:default ("besette²") ;
+REMOVE:default ("besette³") ;
+REMOVE:default ("besette⁴") ;
+
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
