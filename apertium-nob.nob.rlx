@@ -17903,6 +17903,12 @@ REMOVE:landets-styrkjer vblex IF
         ;
 # Skrevet av: Kari Johnsen.
 
+"<Silden>" SELECT:silden-sikret-poeng np IF
+        (1 vblex)
+        (*2 ("poeng") OR ("mål") BARRIER setn-gr)
+        ;
+# Silden sikret tre poeng mot Bremanger.
+
 "<skrevet>" REMOVE:skrev (n nt sg def) IF
 	(0 adj/perf-part)
 	(*1 %under% OR %inn% BARRIER ikke-subst-adj-det-pron-adv)
