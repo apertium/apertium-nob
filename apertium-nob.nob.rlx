@@ -17905,7 +17905,7 @@ REMOVE:landets-styrkjer vblex IF
 
 "<Silden>" SELECT:silden-sikret-poeng np IF
         (1 vblex)
-        (*2 ("poeng") OR ("mål") BARRIER setn-gr)
+        (*2 ("mål") OR ("seier") OR fotball-ord OR kamp-ord BARRIER setn-gr)
         ;
 # Silden sikret tre poeng mot Bremanger.
 
