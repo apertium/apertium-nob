@@ -31624,6 +31624,12 @@ REMOVE:lovkravene ("krave") IF
         ;
 # Ingen treff som ser ut som kragar i ntb-korpus iallfall
 
+REMOVE:grussti nt IF
+        (0 ("sti"))
+        (0/1 cmp)
+        ;
+# Det er grussti langs veien.
+
 REMOVE:lovkravene ("galler") IF
         (0 ("galle"))
         (0/1 cmp)
