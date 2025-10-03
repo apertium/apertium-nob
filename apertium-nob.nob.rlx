@@ -29296,7 +29296,7 @@ SELECT:derfor-gjelder-det (vblex pres) IF
 # (forts) stillingsstruktur\" eller"
 #      :group 43
 
-
+"<stier>" REMOVE:default-stier vblex ;
 
 #:2473
  SELECT:2473 (vblex pres) IF
