@@ -13994,10 +13994,19 @@ REMOVE:terrorstemplet ("stempel") IF
         (1 %med%)
         ;
 # "bøtter med poteter"
-"<rykket>"i REMOVE:rykket-fra n IF
-        (1 pr)
+
+"<rykket>"i SELECT:det-avgjørende-rykket n IF
+        (-1 adj)
+        (-2 %det%)
         ;
-# "Nicolaidis/Carracher tok kommandoen og rykket ifra"
+# i staden var det tyskaren som stod for det avgjerande rykket like før oppløpet
+
+"<rykket>"i REMOVE:rykket-fra n IF
+        (*1 pr BARRIER setn-gr)
+        ;
+# "Nicolaidis/Carracher tok kommandoen og rykte ifrå"
+# På bakgrunn av dette rykte Bellona-leiar Frederic Hauge ut i VG
+
 "<slaget>"i SELECT:er-slaget n IF
         (-1 ("<er>"))
         (1 pr)
@@ -15061,6 +15070,15 @@ REMOVE ("pote") IF
         (0 ("pote") OR ("pota"))
         ;
 # 1 pota - oppskrift
+
+"<stillas>"i REMOVE:stillas gen 
+        ;
+        # ikkje "still"
+
+"<slippers>"i REMOVE:slippers gen 
+        ;
+        # ikkje "slippers butikk"
+        # det vart funne skadelege stoff i slippers butikken selde
 
 "<.*lovens?>"r SELECT:loven-paragraf np IF
         (1 ("<paragraf>"i))
