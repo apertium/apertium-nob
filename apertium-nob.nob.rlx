@@ -24628,6 +24628,14 @@ SELECT:det-de-spiser-er-bambus pres IF
         (*2C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
 
+SELECT:må-den-Xen-være det + &&ADJ_N_AGR IF
+        (-1C m-hj-verb)
+        (0C dem OR prn)
+        (1C n + sg + def + &&ADJ_N_AGR)
+        (2C inf)
+        ;
+# «Vi ønsker at folk skal føde mer og da må   den   tryggheten være der.»
+
 SELECT:nå-kalles-den-X prn + nominativ IF
         (-3 setn-gr - ("som"))
         (-2C adv - ("ikke"))         # V2, no subject to the left of verb
