@@ -38346,6 +38346,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         ;
 # «Kvaløysletta sykehjem var første stopp i Tromsø mandag ettermiddag.»
 
+"<taper>" SELECT ("tape") + n IF
+        (-1C det OR adj)
+        (-1C pl)
+        ;
 
 "<tapet>" SELECT ("tapet") IF
         (-1 (".*mønstret"r))    # ein av få trygge tapet-kontekstar
@@ -44422,6 +44426,8 @@ REMOVE:default ("besette¹") ;
 REMOVE:default ("besette²") ;
 REMOVE:default ("besette³") ;
 REMOVE:default ("besette⁴") ;
+
+REMOVE:default ("tape") IF (0 ("taper")) ;
 
 
 # Corpus-based default rules:
