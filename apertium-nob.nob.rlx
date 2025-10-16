@@ -16470,7 +16470,7 @@ REMOVE ("frø") IF
 # heller vann (nom) i flaska
 # (ser foreløpig bort fra (\"dagen heller.\")"))
 
-"<helst>" REMOVE:unlikely pp;   # bruker folk «helse» på bokmål?
+"<helst>"i REMOVE:unlikely pp;   # bruker folk «helse» på bokmål?
 
 
 #:3544
@@ -24627,6 +24627,14 @@ SELECT:det-de-spiser-er-bambus pres IF
         (1C pres)
         (*2C nominativ OR np OR n BARRIER ikke-adv-adj-det)
         ;
+
+SELECT:må-den-Xen-være det + &&ADJ_N_AGR IF
+        (-1C m-hj-verb)
+        (0C dem OR prn)
+        (1C n + sg + def + &&ADJ_N_AGR)
+        (2C inf)
+        ;
+# «Vi ønsker at folk skal føde mer og da må   den   tryggheten være der.»
 
 SELECT:nå-kalles-den-X prn + nominativ IF
         (-3 setn-gr - ("som"))
@@ -38346,6 +38354,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         ;
 # «Kvaløysletta sykehjem var første stopp i Tromsø mandag ettermiddag.»
 
+"<taper>" SELECT ("tape") + n IF
+        (-1C det OR adj)
+        (-1C pl)
+        ;
 
 "<tapet>" SELECT ("tapet") IF
         (-1 (".*mønstret"r))    # ein av få trygge tapet-kontekstar
@@ -44422,6 +44434,8 @@ REMOVE:default ("besette¹") ;
 REMOVE:default ("besette²") ;
 REMOVE:default ("besette³") ;
 REMOVE:default ("besette⁴") ;
+
+REMOVE:default ("tape") IF (0 ("taper")) ;
 
 
 # Corpus-based default rules:
