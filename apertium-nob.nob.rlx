@@ -14085,10 +14085,13 @@ REMOVE:1-stor-bit pl IF
         (1* ("mål"))
         ;
 # "Det førte til skottenes utligningsmål"  
-"<Gulen>"i SELECT:Gulen-kommune ("Gulen") + top IF
+"<Gulen>" SELECT:Gulen-kommune ("Gulen") + top IF
         (1 ("kommune"))
         ;
 # "Gulen kommune har levert årsrapport."  
+"<Gulen>" REMOVE:unlikely ("Gülen")
+        ;
+# Gulen blir av og til omsett til Gülen, det er stort sett feil.
 "<kvarter>"i SELECT:tre-kvarter-etter ("kvarter") IF
         (-1 det + qnt)
         (1 ("før") OR ("etter"))
