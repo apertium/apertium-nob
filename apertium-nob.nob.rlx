@@ -14085,6 +14085,10 @@ REMOVE:1-stor-bit pl IF
         (1* ("mål"))
         ;
 # "Det førte til skottenes utligningsmål"  
+"<Gulen>"i SELECT:Gulen-kommune ("Gulen") + top IF
+        (1 ("kommune"))
+        ;
+# "Gulen kommune har levert årsrapport."  
 "<kvarter>"i SELECT:tre-kvarter-etter ("kvarter") IF
         (-1 det + qnt)
         (1 ("før") OR ("etter"))
