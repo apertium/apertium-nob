@@ -44460,6 +44460,7 @@ REMOVE:default ("besette⁴") ;
 
 REMOVE:default ("tape") IF (0 ("taper")) ;
 
+REMOVE:default ("leire" n m sg def) IF (0 ("leir")) ;	# keep leir<n><m><sg><def>→leiren
 
 # Corpus-based default rules:
 "<akter>" REMOVE:default-atter ("akter" pr) ;	# keep akte<vblex><pres>→aktar
@@ -44678,7 +44679,6 @@ REMOVE:default ("tape") IF (0 ("taper")) ;
 "<leid>" REMOVE:default-leigd ("leie" pp) ;	# keep li<vblex><pret>→lei
 "<leie>" REMOVE:default-leige ("leie" n f sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
 "<leie>" REMOVE:default-leige ("leie" n m sg ind) ;	# keep lei<adj><sint><pst><un><pl><ind>→leie leie<n><nt><sg><ind>→leie lei<adj><sint><pst><un><sp><def>→leie
-"<leiren>" REMOVE:default-leira ("leire" n m sg def) ;	# keep leir<n><m><sg><def>→leiren
 "<leirene>" REMOVE:default-leira ("leir" n nt pl def) ;	# keep leir<n><m><pl><def>→leirane
 "<leir>" REMOVE:default-leiren ("leir" n nt sg ind) ;	# keep leir<n><m><sg><ind>→leir(en)
 "<leke>" REMOVE:default-leike ("leke" n f sg ind) ;	# keep lek<adj><sint><pst><un><sp><def>→leke lek<adj><sint><pst><un><pl><ind>→leke
