@@ -910,6 +910,7 @@ LIST forbokstavord-genitiv = "<[\\p{Lu}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
 LIST forbokstavord-blanda =  ("<[\\p{L}\\p{Pd}\\p{Nd}]+>"r);
 LIST forbokstavord-blanda-genitiv = "<[\\p{L}\\p{Pd}\\p{Nd}]+(s|'|’)>"r ;
 LIST titlecase = "<\\p{Lu}\\p{Ll}+>"r ;
+LIST titlecase-guio-titlecase = "<(\\p{Lu}(\\p{Ll}|-)+)+>"r ;
 LIST strek = guio ;
 LIST strek/parentes = guio lpar rpar ;
 LIST strek/parentes-beg/anf = guio lpar lquot ;
@@ -2438,6 +2439,21 @@ APPEND:np-guess-alder ("$1"v np ant cgguess)     TARGET ("<(\\p{Lu}\\p{Ll}+(-\\p
 ADD  1par (cgguess) IF (0  1par) ;
 ADD -1par (cgguess) IF (0 -1par) ;
 # TODO: the "minus ukjent" shouldn't be necessary, CG bug?
+
+
+SELECT:title-guio-title SUB:-1 np + guio IF
+        (0 titlecase-guio-titlecase)
+        (0/-2 np)
+        ;
+# «i Kurt-Schumacher-Platz-området.»
+# (ikkje kure<adj>)
+
+SELECT:title-guio SUB:-1 np + guio IF
+        (NEGATE -1 setn-start-med-strek/anf OR siffer)
+        (0 titlecase-guio-titlecase)
+        ;
+# «… bestemte Big Dipper-sjef Andreas …»
+
 
 SECTION 1-select-words ;
 
