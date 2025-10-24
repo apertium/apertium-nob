@@ -2441,19 +2441,21 @@ ADD -1par (cgguess) IF (0 -1par) ;
 # TODO: the "minus ukjent" shouldn't be necessary, CG bug?
 
 
-SELECT:title-guio-title SUB:-1 np + guio IF
+SELECT:title-guio-title SUB:-1 np IF
         (0 titlecase-guio-titlecase)
         (0/-2 np)
         (NEGATE 0/-1 retning)   # Øst-Sibir
+        (0/-1 guio)
         ;
 # «i Kurt-Schumacher-Platz-området.»
 # (ikkje kure<adj>)
 
-SELECT:title-guio SUB:-1 np + guio IF
+SELECT:title-guio SUB:-1 np IF
         (NEGATE -1 setn-start-med-strek/anf OR siffer)
         (0 titlecase-guio-titlecase)
         (NEGATE 0 cgguess) # often we want to prefer long cgguess, e.g. Waller-Bridge
         (NEGATE 0/-1 retning)   # Øst-Sibir
+        (0/-1 guio)
         ;
 # «… bestemte Big Dipper-sjef Andreas …»
 
