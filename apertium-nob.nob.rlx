@@ -1,4 +1,4 @@
-# -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d ../apertium-nno-nob nob-nno-seg | cg-conv a" -*-
+# -*- cg-pre-pipe: "apertium-destxt | apertium -f none -d ../apertium-nno-nob nob-nno-seg | cg-conv -a" -*-
 #       eventuelt: "apertium-destxt | apertium -f none -d . nob-segment | cg-conv a"
 # GPL-2, more info at:
 # https://github.com/apertium/apertium-nno-nob/blob/master/dev/current-OBT
