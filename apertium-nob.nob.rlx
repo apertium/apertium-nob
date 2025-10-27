@@ -38295,6 +38295,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 ;
 #  "dette har tvunget fram kravet om (prep) fast ansatt sekretær"))
 
+
+"<glidelåser>"i SELECT m ;
+"<glidelåsene>"i SELECT m ;
+
 "<pest>" SELECT n IF
         (NOT *-1 %ha% BARRIER ikke-adv)
         ;
