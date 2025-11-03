@@ -8681,6 +8681,10 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "hvor mye er klokka"
 
+  "<mye>"   SELECT:mye-besvær   ("mye") IF
+	(1 ("besvær"))
+;
+
 
 "<noe>" SELECT:noe-mindre adv IF
         (NEGATE *-1 %ikke%)
