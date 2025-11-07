@@ -5878,8 +5878,9 @@ SELECT:løp-etter ("<løp>"i) + pret IF
 
 SELECT:løp-vekk-fra ("<løp>"i) + pret IF
 		(2C prep)
+                (NOT 2 ("gjennom"))
 		;
-
+# Not: et arbeidsrettet løp øker gjennom prosessen
 SELECT:eit-løp ("<løp>"i) + n + sg + ind IF
 		(-1 det OR adj)
 		;
