@@ -217,7 +217,7 @@ LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "ti
 SET n-adjn = n OR adjn ;
 
 # For dei tilfella der me vil matcha def/pl-formen, uavhengig av om den er tagga adj.pst/adj.pp/n:
-LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i ;
+LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i "<fordrevne>"i "<overlevende>"i ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
 
@@ -3001,6 +3001,11 @@ REMOVE:unlikely ("<anga>"i pret) ; # han anga partneren til politiet
 REMOVE:unlikely ("<glattstrikket>"i n) ; # en glattstrikket jersey
 REMOVE:unlikely ("<trikket>"i adj) IF (-1 cmp); # en håndstrikket jersey
 REMOVE:unlikely ("<våre>"i inf) IF (NEGATE -1 infmerke);
+REMOVE:unlikely SUB:* ("lev") ;
+REMOVE:unlikely SUB:* ("gjerd") ;
+REMOVE:unlikely SUB:* ("ligg") ;
+REMOVE:unlikely SUB:* ("røst") + nt ;
+REMOVE:unlikely SUB:* ("seil") + m ;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -14732,6 +14737,8 @@ REMOVE:leveringsfrister sg IF
         (-1  ("<selger>"))
         ;
 # så lenge selger lever
+
+"<lever>"i SELECT vblex IF (1 ("under")) ;
 
 "<bøter>" REMOVE:bøter-ilegges vblex IF
         (1 ("ilegge") + pasv)
@@ -28412,6 +28419,7 @@ SELECT:et-grundig-gjennomarbeidet-kompromiss adj + &&ADJ_N_AGR IF
 	(NOT -1 ikke-adj)
 	(NOT -1 adj-ub)
 	(NOT -2 det OR %de%)    # Mange av de overlevende hoppet
+        (NEGATE -1 adjn-form-def)
 	(**-1C setn-gr BARRIER kop)
 ;
 #  "fra hele landet
@@ -41357,7 +41365,7 @@ REMOVE:seks-av-ti-leser n + sg IF
 REMOVE:forholdene-for-syke-og-gamle adj-def-sg-sp IF
 	(0 fl)
 	(NOT 0 %syvende%)
-	(NOT 0 %tiltalte% OR ("<fordrevne>"))
+	(NOT 0 adjn-form-def)
 	(*1O pron/subst LINK *-1 ikke-adv-adj-det)
 	(*-1O ikke-adv-adj-det-pron LINK NOT 0 det-ent/pron-ent LINK NOT 1 det-ent/pron-ent)
 ;
