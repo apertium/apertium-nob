@@ -3002,6 +3002,8 @@ REMOVE:unlikely ("<anga>"i pret) ; # han anga partneren til politiet
 REMOVE:unlikely ("<glattstrikket>"i n) ; # en glattstrikket jersey
 REMOVE:unlikely ("<trikket>"i adj) IF (-1 cmp); # en håndstrikket jersey
 REMOVE:unlikely ("<våre>"i inf) IF (NEGATE -1 infmerke);
+REMOVE:unlikely ("smitt") ;
+REMOVE:unlikely ("krymp") ;
 REMOVE:unlikely SUB:* ("lev") ;
 REMOVE:unlikely SUB:* ("gjerd") ;
 REMOVE:unlikely SUB:* ("ligg") ;
@@ -44480,6 +44482,7 @@ REMOVE:default ("manne") + imp;
 
 REMOVE:default ("sterkt") + n;
 REMOVE:default ("plukk") + n;
+REMOVE:default ("rast") + n IF (*-1 hj-verb);
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
 REMOVE:default ("dytt") + n IF (0 ("dytte"));
