@@ -3384,6 +3384,7 @@ REMOVE:unlikely ("terne") IF (0 ("oppdretter")) ; # lakseoppdretterne, unngå la
 REMOVE:unlikely SUB:* ("sprog") IF (0/* ("program")) ; # mastergradsprogrammene, unngå mastergrad|språk|rammene
 REMOVE:unlikely ("<rester>"i) + vblex ; # aldri imperativ av å restere (i all hovudsak pres. part. (resterende))
 REMOVE:unlikely ("mer") + adj ;         # we use "mye" comp
+REMOVE:unlikely ("blomster") ;          # "blomst" instead
 REMOVE:unlikely ("<flom>"i) + imp ;        # flaum
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
 REMOVE:unlikely ("<stemmer>"i) + sg + ind ;  # sjeldan eller aldri (piano)stemmar; røyste, stemme
