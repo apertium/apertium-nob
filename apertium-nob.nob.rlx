@@ -3391,19 +3391,20 @@ REMOVE:unlikely ("styr" "<styret>"ri);
 REMOVE:unlikely ("styr" "<styrer>"ri);
 REMOVE:unlikely ("styr" "<styrene>"ri);
 REMOVE:flygedyktig+heten ("hete") IF (0 (".*ighet"r)) (0/* cmp) ;
-REMOVE:unlikely ("anklager") + n IF 
-        (0/* cmp) 
+REMOVE:unlikely ("anklager") + n IF
+        (0/* cmp)
         (NEGATE -1 ("en") + det + qnt + m + sg)
         ;
-REMOVE:unlikely ("anklager") + n IF 
-        (0/* cmp) 
+REMOVE:unlikely ("anklager") + n IF
+        (0/* cmp)
         (NEGATE -2 ("en") + det + qnt + m + sg)
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
 REMOVE:unlikely ("nyre") + n + nt;
 REMOVE:unlikely ("trofé") + n + m;
-REMOVE:unlikely ("gniste") + vblex + pres; 
+REMOVE:unlikely ("gniste") + vblex + pres;
+REMOVE:unlikely ("kute");
 REMOVE:unlikely ("gnist") + n + m; # jf. ein gneiste
-REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke 
+REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
 
 # END Early removal of unlikely / rare forms
 
@@ -3436,14 +3437,14 @@ REMOVE:unlikely ("<preget>"i) + n ;        # prega
 
 SELECT:snakket-går ("<snakket>"i) + n IF
                 (1* ("gå") BARRIER setn-gr)
-                ;	
+                ;
                 # snakket går
 
 SELECT:Snakket-om ("<Snakket>") + n IF
                 (1 ("om"))
                 (2* fv)
                 (NEGATE 0* overskrift)
-                ;	
+                ;
                 # Snakket om at ... (Dei snakka om at ...)
 
 
@@ -44474,6 +44475,7 @@ REMOVE:default ("/") + cm;
 REMOVE:default ("manne") + imp;
 
 REMOVE:default ("sterkt") + n;
+REMOVE:default ("plukk") + n;
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
 REMOVE:default ("dytt") + n IF (0 ("dytte"));
