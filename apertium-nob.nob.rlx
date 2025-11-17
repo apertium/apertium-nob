@@ -2991,6 +2991,7 @@ REMOVE:unlikely ("harry") + n + gen ;     # np
 REMOVE:unlikely ("<skoler>"i) + vblex ;
 REMOVE:unlikely ("sesse") + adj + pp IF (0/* cmp); # *angrepsesset
 REMOVE:unlikely ("norske") + vblex;
+REMOVE:unlikely ("spar") + n + pl;
 REMOVE:unlikely ("mak") + n + m + def; # ikkje sett maken! jf. maken, mak -et 
 REMOVE:unlikely ("<leggene>"i) + nt ; # vondt i leggene
 REMOVE:unlikely ("<oppretter>"i) + n ; # oppretter et fond
