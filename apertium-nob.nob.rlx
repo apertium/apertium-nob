@@ -3009,6 +3009,7 @@ REMOVE:unlikely SUB:* ("røy") ;
 REMOVE:unlikely SUB:* ("beit") ;
 REMOVE:unlikely SUB:* ("røst") + nt ;
 REMOVE:unlikely SUB:* ("seil") + m ;
+REMOVE:unlikely SUB:1 ("seil") + m ; # TODO: does SUB:* not work?
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -44443,6 +44444,7 @@ REMOVE:default adv + ("ende") ;
 REMOVE:default m + ("verv") IF (0/1 cmp) ; # styreverv, unngå «styrekvervel»
 REMOVE:default ("stempel") IF (0 ("stemple")) ; # «terrorstempla», ikkje «terrorstempelet»
 REMOVE:default ("var") IF (0 ("<varen>"i)) ; # varen, ikkje varet
+REMOVE:default ("sål") ; # såle
 
 # TODO: generalisera over dette?
 REMOVE:juniorbokser ("boks") IF (0 ("bokser")) (-1 det + sg) ;
