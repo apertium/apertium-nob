@@ -23164,6 +23164,11 @@ SELECT:en-ukjent-51-årig-diplomat (adj mf ind sg) IF
 ;
 #  "ei stor ei"
 
+"<slapp>" SELECT:litt-slapp adj IF
+	(-1 adj)
+	;
+# Eg kjende meg litt slapp i dag.
+
 "<slapp>" SELECT:slapp-torsdag-høstlisten vblex IF
 	(-1 np)
 	(1 n)
@@ -37197,6 +37202,10 @@ REMOVE:1842 pret IF
 	(-2 cm)
 	(-1 adv)
 	(1 ("til"))
+	;
+
+"<slapp>"i SELECT:slapp-løs ("slippe" vblex pret) IF
+	(0 ("sleppe" vblex))
 	;
 
 #:1843
