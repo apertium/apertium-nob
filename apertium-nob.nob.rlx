@@ -890,7 +890,7 @@ SET setn-gr/verb         = setn-gr OR vblex ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
 LIST setn-start-med-strek/anf = lquot rquot lquot guio >>> ;
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også" "også¹" "også²"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
-LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare" "uttrykke" "opplyse" "forklare" ;
+LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare" "uttrykke" "opplyse" "forklare" "uttale" "opplyse" "anslå" ;
 LIST sikre-navn = "Svein"  "Rune"  "Helle"  "Dag" "Arne"  (np m) (np f) "Aker" ;
 LIST skipsmengde = "trosse"  "tofte"  "skip"  "seil"  "ror"  "rekke"  "ombord"  "matros"  "lugar"  "livbåt"  "lekter"  "forut"  "forut"  "bøye"  "båt"  "baug"  "babord"  ;
 LIST slik-adv = ("slik"  adv) ;
@@ -2204,7 +2204,7 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 # "Da møter de Drafn"
 "<de>"i SELECT:de-Roquefort np + attr IF
         (1 np + storbokstav OR ukjent + storbokstav)
-        (-1 np + storbokstav OR ukjent + storbokstav OR ("si" vblex) OR ("opplyse" vblex) OR ("uttale" vblex) OR n)
+        (-1 np + storbokstav OR ukjent + storbokstav OR sier-verb OR n)
         ; # ballkunstnaren de Bruyne
 "<la>"i SELECT:La-Dauphin np + attr IF
         (0 titlecase)
@@ -2225,7 +2225,7 @@ APPEND:np-guess-forbokstavnamn ("$1"v np org cgguess)     TARGET ("<(\\p{Lu}{2}[
 
 "<du>"i SELECT:du-Plessis np + attr IF
         (1 np + storbokstav OR ukjent + storbokstav)
-        (-1 np + storbokstav OR ukjent + storbokstav OR ("si" vblex) OR ("opplyse" vblex) OR ("uttale" vblex) OR n)
+        (-1 np + storbokstav OR ukjent + storbokstav OR sier-verb OR n)
         ; # Styreformann Jan du Plessis
 "<du>"i REMOVE:unlikely np;
 
@@ -2723,7 +2723,7 @@ REMOVE:VM-renn SUB:4 cgguess IF (0/1 (*) - cgguess) ;
 
 WITH ("<Strøm>") OR ("<Strømmen>") IF (-1 >>>)
 {
-  SELECT:Strøm-animat np IF (1 ("si") OR ("anslå") OR ("<var>"));
+  SELECT:Strøm-animat np IF (1 sier-verb OR ("<var>"));
   SELECT:Strøm-sport np IF (*1 ("hoppe") OR fotball-ord OR kamp-ord);
   SELECT:Straum-og n IF (1 pr OR cm OR cnjcoo); # Straum og vind. Straum, vind og vatn. Straum av nye medlemmer.
   SELECT:Straum-el n IF (*1 straum-ord);
@@ -3698,9 +3698,11 @@ SELECT:for-laget ("<laget>"i) + n IF
 		(*2 n)
 		;
 "<laget>"i SELECT:da-førte-han-laget n IF
-		(-2C vblex)
-		(-1 prn OR np OR n)
-		;
+        (-3C cnjsub)
+        (-2C vblex)
+        (-1 prn OR np OR n)
+        (NEGATE 1 det OR adj OR n)
+        ;
 
 REMOVE:bussene ("busse") + n + pl
 		;
@@ -5307,6 +5309,15 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 #  "Hele uka har det (pron) vært (IV/PRESENT-V)
 # (forts) grunn (uB) til...;"))
 
+
+"<det>" SELECT:at-det-hver-dag expl OR prn IF
+        (-1 %at%)
+        (*1 n LINK NEGATE 0 nt)
+        ;
+
+"<det>" SELECT:at-det-hvert-år expl OR prn IF
+        (1 %hver%)
+        ;
 
 "<det>" SELECT:hos-oss-blir-det-fossefall expl IF
         (-3 pr)
@@ -9723,6 +9734,21 @@ SELECT:NNs-forlovede n IF
 		(-1 gen)
 		(0 ("<forlovede>"))
 		;
+
+"<de>" SELECT:sier-de-brukte prn IF
+        (-1 sier-verb)
+        (1 vblex LINK 0C vblex OR pp)
+        ;
+# «Rundt halvparten sier de brukte to timer eller mer på mobilen daglig.»
+
+"<de>" SELECT:har-de-IND prn IF
+        (-1  %ha% OR %som% OR fv)
+        (-1C %ha% OR %som% OR fv OR pp)
+        (1 qnt + pl LINK 1 ind)
+        (NEGATE 2 infmerke)
+        ;
+# «I dag har de 88 mandater, og det trengs 85 for å få flertall.»
+# «De 20 prosentene som befinner seg lavest på lønnsstigen, må bruke elleve år på å tjene samme beløp som de 20 prosent best lønnede tjener på et år.»
 
 
 "<de>" REMOVE:de-mindre-varer det IF
@@ -19786,12 +19812,22 @@ SELECT:ble-like-KJENT-og-populær pp + $$ADJ_NUMGEN
         ;
 # «Han jobbet i tospann med Knut Bjørnsen i NRK-systemet i 30 år og ble like kjent og populær som kommentatorlegenden.»
 
-SELECT:som-ble-skutt-og-drept pp + $$ADJ_NUMGEN
+SELECT:skutt-og-drept pp + $$ADJ_NUMGEN
         (-2C pp + $$ADJ_NUMGEN)
         (-1 %og/eller%)
         (NOT 0 adv OR farlige-part)
         ;
 # «mannen som ble skutt og drept av israelske soldater»
+
+# Frekvente førsteord i «registrert smittet», «forsøkt drept» etc.:
+LIST pre-pp = "registrere" "bekrefte" "finne" "melde" "forsøke" "gjøre" "holde" "planlegge" "vedta" "begjære" "rapportere" "beslutte" "tenke" "påvise" "mistenke" "pågripe" "anta" "vente" "samle" "legge" "tillate" "bestemme" "sikte" "tiltale" "forvente" "ønske" "vurdere" "sette" "pålegge" "erklære" "dokumentere" "beordre" "kjenne" "oppdage" "nekte" "gjennomføre" "påføre" "innstille" "foreslå" "etterlyse" "konstatere" "garantere" "frykte" "anbefale" "søke" ;
+SELECT:skutt-og-forsøkt+drept pp + $$ADJ_NUMGEN
+        (-3C pp + $$ADJ_NUMGEN)
+        (-2 %og/eller%)
+        (-1C pp + $$ADJ_NUMGEN + pre-pp)
+        (NOT 0 adv OR farlige-part)
+        ;
+# «Han ble skutt og forsøkt drept utenfor sitt hjem i Oslo i 1993.»
 
 SELECT:attributiv-np adj + mf
         (-1C %en/ei%)
@@ -24643,7 +24679,6 @@ SELECT:finne-deres-X-og-Y-og-gi clb IF
 #  "(NOT 2 KOMMA/KONJ)
 # de gamle
 # NOT 1 FV: maten de serverte (pret)"))
-
 
 
 #:2778
