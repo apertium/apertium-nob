@@ -3690,6 +3690,10 @@ SELECT:for-laget ("<laget>"i) + n IF
 		(1 det)
 		(*2 n)
 		;
+"<laget>"i SELECT:da-førte-han-laget n IF
+		(-2C vblex)
+		(-1 prn OR np OR n)
+		;
 
 REMOVE:bussene ("busse") + n + pl
 		;
@@ -4310,6 +4314,20 @@ REMOVE:unlikely ("spill") + adv ;
         ;
         # festpillene
 
+"<festspill>"i SELECT:årets-fespill pl IF
+        (-1 gen)
+        ;
+        # festpillene
+
+"<tall>"i SELECT:årets-tall pl IF
+        (-1 gen)
+        ;
+        # tallene for neste år
+
+"<ting>"i SELECT:årets-ting nt IF
+        (-1 gen)
+        ;
+        # neste års ting > tinget neste år
 
 SELECT:verdens-hav pl + ind IF
         (0C n)
@@ -7393,6 +7411,11 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 #  "en helt (adv) vanlig helt (subst)"))
 
 
+  "<helt>"   SELECT:sin-store-helt   (n m) IF
+        (-2 det + pos)
+	(-1 adj)
+;
+#  "sin store helt"
 
 #:3545
   "<helt>"   SELECT:3545   (n m) IF
