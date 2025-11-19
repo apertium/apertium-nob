@@ -1021,6 +1021,8 @@ LIST straum-ord = "solcellepanel" "fossefall" "kraftproduksjon" "nettverk" "nød
 LIST default-pl-after-poss = "område" "barn" "verk" "sko" "tiltak" "tog" "kår" ;
 LIST default-sg-after-poss = "rike" "samfunn" "selskap" "språk" "spill" "band" "forhold" "hode" "liv" "parti" "styre" "navn" "krav" "lag" "mål" "folk" "album" "skip" "arbeid" "kjønn" "budskap" "bord" "kjennskap" "val" "utstyr" "datautstyr" "ansvar" "bidrag" "håp" "syn" "samarbeid" ".*ombud"r "inntrykk" ".*beredskap"r "jerngrep" ;
 
+TEMPLATE cnjsub/cm+cnjsub = (0 cnjsub) OR (0 cm LINK 1 cnjsub) ;
+
 TEMPLATE prevWordCrossSent = (-1 (*)) OR (-1 (>>>) LINK *-2< (<<<) BARRIER (<<<)) ;
 TEMPLATE nextWordCrossSent = (1 (*))  OR (0  (<<<) LINK *1>  (>>>) BARRIER (>>>) LINK 1 (*)) ;
 
@@ -2878,6 +2880,8 @@ REMOVE:unlikely ("<litt>"i "lite");
 REMOVE:unlikely ("trase"); # trasé
 REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
+REMOVE:unlikely ("alen") IF (0 ("sal"));
+REMOVE:unlikely ("sæter") OR ("sætre") IF (0 ("Sætre"));
 REMOVE:unlikely ("trive") IF (0 ("trives"));
 REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
@@ -3012,6 +3016,7 @@ REMOVE:unlikely SUB:* ("beit") ;
 REMOVE:unlikely SUB:* ("røst") + nt ;
 REMOVE:unlikely SUB:* ("seil") + m ;
 REMOVE:unlikely SUB:1 ("seil") + m ; # TODO: does SUB:* not work?
+REMOVE:unlikely SUB:2 ("seil") + m ; # TODO: does SUB:* not work?
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -3358,6 +3363,7 @@ REMOVE:unlikely ("<fører>"i "føre") + n ;
 REMOVE:unlikely ("<vente>"i "venne") + pp ;
 REMOVE:unlikely ("<vente>"i "venne") + pret ;
 REMOVE:unlikely ("<tøy>"i) + m ;
+REMOVE:unlikely ("kompas") ;
 REMOVE:unlikely ("<potet>"i) + vblex ;
 REMOVE:unlikely ("<potet>"i) + adj ;
 REMOVE:unlikely ("pleie") + pl ; # verb or sg.n
@@ -3404,12 +3410,13 @@ REMOVE:unlikely ("anklager") + n IF
         (0/* cmp)
         (NEGATE -2 ("en") + det + qnt + m + sg)
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
-REMOVE:unlikely ("nyre") + n + nt;
-REMOVE:unlikely ("trofé") + n + m;
 REMOVE:unlikely ("gniste") + vblex + pres;
-REMOVE:unlikely ("kute");
-REMOVE:unlikely ("gnist") + n + m; # jf. ein gneiste
 REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
+
+LIST unlikely-noun-unless-after-agreeing-determiner = "gnist" "plukk" "knips" "kutt" "svekk" ("nyre" nt) ("trofé" m) "kute" "røkt" "kve" ;
+REMOVE:unlikely unlikely-noun-unless-after-agreeing-determiner + n + &&ADJ_N_AGR IF
+        (NEGATE -1 det + &&ADJ_N_AGR)
+        ;
 
 # END Early removal of unlikely / rare forms
 
@@ -12872,8 +12879,7 @@ REMOVE:unlikely ("steam") IF (0 ("team")) (0/1 cmp); # «målvakts+team», avoid
 REMOVE:unlikely ("<flyttet>"i) + n + nt + sg; # flytta ut/inn/tilbake osv.
 REMOVE:unlikely ("<varen>"i "var"); # varen har hatt en høy pris
 REMOVE:unlikely ("<miner>"i) + vblex; # bomber, miner og granater
-REMOVE:unlikely ("kute") + vblex + pret; # å redusere og kutte
-REMOVE:unlikely ("kute") + adj + pp; # kutte
+REMOVE:unlikely ("kute"); # å redusere og kutte
 REMOVE:unlikely ("<folk>"i) + imp; # ikkje folke (seg)
 REMOVE:unlikely ("<følgene>"i) + nt; # følgjene av, nt i fleirtal svært sjeldan
 REMOVE:unlikely ("felt"i) + m + pl; # ute på feltene, ulike felter
@@ -31485,7 +31491,7 @@ SELECT:innskot-har-angrepet vblex + pp IF
         ;
 
 SELECT:Det-er-tatt vblex + pp IF
-	(*-1 %være/bli% BARRIER perf-part OR fv OR setn-gr LINK *-1 expl BARRIER setn-gr)
+	(*-1 %være/bli% BARRIER perf-part OR fv OR setn-gr OR infmerke LINK *-1 expl BARRIER setn-gr)
 	(NEGATE 0 farlige-part)
 	(NEGATE -1 det-prep-infmerke-adjbe)
 	(NEGATE -2 be-nøyt-det)
@@ -43629,6 +43635,13 @@ SELECT:brudd-på-de-plikter n + pl IF
 # «må anses som et grovt brudd på de  plikter  en tillitsvalgt har»
 # Ikkje: «De får ingen glede av de store inntektene, for de  jobber  for en lønn de ikke kan leve av.»
 
+SELECT:blir-Xet-og-Yet-cm pp IF
+        (-1 cnjcoo LINK *-1 pp BARRIER ikke-adv-prep LINK -1 %være/bli% LINK -1 subst)
+        (1C T:cnjsub/cm+cnjsub)
+        ;
+# «46 prosent blir holdt utenfor og baksnakket, mens 24 prosent opplever fysisk mobbing.»
+
+
 SELECT:de-bruker pres IF
         (NOT -2 %alle%)         # «med alle de farer det vil bringe med seg»
         (-1C det OR prn)
@@ -44460,7 +44473,8 @@ REMOVE:default ("bredd") + sg ;
 REMOVE:default ("bredde") + pl ;
 REMOVE:default ("<Lær>") + n ;
 REMOVE:default ("<Vær>") + n ;
-REMOVE:default ("slått") + n ;
+REMOVE:default ("slåtte") IF (0 ("slått")) ; # slått.m meir vanleg
+REMOVE:default ("slått") + n IF (0 ikke-subst) ;
 REMOVE:default ("fattet") + pst ;
 REMOVE:default ("slått") + pst ;
 REMOVE:default ("avvise") + pl ;
@@ -44513,7 +44527,6 @@ REMOVE:default ("/") + cm;
 REMOVE:default ("manne") + imp;
 
 REMOVE:default ("sterkt") + n;
-REMOVE:default ("plukk") + n;
 REMOVE:default ("rast") + n IF (*-1 hj-verb);
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
