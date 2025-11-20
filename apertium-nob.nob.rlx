@@ -5406,11 +5406,29 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         ;
 # Turister funnet døde i hetebølge
 
+"<døde>"i SELECT:Minst-60-døde-i-ulykke vblex + pret IF
+        (-2 ("<Minst>"))
+        (-1 talord-par-siffer)
+        (1 cnjsub)
+	(*1 overskrift)
+        ;
+# Typisk hovedtittel, underforstått "er døde"
+
+"<døde>"i SELECT:Minst-60-døde-i-ulykke adj IF
+        (-2 ("<Minst>"))
+        (-1 talord-par-siffer)
+        (1 prep OR cnjcoo)
+	(*1 overskrift)
+        ;
+# Typisk hovedtittel, underforstått "er døde"
+
 "<døde>" SELECT:tre-døde-i vblex + pret IF
         (-1 talord-par-siffer)
         (1 prep )
+        (NEGATE -2* fv BARRIER setn-gr)
         ;
 # Oftare rett enn feil iallfall
+# Det er registrert 20 døde av sjukdommen.
 
 "<døde>" SELECT:er-døde adj IF
         (-1C vblex)
@@ -5418,13 +5436,20 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 
 "<døde>" SELECT:han-døde-da vblex + pret IF
         (1 adv)
+        (NEGATE -1* fv BARRIER setn-gr)
         ;
 
-"<døde>" SELECT:27-døde adj IF
-        (NOT -2 cnjsub)
+"<døde>"i SELECT:fant-60-døde-sauer adj IF
         (-1 talord-par-siffer)
-        (NOT -1 sanns-årstal)
+        (1 n)
+        (-1* fv BARRIER setn-gr)
         ;
+
+#"<døde>" SELECT:27-døde adj IF
+#        (NOT -2 cnjsub)
+#        (-1 talord-par-siffer)
+#        (NOT -1 sanns-årstal)
+#        ;
 # «– Vi har 32 døde på grunn av terrorister.»
 # Ikkje: «Trump benekter at 3.000 døde som følger av Puerto Rico-orkan»
 # Ikkje: «2.500 ble født, 960 døde, 15.800 flyttet til Oslo og 13.900 flyttet fra Oslo.»
