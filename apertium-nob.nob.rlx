@@ -213,7 +213,7 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" "arbeidsledig" "sysselsatt" ;
 SET n-adjn = n OR adjn ;
 
 # For dei tilfella der me vil matcha def/pl-formen, uavhengig av om den er tagga adj.pst/adj.pp/n:
@@ -5060,6 +5060,12 @@ SELECT:den-som-leder vblex + pres IF
 # «Har gravd opp «Pet Sematary» – og gitt den ny vri.»
 
 
+"<disse>" REMOVE:av-disse det IF
+        (-1 ("av"))
+        (NEGATE -2* fv)
+        (1 fv LINK NEGATE *1 fv BARRIER setn-gr)
+        ;
+
 "<drepte>"i SELECT:den-drepte-og adj IF
         (-1 ("den¹"))
         (1 %og%)
@@ -8766,6 +8772,20 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 
 
+"<noe>" SELECT:en-noe-høyere adv IF
+        (-1 ("en") + &&ADJ_N_AGR)
+        (1 adj LINK 0 ind OR comp)
+        (*1 n + &&ADJ_N_AGR CBARRIER (*) - adj)
+        ;
+# «Det medvirker til en noe høyere kraftpris nå, men vannet som holdes igjen vil redusere strømregningen til vinteren, sier Willumsen i NVE.»
+
+"<noe>" SELECT:den-noe-uvanlige adv IF
+        (-1 ("den") + &&ADJ_N_AGR)
+        (1 adj LINK 0 adj + def OR comp)
+        (*1 n + &&ADJ_N_AGR CBARRIER (*) - adj)
+        ;
+# «Et forslag fra den noe uvanlige politiske konstellasjonen skal nå behandles i Oslo bystyre.»
+
 "<noe>" SELECT:noe-mindre adv IF
         (NEGATE *-1 %ikke%)
         (1 ("<mindre>") OR ("<mer>") OR ("<under>"))
@@ -9774,6 +9794,15 @@ SELECT:NNs-forlovede n IF
         ;
 # «I dag har de 88 mandater, og det trengs 85 for å få flertall.»
 # «De 20 prosentene som befinner seg lavest på lønnsstigen, må bruke elleve år på å tjene samme beløp som de 20 prosent best lønnede tjener på et år.»
+
+
+
+"<de>" SELECT:dekker-de-80 prn IF
+        (-1 fv LINK NEGATE *-1 fv)
+        (1 talord-par-siffer)
+        (NEGATE *2 fv)
+        ;
+# «til sammen dekker de 80 prosent av medlemsmassen.»
 
 
 "<de>" REMOVE:de-mindre-varer det IF
@@ -24705,7 +24734,6 @@ SELECT:finne-deres-X-og-Y-og-gi clb IF
 # de gamle
 # NOT 1 FV: maten de serverte (pret)"))
 
-
 #:2778
  SELECT:2778 (det pl) IF
 	(NOT 0 %hundre/tusen%)
@@ -38267,6 +38295,12 @@ SECTION 3-select-words-heur ;
         (NOT 1 %seg%)
         ;
 
+"<fylte>" SELECT:han-fylte-førti pret IF
+        (-1 nominativ)
+        (1 talord-par-siffer)
+        ;
+# «den andre halvparten fikk beskjed om å holde seg unna peanøtter til de fylte fem år.»
+
 
 "<følger>" SELECT:direkte-følger m + pl IF
         (-1 ("direkte"))
@@ -38700,7 +38734,6 @@ SECTION remove-words-heur ;
  "<disse>"   REMOVE:4093   (vblex inf) IF
 	  (0 verb)
 ;
-
 
 #:4094
  "<disse>"   REMOVE:4094   (n sg ind) IF
