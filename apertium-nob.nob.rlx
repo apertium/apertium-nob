@@ -16474,6 +16474,12 @@ REMOVE ("frø") IF
 # endringer grunnet økningen"
 
 
+"<grått>" REMOVE:grått n IF
+        (NEGATE -1 ("litt"))
+        (NEGATE -1 vblex)
+        (NEGATE -1 cnjcoo LINK -1 adj + sg + nt)
+        ;
+
 
 #:3575
   "<grått>"   REMOVE:3575   pp IF
