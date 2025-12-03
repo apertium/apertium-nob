@@ -8917,6 +8917,12 @@ SELECT:sløvande-middel ("middel") + nt IF
 ;
 #  "kh feb 2004: Bare i samme/neste nu."
 
+"<nummer>" SELECT:nummer-én- sg IF
+        (1 talord-par-siffer OR ("<[eé]n-.*>"r))
+        ;
+# «disse nummer én-rettighetene»
+
+
 "<nå>"   SELECT:se-nå adv IF
 	(-1 vblex - m-hj-verb)
 ;
@@ -35499,7 +35505,6 @@ REMOVE:før-min-tid (cnjsub) IF
 	(*-1 %flere% BARRIER ikke-adv-adj)
 ;
 #  "flere bankbygg (subst fl)"))
-
 
 
 #:2029
