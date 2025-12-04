@@ -19520,8 +19520,10 @@ SELECT:ble-antent adj + pst IF
 		;
 "<trykket>" SELECT:da-han-trykket vblex + pret IF
 		(*-2 ("da"))
-		(NOT *-1 ("ha"))
+		(NEGATE *-1 ("ha"))
+		(NEGATE -1C fv) # «Da synker trykket.»
 		;
+
 "<trykket>" SELECT:holde-trykket-oppe n IF
 		(*-1C ("holde") BARRIER setn-gr)
 		(1C prep)
