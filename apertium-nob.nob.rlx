@@ -6690,6 +6690,10 @@ LIST felles-ord = "innsats" "mål" "tiltak" "interesse" "ansvar" "retningslinje"
 
 
 
+"<for>" SELECT:for-dårlig   (adv) IF
+        (1 ("dårlig"))
+        ;
+
 #:3652
   "<for>"   SELECT:3652   (adv) IF
 	(NOT 1 ikke-adj)
