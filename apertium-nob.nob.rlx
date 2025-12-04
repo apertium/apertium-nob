@@ -5451,11 +5451,11 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         (-1* fv BARRIER setn-gr)
         ;
 
-#"<døde>" SELECT:27-døde adj IF
-#        (NOT -2 cnjsub)
-#        (-1 talord-par-siffer)
-#        (NOT -1 sanns-årstal)
-#        ;
+"<døde>" SELECT:27-døde adj IF
+        (NOT -2 cnjsub)
+        (-1 talord-par-siffer)
+        (NOT -1 sanns-årstal)
+        ;
 # «– Vi har 32 døde på grunn av terrorister.»
 # Ikkje: «Trump benekter at 3.000 døde som følger av Puerto Rico-orkan»
 # Ikkje: «2.500 ble født, 960 døde, 15.800 flyttet til Oslo og 13.900 flyttet fra Oslo.»
