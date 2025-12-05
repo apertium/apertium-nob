@@ -16483,6 +16483,12 @@ REMOVE ("frø") IF
 # endringer, grunnet økningen/
 # endringer grunnet økningen"
 
+"<Grått>"   SELECT:Grått-og-mørkt adj IF
+	(1 cnjcoo or prep)
+        (2 adj + nt)
+        ;
+        # Grått og mørkt i øst og sør
+        # Førsteordet kan unntaksvis vere pp, men alltid følgt av "ha": "Gråte (i nauda) hadde ho ..."
 
 "<grått>" REMOVE:grått n IF
         (NEGATE -1 ("litt"))
