@@ -12957,6 +12957,7 @@ REMOVE:unlikely ("lett") + n; # «… lett kan forekomme»
 REMOVE:unlikely ("rukke") IF (0 ("rekke"));
 REMOVE:unlikely (".*hjelp"r) IF (0 (".*hjelper"r)); # ein hjelpar usannsynleg fleirtal
 REMOVE:unlikely SUB:* ("melke") + n IF (0/* ("melk")); # sannsynlegvis ikkje rogn
+REMOVE:unlikely ("tekniker") + n IF (0/* ("teknikk"));
 REMOVE:unlikely ("<True>") + adj ;
 REMOVE:unlikely ("sau") + n IF (0 ("saus")) (0/* cmp) ;
 REMOVE:unlikely ("<nesten>"i) + n ;
