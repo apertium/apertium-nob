@@ -4338,10 +4338,15 @@ REMOVE:unlikely ("spill") + adv ;
         ;
         # neste års ting > tinget neste år
 
-SELECT:verdens-hav pl + ind IF
-        (0C n)
-        (NEGATE 0 ("behov")) # unngå «Proteinbehova i verda er forventa å auke»
+SELECT:verdens-forbruk sg + ind IF
         (-1 ("<verdens>"i))
+        (0 ("behov") OR ("forbruk") OR ("næringsliv"))
+        (0C n)
+        ;
+# «Verdens proteinbehov er forventet å øke»
+SELECT:verdens-hav pl + ind IF
+        (-1 ("<verdens>"i))
+        (0C n)
         ;
 
 "<skjønnere>"i REMOVE:unlikely n
