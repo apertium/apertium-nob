@@ -10679,6 +10679,12 @@ SELECT:NNs-forlovede n IF
 # 25.2"
 
 
+"<som>" SELECT pr IF
+        (-1 ("tid") + sg + ind)
+        (1C n)
+        ;
+# «Der er den danske fotballstjernens tid som Rosenborg-spiller viet en god del oppmerksomhet.»
+
 
 #:3245
   "<spent>"   SELECT:3245   (vblex pp) IF
