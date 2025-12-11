@@ -10680,6 +10680,7 @@ SELECT:NNs-forlovede n IF
 
 
 "<som>" SELECT pr IF
+        (-2 poss/gen)
         (-1 ("tid") + sg + ind)
         (1C n)
         ;
