@@ -3574,7 +3574,7 @@ MAP:blant-dem-som (@subj @xubj @obj @i-obj @s-pred @app @←p-utfyll) prn IF
 # «Det er rundt 60 prosent kvinner blant dem som diagnostiseres, men det er også langt flere kvinner enn menn som tester seg.»
 
 #:1418
-MAP:1418 (@←p-utfyll)   (prn) IF
+MAP:1418 (@←p-utfyll @xubj)   (prn) IF
 	(0 res/akk)
 	(-1C prep)
 ;
@@ -5569,6 +5569,7 @@ SELECT:knyttet-til @xubj + &&ADJ_N_AGR IF
 SELECT:med-røykdykkere-klare @xubj + &&ADJ_N_AGR IF
 	(-1 ("med"))
 	(1C adj + &&ADJ_N_AGR)
+	(NEGATE 2 &&ADJ_N_AGR + n) # «med noen utvetydig tilbakevisning»
 	;
 
 
