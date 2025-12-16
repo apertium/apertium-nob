@@ -3584,6 +3584,12 @@ REMOVE:løpet ("<løpet>"i) + vblex + pp
 		;
 		# (løpe - løpt) partisippforma løpet knapt i bruk
 
+REMOVE:løpet-ut ("<løpet ut>"i) + vblex + pp
+		;
+# adv: "løpet ut"
+# Regjeringa må stå løpet ut.
+# Der vart ho liggjande løpet ut.
+
 REMOVE:gås ("<gås>"i) + vblex + pasv  IF
 		(-1 det + qnt OR prep OR vblex)
 		(NEGATE -1 modalverb)
