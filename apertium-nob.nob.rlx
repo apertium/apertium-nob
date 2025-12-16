@@ -5942,6 +5942,27 @@ SELECT:dødt-løp ("<løp>"i) + n + sg + ind IF
 		;
                 # dødt løp
 
+SELECT:løp-av ("<løp>"i) + n + sg + ind IF
+		(1 %av%)
+                (NEGATE 2 ("<gårde>"i) OR  ("<sted>"i))
+		;
+# Nytt solid løp av Olsbu Røiseland
+# Ein gutegjeng stal eit kassaapparat frå ein butikk i Bergen og sprang av garde.
+# Ranaren skal ha komme bakfrå og rive pengane til seg før han sprang av stad.
+
+SELECT:et-perfekt-løp ("<løp>"i) + n + sg + ind IF
+		(-2 ("<et>"i))
+                (-1 adj OR ("<slikt>"i))
+		;
+# Regan Smith leverte eit fantastisk løp i Sør-Korea.
+
+SELECT:et-helt-perfekt-løp ("<løp>"i) + n + sg + ind IF
+		(-3 ("<et>"i))
+                (-1 adj OR ("<slikt>"i))
+		;
+# det var herleg å få eit så bra løp rett før VM
+# Han smadra alle i eit tilnærma perfekt løp 
+
 SELECT:løp-hun ("<løp>"i) + pret IF
 		(1C prn OR cog OR ant OR n + def)
 		;
