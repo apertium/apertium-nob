@@ -31346,6 +31346,16 @@ SELECT:den-drepte-var pp + sg + def IF
 	(1 %være/bli%)
 ;
 
+"<prisbelønnet>"i SELECT:prisbelønnet-for adj IF
+	(1 n OR adj)
+        ;
+# eit prislønt bilete av demonstrasjonane i Hongkong
+
+"<prisbelønnet>"i SELECT:prisbelønnet-for pret OR pp IF
+	(1 pr)
+        ;
+# raffinerte dropar av gin som er premierte i internasjonale konkurransar
+
 SELECT:Baglerne-kontrollerte-området-han-ble-født-i adj + pp + &&ADJ_N_AGR IF
 	(NOT 0 farlige-part)
 	(-1 %være/bli% LINK -1 nominativ + &&ADJ_N_AGR LINK 0C &&ADJ_N_AGR LINK -1C n + def LINK *-1 fv)
