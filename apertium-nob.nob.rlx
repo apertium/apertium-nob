@@ -31351,6 +31351,11 @@ SELECT:den-drepte-var pp + sg + def IF
         ;
 # eit prislønt bilete av demonstrasjonane i Hongkong
 
+"<prisbelønte>"i SELECT:prisbelønte-bok adj IF
+	(1 n OR adj)
+        ;
+# Åsne Seierstads prisbelønte bok
+
 "<prisbelønnet>"i SELECT:prisbelønnet-for pret OR pp IF
 	(1 pr)
         ;
