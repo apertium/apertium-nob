@@ -9329,6 +9329,26 @@ LIST regn_vann = ("regn" n) ;
 LIST pr_etter_regnvann = "i" "til" "fra" "ned" "over" "bort" "utover" "som" "på"; # regnet som uteble, regnet utover mandag, regnet fra vest
 LIST regn-verb = "komme" "falle" "hølje" "se";
 
+"<regn>"i SELECT:regn-og-vind regn_vann IF
+        (1C cnjcoo)
+        (2C* n OR adj OR ("<sludd>"i))
+        ;
+# Regn og (litt) vind
+
+"<regn>"i SELECT:vind-og-regn regn_vann IF
+        (-1C cnjcoo)
+        (-2C* n)
+        ;
+# Vind og regn
+
+"<regn>"i SELECT:Regn-med regne_ut IF
+        (1C %med%)
+        (NEGATE 2 ("<fare>") OR ("<snø>") OR ("<sludd>") OR ("<haglbyger>") OR ("<vind>") OR ("<skyer>") OR ("overskyet"))
+        ;
+# Rekn med koronaforseinkingar
+# Det er varsla regn med skyer gjennom helga
+# Regn med fare for snø (kan vere tvitydig...)
+
 REMOVE:regne¹-imp regne_vann + imp ; # IF NOT "hyadene" OR "Frøy"
 
 SELECT:regne-seg-som regne_ut IF
