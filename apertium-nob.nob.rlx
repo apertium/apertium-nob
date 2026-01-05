@@ -3739,7 +3739,7 @@ REMOVE:skrittet ("skritt"¹) ;
 
 SELECT ("gate¹") IF
         (0 sg)
-        (-1 %ved%)
+        (-1 %ved% OR ("forbi") OR ("utenfor"))
         ;
         # utgang på flyplass
 SELECT ("gate¹") IF
