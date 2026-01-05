@@ -9349,6 +9349,13 @@ LIST regn-verb = "komme" "falle" "hølje" "se";
 # Det er varsla regn med skyer gjennom helga
 # Regn med fare for snø (kan vere tvitydig...)
 
+"<regne>"i SELECT:Regn-med regne_vann IF
+        (-1 %å%)
+        (-2C ("<det>"i))
+        (-3C ("begynne"))
+        ;
+# Då byrja det å regne
+
 REMOVE:regne¹-imp regne_vann + imp ; # IF NOT "hyadene" OR "Frøy"
 
 SELECT:regne-seg-som regne_ut IF
