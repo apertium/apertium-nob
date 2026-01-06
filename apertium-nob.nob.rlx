@@ -4358,6 +4358,9 @@ SELECT:verdens-hav pl + ind IF
 "<skjønnere>"i REMOVE:unlikely n
         ;
 
+"<ferskvannsfiske>"i REMOVE:unlikely pl
+        ;
+
 SELECT:hen-til pr IF
         (-1* ("se") BARRIER setn-gr)
         (1 %til%)
