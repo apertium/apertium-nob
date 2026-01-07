@@ -2167,6 +2167,11 @@ WITH storbokstav IF
   APPEND:np-guess-nom ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{3,}+)>"r) IF
         (NEGATE 0 not-np-guess - (np cgguess gen))
         ;
+  # For short (<=3 letter) words, only if we have titlecase to the left:
+  APPEND:np-guess<=3 ("$1"v np cgguess)     TARGET ("<([A-ZÆØÅ][a-zæøå]{2,}+)>"r) IF
+        (NEGATE 0 cgguess)
+        (-1 storbokstav)
+        ;
 };
 # NB. we do allow cgguess on not-np-guess-f_lc>f_uc if they're *nouns* between lowercase words, e.g. «fagbladet Dagligvarehandelen skriver»
 # but other parts of speech are more often wrong, in particular where we are missing punctuation after headings.
