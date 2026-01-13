@@ -3023,6 +3023,7 @@ REMOVE:unlikely SUB:* ("røst") + nt ;
 REMOVE:unlikely SUB:* ("seil") + m ;
 REMOVE:unlikely SUB:1 ("seil") + m ; # TODO: does SUB:* not work?
 REMOVE:unlikely SUB:2 ("seil") + m ; # TODO: does SUB:* not work?
+REMOVE:unlikely ("knee" vblex);
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -4183,6 +4184,16 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (-1 det + qnt + sg)
         ;
 
+"<presset>"i SELECT:som-presset-ham pret IF
+        (-1 %som%)
+        (1 prn OR prep OR n OR np)
+        ;
+
+"<presset>"i SELECT:som-presset-øker n IF
+        (-1 %som%)
+        (1 vblex)
+        ;
+
 "<presset>"i SELECT:at-presset-øker n IF
         (NEGATE -1 %så%)
         (-1 cnjsub OR %at%)
@@ -4192,6 +4203,16 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(-1 det + qnt + m + sg)
 		(1 adj)
         ;
+
+"<presset>"i SELECT:det-sosiale-presset n IF
+		(-2 ("<det>"i))
+                (-1 adj)
+        ;
+
+"<presset>"i SELECT:presset-økonomi adj + pp IF
+		(1 n + sg + ind)
+        ;
+# Dei viser til pressa økonomi
 
 "<presset>"i SELECT:presset-til-å pp IF
 		(1 %til%)
@@ -4286,9 +4307,19 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         ;
 		# kan òg vere verbet, men oftast ikkje
 
+"<presset>"i SELECT:ha-presset-fram pp IF
+        (1 ("fram") OR ("frem"))
+	(-1* %ha% OR ("få" vblex) OR %være/bli% BARRIER setn-gr)
+        ;
+
+"<presset>"i SELECT:presset-fram pret IF
+        (1 ("fram") OR ("frem"))
+	(NEGATE -1* %ha% OR ("få" vblex) OR %være/bli% BARRIER setn-gr)
+        ;
+
 "<presset>"i SELECT:dempe-presset n IF
         (-1* vblex BARRIER setn-gr)
-		(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
+	(NEGATE -1* %ha% OR %være/bli% OR modalverb BARRIER setn-gr)
         ;
 
 "<Presset>" SELECT:Presset-miljøet-har-opplevd n
@@ -4299,6 +4330,13 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (1 prep OR vblex)
         (NEGATE 1 %før% OR %etter%)
         ;
+
+"<presset>"i SELECT:han-presset pret IF
+        (-1 prn)
+        (1 prn OR n OR np)
+        (2 prep)
+        ;
+# han pressa han ned til 45,94
 
 "<Presset>" SELECT:Presset-ikke-lettet n
         (1 adv)
@@ -4817,6 +4855,9 @@ WITH:anklager ("<anklager>"i) {
 "<beløpet>" SELECT:ble-beløpet-økt n IF
         (NOT 1 %seg%)
         (NOT 2 %seg%)
+        ;
+
+"<Beløp>"i SELECT:beløp-spillerne-får n
         ;
 
 "<beløp>" SELECT:ble-beløpet-økt n IF
@@ -18729,6 +18770,10 @@ SELECT ("vekke") IF
 
 "<passet>"i REMOVE n IF
         (1C ("å"))
+        ;
+
+"<passet>"i REMOVE vblex IF
+        (1C vblex)
         ;
 
 #:3161
