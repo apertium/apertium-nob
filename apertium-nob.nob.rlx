@@ -2500,6 +2500,12 @@ REMOVE:prefer-sameaccent (".*[èàòìùỳǹ].*"ri) IF
 REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
         (0 ("<(.*[èàòìùỳǹ].*)>"ri "$1"v));
 
+# Exception to mid-sentence rule.
+SELECT:cm-hullene n IF
+                (-1 ("cm."))
+		(0 ("<Hullene>"))
+		;
+# «Kniven er 20-25 cm. Hullene i knivbladet ...»
 # Words that we leave to below rules since they're ambiguous even mid-sentence, e.g.
 # «Dette er en del av Skolen (åndsverk).»
 LIST ambig-titlecase-midsent = "<Skolen>" ;
