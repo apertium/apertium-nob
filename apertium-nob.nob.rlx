@@ -889,6 +889,7 @@ SET setn-gr/prep         = setn-gr OR pr ;
 SET setn-gr/verb         = setn-gr OR vblex ;
 LIST punktum/ellipse = ("." clb) ("$." clb) (".." clb) ("$.." clb) ("..." clb) ("$..." clb) ;
 LIST setn-start-med-strek/anf = lquot rquot lquot guio >>> ;
+LIST ends-in-period = ".*[.]"r ; # e.g. acronyms like "cm."
 LIST setningsadv = "øyensynlig"  "òg" "visstnok"  "visselig"  "ventelig"  "vanligvis"  "unektelig"  "uheldigvis"  "tydeligvis"  "trolig"  "tilfeldigvis"  "sogar"  "sluttelig"  "simpelthen"  "sannsynligvis"  "sannelig"  "saktens"  "rimeligvis"  "riktignok"  "også" "også¹" "også²"  "ofte"  "nødvendigvis"  "nesten"  "neppe"  "nemlig"  "naturligvis"  "muligvis"  "muligens"  "lykkeligvis"  "liksom"  "klokelig"  "kanskje"  "jo"  "jamvel"  "jammen"  "især"  "imidlertid"  "ikke"  "heldigvis"  "gudskjelov"  "gledeligvis"  "følgelig"  "fortrinnsvis"  "forresten"  "fornuftigvis"  "formodentlig"  "formelig"  "forhåpentligvis"  "ellers"  "eksempelvis"  "dog"  "dessverre"  "dessuten"  "beklageligvis"  "bare"  "antakelig"  "antagelig"  "altså"  "alltid"  "aldri"  ("kan"  adv) ("hende"  adv) ("nok"  adv) ("nå"  adv) ("så"  adv) ("da"  adv) ;
 LIST sier-verb = "tilføye"  "tenke"  "svare"  "sukke"  "spørre"  "skrive"  "si"  "rope"  "mumle"  "mene"  "hyle"  "hviske"  "fortsette"  "fortelle"  "anta"  "advare" "uttrykke" "opplyse" "forklare" "uttale" "opplyse" "anslå" ;
 LIST sikre-navn = "Svein"  "Rune"  "Helle"  "Dag" "Arne"  (np m) (np f) "Aker" ;
@@ -2500,19 +2501,14 @@ REMOVE:prefer-sameaccent (".*[èàòìùỳǹ].*"ri) IF
 REMOVE:prefer-sameaccent (".*[éáóíúýń].*"ri) IF
         (0 ("<(.*[èàòìùỳǹ].*)>"ri "$1"v));
 
-# Exception to mid-sentence rule.
-SELECT:cm-hullene n IF
-                (-1 ("cm."))
-		(0 ("<Hullene>"))
-		;
-# «Kniven er 20-25 cm. Hullene i knivbladet ...»
 # Words that we leave to below rules since they're ambiguous even mid-sentence, e.g.
 # «Dette er en del av Skolen (åndsverk).»
 LIST ambig-titlecase-midsent = "<Skolen>" ;
 SELECT:titlecase-midsent cgguess - ambig-titlecase-midsent IF
-        (NEGATE -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes)
+        (NEGATE -1 setn-start-med-strek/anf OR siffer OR emdash-endash OR parentes OR ends-in-period)
         (NEGATE 0 -1par)
         ;
+# NOT: «Kniven er 20-25 cm. Hullene i knivbladet ...»
 
 SELECT:titlecase-paren1word cgguess IF
         (NEGATE -2 rquot)          # «English» (Norsk)
