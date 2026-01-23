@@ -13543,6 +13543,20 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("av"))
         ;
 # "en del av svelget"
+"<bokstaver>" SELECT:farger-cm-bokstaver n IF
+        (-2 n)
+        (-1 cm)
+        ;
+# "Det er farger, bokstaver, spill og annet."
+"<bokstaver>" SELECT:bokstaver-cm-farger n IF
+        (1 cm)
+        (2 n)
+        ;
+# "Det er spill, bokstaver, farger og annet."
+"<purkene>" SELECT:purkene ("purke") IF
+        (*1 ("brunst"))
+        ;
+# "De fleste purkene vil komme i brunst da."
 "<Lette>" SELECT:lette-bivirkninger ("lett") IF
         (1 n + pl)
         ;
