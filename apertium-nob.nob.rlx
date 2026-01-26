@@ -13657,7 +13657,11 @@ REMOVE:kapret-istedenfor adj IF
         (2 n + ind)
         (3 vblex)
         ;
-# "Det er snakk om kombinasjonen lærer og lekser."
+# "Det er snakk om kombinasjonen lærer og lekser."        
+"<lærer>" SELECT:Forsker-og-lærer n + m IF
+        (-1C %og%)
+        (-2 n + sg + ind)
+        ;
 "<faste>" SELECT:faste-medisiner adj + pl IF
         (1 ("medisin") + pl)
         ;
@@ -39097,6 +39101,10 @@ SECTION remove-words-heur ;
 
 "<Flyplass>" REMOVE:Flyplass np IF
         (*-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
+        ;
+
+"<Forsker>" REMOVE:Forsker-og-x vblex IF
+        (1C %og%)
         ;
 
 "<hende>" REMOVE:kan-det-hende adj OR n IF
