@@ -20075,6 +20075,13 @@ REMOVE:fortsetter-sin-kamp @subj IF
         ;
 # «Han støtter soldatene som under ekstremt vanskelige forhold fortsetter sin kamp for å beskytte befolkningen.»
 
+REMOVE:alle-fra-skipet (@subj) IF
+	(-2 ("<alle>"i) + @subj)
+	(-1 pr)
+	(-1C pr OR adv)
+	(0 @←p-utfyll)
+	;
+# «Den siste skrives ut i løpet av formiddagen, og alle fra skipet vil dermed være utskrevet, opplyser Universitetssykehuset Nord-Norge på Twitter.»
 
 REMOVE:det-spilles-kamper @subj IF
         (-2C @subj/@xubj)
