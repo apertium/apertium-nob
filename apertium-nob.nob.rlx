@@ -19527,7 +19527,9 @@ SELECT:IS-tilknyttet ("tilknytte") + pp IF
 REMOVE:steinete adj + pp IF
         (0 adj + pst)
         (0 ("<.*(ete|et)>"r))
+        (NEGATE 0 (".*skriv.*"r)) # allow utskrive etc.
         ;
+# avoid «steina»
 
 REMOVE:er-kommet mf OR pl IF
         (-1 %være/bli%)
