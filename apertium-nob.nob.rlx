@@ -13568,6 +13568,11 @@ REMOVE:kapret-istedenfor adj IF
         (*1 ("brunst"))
         ;
 # "De fleste purkene vil komme i brunst da."
+"<leke>" SELECT:lese-og-leke vblex IF
+        (-2 ("lese"))
+        (-1 cnjcoo)
+        ;
+# "Lese og leke"
 "<Lette>" SELECT:lette-bivirkninger ("lett") IF
         (1 n + pl)
         ;
