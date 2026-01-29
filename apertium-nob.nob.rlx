@@ -13573,6 +13573,16 @@ REMOVE:kapret-istedenfor adj IF
         (-1 cnjcoo)
         ;
 # "Lese og leke"
+"<lærer>" SELECT:kvinnelig-lærer n IF
+        (-1 adj)
+        (1 pr)
+        ;
+# "Kvinnelig lærer i et klasserom"
+"<lærer>" SELECT:jobber-som-lærer n IF
+        (-2 vblex)
+        (-1 ("som"))
+        ;
+# "Sheila jobber som lærer."
 "<Lette>" SELECT:lette-bivirkninger ("lett") IF
         (1 n + pl)
         ;
