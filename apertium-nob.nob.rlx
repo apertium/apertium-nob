@@ -13105,6 +13105,7 @@ REMOVE:unlikely ("kute"); # å redusere og kutte
 REMOVE:unlikely ("<folk>"i) + imp; # ikkje folke (seg)
 REMOVE:unlikely ("<følgene>"i) + nt; # følgjene av, nt i fleirtal svært sjeldan
 REMOVE:unlikely ("felt"i) + m + pl; # ute på feltene, ulike felter
+REMOVE:unlikely ("sneke" "<sneket>"i); # ikkje "ha sneka på trikken"
 "<tilbaketrukken>" REMOVE:unlikely pp;
 "<Boken>" REMOVE:unlikely np;
 
