@@ -13583,12 +13583,17 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("som"))
         ;
 # "Sheila jobber som lærer."
+"<lærer>" REMOVE:yrke-lærer vblex IF
+        (-1 kolon OR >>> OR sent)
+        (1 sent)
+        ;
+# "Yrke: lærer"
 "<Si>" SELECT:si-hele-setningen vblex IF
         (-1 >>>)
         (1 adj)
         (2 n)
         ;
-# "Sheila jobber som lærer."
+# "Si hele setningen."
 "<Lette>" SELECT:lette-bivirkninger ("lett") IF
         (1 n + pl)
         ;
