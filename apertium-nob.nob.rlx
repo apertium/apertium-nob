@@ -13596,6 +13596,13 @@ REMOVE:kapret-istedenfor adj IF
         (1 sent)
         ;
 # "Yrke: lærer"
+"<pakker>" REMOVE:og-noen-pakker-til vblex IF
+        (-3 n)
+        (-2 ("og"))
+        (-1 ("<noen>"))
+        (1 ("til"))
+        ;
+# med mat på bordet og noen pakker til barna under juletreet
 "<spørsmål>" REMOVE:spørsmål-pl sg IF
         (-1 ("når det gjelder"))
         (1 ("som"))
