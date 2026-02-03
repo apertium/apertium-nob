@@ -4165,6 +4165,13 @@ SELECT:flertall-knyttet-til ("<knyttet>"i) + adj + pp + pl IF
                 (-1 n + pl)
 		(1 %til%)
 		;
+SELECT:flertall-knyttet-til-to ("<knyttet>"i) + adj + pp + pl IF
+                (-3 n + pl)
+                (-2 ("som"))
+                (-1 vblex)
+		(1 %til%)
+		;
+# Når det gjelder spørsmål som er knyttet til Norge.
 SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		(1 %til%)
 		;
@@ -13589,6 +13596,11 @@ REMOVE:kapret-istedenfor adj IF
         (1 sent)
         ;
 # "Yrke: lærer"
+"<spørsmål>" REMOVE:spørsmål-pl sg IF
+        (-1 ("når det gjelder"))
+        (1 ("som"))
+        ;
+# "Når det gjelder spørsmål som dette ..."
 "<Si>" SELECT:si-hele-setningen vblex IF
         (-1 >>>)
         (1 adj)
