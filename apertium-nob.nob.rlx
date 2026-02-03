@@ -13608,6 +13608,14 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("som"))
         ;
 # "Når det gjelder spørsmål som dette ..."
+"<pukka>" SELECT:pukka-nødt adv IF
+        (1 ("nødt"))
+        ;
+# "Det er vi pukka nødt til."
+"<rekke>" REMOVE:rekke-ut n IF
+        (1 ("ut"))
+        ;
+# "Vi må rekke ut en hånd til andre."
 "<Si>" SELECT:si-hele-setningen vblex IF
         (-1 >>>)
         (1 adj)
