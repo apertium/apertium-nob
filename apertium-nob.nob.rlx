@@ -132,7 +132,7 @@ LIST samset = samset ;
 LIST @adv = @adv ;
 
 LIST porsjon = "mengde" "porsjon" ;
-LIST mynteining = "euro" "yen" "krone" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
+LIST mynteining = "euro" "yen" "krone" "kr" "dollar" "franc" "rubel" "pund" "yuan" "rupi" "shekel" "taka" "real" "lev" "zloty" "øre" "cent" "penny" "baht" "koruna" "peso" "lat" "lei" "ringgit" "renminbi" ;
 LIST talord-sg = "en" "én" ;
 LIST talord = "en" "én" "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" "hundretall" "titall" "tusentall" ;
 LIST talord-pl = "to" "tre" "fire" "fem" "seks" "sju" "syv" "åtte" "ni" "ti" "elleve" "tolv" "tretten" "fjorten" "femten" "seksten" "sytten" "atten" "nitten" "tjue" "tretti" "førti" "femti" "seksti" "sytti" "åtti" "nitti" "hundre" "tusen" "million" "milliard" "billion" "billiard" "trillion" "trilliard" "tusenvis" "titusenvis" "hundretusenvis" ;
@@ -5757,6 +5757,14 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 
 "<satt>" SELECT:satt-i-bestilling adj + pp IF
         (-1* %være/bli% BARRIER setn-gr)
+        ;
+
+"<satt>" SELECT:penger-sette-av adj + pp + pl IF
+        (0 ("<satt>"i))
+        (1 ("<av>"i))
+        (-1 mynteining)
+        (-2 kvant)
+        (-2 pl)
         ;
 
 "<satt>"i SELECT:satt-sammen-med pret IF
@@ -13464,6 +13472,11 @@ LIST begrepet-verb = "benytte" "bruke" "oppfinne" "finne# opp" ;
 "<fremme>"i REMOVE:fremme-anken pr IF
         (1 n + def)
         ;
+"<fremme>"i SELECT:fremme-og-bekjempe vblex IF
+        (1 n)
+        (2 ("og"))
+        (3 vblex + inf)
+        ;
 "<håpet>"i REMOVE:håpet-vokste vblex IF
         (1 vblex)
         ;
@@ -20122,6 +20135,7 @@ REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -1 (>>>)) # «: ti drept i …»
         (NEGATE -1 fl-det LINK 0 kvant LINK NOT 0 siffer LINK -2 (>>>)) # «: minst ti drept i …»
         (NEGATE -1 målsubst)
+        (NEGATE -1 mynteining)
         (0* sg LINK 0 n OR prn OR det)
         ;
 
