@@ -12489,7 +12489,9 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 ;
 #  "vel 2 millioner kroner"
 
-
+"<nevnt>"i SELECT:som-nevnt (vblex) IF
+        (-1 adv)
+        (-2 ("som"))
 
 #:3148
   "<vel>"   SELECT:3148   (adv) IF
