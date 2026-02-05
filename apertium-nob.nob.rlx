@@ -13636,6 +13636,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("for"))
         ;
 # "... utsetter vi mennesker – desperate mennesker – for farer."
+"<Volden>" SELECT:volden-blir-utøvd n IF
+        (1 %være/bli%)
+        (*2 ("utøve"))
+        ;
 "<Si>" SELECT:si-hele-setningen vblex IF
         (-1 >>>)
         (1 adj)
