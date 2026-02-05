@@ -14323,6 +14323,10 @@ REMOVE:terrorstemplet ("stempel") IF
 "<holdt>"i REMOVE:holdt-unna n IF
         (1 ("unna"))
         ;
+"<fellesskap>"i SELECT:bygge-sterke-fellesskaper pl IF
+        (-1 adj)
+        (NOT -2 det)
+        ;
 # "Boston Celtics holdt unna mot Miami Heats"
 "<holdt>"i SELECT:det-holdt-til pret IF
         (-1 ("den") + nt)
