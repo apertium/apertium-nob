@@ -42758,6 +42758,15 @@ SELECT:noen-av-skattene ("noe"i) + det + qnt + un + pl - neg IF
         (2 n + pl + def)
         ;
 # noen av skattene
+SELECT:noen-pakker-til ("noe"i) + det + qnt + un + pl - neg IF
+        (1 n + pl)
+        (2 ("til"))
+        ;
+# ... og noen pakker til barna.
+"<Noen>" SELECT:Noen-får <noen> + pl - neg IF
+        (1 ("få") + vblex)
+        ;
+# Noen får familien med seg, andre ikke.
 SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
         (1 ("få" adj))
         ;
