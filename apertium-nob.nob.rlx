@@ -13618,6 +13618,11 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("til"))
         ;
 # med mat på bordet og noen pakker til barna under juletreet
+"<øremerket>" SELECT:øremerket-til adj IF
+        (-1 vblex + pres)
+        (1 ("til"))
+        ;
+# "... med det vi gir øremerket til gode tiltak..."
 "<spørsmål>" REMOVE:spørsmål-pl sg IF
         (-1 ("når det gjelder"))
         (1 ("som"))
@@ -42741,7 +42746,18 @@ SELECT:verb-noen-en prn + neg IF
 REMOVE:noen-betydning <noen> + pl IF
 	(1C sg)
 ;
-
+SELECT:utan-at-noen-av ("noe"i) + det + qnt + un + pl + neg IF
+        (-2 ("uten"))
+        (-1 ("at"))
+        (1 ("av"))
+        (2 n + pl + def)
+        ;
+# noen av skattene
+SELECT:noen-av-skattene ("noe"i) + det + qnt + un + pl - neg IF
+        (1 ("av"))
+        (2 n + pl + def)
+        ;
+# noen av skattene
 SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
         (1 ("få" adj))
         ;
