@@ -13397,6 +13397,14 @@ SELECT:snitt-per-søker n + ind IF
         (NEGATE -1 det + qnt OR adj)
         (NEGATE 1 ("til" prep))
         ;
+"<lykkes>" SELECT:lykkes-bedre vblex IF
+        (1 adj)
+        ;
+# er blant grunnene til at Norge har lykkes bedre med implementeringen enn mange andre land.
+"<Bosettingen>" SELECT:bosettingen-setn-gr n IF
+        (-1 setn-gr)
+        ;
+# Bosettingen (sentence start)
 
 SELECT:meningsmålingssnittene ("snitt") + nt IF
         (0/1 cmp)
