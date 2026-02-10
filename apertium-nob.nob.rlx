@@ -42795,6 +42795,11 @@ SELECT:uten-at-noen <noen> + neg IF
         (-1 %at%)
 ;
 
+SELECT:at-noen-andre <noen> + neg IF
+        (-1 %at% OR ("og at") OR ("enn"))
+        (1 ("annen"))
+        ;
+
 "<Noen>" SELECT:Noen-av <noen> + pl - neg IF
         (1 %av%)
         ;
