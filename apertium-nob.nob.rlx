@@ -13808,6 +13808,10 @@ REMOVE:kapret-istedenfor adj IF
         (-1 %og%)
         ;
 
+"<skaper>"i REMOVE:skaper-trøbbel n IF
+        (1 n)
+        ;
+
 "<tørst>" SELECT:veldig-tørst adj IF
         (-1 ("veldig"))
         ;
