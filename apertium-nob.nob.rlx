@@ -12492,6 +12492,7 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 "<nevnt>"i SELECT:som-nevnt (vblex) IF
         (-1 adv)
         (-2 ("som"))
+;
 
 #:3148
   "<vel>"   SELECT:3148   (adv) IF
@@ -44816,6 +44817,13 @@ SELECT:Forsvarer-kolon n IF
 # «Forsvarer:»
 # «Aviser:»
 # «Redigerer:»
+
+"<">" REMOVE:before-period lquot IF (1 sent) ;
+# «Han sa "blah".»
+
+"<">" REMOVE:no-space-after rquot IF (0 lquot) ;
+# and rquot for the entry that has a following space: "<" >"
+# (see <l>"<b/></l> in dix)
 
 SELECT:Kjører-Arctic-Race pres IF
         (-1 >>>)
