@@ -3423,6 +3423,7 @@ REMOVE:unlikely ("anklager") + n IF
         (0/* cmp)
         (NEGATE -1 ("en") + det + qnt + m + sg)
         ;
+REMOVE:unlikely ("<løpet>"i) + pp ; # (løpe - løpt) partisippforma løpet knapt i bruk
 REMOVE:unlikely ("anklager") + n IF
         (0/* cmp)
         (NEGATE -2 ("en") + det + qnt + m + sg)
@@ -3596,16 +3597,6 @@ REMOVE:vippet ("<vippet>"i) + n IF
 		(NEGATE -1 %på%)
 		;
 		# vippa over, men på vippet (vippen)
-
-REMOVE:løpet ("<løpet>"i) + vblex + pp
-		;
-		# (løpe - løpt) partisippforma løpet knapt i bruk
-
-REMOVE:løpet-ut ("<løpet ut>"i) + vblex + pp
-		;
-# adv: "løpet ut"
-# Regjeringa må stå løpet ut.
-# Der vart ho liggjande løpet ut.
 
 REMOVE:gås ("<gås>"i) + vblex + pasv  IF
 		(-1 det + qnt OR prep OR vblex)
@@ -8451,6 +8442,11 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 "<merkes>"i SELECT:det-merkes vblex + pasv + pres IF
         (-1 ("<det>"i))
         ;
+
+"<huskes>"i SELECT:huskes-godt vblex IF
+        (1 ("god"))
+        ;
+# som huskes best for
 
 "<brennmerker>"i SELECT:brennmerker-på n IF
         (1 %på%)
@@ -28471,6 +28467,10 @@ SELECT:org+guess (np org) IF
 		;
                 # "kåret til noen" (levekåra) er mogleg, men lite sannsynleg (svært uvanleg i nynorsk òg)
 
+SELECT:statlig-eid vblex IF
+        (-1 ("offentlig") OR ("statlig") OR ("kommunal") OR ("fylkeskommunal"))
+        ;
+# eit statleg eigd selskap
 
 #:2494
  SELECT:2494 subst IF
@@ -32140,7 +32140,6 @@ SELECT:offentlig-ansatte def IF
         (0 ("ansatt"i))
         (*-1 ("offentlig"))
         ;
-
 
 SECTION 4-remove-classes ;
 
