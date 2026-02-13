@@ -13650,6 +13650,11 @@ REMOVE:kapret-istedenfor adj IF
         (1 %være/bli%)
         (*2 ("utøve"))
         ;
+"<Dem>" SELECT:dem-det-gjelder prn IF
+        (-1 setn-gr)
+        (*2 vblex BARRIER setn-gr)
+        ;
+# Dem det derimot burde gjelde for ...
 "<Si>" SELECT:si-hele-setningen vblex IF
         (-1 >>>)
         (1 adj)
