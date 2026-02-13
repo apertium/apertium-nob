@@ -15359,9 +15359,12 @@ REMOVE:unlikely ("rukke") IF
 		(0 ("rukke") OR ("rekke"))
         ;
 # "fire runder ble rukket spilt"
-"<utleier>" REMOVE:unlikely ("utleie") IF
+"<utleier>"i REMOVE:unlikely ("utleie") IF
 		(0 ("utleie") OR ("utleier"))
         ;
+"<utleiers>"i REMOVE:unlikely ("utleie") + pl + gen
+        ;
+# utleiers samtykke
 "<selger>" REMOVE:selger-av-ressurser vblex IF
 		(0 ("selge") OR ("selger"))
 		(1 ("av"))
@@ -20058,6 +20061,10 @@ SELECT:få-den-vedtatt adj + pp + $$GENDER IF
 
 "<samtykket>"i SELECT:mannen-samtykket-til vblex IF
 		(1 %til%)
+		;
+
+"<samtykke>"i REMOVE:få-samtykke vblex IF
+		(-1 ("få" vblex) OR ("gi"))
 		;
 
 "<enkelt>"i SELECT:hver-enkelt adj IF
