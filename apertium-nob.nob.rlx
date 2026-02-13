@@ -3155,6 +3155,11 @@ SELECT:bite-seg ("bite") + vblex IF
         (-1* %ha% BARRIER setn-gr)
         (NEGATE 1 vblex + pp)
         ;
+
+"<samarbeider>"i SELECT:samarbeider-fullt-ut vblex + pres IF
+        (1C adv)
+        ;
+# ho er i dialog med arbeidsgivaren sin og samarbeider fullt ut
         
 "<tårnet>"i SELECT:tårnet-seg vblex IF
         (1 %seg% OR %opp%)
@@ -13852,6 +13857,11 @@ REMOVE:kapret-istedenfor adj IF
         (2 vblex + pasv)
         ;
 # "Et ord som løst kan oversettes til gresk."
+"<løst>"i SELECT:så-løst ("løs") IF
+        (-1 ("så" adv) OR ("såpass") OR ("så pass"))
+        ;
+# det er vanskeleg å gira opp når det er så laust
+# Det er altså så laust og tungt
 "<eggene>"i SELECT:eggene-klekker nt IF
         (1 ("klekke"))
         ;
