@@ -3700,6 +3700,12 @@ SELECT:bare-laget-med ("<laget>"i) + n IF
 		(3 n)
 		(4 vblex)
 		;
+
+"<laget>" SELECT:laget-min-egen vblex IF
+                (1 det + pos)
+                (2 ("egen"))
+		;
+# Eg har laga min eigen variant
 SELECT:laget-vårt ("<laget>"i) + n IF
 		(1 pos)
 		;
@@ -3722,6 +3728,17 @@ SELECT:for-laget ("<laget>"i) + n IF
         (-1 prn OR np OR n)
         (NEGATE 1 det OR adj OR n)
         ;
+
+"<laget>" SELECT:har-laget-scoret n IF
+		(-1 %ha%)
+                (1C vblex)
+		;
+# No har laget vorte betre
+
+"<laget>" SELECT:har-laget-fine-ting vblex IF
+		(-1 %ha%)
+                (1 n OR adj OR ("en"))
+		;
 
 REMOVE:bussene ("busse") + n + pl
 		;
