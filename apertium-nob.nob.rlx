@@ -3436,6 +3436,7 @@ REMOVE:unlikely ("anklager") + n IF
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
 REMOVE:unlikely ("gniste") + vblex + pres;
 REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
+REMOVE:unlikely ("<skredet>"i) + pp ; # skredet gjekk
 
 LIST unlikely-noun-unless-after-agreeing-determiner = "gnist" "plukk" "knips" "kutt" "svekk" ("nyre" nt) ("trofé" m) "kute" "røkt" "kve" ;
 REMOVE:unlikely unlikely-noun-unless-after-agreeing-determiner + n + &&ADJ_N_AGR IF
@@ -4312,6 +4313,11 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (-1 %være/bli% - pp)
         ;
 # Ikkje: «er det siste året<adj/n> blitt presset»
+
+"<presset>"i SELECT:er-presset-stort n IF
+        (-1 %være%)
+        (1 ("<stort>"i))
+        ;
 
 "<presset>"i SELECT:ble-presset pp IF
         (-1* %være/bli% BARRIER setn-gr)
@@ -19204,6 +19210,10 @@ REMOVE:Vann  vblex OR adv IF
 	(0 det)
 ;
 #  "åtte er sjelden verb på bm"
+
+"<Åpenbart>" SELECT:avoid-Openberra adj + nt
+        ;
+# Openbert er det vanskeleg å svelgja
 
 "<åpenbart>" SELECT:unntak-openberra pp
         (*-2 np OR n + def)
