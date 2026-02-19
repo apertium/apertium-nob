@@ -3035,6 +3035,7 @@ REMOVE:unlikely SUB:* ("seil") + m ;
 REMOVE:unlikely SUB:1 ("seil") + m ; # TODO: does SUB:* not work?
 REMOVE:unlikely SUB:2 ("seil") + m ; # TODO: does SUB:* not work?
 REMOVE:unlikely ("knee" vblex);
+REMOVE:unlikely ("filet"i nt) ; # to filetar (filetet: brodering)
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -5484,6 +5485,11 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         (1C adjn)
         (1 def)
         ;
+
+"<de>"i SELECT:de-to dem IF
+        (1 det + qnt)
+        ;
+# dei to
 
 "<død>" SELECT adj IF
         (-1 ("finne"))
@@ -13221,6 +13227,10 @@ SELECT ("<Rana>") + np IF
 "<lira>"i REMOVE:30-lira pp IF
         (-1 adj OR talord OR det)
         ;
+
+"<utbredes>"i SELECT:utbredes ("utbre") ;
+
+"<utbredt>"i SELECT:utbredt adj ;
 
 
 REMOVE:ACR-prefer-same-casing SUB:1 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/1 ("\\p{Upper}+"r)) ;
@@ -38950,6 +38960,10 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 "<taper>" SELECT ("tape") + n IF
         (-1C det OR adj)
         (-1C pl)
+        ;
+        
+"<tapet>" SELECT ("tap") IF
+        (-1 ("denne") + nt)    # dette tapet
         ;
 
 "<tapet>" SELECT ("tapet") IF
