@@ -13158,6 +13158,8 @@ REMOVE:unlikely ("felt"i) + m + pl; # ute på feltene, ulike felter
 REMOVE:unlikely ("sneke" "<sneket>"i); # ikkje "ha sneka på trikken"
 "<tilbaketrukken>" REMOVE:unlikely pp;
 "<Boken>" REMOVE:unlikely np;
+REMOVE:unlikely ("genius" "<.*genier>"ir); # ikkje "matematikkgeniusar"
+REMOVE:unlikely ("genius" "<.*geniene>"ir); # ikkje "mattegeniusane"
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
