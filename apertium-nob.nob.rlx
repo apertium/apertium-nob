@@ -5472,6 +5472,10 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 	  (1 %ned%)
 ;
 
+ "<plaffet>"i SELECT:plaffe-ned vblex IF
+	(1 %ned%)
+	;
+
 "<dekket>" SELECT:dekket-kostnadene vblex IF
         (1C n)
         ;
@@ -32017,6 +32021,11 @@ SELECT:sakene-er-nært-forbundet adj + pp IF
         ;
 # «En mann i 60-årene er i Sør-Trøndelag tingrett dømt til seks års fengsel.»
 
+"<innledet>"i REMOVE:Drivenes-innledet-OL pp IF
+	(-2 >>>)
+        (-1 np)
+        ;
+# Drivenes innleidde OL med ein sterk fjerdeplass
 
 #:2606
  SELECT:2606 pron-pers IF
