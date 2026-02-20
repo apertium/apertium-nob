@@ -2668,6 +2668,8 @@ SELECT:Zuccas-Rangers np IF
         (0C n OR np)
         ;
 
+"<Dales>" REMOVE:Dales-forsvarar pasv ;
+
 REMOVE:unlikely-leire-pl ("leire") + pl ;
 
 REMOVE:unlikely-leire-vblex ("leire") + vblex IF
