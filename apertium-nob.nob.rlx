@@ -3438,7 +3438,7 @@ REMOVE:unlikely ("anklager") + n IF
         (NEGATE -2 ("en") + det + qnt + m + sg)
 ; # 'anklager' (prosecutor, sg.ind) rarely used, but possible
 REMOVE:unlikely ("gniste") + vblex + pres;
-REMOVE:unlikely ("militær") + sg + ind ; # adj: militær styrke
+REMOVE:unlikely ("<militær>"i) + n ; # adj: militær styrke
 REMOVE:unlikely ("<skredet>"i) + pp ; # skredet gjekk
 
 LIST unlikely-noun-unless-after-agreeing-determiner = "gnist" "plukk" "knips" "kutt" "svekk" ("nyre" nt) ("trofé" m) "kute" "røkt" "kve" ;
@@ -7422,6 +7422,10 @@ LIST grep-adj = "liten" "økonomisk" "enkel" "nødvendig" "politisk" "ny" "mange
 
 "<grepet>" SELECT:grepet-av adj IF
         (1 %av%)
+        ;
+
+"<grepet>" SELECT:dette-grepet n IF
+        (-1 ("<dette>"i))
         ;
 
 #:3581
@@ -12462,6 +12466,10 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
         (2 ("sammen"))
         ;
 
+"<veier>"i SELECT:veier-tyngst vblex IF
+        (1 ("tung"))
+        ;
+
 "<veier>" SELECT:begge-veier n IF
         (-1 ("begge"))
         ;
@@ -12980,6 +12988,10 @@ REMOVE:spille_spile ("spile") + verb IF
 
 "<leder>"i SELECT:Nord-Koreas-leder n IF
 	(-1 (top gen))
+;
+
+"<leder>"i SELECT:militær-leder n IF
+	(-1 adj)
 ;
 
 "<ballet>" SELECT:ballet-på-seg ("balle" vblex) IF
@@ -38959,7 +38971,18 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         ;
 # «Kvaløysletta sykehjem var første stopp i Tromsø mandag ettermiddag.»
 
-"<taper>" SELECT ("tape") + n IF
+"<taper>"i SELECT:taper-penger pres IF
+        (1C n OR %på%)
+        ;
+# dei som taper på å bu i ulvesona
+
+"<taper>"i SELECT:taper-verdifull-tid pres IF
+        (1C adj)
+        (2C n)
+        ;
+# Mange taper verdifull tid på skulen
+
+"<taper>"i SELECT ("tape") + n IF
         (-1C det OR adj)
         (-1C pl)
         ;
