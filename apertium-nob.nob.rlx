@@ -8252,6 +8252,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 # Storbritannia er det landet som har brukt mest AstraZeneca
 
+"<landet>" SELECT:landet-oppnår n IF
+        (1 vblex)
+        ;
+
 "<landet>"i SELECT:har-landet-vært n IF
         (-1 ("ha"))
         (1 pp)
@@ -8291,6 +8295,12 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         (1 %i%)
         ;
 
+"<landet>" SELECT:landet-hun-på pret IF
+        (1 prn + pers OR np + cog)
+        (2 %på% OR adv)
+        ;
+# Der landa han på ein mann
+
 "<landet>" SELECT:selv-om-landet n IF
         (-1 ("at") OR ("og at") OR ("selv om") OR ("til tross for at") OR cnjsub)
         ;
@@ -8316,7 +8326,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 "<landet>" SELECT:hun-landet pret IF
         (-1 prn + pers OR np + cog)
+        (NEGATE -2 vblex)
         ;
+# Dei landa akkurat, og alt går bra.
+# Ser me landet under eitt, har bustadprisane nesten ikkje stige
 
 "<landet>" SELECT:gjennomført-og-landet pret IF
         (-2 vblex + pret)
@@ -13821,6 +13834,18 @@ REMOVE:kapret-istedenfor adj IF
         (-1C %og%)
         (-2 n + sg + ind)
         ;
+        
+"<lærer>"i SELECT:lærer-seg pres IF
+        (1 refl-prn)
+        ;
+# Det er stadig fleire som lærer seg samisk
+# Du lærer deg sjølv å kjenna
+
+"<lærer>"i SELECT:73-år-gammel-lærer n IF
+        (-1 adj + pst)
+        ;
+# ein 64 år gammal lærar
+
 "<faste>" SELECT:faste-medisiner adj + pl IF
         (1 ("medisin") + pl)
         ;
