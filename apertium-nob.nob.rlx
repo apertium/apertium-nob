@@ -6266,6 +6266,11 @@ SELECT:eier-bygget ("<bygget>"i) + n IF
 	(2 vblex)
 ;
 #  "som både selger og kjøper på FINN"
+
+"<selger>" SELECT:selger-både pres IF
+	(1 ("både"))
+;
+
 "<selger>" SELECT:til-selger n IF
 	(-1 ("til"))
 ;
