@@ -28588,10 +28588,12 @@ SELECT:org+guess (np org) IF
 		;
                 # "kåret til noen" (levekåra) er mogleg, men lite sannsynleg (svært uvanleg i nynorsk òg)
 
-SELECT:statlig-eid vblex IF
-        (-1 ("offentlig") OR ("statlig") OR ("kommunal") OR ("fylkeskommunal"))
+SELECT:statlig-eid vblex + pp OR adj + &&ADJ_N_AGR IF
+        (-1 ("offentlig") OR ("statlig") OR ("kommunal") OR ("fylkeskommunal") LINK 0 &&ADJ_N_AGR)
+        (1C n + &&ADJ_N_AGR)
         ;
-# eit statleg eigd selskap
+# «et statlig eid selskap.»
+# Ikkje: «Det var hans første store offentlige oppdrag» (oppdra.vblex.imp)
 
 #:2494
  SELECT:2494 subst IF
