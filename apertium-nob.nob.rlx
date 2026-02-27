@@ -41775,6 +41775,11 @@ SELECT:dette-løfta-glimra n + def IF
 		(-1 ("for"))
 		;
 
+"<tvang>" SELECT:av-tvang n IF
+		(-1 %av%)
+		;
+# bruken av tvang i psykiatrien
+
 #:1728
  SELECT:1verb-per-setn (vblex pret) IF
 	(NOT 0 farlige-verb)
