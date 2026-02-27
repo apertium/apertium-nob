@@ -42918,20 +42918,25 @@ SELECT:utan-at-noen-av ("noe"i) + det + qnt + un + pl + neg IF
         ;
 # noen av skattene
 SELECT:noen-av-skattene ("noe"i) + det + qnt + un + pl - neg IF
+        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
+        (NEGATE -1 %om%)
         (1 ("av"))
         (2 n + pl + def)
         ;
 # noen av skattene
 SELECT:noen-pakker-til ("noe"i) + det + qnt + un + pl - neg IF
+        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
         (1 n + pl)
         (2 ("til"))
         ;
 # ... og noen pakker til barna.
 "<Noen>" SELECT:Noen-får <noen> + pl - neg IF
+        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
         (1 ("få") + vblex)
         ;
 # Noen får familien med seg, andre ikke.
 SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
+        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
         (1 ("få" adj))
         ;
 # berre nokre få
