@@ -42889,7 +42889,7 @@ REMOVE:pp-overskrift vblex + pp IF
 #################################################################
 
 LIST småord-før-nokon-av = "hvis" "dersom" "om" "uten at" "ikke" "aldri" "uten";
-LIST nektingsord = "ikke" "aldri" "uten" "nekte" ;
+LIST nektingsord = "ikke" "aldri" "uten" "nekte" "hverken" "verken" ;
 LIST av-adverbial = "dage" "syne" "lage" "vei" "gårde" "sted" "all" "hel" "hele";
 
 LIST <noen> = ("<noen>"i);
