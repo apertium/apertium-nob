@@ -9981,6 +9981,10 @@ REMOVE:unlikely ("<ris>") + pasv;
 ;
 #  "ha/få råd til"
 
+"<råd>" SELECT:noen-råd pl IF
+        (-1 %noen%)
+        ;
+
 "<de>"i SELECT:de-forlovede det IF
 		(1 ("forlovede"))
 		;
