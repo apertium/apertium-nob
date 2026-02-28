@@ -42888,6 +42888,10 @@ REMOVE:pp-overskrift vblex + pp IF
 # neg or sg is nokon/noka                                       #
 #################################################################
 
+LIST småord-før-nokon-av = "hvis" "dersom" "om" "uten at" "ikke" "aldri" "uten";
+LIST nektingsord = "ikke" "aldri" "uten" "nekte" ;
+LIST av-adverbial = "dage" "syne" "lage" "vei" "gårde" "sted" "all" "hel" "hele";
+
 LIST <noen> = ("<noen>"i);
 REMOVE:wtf ("noen") + det;      # where is this one in the .dix?
 
@@ -42916,27 +42920,31 @@ SELECT:utan-at-noen-av ("noe"i) + det + qnt + un + pl + neg IF
         (1 ("av"))
         (2 n + pl + def)
         ;
-# noen av skattene
+
 SELECT:noen-av-skattene ("noe"i) + det + qnt + un + pl - neg IF
-        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
-        (NEGATE -1 %om%)
+        (NEGATE *-1 nektingsord)     # «De vet ikke om noen av» → om nokon av
+        (NEGATE -1 småord-før-nokon-av)
         (1 ("av"))
         (2 n + pl + def)
+        (NEGATE *2 spørsmål-t)  # «Kommer noen av dem?»
+        (NEGATE 2 av-adverbial) # «elske noen av hele sitt hjerte, ta noen av dage»
         ;
+# Ikkje: «som nekter å binde seg til noen av koalisjonene»
 # noen av skattene
+
 SELECT:noen-pakker-til ("noe"i) + det + qnt + un + pl - neg IF
-        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
+        (NEGATE *-1 nektingsord)     # «De vet ikke om noen av» → om nokon av
         (1 n + pl)
         (2 ("til"))
         ;
 # ... og noen pakker til barna.
 "<Noen>" SELECT:Noen-får <noen> + pl - neg IF
-        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
+        (NEGATE *-1 nektingsord)     # «De vet ikke om noen av» → om nokon av
         (1 ("få") + vblex)
         ;
 # Noen får familien med seg, andre ikke.
 SELECT:noen-få ("noe"i) + det + qnt + un + pl - neg IF
-        (NEGATE *-1 %ikke% OR %uten%)     # «De vet ikke om noen av» → om nokon av
+        (NEGATE *-1 nektingsord)     # «De vet ikke om noen av» → om nokon av
         (1 ("få" adj))
         ;
 # berre nokre få
@@ -42991,11 +42999,8 @@ SELECT:som-noen-av-en-eller-annen-grunn <noen> + sg IF
         ;
 # «Eksplosjonen ble forårsaket av en granat som noen av en eller annen grunn hadde tatt med seg inn på skolen.»
 
-LIST småord-før-nokon-av = "hvis" "dersom" "om" "uten at" "ikke" "aldri" "uten";
-LIST nektingsadv = "ikke" "aldri" "uten" ;
-LIST av-adverbial = "dage" "syne" "lage" "vei" "gårde" "sted" "all" "hel" "hele";
 REMOVE:fordi-noen-av-dem neg OR sg IF
-        (NEGATE *-1 nektingsadv) # «Jeg håper det ikke blir noen av disse»
+        (NEGATE *-1 nektingsord) # «Jeg håper det ikke blir noen av disse»
         (NEGATE -1 småord-før-nokon-av) # «Hvis noen av dem er fornærmet»
         (0 <noen>)
         (1 %av%)
