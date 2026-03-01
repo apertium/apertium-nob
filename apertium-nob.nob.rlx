@@ -12175,7 +12175,10 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 ;
 #  "Hun skulle tre inn i forsamlingen"
 
-
+"<tre>" SELECT:de-tre qnt IF
+        (-1 %de%)
+        ;
+# «de tre» i tydinga «dei trea» er ganske usannsynleg
 
 
 #:3176
