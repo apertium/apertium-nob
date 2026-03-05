@@ -16633,6 +16633,10 @@ REMOVE ("frø") IF
         ;
 
 
+"<forutsetning>"i REMOVE:forutsetning f
+        ;
+# utan nokon føresetnad
+
 #:3609
   "<før>"   REMOVE:3609   (adj ind sg) IF
 	(-1C clb-konj)
@@ -35166,6 +35170,12 @@ REMOVE:imp+fv (imp) IF
 #  "for (ikke konj) en åpen konflikt."))
 
 "<gjennomtenkte>" SELECT:default-adj adj ;
+
+"<gjennomtenkt>"i SELECT:gjennomtenkt-plan adj IF
+        (NEGATE -1 %ha% BARRIER setn-gr)
+        ;
+# Det er eit gjennomtenkt val.
+# Han må ha oversikt over alle bevis og vitne, ha tenkt over kva spørsmål som vil dukka opp, og ha klart for seg korleis han skal møta skuldingane.
 
 #:2099
  REMOVE:2099 pp IF
