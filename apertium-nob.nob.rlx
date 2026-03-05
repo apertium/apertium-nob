@@ -4904,8 +4904,12 @@ WITH:anklager ("<anklager>"i) {
         (NOT 2 %seg%)
         ;
 
-"<Beløp>"i SELECT:beløp-spillerne-får n
+"<Beløp>" SELECT:beløp-spillerne-får n
+        (NOT 1 %seg%)
+        (NOT 2 %seg%)
         ;
+# Ikkje: «De beløp seg totalt til 208,6 millioner pund» (unngå «beløpa seig»)
+
 
 "<beløp>" SELECT:ble-beløpet-økt n IF
         (NOT 1 %seg%)
@@ -14388,7 +14392,7 @@ REMOVE:terrorstemplet ("stempel") IF
         (2 n)
         ;
 # bryter grunnleggende forbrukervernregler
-"<Bryter>"i REMOVE:Bryter-default n IF
+"<Bryter>" REMOVE:Bryter-default n IF
         (1 prn + pers OR prn + ref OR %med% OR ("en") + det + qnt + sg)
         ;
 # byter han seg inn, bryter seg inn, det bryter med alt, bryter en avtale
@@ -15415,7 +15419,7 @@ REMOVE:rekke-ut-handa ("rake") IF
 "<trengte>"i SELECT:hun-trengte pret IF
         (-1 pron)
         ;
-"<Løy>"i SELECT:Løy-du ("lyve") IF
+"<Løy>" SELECT:Løy-du ("lyve") IF
         (1 pron)
         ;
         
