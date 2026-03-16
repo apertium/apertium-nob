@@ -13388,6 +13388,14 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<smug>"i REMOVE:i-smug nt IF
         (-1 ("i"))
         ;
+REMOVE:-dataene("data") + m IF
+        (0/1 cmp)
+        ;
+# energidataene, overvåkningsdataene
+"<data>" REMOVE:nye-data m IF
+        (-1 ("ny"))
+        ;
+# nye data
 "<savnet>"i SELECT:merke-savnet n IF
         (-1 ("merke" vblex) OR ("kjenne" vblex) OR ("føle" vblex))
         ;
