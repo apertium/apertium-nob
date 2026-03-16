@@ -13388,6 +13388,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<smug>"i REMOVE:i-smug nt IF
         (-1 ("i"))
         ;
+"<bølger>"i SELECT:skjær-og-bølger n IF
+        (-2 n)
+        (-1 ("og"))
+        ;
 REMOVE:-dataene("data") + m IF
         (0/1 cmp)
         ;
