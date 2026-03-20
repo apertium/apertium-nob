@@ -642,7 +642,7 @@ LIST grads-adv = "stor"  "mye"  "liten"  "ille"  "god"  ;
 LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burde"  "bli" "ville# kunne"  ;
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("ville# kunne"  inf) ("ville# kunne"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
 # TODO: fix in dix
-LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
+LIST høflig = "de³" "deres³" ;
 SET ikke-komma = (*) - cm;
 LIST ikke-det-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij <<< <ellipse> (clb cm) adv adj ;
 LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
