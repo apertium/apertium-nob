@@ -13426,6 +13426,10 @@ REMOVE:-dataene("data") + m IF
 "<tykt>"i REMOVE:tykt ("tykke") IF
         (0 ("tykke") OR ("tykk"))
         ;
+"<ringer>"i SELECT:ringer-i-vann ("ring") IF
+        (1 ("i"))
+        (2 ("vann"))
+        ;
 "<strøket>"i SELECT:bli-strøket pl IF
         (-6 ("bli"))
         (-5 n + pl)
