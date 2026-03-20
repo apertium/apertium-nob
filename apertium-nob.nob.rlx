@@ -45217,7 +45217,7 @@ REMOVE:default ("besette¹") ;
 REMOVE:default ("besette²") ;
 REMOVE:default ("besette³") ;
 REMOVE:default ("besette⁴") ;
-REMOVE:default ("data" n m pl) ; # unngå «Manglar dataar»
+"<data>"i REMOVE:default ("data" n m) ; # unngå «dataane»/«dataar» vis «data» mogleg
 
 REMOVE:default ("tape") IF (0 ("taper")) ;
 
