@@ -38672,15 +38672,15 @@ SECTION 3-select-words-heur ;
 
 "<De>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>> OR guio OR lpar)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 "<Dem>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>> OR guio OR lpar)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 "<Deres>" REMOVE:Deres ("deres²" pos) OR ("deres¹" pos) IF
  	(0 høflig)
-	(NOT -1 >>>)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 
 "<De>" REMOVE:De ("de" prn) IF
