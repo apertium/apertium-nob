@@ -14462,6 +14462,10 @@ REMOVE:terrorstemplet ("stempel") IF
         (-2 n)
         ;
 
+"<konge>"i REMOVE adj IF
+        (NOT -1 ("helt") OR ("heilt"))
+        ;
+
 "<låter>"i REMOVE:låter-som vblex IF
         (1 %som%)
         (2 lquot)
