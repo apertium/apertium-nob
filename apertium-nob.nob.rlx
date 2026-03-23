@@ -12832,8 +12832,8 @@ REMOVE:mest-respekterte pret IF
 # «landets mest respekterte intellektuelle»
 # Men ikkje adj ved «minst åtte skudd»
 
-SELECT:glatte-veier ("<veier>"i) + n IF
-        (-1 adj + pl + ind)
+"<veier>"i SELECT:glatte-veier ("vei") + n IF
+        (-1 adj + pl + ind OR %mange%)
         ;
 # glatte vegar
 
