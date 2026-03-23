@@ -19421,7 +19421,7 @@ REMOVE:ta-det-som-tas-kan pres + pasv + ("([^<].*)"r) IF
 # We don't insert before adjectives.                            #
 #################################################################
 SELECT:Siktede-ikke-avhørt n + def IF
-        (-1 >>> OR clb OR cnjcoo)
+        (-1 >>> OR clb OR cnjcoo OR ("etter at"))
         (0 adjn)
         ;
 # «Siktede ikke avhørt.»
