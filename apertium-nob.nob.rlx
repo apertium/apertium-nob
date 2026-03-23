@@ -13242,6 +13242,7 @@ REMOVE:unlikely ("sneke" "<sneket>"i); # ikkje "ha sneka på trikken"
 "<Boken>" REMOVE:unlikely np;
 REMOVE:unlikely ("genius" "<.*genier>"ir); # ikkje "matematikkgeniusar"
 REMOVE:unlikely ("genius" "<.*geniene>"ir); # ikkje "mattegeniusane"
+REMOVE:unlikely ("Sek") + gen;              # Seks
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -20341,6 +20342,16 @@ SELECT:krever-dem-løslatt adj + pl OR adj + sp IF
         ;
 # «Flere land krever ham løslatt.»
 # «Vi holdt oss rolige.»
+
+SELECT:Seks-brannmenn-løslatt adj + pl IF
+        (-3C >>>)
+        (-2C det + qnt + pl)
+        (-1C n + pl)
+        (0C pp OR adj)
+        (1C cnjsub)
+        ;
+# «Seks brannmenn løslatt etter at norsk kvinne anmeldte gjengvoldtekt i Paris.»
+
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
@@ -35216,7 +35227,7 @@ REMOVE:imp+fv (imp) IF
 "<gjennomtenkte>" SELECT:default-adj adj ;
 
 "<gjennomtenkt>"i SELECT:gjennomtenkt-plan adj IF
-        (NEGATE -1 %ha% BARRIER setn-gr)
+        (NEGATE -1 %ha%)
         ;
 # Det er eit gjennomtenkt val.
 # Han må ha oversikt over alle bevis og vitne, ha tenkt over kva spørsmål som vil dukka opp, og ha klart for seg korleis han skal møta skuldingane.
