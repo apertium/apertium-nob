@@ -13289,6 +13289,8 @@ REMOVE:unlikely-imp imp IF
         # liggje tett
 
 "<Viken>" SELECT:typically-np-if-caps np;
+"<Venstre>" SELECT:typically-np-if-caps np ;
+
 "<Jeg>"   REMOVE:not-n-if-caps n IF
         (-1 >>>)
         ;
