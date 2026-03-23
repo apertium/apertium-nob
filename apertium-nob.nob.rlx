@@ -7161,6 +7161,8 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-1 n OR np)
 	(1 ("mot") OR ("å"))
 ;
+# «Siden da har pilene fortsatt å peke oppover»
+
 "<fortsatt>" SELECT (vblex) IF
 	(-2 ("ha"))
 	(-1 n OR np)
@@ -7190,15 +7192,26 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 %som%)
 	(2 ("før"))
 ;
+
 "<fortsatt>" SELECT (vblex) IF
-	(-2 ("ha"))
 	(-1 ("siden"))
+	(-2 ("ha"))
 ;
 
-# Siden da har pilene fortsatt å peke oppover
-"<fortsatt>"i SELECT adv IF
-	(NEGATE -1 ("ha") LINK 2 ("med"))
+"<fortsatt>" SELECT (vblex) IF
+	(-1 ("ha"))
+	(1 ("med"))
 ;
+"<fortsatt>" SELECT:har-fortsatt-etter-at (vblex) IF
+	(-1 ("ha"))
+	(1C cnjsub)
+;
+# «Demonstrasjonene har fortsatt etter at presidenten i helgen opphevet unntakstilstanden som rundt 20.000 politifolk og soldater har håndhevet.»
+
+
+
+
+"<fortsatt>"i SELECT:default adv ;
 
 "<fortsatte>" SELECT:den-fortsatte-stengingen adj + def IF
         (-1 det + dem + &&ADJ_N_AGR)
