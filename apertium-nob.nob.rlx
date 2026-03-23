@@ -3039,6 +3039,7 @@ REMOVE:unlikely SUB:2 ("seil") + m ; # TODO: does SUB:* not work?
 REMOVE:unlikely ("knee" vblex);
 REMOVE:unlikely ("filet"i nt) ; # to filetar (filetet: brodering)
 REMOVE:unlikely (".*lås") + nt; # hengelåsane
+REMOVE:unlikely ("timer") IF (0 ("time")); # noen timer
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
