@@ -12647,6 +12647,10 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 	(*1 fv BARRIER setn-gr)
 ;
 
+"<viss>" SELECT adj IF
+        (-1 %en/ei%)
+        ;
+
 
 #:3124
   "<visst>"   SELECT:3124   (adj pst nt ind sg) IF
