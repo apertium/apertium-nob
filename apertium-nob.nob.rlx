@@ -7209,6 +7209,12 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 # «Demonstrasjonene har fortsatt etter at presidenten i helgen opphevet unntakstilstanden som rundt 20.000 politifolk og soldater har håndhevet.»
 
+"<fortsatt>" SELECT:fra-fortsatt-spill adj + &&ADJ_N_AGR IF
+        (-1 pr)
+        (1 n + &&ADJ_N_AGR + ind)
+        ;
+# «Kvinner som uteblir fra seriespill uten gyldig grunn skal –  med mindre særlige forhold tilsier noe annet –  utelukkes fra fortsatt spill i inneværende sesong og alle lagets kamper annulleres.»
+# «Vi tror på fortsatt vekst.»
 
 
 
