@@ -3441,6 +3441,8 @@ REMOVE:unlikely ("anklager") + n IF
 REMOVE:unlikely ("gniste") + vblex + pres;
 REMOVE:unlikely ("<militær>"i) + n ; # adj: militær styrke
 REMOVE:unlikely ("<skredet>"i) + pp ; # skredet gjekk
+REMOVE:unlikely ("<eierskap>"i) + pl + ind; # ha eigarskap til
+REMOVE:unlikely ("<sakseierskap>"i) + pl + ind; # ha sakseigarskap til
 
 LIST unlikely-noun-unless-after-agreeing-determiner = "gnist" "plukk" "knips" "kutt" "svekk" ("nyre" nt) ("trofé" m) "kute" "røkt" "kve" ;
 REMOVE:unlikely unlikely-noun-unless-after-agreeing-determiner + n + &&ADJ_N_AGR IF
@@ -12698,6 +12700,32 @@ REMOVE:kontroll+ører ("øre") + m IF (0 øre-tvitydig-samansetjing);
 	(1 %på% LINK 0 prep)
 ;
 
+
+SELECT:få-opp-øya ("<øya>"i) + nt + pl + def IF
+        (-1 %opp%)
+        (-2* ("sperre" vblex) OR ("få" vblex) BARRIER setn-gr)
+        ;
+# sperre opp auga
+# seinare fekk byråkratane med filmpengesekken opp auga
+SELECT:svart-i-øya ("<øya>"i) + nt + pl + def IF
+        (NEGATE 0 gen)
+        (-1 %i%)
+        (-2 ("blank") OR ("svart") OR ("mørk"))
+        ;
+# blank i auga
+SELECT:se-i-øya ("<øya>"i) + nt + pl + def IF
+        (NEGATE 0 gen)
+        (-1 %i%)
+        (-2C* ("se" vblex) BARRIER setn-gr)
+        ;
+REMOVE:unlikely ("<øya>"i) + nt + pl + def
+        ;
+# den 2.180.000 kvadratkilometer store øya
+# den greske øya Kreta
+# over heile øya
+# Då vart han så forelska i øya at han bestemde seg for å bli
+
+
 #:3120
   "<å>"   SELECT:3120   ("å" part) IF
 	(1 adverb)
@@ -14496,7 +14524,7 @@ REMOVE:terrorstemplet ("stempel") IF
 # gjere haldt, avdeling haldt!
 
 "<holdt>"i SELECT:ha-holdt vblex + pp IF
-        (-1*C ("ha" vblex) BARRIER setn-gr)
+        (-1*C ("ha" vblex) OR %være/bli% BARRIER setn-gr)
         ;
 
 "<buer>"i SELECT:hytter-og-buer ("bu") IF
@@ -35177,7 +35205,7 @@ REMOVE:imp+fv (imp) IF
 "<gjennomtenkte>" SELECT:default-adj adj ;
 
 "<gjennomtenkt>"i SELECT:gjennomtenkt-plan adj IF
-        (NEGATE -1 %ha% BARRIER setn-gr)
+        (NEGATE -1 %ha%)
         ;
 # Det er eit gjennomtenkt val.
 # Han må ha oversikt over alle bevis og vitne, ha tenkt over kva spørsmål som vil dukka opp, og ha klart for seg korleis han skal møta skuldingane.
