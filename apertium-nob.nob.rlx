@@ -499,7 +499,7 @@ LIST %viss% = "viss"  ;
 LIST %visst% = ("viss"  adj pst nt ind sg) ;
 LIST %være% = "være"  ;
 LIST %bli% = "bli"  ;
-LIST %være/bli% = "være"  "bli"  ;
+LIST %være/bli% = "være"  "bli" ".* være"r  ;
 LIST %ytterligere% = "ytterligere"  ;
 LIST %øye% = "øye" ;
 LIST %år% = "år"  ;
@@ -611,11 +611,11 @@ LIST adj-ofte-forsterkande = "hel" "svær" "veldig" "registrere" "relativ" "sær
 
 LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var"  "tids"  "sige"  "se"  "mige"  "live"  "like"  "lette"  "lage"  "helle"  "før"  "fore"  "ete"  "eie"  "egen"  "bar"  "annen"  "angående"  "ale"  "<lenge>"i  "skjær" "<begrepet>" "<jorda>"i "<bena>"i "<tanna>"i "holde" "<satt>"i ;
 LIST farlige-adj-subst = "drept" "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" "sterkt" ;
-LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind) ;
+LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind)  ("bringe" pl) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
 LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" ;
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre" "røde"  "myke" "samene" "gule" ;
-LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("side¹"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) "drept" ;
+LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("side¹"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) "drept" ("bringe" pl) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
 LIST farlige-part = "sport" "skjelve" "kante"  "vite"  "via"  "vekke"  "svare"  "stole"  "spenne"  "skjønne"  "sale"  "renne"  "re"  "pule"  "prime"  "ose"   "omvende"  "nære"  "nyte"  "mige"  "make"  "lyse"  "live"  "lite"  "lete"  "leite"  "kontre"  "klare"  "hete"  "helle"  "hele"  "gråte"  "gale"  "fortsette"  "fore"  "ete"  "desidere"  "brune"  "bre"  "bene"  "bare"  "anstrenge"  "ale" "områ" gen "huse" "pare" "ett" "lande" "fare" "<styret>"i "<rådet>"i "<laget>"i "kost" "lukt" "tanne" ("sette" adj pp) "forbundet";
 LIST farlige-verb = ("felle" pasv) ("intervjue" pres) ("ferje" pres) ("ri" pasv) "flaske" ("talle" vblex pret) ("talle" vblex imp) ("talle" pp)  ("ansette"  vblex pret) ("kontre"  pret) ("gange"  pres) ("stede"  pres) ("nå"  pres) ("elle"  pres) "<før>" ("føre" imp) ("fø"  pres) ("sige"  pret) ("fare"  pret) ("se"  pret) ("helle"  pres) ("mige"  pret) ("dy"  pres) ("dage"  pres) ("grade"  pres) ("tro"  adj) ("kurve"  pres) ("koppe"  vblex pres) ("iblande"  vblex pret) ("forfatte"  vblex pres) ("stege" pret) ("sukke" pres) ("lite" pres) ("gjerde" pres) ("skive" pres) ("<planer>") ("perle" vblex pres) "skole" ("korne" pret) ("rolle" pres) ("lege" pres) ("skipe" pret) ;
@@ -642,7 +642,7 @@ LIST grads-adv = "stor"  "mye"  "liten"  "ille"  "god"  ;
 LIST hj-verb = "være"  "ville"  "skulle"  "måtte"  "kunne"  "ha"  "få"  "burde"  "bli" "ville# kunne"  ;
 LIST hj-verb-iv = ("bli"  inf) ("bli"  vblex pp) ("ha"  inf) ("ha"  vblex pp) ("være"  inf) ("være"  vblex pp) ("få"  inf) ("få"  vblex pp) ("skulle"  inf) ("skulle"  vblex pp) ("kunne"  inf) ("kunne"  vblex pp) ("ville"  inf) ("ville"  vblex pp) ("ville# kunne"  inf) ("ville# kunne"  vblex pp) ("måtte"  inf) ("måtte"  vblex pp) ("burde"  inf) ("burde"  vblex pp) ;
 # TODO: fix in dix
-LIST høflig = ("De" det pos p2) ("De" prn p2) ("de" det pos p2) ("de" prn p2)  ;
+LIST høflig = "de³" "deres³" ;
 SET ikke-komma = (*) - cm;
 LIST ikke-det-subst = "siden"  "$--" "--" "$:" ":" "$-" "-" "$," "," lpar rpar vblex pr prn cnjsub cnjcoo "å" ij <<< <ellipse> (clb cm) adv adj ;
 LIST ikke-adj = "siden"  adv vblex pr prn cnjsub "å" n np ij det (clb cnjcoo) lquot rquot <ellipse> (cnjcoo <adv>) ;
@@ -2901,6 +2901,7 @@ REMOVE:unlikely ("fly") + mORf IF (0 nt);
 REMOVE:unlikely ("skjede") IF (0 ("kjede"));
 REMOVE:unlikely ("alen") IF (0 ("sal"));
 REMOVE:unlikely ("sæter") OR ("sætre") IF (0 ("Sætre"));
+REMOVE:unlikely ("<bære>"i "bær");
 REMOVE:unlikely ("trive") IF (0 ("trives"));
 REMOVE:unlikely ("motstand") IF (0 ("motstander"));
 REMOVE:unlikely ("gaupe") + vblex;
@@ -3039,6 +3040,7 @@ REMOVE:unlikely SUB:2 ("seil") + m ; # TODO: does SUB:* not work?
 REMOVE:unlikely ("knee" vblex);
 REMOVE:unlikely ("filet"i nt) ; # to filetar (filetet: brodering)
 REMOVE:unlikely (".*lås") + nt; # hengelåsane
+REMOVE:unlikely ("timer") IF (0 ("time")); # noen timer
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -7162,6 +7164,8 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(-1 n OR np)
 	(1 ("mot") OR ("å"))
 ;
+# «Siden da har pilene fortsatt å peke oppover»
+
 "<fortsatt>" SELECT (vblex) IF
 	(-2 ("ha"))
 	(-1 n OR np)
@@ -7191,15 +7195,32 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 	(1 %som%)
 	(2 ("før"))
 ;
+
 "<fortsatt>" SELECT (vblex) IF
-	(-2 ("ha"))
 	(-1 ("siden"))
+	(-2 ("ha"))
 ;
 
-# Siden da har pilene fortsatt å peke oppover
-"<fortsatt>"i SELECT adv IF
-	(NEGATE -1 ("ha") LINK 2 ("med"))
+"<fortsatt>" SELECT (vblex) IF
+	(-1 ("ha"))
+	(1 ("med"))
 ;
+"<fortsatt>" SELECT:har-fortsatt-etter-at (vblex) IF
+	(-1 ("ha"))
+	(1C cnjsub)
+;
+# «Demonstrasjonene har fortsatt etter at presidenten i helgen opphevet unntakstilstanden som rundt 20.000 politifolk og soldater har håndhevet.»
+
+"<fortsatt>" SELECT:fra-fortsatt-spill adj + &&ADJ_N_AGR IF
+        (-1 pr)
+        (1 n + &&ADJ_N_AGR + ind)
+        ;
+# «Kvinner som uteblir fra seriespill uten gyldig grunn skal –  med mindre særlige forhold tilsier noe annet –  utelukkes fra fortsatt spill i inneværende sesong og alle lagets kamper annulleres.»
+# «Vi tror på fortsatt vekst.»
+
+
+
+"<fortsatt>"i SELECT:default adv ;
 
 "<fortsatte>" SELECT:den-fortsatte-stengingen adj + def IF
         (-1 det + dem + &&ADJ_N_AGR)
@@ -8584,6 +8605,11 @@ REMOVE:ulikely ("larv") + n IF
         (NEGATE -1 ("<den>"))
         ;
         # den larven!
+
+"<lengre>" SELECT:ikke-lengre-har adv IF
+        (-1 %ikke%)
+        (1 vblex)
+        ;
 
 #:3486
   "<legg>"   SELECT:3486   (vblex imp) IF
@@ -12635,6 +12661,10 @@ LIST org-nve = "NVE" "Norges vassdrags og energidirektorat" "Varsom.no" "Meteoro
 	(*1 fv BARRIER setn-gr)
 ;
 
+"<viss>" SELECT adj IF
+        (-1 %en/ei%)
+        ;
+
 
 #:3124
   "<visst>"   SELECT:3124   (adj pst nt ind sg) IF
@@ -12846,8 +12876,8 @@ REMOVE:mest-respekterte pret IF
 # «landets mest respekterte intellektuelle»
 # Men ikkje adj ved «minst åtte skudd»
 
-SELECT:glatte-veier ("<veier>"i) + n IF
-        (-1 adj + pl + ind)
+"<veier>"i SELECT:glatte-veier ("vei") + n IF
+        (-1 adj + pl + ind OR %mange%)
         ;
 # glatte vegar
 
@@ -13252,6 +13282,7 @@ REMOVE:unlikely ("sneke" "<sneket>"i); # ikkje "ha sneka på trikken"
 "<Boken>" REMOVE:unlikely np;
 REMOVE:unlikely ("genius" "<.*genier>"ir); # ikkje "matematikkgeniusar"
 REMOVE:unlikely ("genius" "<.*geniene>"ir); # ikkje "mattegeniusane"
+REMOVE:unlikely ("Sek") + gen;              # Seks
 
 LIST farlig-adj-nominalisering = "skyld" "tro" "tru" "forvent" "mislykt" "arm" ;
 REMOVE:unlikely farlig-adj-nominalisering + xgrau ;
@@ -13298,6 +13329,8 @@ REMOVE:unlikely-imp imp IF
         # liggje tett
 
 "<Viken>" SELECT:typically-np-if-caps np;
+"<Venstre>" SELECT:typically-np-if-caps np ;
+
 "<Jeg>"   REMOVE:not-n-if-caps n IF
         (-1 >>>)
         ;
@@ -13404,8 +13437,13 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         (1 n)
         ;
 #«Kraftig brann på kjøpesenteret
+"<bor>"i SELECT:bor-i vblex IF
+        (1 ("i"))
+        (2 setn-gr)
+        ;
+# Hva slags rom er det i huset de fire bor i?
 "<brann>"i REMOVE:kraftig-brann vblex IF
-	      (-2 setn-gr)
+	(-2 setn-gr)
         (-1 adj)
         ;
 #«Den blonde og blåøyde mannen
@@ -13416,6 +13454,18 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
 "<smug>"i REMOVE:i-smug nt IF
         (-1 ("i"))
         ;
+"<bølger>"i SELECT:skjær-og-bølger n IF
+        (-2 n)
+        (-1 ("og"))
+        ;
+REMOVE:-dataene("data") + m IF
+        (0/1 cmp)
+        ;
+# energidataene, overvåkningsdataene
+"<data>" REMOVE:nye-data m IF
+        (-1 ("ny"))
+        ;
+# nye data
 "<savnet>"i SELECT:merke-savnet n IF
         (-1 ("merke" vblex) OR ("kjenne" vblex) OR ("føle" vblex))
         ;
@@ -13436,6 +13486,10 @@ LIST dermed-således = "dermed" "således" "derfor" "slik" "sånn" ;
         ;
 "<tykt>"i REMOVE:tykt ("tykke") IF
         (0 ("tykke") OR ("tykk"))
+        ;
+"<ringer>"i SELECT:ringer-i-vann ("ring") IF
+        (1 ("i"))
+        (2 ("vann"))
         ;
 "<strøket>"i SELECT:bli-strøket pl IF
         (-6 ("bli"))
@@ -14446,6 +14500,10 @@ REMOVE:terrorstemplet ("stempel") IF
 "<bomber>"i REMOVE:granater-og-bomber vblex IF
         (-1 %og/eller%)
         (-2 n)
+        ;
+
+"<konge>"i REMOVE adj IF
+        (NOT -1 ("helt") OR ("heilt"))
         ;
 
 "<låter>"i REMOVE:låter-som vblex IF
@@ -19410,7 +19468,7 @@ REMOVE:ta-det-som-tas-kan pres + pasv + ("([^<].*)"r) IF
 # We don't insert before adjectives.                            #
 #################################################################
 SELECT:Siktede-ikke-avhørt n + def IF
-        (-1 >>> OR clb OR cnjcoo)
+        (-1 >>> OR clb OR cnjcoo OR ("etter at"))
         (0 adjn)
         ;
 # «Siktede ikke avhørt.»
@@ -20330,6 +20388,16 @@ SELECT:krever-dem-løslatt adj + pl OR adj + sp IF
         ;
 # «Flere land krever ham løslatt.»
 # «Vi holdt oss rolige.»
+
+SELECT:Seks-brannmenn-løslatt adj + pl IF
+        (-3C >>>)
+        (-2C det + qnt + pl)
+        (-1C n + pl)
+        (0C pp OR adj)
+        (1C cnjsub)
+        ;
+# «Seks brannmenn løslatt etter at norsk kvinne anmeldte gjengvoldtekt i Paris.»
+
 
 REMOVE:eitt-amputerte-tips adj + pp + pl IF
         (NEGATE 0 ("<.*e>"ri)) # The adj-pp-pl not ending in -e is a bit iffy
@@ -38683,15 +38751,15 @@ SECTION 3-select-words-heur ;
 
 "<De>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>> OR guio OR lpar)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 "<Dem>" REMOVE:De ("de" prn) IF
  	(0 høflig)
-	(NOT -1 >>> OR guio OR lpar)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 "<Deres>" REMOVE:Deres ("deres²" pos) OR ("deres¹" pos) IF
  	(0 høflig)
-	(NOT -1 >>>)
+	(NOT -1 >>> OR guio OR lpar OR lquot)
 ;
 
 "<De>" REMOVE:De ("de" prn) IF
@@ -45213,6 +45281,7 @@ REMOVE:default ("besøker") IF (0 ("besøke")) ;
 SELECT:default ("trosse") + vblex ;
 SELECT:default ("Bjella") + np ;
 REMOVE:default ("side¹") ;
+REMOVE:default ("utelukkende") + adj ;
 REMOVE:default ("skryt") + pl ;
 SELECT:default ("stueren") + adj ; # sannsynlegvis ikkje «stuaren»
 REMOVE:default ("lesse") IF (0 ("lese")) ;
@@ -45233,6 +45302,7 @@ REMOVE:default ("besette¹") ;
 REMOVE:default ("besette²") ;
 REMOVE:default ("besette³") ;
 REMOVE:default ("besette⁴") ;
+"<data>"i REMOVE:default ("data" n m) ; # unngå «dataane»/«dataar» vis «data» mogleg
 
 REMOVE:default ("tape") IF (0 ("taper")) ;
 
