@@ -15503,6 +15503,10 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-2 ("på"))
         (-1 ("vegg"))
         ;
+"<henger>"i SELECT:henger-på-greip ("henge") IF
+        (1 %på%)
+        (2 ("<greip>"i))
+        ;
 "<trengte>"i SELECT:hun-trengte pret IF
         (-1 pron)
         ;
@@ -28821,6 +28825,11 @@ SELECT:statlig-eid vblex + pp OR adj + &&ADJ_N_AGR IF
 		(-2 ("verden") + gen)
 		(-1 adj + pst)
 		;
+                
+"<medlemsland>" SELECT:alliansens-medlemsland n + pl IF
+		(-1 n + gen OR np + gen)
+		;
+# medlemslanda i alliansen
 SELECT:landets-nest-største-sykehus n + sg IF
                 (0 n + nt + pl)
 		(-3 ("land") + sg + gen)
