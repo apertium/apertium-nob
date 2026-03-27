@@ -39160,10 +39160,11 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
         ;
 # Mange taper verdifull tid på skulen
 
-"<taper>"i SELECT ("tape") + n IF
-        (-1C det OR adj)
-        (-1C pl)
+
+"<taper>"i REMOVE:unlikely n + pl 
         ;
+# Alle taper i lengda om vi ikkje slår ring om global handel
+# Det kan gjera at mange taper pengar
         
 "<tapet>" SELECT ("tap") IF
         (-1 ("denne") + nt)    # dette tapet
