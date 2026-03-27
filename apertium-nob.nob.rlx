@@ -15032,6 +15032,9 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         ;
 # "lar det skinne"
 
+"<skinnene>"i SELECT:skinnene ("skinn") + nt IF
+        (0* ("pels") OR (".*jakt"ri) OR ("bjørn") OR ("rev") OR ("mink") OR ("mår") OR (".*bestand"ri) OR ("røyskatt") OR ("sortere") OR ("garve") OR ("oppdrett") OR ("oppdretter") OR ("ulovlig"))
+        ;
 "<skinnene>"i SELECT:skinnene ("skinne") + m IF
         (0* ("tog") OR ("trikk") OR ("jernbane") OR ("lokomotiv") OR ("avsporing") OR ("strekning") OR ("skinnegang") OR ("ulykke") OR ("ras"))
         ;
