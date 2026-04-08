@@ -598,7 +598,7 @@ LIST ellipse = ("$--" guio) ("--" guio) <ellipse> ;
 LIST ent = sg ;
 LIST ent-fem-subst = (n f sg) (np f sg) ;
 LIST tidssubst = "år" "uke" "minutt"  "time" "tiendelssekund" "tidelssekund" "sekund" "nanosekund" "millisekund" "hundredelssekund" "halvår" "døgn" "dag" ;
-LIST ent-fem-subst/tall-subst/målsubst = "tusen" "trillion" "tonnkilometer" "snes" "sjømil" "sekundmeter" "prosent" "nanometer" "måned" "mrd." "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "hundre" "hektoliter" "hektogram" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "centimeter" "centiliter" "centigram" "billion" "billiard" (n f sg) (np f sg) ("gang" pl) ;
+LIST ent-fem-subst/tall-subst/målsubst = "tusen" "trillion" "tonnkilometer" "snes" "sjømil" "sekundmeter" "prosent" "nanometer" "måned" "mrd." "million" "millimeter" "milliliter" "milligram" "milliard" "mill." "mil" "mikrometer" "meter" "liter" "kvartmil" "kvartliter" "kvadrillion" "kvadratmillimeter" "kvadratmeter" "kvadratkilometer" "kvadratdesimeter" "kvadratcentimeter" "kubikkmillimeter" "kubikkmeter" "kubikkdesimeter" "kubikkcentimeter" "kilometer" "kilogram" "kilo" "tonn" "hundre" "hektoliter" "hektogram" "halvmillion" "halvmil" "halvmeter" "halvliter" "halvkilo" "gram" "dusin" "desimeter" "desiliter" "desigram" "dekaliter" "centimeter" "centiliter" "centigram" "billion" "billiard" (n f sg) (np f sg) ("gang" pl) ;
 SET ent-fem-subst/tall-subst/målsubst/tidssubst = ent-fem-subst/tall-subst/målsubst OR tidssubst ;
 LIST ent-mask-subst = (n m sg) (np m sg) ;
 LIST ent-nøyt-subst = (n nt sg) (np nt sg) ;
@@ -759,7 +759,7 @@ LIST mest-sanns-subst-istf-adj = "året"  "skyld"  "lo"  "hull"  "faren"  ("skyg
 LIST mest-sanns-verb-istf-subst = "temmer"  "tapper"  "suger"  "strever"  "strekker"  "stiller"  "stikker"  "slukker"  "koker"  "hogger"  "binder"  ;
 LIST modalverb = ("skulle"  vblex) ("kunne"  vblex) ("ville"  vblex) ("ville# kunne"  vblex)  ("ville# måtte"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
 LIST modalverb-utan-ville = ("skulle"  vblex) ("kunne"  vblex) ("ville# kunne"  vblex)  ("ville# måtte"  vblex) ("måtte"  vblex) ("burde"  vblex) ;
-LIST målsubst = "tonnkilometer"  "snes"  "sjømil"  "sekundmeter"  "prosent"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo"  "hektoliter"  "hektogram"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  ("gang"  pl) ;
+LIST målsubst = "tonnkilometer"  "snes"  "sjømil"  "sekundmeter"  "prosent"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "liter"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kilometer"  "kilogram"  "kilo" "tonn" "hektoliter"  "hektogram"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "dusin"  "desimeter"  "desiliter"  "desigram"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  ("gang"  pl) ;
 LIST nom = (n) (np) (adj) (prn) (det) ;
 LIST nom-ent = (n sg) (np sg) ("all"  sg) (nom sg) ;
 LIST nom-fem-ent = (n f sg) (np f sg) ("all"  det f) ("jeg"  nom) ("hen"  nom) ("hun"  nom) ("du" nom) ("den" prn mf) ("denne" prn mf) ;
@@ -3352,6 +3352,14 @@ REMOVE:unlikely ("lokal") + m IF (0 ("lokale") + pl + ind);
 
 SELECT ("IS" np);
 
+"<snus>"i REMOVE:snus-på-hodet n IF
+        (1 %på%)
+        (2 ("hode"))
+        ;
+"<snus>"i REMOVE:snus-alt-på-hodet n IF
+        (2 %på%)
+        (3 ("hode"))
+        ;
 SELECT:unlikely n + ("snus") IF
         (NOT -1 m-hj-verb OR nominativ) # det skulle snus 90 grader
         (NEGATE -1 np OR n LINK NOT 0 porsjon)        # skulle valget av Thyestes snus.
@@ -14565,12 +14573,20 @@ REMOVE:terrorstemplet ("stempel") IF
         (NOT -2 det)
         ;
 # "Boston Celtics holdt unna mot Miami Heats"
+
+"<holdt>"i SELECT:ville-holdt-til pp IF
+        (-1 modalverb)
+        ;
+# Ho satsa på 131 kilo i siste forsøk, noko som ville [ha] halde til førebels leiing i klassen.
+# Det er ei bekymring at ein held liv i bedrifter ein ikkje skulle [ha] halde liv i
+
 "<holdt>"i SELECT:det-holdt-til pret IF
-        (-1 ("den") + nt)
+        (-1 ("den") + nt OR n)
         (1 %til%)
         (NEGATE *-1 ("ha") + vblex BARRIER setn-gr)
         ;
 # det heldt til topp-fem-plassering
+# Løpet heldt til ein sjetteplass
 
 "<holdt>"i SELECT:gjøre-holdt n IF
         (-1 ("gjøre") OR ("avdeling"))
@@ -15751,6 +15767,16 @@ REMOVE ("pote") IF
 "<stillas>"i REMOVE:stillas gen 
         ;
         # ikkje "still"
+
+"<snus>"i REMOVE:gram-snus vblex IF
+        (-1 målsubst)
+        ;
+        # 10 gram snus (ikkje "blir snudd")
+
+"<snus>"i REMOVE:gram-snus vblex IF
+        (-1 adj)
+        ;
+        # svensk snus (ikkje "blir snudd")
 
 "<slippers>"i REMOVE:slippers gen 
         ;
