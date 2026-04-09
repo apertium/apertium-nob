@@ -39141,6 +39141,15 @@ SELECT:tyske-mark ("mark²" "<mark>") IF
 ;
 #være den rette
 
+"<påståtte>"i   SELECT:påståtte-skandaler   (adj pp sg def) IF
+	  (1 n + pl)
+;
+# dei påståtte konferansane
+
+ "<påståtte>"i   SELECT:den-påståtte-spionasjen   (adj pp sg def) IF
+	  (-1 %den/det/de%)
+;
+# den påståtte trusselen
 
 #:4080
   "<som>"   SELECT:4080   (pr) IF
