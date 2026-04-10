@@ -20084,6 +20084,12 @@ SELECT:ble-antent adj + pst IF
 		(1C prep)
 		;
 
+"<stengt>" SELECT:holde-stengt vblex + pp IF
+		(*-1 ("holde") BARRIER setn-gr)
+		;
+# Til all lykke hadde restauranten halde stengt
+# Utsalsstader skal som hovudregel halde stengt frå laurdag kl. 17.00 til måndag kl. 06.00.
+
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
 		;
