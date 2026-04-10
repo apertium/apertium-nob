@@ -11000,6 +11000,10 @@ SELECT:Uefa-styret ("styre") IF
         (-1* %være/bli% BARRIER setn-gr)
         ;
 
+"<beveget>"i REMOVE:beveget adj + pst IF
+        (1 np)
+        ;
+# Då bevega Veslemannen seg heile 6-7 centimeter
 
 #:3238
   "<stikk>"   SELECT:3238   (adv) IF
@@ -27683,6 +27687,13 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 		(2 pp)
 		(3 n)
 		;
+
+"<den>"i SELECT:den-nye-planen det IF
+		(1 adj)
+		(2 n OR np)
+		;
+# Første steg på vegen er den nye Opel Mokka.
+# Det skal den svenske patent- och marknadsöverdomstolen avgjera.
 
 #:2613
  SELECT:2613 pron-pers IF
