@@ -12898,6 +12898,11 @@ SELECT:ha-slitt ("<slitt>"i) + vblex IF
         (-1* ("ha" vblex) BARRIER setn-gr)
         ;
 
+"<lær>"i SELECT:lær-imperativ vblex IF
+        (1 part OR n OR np)
+        ;
+# ... og lær dialogen godt.
+
 SELECT:være-lei-av ("<lei>"i) + adj IF
         (-1 %være/bli%)
         (1 ("av"))
