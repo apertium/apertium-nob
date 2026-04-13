@@ -12908,6 +12908,12 @@ SELECT:ha-slitt ("<slitt>"i) + vblex IF
         ;
 # ... et løst sammensatt verb.
 
+"<hjulet>"i SELECT:sykler-komma-hjulet ("hjul") IF
+        (-2 n)
+        (-1 komma OR cnjcoo)
+        ;
+# ... elsparkesykler, hjulet eller kunstig intelligens..
+
 "<smerter>"i SELECT:feber-og-smerter n IF
         (-3 ("ha"))
         (-2 ("feber"))
