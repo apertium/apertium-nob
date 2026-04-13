@@ -39950,6 +39950,13 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
         ;
 # "Macron sier han så tegn på resesjon
 
+"<så>"i SELECT:har-det-og-så-det adv IF
+        (-2 n)
+        (-1 ("og"))
+        (*1 n)
+        ;
+# I dag har jeg tysk, musikk og så to timer matematikk.
+
 #:3433
 "<mens>"   REMOVE:3433   n IF
 	(0 cnjsub)
