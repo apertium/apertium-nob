@@ -12903,6 +12903,13 @@ SELECT:ha-slitt ("<slitt>"i) + vblex IF
         ;
 # ... og lær dialogen godt.
 
+"<smerter>"i SELECT:feber-og-smerter n IF
+        (-3 ("ha"))
+        (-2 ("feber"))
+        (-1 ("og"))
+        ;
+# ... har feber og smerter,
+
 SELECT:være-lei-av ("<lei>"i) + adj IF
         (-1 %være/bli%)
         (1 ("av"))
