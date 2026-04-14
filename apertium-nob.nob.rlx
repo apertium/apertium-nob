@@ -13816,6 +13816,11 @@ REMOVE:kapret-istedenfor adj IF
         (2 n)
         ;
 # "Det er spill, bokstaver, farger og annet."
+"<trykk>" SELECT:trykk-nt  nt IF
+        (*-1 ("papir"))
+        (0C ("trykk"))
+        ;
+# "Papiret som blir brukt til denne typen trykk, skal være fuktig."
 "<purkene>" SELECT:purkene ("purke") IF
         (*1 ("brunst"))
         ;
