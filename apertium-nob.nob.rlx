@@ -20445,7 +20445,7 @@ SELECT:det-kunne-de-gjort vblex + pp IF
         ;
 
 SELECT:krever-dem-løslatt adj + pl OR adj + sp IF
-        (NEGATE *-1 ("ha") BARRIER vblex)
+        (NEGATE *-1 ("ha") OR modalverb BARRIER vblex)
         (*-3 nom)
         (-2C vblex)
         (-1 prn + p3 + pl + acc)
