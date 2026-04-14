@@ -13821,6 +13821,10 @@ REMOVE:kapret-istedenfor adj IF
         (0C ("trykk"))
         ;
 # "Papiret som blir brukt til denne typen trykk, skal være fuktig."
+"<lekene>" SELECT:barn-leter-etter-lekene ("leke") IF
+        (*-1 ("barn"))
+        ;
+# "Barnet leter etter lekene sine."
 "<purkene>" SELECT:purkene ("purke") IF
         (*1 ("brunst"))
         ;
