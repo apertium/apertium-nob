@@ -39978,11 +39978,17 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
 # "Macron sier han så tegn på resesjon
 
 "<så>"i SELECT:har-det-og-så-det adv IF
+        (-3 cm)
         (-2 n)
         (-1 ("og"))
-        (*1 n)
+        (*1 n BARRIER clb OR fv)
         ;
-# I dag har jeg tysk, musikk og så to timer matematikk.
+# «I dag har jeg tysk, musikk og så to timer matematikk.»
+# «Man vil lage grunnmur, reisverk og så pipen til slutt.»
+# Ikkje: «– Han har forklart at han hadde tenkt å drepe henne i lengre tid før drapet og så voldsvideoer før han syklet til skolen den dagen, sa Jordet.»
+# Ikkje: «De har begge vært skadd den siste tiden og så kampen fra tribunen.»
+# Ikkje: «I 2021 anslår de en pris på 37,50 dollar fatet og så en gradvis økning til 46 dollar.»
+
 
 #:3433
 "<mens>"   REMOVE:3433   n IF
