@@ -27726,12 +27726,16 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 		(3 n)
 		;
 
-"<den>"i SELECT:den-nye-planen det IF
-		(1 adj)
-		(2 n OR np)
-		;
-# Første steg på vegen er den nye Opel Mokka.
-# Det skal den svenske patent- och marknadsöverdomstolen avgjera.
+"<den>"i SELECT:den-nye-planen det + &&ADJ_N_AGR IF
+        (1 adj-be + &&ADJ_N_AGR)
+        (2 be-subst + &&ADJ_N_AGR OR np)
+        (NEGATE 2 %klokke/kl% OR adverbialsubst)
+	;
+# «Første steg på veien er  den  nye Opel Mokka.»
+# «Det skal  den  svenske patent- och marknadsöverdomstolen avgjøre.»
+# Ikkje: «Han greide å gi Pedersen en rygg å gå i, men  den  utnyttet lagkameraten dårlig.»
+# Ikkje: «Den var på vei nedover fra Gaustablikk mot Rjukan, da  den  kjørte rett fram i en sving og inn i en fjellvegg.»
+
 
 #:2613
  SELECT:2613 pron-pers IF
