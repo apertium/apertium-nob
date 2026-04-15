@@ -213,11 +213,11 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" "arbeidsledig" "sysselsatt" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" "arbeidsledig" "sysselsatt" ("permittere" pp def) ("dømme" pp def) ("permittere" pp pl) ("dømme" pp pl) ;
 SET n-adjn = n OR adjn ;
 
 # For dei tilfella der me vil matcha def/pl-formen, uavhengig av om den er tagga adj.pst/adj.pp/n:
-LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i "<fordrevne>"i "<overlevende>"i ;
+LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i "<fordrevne>"i "<overlevende>"i "<permitterte>"i "<dømte>"i ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
 
