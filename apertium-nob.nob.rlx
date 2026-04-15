@@ -20607,6 +20607,14 @@ SELECT:Monsen-ble-i-2009-tildelt pp
 # «Andry Rajoelina (44) er tatt i ed som Madagaskars nye president.»
 
 
+SELECT:den-dømte-klubb pp IF
+        (-1 ("den") + &&ADJ_N_AGR)
+        (0C pret OR pp)
+        (1C n + &&ADJ_N_AGR)
+        (2C setn-gr OR cm)
+        ;
+# «– Sett i lys av klubbens kapasitet er komiteen klar over at boten er av symbolsk karakter, og ikke skader den dømte klubb, og ikke virker avskrekkende for andre klubber.»
+
 SELECT:nå-påklager-etterlatte-beslutningen n + def IF
         (-2 adv)
         (-1 trans)
