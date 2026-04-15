@@ -20130,10 +20130,14 @@ SELECT:ble-antent adj + pst IF
 		;
 
 "<stengt>" SELECT:holde-stengt adv IF
-		(*-1 ("holde") BARRIER setn-gr)
-		;
+        (*-1 ("holde") BARRIER setn-gr)
+        ;
 # «Til all lykke hadde restauranten holdt stengt»
 # «Utsalgssteder skal som hovedregel holde stengt fra lørdag kl. 17.00 til mandag kl. 06.00.»
+
+"<stengt>"i REMOVE adv IF
+        (NEGATE 0* ("holde"))
+        ;
 
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
