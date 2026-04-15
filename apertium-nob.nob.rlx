@@ -20116,11 +20116,11 @@ SELECT:ble-antent adj + pst IF
 		(1C prep)
 		;
 
-"<stengt>" SELECT:holde-stengt vblex + pp IF
+"<stengt>" SELECT:holde-stengt adv IF
 		(*-1 ("holde") BARRIER setn-gr)
 		;
-# Til all lykke hadde restauranten halde stengt
-# Utsalsstader skal som hovudregel halde stengt frå laurdag kl. 17.00 til måndag kl. 06.00.
+# «Til all lykke hadde restauranten holdt stengt»
+# «Utsalgssteder skal som hovedregel holde stengt fra lørdag kl. 17.00 til mandag kl. 06.00.»
 
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
@@ -45315,6 +45315,7 @@ SELECT:default ("<tanna>" "tann") ;
 
 
 # REMOVE:default rules:
+"<stengt>"i REMOVE:default adv;
 REMOVE:default ("dukk") IF (0 ("dukke")) ;
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
