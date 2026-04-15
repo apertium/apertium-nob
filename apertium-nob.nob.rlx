@@ -5607,6 +5607,10 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         ;
 # «Det var ikke tid eller krefter til å finne og bringe ut døde.»
 
+"<dør>" SELECT:den-skadde-dør pres IF
+        (-1 ("skade") + def)
+        ;
+
 "<drepte>" SELECT:27-drepte adj IF
         (-1 talord-par-siffer)
         ;
