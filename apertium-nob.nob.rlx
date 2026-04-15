@@ -27748,7 +27748,7 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 		;
 
 "<den>"i SELECT:den-nye-planen det + &&ADJ_N_AGR IF
-        (1 adj-be + &&ADJ_N_AGR)
+        (1 adj-be + &&ADJ_N_AGR OR adj + comp)
         (2 be-subst + &&ADJ_N_AGR OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
 	;
 # «Første steg på veien er  den  nye Opel Mokka.»
@@ -27757,7 +27757,7 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 # Ikkje: «Den var på vei nedover fra Gaustablikk mot Rjukan, da  den  kjørte rett fram i en sving og inn i en fjellvegg.»
 
 "<den>"i SELECT:den-nye-X-og-Y det + &&ADJ_N_AGR IF
-        (1 adj-be + &&ADJ_N_AGR)
+        (1 adj-be + &&ADJ_N_AGR OR adj + comp)
         (2 cmp-split)
         (3 cnjcoo)
         (4 be-subst + &&ADJ_N_AGR OR ukjent + suffiks-en OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
@@ -45441,6 +45441,7 @@ REMOVE:default ("/") + cm;
 REMOVE:default ("manne") + imp;
 
 REMOVE:default ("sterkt") + n;
+REMOVE:default ("skreve") + imp; # keep skrive.pret
 REMOVE:default ("rast") + n IF (*-1 hj-verb);
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
