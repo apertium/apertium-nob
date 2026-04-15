@@ -5384,6 +5384,13 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 # «Han skaffet seg blant annet fire våpen og det han trengte for å lage den rundt 950 kilo tunge bomben.»
 
 
+"<den>" SELECT:den-maksimalet-klubben-må det + mORf IF
+        (1C adj + def OR adj + ind + pl) # samsvarer med «den» (bestemt)
+        (2C n + nt + def)       # kan ikkje samsvara med «den» (kjønn)
+        (3C hj-verb)
+        ;
+# «Summen er den maksimale rederiet må betale for skadene på fregatten.»
+
 #:3722
 "<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
