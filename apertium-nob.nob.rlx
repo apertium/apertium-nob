@@ -902,6 +902,7 @@ LIST språk = "akkalasamisk" "albansk" "alemannisk" "aleutisk" "amerikansk" "ame
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
+LIST suffiks-en = (".+en"r);
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
@@ -19856,10 +19857,11 @@ SELECT:Rundt-1000-politifolk n + pl + ind IF
         (0C n + ind)
         ;
 
+
 SELECT:den-okkuperte-Vestbredden adj + def IF
         (-1 dem)
         (0C pret OR adj + pl OR adj + def)
-        (1 np + (".*en"r))
+        (1 np + suffiks-en)
         ;
 # «Vestbredden» blir np, så regex-match på lemma
 # «Ifølge regjeringsavtalen mellom Benjamin Netanyahu og Benny Gantz skal store deler av den israelskokkuperte Vestbredden annekteres, og prosessen skal begynne allerede 1.»
@@ -27732,14 +27734,21 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 
 "<den>"i SELECT:den-nye-planen det + &&ADJ_N_AGR IF
         (1 adj-be + &&ADJ_N_AGR)
-        (2 be-subst + &&ADJ_N_AGR OR np)
-        (NEGATE 2 %klokke/kl% OR adverbialsubst)
+        (2 be-subst + &&ADJ_N_AGR OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
 	;
 # «Første steg på veien er  den  nye Opel Mokka.»
 # «Det skal  den  svenske patent- och marknadsöverdomstolen avgjøre.»
 # Ikkje: «Han greide å gi Pedersen en rygg å gå i, men  den  utnyttet lagkameraten dårlig.»
 # Ikkje: «Den var på vei nedover fra Gaustablikk mot Rjukan, da  den  kjørte rett fram i en sving og inn i en fjellvegg.»
 
+"<den>"i SELECT:den-nye-X-og-Y det + &&ADJ_N_AGR IF
+        (1 adj-be + &&ADJ_N_AGR)
+        (2 cmp-split)
+        (3 cnjcoo)
+        (4 be-subst + &&ADJ_N_AGR OR ukjent + suffiks-en OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
+	;
+# «Fire av de drepte var sivile, melder den syriske eksil- og observatørgruppen Syrian Observatory for Human Rights (SOHR) lørdag.»
+# «Det mener den svenske gymnas- og *kunnskapsløftsministeren Aida Hadzialic»
 
 #:2613
  SELECT:2613 pron-pers IF
