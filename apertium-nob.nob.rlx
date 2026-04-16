@@ -44796,9 +44796,19 @@ REMOVE:norske-sykehus-mangler-leger n + ind IF
         (1 n)
         ;
 
+REMOVE:de-permitterte-jobber n + pl + ind IF
+        (-2C ("den") + pl)
+        (-1C adj + pl + adjn-form-def)
+        (0C n + pl + ind OR pres)
+        (NEGATE *-1 fv BARRIER setn-gr)
+        (NEGATE *1 fv BARRIER setn-gr)
+        ;
+# Ubestemt kan ikkje stå til bestemt demonstrativ+adjektiv før, må vera verb.
+#
+# «Alle de permitterte  jobber  med salg i dagligvarehandelen, opplyser hovedtillitsvalgt Genevieve Prebensen hos Coca-Cola Norge til Romerikes Blad.»
+
 SELECT:nye-minner pl IF
         (-1C adj + pl)
-        (NEGATE -2 ("den") LINK 1 adjn-form-def) # ikkje «de permitterte»
         (0C n OR vblex)
         (*0 fv)
         ;
