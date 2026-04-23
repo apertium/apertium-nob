@@ -213,11 +213,11 @@ LIST trans2 = tr2 tr18 ;
 LIST verb_tar_%om%cnjsub = "vurdere" "spørre" "høre" "høres" "vite" "avklare" "tenke" "vise" "finne# ut" ;
 
 # «to sivile ble»
-LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" "arbeidsledig" "sysselsatt" ;
+LIST adjn = "militær" "fornærmet" "fornærmede" "siktet" "siktede" "sivil" "tiltalt" "ansatt" "etterlatt" "nyansatt" "bekjent" "kjent" "hovedtiltalt" "sakkyndig" "alliert" "lærd" "skriftlærd" "stemmeberettiget" "innsatt" "medtiltalt" "avdød" "oppmøtt" "frivillig" "drept" "borgerlig" "arbeidsledig" "sysselsatt" ("permittere" pp def) ("dømme" pp def) ("permittere" pp pl) ("dømme" pp pl) ;
 SET n-adjn = n OR adjn ;
 
 # For dei tilfella der me vil matcha def/pl-formen, uavhengig av om den er tagga adj.pst/adj.pp/n:
-LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i "<fordrevne>"i "<overlevende>"i ;
+LIST adjn-form-def = "<eldre>"i "<domfelte>"i  "<militære>"i "<fornærmede>"i "<fornærmede>"i "<siktede>"i "<sivile>"i "<tiltalte>"i "<ansatte>"i "<etterlatte>"i "<nyansatte>"i "<bekjente>"i "<kjente>"i "<hovedtiltalte>"i "<sakkyndige>"i "<allierte>"i "<lærde>"i "<skriftlærde>"i "<stemmeberettigede>"i "<innsatte>"i "<medtiltalte>"i "<avdøde>"i "<oppmøtte>"i "<frivillige>"i "<drepte>"i "<borgerlige>"i "<fordrevne>"i "<overlevende>"i "<permitterte>"i "<dømte>"i ;
 
 LIST xgrau = xpst xpsto xpsts xcomp xsup ;
 
@@ -902,6 +902,7 @@ LIST språk = "akkalasamisk" "albansk" "alemannisk" "aleutisk" "amerikansk" "ame
 LIST spørreadv = "hvorledes"  "hvorfor"  "hvordan"  "hvor"  "hva" "hvor mange" "hvor mye" "hvem" ;
 LIST spørsmål-t = "$?" "?" ;
 LIST sted = top ;
+LIST suffiks-en = (".+en"r);
 LIST berre-litenbokstav = "<\\p{Ll}+>"r ;
 LIST storbokstav = "<\\p{Lu}.*>"r ;
 LIST berre-storbokstav =  ("<\\p{Lu}+>"r);
@@ -5389,6 +5390,13 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
 # «Han skaffet seg blant annet fire våpen og det han trengte for å lage den rundt 950 kilo tunge bomben.»
 
 
+"<den>" SELECT:den-maksimalet-klubben-må det + mORf IF
+        (1C adj + def OR adj + ind + pl) # samsvarer med «den» (bestemt)
+        (2C n + nt + def)       # kan ikkje samsvara med «den» (kjønn)
+        (3C hj-verb)
+        ;
+# «Summen er den maksimale rederiet må betale for skadene på fregatten.»
+
 #:3722
 "<der>"   SELECT:3722   pr IF
 	(1 pres/pret)
@@ -5612,6 +5620,10 @@ LIST den-påpeikande-etter = "besvare" "tilknytte" "(.* )?(til|på|fra|i|med|av|
         (1 setn-gr)
         ;
 # «Det var ikke tid eller krefter til å finne og bringe ut døde.»
+
+"<dør>" SELECT:den-skadde-dør pres IF
+        (-1 ("skade") + def)
+        ;
 
 "<drepte>" SELECT:27-drepte adj IF
         (-1 talord-par-siffer)
@@ -19858,10 +19870,11 @@ SELECT:Rundt-1000-politifolk n + pl + ind IF
         (0C n + ind)
         ;
 
+
 SELECT:den-okkuperte-Vestbredden adj + def IF
         (-1 dem)
         (0C pret OR adj + pl OR adj + def)
-        (1 np + (".*en"r))
+        (1 np + suffiks-en)
         ;
 # «Vestbredden» blir np, så regex-match på lemma
 # «Ifølge regjeringsavtalen mellom Benjamin Netanyahu og Benny Gantz skal store deler av den israelskokkuperte Vestbredden annekteres, og prosessen skal begynne allerede 1.»
@@ -20122,11 +20135,15 @@ SELECT:ble-antent adj + pst IF
 		(1C prep)
 		;
 
-"<stengt>" SELECT:holde-stengt vblex + pp IF
-		(*-1 ("holde") BARRIER setn-gr)
-		;
-# Til all lykke hadde restauranten halde stengt
-# Utsalsstader skal som hovudregel halde stengt frå laurdag kl. 17.00 til måndag kl. 06.00.
+"<stengt>" SELECT:holde-stengt adv IF
+        (*-1 ("holde") BARRIER setn-gr)
+        ;
+# «Til all lykke hadde restauranten holdt stengt»
+# «Utsalgssteder skal som hovedregel holde stengt fra lørdag kl. 17.00 til mandag kl. 06.00.»
+
+"<stengt>"i REMOVE adv IF
+        (NEGATE 0* ("holde"))
+        ;
 
 "<leit>" SELECT:på-leit n IF
 		(-1 %på%)
@@ -20606,6 +20623,16 @@ SELECT:Monsen-ble-i-2009-tildelt pp
         ;
 # «Andry Rajoelina (44) er tatt i ed som Madagaskars nye president.»
 
+
+SELECT:den-dømte-klubb pp IF
+        (*-2 vblex BARRIER setn-gr)
+        (-1 ("den") + &&ADJ_N_AGR)
+        (0C pret OR pp)
+        (1C n + &&ADJ_N_AGR)
+        (2C setn-gr OR cm)
+        ;
+# «– Sett i lys av klubbens kapasitet er komiteen klar over at boten er av symbolsk karakter, og ikke skader  den  dømte klubb, og ikke virker avskrekkende for andre klubber.»
+# Ikkje: «Innsatsleder Casper Kaland opplyser til Bergensavisen at brannvesenet hørte kraftige rumlelyder og kjente at bakken ristet mens  de  evakuerte personer.»
 
 SELECT:nå-påklager-etterlatte-beslutningen n + def IF
         (-2 adv)
@@ -27732,12 +27759,23 @@ SELECT:en-av-kveldens-takketaler n + pl IF
 		(3 n)
 		;
 
-"<den>"i SELECT:den-nye-planen det IF
-		(1 adj)
-		(2 n OR np)
-		;
-# Første steg på vegen er den nye Opel Mokka.
-# Det skal den svenske patent- och marknadsöverdomstolen avgjera.
+"<den>"i SELECT:den-nye-planen det + &&ADJ_N_AGR IF
+        (1 adj-be + &&ADJ_N_AGR OR adj + comp)
+        (2 be-subst + &&ADJ_N_AGR OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
+	;
+# «Første steg på veien er  den  nye Opel Mokka.»
+# «Det skal  den  svenske patent- och marknadsöverdomstolen avgjøre.»
+# Ikkje: «Han greide å gi Pedersen en rygg å gå i, men  den  utnyttet lagkameraten dårlig.»
+# Ikkje: «Den var på vei nedover fra Gaustablikk mot Rjukan, da  den  kjørte rett fram i en sving og inn i en fjellvegg.»
+
+"<den>"i SELECT:den-nye-X-og-Y det + &&ADJ_N_AGR IF
+        (1 adj-be + &&ADJ_N_AGR OR adj + comp)
+        (2 cmp-split)
+        (3 cnjcoo)
+        (4 be-subst + &&ADJ_N_AGR OR ukjent + suffiks-en OR np LINK NEGATE 0 %klokke/kl% OR adverbialsubst)
+	;
+# «Fire av de drepte var sivile, melder den syriske eksil- og observatørgruppen Syrian Observatory for Human Rights (SOHR) lørdag.»
+# «Det mener den svenske gymnas- og *kunnskapsløftsministeren Aida Hadzialic»
 
 #:2613
  SELECT:2613 pron-pers IF
@@ -44766,6 +44804,17 @@ REMOVE:norske-sykehus-mangler-leger n + ind IF
         (1 n)
         ;
 
+REMOVE:de-permitterte-jobber n + pl + ind IF
+        (-2C ("den") + pl)
+        (-1C adj + pl + adjn-form-def)
+        (0C n + pl + ind OR pres)
+        (NEGATE *-1 fv BARRIER setn-gr)
+        (NEGATE *1 fv BARRIER setn-gr)
+        ;
+# Ubestemt kan ikkje stå til bestemt demonstrativ+adjektiv før, må vera verb.
+#
+# «Alle de permitterte  jobber  med salg i dagligvarehandelen, opplyser hovedtillitsvalgt Genevieve Prebensen hos Coca-Cola Norge til Romerikes Blad.»
+
 SELECT:nye-minner pl IF
         (-1C adj + pl)
         (0C n OR vblex)
@@ -45321,6 +45370,7 @@ SELECT:default ("<tanna>" "tann") ;
 
 
 # REMOVE:default rules:
+"<stengt>"i REMOVE:default adv;
 REMOVE:default ("dukk") IF (0 ("dukke")) ;
 REMOVE:default ("<karet>" "kar") ;
 REMOVE:default ("<bakken>" "bakke") ;
@@ -45414,6 +45464,7 @@ REMOVE:default ("/") + cm;
 REMOVE:default ("manne") + imp;
 
 REMOVE:default ("sterkt") + n;
+REMOVE:default ("skreve") + imp; # keep skrive.pret
 REMOVE:default ("rast") + n IF (*-1 hj-verb);
 
 REMOVE:default ("skreve") IF (0 ("skrive"));
