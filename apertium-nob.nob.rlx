@@ -4227,6 +4227,12 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
         (NEGATE 1 ("<slutten>") OR ("<gjerdet>") OR ("<veggen>"))
         ;
 
+
+"<presset>"i SELECT:øke-presset-på n + nt IF
+		(-1 ("øke") OR ("lette") OR ("dempe") OR ("legge") OR ("opprettholde") BARRIER setn-gr)
+                (1 %på%)
+		;
+
 "<presset>"i SELECT:øker-presset n IF
 		(-1* ("øke") BARRIER setn-gr)
 		;
