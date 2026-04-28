@@ -19594,6 +19594,11 @@ SELECT:Den-siktede xgrau OR adj IF
 # «Den spiontiltalte nordmannen ber innstendig norske myndigheter om å ta ansvar.»
 
 
+ "<sammenslåtte>"i   SELECT:det-sammenslåtte-selskapet   ("sammenslått" adj) IF
+	  (-1 %den/det/de%)
+;
+# den samanslåtte avdelinga
+
 SECTION 2-select-classes ;
 
 SELECT:av-fortsatt-leting adj IF
