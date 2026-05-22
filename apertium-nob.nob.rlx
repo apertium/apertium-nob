@@ -41963,6 +41963,11 @@ SELECT:et-hvilket-som-helst-annet-løp $$GENDER IF
 SELECT:overhodet-for ("overhode" n) IF
 		(1 ("for"))
 		;
+SELECT:imp-pres-or-noun n IF
+        (-1C vblex + imp)
+        (0 n OR vblex)
+        ;
+# "Velg din egen tegnestil og lag skisser."
 
 #:1732
 SELECT:generell-pres (vblex pres) IF
@@ -45241,7 +45246,6 @@ SELECT:framleis-med ("fortsatt med") IF (*0 fv BARRIER setn-gr);	# keep fortsatt
 "<sporet>" SELECT:har-blitt-sporet adj IF
 		(-1 ("bli" pp))
 		;
-
 
 "<varsler>"i REMOVE:varsler ("varsler") IF
         (NOT -1 qnt)
