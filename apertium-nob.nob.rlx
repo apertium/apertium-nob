@@ -13844,9 +13844,13 @@ REMOVE:kapret-istedenfor adj IF
         ;
 # "Barnet leter etter lekene sine."
 "<purkene>" SELECT:purkene ("purke") IF
-        (*1 ("brunst"))
+        (*1 ("brunst") OR ("kjønnsmoden"))
         ;
 # "De fleste purkene vil komme i brunst da."
+"<Purker>" SELECT:purke ("purke") IF
+        (*1 ("brunst") OR ("kjønnsmoden"))
+        ;
+# "Purker vil være i kjønnsmoden alder og komme i brunst da."
 "<leke>" SELECT:lese-og-leke vblex IF
         (-2 ("lese"))
         (-1 cnjcoo)
