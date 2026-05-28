@@ -30744,7 +30744,7 @@ SELECT:2398 pp IF
 
 
 #:2399
- SELECT:2399 (vblex pp) IF
+SELECT:2399 pp IF
 	(NOT 0 be-ent-nøyt-subst)
 	(NOT 0 farlige-part)
 	(-1C pass)
@@ -33306,7 +33306,7 @@ REMOVE:at-paret (adj pp) IF
 #:2284
  REMOVE:2284 (adj pp) IF
 	(NOT 0 %tiltalte%)
-	(-1C verb)
+	(-1C verb - pasv)
         (NOT -1 kop-fv)         # er skadd
 	(NOT 1 subst/adj)
 	(NOT 1 komma/konj)
@@ -42023,12 +42023,12 @@ SELECT:generell-pres (vblex pres) IF
 
 
 #:24020
- SELECT:24020 (vblex pp) IF
+SELECT:24020 pp IF
 	(-1 pasvpp_tar_pp LINK 0 pass)
 ;
 # «ansees sonet» --KBU
 #:24021
- SELECT:24021 (vblex pp) IF
+SELECT:24021 pp IF
 	(-1 pasvpp_tar_pp LINK 0 perf-part LINK -1 %være/bli% LINK 0 fv)
 ;
 # «blir forsøkt lokket» --KBU
