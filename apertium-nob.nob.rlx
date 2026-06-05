@@ -6205,6 +6205,17 @@ SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
 		;
 		# sportshaller og familiehjem
 
+SELECT:familieheimar ("<familiehjem>"i) + n + pl + ind IF
+		(-1 adj + pl OR adj + def)
+		(NEGATE -2 det + dem)
+		;
+		# offentlige familiehjem
+
+SELECT:utsegner ("<vitneutsagn>"i) + n + pl + ind IF
+		(NEGATE -1 det + qnt OR prn + nt + sg OR adj + nt + sg )
+		;
+		# vitneutsegner på staden
+
 SELECT:skipet-dekk ("<dekk>"i) + n + sg IF
         (-1 ("skip" gen) OR  ("båt" gen))
         ;
