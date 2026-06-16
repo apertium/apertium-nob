@@ -15519,8 +15519,12 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-3 ("ville# måtte"))
         ;
 "<løyet>" SELECT:vinden-hadde-løyet ("løye") IF
-        (-2* ("vind") BARRIER setn-gr)
+        (-2* ("vind") OR ("storm") OR ("orkan") OR ("uvær") BARRIER setn-gr)
         (-1 ("ha"))
+        ;
+"<løyet>" SELECT:har-vinden-løyet ("løye") IF
+        (-2* ("ha") BARRIER setn-gr)
+        (-1 ("vind") OR ("storm") OR ("orkan") OR ("uvær"))
         ;
 "<baker>" SELECT:jobbet-som-baker n IF
         (-2* ("jobbe") BARRIER setn-gr)
