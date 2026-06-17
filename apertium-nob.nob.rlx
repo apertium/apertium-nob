@@ -12976,7 +12976,10 @@ SELECT:unlikely-fremmende ("fremme") IF
 		(2 n)
 		;
 # Løst sammensatte verb kan vi skrive om ...
-
+"<tråkker>" SELECT:tråkker-over vblex IF
+		(1 ("over"))
+		;
+# Når man tråkker over, må man holde foten høyt etterpå.
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
         (-2C det + pl - date)
