@@ -12971,6 +12971,12 @@ SELECT:unlikely-fremmende ("fremme") IF
         (0/* cmp)
 	;
 # Det er salgsfremmende tiltak
+"<Løst>" SELECT:løst-sammensatte-verb ("løs") IF
+		(1 ("sammensatt") OR ("sammensatte"))
+		(2 n)
+		;
+# Løst sammensatte verb kan vi skrive om ...
+
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
         (-2C det + pl - date)
