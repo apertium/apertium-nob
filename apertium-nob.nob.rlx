@@ -12966,6 +12966,11 @@ SELECT:strenge ("<strenge>"i) + adj IF
         ;
 # strengje opp, elles strenge
 
+SELECT:unlikely-fremmende ("fremme") IF
+        (0 ("fremmende"))
+        (0/* cmp)
+	;
+# Det er salgsfremmende tiltak
 SELECT:alle-var-skrivne-ut adj + pl IF
         (NOT -2 gen)            # «saken deres ble henlagt»
         (-2C det + pl - date)
