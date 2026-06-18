@@ -4236,7 +4236,7 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 		;
 
 "<presset>"i SELECT:øker-presset n IF
-		(-1* ("øke") BARRIER setn-gr)
+		(-1* ("øke") OR ("dempe") BARRIER setn-gr)
 		;
 
 "<presset>"i SELECT:føle-seg-presset adj + pp IF
@@ -4415,7 +4415,16 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
 "<presset>"i SELECT:default pret
         ;
 
-"<fanger>i" SELECT:default-fangar ("fange" n m pl ind)
+"<hytter>"i SELECT:hytter-med-neven pres IF
+        (1 %med%)
+        (2 ("neve"))
+        ;
+# Bråkmakaren hyttar med neven.
+
+"<hytter>"i SELECT:default-hytter n
+        ;
+
+"<fanger>"i SELECT:default-fangar ("fange" n m pl ind)
         ;
 
 "<tanten>"i SELECT:default ("tante" n)
