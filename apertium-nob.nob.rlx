@@ -11062,6 +11062,11 @@ SELECT:Uefa-styret ("styre") IF
         (1 ("<arbeidet>"))
         ;
 
+"<støtte>" REMOVE:støtte-til vblex IF
+        (1 %til%)
+        ;
+# Også frå Raudt får regjeringa støtte til forslaget
+
 "<svenske>"i SELECT:svensk-bil adj IF
         (1 n)
         ;
