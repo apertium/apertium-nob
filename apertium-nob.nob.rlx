@@ -4235,8 +4235,8 @@ SELECT:knyttet-til ("<knyttet>"i) + vblex + pp IF
                 (1 %på%)
 		;
 
-"<presset>"i SELECT:øker-presset n IF
-		(-1* ("øke") OR ("dempe") BARRIER setn-gr)
+"<presset>"i SELECT:øker-presset n + nt IF
+		(-1* ("øke") OR ("lette") OR ("dempe") BARRIER setn-gr)
 		;
 
 "<presset>"i SELECT:føle-seg-presset adj + pp IF
