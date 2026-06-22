@@ -14459,11 +14459,31 @@ REMOVE:to-ansatte vblex IF
         (1C sent OR fv OR cm)
         ;
 "<ønsket>"i REMOVE:er-ønsket vblex OR adj IF
+        (-4 setn-gr)
         (-3 pr)
         (-2 n)
         (-1 vblex)
         ;
 # For arbeidsgiver er ønsket å få arbeidstakeren tilbake i jobb.
+"<ønsket>"i REMOVE:de-ønsket n IF
+        (-1 prn OR n)
+        ;
+# men de ønsket ikke å dele mer informasjon
+"<ønsket>"i REMOVE:som-har-ønsket-info n IF
+        (-1 %ha%)
+        (1 n)
+        ;
+# .., som har ønsket informasjon.
+"<ønsket>"i REMOVE:ønsket-velkommen n IF
+        (-1 %bli%)
+        (1 ("velkommen"))
+        ;
+# ... de vil bli ønsket velkommen
+"<ønsket>"i REMOVE:ønsket-å-gå n IF
+        (1 ("å"))
+        (2 ("gå"))
+        ;
+# ... ønsket å gå i dialog.
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
