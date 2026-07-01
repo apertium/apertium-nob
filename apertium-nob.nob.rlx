@@ -12514,6 +12514,8 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
 	(1 n)
 ;
 
+"<forringede>"i SELECT:forringede-vassdrag adj ;
+
 #:3159
   "<var>"   SELECT:3159   (adj pst mf) IF
 	(-1 %føre%)
@@ -13628,6 +13630,10 @@ REMOVE:-dataene("data") + m IF
         (0 cmp OR cmp-split)
         ;
 # sulte- og tørstestreik
+
+LIST cmp/cmp-split = cmp cmp-split;
+REMOVE SUB:* ("hand") IF (0/* ("hands") + cmp/cmp-split);
+
 "<bærer>"i REMOVE:bærer-med-seg ("bærer") IF
         (0 ("bære") OR ("bærer"))
         (1 ("med"))
@@ -13690,30 +13696,6 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
         (0/1 cmp)
         ;
 # meiningsmålingssnitta
-
-"<begrepet>" REMOVE:ingen-hj-v ("begripe") IF
-        (NEGATE *-1 hj-verb)
-        ;
-# "begrepet" som partisipp er såpass sjeldan at det bør vera ha/få/…
-# for at me skal velja det.
-
-"<begrepet>" REMOVE:høre-om-begrepet ("begripe") IF
-        (-1 %om%)
-        ;
-
-LIST begrepet-verb = "benytte" "bruke" "oppfinne" "finne# opp" ;
-"<begrepet>"i REMOVE:benytte-begrepet ("begripe") IF
-        (-1 begrepet-verb)
-        ;
-
-"<begrepet>" REMOVE:med-begrepet-XY ("begripe") IF
-        (-1 %med%)
-        (1 akronym/ukjent OR punktum/ellipse)
-        ;
-"<Begrepet>" REMOVE:begrepet-X-er ("begripe") IF
-        (1 n OR fork/ukjent-ord)
-        (2 kop-fv)
-        ;
 
 "<begravet>"i SELECT:-der-ligger-hunden-begravet adj IF
         (-1* ("ligge") BARRIER setn-gr)
