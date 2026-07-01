@@ -3938,12 +3938,14 @@ REMOVE:prefer-inf-over-adj-split adj + cmp-split IF
         ;
 # «lytte- og sabotasjeutstyr»
 
-REMOVE:prefer-ncmp SUB:* vblex + cmp - allow-verb/adjcmp IF
+REMOVE:prefer-ncmp SUB:* cmp       - allow-verb/adjcmp - n IF
         (0 n)
         ;
-REMOVE:prefer-ncmp-split vblex + cmp-split - allow-verb/adjcmp IF
+# Prefer noun as the non-final part of compounds.
+REMOVE:prefer-ncmp-split cmp-split - allow-verb/adjcmp - n IF
         (0 n)
         ;
+# Prefer noun as split compounds.
 
 "<Flytt>" SELECT:flytt-den imp IF
 		(-1 guio)
