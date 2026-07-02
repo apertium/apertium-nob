@@ -13636,6 +13636,8 @@ REMOVE:-dataene("data") + m IF
 LIST cmp/cmp-split = cmp cmp-split;
 REMOVE SUB:* ("hand") IF (0/* ("hands") + cmp/cmp-split);
 
+REMOVE SUB:* ("flyte") IF (0/* ("flytte") + cmp/cmp-split);
+
 "<bærer>"i REMOVE:bærer-med-seg ("bærer") IF
         (0 ("bære") OR ("bærer"))
         (1 ("med"))
