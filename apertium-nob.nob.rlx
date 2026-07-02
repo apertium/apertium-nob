@@ -5205,6 +5205,19 @@ SELECT:den-som-leder vblex + pres IF
         ;
 # «Har gravd opp «Pet Sematary» – og gitt den ny vri.»
 
+"<den>" SELECT:den-nye  ("den¹") IF
+        (1 ("ny") + adj + pst + un + sp + def)
+        (NEGATE 1 ("ny") + adj + pl)
+        ;
+# Senatet vedtok den nye Tobacco and Vapes-lova
+# Han vaska bilen og gav han nye vindaugsviskarar
+
+"<den>" SELECT:den-nye-er ("den¹") IF
+        (1 ("<nye>"))
+        (2 vblex OR adv)
+        ;
+# fordi ein meiner den nye er ein god avtale
+# I motsetning til den gamle lasermålaren, kan den nye berre brukast frå 100 til 400 meter.
 
 "<disse>" REMOVE:av-disse det IF
         (-1 ("av"))
