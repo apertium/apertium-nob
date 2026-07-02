@@ -13692,6 +13692,12 @@ SELECT:snitt-per-søker n + ind IF
         (NEGATE -1 det + qnt OR adj)
         (NEGATE 1 ("til" prep))
         ;
+
+"<saker>"i REMOVE:saker-som vblex IF
+        (1 ("som"))
+        ;
+# Saker som denne
+
 "<lykkes>" SELECT:lykkes-bedre vblex IF
         (1 adj)
         ;
