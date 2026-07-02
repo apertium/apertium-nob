@@ -6606,6 +6606,11 @@ SELECT:i-kok ("<kok>"i) + nt IF
         (-1 ("skyte"))
         ;
 
+"<ord>"i SELECT:siste-ord sg IF
+        (-1 ("sist"))
+        (NEGATE -2 np OR gen OR pl OR det + pos)
+        ;
+
 SELECT:årets-spelar ("<spiller>"i) + n + sg + ind IF
         (-1 ("år") + n + gen)
         ;
