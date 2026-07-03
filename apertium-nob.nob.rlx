@@ -29747,6 +29747,10 @@ SELECT:forvaltes-og-høstes pasv + pres IF
 		;
                 # Tenkjer du på det, trur eg du blir hemma.
 
+"<vises>"i REMOVE:vises-til ("vises") + pstv
+		;
+# Manglar sjeldne unntak: skrammene visest nesten ikkje, berre auga vistest
+
 #:2442
  SELECT:2442 (vblex pres) IF
 	(NOT 0 pret)
@@ -29754,7 +29758,7 @@ SELECT:forvaltes-og-høstes pasv + pres IF
 	(-1C pron-pers)
 	(**-2C setn-gr BARRIER fv)
 ;
-#  "vi handler (verb pres ikke subst)"))
+#  "vi handler (verb pres ikke subst)"
 
 
 
