@@ -14746,7 +14746,7 @@ REMOVE:terrorstemplet ("stempel") IF
         ;
 # gjere haldt, avdeling haldt!
 
-"<holdt>"i SELECT:ha-holdt vblex + pp IF
+"<holdt>"i SELECT:ha-holdt pp IF
         (-1*C ("ha" vblex) OR %være/bli% BARRIER setn-gr)
         ;
 
