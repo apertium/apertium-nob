@@ -613,7 +613,7 @@ LIST farlige-adj = "vant" "talle" "brakk"  "året"  "være"  "vite"  "vis"  "var
 LIST farlige-adj-subst = "drept" "gifte"  "vedkommende"  "venstre"  "tunge"  "skrå"  "skarp"  "rett"  "ny"  "like"  "lik"  "kvalm"  "høy"  "helt"  "helt"  "heller"  "gode"  "faren"  (adj comp) ("visse"  n) ("sivil"  n) ("absolutt"  n) ("konkret"  n) ("sett"  nt) ("halv"  ubøy) ("var"  n ind) ("lit"  sg def) ("middel"  gen) ("al"  pl def) ("vannrett" n) "sup" "sterkt" ;
 LIST farlige-fl-subst = ("bor" pl ind) ("hjelp"  pl ind) ("lede"  m pl ind) ("led"  m pl ind) ("falle"  m pl ind) ("fall"  m pl ind) ("snus"  m pl ind) ("finn"  pl ind) ("finne"  pl ind) ("komme"  pl ind) ("under"  pl ind) ("får"  pl) ("ønske"  pl) ("slag"  gen) ("jeg"  pl) ("lo"  pl) ("var"  pl) ("nå"  pl) ("sett"  pl) ("al"  pl def) ("mot"  pl ind) ("mens" pl ind) ("men"  pl ind) ("gir"  pl ind) ("nekt" pl ind)  ("bringe" pl) ;
 LIST farlige-forledd-verb = ("gjerde" pres) ("ri" pasv) ("kontre"  pret) ("helle"  pres) ("nå"  pres) ("elle"  pres) ("fø"  pres) ("fare"  pret) ("tro"  adj) ("tiltale"  pret) ("klokke"  pret) "områ" "grade" ;
-LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" "billettere" "vi" ;
+LIST farlige-imp = "bile"  "busse"  "live"  "vare"  "så"  "se"  "nå"  "neie"  "mine"  "mene"  "hanse"  "føre"  "fore"  "ete"  "ene"  "bedre"  "more"  "fare" "man" "berg" "vante" "skreve" "ti" "billettere" "vi" "<Trump>" ;
 LIST farlige-inf = "rike" "lave" ("felle"  vblex inf pasv) "tre"  "så"  "støtte"  "skole"  "pose"  "nå"  "nye"  "norske"  "neste"  "lite"  "like"  "lekre"  "hele"  "friske"  "fri"  "fjerne"  "finere"  "disse"  "dette"  "bedre" "røde"  "myke" "samene" "gule" ;
 LIST farlige-mask-subst = ("press" m) "neste" "ville"  "ved"  "syke"  "skrå"  "like"  "helt"  "heller"  "eldste"  ("ho"  sg ind gen) ("å"  sg ind) ("alt"  sg ind) ("mens"  sg ind) ("meget"  sg ind) ("side"  sg def) ("side¹"  sg def) ("lit"  sg def) ("middel"  gen) ("gode"  sg ind) ("al"  pl def) "ligger" ("bør" sg ind) ("ukas" sg ind) "drept" ("bringe" pl) ;
 LIST farlige-nøyt-subst = ("møte" gen) "trakk" "vilt"  "venstre"  "var"  "under"  "tre"  "skrå"  "sett"  "selv"  "nå"  "ny"  "mot"  "lik"  "konkret"  "jeg"  "høyre"  "godt"  "gode"  "folk"  "bak"  ("stikk"  adv) ("alt"  ind) ("fort"  ind) ("slag"  gen) ("lo"  pl) ("al"  pl def) ("middel"  gen) ("men"  sg ind) ("men"  pl ind) ("varsel" sg def) ("gir" ind) ;
@@ -7280,6 +7280,15 @@ SELECT:For-også-x-er-y cnjcoo + ("<for>"i) IF
 ;
 # «Demonstrasjonene har fortsatt etter at presidenten i helgen opphevet unntakstilstanden som rundt 20.000 politifolk og soldater har håndhevet.»
 
+"<fortsatt>" SELECT:som-fortsatt-løper adv IF
+        (NEGATE *-2 fv BARRIER setn-gr)
+	(-1 %som%)
+	(1 fv)
+        (NEGATE *2 fv BARRIER setn-gr) # ie. the fv in position 1 is quite likely to be fv
+;
+# «I tillegg kommer stipender som er delt ut tidligere, og som fortsatt løper.»
+
+
 "<fortsatt>" SELECT:fra-fortsatt-spill adj + &&ADJ_N_AGR IF
         (-1 pr)
         (1 n + &&ADJ_N_AGR + ind)
@@ -8842,8 +8851,8 @@ SELECT ("lyve") IF
         (1 ("om") OR ("til") OR ("for"))
         ;
 
-  "<løper>"i   SELECT:aktiv-løper (n) IF
-	(-1 adj)
+"<løper>"i   SELECT:aktiv-løper (n) IF
+	(-1C adj)
 ;
 #  "sin siste dag som aktiv løper"
 
@@ -14495,13 +14504,18 @@ REMOVE:to-ansatte vblex IF
         (2 ("gå"))
         ;
 # ... ønsket å gå i dialog.
+
+
+"<øs>"i SELECT:pøs adj IF (1 ("pøs") OR ("pøse"));
+"<øs>"i REMOVE:not-pøs adj;
+
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
 "<møter>"i REMOVE:i-mømter n IF
         (-1 qnt)
         (-2 cnjcoo)
-        ;      
+        ;
 "<møter>"i REMOVE:i-møter vblex IF
         (-1 %i%)
         ;
@@ -14732,7 +14746,7 @@ REMOVE:terrorstemplet ("stempel") IF
         ;
 # gjere haldt, avdeling haldt!
 
-"<holdt>"i SELECT:ha-holdt vblex + pp IF
+"<holdt>"i SELECT:ha-holdt pp IF
         (-1*C ("ha" vblex) OR %være/bli% BARRIER setn-gr)
         ;
 

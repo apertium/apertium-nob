@@ -5377,6 +5377,16 @@ REMOVE:44-år-gammel-mann @subj IF
 # tag), even though they function as @←p-utfyll to the main clause.
 # TODO: Might want a separate tag for these subclause-subjects?
 
+REMOVE:cmclb-pasv-subj @xubj IF
+	(-2C cm + clb)
+	(-1C pasv + pres)
+	(0 @subj)
+	;
+# «Brukes den hver dag, svekkes   den   raskere.»
+# «Uansett hvor mye eller lite de er i stand til å betale, regnes   gjelden   som slettet når perioden er over.»
+# «I KrF og Venstre, som for tiden undersøker mulighetene om en ny borgerlig regjering med Frp og Høyre, ønskes   nyheten   velkommen.»
+
+
 SELECT:ellipsrel-tatt @xubj IF
         (0C n + pl)
         (1C adj + pp + pl)
