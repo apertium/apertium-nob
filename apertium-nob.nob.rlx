@@ -6136,6 +6136,10 @@ SELECT:løp-av ("<løp>"i) + n + sg + ind IF
 # Ein gutegjeng stal eit kassaapparat frå ein butikk i Bergen og sprang av garde.
 # Ranaren skal ha komme bakfrå og rive pengane til seg før han sprang av stad.
 
+"<kull>" SELECT:per-kull ("kull") IF
+        (1 ("per") OR ("<hvert>"i))
+        ;
+
 SELECT:et-perfekt-løp ("<løp>"i) + n + sg + ind IF
 		(-2 ("<et>"i))
                 (-1 adj OR ("<slikt>"i))
@@ -16247,6 +16251,10 @@ REMOVE:angrep-på-valgsystemet ("<angrep>"i) + vblex + pret IF
 		(1 %på%)
 		(2 n OR np)
 		(NEGATE -1 prn OR np)
+;
+
+REMOVE:i-angrep ("<angrep>"i) + n IF
+		(-1 prn + pers + nom)
 ;
 
 #:3740
