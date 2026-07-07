@@ -14509,6 +14509,12 @@ REMOVE:to-ansatte vblex IF
 "<øs>"i SELECT:pøs adj IF (1 ("pøs") OR ("pøse"));
 "<øs>"i REMOVE:not-pøs adj;
 
+"<Hatt>" REMOVE:hatt-er-viktig vblex IF
+        (1 %være/bli%)
+        (2 adv)
+        (3C adj)
+        ;
+# Hatt er veldig viktig på teater.
 "<kursene>"i REMOVE:kurs-kursnedgang nt IF
         (*1 ("kursnedgang") OR ("børs"))
         ;
