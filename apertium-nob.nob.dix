@@ -37078,6 +37078,7 @@
 <e lm="het">             <i>het</i><par n="sen__adj"/></e>
 <e lm="hot">             <i>hot</i><par n="hot__adj"/></e>
 <e lm="hjelpeløs">       <i>hjelpe</i><par n="løs"/><par n="auditiv__adj"/></e>
+<e r="LR" lm="hjelpesløs" c="typo"><p><l>hjelpes</l><r>hjelpe</r></p><par n="løs"/><par n="auditiv__adj"/></e>
 <e lm="hjernedød">       <i>hjernedød</i><par n="auditiv__adj"/></e>
 <e lm="homofil">         <i>homofil</i><par n="auditiv__adj"/></e>
 <e lm="homogen">         <i>homogen</i><par n="auditiv__adj"/></e>
@@ -43929,6 +43930,7 @@
 <e lm="fluffy">	<i>fluffy</i><par n="OK__adj"/></e>
 <e lm="groggy">	<i>groggy</i><par n="OK__adj"/></e>
 <e lm="korny">	<i>korny</i><par n="OK__adj"/></e>
+<e lm="hangry">	<i>hangry</i><par n="OK__adj"/></e>
 <e lm="dry">	<i>dry</i><par n="OK__adj"/></e>
 <e lm="snaksy">	<i>snaksy</i><par n="OK__adj"/></e>
 <e lm="sporty">	<i>sporty</i><par n="OK__adj"/></e>
@@ -137700,6 +137702,7 @@
 <e lm="nazifortid">      <i>nazifortid</i><par n="då__n"/></e>
 <e lm="nazihelvete">     <i>nazihelvet</i><par n="ød/e__n"/></e>
 <e lm="nazihets">        <i>nazihets</i><par n="buss_\Ø__n"/></e>
+<e lm="netthets">        <i>netthets</i><par n="buss_\Ø__n"/></e>
 <e lm="nazijeger">       <i>nazijeger</i><par n="uer__n"/></e>
 <e lm="nazikontroll">    <i>nazikontroll</i><par n="ep_\Ø__n"/></e>
 <e lm="nazimyndighet">   <i>nazimyndighet</i><par n="då__n"/></e>
