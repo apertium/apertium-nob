@@ -99233,6 +99233,7 @@
 <e lm="bjørneunge"><i>bjørneunge</i><par n="re_\Ø__n"/></e>
 <e lm="bla-bla"><i>bla-bla</i><par n="vel__n"/></e>
 <e lm="black metal"><i>black<b/>metal</i><par n="mai__n"/></e>
+<e lm="stang-ut"><i>stang-ut</i><par n="mai__n"/></e>
 <e lm="bladbille"><i>bladbille</i><par n="re_\Ø__n"/></e>
 <e lm="bladfjær"><i>bladfjær</i><par n="ski__n"/></e>
 <e lm="bladfjør"><i>bladfjør</i><par n="ski__n"/></e>
@@ -169559,7 +169560,9 @@
 <e lm="åttedelsfinale">  <i>åttedelsfinale</i><par n="re_\Ø__n"/></e>
 
 <e lm="16.-delsfinale">  <i>16.-delsfinale</i><par n="re_\Ø__n"/></e>
+<e r="LR" lm="16.-delsfinale"><p><l>16.<b/>delsfinale</l><r>16.-delsfinale</r></p><par n="re_\Ø__n"/></e>
 <e lm="8.-delsfinale">  <i>8.-delsfinale</i><par n="re_\Ø__n"/></e>
+<e r="LR" lm="8.-delsfinale"><p><l>8.<b/>delsfinale</l><r>8.-delsfinale</r></p><par n="re_\Ø__n"/></e>
 
 <e lm="åttedobling">     <i>åttedobling</i><par n="då__n"/></e>
 <e lm="åttemannsband">   <i>åttemannsband</i><par n="ul__n"/></e>
@@ -196569,10 +196572,11 @@
   <e>                      <par n="numeros"/></e>
   <!-- sme-nob-numeros needs to be RL to avoid messing up other pairs: -->
   <e r="RL">               <par n="sme-nob-numeros"/></e>
+
   <!-- To get things like «MAX 8-fly» as two tokens instead of four (though one would be even better): -->
   <e lm="0-9+" c="2-3-seier"><re>[0-9]([0-9–\-]*[0-9])?</re><par n="8__n_cmp"/></e>
 
-    
+
   <!-- 22.30-tiden needs a non-compund entry, otherwise it gets tokenised
        as 22.<adj><ord>-<guio>tid<n> since the adj.ord are inconditional:-->
   <e lm="22.30-tiden">           <re>[0-9]+[.][0-9]+</re><i>-tid</i><par n="då_\s__n"/></e>
@@ -196584,6 +196588,8 @@
   <e lm="13.-lag">               <re>[0-9]+[.]</re><i>-lag</i><par n="ul_\s__n"/></e>
   <e lm="13-månedersalder">     <re>[0-9–—\-]+</re><i>-månedersald</i><par n="iv/er__n"/></e>
   <e lm="13-punkts">     <re>[0-9]+</re><i>-punkt</i><par n="ja_\s__n"/></e>
+  <e lm="13-dagers">     <re>[0-9]+</re><i>-dagers</i><par n="kommunal__n_cmp"/></e>
+  <e r="LR" lm="13- dagers"><re>[0-9]+</re><p><l>-<b/>dagers</l><r>-dagers</r></p><par n="kommunal__n_cmp"/></e>
   <!-- And a non-compound (but cmp-tagged) entry for the general case to analyse
        things like «1.000-kroneseddel» as ^1.<n><cmp>$^000<n><cmp>$^seddel<n>$,
        but without using the compound machinery (which would be overridden by inconditionals): -->
