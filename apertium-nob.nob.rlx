@@ -6113,6 +6113,11 @@ SELECT:trives ("<trives>"i) + vblex + pres IF
 		(-1 det OR prn OR adj)
 		;
 
+"<trenges>"i REMOVE:trenges pstv + pres IF
+                (1 ("opp") OR ("ned") OR ("sammen") OR ("inn") OR ("ut"))
+		;
+# Unlikely: ha trong for; de trenges opp i et hjørne; jf. LRX
+
 SELECT:løpet-kjørt ("<løpet>"i) + n IF
         (1 ("<kjørt>"))
         ;
