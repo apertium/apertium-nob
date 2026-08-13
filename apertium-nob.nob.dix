@@ -60323,6 +60323,8 @@
 <e lm="teori">           <i>teori</i><par n="ep_\Ø__n"/></e>
 <e lm="tempel">          <i>temp</i><par n="es/el__n"/></e>
 <e lm="sport">           <i>sport</i><par n="ep_\s__n"/></e>
+<e lm="e-sport">         <i>e-sport</i><par n="ep_\s__n"/></e>
+<e r="LR" lm="esport">   <p><l>esport</l><r>e-sport</r></p><par n="ep_\s__n"/></e>
 <e lm="ballsport">           <i>ballsport</i><par n="ep_\Ø__n"/></e>
 <e lm="snøsport">           <i>snøsport</i><par n="ep_\Ø__n"/></e>
 <e lm="utgave">          <i>utgav</i><par n="enk/e_\Ø__n"/></e>
