@@ -43684,11 +43684,12 @@ REMOVE:hvor-mange-fisker ub-ent IF
         ;
 # not "fisker" n m sg ind
 
-REMOVE:Importer-alle (n pl) IF
+REMOVE:Importer-alle (n) IF
 	(-1 >>>)
 	(0C imp OR subst)
 	(1C det OR subst)
 ;
+
 
 REMOVE:gen-subst gen-subst IF
 	(0 subst-prop)
