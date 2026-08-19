@@ -17366,6 +17366,25 @@
   <e r="LR"><p><l>a</l>   <r>et<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
   <e c="n" r="LR"> <p><l>as</l>   <r>et<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
 </pardef>
+<pardef n="høybyg/d__adj">
+  <e r="LR"><p><l>get</l>  <r>d<s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
+  <e>       <p><l>d</l>    <r>d<s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
+  <e r="LR"><p><l>get</l>  <r>d<s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>d</l>    <r>d<s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e r="LR"><p><l>gede</l> <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="pl"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e r="LR"><p><l>gete</l> <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="pl"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>de</l>   <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="pl"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e r="LR"><p><l>ede</l>  <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>de</l>   <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e c="n" r="LR"> <p><l>edes</l> <r>d<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+  <e c="n"> <p><l>des</l> <r>d<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+  <e r="LR"><p><l>ete</l>  <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>de</l>   <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e c="n" r="LR"> <p><l>etes</l> <r>d<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+  <e c="n"> <p><l>des</l> <r>d<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+  <e>       <p><l>d</l>   <r>d<s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e c="n"> <p><l>des</l>   <r>d<s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+</pardef>
 <pardef n="beløn/net__adj">
   <e>       <p><l>net</l>  <r>net<s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
   <e r="LR"><p><l>na</l>   <r>net<s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
@@ -35697,8 +35716,8 @@
 <e lm="indisk">          <i>indisk</i><par n="minst__adj"/></e>
 <e lm="indonesisk">      <i>indonesisk</i><par n="minst__adj"/></e>
 <e lm="innbitt">         <i>innbitt</i><par n="minst__adj"/></e>
-<e lm="innebygd">        <i>innebygd</i><par n="minst__adj"/></e>
-<e lm="selvbygd">        <par n="selv"/><i>bygd</i><par n="minst__adj"/></e>
+<e lm="innebygd">        <i>innebyg</i><par n="høybyg/d__adj"/></e>
+<e lm="selvbygd">        <par n="selv"/><i>byg</i><par n="høybyg/d__adj"/></e>
 <e lm="innenlandsk">     <i>innenlandsk</i><par n="minst__adj"/></e>
 <e lm="innestengt">      <i>innestengt</i><par n="minst__adj"/></e>
 <e lm="innfløkt">        <i>innfløkt</i><par n="minst__adj"/></e>
@@ -36114,7 +36133,7 @@
 <e lm="termisk">         <i>termisk</i><par n="minst__adj"/></e>
 <e lm="tett">            <i>tett</i><par n="sort__adj"/></e>
 <e lm="tight">            <i>tight</i><par n="sort__adj"/></e>
-<e lm="tettbygd">        <i>tettbygd</i><par n="minst__adj"/></e>
+<e lm="tettbygd">        <i>tettbyg</i><par n="høybyg/d__adj"/></e>
 <e lm="tett bebygd">        <i>tett<b/>bebygd</i><par n="minst__adj"/></e>
 <e r="LR" lm="tettbebygd"><p><l>tettbebygd</l><r>tettbygd</r></p><par n="minst__adj"/></e>
 <e r="LR" lm="tettbygd"><p><l>tett<b/>bebygd</l><r>tettbebygd</r></p><par n="minst__adj"/></e>
@@ -38629,7 +38648,7 @@
 <e lm="frisisk">               <i>frisisk</i><par n="minst__adj"/></e>
 <e lm="norsk-russisk">         <i>norsk-russisk</i><par n="minst__adj"/></e>
 <e lm="beksvart">              <i>beksvart</i><par n="minst__adj"/></e>
-<e lm="overbygd">              <i>overbygd</i><par n="minst__adj"/></e>
+<e lm="overbygd">              <i>overbyg</i><par n="høybyg/d__adj"/></e>
 <e lm="enspråklig">            <i>enspråklig</i><par n="minst__adj"/></e>
 <e lm="tospråklig">            <i>tospråklig</i><par n="minst__adj"/></e>
 <e lm="epidemiologisk">        <i>epidemiologisk</i><par n="minst__adj"/></e>
@@ -45663,35 +45682,35 @@
 <e lm="korthugd">	<i>korthugd</i><par n="minst__adj"/></e>
 <e lm="uthugd">	<i>uthugd</i><par n="minst__adj"/></e>
 <e lm="avhugd">	<i>avhugd</i><par n="minst__adj"/></e>
-<e lm="spedbygd">	<i>spedbygd</i><par n="minst__adj"/></e>
-<e lm="bredbygd">	<i>bredbygd</i><par n="minst__adj"/></e>
-<e lm="bebygd">	    <i>bebygd</i><par n="minst__adj"/></e>
-<e lm="ubebygd">	<i>ubebygd</i><par n="minst__adj"/></e>
-<e lm="spebygd">	<i>spebygd</i><par n="minst__adj"/></e>
-<e lm="ferdigbygd">	<i>ferdigbygd</i><par n="minst__adj"/></e>
-<e lm="breibygd">	<i>breibygd</i><par n="minst__adj"/></e>
-<e lm="klinkbygd">	<i>klinkbygd</i><par n="minst__adj"/></e>
-<e lm="nederlandskbygd">	<i>nederlandskbygd</i><par n="minst__adj"/></e>
-<e lm="sovjetiskbygd">	<i>sovjetiskbygd</i><par n="minst__adj"/></e>
-<e lm="engelskbygd">	<i>engelskbygd</i><par n="minst__adj"/></e>
-<e lm="danskbygd">	<i>danskbygd</i><par n="minst__adj"/></e>
-<e lm="finskbygd">	<i>finskbygd</i><par n="minst__adj"/></e>
-<e lm="norskbygd">	<i>norskbygd</i><par n="minst__adj"/></e>
-<e lm="tyskbygd">	<i>tyskbygd</i><par n="minst__adj"/></e>
-<e lm="spesialbygd">	<i>spesialbygd</i><par n="minst__adj"/></e>
-<e lm="velbygd">	<i>velbygd</i><par n="minst__adj"/></e>
-<e lm="kravellbygd">	<i>kravellbygd</i><par n="minst__adj"/></e>
-<e lm="ombygd">	<i>ombygd</i><par n="minst__adj"/></e>
-<e lm="nyombygd">	<i>nyombygd</i><par n="minst__adj"/></e>
-<e lm="innbygd">	<i>innbygd</i><par n="minst__adj"/></e>
-<e lm="fintbygd">	<i>fintbygd</i><par n="minst__adj"/></e>
-<e lm="velutbygd">	<i>velutbygd</i><par n="minst__adj"/></e>
-<e lm="overutbygd">	<i>overutbygd</i><par n="minst__adj"/></e>
-<e lm="uutbygd">	<i>uutbygd</i><par n="minst__adj"/></e>
-<e lm="nyutbygd">	<i>nyutbygd</i><par n="minst__adj"/></e>
-<e lm="ubygd">	<i>ubygd</i><par n="minst__adj"/></e>
-<e lm="grovbygd">	<i>grovbygd</i><par n="minst__adj"/></e>
-<e lm="nybygd">	<i>nybygd</i><par n="minst__adj"/></e>
+<e lm="spedbygd">	<i>spedbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="bredbygd">	<i>bredbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="bebygd">	    <i>bebyg</i><par n="høybyg/d__adj"/></e>
+<e lm="ubebygd">	<i>ubebyg</i><par n="høybyg/d__adj"/></e>
+<e lm="spebygd">	<i>spebyg</i><par n="høybyg/d__adj"/></e>
+<e lm="ferdigbygd">	<i>ferdigbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="breibygd">	<i>breibyg</i><par n="høybyg/d__adj"/></e>
+<e lm="klinkbygd">	<i>klinkbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="nederlandskbygd">	<i>nederlandskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="sovjetiskbygd">	<i>sovjetiskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="engelskbygd">	<i>engelskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="danskbygd">	<i>danskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="finskbygd">	<i>finskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="norskbygd">	<i>norskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="tyskbygd">	<i>tyskbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="spesialbygd">	<i>spesialbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="velbygd">	<i>velbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="kravellbygd">	<i>kravellbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="ombygd">	<i>ombyg</i><par n="høybyg/d__adj"/></e>
+<e lm="nyombygd">	<i>nyombyg</i><par n="høybyg/d__adj"/></e>
+<e lm="innbygd">	<i>innbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="fintbygd">	<i>fintbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="velutbygd">	<i>velutbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="overutbygd">	<i>overutbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="uutbygd">	<i>uutbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="nyutbygd">	<i>nyutbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="ubygd">	<i>ubyg</i><par n="høybyg/d__adj"/></e>
+<e lm="grovbygd">	<i>grovbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="nybygd">	<i>nybyg</i><par n="høybyg/d__adj"/></e>
 <e lm="ferdigtygd">	<i>ferdigtygd</i><par n="minst__adj"/></e>
 <e lm="usløgd">	<i>usløgd</i><par n="minst__adj"/></e>
 <e lm="nøgd">	<i>nøgd</i><par n="minst__adj"/></e>
@@ -56601,6 +56620,7 @@
 <e lm="hvitlugget">                     <i>hvitlugg</i><par n="øv/et__adj"/></e>
 <e lm="kvitlugget">                     <i>kvitlugg</i><par n="øv/et__adj"/></e>
 <e lm="ferdigbygget">                   <i>ferdigbygg</i><par n="øv/et__adj"/></e>
+<e lm="privatbygd">                     <i>privatbyg</i><par n="høybyg/d__adj"/></e>
 <e lm="høgbygget">                      <i>høgbygg</i><par n="øv/et__adj"/></e>
 <e lm="spesialbygget">                  <i>spesialbygg</i><par n="øv/et__adj"/></e>
 <e lm="høybygget">                      <i>høybygg</i><par n="øv/et__adj"/></e>
@@ -56732,10 +56752,10 @@
 <e lm="formsydd">                       <i>formsydd</i><par n="minst__adj"/></e>
 <e lm="grovhogd">                       <i>grovhogd</i><par n="minst__adj"/></e>
 <e lm="grovhugd">                       <i>grovhugd</i><par n="minst__adj"/></e>
-<e lm="høgbygd">                        <i>høgbygd</i><par n="minst__adj"/></e>
-<e lm="lågbygd">                        <i>lågbygd</i><par n="minst__adj"/></e>
-<e lm="lavbygd">                        <i>lavbygd</i><par n="minst__adj"/></e>
-<e lm="høybygd">                        <i>høybygd</i><par n="minst__adj"/></e>
+<e lm="høgbygd">                        <i>høgbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="lågbygd">                        <i>lågbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="lavbygd">                        <i>lavbyg</i><par n="høybyg/d__adj"/></e>
+<e lm="høybygd">                        <i>høybyg</i><par n="høybyg/d__adj"/></e>
 <e lm="heileid">                        <i>heileid</i><par n="minst__adj"/></e>
 <e lm="innleid">                        <i>innleid</i><par n="minst__adj"/></e>
 <e lm="høglærd">                        <i>høglærd</i><par n="minst__adj"/></e>
