@@ -85648,6 +85648,7 @@
 <e lm="sterling"><i>sterling</i><par n="ep_\Ø\s__n"/></e>
 <e lm="sterlingsølv"><i>sterlingsølv</i><par n="ul__n"/></e>
 <e lm="steroid"><i>steroid</i><par n="ja_\Ø__n"/></e>
+<e r="LR" lm="stereoid"><p><l>stereoid</l><r>steroid</r></p><par n="ja_\Ø__n"/></e>
 <e lm="sterol"><i>sterol</i><par n="ep_\Ø__n"/></e>
 <e lm="stetoskop"><i>stetoskop</i><par n="ja_\Ø__n"/></e>
 <e lm="stev"><i>stev</i><par n="ul__n"/></e>
