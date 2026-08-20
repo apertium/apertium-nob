@@ -12987,6 +12987,18 @@ SELECT:ha-slitt ("<slitt>"i) + vblex IF
         (-1* ("ha" vblex) BARRIER setn-gr)
         ;
 
+"<rød>"i SELECT:gul-cm-rød adj IF
+        (-2 farger)
+        (-1 cm OR cnjcoo)
+        ;
+# ... gul, rød, blå og grønn.
+
+"<gul>"i SELECT:gul-cm-rød-2 adj IF
+        (1 cm OR cnjcoo)
+        (2 farger)
+        ;
+# ... gul, rød, blå og grønn.
+
 "<lær>"i SELECT:lær-imperativ vblex IF
         (1 part OR n OR np)
         ;
