@@ -13809,7 +13809,7 @@ SELECT:meningsmålingssnittene ("snitt") + nt IF
 "<vinner>"i REMOVE:stå-igjen-som-vinner vblex IF
         (-1 %som%)
         (-2 ("igjen"))
-        (-3 ("stå"))
+        (-3* ("stå") BARRIER setn-gr)
         ;
 "<hjem>"i SELECT:tusenvis-av-hjem n + pl IF
         (-2 ("tusenvis") OR ("hundrevis"))
