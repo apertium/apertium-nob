@@ -98104,7 +98104,16 @@
 <e lm="berettigelse"><i>berettigelse</i><par n="re_\s__n"/></e>
 <e lm="berettiging"><i>berettiging</i><par n="då__n"/></e>
 <e lm="beretting"><i>beretting</i><par n="då__n"/></e>
+
 <e lm="berg-og-dal-bane"><i>berg-og-dal-bane</i><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg- og dal-bane" c="typo"><p><l>berg-<b/>og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og dal-bane" c="typo"><p><l>berg-og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg og dal-bane" c="typo"><p><l>berg<b/>og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg og dalbane" c="typo"><p><l>berg<b/>og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og-dalbane" c="typo"><p><l>berg-og-dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og dalbane" c="typo"><p><l>berg-og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg- og dalbane" c="typo"><p><l>berg-<b/>og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+
 <e lm="bergamottappelsin"><i>bergamottappelsin</i><par n="ep_\Ø__n"/></e>
 <e lm="bergamottpære"><i>bergamottpær</i><par n="enk/e__n"/></e>
 <e lm="bergand"><i>berg</i><par n="/and__n"/></e>
@@ -182816,8 +182825,6 @@
 <e lm="sexisme">	<i>sexisme</i><par n="re_\Ø__n"/></e>
 <e lm="tannstangbane">	<i>tannstangbane</i><par n="re_\Ø__n"/></e>
 <e lm="tunellbane">	<i>tunellbane</i><par n="re_\Ø__n"/></e>
-<e lm="berg-og-dalbane"> <i>berg-og-dalbane</i><par n="re_\Ø__n"/></e>
-<e lm="berg- og dalbane"> <i>berg-<b/>og<b/>dalbane</i><par n="re_\Ø__n"/></e>
 <e lm="krumbane">	<i>krumbane</i><par n="re_\Ø__n"/></e>
 <e lm="gene">	<i>gene</i><par n="re_\Ø__n"/></e>
 <e lm="intimhygiene">	<i>intimhygiene</i><par n="re_\Ø__n"/></e>
