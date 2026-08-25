@@ -35292,6 +35292,7 @@
 <e lm="astronomisk">          <i>astronomisk</i><par n="minst__adj"/></e>
 <e lm="antisemittisk">          <i>antisemittisk</i><par n="minst__adj"/></e>
 <e lm="analytisk">          <i>analytisk</i><par n="minst__adj"/></e>
+<e lm="hemolytisk">          <i>hemolytisk</i><par n="minst__adj"/></e>
 <e lm="algebraisk">          <i>algebraisk</i><par n="minst__adj"/></e>
 <e lm="økumenisk">          <i>økumenisk</i><par n="minst__adj"/></e>
 <e lm="upraktisk">          <i>upraktisk</i><par n="minst__adj"/></e>
@@ -91608,6 +91609,7 @@
 <e lm="offentlighetslov"><i>offentlighetslov</i><par n="ep_\s__n"/></e>
 <e lm="overbevisning">   <i>overbevisning</i><par n="då_\s__n"/></e>
 <e lm="overenskomst">    <i>overenskomst</i><par n="ep_\Ø__n"/></e>
+<e lm="uoverenskomst">    <i>uoverenskomst</i><par n="ep_\Ø__n"/></e>
 <e lm="ringeakt">        <i>ringeakt</i><par n="ep_\Ø__n"/></e>
 <e lm="selvbestemmelsesrett"><i>selvbestemmelsesrett</i><par n="ep_\s__n"/></e>
 <e lm="stemmegivning">   <i>stemmegivning</i><par n="då_\s__n"/></e>
