@@ -43703,10 +43703,11 @@ REMOVE:hvor-mange-fisker ub-ent IF
         ;
 # not "fisker" n m sg ind
 
-REMOVE:Importer-alle (n) IF
+SELECT:Importer-alle imp IF
 	(-1 >>>)
 	(0C imp OR subst)
 	(1C det OR subst)
+        (NEGATE *2C fv BARRIER setn-gr) # «Klubbens forslag om smittevern er godtatt av myndighetene»
 ;
 
 

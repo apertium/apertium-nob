@@ -35292,6 +35292,7 @@
 <e lm="astronomisk">          <i>astronomisk</i><par n="minst__adj"/></e>
 <e lm="antisemittisk">          <i>antisemittisk</i><par n="minst__adj"/></e>
 <e lm="analytisk">          <i>analytisk</i><par n="minst__adj"/></e>
+<e lm="hemolytisk">          <i>hemolytisk</i><par n="minst__adj"/></e>
 <e lm="algebraisk">          <i>algebraisk</i><par n="minst__adj"/></e>
 <e lm="økumenisk">          <i>økumenisk</i><par n="minst__adj"/></e>
 <e lm="upraktisk">          <i>upraktisk</i><par n="minst__adj"/></e>
@@ -47927,6 +47928,7 @@
 <e lm="usympatisk">	<i>usympatisk</i><par n="minst__adj"/></e>
 <e lm="homeopatisk">	<i>homeopatisk</i><par n="minst__adj"/></e>
 <e lm="psykopatisk">	<i>psykopatisk</i><par n="minst__adj"/></e>
+<e lm="sosiopatisk">	<i>sosiopatisk</i><par n="minst__adj"/></e>
 <e lm="hieratisk">	<i>hieratisk</i><par n="minst__adj"/></e>
 <e lm="idiosynkratisk">	<i>idiosynkratisk</i><par n="minst__adj"/></e>
 <e lm="teokratisk">	<i>teokratisk</i><par n="minst__adj"/></e>
@@ -71894,6 +71896,7 @@
 <e lm="infanterivåpen"><i>infanterivåp</i><par n="våp/en__n"/></e>
 <e lm="infantilisme"><i>infantilisme</i><par n="re_\Ø__n"/></e>
 <e lm="infarkt"><i>infarkt</i><par n="ja_\Ø__n"/></e>
+<e r="LR" lm="innfarkt" c="typo">  <p><l>innfarkt</l><r>infarkt</r></p><par n="ja_\Ø__n"/></e>
 <e lm="infeksjon"><i>infeksjon</i><par n="ep_\s__n"/></e>
 <e lm="infeksjonssjukdom"><i>infeksjonssjukdom</i><par n="bom_\s__n"/></e>
 <e lm="inferno"><i>inferno</i><par n="ja_\Ø__n"/></e>
@@ -91608,6 +91611,7 @@
 <e lm="offentlighetslov"><i>offentlighetslov</i><par n="ep_\s__n"/></e>
 <e lm="overbevisning">   <i>overbevisning</i><par n="då_\s__n"/></e>
 <e lm="overenskomst">    <i>overenskomst</i><par n="ep_\Ø__n"/></e>
+<e lm="uoverenskomst">    <i>uoverenskomst</i><par n="ep_\Ø__n"/></e>
 <e lm="ringeakt">        <i>ringeakt</i><par n="ep_\Ø__n"/></e>
 <e lm="selvbestemmelsesrett"><i>selvbestemmelsesrett</i><par n="ep_\s__n"/></e>
 <e lm="stemmegivning">   <i>stemmegivning</i><par n="då_\s__n"/></e>
@@ -98102,7 +98106,16 @@
 <e lm="berettigelse"><i>berettigelse</i><par n="re_\s__n"/></e>
 <e lm="berettiging"><i>berettiging</i><par n="då__n"/></e>
 <e lm="beretting"><i>beretting</i><par n="då__n"/></e>
+
 <e lm="berg-og-dal-bane"><i>berg-og-dal-bane</i><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg- og dal-bane" c="typo"><p><l>berg-<b/>og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og dal-bane" c="typo"><p><l>berg-og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg og dal-bane" c="typo"><p><l>berg<b/>og<b/>dal-bane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg og dalbane" c="typo"><p><l>berg<b/>og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og-dalbane" c="typo"><p><l>berg-og-dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg-og dalbane" c="typo"><p><l>berg-og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+<e r="LR" lm="berg- og dalbane" c="typo"><p><l>berg-<b/>og<b/>dalbane</l><r>berg-og-dal-bane</r></p><par n="re_\Ø__n"/></e>
+
 <e lm="bergamottappelsin"><i>bergamottappelsin</i><par n="ep_\Ø__n"/></e>
 <e lm="bergamottpære"><i>bergamottpær</i><par n="enk/e__n"/></e>
 <e lm="bergand"><i>berg</i><par n="/and__n"/></e>
@@ -182814,8 +182827,6 @@
 <e lm="sexisme">	<i>sexisme</i><par n="re_\Ø__n"/></e>
 <e lm="tannstangbane">	<i>tannstangbane</i><par n="re_\Ø__n"/></e>
 <e lm="tunellbane">	<i>tunellbane</i><par n="re_\Ø__n"/></e>
-<e lm="berg-og-dalbane"> <i>berg-og-dalbane</i><par n="re_\Ø__n"/></e>
-<e lm="berg- og dalbane"> <i>berg-<b/>og<b/>dalbane</i><par n="re_\Ø__n"/></e>
 <e lm="krumbane">	<i>krumbane</i><par n="re_\Ø__n"/></e>
 <e lm="gene">	<i>gene</i><par n="re_\Ø__n"/></e>
 <e lm="intimhygiene">	<i>intimhygiene</i><par n="re_\Ø__n"/></e>
