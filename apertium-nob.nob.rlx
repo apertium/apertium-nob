@@ -15189,6 +15189,8 @@ SELECT:sittet-varetektsfengslet pp IF
         (-1* ("ha" vblex))
         (1 %om%)
         ;
+"<siterer>"i REMOVE:ulikely n 
+        ;
 "<telt>"i SELECT:er-telt-opp adj IF
         (-1* %være/bli% BARRIER setn-gr)
         (1 %opp%)
