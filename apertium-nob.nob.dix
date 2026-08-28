@@ -58724,6 +58724,7 @@
 <e lm="administrator">   <i>administrator</i><par n="ep_\Ø__n"/></e>
 <e lm="kalibrator">   <i>kalibrator</i><par n="ep_\Ø__n"/></e>
 <e lm="befolkning">      <i>befolkning</i><par n="då_\s__n"/></e>
+<e r="LR" lm="befolking" c="typo"><p><l>befolking</l><r>befolkning</r></p><par n="då_\s__n"/></e>
 <e lm="blomster">        <i>blomst</i><par n="åk/er__n"/></e>
 <e lm="blomst">          <i>blomst</i><par n="blomst_\er__n"/></e>
 <e lm="debatt">          <i>debatt</i><par n="ep_\Ø__n"/></e>
@@ -97600,7 +97601,6 @@
 <e lm="befinning"><i>befinning</i><par n="då__n"/></e>
 <e lm="befippelse"><i>befippelse</i><par n="re_\s__n"/></e>
 <e lm="beflitting"><i>beflitting</i><par n="då__n"/></e>
-<e lm="befolking"><i>befolking</i><par n="då__n"/></e>
 <e lm="befolkningsammensetning"><i>befolkningsammensetning</i><par n="då__n"/></e>
 <e lm="befolkningseksplosjon"><i>befolkningseksplosjon</i><par n="ep_\s\Ø__n"/></e>
 <e lm="befolkningsgrunnlag"><i>befolkningsgrunnlag</i><par n="ul__n"/></e>
@@ -170743,6 +170743,7 @@
 <e lm="kreftavdeling">   <i>kreftavdeling</i><par n="då_\s__n"/></e>
 <e lm="kreftbehandling"> <i>kreftbehandling</i><par n="då_\s__n"/></e>
 <e lm="kringkasting">    <i>kringkasting</i><par n="då_\s__n"/></e>
+<e r="LR" lm="kringkastning" c="typo"><p><l>kringkastning</l><r>kringkasting</r></p><par n="då_\s__n"/></e>
 <e lm="krittsystem">     <i>krittsystem</i><par n="ja_\Ø__n"/></e>
 <e lm="krympning">        <i>krympning</i><par n="då_\s__n"/></e>
 <e lm="kulturpolitikk">  <i>kulturpolitikk</i><par n="ep_\Ø__n"/></e>
