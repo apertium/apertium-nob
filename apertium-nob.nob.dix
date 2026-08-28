@@ -62386,6 +62386,7 @@
 <e lm="appelsintre"><i>appelsintr</i><par n="tr/e__n"/></e>
 <e lm="appendiks"><i>appendiks</i><par n="do__n"/></e>
 <e lm="appetitt"><i>appetitt</i><par n="ep_\Ø__n"/></e>
+<e r="LR" lm="apetitt" c="typo"> <p><l>apetitt</l><r>appetitt</r></p><par n="ep_\Ø__n"/></e>
 <e lm="applaus"><i>applaus</i><par n="buss_\Ø__n"/></e>
 <e lm="applikasjon"><i>applikasjon</i><par n="ep_\s__n"/></e>
 <e lm="replikasjon"><i>replikasjon</i><par n="ep_\s__n"/></e>
