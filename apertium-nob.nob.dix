@@ -20083,7 +20083,7 @@
 <e lm="utapå">           <i>utapå</i><par n="i__pr"/></e>
 <e lm="utav">            <i>utav</i><par n="i__pr"/></e>
 <e lm="ute">             <i>ute</i><par n="i__pr"/></e>
-<e lm="utfra">          <i>utfra</i><par n="i__pr"/></e>
+<e r="LR" lm="utfra">    <p><l>utfra</l><r>ut<b/>fra</r></p><par n="i__pr"/></e>
 <e lm="utefra">          <i>utefra</i><par n="i__pr"/></e>
 <e lm="uten">            <i>uten</i><par n="i__pr"/></e>
 <e lm="utendørs">        <i>utendørs</i><par n="i__pr"/></e>
@@ -105190,6 +105190,7 @@
 <e lm="elgkolle"><i>elgkoll</i><par n="enk/e__n"/></e>
 <e lm="elgku"><i>elgk</i><par n="k/u__n"/></e>
 <e lm="elglos"><i>elglos</i><par n="buss_\Ø__n"/></e>
+<e lm="elgskilt"><i>elgskilt</i><par n="ja_\Ø__n"/></e>
 <e lm="elgskinn"><i>elgskinn</i><par n="ul__n"/></e>
 <e lm="elgstamme"><i>elgstamme</i><par n="re_\Ø__n"/></e>
 <e lm="elgsteik"><i>elgsteik</i><par n="då__n"/></e>
