@@ -13505,6 +13505,11 @@ SELECT ("<Rana>") + np IF
 
 "<utbredt>"i SELECT:utbredt adj ;
 
+"<skallet>"i SELECT:skallet-ned ("skalle" vblex) IF
+        (1 %ned%)
+        (NEGATE -1* fv BARRIER setn-gr)
+        ;
+# førstnemnde skalla ned Hull-spelaren
 
 REMOVE:ACR-prefer-same-casing SUB:1 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/1 ("\\p{Upper}+"r)) ;
 # «kake-TV-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
@@ -13663,6 +13668,9 @@ REMOVE:-dataene("data") + m IF
         ;
 "<anklager>"i REMOVE:anklager-mot vblex IF
         (1 ("mot"))
+        ;
+"<anklager>"i REMOVE:anklager-reises vblex IF
+        (1 vblex)
         ;
 "<Glimt>" SELECT:Glimt-spiller np IF
         (1 vblex)
