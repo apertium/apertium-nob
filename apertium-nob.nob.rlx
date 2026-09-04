@@ -10058,6 +10058,22 @@ REMOVE:unlikely ("<ris>") + pasv;
 "<skade>" REMOVE:unlikely adj + pp ;
 # Anten infinitiv eller substantiv
 
+
+"<skader>"i REMOVE:skader-på vblex IF
+        (1 %på% OR ("mellom") OR ("blant"))
+        ;
+# skadar på sau
+
+"<skader>"i REMOVE:etter-skader vblex IF
+        (-1 %etter%)
+        ;
+# etter skadar på grunn av vaksine
+
+"<skader>"i REMOVE:påført-skader vblex IF
+        (-1* ("påføre") BARRIER setn-gr)
+        ;
+# byen Beira anten er øydelagt eller påført skadar i uvêret
+
 #:4002
 
  "<rotta>"   SELECT:4002   (n f sg def) IF
