@@ -12829,6 +12829,10 @@ REMOVE:kontroll+ører ("øre") + nt OR ("øre¹") IF (0 øre-tvitydig-samansetji
 # Fjern m viss det finst heilt andre lemma (radarkontroll+øre vs radar+kontrollør):
 REMOVE:kontroll+ører ("øre") + m IF (0 øre-tvitydig-samansetjing);
 
+"<ørene>"i SELECT:spisse-ørene ("øre¹")
+        ;
+# Men 'dei 50 øra'
+
 "<øst>" SELECT:øst-i-England pr IF
         (NOT 1 ("ut"))
         ;
