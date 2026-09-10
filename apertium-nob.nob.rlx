@@ -8192,6 +8192,11 @@ SELECT:kroner-per n + ("krone") IF (1 ("per"));
 SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 ukjent);
 SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
+
+"<grader>"i SELECT:10-grader n IF
+        (-1 talord OR siffer OR det + qnt)
+        ;
+
 "<kvoter>" SELECT:kvoter ("kvote");
 
 #:3502
