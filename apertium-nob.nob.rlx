@@ -15155,6 +15155,9 @@ REMOVE:Isnes-ansatt vblex IF
         (2 n)
         ;
 # "I knappen under finner du beskjeden."
+"<spørres>"i REMOVE:default-blir-spurt ("spørres" vblex ) 
+        ;
+# i så fall blir partane spurde om dei ønskjer dette
 "<transporteres>"i SELECT:skal-alle-transporteres vblex + inf + pasv IF
         (-2 modalverb)
         (-1 det OR n OR pron)

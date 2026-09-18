@@ -198877,6 +198877,9 @@
 <e lm="vareførselsloven">	<i>vareførselsloven</i><par n="d'or__np"/></e>
 <e lm="vaktvirksomhetsloven">	<i>vaktvirksomhetsloven</i><par n="d'or__np"/></e>
 <e lm="varemerkeloven">	<i>varemerkeloven</i><par n="d'or__np"/></e>
+<e lm="veglova">	<i>veglova</i><par n="d'or__np"/></e>
+<e r="LR" lm="veiloven">	<p><l>veiloven</l><r>veglova</r></p><par n="d'or__np"/></e>
+<e r="LR" lm="vegloven">	<p><l>vegloven</l><r>veglova</r></p><par n="d'or__np"/></e>
 <e lm="vegtrafikkloven">	<i>vegtrafikkloven</i><par n="d'or__np"/></e>
 <e r="LR" lm="veitrafikkloven">	<p><l>veitrafikkloven</l><r>vegtrafikkloven</r></p><par n="d'or__np"/></e>
 <e lm="verdipapirsentralloven">	<i>verdipapirsentralloven</i><par n="d'or__np"/></e>
