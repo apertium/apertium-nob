@@ -8869,6 +8869,11 @@ SELECT ("lyve") IF
 	(-1C adj)
 ;
 #  "sin siste dag som aktiv løper"
+"<løper>"i   SELECT:som-løper (n) IF
+        (-2 ("<steget>"))
+	(-1 ("som"))
+;
+#  "å ta det neste steget som løper..."
 
 #:3451
   "<man>"   SELECT:3451   (prn) IF
@@ -11437,6 +11442,11 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (-2 %at%)
         (-1 prn + nom)
         (1 adj)
+        ;
+
+"<så>"   SELECT:hva-så adv IF
+        (-1 ("hva"))
+        (1 pr)
         ;
 
 "<så>"   SELECT:vi-såg-i pret IF
