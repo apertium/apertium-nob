@@ -11448,7 +11448,7 @@ REMOVE:unlikely ("<utløp>"i) + pret IF
         (-1 ("hva"))
         (1 pr)
         ;
-
+# "Hva så med deg og meg?"
 "<så>"   SELECT:vi-såg-i pret IF
         (-1 prn + nom)
         (1 prep OR ("i fjor") OR ("i dag"))
@@ -44451,7 +44451,12 @@ SELECT:sjå-på ("kurve" n) IF
 		(*-2 ("se" vblex) OR ("stirre" vblex))
 		(-1 %på%)
 		; 					#sjå på kurvene
-
+SELECT:ha-sett-ut ("kurve" n) IF
+		(1 ("ha" vblex))
+		(2 ("se" vblex))
+                (3 %ut%)
+		; 
+# Hvordan ville kurven ha sett ut dersom allelet som ikke gir resistens
 SELECT:jamne-ut-kurve ("kurve" n) IF
 		(*-2 ("flate" vblex) OR ("rette" vblex) OR ("jevne" vblex))
 		(-1 %ut%)
