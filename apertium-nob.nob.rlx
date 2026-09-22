@@ -14272,6 +14272,11 @@ REMOVE:kapret-istedenfor adj IF
         (-1 ("klekke"))
         ;
 # "... klekker egg ..."
+"<eggene>"i SELECT:et-av-eggene nt IF
+        (-2 det + qnt + nt)
+        (-1 %av%)
+        ;
+# "... ett av eggene ..."
 "<løst>"i SELECT:løst-og-ledig ("løs") IF
         (1 ("og"))
         (2 ("ledig"))
