@@ -2543,7 +2543,10 @@ SELECT:mennenes-VM n IF
 "<De>" SELECT:De-grønne det IF
 		(1 ("<grønne>"))
 		;
-
+"<Hva>" SELECT:spm-hva prn IF
+		(-1  np + init)
+		;
+# B. Hva er svaret på spørsmålet?
 SELECT:storbokstav-np np IF
         (0 storbokstav)
         (NEGATE *-1 storbokstav-ok-etter BARRIER (*) - storbokstav-ok-etter-mellom)
