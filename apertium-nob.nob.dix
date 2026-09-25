@@ -164810,6 +164810,7 @@
 <e lm="utgiftsgruppe">   <i>utgiftsgrupp</i><par n="enk/e__n"/></e>
 <e lm="utgiftsgruppekode"><i>utgiftsgruppekode</i><par n="re_\Ø__n"/></e>
 <e lm="utgiftskarusell"> <i>utgiftskarusell</i><par n="ep_\Ø__n"/></e>
+<e lm="avgiftskutt">     <i>avgiftskutt</i><par n="ul__n"/></e>
 <e lm="utgiftskutt">     <i>utgiftskutt</i><par n="ul__n"/></e>
 <e lm="utgiftsnivå">     <i>utgiftsnivå</i><par n="ja__n"/></e>
 <e lm="utgiftsoppstilling"><i>utgiftsoppstilling</i><par n="då__n"/></e>
