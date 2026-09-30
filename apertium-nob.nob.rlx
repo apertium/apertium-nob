@@ -3034,6 +3034,7 @@ REMOVE:unlikely ("<trikket>"i adj) IF (-1 cmp); # en håndstrikket jersey
 REMOVE:unlikely ("<våre>"i inf) IF (NEGATE -1 infmerke);
 REMOVE:unlikely ("smitt") ;
 REMOVE:unlikely ("krymp") ;
+REMOVE:unlikely ("dele") + n ;
 REMOVE:unlikely SUB:* ("lev") ;
 REMOVE:unlikely SUB:* ("gjerd") ;
 REMOVE:unlikely SUB:* ("ligg") ;
