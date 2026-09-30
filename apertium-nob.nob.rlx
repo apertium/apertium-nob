@@ -12915,6 +12915,28 @@ REMOVE:unlikely ("<øya>"i) + nt + pl + def
 # over heile øya
 # Då vart han så forelska i øya at han bestemde seg for å bli
 
+"<piano>"i SELECT:ta-det-piano adv IF
+        (-2 ("ta"))
+        (-1 ("<det>"))
+        ;
+
+"<piano>"i SELECT:ta-det-litt-piano adv IF
+        (-3 ("ta"))
+        (-2 ("<det>"))
+        ;
+# ta det heilt piano
+
+"<piano>"i SELECT:ta-det-piano adv IF
+        (-3 ("ta"))
+        (-1 ("<det>"))
+        ;
+# etterpå tok dei det piano
+
+"<piano>"i SELECT:ta-det-piano adv IF
+        (-4 ("ta"))
+        (-2 ("<det>"))
+        ;
+# etterpå tok dei det heilt piano
 
 #:3120
   "<å>"   SELECT:3120   ("å" part) IF
