@@ -1547,6 +1547,9 @@
 <pardef n="MC_\s__n">
   <e>       <p><l></l>          <r><s n="n"/><s n="mf"/><s n="sp"/></r></p><par n="s_case\s_cp-both"/></e>
 </pardef>
+<pardef n="gutta på skauen__n">
+  <e>       <p><l></l>          <r><s n="n"/><s n="m"/><s n="pl"/><s n="def"/></r></p><par n="s_case\Ø_no-cp"/></e>
+</pardef>
 <pardef n="mai__n">
   <e>       <p><l></l>          <r><s n="n"/><s n="m"/><s n="sp"/></r></p><par n="s_case\Ø_no-cp"/></e>
 </pardef>
@@ -59098,6 +59101,7 @@
 <e lm="bombevest">       <i>bombevest</i><par n="ep_\Ø__n"/></e>
 <e lm="gutt">            <i>gutt</i><par n="gutt__n"/></e>
 <e lm="chatbot">         <i>chatbot</i><par n="gutt__n"/></e>
+<e lm="gutta på skauen"> <i>gutta<b/>på<b/>skauen</i><par n="gutta på skauen__n"/></e>
 <e lm="kesam">           <i>kesam</i><par n="gutt__n"/></e>
 <e lm="hoppe">           <i>hopp</i><par n="enk/e_\Ø__n"/></e>
 <e lm="nonne">           <i>nonn</i><par n="enk/e_\Ø__n"/></e>
