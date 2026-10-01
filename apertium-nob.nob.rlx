@@ -8217,6 +8217,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
 
 "<kvoter>" SELECT:kvoter ("kvote");
 
+"<klart>"i SELECT:klart-inntrykk ("klar") + adj IF
+        (1 n)
+        ;
+
 #:3502
   "<klart>"   SELECT:3502   (vblex pp) IF
 	(NOT 1 %for%)
@@ -17858,8 +17862,7 @@ REMOVE:den-type-jobber vblex + pres IF
 	(2 pron-akk)
 	(*-1 %ha% BARRIER setn-gr)
 ;
-#  "Ha noe klart (adj) for seg"))
-
+#  "Ha noe klart (adj) for seg"
 
 #:3501
   "<klart>"   REMOVE:3501   pp IF
