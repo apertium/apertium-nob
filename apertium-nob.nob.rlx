@@ -3047,6 +3047,7 @@ REMOVE:unlikely ("knee" vblex);
 REMOVE:unlikely ("filet"i nt) ; # to filetar (filetet: brodering)
 REMOVE:unlikely (".*lås") + nt; # hengelåsane
 REMOVE:unlikely ("timer") IF (0 ("time")); # noen timer
+REMOVE:unlikely ("<eiers>"i) + pl + gen; # på eigars grunn
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
@@ -13594,6 +13595,17 @@ SELECT ("<Rana>") + np IF
         (NEGATE -1* fv BARRIER setn-gr)
         ;
 # førstnemnde skalla ned Hull-spelaren
+
+"<skallet>"i SELECT:skallet-av-en-appelsin ("skall" n) IF
+        (1 %av%)
+        (2 talord OR siffer)
+        ;
+# skalet av 1 lime
+
+"<skallet>"i SELECT:bare-skallet-står-igjen ("skall" n) IF
+        (1 vblex)
+        ;
+# berre skalet står att
 
 REMOVE:ACR-prefer-same-casing SUB:1 ("\\p{Letter}*\\p{Lower}.*"r) IF (0/1 ("\\p{Upper}+"r)) ;
 # «kake-TV-leverandøren»: prefer lemma "TV" over "Tv-" or "tv"
@@ -27234,7 +27246,9 @@ SELECT:Jeg-så-mot-vinduet pr IF
 ;
 #  "... med (prep) røde roser"))
 
-
+SELECT:skal-fremme-norsk-eksport (vblex) IF
+	(-1C modalverb)
+;
 
 #:2641
  SELECT:2641 (pr) IF

@@ -150914,6 +150914,7 @@
 <e lm="skattfrihet">     <i>skattfrihet</i><par n="då__n"/></e>
 <e lm="skatting">        <i>skatting</i><par n="då__n"/></e>
 <e lm="skattkiste">      <i>skattkist</i><par n="enk/e__n"/></e>
+<e r="LR" lm="skattekiste"> <p><l>skattekist</l><r>skattkist</r></p><par n="enk/e__n"/></e>
 <e lm="skattlegging">    <i>skattlegging</i><par n="då__n"/></e>
 <e lm="skattlegning">    <i>skattlegning</i><par n="då__n"/></e>
 <e lm="skattligning">    <i>skattligning</i><par n="då__n"/></e>
