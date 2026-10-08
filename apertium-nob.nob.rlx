@@ -15381,7 +15381,18 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (1 %i%)
         (2 ("klasse"))
         ;
-# Felles i klassen: ..."
+# "Felles i klassen: ..."
+"<skinner>" REMOVE:sola-skinner n IF
+        (-1 ("sol"))
+        ;
+# Sola skinner
+"<Veien>" REMOVE:Veien np IF
+        (-1 np)
+        ;
+# Spilleren Cato Veien scoret mål i kampen mot Haugesund.
+"<Veien>" REMOVE:unlikely np
+        (-1 setn-gr)
+        ;
 "<anklage>"i SELECT:en-anklage n IF
         (-1 ("en"))
         ;
