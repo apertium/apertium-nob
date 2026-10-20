@@ -40293,6 +40293,11 @@ REMOVE:sjukepleier (".*kepleie"r) IF (0 (".*pleier"r)); # unlikely to be "sykepl
         (*2 acc OR n + def)
         ;
 
+"<så>" SELECT:så-ting-greit-ut pret IF
+        (2 ("<greit>"))
+        (3 ("ut"))
+        ;
+
 "<så>" SELECT:uten-at-jeg-så-noen pret IF
         (-1C nominativ)
         (1 ("noe"))
