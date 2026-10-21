@@ -14093,6 +14093,10 @@ REMOVE:kapret-istedenfor adj IF
         (1 ("nødt"))
         ;
 # "Det er vi pukka nødt til."
+"<Ravn>" SELECT:Ravn-fotball np IF
+        (2 ("Norborg"))
+        ;
+# "Ravn/Norborg kjemper om tabelltoppen"
 "<rekke>" REMOVE:rekke-ut n IF
         (1 ("ut"))
         ;
