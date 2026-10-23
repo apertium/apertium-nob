@@ -15752,6 +15752,12 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 vblex + inf)
         (NOT -1 ("ha"))
         ;
+"<vinner>" REMOVE:uansett-vinner n IF
+        (-1 pr)
+        (1 prn)
+        (2 sent)
+        ;
+# Uansett vinner du.
 "<vinner>" REMOVE:tippet-som-vinner ("vinne") IF
         (-2 ("tippe"))
         (-1 ("som"))
