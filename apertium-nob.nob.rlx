@@ -15752,6 +15752,11 @@ REMOVE:rekke-ut-handa ("rake") IF
         (-1 vblex + inf)
         (NOT -1 ("ha"))
         ;
+"<Lukter>" REMOVE:lukter-kril n IF
+        (1 n)
+        (2 sent)
+        ;
+# Lukter fisk.
 "<vinner>" REMOVE:uansett-vinner n IF
         (-1 pr)
         (1 prn)
