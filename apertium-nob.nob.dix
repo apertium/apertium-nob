@@ -149600,6 +149600,7 @@
 <e lm="signore">         <i>signore</i><par n="re_\Ø__n"/></e>
 <e r="LR" lm="signor">   <p><l>signor</l><r>signore</r></p><par n="re_\Ø__n"/></e>
 <e lm="signorina">       <i>signorina</i><par n="ep_\Ø__n"/></e>
+<e lm="plastelina">      <i>plastelina</i><par n="ep_\Ø__n"/></e>
 <e lm="signorino">       <i>signorino</i><par n="ep_\Ø__n"/></e>
 <e lm="signum">          <i>sign</i><par n="vel/um__n"/></e>
 <e lm="sigøyner">        <i>sigøyner</i><par n="uer__n"/></e>
