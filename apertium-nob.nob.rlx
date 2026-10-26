@@ -26851,7 +26851,10 @@ SELECT:er-hans-feil det + pos + sg + $$GENDER IF
 ;
 #  "sin egen bil"
 
-
+"<deres>" SELECT:hver-deres ("deres²" pos) IF
+	(-1 ("hver"))
+;
+# Lag hver deres pinne av en binders
 
 #:2691
  SELECT:2691 (det pos m sg) IF
