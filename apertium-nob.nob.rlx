@@ -15387,6 +15387,11 @@ LIST telt-subst-ord = "skur" "lys" "pledd" "sove" "stand" "brakke" "tauverk" "ca
         (-1 ("sann"))
         ;
 # "en sann helt"
+
+"<helt>" SELECT:fjerne-helt adv IF
+        (-1 ("fjerne"))
+        ;
+
 "<skumleste>"i REMOVE:den-skumleste ("skumlese") IF
         (-1 ("den"))
         ;
@@ -17553,6 +17558,7 @@ REMOVE ("frø") IF
 	(1C verb)
 ;
 #  "Han har ikke helt (ikke subst) lyktes"))
+
 
 "<hen>" REMOVE:hvor-hen prn IF
         (-1 ("upåaktet") OR ("ubemerket") OR ("hvor"))
