@@ -3369,11 +3369,11 @@ SELECT ("IS" np);
         (2 %på%)
         (3 ("hode"))
         ;
-SELECT:unlikely n + ("snus") IF
+SELECT:unlikely n + ("<snus>"i) IF
         (NOT -1 m-hj-verb OR nominativ) # det skulle snus 90 grader
         (NEGATE -1 np OR n LINK NOT 0 porsjon)        # skulle valget av Thyestes snus.
         ;
-SELECT:unlikely n + ("snus") IF
+SELECT:unlikely n + ("<snus>"i) IF
         (*0 ("tobakk") OR ("røyk"))
         ;
 
