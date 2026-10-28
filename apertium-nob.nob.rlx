@@ -42218,6 +42218,14 @@ SELECT:i_tilfelle-det-ble cnjsub IF
 # bedre som heuristisk etter at vi har forsøkt
 # å finne adj?"
 
+SELECT:den-enkelte-n n + &&ADJ_N_AGR IF
+        (-3C pr)
+        (-2 ("den") + &&ADJ_N_AGR)
+        (-1 ("<enkelte>"))
+        (0C vblex OR n)
+        ;
+# (gjerne enkel bestemming)
+# «Generalsekretær Ann-Margit Austenå mener lydopptak vil fjerne misforståelser og gi en tryggere saksbehandling for den enkelte   søker  .»
 
 SELECT:frikjente adj IF
 		(-2 adj + pst + un + pl OR n)
