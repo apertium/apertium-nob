@@ -27276,7 +27276,7 @@ SELECT:Jeg-så-mot-vinduet pr IF
 ;
 #  "... med (prep) røde roser"))
 
-SELECT:skal-fremme-norsk-eksport (vblex) IF
+"<fremme>" SELECT:skal-fremme-norsk-eksport (vblex) IF
 	(-1C modalverb)
 ;
 
