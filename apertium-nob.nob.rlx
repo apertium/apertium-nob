@@ -39806,6 +39806,12 @@ SECTION remove-words-heur ;
 ;
 #  "kh jan 2004: Lite sannsynlig subst etter at vanlig subst-regler er kjørt. Unntak; gjøre seg/drikke seg til fant!"
 
+"<falt>" REMOVE:ville-falt (adj) IF
+        (-1C modalverb)
+        (1 %til%)
+        ;
+# «Norge har tapt begge sine kamper etter at VM-plassen ble sikret i november og ville falt til tredje seedingsnivå om noen av de andre VM-klare nasjonene gikk forbi på rankingen.»
+
 
 
 #:4040
