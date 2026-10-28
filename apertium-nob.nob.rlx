@@ -32258,6 +32258,13 @@ SELECT:2335 (vblex) IF
 	(NOT 1 vblex)
 	;
 
+"<nå>" SELECT:skal-nå-avtalens-mål vblex IF
+        (-1C modalverb)
+        (*1 ("mål") BARRIER (*) - gen - adj - det)
+        ;
+# «Analysen viser at disse landene – der Norge er inkludert – planlegger å utvinne så mye kull, olje og gass at utslippene av klimagasser i 2030 vil ligge 50 prosent høyere enn det som er mulig hvis verden skal     nå     Parisavtalens mål om å begrense den globale oppvarmingen til maksimalt 2 grader over førindustrielt nivå.»
+
+
 #:2849
  SELECT:er-vel-forskjell (adv) IF
 	(NOT 0 %blikk%)
