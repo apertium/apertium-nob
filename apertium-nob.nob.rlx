@@ -30852,11 +30852,12 @@ SELECT:føle-seg-beæret adj + pp IF
 
 
 #:2423
- SELECT:2423 (vblex inf) IF
+ SELECT:lugge-le-og-smile (vblex inf) IF
 	(NOT 0 farlige-inf)
 	(-1C komma)
 	(NOT -1 clb)
-	(**-1C inf BARRIER setn-gr)
+	(**-1C inf BARRIER setn-gr) # lugge,
+	(*1 inf BARRIER setn-gr)    #             og smile
 ;
 #  "lugge, le (inf) og smile"))
 
