@@ -3049,6 +3049,7 @@ REMOVE:unlikely ("filet"i nt) ; # to filetar (filetet: brodering)
 REMOVE:unlikely (".*lås") + nt; # hengelåsane
 REMOVE:unlikely ("timer") IF (0 ("time")); # noen timer
 REMOVE:unlikely ("<eiers>"i) + pl + gen; # på eigars grunn
+REMOVE:unlikely ("<fjernes>"i) + gen;
 
 SELECT:utelukkende-adv ("utelukkende") + adv IF (0 adv OR adj) (1 vblex OR ("når") OR ("om") OR ("fordi")) ; # adj vs. adv
 SELECT:bøtta-n ("bøtte") + n IF (-1 lquot) (0 vblex OR n) (1 rquot) ; # «bøtta»
