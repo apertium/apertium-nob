@@ -842,7 +842,7 @@ SET predik3/5-7 = pr3 OR pr5 OR pr6 OR pr7 ;
 LIST premod-subst = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  ("gang"  pl) ;
 LIST premod-subst/prop = "tonnkilometer"  "tallerken"  "snes"  "slurk"  "sjømil"  "sekundmeter"  "prosent"  "porsjon"  "neve"  "nanometer"  "millimeter"  "milliliter"  "milligram"  "mil"  "mikrometer"  "meter"  "mengde"  "liter"  "lass"  "kvartmil"  "kvartliter"  "kvadratmillimeter"  "kvadratmeter"  "kvadratkilometer"  "kvadratdesimeter"  "kvadratcentimeter"  "kubikkmillimeter"  "kubikkmeter"  "kubikkdesimeter"  "kubikkcentimeter"  "kopp"  "klunk"  "kilometer"  "kilogram"  "kilo"  "håndfull"  "hektoliter"  "hektogram"  "handfull"  "halvmil"  "halvmeter"  "halvliter"  "halvkilo"  "gram"  "glass"  "fåtall"  "dusin"  "desimeter"  "desiliter"  "desigram"  "del"  "dekaliter"  "centimeter"  "centiliter"  "centigram"  "bit"  "anelse"  np ("gang"  pl) ;
 LIST prep = pr ;
-LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der" "utvendig" ;
+LIST prep-intrans = "vekke"  "utenfra"  "underveis"  "inne"  "imot"  "iblant"  "iblandt"  "hjemme"  "hit"  "herifra"  "herfra"  "her"  "heime"  "frem"  "fram"  "etterpå"  "dit"  "derifra"  "derfra"  "der" "utvendig" "fremme" ;
 SET prep-intrans/adv = prep-intrans OR adv ;
 LIST prep-tall = "siden"  pr (det qnt) ;
 LIST prep/@adv = @adv pr ;
@@ -27288,6 +27288,7 @@ SELECT:Jeg-så-mot-vinduet pr IF
 	(NOT 0 clb)
 	(NOT 0 pron)
 	(NOT 0 adj)
+        (NEGATE 0 prep-intrans)
 	(1C adj)
 	(NOT -1 prep)
 	(NOT -1 det)
@@ -39764,8 +39765,12 @@ SECTION remove-words-heur ;
 ;
 #  "kh feb 2004: som regel adverb"
 
-"<dekke>" REMOVE n IF
+"<dekke>" REMOVE:bot-dekke n IF
         (1 bot-ord)
+        ;
+
+"<dekke>" REMOVE:skal-dekke n IF
+        (1 modalverb)
         ;
 
 
@@ -40652,6 +40657,11 @@ LIST høyt-og-lavt = "<høyt>" "<lavt>" ;
 ;
 #bare fem i betydningen forvirring
 
+"<virke>" REMOVE (n) IF
+        (-2 %for%)
+        (-1 %mange%)
+        ;
+# «Andre ord er gjerne hentet fra tidens debatter og kan for mange virke provoserende.»
 
 REMOVE:øye ("øye"i) IF
   	  (0 ("øy"i))
