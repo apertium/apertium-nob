@@ -29385,7 +29385,7 @@ SELECT:varslet-både vblex IF
 
 #:2501
  SELECT:2501 subst IF
-	(1 konj)
+	(1 konj - %både%)       # kan styrke<inf!> både x og y
 	(NOT 1 clb)
 	(NOT 1 <adv>)
 	(2C subst)
