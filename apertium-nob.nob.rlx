@@ -38020,6 +38020,7 @@ REMOVE:før-det-legges-fram inf IF
 	(NOT 0 pass)
 	(-2C prep)
 	(-1 det)
+        (-1 $$NUMBER LINK 1 $$NUMBER)
 ;
 
 
