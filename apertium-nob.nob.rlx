@@ -8464,9 +8464,10 @@ SELECT:enmilliontohundretusen-kroner n + ("krone") IF (-1 guio LINK -1 ukjent);
         ;
 
 "<landet>" SELECT:flykte-landet n IF
-        (-1C fv)
-        (NEGATE -1 %ha% OR %være/bli%)
+        (-1C fv - hj-verb)
         ;
+# (Sjå også sjanseregel SELECT:landet-er lenger nede i fila)
+
 "<landet>" SELECT:det-lover-jeg-landet n IF
         (-3 det OR prn)
         (-2 vblex)
@@ -39415,7 +39416,7 @@ SECTION 3-select-words-heur ;
 # Farleg – «deler landet på midten» osb.
 
 "<landet>" SELECT:landet-er n IF
-        (*1C fv BARRIER setn-gr)
+        (*1C fv - hj-verb BARRIER setn-gr)
         ;
 # Ikkje: «Romsonden landet imidlertid på et skyggefullt sted på kometen, noe som gjorde …»
 
@@ -39445,6 +39446,12 @@ SECTION 3-select-words-heur ;
 "<landet>" SELECT:og-landet-helt-perfekt pret IF
         (NEGATE 0* fv BARRIER setn-gr)
         ;
+
+"<landet>" SELECT:skulle-landet-på pp IF
+        (-1C hj-verb)
+        (1C %på% OR %i%)
+        ;
+# «At LO skulle landet på et samordnet oppgjør var ikke opplagt.»
 
 
 #4087
