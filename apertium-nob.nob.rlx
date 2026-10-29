@@ -20950,6 +20950,7 @@ SELECT:nå-påklager-etterlatte-beslutningen n + def IF
         (-2 adv)
         (-1 trans)
         (-1C fv)
+        (NEGATE -1 hj-verb LINK 1 vblex + pp) # «ikke ville   funnet   veien»
         (0C n OR pp)
         (1C n + def)
         ;
