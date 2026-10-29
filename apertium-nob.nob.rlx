@@ -16686,6 +16686,11 @@ REMOVE:data-not-datum ("datum");
         ;
         # Ho seier dokka er ein barndomsdraum
 
+"<dukker>" REMOVE:dukker-det-opp n IF
+        (*1 prn OR n BARRIER ikke-adv-adj-det LINK *1 %opp% BARRIER ikke-adv)
+        ;
+# «Ofte finner både kjøttmeis og blåmeis turen til fuglebrettet, men kanskje dukker det også opp en gråspett eller rødstrupe.»
+
 #:3713
   "<egen>"   REMOVE:3713   (adj mf) IF
 	(*1 ub-ent-mask/fem-subst BARRIER ikke-adv-adj)
