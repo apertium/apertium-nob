@@ -30471,6 +30471,14 @@ SELECT:må-tørkes-kokes inf IF
         ;
 # «Sopp kan hermetiseres, tørkes, avkokes, sammenkokes, saltes og fryses, alt ettersom hva den skal brukes til.»
 
+SELECT:må-tømmes-rengjøres-og-graves inf IF
+        (-3C m-hj-verb)         # C!
+        (-2 inf)
+        (-1 cm)
+        (NEGATE 0 n LINK -2 n)  # snø, sludd og regn
+        (1 cm OR %og/eller%)
+        (2 inf LINK 0C vblex)
+        ;
 
 SELECT:LØYET-narret-og-bedratt $$TEMPUS IF
         (NEGATE -1 cm OR %og/eller% LINK -1 vblex)
