@@ -3973,6 +3973,30 @@ REMOVE:disprefer-vblex-cmp vblex - allow-verb/adjcmp IF
 
 ## select words
 
+
+#:3120
+  "<å>"   SELECT:3120   ("å" part) IF
+	(1 adverb)
+	(2 inf)
+;
+
+
+#:3121
+  "<å>"   SELECT:3121   ("å" part) IF
+	(1 anf)
+	(2 inf)
+;
+#  "å \"ta opp kampen\""
+
+
+
+#:3122
+  "<å>"   SELECT:å-leke   ("å" part) IF
+	(1 inf)
+;
+#  "å leke"
+
+
 "<antall>"i SELECT:Antall-solgte-billetter sg IF
         (NEGATE -1 pl LINK 0 det OR adj)
         (*1 n BARRIER (*) - adj)
@@ -12945,28 +12969,6 @@ REMOVE:unlikely ("<øya>"i) + nt + pl + def
         (-2 ("<det>"))
         ;
 # etterpå tok dei det heilt piano
-
-#:3120
-  "<å>"   SELECT:3120   ("å" part) IF
-	(1 adverb)
-	(2 inf)
-;
-
-
-#:3121
-  "<å>"   SELECT:3121   ("å" part) IF
-	(1 anf)
-	(2 inf)
-;
-#  "å \"ta opp kampen\""
-
-
-
-#:3122
-  "<å>"   SELECT:å-leke   ("å" part) IF
-	(1 inf)
-;
-#  "å leke"
 
 
 
