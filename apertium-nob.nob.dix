@@ -57718,6 +57718,8 @@
 <e lm="palestina">         <i>palestina</i><par n="kommunal__n_cmp"/></e>
 <e lm="hands-">         <i>hands-</i><par n="kommunal__n_cmp"/></e>
 <e lm="amino">         <i>amino</i><par n="kommunal__n_cmp"/></e>
+<e lm="iran">         <i>iran</i><par n="kommunal__n_cmp"/></e>
+<e lm="gestapo">         <i>gestapo</i><par n="kommunal__n_cmp"/></e>
 
 <!-- MWE nouns (agreement multiwords), each needing their own pardefs: -->
 <e lm="utenlandsk valuta">          <i>utenlandsk</i>      <par n="utenlandsk/_valuta__n"/></e>
