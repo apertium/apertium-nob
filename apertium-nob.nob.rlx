@@ -1014,7 +1014,7 @@ LIST spesielt-ord = "<spesielt>" "<særlig>" ;
 LIST fotball-ord = "fotball" "<ballen>" "back" "sparke" "<sidelinja>" "innkast" "<spillerne>" "<spilleren>" "<kampen>" ;
 LIST dersom-ord = "dersom" "hvis" "om" "viss" ;
 LIST bot-ord = ".*bot"r ".*regning"r ;
-LIST husdyr-ord = "ku" "gris" "sau" "slakt" "kylling" "høne" "kalv" ;
+LIST husdyr-ord = "ku" "gris" "sau" "slakt" "kylling" "høne" "kalv" ("gås" n) ("lam" n) ;
 LIST ernæring-ord = "glutenfri" "korn" "kolesterol" "salt" "jod" "diett" ("kost" m) "alkohol" "kjøtt" "grønnsak" "glukose" ;
 LIST pågående-ord = ".*aksjon"ri ".*angrep"ri ".*arbeid"ri ".*brann"ri ".*brudd"ri ".*bruk"ri ".*bygging"ri ".*bølge"ri ".*debatt"ri ".*demokratisering"ri ".*demonstrasjon"ri ".*dialog"ri ".*diskusjon"ri ".*drøftelse"ri ".*drøfting"ri ".*ekspedisjon"ri ".*else"ri ".*endring"ri ".*epidemi"ri ".*ering"ri ".*evakuering"ri ".*feide"ri ".*fiske"ri ".*fiskeri"ri ".*flom"ri ".*forbrytelse"ri ".*forhandling"ri ".*fornyelse"ri ".*fornying"ri ".*forsking"ri ".*forskning"ri ".*forsøk"ri ".*føring"ri ".*gransking"ri ".*granskning"ri ".*handel"ri ".*handling"ri ".*høring"ri ".*innsats"ri ".*jakt"ri ".*kamp"ri ".*kampanje"ri ".*kartlegging"ri ".*katastrofe"ri ".*klimaendring"ri ".*konferanse"ri ".*konflikt"ri ".*kongress"ri ".*konkurranse"ri ".*krig"ri ".*krise"ri ".*kupp"ri ".*kvalifisering"ri ".*leik"ri ".*leir"ri ".*lek"ri ".*lekkasje"ri ".*lockout"ri ".*lovbrudd"ri ".*løp"ri ".*mekling"ri ".*mesterskap"ri ".*misbruk"ri ".*møte"ri ".*offensiv"ri ".*okkupasjon"ri ".*operasjon"ri ".*oppgjør"ri ".*opprør"ri ".*opptøyer"ri ".*overgangsvindu"ri ".*overgrep"ri ".*pandemi"ri ".*pause"ri ".*periode"ri ".*problemstilling"ri ".*program"ri ".*prosedyre"ri ".*prosess"ri ".*prosjekt"ri ".*protest"ri ".*reform"ri ".*reise"ri ".*rensing"ri ".*rensking"ri ".*renskning"ri ".*risiko"ri ".*rivalisering"ri ".*runde"ri ".*rydding"ri ".*sak"ri ".*samling"ri ".*sammenbrudd"ri ".*samtale"ri ".*satsing"ri ".*sesong"ri ".*situasjon"ri ".*skandale"ri ".*smitte"ri ".*smittesporing"ri ".*sondering"ri ".*soning"ri ".*spill"ri ".*spredning"ri ".*stans"ri ".*streik"ri ".*strid"ri ".*studie"ri ".*søksmål"ri ".*tilsyn"ri ".*tokt"ri ".*transformasjon"ri ".*turné"ri ".*turnering"ri ".*tvist"ri ".*tørke"ri ".*uke"ri ".*underslag"ri ".*undersøkelse"ri ".*undertrykking"ri ".*uro"ri ".*utbrudd"ri ".*utbygging"ri ".*utredning"ri ".*utslipp"ri ".*utvikling"ri ".*uvær"ri ".*vaksinasjon"ri ".*vaksinering"ri ".*vedlikehold"ri ".*vekst"ri ".*vikling"ri ".*vold"ri ".*økning"ri ".*øvelse"ri ;
 LIST straum-ord = "solcellepanel" "fossefall" "kraftproduksjon" "nettverk" "nødnett" "klima" ".*kraft" "oppvarming" "vann" "vannmasse" ("dyr" adj) "billig" "høyspent" "gass" "kull" "høyspentmast";
@@ -3631,17 +3631,21 @@ REMOVE:vippet ("<vippet>"i) + n IF
 		;
 		# vippa over, men på vippet (vippen)
 
-REMOVE:gås ("<gås>"i) + vblex + pasv  IF
+REMOVE:gås ("<gås>"i) + vblex  IF
 		(-1 det + qnt OR prep OR vblex)
 		(NEGATE -1 modalverb)
 		;
 		# ei gås, dei serverte gås, drive med gås, artar av gås, jakt på gås
 
-REMOVE:ei-dum-gås ("<gås>"i) + vblex + pasv  IF
+REMOVE:ei-dum-gås ("<gås>"i) + vblex  IF
 		(-2 det + qnt)
 		(-1 adj)
 		;
         # ei diger gås
+
+REMOVE:gås-høne-hane ("<gås>"i) + vblex IF
+        (*0 husdyr-ord)
+        ;
 
 REMOVE:skal-det-gås ("<gås>"i) + n  IF
 		(-2* modalverb BARRIER setn-gr)
@@ -15154,7 +15158,7 @@ REMOVE:Isnes-ansatt vblex IF
 # «Da ble målvakten dopet ned og svindlet.»
 
 "<egget>"i SELECT n
-        (-2C ("høne"))
+        (-2C fugl-ord)
         ;
         # høna og/eller egget
 
