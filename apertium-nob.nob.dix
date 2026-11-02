@@ -17262,6 +17262,14 @@
   <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
   <e c="n"> <p><l>es</l>         <r><s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
 </pardef>
+<pardef n="ortodoks__adj">
+  <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
+  <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e r="LR"><p><l>t</l>         <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="pl"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e c="n"> <p><l>es</l>         <r><s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+</pardef>
 <pardef n="pågående__adj" c="pågående¹=igangsett, igangverande, undervegs; elles framfus, aggressiv">
   <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
   <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
@@ -25606,6 +25614,7 @@
 <e lm="brise">		 <i>bris</i><par n="yr/e__vblex_adj"/></e>
 <e lm="egalisere">	 <i>egaliser</i><par n="yr/e__vblex_adj"/></e>
 <e lm="oppsummere">	 <i>oppsummer</i><par n="yr/e__vblex_adj"/></e>
+<e r="LR" lm="oppsumere" c="typo"><p><l>oppsumer</l><r>oppsummer</r></p><par n="yr/e__vblex_adj"/></e>
 <e lm="komparere">	 <i>komparer</i><par n="yr/e__vblex_adj"/></e>
 <e lm="skjelettere">	 <i>skjeletter</i><par n="yr/e__vblex_adj"/></e>
 <e lm="konsultere">	 <i>konsulter</i><par n="yr/e__vblex_adj"/></e>
@@ -35067,9 +35076,9 @@
 <e lm="burlesk">         <i>burlesk</i><par n="minst__adj"/></e>
 <e r="LR" lm="burlesque">  <p><l>burlesque</l><r>burlesk</r></p><par n="minst__adj"/></e>
 <e lm="canadisk">        <i>canadisk</i><par n="minst__adj"/></e>
-<e lm="dagligdags">      <i>dagligdags</i><par n="minst__adj"/></e>
-<e lm="endags">          <i>endags</i><par n="minst__adj"/></e>
-<e lm="éndags">          <i>éndags</i><par n="minst__adj"/></e>
+<e lm="dagligdags">      <i>dagligdags</i><par n="ortodoks__adj"/></e>
+<e lm="endags">          <i>endags</i><par n="ortodoks__adj"/></e>
+<e lm="éndags">          <i>éndags</i><par n="ortodoks__adj"/></e>
 <e lm="dansk">           <i>dansk</i><par n="norsk__adj"/></e>
 <e lm="delikat">         <i>delikat</i><par n="minst__adj"/></e>
 <e lm="duplikat">         <i>duplikat</i><par n="minst__adj"/></e>
@@ -35100,9 +35109,9 @@
 <e lm="elektrisk">       <i>elektrisk</i><par n="minst__adj"/></e>
 <e lm="helelektrisk">       <i>helelektrisk</i><par n="minst__adj"/></e>
 <e lm="etnisk">          <i>etnisk</i><par n="minst__adj"/></e>
-<e lm="ortodoks">          <i>ortodoks</i><par n="minst__adj"/></e>
-<e lm="ultraortodoks">          <i>ultraortodoks</i><par n="minst__adj"/></e>
-<e lm="konveks">          <i>konveks</i><par n="minst__adj"/></e>
+<e lm="ortodoks">          <i>ortodoks</i><par n="ortodoks__adj"/></e>
+<e lm="ultraortodoks">          <i>ultraortodoks</i><par n="ortodoks__adj"/></e>
+<e lm="konveks">          <i>konveks</i><par n="ortodoks__adj"/></e>
 <e lm="konkav">          <i>konkav</i><par n="minst__adj"/></e>
 <e lm="protestantisk">          <i>protestantisk</i><par n="minst__adj"/></e>
 <e lm="matematisk">          <i>matematisk</i><par n="minst__adj"/></e>
@@ -36148,7 +36157,7 @@
 <e r="LR" lm="tettbebygd"><p><l>tettbebygd</l><r>tettbygd</r></p><par n="minst__adj"/></e>
 <e r="LR" lm="tettbygd"><p><l>tett<b/>bebygd</l><r>tettbebygd</r></p><par n="minst__adj"/></e>
 <e lm="thailandsk">      <i>thailandsk</i><par n="minst__adj"/></e>
-<e lm="tilfreds">        <i>tilfreds</i><par n="minst__adj"/></e>
+<e lm="tilfreds">        <i>tilfreds</i><par n="ortodoks__adj"/></e>
 <e lm="tilgjort">        <i>tilgjort</i><par n="minst__adj"/></e>
 <e lm="tilnærmet">       <i>tilnærm</i><par n="øv/et__adj"/></e>
 <e lm="tiltrengt">       <i>tiltrengt</i><par n="minst__adj"/></e>
@@ -37324,7 +37333,7 @@
 <e lm="unik">            <i>unik</i><par n="auditiv__adj"/></e>
 <e lm="unormal">         <i>unormal</i><par n="auditiv__adj"/></e>
 <e lm="uttrykksfull">    <i>uttrykksfull</i><par n="auditiv__adj"/></e>
-<e lm="uviss">           <i>uviss</i><par n="minst__adj"/></e>
+<e lm="uviss">           <i>uviss</i><par n="ortodoks__adj"/></e>
 <e lm="vak">             <i>vak</i><par n="sen__adj"/></e>
 <e lm="var">             <i>var</i><par n="sen__adj"/></e>
 <e lm="varm">            <i>varm</i><par n="sen__adj"/></e>
@@ -37662,8 +37671,8 @@
 <e lm="døddrukken">      <i>døddruk</i><par n="druk/ken__adj"/></e>
 <e lm="gebrokken">       <i>gebrok</i><par n="druk/ken__adj"/></e>
 <e lm="gjeld">           <i>gjeld</i><par n="minst__adj"/></e>
-<e lm="periodevis">      <i>periodevis</i><par n="minst__adj"/></e>
-<e lm="kvartalsvis">     <i>kvartalsvis</i><par n="minst__adj"/></e>
+<e lm="periodevis">      <i>periodevis</i><par n="ortodoks__adj"/></e>
+<e lm="kvartalsvis">     <i>kvartalsvis</i><par n="ortodoks__adj"/></e>
 <e lm="kravstor">        <i>kravstor</i><par n="auditiv__adj"/></e>
 <e lm="mellomstor">      <i>mellomstor</i><par n="auditiv__adj"/></e>
 <e lm="regntung">        <i>regntung</i><par n="auditiv__adj"/></e>
@@ -37927,7 +37936,7 @@
 <e lm="svinaktig">    <i>svinaktig</i><par n="minst__adj"/></e>
 <e lm="delegert">  <i>delegert</i><par n="minst__adj"/></e>
 <e lm="deltakende">  <i>deltakende</i><par n="OK__adj"/></e>
-<e lm="delvis">  <i>delvis</i><par n="minst__adj"/></e>
+<e lm="delvis">  <i>delvis</i><par n="ortodoks__adj"/></e>
 <e lm="deontisk">  <i>deontisk</i><par n="minst__adj"/></e>
 <e lm="deprimert">  <i>deprimert</i><par n="minst__adj"/></e>
 <e lm="deskriptiv">  <i>deskriptiv</i><par n="auditiv__adj"/></e>
@@ -38166,7 +38175,7 @@
 <e lm="motløs">  <i>mot</i><par n="løs"/><par n="auditiv__adj"/></e>
 <e lm="multimedia">  <i>multimedia</i><par n="OK__adj"/></e>
 <e lm="munter">  <i>munt</i><par n="mag/er__adj"/></e>
-<e lm="naturligvis">  <i>naturligvis</i><par n="minst__adj"/></e>
+<e lm="naturligvis">  <i>naturligvis</i><par n="ortodoks__adj"/></e>
 <e lm="naturvitenskapelig">  <i>naturvitenskap</i><par n="skap/elig__adj"/></e>
 <e lm="nedbrytende">  <i>nedbrytende</i><par n="OK__adj"/></e>
 <e lm="neogrammatisk">  <i>neogrammatisk</i><par n="minst__adj"/></e>
@@ -38183,8 +38192,8 @@
 <e lm="overnaturlig">  <i>overnaturlig</i><par n="minst__adj"/></e>
 <e lm="overraskende">  <i>overraskende</i><par n="OK__adj"/></e>
 <e lm="paradigmatisk">  <i>paradigmatisk</i><par n="minst__adj"/></e>
-<e lm="parvis">  <i>parvis</i><par n="minst__adj"/></e>
-<e lm="gradvis">  <i>gradvis</i><par n="minst__adj"/></e>
+<e lm="parvis">  <i>parvis</i><par n="ortodoks__adj"/></e>
+<e lm="gradvis">  <i>gradvis</i><par n="ortodoks__adj"/></e>
 <e lm="passelig">  <i>passelig</i><par n="tidlig__adj"/></e>
 <e lm="passiv">  <i>passiv</i><par n="auditiv__adj"/></e>
 <e lm="massiv">  <i>massiv</i><par n="auditiv__adj"/></e>
@@ -38820,7 +38829,7 @@
 <e lm="lagelig">          <i>lagelig</i><par n="minst__adj"/></e>
 <e lm="usannsynlig">      <i>usannsynlig</i><par n="tidlig__adj"/></e>
 <e lm="usolidarisk">  <i>usolidarisk</i><par n="minst__adj"/></e>
-<e r="RL" lm="senere tids"><i>senere<b/>tids</i><par n="minst__adj"/></e>
+<e r="RL" lm="senere tids"><i>senere<b/>tids</i><par n="ortodoks__adj"/></e>
 <e lm="uforklart">        <i>uforklart</i><par n="minst__adj"/></e>
 
 
@@ -40252,7 +40261,7 @@
 <e lm="skjelven">    <i>skjelv</i><par n="kil/en__adj"/></e>
 <e lm="ufortrøden">    <i>ufortrød</i><par n="kil/en__adj"/></e>
 <e lm="kompleks">    <i>kompleks</i><par n="auditiv__adj"/></e>
-<e lm="fiks">          <i>fiks</i><par n="minst__adj"/></e>
+<e lm="fiks">          <i>fiks</i><par n="ortodoks__adj"/></e>
 <e lm="håndløs">    <par n="hånd"/><par n="løs"/><par n="auditiv__adj"/></e>
 <e lm="fornorsket">    <i>fornorsk</i><par n="øv/et__adj"/></e>
 <e lm="krøllet">    <i>krøll</i><par n="øv/et__adj"/></e>
@@ -48883,40 +48892,40 @@
 <e lm="mo">	<i>mo</i><par n="minst__adj"/></e>
 <e lm="camp">	<i>camp</i><par n="minst__adj"/></e>
 <e lm="gørr">	<i>gørr</i><par n="minst__adj"/></e>
-<e lm="veltilfreds">	<i>veltilfreds</i><par n="minst__adj"/></e>
-<e lm="utilfreds">	<i>utilfreds</i><par n="minst__adj"/></e>
-<e lm="selvtilfreds">	<par n="selv"/><i>tilfreds</i><par n="minst__adj"/></e>
-<e lm="gammaldags">	<i>gammaldags</i><par n="minst__adj"/></e>
-<e lm="avleggs">	<i>avleggs</i><par n="minst__adj"/></e>
-<e lm="gjengs">	<i>gjengs</i><par n="minst__adj"/></e>
-<e lm="leddvis">	<i>leddvis</i><par n="minst__adj"/></e>
-<e lm="sekkevis">	<i>sekkevis</i><par n="minst__adj"/></e>
-<e lm="bolkevis">	<i>bolkevis</i><par n="minst__adj"/></e>
-<e lm="kolonnevis">	<i>kolonnevis</i><par n="minst__adj"/></e>
-<e lm="tonnevis">	<i>tonnevis</i><par n="minst__adj"/></e>
-<e lm="kommunevis">	<i>kommunevis</i><par n="minst__adj"/></e>
-<e lm="turevis">	<i>turevis</i><par n="minst__adj"/></e>
-<e lm="posevis">	<i>posevis</i><par n="minst__adj"/></e>
-<e lm="sesongvis">	<i>sesongvis</i><par n="minst__adj"/></e>
-<e lm="rykkvis">	<i>rykkvis</i><par n="minst__adj"/></e>
-<e lm="tertialvis">	<i>tertialvis</i><par n="minst__adj"/></e>
-<e lm="titusenvis">	<i>titusenvis</i><par n="minst__adj"/></e>
-<e r="LR" lm="ti-tusenvis"><p><l>ti-tusenvis</l><r>titusenvis</r></p><par n="minst__adj"/></e>
-<e lm="terminvis">	<i>terminvis</i><par n="minst__adj"/></e>
-<e lm="turvis">	<i>turvis</i><par n="minst__adj"/></e>
-<e lm="forskuddsvis">	<i>forskuddsvis</i><par n="minst__adj"/></e>
-<e lm="forbundsvis">	<i>forbundsvis</i><par n="minst__adj"/></e>
-<e lm="timesvis">	<i>timesvis</i><par n="minst__adj"/></e>
-<e lm="sammenfatningsvis">	<i>sammenfatningsvis</i><par n="minst__adj"/></e>
-<e lm="forutsetningsvis">	<i>forutsetningsvis</i><par n="minst__adj"/></e>
-<e lm="avslutningsvis">	<i>avslutningsvis</i><par n="minst__adj"/></e>
-<e lm="erfaringsvis">	<i>erfaringsvis</i><par n="minst__adj"/></e>
-<e lm="seksjonsvis">	<i>seksjonsvis</i><par n="minst__adj"/></e>
-<e lm="forskottsvis">	<i>forskottsvis</i><par n="minst__adj"/></e>
-<e lm="links">	<i>links</i><par n="minst__adj"/></e>
-<e lm="bursjikos">	<i>bursjikos</i><par n="minst__adj"/></e>
-<e lm="utilpass">	<i>utilpass</i><par n="minst__adj"/></e>
-<e lm="rechts">	<i>rechts</i><par n="minst__adj"/></e>
+<e lm="veltilfreds">	<i>veltilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="utilfreds">	<i>utilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="selvtilfreds">	<par n="selv"/><i>tilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="gammaldags">	<i>gammaldags</i><par n="ortodoks__adj"/></e>
+<e lm="avleggs">	<i>avleggs</i><par n="ortodoks__adj"/></e>
+<e lm="gjengs">	<i>gjengs</i><par n="ortodoks__adj"/></e>
+<e lm="leddvis">	<i>leddvis</i><par n="ortodoks__adj"/></e>
+<e lm="sekkevis">	<i>sekkevis</i><par n="ortodoks__adj"/></e>
+<e lm="bolkevis">	<i>bolkevis</i><par n="ortodoks__adj"/></e>
+<e lm="kolonnevis">	<i>kolonnevis</i><par n="ortodoks__adj"/></e>
+<e lm="tonnevis">	<i>tonnevis</i><par n="ortodoks__adj"/></e>
+<e lm="kommunevis">	<i>kommunevis</i><par n="ortodoks__adj"/></e>
+<e lm="turevis">	<i>turevis</i><par n="ortodoks__adj"/></e>
+<e lm="posevis">	<i>posevis</i><par n="ortodoks__adj"/></e>
+<e lm="sesongvis">	<i>sesongvis</i><par n="ortodoks__adj"/></e>
+<e lm="rykkvis">	<i>rykkvis</i><par n="ortodoks__adj"/></e>
+<e lm="tertialvis">	<i>tertialvis</i><par n="ortodoks__adj"/></e>
+<e lm="titusenvis">	<i>titusenvis</i><par n="ortodoks__adj"/></e>
+<e r="LR" lm="ti-tusenvis"><p><l>ti-tusenvis</l><r>titusenvis</r></p><par n="ortodoks__adj"/></e>
+<e lm="terminvis">	<i>terminvis</i><par n="ortodoks__adj"/></e>
+<e lm="turvis">	<i>turvis</i><par n="ortodoks__adj"/></e>
+<e lm="forskuddsvis">	<i>forskuddsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forbundsvis">	<i>forbundsvis</i><par n="ortodoks__adj"/></e>
+<e lm="timesvis">	<i>timesvis</i><par n="ortodoks__adj"/></e>
+<e lm="sammenfatningsvis">	<i>sammenfatningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forutsetningsvis">	<i>forutsetningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avslutningsvis">	<i>avslutningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="erfaringsvis">	<i>erfaringsvis</i><par n="ortodoks__adj"/></e>
+<e lm="seksjonsvis">	<i>seksjonsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forskottsvis">	<i>forskottsvis</i><par n="ortodoks__adj"/></e>
+<e lm="links">	<i>links</i><par n="ortodoks__adj"/></e>
+<e lm="bursjikos">	<i>bursjikos</i><par n="ortodoks__adj"/></e>
+<e lm="utilpass">	<i>utilpass</i><par n="ortodoks__adj"/></e>
+<e lm="rechts">	<i>rechts</i><par n="ortodoks__adj"/></e>
 <e lm="probat">	<i>probat</i><par n="minst__adj"/></e>
 <e lm="sedat">	<i>sedat</i><par n="minst__adj"/></e>
 <e lm="obligat">	<i>obligat</i><par n="minst__adj"/></e>
@@ -55673,9 +55682,9 @@
 <e lm="norsk-svensk">	<i>norsk-svensk</i>	<par n="minst__adj"/> </e>
 <e lm="rhinsk">	<i>rhinsk</i>	<par n="minst__adj"/> </e>
 <e lm="tysk-romersk">	<i>tysk-romersk</i>	<par n="minst__adj"/> </e>
-<e lm="omveges">	<i>omveges</i>	<par n="minst__adj"/> </e>
-<e lm="omvegs">	<i>omvegs</i>	<par n="minst__adj"/> </e>
-<e lm="omveis">	<i>omveis</i>	<par n="minst__adj"/> </e>
+<e lm="omveges">	<i>omveges</i>	<par n="ortodoks__adj"/> </e>
+<e lm="omvegs">	<i>omvegs</i>	<par n="ortodoks__adj"/> </e>
+<e lm="omveis">	<i>omveis</i>	<par n="ortodoks__adj"/> </e>
 <e lm="lettbedt">	<i>lettbedt</i>	<par n="minst__adj"/> </e>
 <e lm="sjølforvoldt">	<i>sjølforvoldt</i>	<par n="minst__adj"/> </e>
 <e lm="selvforvoldt">	<i>selvforvoldt</i>	<par n="minst__adj"/> </e>
@@ -56852,41 +56861,41 @@
 <e lm="høynorsk">                       <i>høynorsk</i><par n="minst__adj"/></e>
 <e lm="plattysk">                       <i>plattysk</i><par n="minst__adj"/></e>
 <e lm="platt-tysk">                     <i>platt-tysk</i><par n="minst__adj"/></e>
-<e lm="halvveges">                      <i>halvveges</i><par n="minst__adj"/></e>
-<e lm="halvvegs">                       <i>halvvegs</i><par n="minst__adj"/></e>
-<e lm="halvveis">                       <i>halvveis</i><par n="minst__adj"/></e>
-<e lm="tidvis">                         <i>tidvis</i><par n="minst__adj"/></e>
-<e lm="puljevis">                       <i>puljevis</i><par n="minst__adj"/></e>
-<e lm="flekkevis">                      <i>flekkevis</i><par n="minst__adj"/></e>
-<e lm="stykkevis">                      <i>stykkevis</i><par n="minst__adj"/></e>
-<e lm="etappevis">                      <i>etappevis</i><par n="minst__adj"/></e>
-<e lm="troppevis">                      <i>troppevis</i><par n="minst__adj"/></e>
-<e lm="gruppevis">                      <i>gruppevis</i><par n="minst__adj"/></e>
-<e lm="ratevis">                        <i>ratevis</i><par n="minst__adj"/></e>
-<e lm="lagvis">                         <i>lagvis</i><par n="minst__adj"/></e>
-<e lm="stegvis">                        <i>stegvis</i><par n="minst__adj"/></e>
-<e lm="sprangvis">                      <i>sprangvis</i><par n="minst__adj"/></e>
-<e lm="vekselvis">                      <i>vekselvis</i><par n="minst__adj"/></e>
-<e lm="trinnvis">                       <i>trinnvis</i><par n="minst__adj"/></e>
-<e lm="etterskuddsvis">                 <i>etterskuddsvis</i><par n="minst__adj"/></e>
-<e lm="månedsvis">                      <i>månedsvis</i><par n="minst__adj"/></e>
-<e lm="fylkesvis">                      <i>fylkesvis</i><par n="minst__adj"/></e>
-<e lm="anslagsvis">                     <i>anslagsvis</i><par n="minst__adj"/></e>
-<e lm="avdragsvis">                     <i>avdragsvis</i><par n="minst__adj"/></e>
-<e lm="innleiingsvis">                  <i>innleiingsvis</i><par n="minst__adj"/></e>
-<e lm="avdelingsvis">                   <i>avdelingsvis</i><par n="minst__adj"/></e>
-<e lm="innledningsvis">                 <i>innledningsvis</i><par n="minst__adj"/></e>
-<e lm="unntaksvis">                     <i>unntaksvis</i><par n="minst__adj"/></e>
-<e lm="forsøksvis">                     <i>forsøksvis</i><par n="minst__adj"/></e>
-<e lm="troppsvis">                      <i>troppsvis</i><par n="minst__adj"/></e>
-<e lm="distriktsvis">                   <i>distriktsvis</i><par n="minst__adj"/></e>
-<e lm="etterskottsvis">                 <i>etterskottsvis</i><par n="minst__adj"/></e>
-<e lm="punktvis">                       <i>punktvis</i><par n="minst__adj"/></e>
-<e lm="enkeltvis">                      <i>enkeltvis</i><par n="minst__adj"/></e>
-<e lm="glimtvis">                       <i>glimtvis</i><par n="minst__adj"/></e>
-<e lm="skrittvis">                      <i>skrittvis</i><par n="minst__adj"/></e>
-<e lm="støytvis">                       <i>støytvis</i><par n="minst__adj"/></e>
-<e lm="støtvis">                        <i>støtvis</i><par n="minst__adj"/></e>
+<e lm="halvveges">                      <i>halvveges</i><par n="ortodoks__adj"/></e>
+<e lm="halvvegs">                       <i>halvvegs</i><par n="ortodoks__adj"/></e>
+<e lm="halvveis">                       <i>halvveis</i><par n="ortodoks__adj"/></e>
+<e lm="tidvis">                         <i>tidvis</i><par n="ortodoks__adj"/></e>
+<e lm="puljevis">                       <i>puljevis</i><par n="ortodoks__adj"/></e>
+<e lm="flekkevis">                      <i>flekkevis</i><par n="ortodoks__adj"/></e>
+<e lm="stykkevis">                      <i>stykkevis</i><par n="ortodoks__adj"/></e>
+<e lm="etappevis">                      <i>etappevis</i><par n="ortodoks__adj"/></e>
+<e lm="troppevis">                      <i>troppevis</i><par n="ortodoks__adj"/></e>
+<e lm="gruppevis">                      <i>gruppevis</i><par n="ortodoks__adj"/></e>
+<e lm="ratevis">                        <i>ratevis</i><par n="ortodoks__adj"/></e>
+<e lm="lagvis">                         <i>lagvis</i><par n="ortodoks__adj"/></e>
+<e lm="stegvis">                        <i>stegvis</i><par n="ortodoks__adj"/></e>
+<e lm="sprangvis">                      <i>sprangvis</i><par n="ortodoks__adj"/></e>
+<e lm="vekselvis">                      <i>vekselvis</i><par n="ortodoks__adj"/></e>
+<e lm="trinnvis">                       <i>trinnvis</i><par n="ortodoks__adj"/></e>
+<e lm="etterskuddsvis">                 <i>etterskuddsvis</i><par n="ortodoks__adj"/></e>
+<e lm="månedsvis">                      <i>månedsvis</i><par n="ortodoks__adj"/></e>
+<e lm="fylkesvis">                      <i>fylkesvis</i><par n="ortodoks__adj"/></e>
+<e lm="anslagsvis">                     <i>anslagsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avdragsvis">                     <i>avdragsvis</i><par n="ortodoks__adj"/></e>
+<e lm="innleiingsvis">                  <i>innleiingsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avdelingsvis">                   <i>avdelingsvis</i><par n="ortodoks__adj"/></e>
+<e lm="innledningsvis">                 <i>innledningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="unntaksvis">                     <i>unntaksvis</i><par n="ortodoks__adj"/></e>
+<e lm="forsøksvis">                     <i>forsøksvis</i><par n="ortodoks__adj"/></e>
+<e lm="troppsvis">                      <i>troppsvis</i><par n="ortodoks__adj"/></e>
+<e lm="distriktsvis">                   <i>distriktsvis</i><par n="ortodoks__adj"/></e>
+<e lm="etterskottsvis">                 <i>etterskottsvis</i><par n="ortodoks__adj"/></e>
+<e lm="punktvis">                       <i>punktvis</i><par n="ortodoks__adj"/></e>
+<e lm="enkeltvis">                      <i>enkeltvis</i><par n="ortodoks__adj"/></e>
+<e lm="glimtvis">                       <i>glimtvis</i><par n="ortodoks__adj"/></e>
+<e lm="skrittvis">                      <i>skrittvis</i><par n="ortodoks__adj"/></e>
+<e lm="støytvis">                       <i>støytvis</i><par n="ortodoks__adj"/></e>
+<e lm="støtvis">                        <i>støtvis</i><par n="ortodoks__adj"/></e>
 <e lm="gørrlat">                        <i>gørrlat</i><par n="minst__adj"/></e>
 <e lm="forlibt">                        <i>forlibt</i><par n="minst__adj"/></e>
 <e lm="håndholdt">                      <par n="hånd"/><i>holdt</i><par n="minst__adj"/></e>
