@@ -7148,6 +7148,7 @@
   <e lm="EP">          <i>EP</i><par n="PC__n"/></e>
   <e lm="ATV">         <i>ATV</i><par n="PC__n"/></e>
   <e lm="NGO">         <i>NGO</i><par n="PC__n"/></e>
+  <e lm="3D">          <i>3D</i><par n="PC__n"/></e>
 
   <e lm="mV">            <i>mV</i><par n="PC__n"/></e>
 
@@ -17261,6 +17262,14 @@
   <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
   <e c="n"> <p><l>es</l>         <r><s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
 </pardef>
+<pardef n="ortodoks__adj">
+  <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
+  <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e r="LR"><p><l>t</l>         <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="pl"/><s n="ind"/></r></p><par n="cp-R"/></e>
+  <e>       <p><l>e</l>         <r><s n="adj"/><s n="pst"/><s n="un"/><s n="sp"/><s n="def"/></r></p><par n="cp-R"/></e>
+  <e c="n"> <p><l>es</l>         <r><s n="n"/><s n="xpst"/></r></p><par n="sgpl_def_gen"/><par n="cp-R"/></e>
+</pardef>
 <pardef n="pågående__adj" c="pågående¹=igangsett, igangverande, undervegs; elles framfus, aggressiv">
   <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="ind"/></r></p><par n="cp-both"/></e>
   <e>       <p><l></l>          <r><s n="adj"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="ind"/></r></p><par n="cp-R"/></e>
@@ -25606,6 +25615,7 @@
 <e lm="brise">		 <i>bris</i><par n="yr/e__vblex_adj"/></e>
 <e lm="egalisere">	 <i>egaliser</i><par n="yr/e__vblex_adj"/></e>
 <e lm="oppsummere">	 <i>oppsummer</i><par n="yr/e__vblex_adj"/></e>
+<e r="LR" lm="oppsumere" c="typo"><p><l>oppsumer</l><r>oppsummer</r></p><par n="yr/e__vblex_adj"/></e>
 <e lm="komparere">	 <i>komparer</i><par n="yr/e__vblex_adj"/></e>
 <e lm="skjelettere">	 <i>skjeletter</i><par n="yr/e__vblex_adj"/></e>
 <e lm="konsultere">	 <i>konsulter</i><par n="yr/e__vblex_adj"/></e>
@@ -35067,9 +35077,9 @@
 <e lm="burlesk">         <i>burlesk</i><par n="minst__adj"/></e>
 <e r="LR" lm="burlesque">  <p><l>burlesque</l><r>burlesk</r></p><par n="minst__adj"/></e>
 <e lm="canadisk">        <i>canadisk</i><par n="minst__adj"/></e>
-<e lm="dagligdags">      <i>dagligdags</i><par n="minst__adj"/></e>
-<e lm="endags">          <i>endags</i><par n="minst__adj"/></e>
-<e lm="éndags">          <i>éndags</i><par n="minst__adj"/></e>
+<e lm="dagligdags">      <i>dagligdags</i><par n="ortodoks__adj"/></e>
+<e lm="endags">          <i>endags</i><par n="ortodoks__adj"/></e>
+<e lm="éndags">          <i>éndags</i><par n="ortodoks__adj"/></e>
 <e lm="dansk">           <i>dansk</i><par n="norsk__adj"/></e>
 <e lm="delikat">         <i>delikat</i><par n="minst__adj"/></e>
 <e lm="duplikat">         <i>duplikat</i><par n="minst__adj"/></e>
@@ -35100,9 +35110,9 @@
 <e lm="elektrisk">       <i>elektrisk</i><par n="minst__adj"/></e>
 <e lm="helelektrisk">       <i>helelektrisk</i><par n="minst__adj"/></e>
 <e lm="etnisk">          <i>etnisk</i><par n="minst__adj"/></e>
-<e lm="ortodoks">          <i>ortodoks</i><par n="minst__adj"/></e>
-<e lm="ultraortodoks">          <i>ultraortodoks</i><par n="minst__adj"/></e>
-<e lm="konveks">          <i>konveks</i><par n="minst__adj"/></e>
+<e lm="ortodoks">          <i>ortodoks</i><par n="ortodoks__adj"/></e>
+<e lm="ultraortodoks">          <i>ultraortodoks</i><par n="ortodoks__adj"/></e>
+<e lm="konveks">          <i>konveks</i><par n="ortodoks__adj"/></e>
 <e lm="konkav">          <i>konkav</i><par n="minst__adj"/></e>
 <e lm="protestantisk">          <i>protestantisk</i><par n="minst__adj"/></e>
 <e lm="matematisk">          <i>matematisk</i><par n="minst__adj"/></e>
@@ -36148,7 +36158,7 @@
 <e r="LR" lm="tettbebygd"><p><l>tettbebygd</l><r>tettbygd</r></p><par n="minst__adj"/></e>
 <e r="LR" lm="tettbygd"><p><l>tett<b/>bebygd</l><r>tettbebygd</r></p><par n="minst__adj"/></e>
 <e lm="thailandsk">      <i>thailandsk</i><par n="minst__adj"/></e>
-<e lm="tilfreds">        <i>tilfreds</i><par n="minst__adj"/></e>
+<e lm="tilfreds">        <i>tilfreds</i><par n="ortodoks__adj"/></e>
 <e lm="tilgjort">        <i>tilgjort</i><par n="minst__adj"/></e>
 <e lm="tilnærmet">       <i>tilnærm</i><par n="øv/et__adj"/></e>
 <e lm="tiltrengt">       <i>tiltrengt</i><par n="minst__adj"/></e>
@@ -37324,7 +37334,7 @@
 <e lm="unik">            <i>unik</i><par n="auditiv__adj"/></e>
 <e lm="unormal">         <i>unormal</i><par n="auditiv__adj"/></e>
 <e lm="uttrykksfull">    <i>uttrykksfull</i><par n="auditiv__adj"/></e>
-<e lm="uviss">           <i>uviss</i><par n="minst__adj"/></e>
+<e lm="uviss">           <i>uviss</i><par n="ortodoks__adj"/></e>
 <e lm="vak">             <i>vak</i><par n="sen__adj"/></e>
 <e lm="var">             <i>var</i><par n="sen__adj"/></e>
 <e lm="varm">            <i>varm</i><par n="sen__adj"/></e>
@@ -37662,8 +37672,8 @@
 <e lm="døddrukken">      <i>døddruk</i><par n="druk/ken__adj"/></e>
 <e lm="gebrokken">       <i>gebrok</i><par n="druk/ken__adj"/></e>
 <e lm="gjeld">           <i>gjeld</i><par n="minst__adj"/></e>
-<e lm="periodevis">      <i>periodevis</i><par n="minst__adj"/></e>
-<e lm="kvartalsvis">     <i>kvartalsvis</i><par n="minst__adj"/></e>
+<e lm="periodevis">      <i>periodevis</i><par n="ortodoks__adj"/></e>
+<e lm="kvartalsvis">     <i>kvartalsvis</i><par n="ortodoks__adj"/></e>
 <e lm="kravstor">        <i>kravstor</i><par n="auditiv__adj"/></e>
 <e lm="mellomstor">      <i>mellomstor</i><par n="auditiv__adj"/></e>
 <e lm="regntung">        <i>regntung</i><par n="auditiv__adj"/></e>
@@ -37927,7 +37937,7 @@
 <e lm="svinaktig">    <i>svinaktig</i><par n="minst__adj"/></e>
 <e lm="delegert">  <i>delegert</i><par n="minst__adj"/></e>
 <e lm="deltakende">  <i>deltakende</i><par n="OK__adj"/></e>
-<e lm="delvis">  <i>delvis</i><par n="minst__adj"/></e>
+<e lm="delvis">  <i>delvis</i><par n="ortodoks__adj"/></e>
 <e lm="deontisk">  <i>deontisk</i><par n="minst__adj"/></e>
 <e lm="deprimert">  <i>deprimert</i><par n="minst__adj"/></e>
 <e lm="deskriptiv">  <i>deskriptiv</i><par n="auditiv__adj"/></e>
@@ -38166,7 +38176,7 @@
 <e lm="motløs">  <i>mot</i><par n="løs"/><par n="auditiv__adj"/></e>
 <e lm="multimedia">  <i>multimedia</i><par n="OK__adj"/></e>
 <e lm="munter">  <i>munt</i><par n="mag/er__adj"/></e>
-<e lm="naturligvis">  <i>naturligvis</i><par n="minst__adj"/></e>
+<e lm="naturligvis">  <i>naturligvis</i><par n="ortodoks__adj"/></e>
 <e lm="naturvitenskapelig">  <i>naturvitenskap</i><par n="skap/elig__adj"/></e>
 <e lm="nedbrytende">  <i>nedbrytende</i><par n="OK__adj"/></e>
 <e lm="neogrammatisk">  <i>neogrammatisk</i><par n="minst__adj"/></e>
@@ -38183,8 +38193,8 @@
 <e lm="overnaturlig">  <i>overnaturlig</i><par n="minst__adj"/></e>
 <e lm="overraskende">  <i>overraskende</i><par n="OK__adj"/></e>
 <e lm="paradigmatisk">  <i>paradigmatisk</i><par n="minst__adj"/></e>
-<e lm="parvis">  <i>parvis</i><par n="minst__adj"/></e>
-<e lm="gradvis">  <i>gradvis</i><par n="minst__adj"/></e>
+<e lm="parvis">  <i>parvis</i><par n="ortodoks__adj"/></e>
+<e lm="gradvis">  <i>gradvis</i><par n="ortodoks__adj"/></e>
 <e lm="passelig">  <i>passelig</i><par n="tidlig__adj"/></e>
 <e lm="passiv">  <i>passiv</i><par n="auditiv__adj"/></e>
 <e lm="massiv">  <i>massiv</i><par n="auditiv__adj"/></e>
@@ -38820,7 +38830,7 @@
 <e lm="lagelig">          <i>lagelig</i><par n="minst__adj"/></e>
 <e lm="usannsynlig">      <i>usannsynlig</i><par n="tidlig__adj"/></e>
 <e lm="usolidarisk">  <i>usolidarisk</i><par n="minst__adj"/></e>
-<e r="RL" lm="senere tids"><i>senere<b/>tids</i><par n="minst__adj"/></e>
+<e r="RL" lm="senere tids"><i>senere<b/>tids</i><par n="ortodoks__adj"/></e>
 <e lm="uforklart">        <i>uforklart</i><par n="minst__adj"/></e>
 
 
@@ -40252,7 +40262,7 @@
 <e lm="skjelven">    <i>skjelv</i><par n="kil/en__adj"/></e>
 <e lm="ufortrøden">    <i>ufortrød</i><par n="kil/en__adj"/></e>
 <e lm="kompleks">    <i>kompleks</i><par n="auditiv__adj"/></e>
-<e lm="fiks">          <i>fiks</i><par n="minst__adj"/></e>
+<e lm="fiks">          <i>fiks</i><par n="ortodoks__adj"/></e>
 <e lm="håndløs">    <par n="hånd"/><par n="løs"/><par n="auditiv__adj"/></e>
 <e lm="fornorsket">    <i>fornorsk</i><par n="øv/et__adj"/></e>
 <e lm="krøllet">    <i>krøll</i><par n="øv/et__adj"/></e>
@@ -48883,40 +48893,40 @@
 <e lm="mo">	<i>mo</i><par n="minst__adj"/></e>
 <e lm="camp">	<i>camp</i><par n="minst__adj"/></e>
 <e lm="gørr">	<i>gørr</i><par n="minst__adj"/></e>
-<e lm="veltilfreds">	<i>veltilfreds</i><par n="minst__adj"/></e>
-<e lm="utilfreds">	<i>utilfreds</i><par n="minst__adj"/></e>
-<e lm="selvtilfreds">	<par n="selv"/><i>tilfreds</i><par n="minst__adj"/></e>
-<e lm="gammaldags">	<i>gammaldags</i><par n="minst__adj"/></e>
-<e lm="avleggs">	<i>avleggs</i><par n="minst__adj"/></e>
-<e lm="gjengs">	<i>gjengs</i><par n="minst__adj"/></e>
-<e lm="leddvis">	<i>leddvis</i><par n="minst__adj"/></e>
-<e lm="sekkevis">	<i>sekkevis</i><par n="minst__adj"/></e>
-<e lm="bolkevis">	<i>bolkevis</i><par n="minst__adj"/></e>
-<e lm="kolonnevis">	<i>kolonnevis</i><par n="minst__adj"/></e>
-<e lm="tonnevis">	<i>tonnevis</i><par n="minst__adj"/></e>
-<e lm="kommunevis">	<i>kommunevis</i><par n="minst__adj"/></e>
-<e lm="turevis">	<i>turevis</i><par n="minst__adj"/></e>
-<e lm="posevis">	<i>posevis</i><par n="minst__adj"/></e>
-<e lm="sesongvis">	<i>sesongvis</i><par n="minst__adj"/></e>
-<e lm="rykkvis">	<i>rykkvis</i><par n="minst__adj"/></e>
-<e lm="tertialvis">	<i>tertialvis</i><par n="minst__adj"/></e>
-<e lm="titusenvis">	<i>titusenvis</i><par n="minst__adj"/></e>
-<e r="LR" lm="ti-tusenvis"><p><l>ti-tusenvis</l><r>titusenvis</r></p><par n="minst__adj"/></e>
-<e lm="terminvis">	<i>terminvis</i><par n="minst__adj"/></e>
-<e lm="turvis">	<i>turvis</i><par n="minst__adj"/></e>
-<e lm="forskuddsvis">	<i>forskuddsvis</i><par n="minst__adj"/></e>
-<e lm="forbundsvis">	<i>forbundsvis</i><par n="minst__adj"/></e>
-<e lm="timesvis">	<i>timesvis</i><par n="minst__adj"/></e>
-<e lm="sammenfatningsvis">	<i>sammenfatningsvis</i><par n="minst__adj"/></e>
-<e lm="forutsetningsvis">	<i>forutsetningsvis</i><par n="minst__adj"/></e>
-<e lm="avslutningsvis">	<i>avslutningsvis</i><par n="minst__adj"/></e>
-<e lm="erfaringsvis">	<i>erfaringsvis</i><par n="minst__adj"/></e>
-<e lm="seksjonsvis">	<i>seksjonsvis</i><par n="minst__adj"/></e>
-<e lm="forskottsvis">	<i>forskottsvis</i><par n="minst__adj"/></e>
-<e lm="links">	<i>links</i><par n="minst__adj"/></e>
-<e lm="bursjikos">	<i>bursjikos</i><par n="minst__adj"/></e>
-<e lm="utilpass">	<i>utilpass</i><par n="minst__adj"/></e>
-<e lm="rechts">	<i>rechts</i><par n="minst__adj"/></e>
+<e lm="veltilfreds">	<i>veltilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="utilfreds">	<i>utilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="selvtilfreds">	<par n="selv"/><i>tilfreds</i><par n="ortodoks__adj"/></e>
+<e lm="gammaldags">	<i>gammaldags</i><par n="ortodoks__adj"/></e>
+<e lm="avleggs">	<i>avleggs</i><par n="ortodoks__adj"/></e>
+<e lm="gjengs">	<i>gjengs</i><par n="ortodoks__adj"/></e>
+<e lm="leddvis">	<i>leddvis</i><par n="ortodoks__adj"/></e>
+<e lm="sekkevis">	<i>sekkevis</i><par n="ortodoks__adj"/></e>
+<e lm="bolkevis">	<i>bolkevis</i><par n="ortodoks__adj"/></e>
+<e lm="kolonnevis">	<i>kolonnevis</i><par n="ortodoks__adj"/></e>
+<e lm="tonnevis">	<i>tonnevis</i><par n="ortodoks__adj"/></e>
+<e lm="kommunevis">	<i>kommunevis</i><par n="ortodoks__adj"/></e>
+<e lm="turevis">	<i>turevis</i><par n="ortodoks__adj"/></e>
+<e lm="posevis">	<i>posevis</i><par n="ortodoks__adj"/></e>
+<e lm="sesongvis">	<i>sesongvis</i><par n="ortodoks__adj"/></e>
+<e lm="rykkvis">	<i>rykkvis</i><par n="ortodoks__adj"/></e>
+<e lm="tertialvis">	<i>tertialvis</i><par n="ortodoks__adj"/></e>
+<e lm="titusenvis">	<i>titusenvis</i><par n="ortodoks__adj"/></e>
+<e r="LR" lm="ti-tusenvis"><p><l>ti-tusenvis</l><r>titusenvis</r></p><par n="ortodoks__adj"/></e>
+<e lm="terminvis">	<i>terminvis</i><par n="ortodoks__adj"/></e>
+<e lm="turvis">	<i>turvis</i><par n="ortodoks__adj"/></e>
+<e lm="forskuddsvis">	<i>forskuddsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forbundsvis">	<i>forbundsvis</i><par n="ortodoks__adj"/></e>
+<e lm="timesvis">	<i>timesvis</i><par n="ortodoks__adj"/></e>
+<e lm="sammenfatningsvis">	<i>sammenfatningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forutsetningsvis">	<i>forutsetningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avslutningsvis">	<i>avslutningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="erfaringsvis">	<i>erfaringsvis</i><par n="ortodoks__adj"/></e>
+<e lm="seksjonsvis">	<i>seksjonsvis</i><par n="ortodoks__adj"/></e>
+<e lm="forskottsvis">	<i>forskottsvis</i><par n="ortodoks__adj"/></e>
+<e lm="links">	<i>links</i><par n="ortodoks__adj"/></e>
+<e lm="bursjikos">	<i>bursjikos</i><par n="ortodoks__adj"/></e>
+<e lm="utilpass">	<i>utilpass</i><par n="ortodoks__adj"/></e>
+<e lm="rechts">	<i>rechts</i><par n="ortodoks__adj"/></e>
 <e lm="probat">	<i>probat</i><par n="minst__adj"/></e>
 <e lm="sedat">	<i>sedat</i><par n="minst__adj"/></e>
 <e lm="obligat">	<i>obligat</i><par n="minst__adj"/></e>
@@ -55673,9 +55683,9 @@
 <e lm="norsk-svensk">	<i>norsk-svensk</i>	<par n="minst__adj"/> </e>
 <e lm="rhinsk">	<i>rhinsk</i>	<par n="minst__adj"/> </e>
 <e lm="tysk-romersk">	<i>tysk-romersk</i>	<par n="minst__adj"/> </e>
-<e lm="omveges">	<i>omveges</i>	<par n="minst__adj"/> </e>
-<e lm="omvegs">	<i>omvegs</i>	<par n="minst__adj"/> </e>
-<e lm="omveis">	<i>omveis</i>	<par n="minst__adj"/> </e>
+<e lm="omveges">	<i>omveges</i>	<par n="ortodoks__adj"/> </e>
+<e lm="omvegs">	<i>omvegs</i>	<par n="ortodoks__adj"/> </e>
+<e lm="omveis">	<i>omveis</i>	<par n="ortodoks__adj"/> </e>
 <e lm="lettbedt">	<i>lettbedt</i>	<par n="minst__adj"/> </e>
 <e lm="sjølforvoldt">	<i>sjølforvoldt</i>	<par n="minst__adj"/> </e>
 <e lm="selvforvoldt">	<i>selvforvoldt</i>	<par n="minst__adj"/> </e>
@@ -56852,41 +56862,41 @@
 <e lm="høynorsk">                       <i>høynorsk</i><par n="minst__adj"/></e>
 <e lm="plattysk">                       <i>plattysk</i><par n="minst__adj"/></e>
 <e lm="platt-tysk">                     <i>platt-tysk</i><par n="minst__adj"/></e>
-<e lm="halvveges">                      <i>halvveges</i><par n="minst__adj"/></e>
-<e lm="halvvegs">                       <i>halvvegs</i><par n="minst__adj"/></e>
-<e lm="halvveis">                       <i>halvveis</i><par n="minst__adj"/></e>
-<e lm="tidvis">                         <i>tidvis</i><par n="minst__adj"/></e>
-<e lm="puljevis">                       <i>puljevis</i><par n="minst__adj"/></e>
-<e lm="flekkevis">                      <i>flekkevis</i><par n="minst__adj"/></e>
-<e lm="stykkevis">                      <i>stykkevis</i><par n="minst__adj"/></e>
-<e lm="etappevis">                      <i>etappevis</i><par n="minst__adj"/></e>
-<e lm="troppevis">                      <i>troppevis</i><par n="minst__adj"/></e>
-<e lm="gruppevis">                      <i>gruppevis</i><par n="minst__adj"/></e>
-<e lm="ratevis">                        <i>ratevis</i><par n="minst__adj"/></e>
-<e lm="lagvis">                         <i>lagvis</i><par n="minst__adj"/></e>
-<e lm="stegvis">                        <i>stegvis</i><par n="minst__adj"/></e>
-<e lm="sprangvis">                      <i>sprangvis</i><par n="minst__adj"/></e>
-<e lm="vekselvis">                      <i>vekselvis</i><par n="minst__adj"/></e>
-<e lm="trinnvis">                       <i>trinnvis</i><par n="minst__adj"/></e>
-<e lm="etterskuddsvis">                 <i>etterskuddsvis</i><par n="minst__adj"/></e>
-<e lm="månedsvis">                      <i>månedsvis</i><par n="minst__adj"/></e>
-<e lm="fylkesvis">                      <i>fylkesvis</i><par n="minst__adj"/></e>
-<e lm="anslagsvis">                     <i>anslagsvis</i><par n="minst__adj"/></e>
-<e lm="avdragsvis">                     <i>avdragsvis</i><par n="minst__adj"/></e>
-<e lm="innleiingsvis">                  <i>innleiingsvis</i><par n="minst__adj"/></e>
-<e lm="avdelingsvis">                   <i>avdelingsvis</i><par n="minst__adj"/></e>
-<e lm="innledningsvis">                 <i>innledningsvis</i><par n="minst__adj"/></e>
-<e lm="unntaksvis">                     <i>unntaksvis</i><par n="minst__adj"/></e>
-<e lm="forsøksvis">                     <i>forsøksvis</i><par n="minst__adj"/></e>
-<e lm="troppsvis">                      <i>troppsvis</i><par n="minst__adj"/></e>
-<e lm="distriktsvis">                   <i>distriktsvis</i><par n="minst__adj"/></e>
-<e lm="etterskottsvis">                 <i>etterskottsvis</i><par n="minst__adj"/></e>
-<e lm="punktvis">                       <i>punktvis</i><par n="minst__adj"/></e>
-<e lm="enkeltvis">                      <i>enkeltvis</i><par n="minst__adj"/></e>
-<e lm="glimtvis">                       <i>glimtvis</i><par n="minst__adj"/></e>
-<e lm="skrittvis">                      <i>skrittvis</i><par n="minst__adj"/></e>
-<e lm="støytvis">                       <i>støytvis</i><par n="minst__adj"/></e>
-<e lm="støtvis">                        <i>støtvis</i><par n="minst__adj"/></e>
+<e lm="halvveges">                      <i>halvveges</i><par n="ortodoks__adj"/></e>
+<e lm="halvvegs">                       <i>halvvegs</i><par n="ortodoks__adj"/></e>
+<e lm="halvveis">                       <i>halvveis</i><par n="ortodoks__adj"/></e>
+<e lm="tidvis">                         <i>tidvis</i><par n="ortodoks__adj"/></e>
+<e lm="puljevis">                       <i>puljevis</i><par n="ortodoks__adj"/></e>
+<e lm="flekkevis">                      <i>flekkevis</i><par n="ortodoks__adj"/></e>
+<e lm="stykkevis">                      <i>stykkevis</i><par n="ortodoks__adj"/></e>
+<e lm="etappevis">                      <i>etappevis</i><par n="ortodoks__adj"/></e>
+<e lm="troppevis">                      <i>troppevis</i><par n="ortodoks__adj"/></e>
+<e lm="gruppevis">                      <i>gruppevis</i><par n="ortodoks__adj"/></e>
+<e lm="ratevis">                        <i>ratevis</i><par n="ortodoks__adj"/></e>
+<e lm="lagvis">                         <i>lagvis</i><par n="ortodoks__adj"/></e>
+<e lm="stegvis">                        <i>stegvis</i><par n="ortodoks__adj"/></e>
+<e lm="sprangvis">                      <i>sprangvis</i><par n="ortodoks__adj"/></e>
+<e lm="vekselvis">                      <i>vekselvis</i><par n="ortodoks__adj"/></e>
+<e lm="trinnvis">                       <i>trinnvis</i><par n="ortodoks__adj"/></e>
+<e lm="etterskuddsvis">                 <i>etterskuddsvis</i><par n="ortodoks__adj"/></e>
+<e lm="månedsvis">                      <i>månedsvis</i><par n="ortodoks__adj"/></e>
+<e lm="fylkesvis">                      <i>fylkesvis</i><par n="ortodoks__adj"/></e>
+<e lm="anslagsvis">                     <i>anslagsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avdragsvis">                     <i>avdragsvis</i><par n="ortodoks__adj"/></e>
+<e lm="innleiingsvis">                  <i>innleiingsvis</i><par n="ortodoks__adj"/></e>
+<e lm="avdelingsvis">                   <i>avdelingsvis</i><par n="ortodoks__adj"/></e>
+<e lm="innledningsvis">                 <i>innledningsvis</i><par n="ortodoks__adj"/></e>
+<e lm="unntaksvis">                     <i>unntaksvis</i><par n="ortodoks__adj"/></e>
+<e lm="forsøksvis">                     <i>forsøksvis</i><par n="ortodoks__adj"/></e>
+<e lm="troppsvis">                      <i>troppsvis</i><par n="ortodoks__adj"/></e>
+<e lm="distriktsvis">                   <i>distriktsvis</i><par n="ortodoks__adj"/></e>
+<e lm="etterskottsvis">                 <i>etterskottsvis</i><par n="ortodoks__adj"/></e>
+<e lm="punktvis">                       <i>punktvis</i><par n="ortodoks__adj"/></e>
+<e lm="enkeltvis">                      <i>enkeltvis</i><par n="ortodoks__adj"/></e>
+<e lm="glimtvis">                       <i>glimtvis</i><par n="ortodoks__adj"/></e>
+<e lm="skrittvis">                      <i>skrittvis</i><par n="ortodoks__adj"/></e>
+<e lm="støytvis">                       <i>støytvis</i><par n="ortodoks__adj"/></e>
+<e lm="støtvis">                        <i>støtvis</i><par n="ortodoks__adj"/></e>
 <e lm="gørrlat">                        <i>gørrlat</i><par n="minst__adj"/></e>
 <e lm="forlibt">                        <i>forlibt</i><par n="minst__adj"/></e>
 <e lm="håndholdt">                      <par n="hånd"/><i>holdt</i><par n="minst__adj"/></e>
@@ -57331,7 +57341,6 @@
 <e lm="ufør">         <i>ufør</i><par n="kommunal__n_cmp"/></e>
 <e lm="by">         <i>by</i><par n="kommunal__n_cmp"/></e>
 <e lm="2D">         <i>2D</i><par n="kommunal__n_cmp"/></e>
-<e lm="3D">         <i>3D</i><par n="kommunal__n_cmp"/></e>
 <e lm="4D">         <i>4D</i><par n="kommunal__n_cmp"/></e>
 <e lm="ADK">         <i>ADK</i><par n="kommunal__n_cmp"/></e>
 <e lm="ÅDT">         <i>ÅDT</i><par n="kommunal__n_cmp"/></e>
@@ -57719,6 +57728,8 @@
 <e lm="palestina">         <i>palestina</i><par n="kommunal__n_cmp"/></e>
 <e lm="hands-">         <i>hands-</i><par n="kommunal__n_cmp"/></e>
 <e lm="amino">         <i>amino</i><par n="kommunal__n_cmp"/></e>
+<e lm="iran">         <i>iran</i><par n="kommunal__n_cmp"/></e>
+<e lm="gestapo">         <i>gestapo</i><par n="kommunal__n_cmp"/></e>
 
 <!-- MWE nouns (agreement multiwords), each needing their own pardefs: -->
 <e lm="utenlandsk valuta">          <i>utenlandsk</i>      <par n="utenlandsk/_valuta__n"/></e>
@@ -149601,6 +149612,7 @@
 <e lm="signore">         <i>signore</i><par n="re_\Ø__n"/></e>
 <e r="LR" lm="signor">   <p><l>signor</l><r>signore</r></p><par n="re_\Ø__n"/></e>
 <e lm="signorina">       <i>signorina</i><par n="ep_\Ø__n"/></e>
+<e lm="plastelina">      <i>plastelina</i><par n="ep_\Ø__n"/></e>
 <e lm="signorino">       <i>signorino</i><par n="ep_\Ø__n"/></e>
 <e lm="signum">          <i>sign</i><par n="vel/um__n"/></e>
 <e lm="sigøyner">        <i>sigøyner</i><par n="uer__n"/></e>
@@ -195834,8 +195846,320 @@
 <e lm="lyssiv"><i>lyssiv</i><par n="ul__n"/></e>
 <e lm="løevegg"><i>løevegg</i><par n="ep_\Ø__n"/></e>
 <e lm="løsjer">          <i>løsjer</i><par n="uer__n"/></e>
-
-
+<e lm="alacarteservering">	<i>alacarteservering</i>	<par n="då__n"/> </e>
+<e lm="cache">	<i>cach</i>	<par n="enk/e__n"/> </e>
+<e lm="chiffoniere">	<i>chiffonier</i>	<par n="enk/e__n"/> </e>
+<e lm="coulis">	<i>coul</i>	<par n="dos/is__n"/> </e>
+<e lm="endoderm">	<i>endoderm</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="fornuftdyrkelse">	<i>fornuftdyrkels</i>	<par n="enk/e__n"/> </e>
+<e lm="førejulstid">	<i>førejulstid</i>	<par n="då__n"/> </e>
+<e lm="gaffa">	<i>gaff</i>	<par n="kolleg/a__n"/> </e>
+<e lm="genitivsomskriving">	<i>genitivsomskriving</i>	<par n="då__n"/> </e>
+<e lm="gliaselle">	<i>gliasell</i>	<par n="enk/e__n"/> </e>
+<e lm="grynder">	<i>gryn</i>	<par n="slad/der__n"/> </e>
+<e lm="guava">	<i>guav</i>	<par n="kolleg/a__n"/> </e>
+<e lm="halitt">	<i>halitt</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="havala">	<i>haval</i>	<par n="kolleg/a__n"/> </e>
+<e lm="hestigle">	<i>hestigl</i>	<par n="enk/e__n"/> </e>
+<e lm="iftar">	<i>ift</i>	<par n="nav/ar__n"/> </e>
+<e lm="japse">	<i>japs</i>	<par n="enk/e__n"/> </e>
+<e lm="jassfestival">	<i>jassfestival</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="jesusbilde">	<i>jesusbil</i>	<par n="ho/de__n"/> </e>
+<e lm="jugend">	<i>jugend</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="kanaresisk">	<i>kanaresisk</i>	<par n="samisk_\Ø__n"/> </e>
+<e lm="khoi-khoi">	<i>khoi-khoi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="laiv">	<i>laiv</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="lastex">	<i>lastex</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="legatoboge">	<i>legatobog</i>	<par n="enk/e__n"/> </e>
+<e lm="LHBT">	<i>LHBT</i>	<par n="PC__n"/> </e>
+<e lm="lhbt">	<i>lhbt</i>	<par n="PC__n"/> </e>
+<e lm="lhbt-person">	<i>lhbt-person</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="louis-seize">	<i>louis-seiz</i>	<par n="enk/e__n"/> </e>
+<e lm="macchiato">	<i>macchiat</i>	<par n="sol/o__n"/> </e>
+<e lm="magenta">	<i>magent</i>	<par n="kolleg/a__n"/> </e>
+<e lm="malthusianisme">	<i>malthusianism</i>	<par n="enk/e__n"/> </e>
+<e lm="mangesysleri">	<i>mangesysleri</i>	<par n="ul__n"/> </e>
+<e lm="markeslått">	<i>markesl</i>	<par n="t/ått__n"/> </e>
+<e lm="marokeng">	<i>marokeng</i>	<par n="ul__n"/> </e>
+<e lm="meierske">	<i>meiersk</i>	<par n="enk/e__n"/> </e>
+<e lm="menarche">	<i>menarch</i>	<par n="enk/e__n"/> </e>
+<e lm="menarke">	<i>menark</i>	<par n="enk/e__n"/> </e>
+<e lm="mensalgods">	<i>mensalgods</i>	<par n="ul__n"/> </e>
+<e lm="messias">	<i>messia</i>	<par n="taksi/s__n"/> </e>
+<e lm="messiaskompleks">	<i>messiaskompleks</i>	<par n="ul__n"/> </e>
+<e lm="metonym">	<i>metonym</i>	<par n="ul__n"/> </e>
+<e lm="meze">	<i>mez</i>	<par n="id/e_no-cp__n"/> </e>
+<e lm="mikkmakk">	<i>mikkmakk</i>	<par n="ul__n"/> </e>
+<e lm="mindremann">	<i>mindrem</i>	<par n="jam/ann__n"/> </e>
+<e lm="mindremannsfølelse">	<i>mindremannsfølels</i>	<par n="enk/e__n"/> </e>
+<e lm="minermøll">	<i>minermøll</i>	<par n="ymt_\Ø__n"/> </e>
+<e lm="mir">	<i>mir</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="misandri">	<i>misandri</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="mittel">	<i>mitt</i>	<par n="ad/el__n"/> </e>
+<e lm="mjelt">	<i>mjelt</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="moderatørlampe">	<i>moderatørlamp</i>	<par n="enk/e__n"/> </e>
+<e lm="multitasking">	<i>multitasking</i>	<par n="då__n"/> </e>
+<e lm="mungo">	<i>mung</i>	<par n="sol/o__n"/> </e>
+<e lm="muskarin">	<i>muskarin</i>	<par n="ul__n"/> </e>
+<e lm="musklikk">	<i>musklikk</i>	<par n="ymt_\Ø__n"/> </e>
+<e lm="mykose">	<i>mykos</i>	<par n="enk/e__n"/> </e>
+<e lm="nesnalobb">	<i>nesnalobb</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="n-fakultet">	<i>n-fakultet</i>	<par n="ul__n"/> </e>
+<e lm="ninja">	<i>ninj</i>	<par n="kolleg/a__n"/> </e>
+<e lm="nothund">	<i>nothund</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="nyserot">	<i>nyserot</i>	<par n="ski__n"/> </e>
+<e lm="någauk">	<i>någauk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ojibwe">	<i>ojibw</i>	<par n="sigend/e__n"/> </e>
+<e lm="okshøvel">	<i>okshøv</i>	<par n="ad/el__n"/> </e>
+<e lm="oksymeter">	<i>oksymet</i>	<par n="vat/er_\Ø__n"/> </e>
+<e lm="one-night-stand">	<i>one-night-st</i>	<par n="st/and__n"/> </e>
+<e lm="orekjerr">	<i>orekjer</i>	<par n="koppe/r__n"/> </e>
+<e lm="orering">	<i>orering</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ormerot">	<i>ormer</i>	<par n="kålr/ot__n"/> </e>
+<e lm="ornitose">	<i>ornitos</i>	<par n="enk/e__n"/> </e>
+<e lm="ortoreksi">	<i>ortoreksi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ostentasjon">	<i>ostentasjon</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="otitt">	<i>otitt</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="otolitt">	<i>otolitt</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="overvasshandtering">	<i>overvasshandtering</i>	<par n="då__n"/> </e>
+<e lm="overvasshåndtering">	<i>overvasshåndtering</i>	<par n="då__n"/> </e>
+<e lm="paladin">	<i>paladin</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="paleozoolog">	<i>paleozoolog</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="panarabisme">	<i>panarabism</i>	<par n="enk/e__n"/> </e>
+<e lm="pancetta">	<i>pancett</i>	<par n="kolleg/a__n"/> </e>
+<e lm="pangermanisme">	<i>pangermanism</i>	<par n="enk/e__n"/> </e>
+<e lm="pangolin">	<i>pangolin</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="panko">	<i>pank</i>	<par n="sol/o__n"/> </e>
+<e lm="pannacotta">	<i>pannacott</i>	<par n="kolleg/a__n"/> </e>
+<e lm="pantalong">	<i>pantalong</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="papat">	<i>papat</i>	<par n="ul__n"/> </e>
+<e lm="parerplate">	<i>parerplat</i>	<par n="enk/e__n"/> </e>
+<e lm="partenogenese">	<i>partenogenes</i>	<par n="enk/e__n"/> </e>
+<e lm="parømiologi">	<i>parømiologi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="pasteur">	<i>pasteur</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="patio">	<i>pati</i>	<par n="sol/o__n"/> </e>
+<e lm="pavlova">	<i>pavlov</i>	<par n="kolleg/a__n"/> </e>
+<e lm="pcr-test">	<i>pcr-test</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="pecorino">	<i>pecorin</i>	<par n="sol/o__n"/> </e>
+<e lm="pekannøtt">	<i>pekannøtt</i>	<par n="då__n"/> </e>
+<e lm="penthouse">	<i>penthous</i>	<par n="døm/e__n"/> </e>
+<e lm="pepperoni">	<i>pepperoni</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="periodikum">	<i>periodik</i>	<par n="vel/um__n"/> </e>
+<e lm="persimon">	<i>persimon</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="persistens">	<i>persisten</i>	<par n="taksi/s__n"/> </e>
+<e lm="pikogram">	<i>pikogram</i>	<par n="lam__n"/> </e>
+<e lm="pikrinsyre">	<i>pikrinsyr</i>	<par n="enk/e__n"/> </e>
+<e lm="pjoning">	<i>pjoning</i>	<par n="då__n"/> </e>
+<e lm="plagioklas">	<i>plagiokla</i>	<par n="taksi/s__n"/> </e>
+<e lm="planimeter">	<i>planime</i>	<par n="mut/ter__n"/> </e>
+<e lm="plenarmøte">	<i>plenarmøt</i>	<par n="ød/e__n"/> </e>
+<e lm="pod">	<i>pod</i>	<par n="bom__n"/> </e>
+<e lm="poff">	<i>poff</i>	<par n="ul__n"/> </e>
+<e lm="pokebolle">	<i>pokeboll</i>	<par n="enk/e__n"/> </e>
+<e lm="polyeten">	<i>polyet</i>	<par n="søsk/en__n"/> </e>
+<e lm="pomelo">	<i>pomel</i>	<par n="sol/o__n"/> </e>
+<e lm="ponticello">	<i>ponticell</i>	<par n="sol/o__n"/> </e>
+<e lm="popupbutikk">	<i>popupbutikk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="popup">	<i>popup</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="prekariat">	<i>prekariat</i>	<par n="ul__n"/> </e>
+<e lm="preklusjon">	<i>preklusjon</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="primarius">	<i>primari</i>	<par n="papyr/us__n"/> </e>
+<e lm="prodrom">	<i>prodrom</i>	<par n="ul__n"/> </e>
+<e lm="prorataansvar">	<i>prorataansv</i>	<par n="husf/ar__n"/> </e>
+<e lm="pyemi">	<i>pyemi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="qigong">	<i>qigong</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="quesadilla">	<i>quesadill</i>	<par n="kolleg/a__n"/> </e>
+<e lm="quiche">	<i>quich</i>	<par n="enk/e__n"/> </e>
+<e lm="quinoa">	<i>quino</i>	<par n="kolleg/a__n"/> </e>
+<e lm="raljør">	<i>raljør</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="rassball">	<i>rassball</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ratatouille">	<i>ratatouill</i>	<par n="enk/e__n"/> </e>
+<e lm="raudhyll">	<i>raudhyll</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="raudjord">	<i>raudjord</i>	<par n="då__n"/> </e>
+<e lm="raudkjeks">	<i>raudkje</i>	<par n="falan/ks__n"/> </e>
+<e lm="raudknapp">	<i>raudknapp</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="raudpanda">	<i>raudpand</i>	<par n="kolleg/a__n"/> </e>
+<e lm="raudsvingel">	<i>raudsving</i>	<par n="ad/el__n"/> </e>
+<e lm="raudsyre">	<i>raudsyr</i>	<par n="enk/e__n"/> </e>
+<e lm="reaktant">	<i>reaktant</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="reglett">	<i>reglett</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="rekonvalesering">	<i>rekonvalesering</i>	<par n="då__n"/> </e>
+<e lm="releaseparty">	<i>releaseparty</i>	<par n="ul__n"/> </e>
+<e lm="revtik">	<i>revtik</i>	<par n="då__n"/> </e>
+<e lm="rinald">	<i>rinald</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="romegress">	<i>romegress</i>	<par n="ul__n"/> </e>
+<e lm="rorsmann">	<i>rorsm</i>	<par n="jam/ann__n"/> </e>
+<e lm="roségull">	<i>roségull</i>	<par n="ul__n"/> </e>
+<e lm="rotpersille">	<i>rotpersill</i>	<par n="enk/e__n"/> </e>
+<e lm="runk">	<i>runk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ryss">	<i>rys</i>	<par n="taksi/s__n"/> </e>
+<e lm="råderom">	<i>råderom</i>	<par n="lam__n"/> </e>
+<e lm="råflir">	<i>råflir</i>	<par n="ymt_\Ø__n"/> </e>
+<e lm="sabbatsdag">	<i>sabbatsdag</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="sagging">	<i>sagging</i>	<par n="då__n"/> </e>
+<e lm="sakkarid">	<i>sakkarid</i>	<par n="ul__n"/> </e>
+<e lm="sambu">	<i>sambu</i>	<par n="ul__n"/> </e>
+<e lm="satyriasis">	<i>satyrias</i>	<par n="dos/is__n"/> </e>
+<e lm="scrapbooking">	<i>scrapbooking</i>	<par n="då__n"/> </e>
+<e lm="sekksporesopp">	<i>sekksporesopp</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="seminlag">	<i>seminlag</i>	<par n="ul__n"/> </e>
+<e lm="serranoskinke">	<i>serranoskink</i>	<par n="enk/e__n"/> </e>
+<e lm="sexdebut">	<i>sexdebut</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="shawarma">	<i>shawarm</i>	<par n="kolleg/a__n"/> </e>
+<e lm="silduk">	<i>silduk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="silurtid">	<i>silurtid</i>	<par n="då__n"/> </e>
+<e lm="sinkenov">	<i>sinkenov</i>	<par n="då__n"/> </e>
+<e lm="sivaks">	<i>sivaks</i>	<par n="ul__n"/> </e>
+<e lm="sivblom">	<i>sivblom</i>	<par n="bom__n"/> </e>
+<e lm="sjeleskildring">	<i>sjeleskildring</i>	<par n="då__n"/> </e>
+<e lm="skjeldtile">	<i>skjeldtil</i>	<par n="ød/e__n"/> </e>
+<e lm="sklette">	<i>sklett</i>	<par n="enk/e__n"/> </e>
+<e lm="skogsivaks">	<i>skogsivaks</i>	<par n="ul__n"/> </e>
+<e lm="slapstickhumor">	<i>slapstickhum</i>	<par n="m/or_\s__n"/> </e>
+<e lm="slapstickkomedie">	<i>slapstickkomed</i>	<par n="sperm/ie_\Ø__n"/> </e>
+<e lm="slings">	<i>sling</i>	<par n="taksi/s__n"/> </e>
+<e lm="slush">	<i>slush</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="sløsj">	<i>sløsj</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="smiley">	<i>smile</i>	<par n="royalt/y__n"/> </e>
+<e lm="sommelier">	<i>sommelier</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="soriamoriaslott">	<i>soriamoriaslott</i>	<par n="ul__n"/> </e>
+<e lm="s-passiv">	<i>s-passiv</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="splatterfilm">	<i>splatterfilm</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="splatter">	<i>splat</i>	<par n="mut/ter__n"/> </e>
+<e lm="splitt-og-hersk-politikk">	<i>splitt-og-hersk-politikk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="splitt-og-hersk-taktikk">	<i>splitt-og-hersk-taktikk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="sprutregn">	<i>sprutregn</i>	<par n="ul__n"/> </e>
+<e lm="stagediving">	<i>stagediving</i>	<par n="då__n"/> </e>
+<e lm="startup">	<i>startup</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="statement">	<i>statement</i>	<par n="ul__n"/> </e>
+<e lm="steelband">	<i>steelb</i>	<par n="gull/and__n"/> </e>
+<e lm="stilkesting">	<i>stilkesting</i>	<par n="ul__n"/> </e>
+<e lm="stolpebu">	<i>stolpeb</i>	<par n="k/u__n"/> </e>
+<e lm="st-passiv">	<i>st-passiv</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="streetfood">	<i>streetfood</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="stresstest">	<i>stresstest</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="stringtruse">	<i>stringtrus</i>	<par n="enk/e__n"/> </e>
+<e lm="strull">	<i>strull</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="strutsefjør">	<i>strutsefjør</i>	<par n="ymt_\Ø__n"/> </e>
+<e lm="stuffing">	<i>stuffing</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="st-verb">	<i>st-verb</i>	<par n="ul__n"/> </e>
+<e lm="survey">	<i>surve</i>	<par n="royalt/y__n"/> </e>
+<e lm="surveyundersøking">	<i>surveyundersøking</i>	<par n="då__n"/> </e>
+<e lm="svarabhakti">	<i>svarabhakti</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="svartemann">	<i>svartem</i>	<par n="jam/ann__n"/> </e>
+<e lm="svedjebruk">	<i>svedjebruk</i>	<par n="ul__n"/> </e>
+<e lm="s-verb">	<i>s-verb</i>	<par n="ul__n"/> </e>
+<e lm="svorsk">	<i>svorsk</i>	<par n="samisk_\Ø__n"/> </e>
+<e lm="sylinderlås">	<i>sylinderlås</i>	<par n="ul__n"/> </e>
+<e lm="særbu">	<i>særb</i>	<par n="k/u__n"/> </e>
+<e lm="sårad">	<i>sårad</i>	<par n="då__n"/> </e>
+<e lm="tahini">	<i>tahini</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tandoori">	<i>tandoori</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tandoor">	<i>tando</i>	<par n="m/or_\s__n"/> </e>
+<e lm="target">	<i>target</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tbc">	<i>tbc</i>	<par n="PC__n"/> </e>
+<e lm="teboks">	<i>tebo</i>	<par n="falan/ks__n"/> </e>
+<e lm="tebriks">	<i>tebri</i>	<par n="falan/ks__n"/> </e>
+<e lm="tefrokronologi">	<i>tefrokronologi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tekgrynder">	<i>tekgryn</i>	<par n="slad/der__n"/> </e>
+<e lm="tekgründer">	<i>tekgrün</i>	<par n="slad/der__n"/> </e>
+<e lm="tekkgrynder">	<i>tekkgryn</i>	<par n="slad/der__n"/> </e>
+<e lm="tekkgründer">	<i>tekkgrün</i>	<par n="slad/der__n"/> </e>
+<e lm="teklipper">	<i>teklip</i>	<par n="pep/per__n"/> </e>
+<e lm="telofase">	<i>telofas</i>	<par n="enk/e__n"/> </e>
+<e lm="telysestake">	<i>telysestak</i>	<par n="enk/e__n"/> </e>
+<e lm="temmincksnipe">	<i>temmincksnip</i>	<par n="enk/e__n"/> </e>
+<e lm="temperafarge">	<i>temperafarg</i>	<par n="enk/e__n"/> </e>
+<e lm="tenakel">	<i>tenak</i>	<par n="ad/el__n"/> </e>
+<e lm="tenalder">	<i>tenal</i>	<par n="slad/der__n"/> </e>
+<e lm="tendring">	<i>tendring</i>	<par n="då__n"/> </e>
+<e lm="tennammunisjon">	<i>tennammunisjon</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tennbrikett">	<i>tennbrikett</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tenntemperatur">	<i>tenntemperatur</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="teplante">	<i>teplant</i>	<par n="enk/e__n"/> </e>
+<e lm="teratologi">	<i>teratologi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="teriyaki">	<i>teriyaki</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="termografering">	<i>termografering</i>	<par n="då__n"/> </e>
+<e lm="termostatstyring">	<i>termostatstyring</i>	<par n="då__n"/> </e>
+<e lm="tertia">	<i>terti</i>	<par n="kolleg/a__n"/> </e>
+<e lm="testoff">	<i>testoff</i>	<par n="ul__n"/> </e>
+<e lm="tex-mex">	<i>tex-mex</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tex-mex-mat">	<i>tex-mex-mat</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tex-mex-musikk">	<i>tex-mex-musikk</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tilkortkomming">	<i>tilkortkomming</i>	<par n="då__n"/> </e>
+<e lm="tilskrift">	<i>tilskrift</i>	<par n="då__n"/> </e>
+<e lm="tiæring">	<i>tiæring</i>	<par n="då__n"/> </e>
+<e lm="tjodveg">	<i>tjodveg</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tjodvei">	<i>tjodvei</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tokn">	<i>tokn</i>	<par n="då__n"/> </e>
+<e lm="tollaksmesse">	<i>tollaksmess</i>	<par n="enk/e__n"/> </e>
+<e lm="tollaksmess">	<i>tollaksmess</i>	<par n="då__n"/> </e>
+<e lm="tomasmesse">	<i>tomasmess</i>	<par n="enk/e__n"/> </e>
+<e lm="tomasmess">	<i>tomasmess</i>	<par n="då__n"/> </e>
+<e lm="tonerkassett">	<i>tonerkassett</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tonic">	<i>tonic</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="torshammer">	<i>torsham</i>	<par n="som/mer__n"/> </e>
+<e lm="totenur">	<i>totenu</i>	<par n="koppe/r__n"/> </e>
+<e lm="transjergaffel">	<i>transjergaf</i>	<par n="vaf/fel__n"/> </e>
+<e lm="triastid">	<i>triastid</i>	<par n="då__n"/> </e>
+<e lm="triftong">	<i>triftong</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="triglyf">	<i>triglyf</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="trikloretylen">	<i>trikloretyl</i>	<par n="søsk/en__n"/> </e>
+<e lm="triumvir">	<i>triumvir</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="trusfellesskap">	<i>trusfellesskap</i>	<par n="ul__n"/> </e>
+<e lm="trussystem">	<i>trussystem</i>	<par n="ul__n"/> </e>
+<e lm="trøbil">	<i>trøbil</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="trøbrett">	<i>trøbrett</i>	<par n="ul__n"/> </e>
+<e lm="trøbåt">	<i>trøbåt</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="trøhjul">	<i>trøhjul</i>	<par n="ul__n"/> </e>
+<e lm="trømaskin">	<i>trømaskin</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="trøys">	<i>trøys</i>	<par n="då__n"/> </e>
+<e lm="tunrapp">	<i>tunrapp</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tunvord">	<i>tunvord</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tyskål">	<i>tyskål</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tyvflaks">	<i>tyvfla</i>	<par n="falan/ks__n"/> </e>
+<e lm="tzatziki">	<i>tzatziki</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tørrprat">	<i>tørrprat</i>	<par n="ul__n"/> </e>
+<e lm="tøvind">	<i>tøvind</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="tåbein">	<i>tåbein</i>	<par n="ul__n"/> </e>
+<e lm="tåspark">	<i>tåspark</i>	<par n="ul__n"/> </e>
+<e lm="tåtipp">	<i>tåtipp</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ufo-observasjon">	<i>ufo-observasjon</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ufsedråpe">	<i>ufsedråp</i>	<par n="enk/e__n"/> </e>
+<e lm="ulune">	<i>ulun</i>	<par n="ød/e__n"/> </e>
+<e lm="underarmskast">	<i>underarmskast</i>	<par n="ul__n"/> </e>
+<e lm="underkommunisering">	<i>underkommunisering</i>	<par n="då__n"/> </e>
+<e lm="undervasskabel">	<i>undervasskab</i>	<par n="ad/el__n"/> </e>
+<e lm="undervassrugby">	<i>undervassrugb</i>	<par n="royalt/y__n"/> </e>
+<e lm="undervassteknologi">	<i>undervassteknologi</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="undesime">	<i>undesim</i>	<par n="enk/e__n"/> </e>
+<e lm="undesim">	<i>undesim</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="ungfe">	<i>ungf</i>	<par n="tr/e__n"/> </e>
+<e lm="utaforskap">	<i>utaforskap</i>	<par n="ul__n"/> </e>
+<e lm="utalandsformue">	<i>utalandsformu</i>	<par n="enk/e__n"/> </e>
+<e lm="utalandslektor">	<i>utalandslekt</i>	<par n="m/or_\s__n"/> </e>
+<e lm="utapåplagg">	<i>utapåplagg</i>	<par n="ul__n"/> </e>
+<e lm="vatikankonsil">	<i>vatikankonsil</i>	<par n="ul__n"/> </e>
+<e lm="venuspassasje">	<i>venuspassasj</i>	<par n="enk/e__n"/> </e>
+<e lm="venusvogn">	<i>venusvogn</i>	<par n="då__n"/> </e>
+<e lm="vermlending">	<i>vermlending</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="versepar">	<i>versep</i>	<par n="husf/ar__n"/> </e>
+<e lm="vertorganisme">	<i>vertorganism</i>	<par n="enk/e__n"/> </e>
+<e lm="veslefar">	<i>veslefar</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="vevfjøl">	<i>vevfjøl</i>	<par n="då__n"/> </e>
+<e lm="vibroplate">	<i>vibroplat</i>	<par n="enk/e__n"/> </e>
+<e lm="votivfunn">	<i>votivfunn</i>	<par n="ul__n"/> </e>
+<e lm="økologisering">	<i>økologisering</i>	<par n="då__n"/> </e>
+<e lm="øksøye">	<i>øksøy</i>	<par n="ød/e__n"/> </e>
+<e lm="ørting">	<i>ørting</i>	<par n="då__n"/> </e>
+<e lm="åbot">	<i>åb</i>	<par n="b/ot__n"/> </e>
+<e lm="ålekar">	<i>ålek</i>	<par n="husf/ar__n"/> </e>
+<e lm="åleskinn">	<i>åleskinn</i>	<par n="ul__n"/> </e>
+<e lm="årepar">	<i>årep</i>	<par n="husf/ar__n"/> </e>
+<e lm="årestein">	<i>årestein</i>	<par n="ep_\Ø__n"/> </e>
+<e lm="åsalære">	<i>åsalær</i>	<par n="enk/e__n"/> </e>
+<e lm="åsdrag">	<i>åsdrag</i>	<par n="ul__n"/> </e>
+<e lm="åskant">	<i>åskant</i>	<par n="ep_\Ø__n"/> </e>
 <!-- /common nouns -->
 
 <e lm="Volvo">	<i>Volvo</i><par n="ep_\-__n"/></e>

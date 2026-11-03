@@ -354,8 +354,8 @@ LIST gen = gen ;
 LIST gen/%slags% = "slags" gen ;
 LIST gen-subst = (n gen) ;
 LIST subst-gen = (n gen) ;
-LIST hj-verb   = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" "bli" "ha" "være" ;
-LIST m-hj-verb = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" ;
+LIST hj-verb   = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" "ville# måtte" "bli" "ha" "være" ;
+LIST m-hj-verb = "ville" "skulle" "måtte" "kunne" "få" "burde" "ville# kunne" "ville# måtte" ;
 
 SET ikke-@←adv = @alle-funksjoner - @←adv ;
 SET ikke-@←p-utfyll = @alle-funksjoner - @←p-utfyll ;
