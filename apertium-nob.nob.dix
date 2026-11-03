@@ -22601,7 +22601,8 @@
 <e lm="tilnærmelsesvis">        <i>tilnærmelsesvis</i><par n="dagevis__adv"/></e>
 <e lm="tilrette">        <i>tilrette</i><par n="dagevis__adv"/></e>
 <e lm="tilrådelig">        <i>tilrådelig</i><par n="dagevis__adv"/></e>
-<e lm="tilsammen">        <i>tilsammen</i><par n="dagevis__adv"/></e>
+<e r="LR" lm="tilsammen">        <p><l>tilsammen</l><r>til<b/>sammen</r></p><par n="dagevis__adv"/></e>
+<e lm="til sammen">        <i>til<b/>sammen</i><par n="dagevis__adv"/></e>
 <e lm="tilskitnet">        <i>tilskitnet</i><par n="dagevis__adv"/></e>
 <e lm="tilstengt">        <i>tilstengt</i><par n="dagevis__adv"/></e>
 <e lm="tilsølt av kjøtt">        <i>tilsølt<b/>av<b/>kjøtt</i><par n="dagevis__adv"/></e>
