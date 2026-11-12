@@ -14025,6 +14025,11 @@ REMOVE ("betinget") + adv IF
         (0 ("betinget"))
 ;
 # betinget suksess vs. gjort betinget
+"<forhold>" SELECT:relasjon-forhold n IF
+        (-2 ("relasjon"))
+        (-1 cm)
+        ;
+# "relasjon, forhold"
 REMOVE:kapret-istedenfor adj IF
         (0 vblex OR adj)
         (1 ("istedenfor")) ;
