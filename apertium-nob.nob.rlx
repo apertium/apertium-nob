@@ -19171,6 +19171,23 @@ LIST forsterkende = "tydelig" "svært" "veldig" "kraftig" "voldsom" "meget" ;
 
 "<stammer>" REMOVE:stammer-fra n IF (1 %fra%) ;
 
+"<atskilt>"i SELECT:være-atskilt adj + pst + un + pl IF
+        (-1 vblex)
+        ;
+"<atskilt>"i REMOVE:atskilt-fra pp IF
+        (1 prep OR n)
+        ;
+"<atskilte>"i REMOVE:atskilt-fra pp IF 
+        (1 prep OR n) 
+        ;
+
+"<adskilt>"i REMOVE:atskilt-fra pp IF 
+        (1 prep OR n) 
+        ;
+"<adskilte>"i REMOVE:atskilt-fra pp IF 
+        (1 prep OR n)
+        ;
+
 #:3240
   "<steder>"   REMOVE:3240   (n pl) IF
 	(0 verb)
