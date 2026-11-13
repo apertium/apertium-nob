@@ -37851,6 +37851,9 @@ REMOVE:før-det-legges-fram inf IF
 # "vblex inf gen"
 
 
+"<tørre>"i REMOVE:tørre-å adj IF
+        (1 %å%)
+        ;
 
 #:1905
  REMOVE:1905 (vblex inf) IF
