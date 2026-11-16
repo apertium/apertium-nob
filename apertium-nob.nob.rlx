@@ -13137,6 +13137,11 @@ SELECT:strenge ("<strenge>"i) + adj IF
         ;
 # strengje opp, elles strenge
 
+"<fremmede>" SELECT:til-fremmede ("fremmed") IF
+        (-1 pr or adv)
+        (1 setn-gr)
+	;
+# Det er ikke alle det er naturlig for å levere fra seg sakene sine til fremmede.
 SELECT:unlikely-fremmende ("fremme") IF
         (0 ("fremmende"))
         (0/* cmp)
