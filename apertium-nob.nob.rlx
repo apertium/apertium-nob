@@ -9592,6 +9592,11 @@ SELECT:tranene ("trane") IF
         ;
         # Fleirtal "røykar" er mogleg, men svært uvanleg
 
+"<stampe>"i   REMOVE:stå-i-stampe vblex IF
+        (-1 %i%)
+;
+# stå i stampe
+
 "<løse>"i SELECT:løse-utfordringer vblex IF
         (1* ("problem") OR ("utfordring") OR ("oppgave"))
         ;

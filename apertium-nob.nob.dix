@@ -28163,6 +28163,7 @@
     <e lm="fossro"><i>fossro</i><par n="nø__vblex_adj"/></e>
     <e lm="fostre"><i>fostr</i><par n="adl/e__vblex_adj"/></e>
     <e lm="fote"><i>fot</i><par n="di/e__vblex_adj"/></e>
+    <e lm="fradra"><i>fradr</i><par n="dr/a__vblex_adj"/></e>
     <e lm="frakte"><i>frakt</i><par n="di/e__vblex_adj"/></e>
     <e lm="framelske"><i>framelsk</i><par n="di/e__vblex_adj"/></e>
     <e lm="framheve"><i>framhev</i><par n="nag/e__vblex_adj"/></e>
@@ -125087,7 +125088,7 @@
 <e lm="klarskrift">      <i>klarskrift</i><par n="då__n"/></e>
 <e lm="klarsyn">         <i>klarsyn</i><par n="ul__n"/></e>
 <e lm="klarsynthet">     <i>klarsynthet</i><par n="då__n"/></e>
-<e lm="klarvær">         <i>klarvær</i><par n="ul__n"/></e>
+<e lm="klarvær">         <i>klarvær</i><par n="ul_\s__n"/></e>
 <e lm="klarværsdag">     <i>klarværsdag</i><par n="ep_\Ø__n"/></e>
 <e lm="klaskedo">        <i>klaskedo</i><par n="do__n"/></e>
 <e lm="klasking">        <i>klasking</i><par n="då__n"/></e>
