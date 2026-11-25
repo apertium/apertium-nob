@@ -14076,6 +14076,10 @@ REMOVE:kapret-istedenfor adj IF
         (*1 ("brunst") OR ("kjønnsmoden"))
         ;
 # "Purker vil være i kjønnsmoden alder og komme i brunst da."
+"<døgnet>" SELECT:døgnet-rundt n IF
+        (1 ("<rundt>"))
+        ;
+# "Planter puster døgnet rundt."
 "<leke>" SELECT:lese-og-leke vblex IF
         (-2 ("lese"))
         (-1 cnjcoo)
